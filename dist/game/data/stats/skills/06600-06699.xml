@@ -2025,7 +2025,7 @@
 		</effects>
 	</skill>
 	<skill id="6621" toLevel="7" name="Maguen Plasma">
-		<!-- Increases P. Atk./M. Atk. -->
+		<!-- P. Atk. and M. Atk. are increased. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2073,7 +2073,7 @@
 		</effects>
 	</skill>
 	<skill id="6622" toLevel="1" name="Stun">
-		<!-- Stunned and unable to move for 20 seconds. The chance of receiving P. Critical Damage +50%. -->
+		<!-- Stunned for 20 seconds and momentarily immobile with a boosted chance by 50% for getting hit by critical damage. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2097,9 +2097,7 @@
 			<effect name="PhysicalDamage">
 				<power>2748</power>
 			</effect>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 			<effect name="DefenceCriticalRate">
 				<amount>50</amount>
 				<mode>PER</mode>
@@ -2120,7 +2118,7 @@
 		<mpConsume>110</mpConsume>
 	</skill>
 	<skill id="6624" toLevel="1" name="Stun">
-		<!-- Stunned and unable to move for 9 seconds. The chance of receiving P. Critical Damage +50%. -->
+		<!-- Stunned for 9 seconds and momentarily immobile. Your chance of getting hit by Critical Damage is increased by 50%. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2253,7 +2251,7 @@
 		</effects>
 	</skill>
 	<skill id="6631" toLevel="1" name="Energy of Power">
-		<!-- Increases P. Atk. +15% for a set time. -->
+		<!-- Increases P. Atk. temporarily. Effect 3. -->
 		<icon>icon.etc_herb_red_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2280,7 +2278,7 @@
 		</effects>
 	</skill>
 	<skill id="6632" toLevel="1" name="Energy of Magic">
-		<!-- Temporarily increases M. Atk. +75%. -->
+		<!-- Increases M. Atk. temporarily. Effect 3. -->
 		<icon>icon.etc_herb_blue_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2301,7 +2299,7 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="6633" toLevel="1" name="Energy of Atk. Spd.">
-		<!-- Increases Atk. Spd. +33% for a set time. -->
+		<!-- Increases Speed. temporarily. Effect 2. -->
 		<icon>icon.etc_attack_sp_herb_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2328,7 +2326,7 @@
 		</effects>
 	</skill>
 	<skill id="6634" toLevel="1" name="Energy of Casting Spd.">
-		<!-- Increases Casting Spd. +30% for a set time. -->
+		<!-- Increases Casting Spd. temporarily. Effect 3. -->
 		<icon>icon.etc_magic_sp_herb_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2349,7 +2347,7 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="6635" toLevel="1" name="Energy of Crtical Attack">
-		<!-- P. Critical Rate +30% for a set time. -->
+		<!-- Increases Critical attack rate temporarily. Effect 3. -->
 		<icon>icon.etc_critical_herb_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2375,8 +2373,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6636" toLevel="1" name="Energy of Movement Speed">
-		<!-- Increases Movement Speed +33 for a set time. -->
+	<skill id="6636" toLevel="1" name="Energy of Speed">
+		<!-- Increases Speed. temporarily. Effect 2. -->
 		<icon>icon.etc_move_herb_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2403,7 +2401,7 @@
 		</effects>
 	</skill>
 	<skill id="6637" toLevel="1" name="Energy of HP Drain">
-		<!-- Momentarily restores HP using damage inflicted upon the enemy with a certain probability. -->
+		<!-- Uses damage inflicted upon the enemy to temporarily restore HP with a certain probability. Effect 4. -->
 		<icon>icon.skill6637</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2471,7 +2469,7 @@
 		</effects>
 	</skill>
 	<skill id="6639" toLevel="1" name="Energy of Crtical Rate: Damage">
-		<!-- P. Critical Damage increased for a set time. -->
+		<!-- Increases Critical P. Atk. temporarily. Effect 3. -->
 		<icon>icon.skill2514</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2494,6 +2492,33 @@
 			<effect name="CriticalDamage">
 				<amount>35</amount>
 				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6640" toLevel="1" name="Vitality Replenishing Aura">
+		<!-- Recovers Vitality upon acquiring XP. -->
+		<icon>icon.skilltransform4</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalInstant>true</abnormalInstant>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>VP_UP</abnormalType>
+		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>2000</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>2000</effectRange>
+		<hitTime>100</hitTime>
+		<isMagic>4</isMagic> <!-- Item Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>2000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
 			</effect>
 		</effects>
 	</skill>
@@ -2579,7 +2604,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="6645" toLevel="1" name="Cooker Invincibility On">
-		<!-- Invincible against normal attacks, skills, and debuff cancel/debuffs. -->
+		<!-- Invincible against standard targets and skills and buffs/debuffs. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2625,8 +2650,42 @@
 		<magicLevel>84</magicLevel>
 		<mpConsume>110</mpConsume>
 	</skill>
-	<skill id="6650" toLevel="1" name="Tacrakahn's Alienation">
-		<!-- All actions are sealed by Tacrakahn's special ability. Impossible to dispel. -->
+	<skill id="6649" toLevel="1" name="Transform Treykan">
+		<!-- Transforms you into a fearsome Treykan. -->
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<castRange>2000</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>2000</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<mpConsume>31</mpConsume>
+		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>126</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>126</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6650" toLevel="1" name="Taklacan's Alienation">
+		<!-- All actions are sealed by Taklacan's special ability. Impossible to dispel. -->
 		<icon>icon.skill4111</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2663,21 +2722,21 @@
 		<magicLevel>-1</magicLevel>
 		<specialLevel>-1</specialLevel>
 	</skill>
-	<skill id="6652" toLevel="1" name="Lv. 89 Raid Boss">
+	<skill id="6652" toLevel="1" name="Raid Boss (Lv. 89)">
 		<!-- Head of the Bistakon, a race that is one of Istina's numerous descendants. He became the head of the race through physical strength and superior power. They are enemies with the Kokracon and Reptilikon races, maintaining the balance of power. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6653" toLevel="1" name="Lv. 89 Raid Boss">
+	<skill id="6653" toLevel="1" name="Raid Boss (Lv. 89)">
 		<!-- Head of the Leptilikon, a race that is one of Istina's numerous descendants. He boasts perfect defense, but is weak against Treykan. They are enemies with the Kokracon and Bistakon races, maintaining the balance of power. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6654" toLevel="1" name="Lv. 89 Raid Boss">
+	<skill id="6654" toLevel="1" name="Raid Boss (Lv. 89)">
 		<!-- Head of the Kokracon, a race that is one of Istina's numerous descendants. He has exceptional intelligence among his race. They are enemies with the Bistakon and Leptilikon races, maintaining the balance of power. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -2722,28 +2781,28 @@
 		<magicLevel>99</magicLevel>
 		<mpConsume>110</mpConsume>
 	</skill>
-	<skill id="6658" toLevel="1" name="Lv. 84 Raid Boss">
+	<skill id="6658" toLevel="1" name="Raid Boss (Lv. 84)">
 		<!-- Raid Boss Darnel -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6659" toLevel="1" name="Lv. 84 Raid Boss">
+	<skill id="6659" toLevel="1" name="Raid Boss (Lv. 84)">
 		<!-- Raid Boss Kechi -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6660" toLevel="1" name="Lv. 84 Raid Boss">
+	<skill id="6660" toLevel="1" name="Raid Boss (Lv. 84)">
 		<!-- Raid Boss Tears -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6661" toLevel="1" name="Lv. 85 Raid Boss">
+	<skill id="6661" toLevel="1" name="Raid Boss (Lv. 85)">
 		<!-- Ice warrior created by blowing life into Freya's crystal fragment. It has no understanding of self and only obeys the commands of its master Freya. It will even walk into death if it is her will. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -2782,12 +2841,10 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 			<effect name="DamOverTime">
 				<power>115</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -2797,14 +2854,14 @@
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="6663" toLevel="1" name="Lv. 76 Raid Boss">
+	<skill id="6663" toLevel="1" name="Raid Boss (Lv. 76)">
 		<!-- Powerful gigantic golem created by Dr. Kaos using the Pael ruins star stone. Dr. Chaos was once the Golem Maestro for all guilds, but he tried to steal the Leader's Blueprints. Was assigned to obtaining revenge for the Black Anvil Guild, and he led the golem army that he made to Pavel's Ruins. When an outsider is found, in order to punish himself, consider it troops from the Black Anvil Guild, and just attack. His ultimate goal is world domination. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6664" toLevel="1" name="Lv. 84 Raid Boss">
+	<skill id="6664" toLevel="1" name="Raid Boss (Lv. 84)">
 		<!-- Though it appears human, it is actually an archangel who speaks directly with Einhasad. The ancient religious text discovered at the Tower of Insolence gave evidence that the grail was hidden somewhere in the Monastery of Silence. Afterward, extensive searches for the grail took place in the Temple of Bishop, but no one could escape the judgment of the Master of Splendor. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -2878,7 +2935,7 @@
 		</effects>
 	</skill>
 	<skill id="6668" toLevel="1" name="Feral Death Whisper">
-		<!-- Increases P. Critical Damage +35% for 5 minutes. -->
+		<!-- Increases critical P. Atk. by 35% for 5 minutes. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2959,7 +3016,7 @@
 		</effects>
 	</skill>
 	<skill id="6671" toLevel="1" name="Feral Berserker Spirit">
-		<!-- P. Def. decreases momentarily. -8%, M. Def. -16%,P. Evasion -4 and increases P. Atk. +8%, M. Atk. +16%, Atk. Spd. +8%, Casting Spd. +8%, and Movement Speed. +8 for 5 minutes. -->
+		<!-- P. Def. decreases momentarily. by 8%, M. Def. by 16%, Evasion by 4 and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed. by 8 for 5 minutes. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3014,12 +3071,12 @@
 		</effects>
 	</skill>
 	<skill id="6672" toLevel="1" name="Feral Blessed Shield">
-		<!-- Increases Shield defense rate +5% for 30 minutes. -->
+		<!-- Increases Shield defense rate by 5% for 30 minutes. -->
 		<icon>icon.skill1243</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
 		<abnormalLevel>6</abnormalLevel>
-		<abnormalTime>315</abnormalTime>
+		<abnormalTime>1800</abnormalTime>
 		<abnormalType>SHIELD_PROB_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
@@ -3055,7 +3112,7 @@
 		<magicLevel>85</magicLevel>
 	</skill>
 	<skill id="6674" toLevel="1" name="Energy of Range Increment">
-		<!-- Increases Bow Attack Range +50 for a set time. -->
+		<!-- Bow/Crossbow range is temporarily increased by 50. -->
 		<icon>icon.etc_magic_sp_herb_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3295,6 +3352,29 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="6685" toLevel="1" name="Santa's Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2700</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>17003</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="6686" toLevel="1" name="Cancel Holy Protection">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -3312,7 +3392,7 @@
 		</effects>
 	</skill>
 	<skill id="6687" toLevel="1" name="Patience">
-		<!-- P. Skill Power increased. -->
+		<!-- Skill Power is increased. -->
 		<icon>icon.skill0983</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3355,7 +3435,7 @@
 		<effects>
 			<effect name="DamOverTimePercent">
 				<power>0.02</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>20</amount>
@@ -3380,10 +3460,7 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>83</magicLevel>
 		<effects>
-			<effect name="HpDrain">
-				<power>131</power>
-				<percentage>40</percentage>
-			</effect>
+			<!-- TODO i_hp_drain 131 40 -->
 			<effect name="Mp">
 				<amount>-491</amount>
 				<mode>DIFF</mode>
@@ -3622,16 +3699,14 @@
 		<magicLevel>-1</magicLevel>
 		<specialLevel>-1</specialLevel>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 			<effect name="DamOverTime">
 				<power>115</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="ManaDamOverTime">
 				<power>5</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>

@@ -17,10 +17,10 @@
 	</skill>
 	<skill id="6103" toLevel="5" name="Showdown with the Turkey - 1st Win">
 		<!-- Level 1: 1st win. -->
-		<!-- Level 2: 2nd consecutive win. -->
-		<!-- Level 3: 3rd consecutive win. -->
-		<!-- Level 4: 4th consecutive win. -->
-		<!-- Level 5: 5th consecutive win. -->
+		<!-- Level 2: 2nd win. -->
+		<!-- Level 3: 3rd win. -->
+		<!-- Level 4: 4th win. -->
+		<!-- Level 5: 5th win. -->
 		<icon>
 			<value level="1">icon.xmas_pcwin1_i00</value>
 			<value level="2">icon.xmas_pcwin2_i00</value>
@@ -62,7 +62,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="6105" toLevel="1" name="Turkey's Mistake">
-		<!-- Stupid Turkey's Mistake. For 1 hour, increases Max HP +10%, Max MP +10%, Max CP +10%, Movement Speed +15%, P. Atk. +10%, M. Atk. +15%, P. Critical Rate +5, P. Critical Damage +15%, and M. Critical Rate +20. -->
+		<!-- The stupid turkey's mistake. For 1 hour, increases Max HP by 10%, Max MP by 10%, Max CP by 10%, Speed by 15%, P. Atk. by 10%, M. Atk. by 15%, Critical Rate by 5, Critical Damage by 15%, and the chance of prominent damage occurring through magic damage by 2. -->
 		<icon>icon.turkey_buff_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -307,24 +307,8 @@
 		<magicLevel>1</magicLevel>
 		<specialLevel>-1</specialLevel>
 	</skill>
-	<skill id="6118" toLevel="1" name="Holiday Blessing">
-		<!-- For 1 hr., Might, Shield, Focus, Heist, Acumen, Empower, and Wind Walk are applied. -->
-		<icon>icon.etc_x_mas_tree_i00</icon>
-		<operateType>A1</operateType>
-		<effectPoint>1</effectPoint>
-		<hitTime>200</hitTime>
-		<reuseDelay>1000</reuseDelay>
-	</skill>
-	<skill id="6119" toLevel="1" name="Blessing of Abundance">
-		<!-- Applies Might, Shield, Focus, Haste, Acumen, Empower, and Wind Walk effects for 1 hour. -->
-		<icon>icon.skill5662</icon>
-		<operateType>A1</operateType>
-		<castRange>400</castRange>
-		<hitTime>200</hitTime>
-		<reuseDelay>1000</reuseDelay>
-	</skill>
 	<skill id="6120" toLevel="1" name="Santa's Reward">
-		<!-- Santa's Reward. For 1 hour, increases Max HP +10%, Max MP +10%, Max CP +10%, Movement Speed +15%, P. Atk. +10%, M. Atk. +15%, P. Critical Rate +5, P. Critical Damage +15%, and M. Critical Rate +20. -->
+		<!-- Santa's reward. For 1 hour, increases Max HP by 10%, Max MP by 10%, Max CP by 10%, Speed by 15%, P. Atk. by 10%, M. Atk. by 15%, Critical Rate by 5, Critical Damage by 15%, and the chance of prominent damage occurring through magic damage by 2. -->
 		<icon>icon.etc_pi_gift_box_i04</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -380,6 +364,77 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="6121" toLevel="1" name="Agathion's New Year's Gift 1">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2700</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>86400000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>14676</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6122" toLevel="1" name="Agathion's New Year's Gift 2">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2700</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>86400000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>14677</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6123" toLevel="1" name="Agathion's New Year's Wish">
+		<!-- Agathion's New Year's Wish - Vitality is maintained and not consumed. -->
+		<icon>icon.etc_pi_gift_box_i03</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>VP_KEEP</abnormalType>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2000</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic> <!-- Item Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>86400000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem" />
+		</conditions>
+	</skill>
 	<skill id="6124" toLevel="1" name="Agathion Cute Trick - Neolithica">
 		<!-- See the summoned spirit perform cute tricks. -->
 		<icon>icon.skill_agathion_cute</icon>
@@ -400,21 +455,22 @@
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
-		<abnormalLevel>2</abnormalLevel>
+		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>40</magicLevel>
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -423,21 +479,22 @@
 		<icon>icon.skill1170</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
-		<abnormalLevel>2</abnormalLevel>
+		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>10</abnormalTime>
 		<abnormalType>PARALYZE</abnormalType>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>40</magicLevel>
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -462,7 +519,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="6129" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -487,7 +544,7 @@
 		<trait>SHOCK</trait>
 	</skill>
 	<skill id="6130" toLevel="1" name="Mutant Curse">
-		<!-- Mutant Curse: Stunned and unable to move momentarily. -->
+		<!-- Mutant Curse: Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -515,7 +572,7 @@
 		<trait>SHOCK</trait>
 	</skill>
 	<skill id="6131" toLevel="1" name="Decrease Speed">
-		<!-- Mutant Curse: Movement Speed momentarily decreased by 8%. -->
+		<!-- Mutant Curse: Speed decreases momentarily. Effect 1. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -539,7 +596,7 @@
 		<reuseDelay>8000</reuseDelay>
 	</skill>
 	<skill id="6132" toLevel="1" name="Decrease Atk. Spd.">
-		<!-- Mutant Curse: Atk. Spd. momentarily decreased by 8%. -->
+		<!-- Mutant Curse: Atk. Spd. decreases momentarily. Effect 1. -->
 		<icon>icon.skill4038</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -584,7 +641,7 @@
 		<trait>ETC</trait>
 	</skill>
 	<skill id="6134" toLevel="1" name="Mutant Curse">
-		<!-- Mutant Curse: Atk. Spd. and Movement Speed are decreased by 30% momentarily. -->
+		<!-- Mutant Curse: Atk. Spd. and Speed decrease momentarily. Effect 1. -->
 		<icon>icon.skill4038</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -607,7 +664,7 @@
 		<reuseDelay>8000</reuseDelay>
 	</skill>
 	<skill id="6135" toLevel="1" name="Mutant Curse">
-		<!-- Mutant Curse: Stunned and unable to move momentarily. -->
+		<!-- Mutant Curse: Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -666,6 +723,9 @@
 		<reuseDelay>10000</reuseDelay>
 		<specialLevel>-1</specialLevel>
 		<trait>ETC</trait>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6138" toLevel="1" name="Agathion Juju - Large Firecracker">
 		<!-- Can set off large firecrackers. -->
@@ -679,6 +739,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
 		<reuseDelay>20000</reuseDelay>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6139" toLevel="1" name="Fake Tears">
 		<!-- For 10 minutes, weapon appearances change through the effect of the "Fake Tears" that were scattered by "Pierre Baguette." But, weapons don't change their abilities. -->
@@ -738,9 +801,9 @@
 		<magicLevel>85</magicLevel>
 	</skill>
 	<skill id="6142" toLevel="3" name="Tar Trap">
-		<!-- Level 1: You are covered in hot and sticky tar. Your Movement Speed is decreased by 30% for 5 minutes. P. Def. and P. evasion are decreased by 10%. -->
-		<!-- Level 2: You are covered in hot and sticky tar. Your Movement Speed is decreased by 60% for 5 minutes. P. Def. and P. evasion are decreased by 20%. -->
-		<!-- Level 3: You are covered in hot and sticky tar. Your Movement Speed is decreased by 90% for 5 minutes. P. Def. and P. evasion are decreased by 30%. -->
+		<!-- Level 1: You are covered in hot and sticky tar. Your Speed is decreased by 30% for 5 minutes. P. Def. and evasion are decreased by 10%. -->
+		<!-- Level 2: You are covered in hot and sticky tar. Your Speed is decreased by 60% for 5 minutes. P. Def. and evasion are decreased by 20%. -->
+		<!-- Level 3: You are covered in hot and sticky tar. Your Speed is decreased by 90% for 5 minutes. P. Def. and evasion are decreased by 30%. -->
 		<icon>icon.skill0770</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -931,7 +994,7 @@
 		</effects>
 	</skill>
 	<skill id="6149" toLevel="1" name="Kasha's Brand">
-		<!-- Kasha's Brand. For 5 minutes, P. Def. -30%. -->
+		<!-- Kasha's Brand. For 5 minutes, P. Def. - 30%. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1082,7 +1145,7 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="6154" toLevel="4" name="Kasha's Despair">
-		<!-- Kasha's Despair. P. Critical rate increases. -->
+		<!-- Kasha's Despair. Critical rate increases. -->
 		<icon>
 			<value level="1">icon.skill6154_1</value>
 			<value level="2">icon.skill6154_2</value>
@@ -1119,7 +1182,7 @@
 		</effects>
 	</skill>
 	<skill id="6155" toLevel="4" name="Kasha's Despair">
-		<!-- Kasha's Despair. P. Critical rate increases and P. Def. decreases. -->
+		<!-- Kasha's Despair. Critical rate increases and P. Def. decreases. -->
 		<icon>
 			<value level="1">icon.skill6154_1</value>
 			<value level="2">icon.skill6154_2</value>
@@ -1143,66 +1206,8 @@
 		<specialLevel>-1</specialLevel>
 		<trait>BLEED</trait>
 	</skill>
-	<skill id="6156" toLevel="1" name="Mood Melody">
-		<!-- For 1hour, grants the following effects: Might, Shield, Focus, Haste, Acumen, Empower, Wind Walk, Death Whisper, and Vampiric Rage. -->
-		<icon>icon.bm_magmeld</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>3600</abnormalTime>
-		<abnormalType>G_EV_BUFF1</abnormalType>
-		<affectScope>SINGLE</affectScope>
-		<basicProperty>NONE</basicProperty>
-		<blockedInOlympiad>true</blockedInOlympiad>
-		<castRange>400</castRange>
-		<effectPoint>0</effectPoint>
-		<hitTime>200</hitTime>
-		<isMagic>1</isMagic>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>-2</magicLevel>
-		<reuseDelay>1000</reuseDelay>
-		<specialLevel>-2</specialLevel>
-		<effects>
-			<effect name="PhysicalAttack">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalRate">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>33</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
-				<amount>75</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed">
-				<amount>33</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>35</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="VampiricAttack">
-				<amount>9</amount>
-				<chance>80</chance>
-			</effect>
-		</effects>
-	</skill>
 	<skill id="6166" toLevel="1" name="Hold">
-		<!-- Afflicted with Hold and unable to move momentarily. -->
+		<!-- Inflicted with hold and unable to move momentarily. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1230,7 +1235,7 @@
 		<trait>HOLD</trait>
 	</skill>
 	<skill id="6167" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1280,7 +1285,7 @@
 		<trait>SHOCK</trait>
 	</skill>
 	<skill id="6168" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1744,6 +1749,32 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>79</magicLevel>
 		<reuseDelay>8000</reuseDelay>
+	</skill>
+	<skill id="6196" toLevel="1" name="Agathion Oink Oink's Ability">
+		<!-- Agathion Oink Oink's Ability: Vitality is maintained and not consumed. -->
+		<icon>icon.skill_agathion_cute</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>VP_KEEP</abnormalType>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic> <!-- Item Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>72000000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem" />
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="6197" toLevel="1" name="Agathion Cute Trick - Oink Oink">
 		<!-- See the summoned spirit perform cute tricks. -->

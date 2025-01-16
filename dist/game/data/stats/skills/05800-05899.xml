@@ -38,7 +38,7 @@
 		<reuseDelay>4000</reuseDelay>
 	</skill>
 	<skill id="5802" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -218,7 +218,7 @@
 		<reuseDelay>4000</reuseDelay>
 	</skill>
 	<skill id="5810" toLevel="1" name="Decrease Speed">
-		<!-- Movement Speed has momentarily decreased by 30%. -->
+		<!-- Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -402,6 +402,29 @@
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+	</skill>
+	<skill id="5822" toLevel="1" name="Bait for Drakes">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<effectPoint>-1000</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>3000</hitTime>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>13879</itemConsumeId> <!-- Bait for Drakes -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<reuseDelay>600000</reuseDelay>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>18781</item>
+				</npcIds>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="5823" toLevel="1" name="Boss Defeat">
 		<icon>icon.skill0000</icon>
@@ -668,7 +691,7 @@
 		</effects>
 	</skill>
 	<skill id="5831" toLevel="1" name="Polearm Swing">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. Effect 9. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -689,7 +712,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -720,7 +743,7 @@
 		</effects>
 	</skill>
 	<skill id="5833" toLevel="1" name="Shield">
-		<!-- Increases P. Def. +15% for a set time. -->
+		<!-- Increases defense power temporarily. Effect 3. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -749,7 +772,7 @@
 		</effects>
 	</skill>
 	<skill id="5834" toLevel="1" name="Magic Barrier">
-		<!-- Increases M. Def. +33% for a set time. -->
+		<!-- Momentarily increases M. Def. Effect 3. -->
 		<icon>icon.skill1036</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -799,7 +822,7 @@
 		</effects>
 	</skill>
 	<skill id="5836" toLevel="1" name="Greater Heal">
-		<!-- Recovers party members' HP and momentarily increases HP Recovery Bonus. -->
+		<!-- Recovers party member's HP and increases HP Recovery Bonus momentarily. Power 1. Effect 5. -->
 		<icon>icon.skill1219</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1075,7 +1098,18 @@
 		</effects>
 	</skill>
 	<skill id="5846" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1141,7 +1175,7 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1165,7 +1199,7 @@
 		<magicLevel>80</magicLevel>
 	</skill>
 	<skill id="5849" toLevel="1" name="Decrease Speed">
-		<!-- Movement Speed decreased. -->
+		<!-- Speed is decreased. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1198,7 +1232,7 @@
 		<magicLevel>80</magicLevel>
 	</skill>
 	<skill id="5851" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1221,7 +1255,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -1255,7 +1289,7 @@
 		<reuseDelay>2000</reuseDelay>
 	</skill>
 	<skill id="5854" toLevel="1" name="Decrease Speed">
-		<!-- Movement Speed decreased. -->
+		<!-- Speed is decreased. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1274,7 +1308,7 @@
 		<magicLevel>80</magicLevel>
 	</skill>
 	<skill id="5855" toLevel="2" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>
@@ -1332,6 +1366,118 @@
 			<value level="2">165</value>
 		</mpConsume>
 		<trait>SHOCK</trait>
+	</skill>
+	<skill id="5856" toLevel="1" name="Transformation Scroll: Makeshift Bat">
+		<!-- Transforms into a Makeshift Bat. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>117</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>117</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5857" toLevel="1" name="Transformation Scroll: Lady Tow">
+		<!-- Transforms into a Lady Tow. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>118</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>118</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5858" toLevel="1" name="Transformation Scroll: Angry Tow">
+		<!-- Transforms into an Angry Tow. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>119</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>119</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5859" toLevel="1" name="Transformation Scroll: Sleepy Tow">
+		<!-- Transforms into a Sleepy Tow. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>120</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>120</transformationId>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5860" toLevel="1" name="Wrath of Valakas">
 		<!-- Magic skills are blocked and Speed decreases momentarily. Destruction of the Body is activated, inflicting major damage on the stamina of nearby party members after 10 seconds. -->
@@ -1462,7 +1608,16 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="5866" toLevel="10" name="Soul Worm">
-		<!-- MEN blow is received. Current MP/Max MP/MP Bonus decreases. HP decreases from poison momentarily. -->
+		<!-- Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 2: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 3: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 4: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 5: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 6: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 7: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 8: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 9: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 10: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1510,7 +1665,16 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5867" toLevel="10" name="Soul Worm">
-		<!-- MEN blow is received. Current MP/Max MP/MP Bonus decreases. HP decreases from poison momentarily. -->
+		<!-- Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 2: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 3: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 4: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 5: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 6: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 7: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 8: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 9: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 10: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1561,7 +1725,16 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5868" toLevel="10" name="Soul Worm">
-		<!-- MEN blow is received. Current MP/Max MP/MP Bonus decreases. HP decreases from poison momentarily. -->
+		<!-- Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 2: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 3: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 4: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 5: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 6: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 7: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 8: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 9: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 10: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1612,7 +1785,16 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5869" toLevel="10" name="Soul Worm">
-		<!-- MEN blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. -->
+		<!-- Level 1: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 2: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 3: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 8. -->
+		<!-- Level 4: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 5: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 6: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 7: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 9. -->
+		<!-- Level 8: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 9: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
+		<!-- Level 10: Mental blow is received. Current MP, Max MP, and MP Recovery Bonus decreases. HP decreases from poison momentarily. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1661,7 +1843,16 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5870" toLevel="10" name="Flash Worm">
-		<!-- Physical blow is received. P. Def., Max HP/HP, and HP regeneration bonus are decreased. Inflicted with Bleed and HP is temporarily decreased. -->
+		<!-- Level 1: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 2: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 3: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 4: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 5: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 6: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 7: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 8: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
+		<!-- Level 9: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
+		<!-- Level 10: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1708,7 +1899,16 @@
 		<trait>BLEED</trait>
 	</skill>
 	<skill id="5871" toLevel="10" name="Flash Worm">
-		<!-- Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from Bleed momentarily. -->
+		<!-- Level 1: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 2: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 3: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 4: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 5: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 6: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 7: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 8: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
+		<!-- Level 9: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
+		<!-- Level 10: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1758,7 +1958,16 @@
 		<trait>BLEED</trait>
 	</skill>
 	<skill id="5872" toLevel="10" name="Flash Worm">
-		<!-- Physical blow is received. P. Def., Max HP/HP, and HP regeneration bonus are decreased. Inflicted with Bleed and HP is temporarily decreased. -->
+		<!-- Level 1: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 2: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 3: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 8. -->
+		<!-- Level 4: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 5: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 6: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 7: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 9. -->
+		<!-- Level 8: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
+		<!-- Level 9: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
+		<!-- Level 10: Physical blow is received. P. Def., Max HP, and HP Recovery Bonus decreases. HP decreases from bleeding momentarily. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1932,7 +2141,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="5878" toLevel="1" name="Cruel Puncture">
-		<!-- Life force lost and Casting Spd. decreased. -->
+		<!-- Life force is lost and Casting Spd. is decreased. -->
 		<icon>icon.skill1386</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1963,7 +2172,7 @@
 		</effects>
 	</skill>
 	<skill id="5879" toLevel="1" name="Cruel Expunge">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. Effect 9. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1989,12 +2198,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>145</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5880" toLevel="2" name="Vicious Mutilation">
-		<!-- Movement Speed decreased. -->
+		<!-- Speed is decreased. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2016,7 +2225,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="5881" toLevel="2" name="Vicious Mutilation">
-		<!-- P. Def., P. Evasion, and Movement Speed are decreased. -->
+		<!-- P. Def., Evasion, and Speed are decreased. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2038,7 +2247,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="5882" toLevel="2" name="Weakened Pommel">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2072,12 +2281,12 @@
 				<power>873</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5883" toLevel="1" name="Meggling Injury">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. Effect 9. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2103,7 +2312,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>145</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2146,7 +2355,7 @@
 		</effects>
 	</skill>
 	<skill id="5885" toLevel="1" name="Weakened Sweep">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2179,12 +2388,12 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5886" toLevel="1" name="Ground Shaker">
-		<!-- P. Evasion and Movement Speed are decreased. -->
+		<!-- Evasion and Speed are decreased. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2218,7 +2427,7 @@
 		</effects>
 	</skill>
 	<skill id="5887" toLevel="1" name="Howl from Beyond">
-		<!-- P. Atk./M. Atk./Atk. Spd./P. Accuracy/P. Critical Rate/P. Critical Damage significantly decreased. -->
+		<!-- P. Atk., M. Atk., Atk. Spd., Accuracy, Critical Rate, and Critical Impact are greatly decreased. -->
 		<icon>icon.skill1337</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2241,7 +2450,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="5888" toLevel="2" name="Earth Shaker">
-		<!-- Stun and unable to move momentarily. Lost the target. -->
+		<!-- Momentarily immobile due to the Stun effect and lost the target. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2357,7 +2566,8 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="5892" toLevel="2" name="Cunning Coercion">
-		<!-- Makes the enemy show his back, removes its desire for attack, and cancels its target state. Inflicts mental shock on the enemy momentarily. -->
+		<!-- Level 1: Makes the enemy show his back, removes its desire for attack, and cancels its target state. Momentarily inflicts mental shock on the enemy. -->
+		<!-- Level 2: Makes the enemy show his back, removes its desire for attack, and cancels its target state. Inflicts mental shock on the enemy momentarily. -->
 		<icon>icon.skill0358</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2407,7 +2617,7 @@
 		<reuseDelay>1000</reuseDelay>
 	</skill>
 	<skill id="5894" toLevel="1" name="Mark of Despair">
-		<!-- Marked with Stigma's Despair. Significantly decreases P. Def./M. Def./P. Evasion/Max HP. HP Recovery is limited, but P. Atk., M. Atk., Atk. Spd., P. Accuracy, P. Critical Damage and P. Critical Rate are increased. -->
+		<!-- Significantly decreases P. Def., M. Def., evasion and HP. HP Recovery is limited, but P. Atk., M. Atk., Atk. Spd., Accuracy, Critical Damage and critical attack rate are increased. -->
 		<icon>icon.skill1337</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2476,7 +2686,7 @@
 		</effects>
 	</skill>
 	<skill id="5895" toLevel="1" name="Mark of Cowardice">
-		<!-- Significantly decreases Max HP, P. Def., M. Def. and P. evasion. The use of attack actions and skills and HP Recovery are limited, but movement speed is slightly increased. -->
+		<!-- Significantly decreases HP, P. Def., M. Def. and evasion. The use of attack actions and skills and HP Recovery are limited, but Speed is slightly increased. -->
 		<icon>icon.skill1337</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2547,7 +2757,7 @@
 		<mpConsume>149</mpConsume>
 	</skill>
 	<skill id="5897" toLevel="1" name="Spike of Anchor">
-		<!-- P. Def./M. Def./P. Evasion/Movement Speed decreased. -->
+		<!-- P. Def., M. Def., Evasion, and Speed are decreased. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2587,7 +2797,7 @@
 		</effects>
 	</skill>
 	<skill id="5898" toLevel="2" name="Blast of Anchor">
-		<!-- P. Def./M. Def./P. Evasion/Movement Speed decreased. -->
+		<!-- P. Def., M. Def., Evasion, and Speed are decreased. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>

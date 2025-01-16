@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
-	<skill id="3500" toLevel="1" name="Set Effect - Wooden Light Armor, 3-piece">
-		<!-- Max HP +41 and P. Def +2%. -->
+	<skill id="3500" toLevel="1" name="Wooden Set">
+		<!-- Increases P. Def. and Max HP. -->
 		<icon>icon.armor_t06_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="PhysicalDefence">
-				<amount>2</amount>
+				<amount>2.2</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxHp">
@@ -17,8 +17,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3501" toLevel="1" name="Set Effect - Robe of Devotion, 3-piece">
-		<!-- Casting Spd. +15%. -->
+	<skill id="3501" toLevel="1" name="Devotion Set">
+		<!-- Increases Casting Spd. -->
 		<icon>icon.armor_t55_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -30,788 +30,564 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3502" toLevel="2" name="Set Effect - Mithril Heavy Armor, 2-piece">
-		<!-- Level 1: Max HP +126. -->
-		<!-- Level 2: Max HP +126 and Poison Attack Resistance +20%. -->
+	<skill id="3502" toLevel="1" name="Mithril Breastplate Heavy Armor Set">
+		<!-- Increases Poison Resistance. -->
 		<icon>icon.armor_t19_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxHp" fromLevel="1" toLevel="2">
-				<amount>126</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="2">
-				<POISON>30</POISON>
+			<effect name="DefenceTrait">
+				<POISON>20</POISON>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3503" toLevel="2" name="Set Effect - Reinforced Leather Light Armor, 2-piece">
-		<!-- Level 1: Max MP +80. -->
-		<!-- Level 2: Max MP +80 and P. Critical Damage +10. -->
+	<skill id="3503" toLevel="1" name="Reinforced Leather Set">
+		<!-- Increases Max MP. -->
 		<icon>icon.armor_t13_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxMp" fromLevel="1" toLevel="2">
+			<effect name="MaxMp">
 				<amount>80</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalDamage" fromLevel="2" toLevel="2">
-				<amount>10</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3504" toLevel="2" name="Set Effect - Knowledge Robe Armor, 2-piece">
-		<!-- Level 1: Max MP +40. -->
-		<!-- Level 2: Max MP +40 and M. Atk. +10%. -->
+	<skill id="3504" toLevel="1" name="Tunic of Knowledge Set">
+		<!-- Decreases MP Recovery Bonus and increases M. Atk. -->
 		<icon>icon.armor_t41_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxMp" fromLevel="1" toLevel="2">
-				<amount>40</amount>
-				<mode>DIFF</mode>
+			<effect name="MagicalAttack">
+				<amount>10.25</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttack" fromLevel="2" toLevel="2">
-				<amount>10</amount>
+			<effect name="MpRegen">
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3505" toLevel="2" name="Set Effect - Manticore Light Armor, 2-piece">
-		<!-- Level 1: Max MP +92. -->
-		<!-- Level 2: Max MP +92 and P. Critical Damage +15. -->
+	<skill id="3505" toLevel="1" name="Manticore Set">
+		<!-- Increases Max MP. -->
 		<icon>icon.armor_t42_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxMp" fromLevel="1" toLevel="2">
-				<amount>92</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalDamage" fromLevel="2" toLevel="2">
-				<amount>15</amount>
+			<effect name="MaxMp">
+				<amount>91.81</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3506" toLevel="2" name="Set Effect - Brigandine Heavy Armor, 2-piece">
-		<!-- Level 1: Max HP +153. -->
-		<!-- Level 2: Max HP +153 and P. Def +5%. -->
+	<skill id="3506" toLevel="1" name="Brigandine Heavy Armor Set">
+		<!-- Increases P. Def. and Max HP. -->
 		<icon>icon.armor_t43_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxHp" fromLevel="1" toLevel="2">
-				<amount>153</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="2">
+			<effect name="PhysicalDefence">
 				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>153</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3507" toLevel="2" name="Set Effect - Elven Mithril Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.24%. -->
-		<!-- Level 2: INT +1 and MP Recovery Bonus +5.24%. -->
-		<icon>icon.armor_elven_tunic_i00</icon>
+	<skill id="3507" toLevel="1" name="Mithril Tunic Robe Set">
+		<!-- Increases Speed. INT-1, WIT+1 -->
+		<icon>icon.armor_t51_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="Speed" fromLevel="1" toLevel="2">
+			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="2">
-				<amount>1</amount>
-				<stat>WIT</stat>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3508" toLevel="2" name="Set Effect - Reinforced Mithril Light Armor, 2-piece">
-		<!-- Level 1: P. Evasion +4. -->
-		<!-- Level 2: P. Evasion +4 and Poison/Bleed Resistance +30%. -->
+	<skill id="3508" toLevel="1" name="Reinforced Mithril Light Armor Set">
+		<!-- Increases Evasion. -->
 		<icon>icon.armor_t47_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="PhysicalEvasion" fromLevel="1" toLevel="2">
+			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="2">
-				<POISON>30</POISON>
-				<BLEED>30</BLEED>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3509" toLevel="2" name="Set Effect - Chain Heavy Armor, 2-piece">
-		<!-- Level 1: Sleep/Hold Resistance +20%, Max HP +198. -->
-		<!-- Level 2: Sleep/Hold Resistance +20%, Max HP +198, and P. Def. +5%. -->
+	<skill id="3509" toLevel="1" name="Chain Mail Heavy Armor Set">
+		<!-- Increases Dagger Resistance. -->
 		<icon>icon.armor_t48_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxHp" fromLevel="1" toLevel="2">
-				<amount>198</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
-				<SLEEP>20</SLEEP>
-				<HOLD>20</HOLD>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="2">
-				<amount>5</amount>
-				<mode>PER</mode>
+			<effect name="DefenceTrait">
+				<DAGGER>6</DAGGER>
+				<DUALDAGGER>6</DUALDAGGER>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3510" toLevel="2" name="Set Effect - Karmian Robe Armor, 2-piece">
-		<!-- Level 1: Sleep/Hold Resistance +20%. -->
-		<!-- Level 2: Sleep/Hold Resistance +20%, Casting Spd. +15%, and P. Def. +5.26%. -->
+	<skill id="3510" toLevel="1" name="Karmian Tunic Robe Set">
+		<!-- Increases P. Def. and Casting Spd. -->
 		<icon>icon.armor_t53_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
-				<SLEEP>20</SLEEP>
-				<HOLD>20</HOLD>
-			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="2" toLevel="2">
-				<amount>15</amount>
+			<effect name="PhysicalDefence">
+				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="2">
-				<amount>5.26</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3511" toLevel="2" name="Set Effect - Plate Light Armor, 2-piece">
-		<!-- Level 1: Sleep/Hold Resistance +20%. -->
-		<!-- Level 2: STR +4, CON -1, Sleep/Hold Resistance +20%. -->
+	<skill id="3511" toLevel="1" name="Plated Leather Light Armor Set">
+		<!-- STR+4, CON-1 -->
 		<icon>icon.armor_t47_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
-		<effects>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
-				<SLEEP>20</SLEEP>
-				<HOLD>20</HOLD>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="2">
-				<amount>4</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="2">
-				<amount>-1</amount>
-				<stat>CON</stat>
-			</effect>
-		</effects>
 	</skill>
-	<skill id="3512" toLevel="1" name="Set Effect - Compound Heavy Armor, 2-piece">
-		<!-- Weight Limit +5795, M. Def. +5%, and Paralysis Resistance +10%. -->
+	<skill id="3512" toLevel="1" name="Compound Heavy Armor Set">
+		<!-- Increases your weight capacity. -->
 		<icon>icon.armor_t61_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="WeightLimit" fromLevel="1" toLevel="1">
+			<effect name="WeightPenalty">
 				<amount>5795</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalDefence" fromLevel="1" toLevel="1">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="1">
-				<PARALYZE>10</PARALYZE>
-				<HOLD>10</HOLD>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3513" toLevel="2" name="Set Effect - Demon's Robe, 2-piece">
-		<!-- Level 1: Stun Resistance +10%. -->
-		<!-- Level 2: INT +4, WIT -1, Stun Resistance +10%, Max HP -270. -->
+	<skill id="3513" toLevel="1" name="Demon's Set">
+		<!-- Decreases Max HP. INT+4, WIT-1 -->
 		<icon>icon.armor_t54_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
-				<SHOCK>10</SHOCK>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="2">
-				<amount>4</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="2">
-				<amount>-1</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="MaxHp" fromLevel="2" toLevel="2">
-				<amount>-270</amount>
+			<effect name="MaxHp">
+				<amount>-269.65</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3514" toLevel="2" name="Set Effect - Theca Light Armor, 2-piece">
-		<!-- Level 1: Paralysis Resistance +10%. -->
-		<!-- Level 2: Paralysis Resistance +10% and P. Def. +5.26%. -->
+	<skill id="3514" toLevel="1" name="Theca Leather Light Armor Set">
+		<!-- Increases P. Def. -->
 		<icon>icon.armor_t63_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
-				<PARALYZE>10</PARALYZE>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="2">
+			<effect name="PhysicalDefence">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3515" toLevel="1" name="Set Effect - Drake Light Armor, 2-piece">
-		<!-- M. Def. +5% and Stun Resistance +10%. -->
-		<icon>icon.armor_t45_ul_i00</icon>
+	<skill id="3515" toLevel="1" name="Drake Leather Set">
+		<!-- Increases M. Def. -->
+		<icon>icon.armor_t21_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MagicalDefence" fromLevel="1" toLevel="1">
-				<amount>5</amount>
+			<effect name="MagicalDefence">
+				<amount>5.26</amount>
 				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="1">
-				<PARALYZE>10</PARALYZE>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3516" toLevel="1" name="Set Effect - Full Plate Heavy Armor, 2-piece">
-		<!-- Max HP +270, M. Def. +5%, and Stun Resistance +10%. -->
+	<skill id="3516" toLevel="1" name="Full Plate Heavy Armor Set">
+		<!-- Increases Max HP. -->
 		<icon>icon.armor_t62_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxHp" fromLevel="1" toLevel="1">
-				<amount>270</amount>
+			<effect name="MaxHp">
+				<amount>269.65</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="1" toLevel="1">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="1">
-				<PARALYZE>10</PARALYZE>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3517" toLevel="2" name="Set Effect - Robe of Divinity, 2-piece">
-		<!-- Level 1: Paralysis Resistance +10%. -->
-		<!-- Level 2: WIT +1, Max MP +171, P. Def +5.26%, and Paralysis Resistance +10%. -->
+	<skill id="3517" toLevel="1" name="Divine Set">
+		<!-- Increases P. Def. and Max MP. INT-1, WIT+1 -->
 		<icon>icon.armor_t57_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="2">
-				<PARALYZE>10</PARALYZE>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="2">
-				<amount>1</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="MaxMp" fromLevel="2" toLevel="2">
-				<amount>171</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="2">
+			<effect name="PhysicalDefence">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxMp">
+				<amount>170.62</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3518" toLevel="4" name="Set Effect - Zubei Heavy Armor, 2-piece">
-		<!-- Level 1: HP Recovery Bonus +5.24%. -->
-		<!-- Level 2: HP Recovery Bonus +5.24%, Max HP +294. -->
-		<!-- Level 3: HP Recovery Bonus +5.24%, Max HP +294, Paralysis Resistance +30%. -->
-		<!-- Level 4: HP Recovery Bonus +5.24%, Max HP +294, Paralysis Resistance +30%, and P. Def. +5.26%. -->
+	<skill id="3518" toLevel="1" name="Zubei's Heavy Armor Set">
+		<!-- Increases P. Def. and Max HP. -->
 		<icon>icon.armor_t64_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="HpRegen" fromLevel="1" toLevel="4">
-				<amount>5.24</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxHp" fromLevel="2" toLevel="4">
-				<amount>294</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<PARALYZE>30</PARALYZE>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="4" toLevel="4">
+			<effect name="PhysicalDefence">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MaxHp">
+				<amount>294.49</amount>
+				<mode>DIFF</mode>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3519" toLevel="4" name="Set Effect - Avadon Heavy Armor, 2-piece">
-		<!-- Level 1: Max HP +294. -->
-		<!-- Level 2: Max HP +270 and M. Def. +5%. -->
-		<!-- Level 3: Max HP +294, M. Def. +5%, and Poison/Bleed Resistance +60%. -->
-		<!-- Level 4: CON +1, Max HP +294, P. Def. +5%, and Poison/Bleed Resistance +60%. -->
+	<skill id="3519" toLevel="1" name="Avadon Breastplate Heavy Armor Set">
+		<!-- Increases Max HP. -->
 		<icon>icon.armor_t66_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxHp" fromLevel="1" toLevel="4">
-				<amount>294</amount>
+			<effect name="MaxHp">
+				<amount>294.49</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="4">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<POISON>60</POISON>
-				<BLEED>60</BLEED>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>1</amount>
-				<stat>CON</stat>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3520" toLevel="4" name="Set Effect - Zubei Light Armor, 2-piece">
-		<!-- Level 1: P. Evasion +4. -->
-		<!-- Level 2: P. Evasion +4, P. Critical Rate +10. -->
-		<!-- Level 3: P. Evasion +4, P. Critical Rate +10, and Paralysis Resistance +30%. -->
-		<!-- Level 4: DEX +1, P. Evasion +4, P. Critical Rate +10, and Paralysis Resistance +30%. -->
+	<skill id="3520" toLevel="1" name="Zubei's Leather Shirt Light Armor Set">
+		<!-- Increases Evasion. -->
 		<icon>icon.armor_t65_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="PhysicalEvasion" fromLevel="1" toLevel="4">
+			<effect name="PhysicalEvasion">
 				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalRate" fromLevel="2" toLevel="4">
-				<amount>10</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<PARALYZE>30</PARALYZE>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>1</amount>
-				<stat>DEX</stat>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3521" toLevel="3" name="Set Effect - Avadon Light Armor, 2-piece">
-		<!-- Level 1: Weight Limit +5759. -->
-		<!-- Level 2: Weight Limit +5759 and P. Critical Damage +30. -->
-		<!-- Level 3: Weight Limit +5759, P. Critical Damage +30, Poison/Bleed Resistance +60%, and M. Def +5.25%. -->
+	<skill id="3521" toLevel="1" name="Avadon Light Armor Set">
+		<!-- Increases M. Def. and weight limit. -->
 		<icon>icon.armor_t67_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="WeightLimit" fromLevel="1" toLevel="3">
-				<amount>5795</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="CriticalDamage" fromLevel="2" toLevel="3">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<POISON>30</POISON>
-				<BLEED>30</BLEED>
-			</effect>
-			<effect name="MagicalDefence" fromLevel="3" toLevel="3">
+			<effect name="MagicalDefence">
 				<amount>5.25</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="WeightPenalty">
+				<amount>5795</amount>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3522" toLevel="4" name="Set Effect - Zubei Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26% and Max MP +102. -->
-		<!-- Level 3: MP Recovery Bonus +5.26%, Max MP +102, and Paralysis Resistance +30%. -->
-		<!-- Level 4: MP Recovery Bonus +5.26%, Max MP +102, Paralysis Resistance +30%, and M. Atk.+10%. -->
+	<skill id="3522" toLevel="1" name="Tunic of Zubei Robe Set">
+		<!-- Decreases MP Recovery Bonus and increases M. Atk. -->
 		<icon>icon.armor_t56_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="4">
-				<amount>5.26</amount>
+			<effect name="MagicalAttack">
+				<amount>10.25</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MaxMp" fromLevel="2" toLevel="4">
-				<amount>102</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<PARALYZE>30</PARALYZE>
-			</effect>
-			<effect name="MagicalAttack" fromLevel="4" toLevel="4">
-				<amount>10</amount>
+			<effect name="MpRegen">
+				<amount>-5</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3523" toLevel="3" name="Set Effect - Avadon Robe Armor, 2-piece">
-		<!-- Level 1: Poison/Bleed Resistance +60%. -->
-		<!-- Level 2: Poison/Bleed Resistance +60%, P. Def. +5.26%. -->
-		<!-- Level 3: Poison/Bleed Resistance +60%, P. Def. +5.26%, and Casting Spd. +15%. -->
+	<skill id="3523" toLevel="1" name="Avadon Robe Set">
+		<!-- Increases P. Def. and Casting Spd. -->
 		<icon>icon.armor_t59_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="DefenceTrait" fromLevel="1" toLevel="3">
-				<POISON>60</POISON>
-				<BLEED>60</BLEED>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="3">
+			<effect name="PhysicalDefence">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="3">
+			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3524" toLevel="4" name="Set Effect - Blue Wolf Heavy Armor, 2-piece">
-		<!-- Level 1: HP Recovery Bonus +5.24%. -->
-		<!-- Level 2: HP Recovery Bonus +5.24% and Movement Speed +7. -->
-		<!-- Level 3: HP Recovery Bonus +5.24%, Movement Speed +7, and Stun Resistance +30%. -->
-		<!-- Level 4: STR +3, CON -1, DEX -2, HP Recovery Bonus +5.24%, Movement Speed +7, and Stun Resistance +30%. -->
+	<skill id="3524" toLevel="1" name="Blue Wolf Heavy Armor Set">
+		<!-- Increases Speed and HP Recovery Bonus. STR+3, CON-1, DEX-2 -->
 		<icon>icon.armor_t68_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="HpRegen" fromLevel="1" toLevel="4">
-				<amount>5.24</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed" fromLevel="2" toLevel="4">
+			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<SHOCK>30</SHOCK>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>3</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-1</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-2</amount>
-				<stat>DEX</stat>
+			<effect name="HpRegen">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3525" toLevel="3" name="Set Effect - Doom Heavy Armor, 2-piece">
-		<!-- Level 1: Max HP +320. -->
-		<!-- Level 2: Max HP +320 and Sleep/Hold Resistance +50%. -->
-		<!-- Level 3: STR -3, CON +3, Max HP +320, and Sleep/Hold Resistance +50%. -->
+	<skill id="3525" toLevel="1" name="Doom Heavy Armor Set">
+		<!-- Increases Max HP and lung capacity. STR-3, CON+3 -->
 		<icon>icon.armor_t71_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MaxHp" fromLevel="1" toLevel="3">
+			<effect name="Breath">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
 				<amount>320</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
-				<SLEEP>50</SLEEP>
-				<HOLD>50</HOLD>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-3</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>3</amount>
-				<stat>CON</stat>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3526" toLevel="3" name="Set Effect - Blue Wolf Light Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: INT -2, MEN +3, WIT -1, MP Recovery Bonus +5.26%, and P. Def. +5.26%. -->
-		<!-- Level 3: INT -2, MEN +3, WIT -1, MP Recovery Bonus +5.26%, P. Def. +5.26%, Stun Resistance +30%, and Casting Spd. +15%. -->
+	<skill id="3526" toLevel="1" name="Blue Wolf Light Armor Set">
+		<!-- Increases P. Def. and Casting Spd. INT-2, MEN+3, WIT-1 -->
 		<icon>icon.armor_t69_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="3">
+			<effect name="PhysicalDefence">
 				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>3</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>-1</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>-2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="3">
-				<amount>5.26</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<SHOCK>30</SHOCK>
-			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="3">
+			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3527" toLevel="3" name="Set Effect - Doom Light Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26% and P. Atk. +2.7%. -->
-		<!-- Level 3: DEX +3, MP Recovery Bonus by 5.26%, P. Atk. by 2.7%, and Sleep/Hold Resistance by 50%. -->
+	<skill id="3527" toLevel="1" name="Leather Armor of Doom Set">
+		<!-- Increases Poison Resistance and increases lung capacity, P. Atk., and MP Recovery Bonus. STR-1, CON-2, DEX+3 -->
 		<icon>icon.armor_t72_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="3">
-				<amount>5.26</amount>
-				<mode>PER</mode>
+			<effect name="DefenceTrait">
+				<POISON>20</POISON>
 			</effect>
-			<effect name="PhysicalAttack" fromLevel="2" toLevel="3">
+			<effect name="PhysicalAttack">
 				<amount>2.7</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<SLEEP>50</SLEEP>
-				<HOLD>50</HOLD>
+			<effect name="MpRegen">
+				<amount>2.5</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>3</amount>
-				<stat>DEX</stat>
+			<effect name="Breath">
+				<amount>200</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3528" toLevel="4" name="Set Effect - Blue Wolf Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26% and Max MP +206. -->
-		<!-- Level 3: MP Recovery Bonus +5.26%, Max MP +206, and Stun Resistance +30%. -->
-		<!-- Level 4: INT -2, MEN -1, WIT +3, MP Recovery Bonus +5.26%, Max MP +206, and Stun Resistance +30%. -->
+	<skill id="3528" toLevel="1" name="Blue Wolf Robe Set">
+		<!-- Increases Max MP and MP Recovery Bonus. INT-2, MEN-1, WIT+3 -->
 		<icon>icon.armor_t70_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="4">
-				<amount>5.26</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp" fromLevel="2" toLevel="4">
+			<effect name="MaxMp">
 				<amount>206</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<SHOCK>30</SHOCK>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-1</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>3</amount>
-				<stat>WIT</stat>
+			<effect name="MpRegen">
+				<amount>5.24</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3529" toLevel="4" name="Set Effect - Doom Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26% and Movement Speed +7. -->
-		<!-- Level 3: MP Recovery Bonus +5.26%, Movement Speed +7, and Sleep/Hold Resistance +50%. -->
-		<!-- Level 4: INT +2, MEN +1, WIT -3, MP Recovery Bonus +5.26%, Movement Speed +7, Sleep/Hold Resistance +50%, and M. Critical Damage +30. -->
+	<skill id="3529" toLevel="1" name="Doom Robe Set">
+		<!-- Increases Speed, Lung Capacity, and MP Recovery Bonus. INT+2, MEN+1, WIT-3 -->
 		<icon>icon.armor_t73_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="4">
-				<amount>5.26</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="Speed" fromLevel="2" toLevel="4">
+			<effect name="Speed">
 				<amount>7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<SLEEP>50</SLEEP>
-				<HOLD>50</HOLD>
+			<effect name="MpRegen">
+				<amount>5.26</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="Breath" fromLevel="3" toLevel="4">
+			<effect name="Breath">
 				<amount>200</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>1</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-3</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="MagicCriticalDamage" fromLevel="4" toLevel="4">
-				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3530" toLevel="4" name="Set Effect - Dark Crystal Heavy Armor, 2-piece">
-		<!-- Level 1: HP Recovery Bonus +5.24%. -->
-		<!-- Level 2: HP Recovery Bonus +5.24% and Heal Received +4%. -->
-		<!-- Level 3: HP Recovery Bonus +5.24%, Heal Received +4%, and Paralysis Resistance +50%. -->
-		<!-- Level 4: STR -2, CON +2, HP Recovery Bonus +5.24%, Heal Received +4%, Max HP +238, and Paralysis Resistance +50%. -->
+	<skill id="3530" toLevel="1" name="Dark Crystal Breastplate Heavy Armor Set">
+		<!-- Increases Paralysis Resistance and the effect of HP recovery magic to oneself. STR-2, CON+2 -->
 		<icon>icon.armor_t74_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="HpRegen" fromLevel="1" toLevel="4">
-				<amount>5.24</amount>
-				<mode>PER</mode>
+			<effect name="DefenceTrait">
+				<PARALYZE>50</PARALYZE>
 			</effect>
-			<effect name="HealEffect" fromLevel="2" toLevel="4">
+			<effect name="HealEffect">
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
-				<PARALYZE>50</PARALYZE>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-2</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>3</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="MaxHp" fromLevel="4" toLevel="4">
-				<amount>238</amount>
-				<mode>DIFF</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="3531" toLevel="3" name="Set Effect - Tallum Heavy Armor, 3-piece">
-		<!-- Level 1: Weight Limit +5759. -->
-		<!-- Level 2: Weight Limit +5759, Poison/Bleed Resistance +80%, and Movement Speed +4. -->
-		<!-- Level 3: STR +2, CON -2, Weight Limit +5759, Poison/Bleed Resistance +80%, Movement Speed +4, and Atk. Spd. +8%. -->
+	<skill id="3531" toLevel="1" name="Tallum Heavy Armor Set">
+		<!-- Increases Poison/Bleed Resistance, Atk. Spd., and weight limit. STR+2, CON-2 -->
 		<icon>icon.armor_t77_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="WeightLimit" fromLevel="1" toLevel="3">
-				<amount>5795</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
+			<effect name="DefenceTrait">
 				<POISON>80</POISON>
 				<BLEED>80</BLEED>
 			</effect>
-			<effect name="Speed" fromLevel="2" toLevel="3">
-				<amount>4</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-2</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="PhysicalAttackSpeed" fromLevel="3" toLevel="3">
+			<effect name="PhysicalAttackSpeed">
 				<amount>8</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="WeightPenalty">
+				<amount>5759</amount>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3532" toLevel="4" name="Set Effect - Dark Crystal Light Armor, 2-piece">
-		<!-- Level 1: P. Evasion +4. -->
-		<!-- Level 2: P. Evasion +4 and P. Critical Damage +30. -->
-		<!-- Level 3: P. Evasion +4, P. Critical Damage. +30, P. Atk. Spd. +4%, and Paralysis Resistance +50%. -->
-		<!-- Level 4: STR +1, CON -1, P. Evasion +4, P. Critical Damage +30, P. Atk. +4%, Atk. Spd. +4%, and Paralysis Resistance +50%. -->
+	<skill id="3532" toLevel="1" name="Dark Crystal Light Armor Set">
+		<!-- Increases Paralysis Resistance, Atk. Spd., and P. Atk. STR+1, CON-1 -->
 		<icon>icon.armor_t75_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="PhysicalEvasion" fromLevel="1" toLevel="4">
-				<amount>4</amount>
-				<mode>DIFF</mode>
+			<effect name="DefenceTrait">
+				<PARALYZE>50</PARALYZE>
 			</effect>
-			<effect name="CriticalDamage" fromLevel="2" toLevel="4">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed" fromLevel="3" toLevel="4">
+			<effect name="PhysicalAttack">
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3533" toLevel="1" name="Tallum Light Armor Set">
+		<!-- Increases Poison/Bleed Resistance, MP Recovery Rate, and Max MP. MEN+2, WIT-2 -->
+		<icon>icon.armor_t78_ul_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
+				<POISON>80</POISON>
+				<BLEED>80</BLEED>
+			</effect>
+			<effect name="MaxMp">
+				<amount>222</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3534" toLevel="1" name="Tallum Robe Set">
+		<!-- Increases Poison/Bleed Resistance, Casting Spd., and M. Def. INT-2, WIT+2 -->
+		<icon>icon.armor_t79_u_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
+				<POISON>80</POISON>
+				<BLEED>80</BLEED>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3535" toLevel="1" name="Dark Crystal Robe Set">
+		<!-- Decreases magic cancel rate and increases Paralysis Resistance, P. Def., Casting Spd. and Speed. WIT+2, MEN-2 -->
+		<icon>icon.armor_t76_ul_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
 				<PARALYZE>50</PARALYZE>
 			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>1</amount>
-				<stat>STR</stat>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp">
-				<amount>-1</amount>
-				<stat>CON</stat>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3536" toLevel="1" name="Heavy Armor of Nightmare Set">
+		<!-- Increases P. Atk. and Sleep/Hold Resistance. CON+2, DEX-2 -->
+		<icon>icon.armor_t80_ul_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceTrait">
+				<SLEEP>70</SLEEP>
+				<HOLD>70</HOLD>
 			</effect>
 			<effect name="PhysicalAttack">
 				<amount>4</amount>
@@ -819,240 +595,58 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3533" toLevel="3" name="Set Effect - Tallum Light Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +8%. -->
-		<!-- Level 2: MP Recovery Bonus +8% and Max MP +222. -->
-		<!-- Level 3: MEN +2, WIT -2, MP Recovery Bonus +8%, Max MP +222, and Poison/Bleed Resistance +80%. -->
-		<icon>icon.armor_t78_ul_i00</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
-		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="3">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp" fromLevel="2" toLevel="3">
-				<amount>222</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-2</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<POISON>80</POISON>
-				<BLEED>80</BLEED>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3534" toLevel="4" name="Set Effect - Tallum Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26% and Poison/Bleed Resistance +80% -->
-		<!-- Level 3: MP Recovery Bonus +5.26%, Poison/Bleed Resistance +80%, and M. Def. +8%. -->
-		<!-- Level 4: INT -2, WIT +2, MP Recovery Bonus +5.26%, Poison/Bleed Resistance +80%, M. Def. +8%, and Casting Spd. +15%. -->
-		<icon>icon.armor_t79_u_i00</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
-		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="4">
-				<amount>5.26</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="4">
-				<POISON>80</POISON>
-				<BLEED>80</BLEED>
-			</effect>
-			<effect name="MagicalDefence" fromLevel="3" toLevel="4">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>2</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="4" toLevel="4">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3535" toLevel="3" name="Set Effect - Dark Crystal Robe, 2-piece">
-		<!-- Level 1: Movement Speed +7. Decreases Magic Cancellation Rate. -->
-		<!-- Level 2: Movement Speed +7, Paralysis Resistance +50%, P. Def. +8%. Decreases Magic Cancellation Rate. -->
-		<!-- Level 3: Wit +2, Men -2, Movement Speed +7, Paralysis Resistance +50%, P. Def. +8%, Casting Spd. +15%. Decreases Magic Cancellation Rate. -->
-		<icon>icon.armor_t76_ul_i00</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
-		<effects>
-			<effect name="ReduceCancel" fromLevel="1" toLevel="3">
-				<amount>-50</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="Speed" fromLevel="1" toLevel="3">
-				<amount>7</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
-				<PARALYZE>50</PARALYZE>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="3">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-2</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="3">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3536" toLevel="3" name="Set Effect - Nightmare Heavy Armor, 2-piece">
-		<!-- Level 1: P. Accuracy +3 and HP Recovery Bonus +5.24%. -->
-		<!-- Level 2: P. Accuracy +3, HP Recovery Bonus +5.24%, and P. Atk. +4%. Reflects 5% of P. melee damage. -->
-		<!-- Level 3: CON +2, DEX -2, P. Accuracy +3, HP Recovery Bonus +5.24%, P. Atk. +4%, and Sleep/Hold Resistance +70%. Additionally reflects 5% of normal P. melee damage. -->
-		<icon>icon.armor_t80_ul_i00</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
-		<effects>
-			<effect name="Accuracy" fromLevel="1" toLevel="3">
-				<amount>3</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="HpRegen" fromLevel="1" toLevel="3">
-				<amount>5.24</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttack" fromLevel="2" toLevel="3">
-				<amount>4</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DamageShield" fromLevel="2" toLevel="3">
-				<amount>5</amount>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-2</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<SLEEP>70</SLEEP>
-				<HOLD>70</HOLD>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3537" toLevel="3" name="Set Effect - Majestic Heavy Armor, 2-piece">
-		<!-- Level 1: P. Accuracy +3 and HP Recovery Bonus +5.24%. -->
-		<!-- Level 2: P. Accuracy +3, HP Recovery Bonus +5.24%, P. Atk. +4%, and Movement Speed +7. -->
-		<!-- Level 3: STR +2, CON -2, P. Accuracy +3, HP Recovery Bonus +5.24%, P. Atk. +4%, Movement Speed +7, and Stun Resistance +50%. -->
+	<skill id="3537" toLevel="1" name="Majestic Plate Heavy Armor Set">
+		<!-- Increases resistance, attack/accuracy to Stun attack. STR+2. CON-2 -->
 		<icon>icon.armor_t83_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="Accuracy" fromLevel="1" toLevel="3">
-				<amount>3</amount>
-				<mode>DIFF</mode>
+			<effect name="DefenceTrait">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="HpRegen" fromLevel="1" toLevel="3">
-				<amount>5.24</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttack" fromLevel="2" toLevel="3">
+			<effect name="PhysicalAttack">
 				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="Speed" fromLevel="2" toLevel="3">
-				<amount>7</amount>
+			<effect name="Accuracy">
+				<amount>3.1</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-2</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<SHOCK>50</SHOCK>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3538" toLevel="3" name="Set Effect - Nightmare Light Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26% and M. Def. +4%. Has a chance to absorb 3% of physical damage dealt to enemies as HP. -->
-		<!-- Level 3: DEX +1, CON -1, MP Recovery Bonus +5.26%, M. Def. +4%, and Sleep/Hold Resistance +70%. Has a chance to absorb 3% of physical damage dealt to enemies as HP. -->
+	<skill id="3538" toLevel="1" name="Light Armor of Nightmare Set">
+		<!-- Increases Sleep/Hold Resistance and restores HP by using some of the damage inflicted upon the enemy with a certain probability. DEX+1, CON-1 -->
 		<icon>icon.armor_t81_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="3">
-				<amount>5.26</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="VampiricAttack" fromLevel="2" toLevel="3">
-				<amount>3</amount>
-				<chance>100</chance>
-			</effect>
-			<effect name="MagicalDefence" fromLevel="2" toLevel="3">
-				<amount>4</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>1</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-1</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
+			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
 			</effect>
+			<effect name="VampiricAttack">
+				<amount>3</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3539" toLevel="3" name="Set Effect - Majestic Light Armor, 2-piece">
-		<!-- Level 1: Weight Limit +5759 and P. Accuracy +3. -->
-		<!-- Level 2: Weight Limit +5759, P. Accuracy +3, Bow Damage +8%, and Max MP +240. -->
-		<!-- Level 3: DEX +1, CON -1, Weight Limit +5759, P. Accuracy +3, Bow Damage +8%, Max MP +240, and Stun Resistance +50%. -->
+	<skill id="3539" toLevel="1" name="Majestic Leather Light Armor Set">
+		<!-- Increases Stun Resistance, bow and crossbow attack/Maximum MP/weight limit. DEX+1, CON-1 -->
 		<icon>icon.armor_t84_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="WeightPenalty" fromLevel="1" toLevel="3">
-				<amount>5795</amount>
-				<mode>DIFF</mode>
+			<effect name="DefenceTrait">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="Accuracy" fromLevel="1" toLevel="3">
-				<amount>3</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttack" fromLevel="2" toLevel="3">
+			<effect name="PhysicalAttack">
 				<amount>8</amount>
 				<mode>PER</mode>
 				<weaponType>
@@ -1060,95 +654,63 @@
 					<item>CROSSBOW</item>
 				</weaponType>
 			</effect>
-			<effect name="MaxMp" fromLevel="2" toLevel="3">
+			<effect name="MaxMp">
 				<amount>240</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>1</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-1</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<SHOCK>50</SHOCK>
+			<effect name="WeightPenalty">
+				<amount>5759</amount>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3540" toLevel="3" name="Set Effect - Nightmare Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +5.26%. -->
-		<!-- Level 2: MP Recovery Bonus +5.26%, Sleep/Hold Resistance +70%, and M. Critical Damage +30. -->
-		<!-- Level 3: INT +2, WIT -2, MP Recovery Bonus +5.26%, Sleep/Hold Resistance +70%, and M. Critical Damage +30. -->
+	<skill id="3540" toLevel="1" name="Robe of Nightmare Set">
+		<!-- Increases MP regeneration, M. Atk. and Sleep/Hold Resistance. INT+2, WIT-2 -->
 		<icon>icon.armor_t82_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="3">
-				<amount>5.26</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
+			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
 			</effect>
-			<effect name="MagicCriticalDamage" fromLevel="2" toLevel="3">
-				<amount>30</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-2</amount>
-				<stat>WIT</stat>
-			</effect>
-			<effect name="MagicalAttack" fromLevel="3" toLevel="3">
+			<effect name="MagicalAttack">
 				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3541" toLevel="3" name="Set Effect - Majestic Robe Armor, 2-piece">
-		<!-- Level 1: MP Recovery Bonus +8%. -->
-		<!-- Level 2: MEN +1, WIT -1, MP Recovery Bonus +8%, and Max MP +240. -->
-		<!-- Level 3: MEN +1, INT -1, MP Recovery Bonus +8%, Max MP +240, Casting Spd. +15%, and Stun Resistance +50%. -->
+	<skill id="3541" toLevel="1" name="Majestic Robe Set">
+		<!-- Increases Stun Resistance, Maximum MP/Casting Spd./MP Recovery bonus. MEN+1, INT-1 -->
 		<icon>icon.armor_t85_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="MpRegen" fromLevel="1" toLevel="3">
-				<amount>8</amount>
-				<mode>PER</mode>
+			<effect name="DefenceTrait">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>1</amount>
-				<stat>MEN</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="2" toLevel="3">
-				<amount>-1</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="MaxMp" fromLevel="2" toLevel="3">
-				<amount>240</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed" fromLevel="3" toLevel="3">
+			<effect name="MagicalAttackSpeed">
 				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="3">
-				<SHOCK>50</SHOCK>
+			<effect name="MaxMp">
+				<amount>240</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3542" toLevel="9" name="Special Ability: P. Critical Damage">
-		<!-- Increases P. Critical Damage. -->
-		<icon>icon.skill1242</icon>
+	<skill id="3542" toLevel="6" name="Special Ability: Critical Damage">
+		<!-- Increases Critical Damage. -->
+		<icon>icon.skill0193</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
@@ -1158,37 +720,31 @@
 			<value level="4">55</value>
 			<value level="5">58</value>
 			<value level="6">61</value>
-			<value level="7">64</value>
-			<value level="8">67</value>
-			<value level="9">70</value>
 		</magicLevel>
 		<effects>
 			<effect name="CriticalDamage">
 				<amount>
-					<value level="1">183</value>
-					<value level="2">203</value>
-					<value level="3">223</value>
-					<value level="4">242</value>
-					<value level="5">260</value>
-					<value level="6">275</value>
-					<value level="7">288</value>
-					<value level="8">297</value>
-					<value level="9">302</value>
+					<value level="1">203.97</value>
+					<value level="2">226.51</value>
+					<value level="3">248.71</value>
+					<value level="4">269.91</value>
+					<value level="5">289.4</value>
+					<value level="6">306.42</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3543" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Increases Max HP. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="ShieldDefence">
-				<amount>2.63</amount>
-				<mode>PER</mode>
+			<effect name="MaxHp">
+				<amount>126.13</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -1206,33 +762,33 @@
 		</effects>
 	</skill>
 	<skill id="3545" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Increases Max HP. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="ShieldDefenceRate">
-				<amount>5.26</amount>
-				<mode>PER</mode>
+			<effect name="MaxHp">
+				<amount>198.21</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3546" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases M. Atk. Resistance. -->
+		<!-- Increases M. Def. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="MagicalDefence">
-				<amount>3</amount>
+				<amount>5.26</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3547" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1245,7 +801,7 @@
 		</effects>
 	</skill>
 	<skill id="3548" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1258,7 +814,7 @@
 		</effects>
 	</skill>
 	<skill id="3549" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1271,157 +827,173 @@
 		</effects>
 	</skill>
 	<skill id="3550" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Increases Shield Defense Rate. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="ShieldDefenceRate">
-				<amount>24</amount>
+				<amount>18</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3551" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Returns damage inflicted by enemy back upon him. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
-			<effect name="ShieldDefenceRate">
-				<amount>24</amount>
+			<effect name="DamageShield">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3552" toLevel="4" name="Special Ability: PvP Damage">
+		<!-- Level 1: Inflicts additional damage during PvP. -->
+		<!-- Level 2: Enables the character to attack multiple opponents. Inflicts additional damage during PvP. -->
+		<!-- Level 3: Inflicts additional damage during PvP. -->
+		<!-- Level 4: Enables the character to attack multiple opponents. Inflicts additional damage during PvP. -->
+		<icon>icon.skill0297</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">64</value>
+			<value level="2">64</value>
+			<value level="3">72</value>
+			<value level="4">72</value>
+		</magicLevel>
+		<effects>
+			<effect name="HitNumber">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">4</value>
+					<value level="3">0</value>
+					<value level="4">4</value>
+				</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>
+					<value level="1">5</value>
+					<value level="2">5</value>
+					<value level="3">10</value>
+					<value level="4">10</value>
+				</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3553" toLevel="4" name="Set Effect - Imperial Crusader, 2-piece">
-		<!-- Level 1: HP Recovery Bonus +6%. -->
-		<!-- Level 2: HP Recovery Bonus +6% and P. Def. +8%. -->
-		<!-- Level 3: HP Recovery Bonus +6%, P. Def. +8%, and Sleep/Hold Resistance +70%. -->
-		<!-- Level 4: STR +4, DEX -1, Max HP +445, HP Recovery Bonus +6%, P. Def. +8%, and Sleep/Hold Resistance +70%. -->
+	<skill id="3553" toLevel="1" name="Imperial Crusader Heavy Armor Set">
+		<!-- Increases Sleep/Hold Resistance, Max HP, and P. Def. STR+2, DEX-2 -->
 		<icon>icon.armor_t88_u_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
+		<magicLevel>75</magicLevel>
 		<effects>
-			<effect name="HpRegen" fromLevel="1" toLevel="4">
-				<amount>6</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalDefence" fromLevel="2" toLevel="4">
-				<amount>8</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="DefenceTrait" fromLevel="3" toLevel="4">
+			<effect name="DefenceTrait">
 				<SLEEP>70</SLEEP>
 				<HOLD>70</HOLD>
 			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>4</amount>
-				<stat>STR</stat>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="4" toLevel="4">
-				<amount>-1</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="MaxHp" fromLevel="4" toLevel="4">
+			<effect name="MaxHp">
 				<amount>445</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3554" toLevel="1" name="Equip Shield">
-		<!-- Additionally increases Shield Defense Rate. -->
+		<!-- Additionally increases Poison/Bleed Resistance. -->
 		<icon>icon.skill0091</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>75</magicLevel>
 		<effects>
-			<effect name="ShieldDefenceRate">
-				<amount>24</amount>
-				<mode>PER</mode>
+			<effect name="DefenceTrait">
+				<POISON>80</POISON>
+				<BLEED>80</BLEED>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3555" toLevel="3" name="Set Effect - Draconic Leather, 2-piece">
-		<!-- Level 1: Weight Limit +5759 and Max MP +289. -->
-		<!-- Level 2: Weight Limit +5759, Max MP +289, P. Atk. +4%, and Atk. Spd. +4%. -->
-		<!-- Level 3: STR +2, DEX +2, CON -1, Weight Limit +5759, Max MP +289, P. Atk. +4%, and Atk. Spd. +4%. -->
+	<skill id="3555" toLevel="1" name="Draconic Leather Armor Set">
+		<!-- Increases Max MP, Atk. Spd, P. Atk, and weight limit. DEX+1, STR+1, CON-2 -->
 		<icon>icon.armor_t89_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>1</magicLevel>
+		<magicLevel>75</magicLevel>
 		<effects>
-			<effect name="WeightPenalty" fromLevel="1" toLevel="3">
-				<amount>5759</amount>
+			<effect name="PhysicalAttack">
+				<amount>4</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="MaxMp" fromLevel="1" toLevel="3">
+			<effect name="PhysicalAttackSpeed">
+				<amount>4</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>289</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="PhysicalAttack" fromLevel="2" toLevel="3">
-				<amount>4</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed" fromLevel="2" toLevel="3">
-				<amount>4</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>STR</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>DEX</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-1</amount>
-				<stat>CON</stat>
+			<effect name="WeightPenalty">
+				<amount>5759</amount>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3556" toLevel="3" name="Set Effect - Major Arcana Robe, 2-piece">
-		<!-- Level 1: Weight Limit +5759 and Movement Speed +7. -->
-		<!-- Level 2: Weight Limit +5759, Movement Speed +7, M. Atk. +17%, and Stun Resistance +50%. -->
-		<!-- Level 3: INT +2, WIT +2, MEN -1, Weight Limit +5759, Movement Speed +7, M. Atk. +17%, and Stun Resistance +50%. -->
+	<skill id="3556" toLevel="1" name="Major Arcana Robe Set">
+		<!-- Decreases a chance of getting your magic canceled and increases Stun Resistance, M. Atk./Speed/Weight Limit. WIT+1, INT+1, MEN-2 -->
 		<icon>icon.armor_t90_ul_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>75</magicLevel>
 		<effects>
-			<effect name="WeightPenalty" fromLevel="1" toLevel="3">
-				<amount>5759</amount>
+			<effect name="DefenceTrait">
+				<SHOCK>50</SHOCK>
 			</effect>
-			<effect name="Speed" fromLevel="1" toLevel="3">
-				<amount>7</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalAttack" fromLevel="2" toLevel="3">
+			<effect name="MagicalAttack">
 				<amount>17</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="DefenceTrait" fromLevel="2" toLevel="3">
-				<SHOCK>50</SHOCK>
+			<effect name="Speed">
+				<amount>7</amount>
+				<mode>DIFF</mode>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>WIT</stat>
+			<effect name="WeightPenalty">
+				<amount>5759</amount>
 			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>2</amount>
-				<stat>INT</stat>
-			</effect>
-			<effect name="StatUp" fromLevel="3" toLevel="3">
-				<amount>-1</amount>
-				<stat>MEN</stat>
+			<effect name="ReduceCancel">
+				<amount>-50</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3557" toLevel="1" name="Valakas' Necklace">
-		<!-- Increases Fire Resistance, Sleep Resistance, Sleep Atk. Rate, Max HP/P. Atk./M. Atk., and P. Critical Rate of damage-dealing magic. Decreases skill cooldown. Reflects some of the damage received back to the enemy. -->
+		<!-- Increases Fire Resistance, Sleep Resistance, sleep attack bonus, Max HP/ P. Atk./ M. Atk. and magic damage Critical Rate. Decreases skill cooldown. Reflects some of the physical damage received back upon the enemy. -->
 		<icon>icon.accessory_necklace_of_valakas_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1466,1145 +1038,566 @@
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
+			<effect name="Reuse">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3558" toLevel="15" name="Damaged Antharas' Earring">
-		<!-- Level 1: Bleed Resistance +1% and Bleed Atk. Rate +1%. -->
-		<!-- Level 2: Bleed Resistance +1% and Bleed Atk. Rate +1%. -->
-		<!-- Level 3: Bleed Resistance +1% and Bleed Atk. Rate +1%. -->
-		<!-- Level 4: Bleed Resistance +1% and Bleed Atk. Rate +1%. -->
-		<!-- Level 5: Bleed Resistance +6% and Bleed Atk. Rate +6%. -->
-		<!-- Level 6: Bleed Resistance +8% and Bleed Atk. Rate +8%. -->
-		<!-- Level 7: Bleed Resistance +10% and Bleed Atk. Rate +10%. -->
-		<!-- Level 8: Bleed Resistance =10%, Bleed Atk. Rate +10%, Stun Resistance +3%, and Stun Atk. Rate +3%. -->
-		<!-- Level 9: Bleed Resistance +10%, Bleed Atk. Rate +10%, Stun Resistance +4%, Stun Atk. Rate +4%, and Heal Received +2%. -->
-		<!-- Level 10: Bleed Resistance +10%, Bleed Atk. Rate +10%, Stun Resistance +5%, Stun Atk. Rate +5%, Heal Received +2%, and Skill MP Consumption -1%. -->
-		<!-- Level 11: Bleed Resistance +10%, Bleed Atk. Rate +10%, Stun Resistance +5%, Stun Atk. Rate +5%, Heal Received +2%, Max MP +18, and Skill MP Consumption -1%. -->
-		<!-- Level 12: Bleed Resistance +10%, Bleed Atk. Rate +10%, Stun/MEN Resistance +5%, Stun/MEN Atk. Rate +5%, Heal Received +6%, and Skill MP Consumption -3%. Has a chance to absorb 2% of damage dealt to enemies as HP. -->
-		<!-- Level 13: Bleed Resistance +20%, Bleed Atk. Rate +20%, Stun/MEN Resistance +10%, Stun/MEN Atk. Rate +10%, Damage Reflect Resistance +7%, Heal Received +10%, and Skill MP Consumption -4%. Has a chance to absorb 3% of damage dealt to enemies as HP. -->
-		<!-- Level 14: CON +1, MEN +1, Bleed Resistance +30%, Bleed Atk. Rate +30%, Stun/MEN Resistance +20%, Stun/MEN Atk. Rate +20%, Damage Reflect Resistance +15%, Heal Received +15%, and Skill MP Consumption -6%. Has a chance to absorb 6% of damage dealt to enemies as HP. -->
-		<!-- Level 15: CON +2, MEN +1, Bleed Resistance +40%, Bleed Atk. Rate +40%, Stun/MEN Resistance +30%, Stun/MEN Atk. Rate +30%, Damage Reflect Resistance +20%, Heal Received +20%, and Skill MP Consumption -15%. Has a chance to absorb 6% of damage dealt to enemies as HP. -->
-		<icon>
-			<value level="1">icon.accessory_earring_of_antaras_i00</value>
-			<value level="2">icon.accessory_earring_of_antaras_i00</value>
-			<value level="3">icon.accessory_earring_of_antaras_i00</value>
-			<value level="4">icon.accessory_earring_of_antaras_i00</value>
-			<value level="5">icon.accessory_earring_of_antaras_i00</value>
-			<value level="6">icon.accessory_earring_of_antaras_i00</value>
-			<value level="7">icon.accessory_earring_of_antaras_i00</value>
-			<value level="8">icon.accessory_earring_of_antaras_i00</value>
-			<value level="9">icon.accessory_earring_of_antaras_i00</value>
-			<value level="10">icon.accessory_earring_of_antaras_i00</value>
-			<value level="11">icon.accessory_earring_of_antaras_i00</value>
-			<value level="12">icon.accessory_earring_of_antaras_i00</value>
-			<value level="13">icon.accessory_earring_of_antaras_i01</value>
-			<value level="14">icon.accessory_earring_of_antaras_i02</value>
-			<value level="15">icon.accessory_earring_of_antaras_i04</value>
-		</icon>
+	<skill id="3558" toLevel="1" name="Antharas' Earring">
+		<!-- Increases Earth Attack/Bleed/Stun/Mental Resistance, Bleed/Stun/Mental attack bonus, and the effect of HP Recovery magic and decreases MP consumption by skills. Restores HP by using some of the damage inflicted upon the enemy with a certain probability. -->
+		<icon>icon.accessory_earring_of_antaras_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>75</magicLevel>
 		<effects>
 			<effect name="AttackTrait">
-				<BLEED>
-					<value level="1">1</value>
-					<value level="2">1</value>
-					<value level="3">1</value>
-					<value level="4">1</value>
-					<value level="5">6</value>
-					<value level="6">8</value>
-					<value level="7">10</value>
-					<value level="8">10</value>
-					<value level="9">10</value>
-					<value level="10">10</value>
-					<value level="11">10</value>
-					<value level="12">10</value>
-					<value level="13">20</value>
-					<value level="14">30</value>
-					<value level="15">40</value>
-				</BLEED>
-				<DERANGEMENT>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
-				</DERANGEMENT>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">3</value>
-					<value level="9">4</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
-				</SHOCK>
+				<BLEED>40</BLEED>
+				<DERANGEMENT>30</DERANGEMENT>
+				<SHOCK>30</SHOCK>
 			</effect>
 			<effect name="DefenceTrait">
-				<BLEED>
-					<value level="1">1</value>
-					<value level="2">1</value>
-					<value level="3">1</value>
-					<value level="4">1</value>
-					<value level="5">6</value>
-					<value level="6">8</value>
-					<value level="7">10</value>
-					<value level="8">10</value>
-					<value level="9">10</value>
-					<value level="10">10</value>
-					<value level="11">10</value>
-					<value level="12">10</value>
-					<value level="13">20</value>
-					<value level="14">30</value>
-					<value level="15">40</value>
-				</BLEED>
-				<DERANGEMENT>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
-				</DERANGEMENT>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">3</value>
-					<value level="9">4</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
-				</SHOCK>
+				<SHOCK>30</SHOCK>
+				<DERANGEMENT>30</DERANGEMENT>
+				<BLEED>40</BLEED>
 			</effect>
 			<effect name="VampiricAttack">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">2</value>
-					<value level="13">3</value>
-					<value level="14">6</value>
-					<value level="15">6</value>
-				</amount>
-				<chance>80</chance>
-			</effect>
-			<effect name="HealEffect">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">2</value>
-					<value level="10">2</value>
-					<value level="11">2</value>
-					<value level="12">6</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
-					<value level="12">-3</value>
-					<value level="13">-4</value>
-					<value level="14">-6</value>
-					<value level="15">-15</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
-					<value level="12">-3</value>
-					<value level="13">-4</value>
-					<value level="14">-6</value>
-					<value level="15">-15</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
-					<value level="12">-3</value>
-					<value level="13">-4</value>
-					<value level="14">-6</value>
-					<value level="15">-15</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
-			</effect>
-			<effect name="DamageShieldResist">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">7</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</amount>
-			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">1</value>
-					<value level="15">2</value>
-				</amount>
-				<stat>CON</stat>
-			</effect>
-			<effect name="StatUp">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">1</value>
-					<value level="15">2</value>
-				</amount>
-				<stat>MEN</stat>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3559" toLevel="15" name="Damaged Zaken's Earring">
-		<!-- Level 1: Bleed Resistance +1%. -->
-		<!-- Level 2: Bleed Resistance +1%. -->
-		<!-- Level 3: Bleed Resistance +1%. -->
-		<!-- Level 4: Bleed Resistance +1%. -->
-		<!-- Level 5: Bleed Resistance +6%. -->
-		<!-- Level 6: Bleed Resistance +8%. -->
-		<!-- Level 7: Bleed Resistance +10%. -->
-		<!-- Level 8: Bleed Resistance by +% and Stun Resistance +3%. -->
-		<!-- Level 9: Bleed Resistance +10%, Stun Resistance +4%, and Heal Received +1%. -->
-		<!-- Level 10: Bleed Resistance +10%, Stun Resistance +5%, Heal Received +1%, and Skill MP Consumption -1%. -->
-		<!-- Level 11: Bleed Resistance +10%, Stun Resistance +5%, Stun, Heal Received +1%, HP Recovery Bonus +5%, Max MP +12, and Skill MP Consumption -1%. -->
-		<!-- Level 12: Bleed Resistance +10%, Stun/MEN Resistance +5%, Bleed Atk. Rate +10%, Stun/MEN Atk. Rate +5%, Heal Received +4%, HP Recovery Bonus +10%, and Skill MP Consumption -2%. -->
-		<!-- Level 13: Bleed Resistance +15%, Stun/MEN Resistance +10%, Bleed Atk. Rate +15%, Stun/MEN Atk. Rate +10%, Heal Received +6%, HP Recovery Bonus +15%, and Skill MP Consumption -3%. -->
-		<!-- Level 14: Bleed Resistance +20%, Stun/MEN Resistance +15%, Bleed Atk. Rate +20%, Stun/MEN Atk. Rate +15%, Heal Received +10%, HP Recovery Bonus +20%, and Skill MP Consumption -4%. Vampiric Rage effect. -->
-		<!-- Level 15: Bleed Resistance +30%, Stun/MEN Resistance +20%, Bleed Atk. Rate +30%, Stun/MEN Atk. Rate +20%, Heal Received +15%, HP Recovery Bonus +20%, and Skill MP Consumption -10%. Vampiric Rage effect. -->
-		<icon>
-			<value level="1">icon.accessory_earring_of_zaken_i00</value>
-			<value level="2">icon.accessory_earring_of_zaken_i00</value>
-			<value level="3">icon.accessory_earring_of_zaken_i00</value>
-			<value level="4">icon.accessory_earring_of_zaken_i00</value>
-			<value level="5">icon.accessory_earring_of_zaken_i00</value>
-			<value level="6">icon.accessory_earring_of_zaken_i00</value>
-			<value level="7">icon.accessory_earring_of_zaken_i00</value>
-			<value level="8">icon.accessory_earring_of_zaken_i00</value>
-			<value level="9">icon.accessory_earring_of_zaken_i00</value>
-			<value level="10">icon.accessory_earring_of_zaken_i00</value>
-			<value level="11">icon.accessory_earring_of_zaken_i00</value>
-			<value level="12">icon.accessory_earring_of_zaken_i00</value>
-			<value level="13">icon.accessory_earring_of_zaken_i02</value>
-			<value level="14">icon.accessory_earring_of_zaken_i03</value>
-			<value level="15">icon.accessory_earring_of_zaken_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<effects>
-			<effect name="AttackTrait">
-				<BLEED>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">10</value>
-					<value level="13">15</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
-				</BLEED>
-				<DERANGEMENT>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</DERANGEMENT>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</SHOCK>
-			</effect>
-			<effect name="DefenceTrait">
-				<BLEED>
-					<value level="1">1</value>
-					<value level="2">1</value>
-					<value level="3">1</value>
-					<value level="4">1</value>
-					<value level="5">6</value>
-					<value level="6">8</value>
-					<value level="7">10</value>
-					<value level="8">10</value>
-					<value level="9">10</value>
-					<value level="10">10</value>
-					<value level="11">10</value>
-					<value level="12">10</value>
-					<value level="13">15</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
-				</BLEED>
-				<DERANGEMENT>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</DERANGEMENT>
-				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">3</value>
-					<value level="9">4</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</SHOCK>
-			</effect>
-			<effect name="HealEffect">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">1</value>
-					<value level="10">1</value>
-					<value level="11">1</value>
-					<value level="12">4</value>
-					<value level="13">6</value>
-					<value level="14">10</value>
-					<value level="15">15</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="HpRegen">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">5</value>
-					<value level="12">10</value>
-					<value level="13">15</value>
-					<value level="14">20</value>
-					<value level="15">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="VampiricAttack">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">8</value>
-					<value level="15">8</value>
-				</amount>
-				<chance>80</chance>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
-					<value level="12">-2</value>
-					<value level="13">-3</value>
-					<value level="14">-4</value>
-					<value level="15">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
-					<value level="12">-2</value>
-					<value level="13">-3</value>
-					<value level="14">-4</value>
-					<value level="15">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">-1</value>
-					<value level="11">-1</value>
-					<value level="12">-2</value>
-					<value level="13">-3</value>
-					<value level="14">-4</value>
-					<value level="15">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3560" toLevel="4" name="Orfen's Earring">
-		<!-- Level 1: Hold Resistance +10%, MEN Resistance +5%, Hold Atk. Rate +10%, MEN Atk. Rate +5%, Heal Received +2%, and Skill MP Consumption -2%. -->
-		<!-- Level 2: Hold Resistance +15%, MEN Resistance +10%, Hold Atk. Rate +15%, MEN Atk. Rate +10%, Heal Received +4%, and Skill MP Consumption -3%. -->
-		<!-- Level 3: Hold Resistance +20%, MEN Resistance +15%, Hold Atk. Rate +20%, MEN Atk. Rate +15%, Heal Received +6%, and Skill MP Consumption -5%. Has a chance to absorb part of the damage dealt to enemies as MP. -->
-		<!-- Level 4: Hold Resistance +30%, MEN Resistance +20%, Hold Atk. Rate +30%, MEN Atk. Rate +20%, Heal Received +12%, and Skill MP Consumption -10%. Has a chance to absorb part of the damage dealt to the enemy as MP. -->
-		<icon>
-			<value level="1">icon.accessory_earring_of_orfen_i00</value>
-			<value level="2">icon.accessory_earring_of_orfen_i02</value>
-			<value level="3">icon.accessory_earring_of_orfen_i03</value>
-			<value level="4">icon.accessory_earring_of_orfen_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>75</magicLevel>
-		<effects>
-			<effect name="DefenceTrait">
-				<DERANGEMENT>
-					<value level="1">5</value>
-					<value level="2">10</value>
-					<value level="3">15</value>
-					<value level="4">20</value>
-				</DERANGEMENT>
-				<HOLD>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-				</HOLD>
-			</effect>
-			<effect name="AttackTrait">
-				<DERANGEMENT>
-					<value level="1">5</value>
-					<value level="2">10</value>
-					<value level="3">15</value>
-					<value level="4">20</value>
-				</DERANGEMENT>
-				<HOLD>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-				</HOLD>
-			</effect>
-			<effect name="HealEffect">
-				<amount>
-					<value level="1">2</value>
-					<value level="2">4</value>
-					<value level="3">6</value>
-					<value level="4">12</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">-2</value>
-					<value level="2">-3</value>
-					<value level="3">-5</value>
-					<value level="4">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">-2</value>
-					<value level="2">-3</value>
-					<value level="3">-5</value>
-					<value level="4">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>
-					<value level="1">-2</value>
-					<value level="2">-3</value>
-					<value level="3">-5</value>
-					<value level="4">-10</value>
-				</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
-			</effect>
-			<effect name="MpVampiricAttack" fromLevel="3" toLevel="4">
-				<amount>3</amount>
+				<amount>4</amount>
 				<chance>30</chance>
 			</effect>
+			<effect name="HealEffect">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>15</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-5</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="3561" toLevel="15" name="Damaged Baium's Ring">
-		<!-- Level 1: Bleed Resistance +1%. -->
-		<!-- Level 2: Bleed Resistance +1%. -->
-		<!-- Level 3: Bleed Resistance +1%. -->
-		<!-- Level 4: Bleed Resistance +1%. -->
-		<!-- Level 5: Bleed Resistance +3%. -->
-		<!-- Level 6: Bleed Resistance +4%. -->
-		<!-- Level 7: Bleed Resistance +5%. -->
-		<!-- Level 8: Bleed Resistance +5% and Stun Resistance +4%. -->
-		<!-- Level 9: Bleed Resistance +5%, Stun Resistance +4%, and P. Accuracy/M. Accuracy +1. -->
-		<!-- Level 10: Bleed Resistance +5%, Stun Resistance +5%, Atk. Spd./Casting Spd. +15, and P. Accuracy/M. Accuracy +1. -->
-		<!-- Level 11: Bleed Resistance +5%, Stun Resistance +5%, Atk. Spd./Casting Spd. +15, P. Accuracy/M. Accuracy +1, and Max MP +10. -->
-		<!-- Level 12: Bleed Resistance +5%, Stun Resistance +10%, Bleed Atk. Rate +5%, Stun Atk. Rate +10%, Atk. Spd./Casting Spd. +3%, P. Accuracy/M. Accuracy +2, and P. Skill Power/M. Skill Power +3%. -->
-		<!-- Level 13: Bleed Resistance +10%, Stun Resistance +15%, Bleed Atk. Rate +10%, Stun Atk. Rate +15%, Atk. Spd./Casting Spd. +4%, P. Accuracy/M. Accuracy +3, and P. Skill Power/M. Skill Power +6%. -->
-		<!-- Level 14: Bleed Resistance +15%, Stun Resistance +20%, Bleed Atk. Rate +15%, Stun Atk. Rate +20%, Atk. Spd./Casting Spd. +5%, P. Accuracy/M. Accuracy +4, P. Skill Power/M. Skill Power +10%, P. Critical Damage +15%, and M. Critical Damage +10%. -->
-		<!-- Level 15: Bleed Resistance +20%, Stun Resistance +30%, Bleed Atk. Rate +20%, Stun Atk. Rate +30%, Atk. Spd./Casting Spd. +10%, P. Accuracy/M. Accuracy +8, P. Skill Power/M. Skill Power +10%, P. Critical Damage +15%. and M. Critical Damage +10%. -->
-		<icon>
-			<value level="1">icon.accessory_ring_of_baium_i00</value>
-			<value level="2">icon.accessory_ring_of_baium_i00</value>
-			<value level="3">icon.accessory_ring_of_baium_i00</value>
-			<value level="4">icon.accessory_ring_of_baium_i00</value>
-			<value level="5">icon.accessory_ring_of_baium_i00</value>
-			<value level="6">icon.accessory_ring_of_baium_i00</value>
-			<value level="7">icon.accessory_ring_of_baium_i00</value>
-			<value level="8">icon.accessory_ring_of_baium_i00</value>
-			<value level="9">icon.accessory_ring_of_baium_i00</value>
-			<value level="10">icon.accessory_ring_of_baium_i00</value>
-			<value level="11">icon.accessory_ring_of_baium_i00</value>
-			<value level="12">icon.accessory_ring_of_baium_i00</value>
-			<value level="13">icon.accessory_ring_of_baium_i02</value>
-			<value level="14">icon.accessory_ring_of_baium_i03</value>
-			<value level="15">icon.accessory_ring_of_baium_i04</value>
-		</icon>
+	<skill id="3559" toLevel="2" name="Zaken's Earring">
+		<!-- Level 1: Increases Bleed/Stun/Mental Resistance, Bleed/Stun/Mental attack bonus, and the magic effect of HP Recovery received. Restores HP by using some of the damage inflicted upon the enemy with a certain probability. -->
+		<!-- Level 2: Increases Dark Attack/Bleed/Stun/Mental Resistance, Bleed/Stun/Mental attack bonus, and the effect of HP Recovery magic. Restores HP by using some of the damage inflicted upon the enemy with a certain probability. -->
+		<icon>icon.accessory_earring_of_zaken_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>75</magicLevel>
 		<effects>
-			<effect name="DefenceTrait">
-				<BLEED>
-					<value level="1">1</value>
-					<value level="2">1</value>
-					<value level="3">1</value>
-					<value level="4">1</value>
-					<value level="5">3</value>
-					<value level="6">4</value>
-					<value level="7">5</value>
-					<value level="8">5</value>
-					<value level="9">5</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</BLEED>
+			<effect name="AttackTrait">
+				<BLEED>30</BLEED>
+				<DERANGEMENT>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</DERANGEMENT>
 				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">3</value>
-					<value level="9">4</value>
-					<value level="10">5</value>
-					<value level="11">5</value>
-					<value level="12">10</value>
-					<value level="13">15</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
+					<value level="1">20</value>
+					<value level="2">30</value>
 				</SHOCK>
 			</effect>
-			<effect name="AttackTrait">
-				<BLEED>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">5</value>
-					<value level="13">10</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</BLEED>
+			<effect name="DefenceTrait">
 				<SHOCK>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">10</value>
-					<value level="13">15</value>
-					<value level="14">20</value>
-					<value level="15">30</value>
+					<value level="1">20</value>
+					<value level="2">30</value>
 				</SHOCK>
+				<DERANGEMENT>
+					<value level="1">20</value>
+					<value level="2">30</value>
+				</DERANGEMENT>
+				<BLEED>30</BLEED>
+			</effect>
+			<effect name="VampiricAttack">
+				<amount>4</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="HealEffect">
+				<amount>
+					<value level="1">10</value>
+					<value level="2">15</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceAttribute">
+				<amount>
+					<value level="1">0</value>
+					<value level="2">15</value>
+				</amount>
+				<attribute>DARK</attribute>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3560" toLevel="1" name="Orfen's Earring">
+		<!-- Increases healing from heal spells, Bleed Resistance, and gives a Bleed attack bonus. -->
+		<icon>icon.accessory_earring_of_orfen_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<BLEED>20</BLEED>
+			</effect>
+			<effect name="DefenceTrait">
+				<BLEED>20</BLEED>
+			</effect>
+			<effect name="HealEffect">
+				<amount>6</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3561" toLevel="1" name="Baium's Ring">
+		<!-- Increases Poison/Hold Resistance, poison/hold attack bonus, Critical Damage, Accuracy, Atk. Spd., and Casting Spd. -->
+		<icon>icon.accessory_ring_of_baium_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<effects>
+			<effect name="AttackTrait">
+				<POISON>40</POISON>
+				<HOLD>30</HOLD>
+			</effect>
+			<effect name="DefenceTrait">
+				<POISON>40</POISON>
+				<HOLD>30</HOLD>
 			</effect>
 			<effect name="Accuracy">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">1</value>
-					<value level="10">1</value>
-					<value level="11">1</value>
-					<value level="12">2</value>
-					<value level="13">3</value>
-					<value level="14">4</value>
-					<value level="15">8</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicAccuracy">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">1</value>
-					<value level="10">1</value>
-					<value level="11">1</value>
-					<value level="12">2</value>
-					<value level="13">3</value>
-					<value level="14">4</value>
-					<value level="15">8</value>
-				</amount>
+				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">15</value>
-					<value level="11">15</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">0</value>
-					<value level="15">0</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">3</value>
-					<value level="13">4</value>
-					<value level="14">5</value>
-					<value level="15">10</value>
-				</amount>
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">15</value>
-					<value level="11">15</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">0</value>
-					<value level="15">0</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">3</value>
-					<value level="13">4</value>
-					<value level="14">5</value>
-					<value level="15">10</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalSkillPower">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">3</value>
-					<value level="13">6</value>
-					<value level="14">10</value>
-					<value level="15">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalSkillPower">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">3</value>
-					<value level="13">6</value>
-					<value level="14">10</value>
-					<value level="15">20</value>
-				</amount>
+				<amount>4</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">15</value>
-					<value level="15">20</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">0</value>
-					<value level="5">0</value>
-					<value level="6">0</value>
-					<value level="7">0</value>
-					<value level="8">0</value>
-					<value level="9">0</value>
-					<value level="10">0</value>
-					<value level="11">0</value>
-					<value level="12">0</value>
-					<value level="13">0</value>
-					<value level="14">10</value>
-					<value level="15">20</value>
-				</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3562" toLevel="4" name="Queen Ant's Ring">
-		<!-- Level 1: Poison Resistance +10%, Poison Atk. Rate +10%, P. Accuracy/M. Accuracy +1, and P. Atk./M. Atk. +4%. -->
-		<!-- Level 2: Poison Resistance +15%, Poison Atk. Rate +15%, P. Accuracy/M. Accuracy +2, and P. Atk./M. Atk. +6%. -->
-		<!-- Level 3: Poison Resistance +20%, Poison Atk. Rate +20%, P. Accuracy/M. Accuracy +3, P. Critical Damage +10%, and M. Critical Damage +5%. -->
-		<!-- Level 4: Poison Resistance +30%, Poison Atk. Rate +30%, P. Accuracy/M. Accuracy +5, P. Atk. +10%, M. Atk. +15%, P. Critical Damage +15%, and M. Critical Damage +10%. -->
-		<icon>
-			<value level="1">icon.accessory_ring_of_queen_ant_i00</value>
-			<value level="2">icon.accessory_ring_of_queen_ant_i02</value>
-			<value level="3">icon.accessory_ring_of_queen_ant_i03</value>
-			<value level="4">icon.accessory_ring_of_queen_ant_i04</value>
-		</icon>
+	<skill id="3562" toLevel="1" name="Queen Ant's Ring">
+		<!-- Increases Poison/Hold Resistance, poison/hold attack bonus, Critical Damage, and Accuracy. -->
+		<icon>icon.accessory_ring_of_queen_ant_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>75</magicLevel>
 		<effects>
 			<effect name="AttackTrait">
-				<POISON>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-				</POISON>
+				<POISON>30</POISON>
+				<HOLD>20</HOLD>
 			</effect>
 			<effect name="DefenceTrait">
-				<POISON>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-				</POISON>
+				<POISON>30</POISON>
+				<HOLD>20</HOLD>
 			</effect>
 			<effect name="Accuracy">
-				<amount>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">5</value>
-				</amount>
+				<amount>2</amount>
 				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicAccuracy">
-				<amount>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">5</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttack">
-				<amount>
-					<value level="1">4</value>
-					<value level="2">6</value>
-					<value level="3">7</value>
-					<value level="4">10</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalAttack">
-				<amount>
-					<value level="1">4</value>
-					<value level="2">6</value>
-					<value level="3">7</value>
-					<value level="4">15</value>
-				</amount>
-				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">10</value>
-					<value level="4">15</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalDamage">
-				<amount>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">5</value>
-					<value level="4">10</value>
-				</amount>
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3563" toLevel="4" name="Ring of Core">
-		<!-- Level 1: MEN Resistance +10%, MEN Atk. Rate +10%, P. Evasion/M. Evasion +1, and Damage Received -2%. -->
-		<!-- Level 2: MEN Resistance +15%, MEN Atk. Rate +15%, P. Evasion/M. Evasion +2, and Damage Received -4%. -->
-		<!-- Level 3: MEN Resistance +20%, MEN Atk. Rate +20%, P. Evasion/M. Evasion +3, and Damage Received -6%. -->
-		<!-- Level 4: MEN Resistance +30%, MEN Atk. Rate +30%, Sleep Resistance +20%, P. Evasion/M. Evasion +5, and Damage Received -10%. -->
-		<icon>
-			<value level="1">icon.accessory_ring_of_core_i00</value>
-			<value level="2">icon.accessory_ring_of_core_i02</value>
-			<value level="3">icon.accessory_ring_of_core_i03</value>
-			<value level="4">icon.accessory_ring_of_core_i04</value>
-		</icon>
+	<skill id="3563" toLevel="1" name="Ring of Core">
+		<!-- Increases Accuracy, Poison Resistance, and Poison attack bonus. -->
+		<icon>icon.accessory_ring_of_core_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>75</magicLevel>
 		<effects>
 			<effect name="AttackTrait">
-				<DERANGEMENT>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-				</DERANGEMENT>
+				<POISON>20</POISON>
 			</effect>
 			<effect name="DefenceTrait">
-				<DERANGEMENT>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">20</value>
-					<value level="4">30</value>
-				</DERANGEMENT>
-				<SLEEP>
-					<value level="1">0</value>
-					<value level="2">0</value>
-					<value level="3">0</value>
-					<value level="4">20</value>
-				</SLEEP>
+				<POISON>20</POISON>
 			</effect>
-			<effect name="PhysicalEvasion">
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3564" toLevel="8" name="Special Ability: Haste">
+		<!-- Increases Atk. Spd. Inflicts additional damage during PvP. -->
+		<icon>icon.skill1086</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">80</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">90</value>
+			<value level="6">94</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
 				<amount>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">5</value>
+					<value level="1">7</value>
+					<value level="2">10</value>
+					<value level="3">11</value>
+					<value level="4">11</value>
+					<value level="5">11</value>
+					<value level="6">11</value>
+					<value level="7">11</value>
+					<value level="8">11</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3565" toLevel="10" name="Special Ability: Focus">
+		<!-- Level 1: Increases Critical Rate by 80.6. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 2: Increases Critical Rate by 107. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 3: Increases Critical Rate by 123.5. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 4: Increases Critical Rate by 129. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 5: Increases Critical Rate by 129. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 6: Increases Critical Rate by 76.3. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 7: Increases Critical Rate by 76. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 8: Increases Critical Rate by 75.7. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 9: Increases Critical Rate by 75.5. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 10: Increases Critical Rate by 75.4. Inflicts additional damage by 5% during PvP. -->
+		<icon>
+			<value level="1">icon.ensoul_big_old</value>
+			<value level="2">icon.ensoul_big_old</value>
+			<value level="3">icon.ensoul_big_old</value>
+			<value level="4">icon.ensoul_big_old</value>
+			<value level="5">icon.ensoul_big_old</value>
+			<value level="6">icon.skill1077</value>
+			<value level="7">icon.skill1077</value>
+			<value level="8">icon.skill1077</value>
+			<value level="9">icon.skill1077</value>
+			<value level="10">icon.skill1077</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">80</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">86</value>
+			<value level="6">85</value>
+			<value level="7">90</value>
+			<value level="8">94</value>
+			<value level="9">97</value>
+			<value level="10">99</value>
+		</magicLevel>
+		<effects>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="1">80.6</value>
+					<value level="2">107</value>
+					<value level="3">123.5</value>
+					<value level="4">129</value>
+					<value level="5">129</value>
+					<value level="6">129</value>
+					<value level="7">129</value>
+					<value level="8">129</value>
+					<value level="9">129</value>
+					<value level="10">129</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MagicalEvasion">
+		</effects>
+	</skill>
+	<skill id="3566" toLevel="10" name="Special Ability: Focus">
+		<!-- Level 1: Increases Critical Rate by 84.3. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 2: Increases Critical Rate by 111.5. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 3: Increases Critical Rate by 131.3. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 4: Increases Critical Rate by 134.4. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 5: Increases Critical Rate by 134.4. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 6: Increases Critical Rate by 79.5. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 7: Increases Critical Rate by 79.2. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 8: Increases Critical Rate by 78.9. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 9: Increases Critical Rate by 78.7. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 10: Increases Critical Rate by 78.5. Inflicts additional damage by 5% during PvP. -->
+		<icon>
+			<value level="1">icon.ensoul_big_old</value>
+			<value level="2">icon.ensoul_big_old</value>
+			<value level="3">icon.ensoul_big_old</value>
+			<value level="4">icon.ensoul_big_old</value>
+			<value level="5">icon.ensoul_big_old</value>
+			<value level="6">icon.skill1077</value>
+			<value level="7">icon.skill1077</value>
+			<value level="8">icon.skill1077</value>
+			<value level="9">icon.skill1077</value>
+			<value level="10">icon.skill1077</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">80</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">86</value>
+			<value level="6">85</value>
+			<value level="7">90</value>
+			<value level="8">94</value>
+			<value level="9">97</value>
+			<value level="10">99</value>
+		</magicLevel>
+		<effects>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>
-					<value level="1">1</value>
-					<value level="2">2</value>
-					<value level="3">3</value>
-					<value level="4">5</value>
+					<value level="1">84.3</value>
+					<value level="2">111.5</value>
+					<value level="3">133.3</value>
+					<value level="4">134.4</value>
+					<value level="5">134.4</value>
+					<value level="6">134.4</value>
+					<value level="7">134.4</value>
+					<value level="8">134.4</value>
+					<value level="9">134.4</value>
+					<value level="10">134.4</value>
 				</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="DamageByAttack">
-				<amount>
-					<value level="1">-2</value>
-					<value level="2">-4</value>
-					<value level="3">-6</value>
-					<value level="4">-10</value>
-				</amount>
-				<type>PK</type>
+		</effects>
+	</skill>
+	<skill id="3567" toLevel="10" name="Special Ability: Focus">
+		<!-- Level 1: Increases Critical Rate by 88.1. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 2: Increases Critical Rate by 116. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 3: Increases Critical Rate by 133.9. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 4: Increases Critical Rate by 139.9. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 5: Increases Critical Rate by 139.9. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 6: Increases Critical Rate by 82.7. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 7: Increases Critical Rate by 82.3. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 8: Increases Critical Rate by 82.1. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 9: Increases Critical Rate by 81.9. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 10: Increases Critical Rate by 81.7. Inflicts additional damage by 5% during PvP. -->
+		<icon>
+			<value level="1">icon.ensoul_big_old</value>
+			<value level="2">icon.ensoul_big_old</value>
+			<value level="3">icon.ensoul_big_old</value>
+			<value level="4">icon.ensoul_big_old</value>
+			<value level="5">icon.ensoul_big_old</value>
+			<value level="6">icon.skill1077</value>
+			<value level="7">icon.skill1077</value>
+			<value level="8">icon.skill1077</value>
+			<value level="9">icon.skill1077</value>
+			<value level="10">icon.skill1077</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">80</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">86</value>
+			<value level="6">85</value>
+			<value level="7">90</value>
+			<value level="8">94</value>
+			<value level="9">97</value>
+			<value level="10">99</value>
+		</magicLevel>
+		<effects>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
-			<effect name="DamageByAttack">
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
 				<amount>
-					<value level="1">-2</value>
-					<value level="2">-4</value>
-					<value level="3">-6</value>
-					<value level="4">-10</value>
+					<value level="1">88.1</value>
+					<value level="2">116</value>
+					<value level="3">133.9</value>
+					<value level="4">139.9</value>
+					<value level="5">139.9</value>
+					<value level="6">139.9</value>
+					<value level="7">139.9</value>
+					<value level="8">139.9</value>
+					<value level="9">139.9</value>
+					<value level="10">139.9</value>
 				</amount>
-				<type>ENEMY_ALL</type>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3568" toLevel="2" name="Special Ability: HP Drain">
+		<!-- Level 1: Restores HP by using some of the damage inflicted upon the enemy with a certain probability. Increases damage by 5% during PvP. -->
+		<!-- Level 2: Restores HP by using some of the damage inflicted upon the enemy with a certain probability. Damage dealt in PvP is increased by 5%. PvP Damage Bonus + $s2 -->
+		<icon>icon.ensoul_big_old</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">84</value>
+		</magicLevel>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>
+					<value level="1">3</value>
+					<value level="2">4</value>
+				</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3569" toLevel="9" name="Special Ability: HP Regeneration">
+		<!-- Increases HP Recovery Bonus. Increases damage by 5% during PvP. -->
+		<icon>
+			<value level="1">icon.ensoul_big_old</value>
+			<value level="2">icon.ensoul_big_old</value>
+			<value level="3">icon.ensoul_big_old</value>
+			<value level="4">icon.ensoul_big_old</value>
+			<value level="5">icon.skill1044</value>
+			<value level="6">icon.skill1044</value>
+			<value level="7">icon.skill1044</value>
+			<value level="8">icon.skill1044</value>
+			<value level="9">icon.skill1044</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">84</value>
+			<value level="3">84</value>
+			<value level="4">84</value>
+			<value level="5">84</value>
+			<value level="6">84</value>
+			<value level="7">84</value>
+			<value level="8">84</value>
+			<value level="9">84</value>
+		</magicLevel>
+		<effects>
+			<effect name="HpRegen">
+				<amount>
+					<value level="1">2.04</value>
+					<value level="2">4.92</value>
+					<value level="3">5.15</value>
+					<value level="4">5.18</value>
+					<value level="5">5.18</value>
+					<value level="6">5.18</value>
+					<value level="7">5.18</value>
+					<value level="8">5.18</value>
+					<value level="9">5.18</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3570" toLevel="1" name="Special Ability: Robust Health">
+		<!-- Increases Max HP, Max MP, Max CP. Increases damage by 5% during PvP. -->
+		<icon>icon.ensoul_big_old</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>75</magicLevel>
+		<effects>
+			<effect name="MaxCp">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>15</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3571" toLevel="2" name="Special Ability: Critical Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2619,6 +1612,7 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>100</castRange>
 		<effectPoint>-100</effectPoint>
 		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
@@ -2634,12 +1628,116 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3572" toLevel="9" name="Special Ability: Critical Damage">
+		<!-- Increases Critical Damage. Inflicts additional damage during PvP. -->
+		<icon>icon.skill0193</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">84</value>
+			<value level="3">85</value>
+			<value level="4">86</value>
+			<value level="5">85</value>
+			<value level="6">90</value>
+			<value level="7">94</value>
+			<value level="8">97</value>
+			<value level="9">99</value>
+		</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>
+					<value level="1">265</value>
+					<value level="2">906</value>
+					<value level="3">999</value>
+					<value level="4">1059</value>
+					<value level="5">1059</value>
+					<value level="6">1059</value>
+					<value level="7">1059</value>
+					<value level="8">1059</value>
+					<value level="9">1059</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3573" toLevel="8" name="Special Ability: Guidance">
+		<!-- Level 1: Increases Accuracy by 5.27. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 2: Increases Accuracy by 5.32. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 3: Increases Accuracy by 7.5. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 4: Increases Accuracy by 7.6. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 5: Increases Accuracy by 7.7. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 6: Increases Accuracy by 7.8. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 7: Increases Accuracy by 7.9. Inflicts additional damage by 5% during PvP. -->
+		<!-- Level 8: Increases Accuracy by 8. Inflicts additional damage by 5% during PvP. -->
+		<icon>
+			<value level="1">icon.ensoul_big_old</value>
+			<value level="2">icon.ensoul_big_old</value>
+			<value level="3">icon.ensoul_big_old</value>
+			<value level="4">icon.ensoul_big_old</value>
+			<value level="5">icon.ensoul_big_old</value>
+			<value level="6">icon.ensoul_big_old</value>
+			<value level="7">icon.ensoul_big_old</value>
+			<value level="8">icon.skill1240</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">80</value>
+			<value level="3">84</value>
+			<value level="4">85</value>
+			<value level="5">90</value>
+			<value level="6">95</value>
+			<value level="7">97</value>
+			<value level="8">99</value>
+		</magicLevel>
+		<effects>
+			<effect name="Accuracy">
+				<amount>
+					<value level="1">5.27</value>
+					<value level="2">5.32</value>
+					<value level="3">7.5</value>
+					<value level="4">7.5</value>
+					<value level="5">7.5</value>
+					<value level="6">7.5</value>
+					<value level="7">7.5</value>
+					<value level="8">7.5</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3574" toLevel="3" name="Special Ability: Critical Slow">
-		<!-- Movement Speed has temporarily decreased by 30%. -->
+		<!-- Temporarily decreases Speed. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2669,6 +1767,106 @@
 		<effects>
 			<effect name="Speed">
 				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3575" toLevel="9" name="Special Ability: Empower">
+		<!-- Increases M. Atk. Inflicts additional damage during PvP. -->
+		<icon>icon.skill1059</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">84</value>
+			<value level="3">85</value>
+			<value level="4">86</value>
+			<value level="5">86</value>
+			<value level="6">86</value>
+			<value level="7">86</value>
+			<value level="8">86</value>
+			<value level="9">86</value>
+		</magicLevel>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="1">60.09</value>
+					<value level="2">151.09</value>
+					<value level="3">166.54</value>
+					<value level="4">176.53</value>
+					<value level="5">176.53</value>
+					<value level="6">176.53</value>
+					<value level="7">176.53</value>
+					<value level="8">176.53</value>
+					<value level="9">176.53</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3576" toLevel="9" name="Special Ability: MP Regeneration">
+		<!-- Increases MP Recovery Bonus. Increases damage by 5% during PvP. -->
+		<icon>
+			<value level="1">icon.ensoul_big_old</value>
+			<value level="2">icon.ensoul_big_old</value>
+			<value level="3">icon.ensoul_big_old</value>
+			<value level="4">icon.ensoul_big_old</value>
+			<value level="5">icon.ensoul_big_old</value>
+			<value level="6">icon.ensoul_big_old</value>
+			<value level="7">icon.ensoul_big_old</value>
+			<value level="8">icon.ensoul_big_old</value>
+			<value level="9">icon.skill1047</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">75</value>
+			<value level="2">84</value>
+			<value level="3">85</value>
+			<value level="4">86</value>
+			<value level="5">86</value>
+			<value level="6">86</value>
+			<value level="7">86</value>
+			<value level="8">86</value>
+			<value level="9">86</value>
+		</magicLevel>
+		<effects>
+			<effect name="MpRegen">
+				<amount>
+					<value level="1">0.54</value>
+					<value level="2">1.95</value>
+					<value level="3">2.04</value>
+					<value level="4">2.05</value>
+					<value level="5">2.05</value>
+					<value level="6">2.05</value>
+					<value level="7">2.05</value>
+					<value level="8">2.05</value>
+					<value level="9">2.05</value>
+				</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>5</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -2703,313 +1901,215 @@
 			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="3578" toLevel="1" name="Special Ability: Infinity Sword">
-		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, Atk. Speed +5%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+	<skill id="3578" toLevel="1" name="Special Ability: Infinity Blade">
+		<!-- Decreases enemy's P. Def. during critical attacks. Also increases Max HP, Max MP, Max CP, shield defense capability. Inflicts additional damage during PvP. Reflects some of the damage received back to the enemy. -->
 		<icon>icon.weapon_the_sword_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>20</amount>
+			<effect name="DamageShield">
+				<amount>9</amount>
+			</effect>
+			<effect name="MaxCp">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttack">
+			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ShieldDefence">
+				<amount>33</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3579" toLevel="1" name="Infinity Power - Reflect">
-		<!-- For 5 minutes, returns 8% of damage received by the target back to the enemy. -->
-		<icon>icon.skill0086</icon>
+	<skill id="3579" toLevel="1" name="Decrease P. Def.">
+		<!-- Temporarily decreases P. Def. Effect 3 -->
+		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>PD_DOWN</abnormalType>
+		<activateRate>4</activateRate>
 		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
+		<basicProperty>MAGIC</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="DamageShield">
-				<amount>8</amount>
-			</effect>
-			<effect name="ReflectSkill">
-				<amount>8</amount>
-				<mode>DIFF</mode>
+			<effect name="PhysicalDefence">
+				<amount>-23</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3580" toLevel="1" name="Special Ability: Infinity Axe">
-		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, Atk. Speed +5%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+		<!-- Dazzles the enemy to distraction during a critical attack. Also increases Max HP, Max MP, Max CP, shield defense capability. Inflicts additional damage during PvP. Reflects some of the damage received back to the enemy. -->
 		<icon>icon.weapon_the_axe_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>20</amount>
-				<mode>PER</mode>
+			<effect name="DamageShield">
+				<amount>9</amount>
 			</effect>
-			<effect name="MaxMp">
-				<amount>15</amount>
+			<effect name="ShieldDefenceRate">
+				<amount>39</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3581" toLevel="1" name="Infinity Power - Tenacity">
-		<!-- For 2 minutes returns 10% of the received damage back to the enemy. Recovers 460 HP. -->
+	<skill id="3581" toLevel="1" name="Discord">
 		<icon>icon.skill0000</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>120</abnormalTime>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="DamageShield">
-				<amount>10</amount>
-			</effect>
-			<effect name="ReflectSkill">
-				<amount>10</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="Hp">
-				<amount>460</amount>
-				<mode>DIFF</mode>
+			<!-- FIXME: this should be "Distrust" effect -->
+			<effect name="Confuse" abnormalTime="20">
+				<chance>20</chance>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3582" toLevel="1" name="Special Ability: Infinity Slasher">
-		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, P. Critical Damage +10%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+	<skill id="3582" toLevel="1" name="Special Ability: Infinity Cleaver">
+		<!-- Increases Critical Rate/damage, Max HP, and Max CP. Inflicts additional damage during PvP. Reflects debuff attack back on enemy. -->
 		<icon>icon.weapon_the_two_handed_sword_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="MaxCp">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttack">
-				<amount>10</amount>
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalDamage">
+				<amount>504</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3584" toLevel="1" name="Infinity Power - Protection">
-		<!-- For 2 minutes makes you immune to debuffs 5 times. -->
-		<icon>icon.skill0100</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>120</abnormalTime>
-		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
-		<effects>
-			<effect name="AbnormalShield">
-				<times>5</times>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3585" toLevel="1" name="Special Ability: Infinity Dualsword">
-		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +5%, P. Critical Damage +5%, P. Atk. Spd. +5%, and PvP Damage +5%. Can also uses weapon's special ability. -->
-		<icon>icon.weapon_the_dualsword_of_hero_i00</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<effects>
-			<effect name="MaxHp">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxCp">
-				<amount>30</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttack">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3586" toLevel="1" name="Set Effect - Full Plate Heavy Armor, 2-piece">
-		<!-- All Skill Cooldown -10% for 5 minutes. Does not apply to skills with fixed cooldowns. -->
-		<icon>icon.skill3123</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
-		<effects>
-			<effect name="Reuse">
-				<amount>-10</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="Reuse">
-				<amount>-10</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="Reuse">
-				<amount>-10</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3587" toLevel="1" name="Special Ability: Infinity Fighter">
-		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Critical Rate +20, Atk. Spd. +5%, and PvP Damage +5%. Can also uses weapon's special ability. -->
-		<icon>icon.weapon_the_fist_of_hero_i00</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<effects>
-			<effect name="MaxHp">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>15</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxCp">
-				<amount>30</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="CriticalRate">
-				<amount>20</amount>
+				<amount>78.7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="PhysicalAttackSpeed">
-				<amount>5</amount>
+			<effect name="MaxHp">
+				<amount>25</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
 			</effect>
-			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3588" toLevel="1" name="Stun">
-		<!-- Infinity Fang Skill -->
+	<skill id="3583" toLevel="1" name="Special Ability: Infinity Crusher">
+		<!-- Inflicts Stun on the enemy for successful critical attack. Increases Maximum HP/CP, Atk. Spd. and damage during PvP while reflecting debuff inflicted to the enemy. -->
+		<icon>icon.weapon_the_hammer_of_hero_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3584" toLevel="1" name="Stun">
+		<!-- Momentarily immobile due to the Stun effect. -->
+		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
 		<abnormalLevel>1</abnormalLevel>
@@ -3017,7 +2117,6 @@
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<activateRate>25</activateRate>
-		<affectObject>NOT_FRIEND</affectObject>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
 		<effectPoint>-100</effectPoint>
@@ -3029,306 +2128,452 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3589" toLevel="1" name="Special Ability: Infinity Dagger">
-		<!-- Max HP +15%, Max MP +25%, Max CP +30%, M. Critical Rate +20, P. Critical Damage +20%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+	<skill id="3585" toLevel="1" name="Special Ability: Infinity Wing">
+		<!-- Blocks enemy's ability to use physical skills during a critical attack. Increases Max HP, Max MP, Max CP, Critical Rate. Inflicts additional damage during PvP. Reflects debuff attack back on enemy. -->
+		<icon>icon.weapon_the_dualsword_of_hero_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<effects>
+			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>78.7</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3586" toLevel="1" name="Restrain Physical Skills">
+		<!-- Temporarily blocks opponent's ability to use physical skills. -->
+		<icon>icon.skill1064</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>60</abnormalTime>
+		<abnormalType>SILENCE_PHYSICAL</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<activateRate>10</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="PhysicalMute" />
+		</effects>
+	</skill>
+	<skill id="3587" toLevel="1" name="Special Ability: Infinity Fang">
+		<!-- Inflicts Stun on the enemy for successful critical attack. Increases Maximum HP/MP/CP, evasion and damage during PvP while reflecting debuff inflicted to the enemy. -->
+		<icon>icon.weapon_the_fist_of_hero_i00</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>3.15</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalAttackDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDamageBonus">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>10</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3588" toLevel="1" name="Stun">
+		<!-- Momentarily immobile due to the Stun effect. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>25</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3589" toLevel="1" name="Special Ability: Infinity Stinger">
+		<!-- Blocks enemy's ability to use magic skills during a critical attack. Increases Max MP, Max CP, Atk. Spd., MP Recovery Rate, Critical Rate when attacking the enemy from behind. Inflicts additional damage during PvP. Restores HP by using some of the damage inflicted upon the enemy with a certain probability. -->
 		<icon>icon.weapon_the_dagger_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>15</amount>
-				<mode>PER</mode>
+			<effect name="CriticalRatePositionBonus">
+				<amount>22</amount>
+				<position>BACK</position>
 			</effect>
-			<effect name="MaxMp">
-				<amount>25</amount>
+			<effect name="VampiricAttack">
+				<amount>2</amount>
+				<chance>30</chance>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>3</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="CriticalRate">
-				<amount>20</amount>
+			<effect name="MpRegen">
+				<amount>0.51</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="CriticalDamage">
-				<amount>20</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3590" toLevel="1" name="Infinity Power - Immortal">
-		<!-- For 5 minutes, Deadly Stab Rate +20%. -->
-		<icon>icon.skill0410</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
-		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
-		<effects>
-			<effect name="FatalBlowRate">
 				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
+	<skill id="3590" toLevel="1" name="Restrain Magic Skills">
+		<!-- Magic skills are blocked momentarily. -->
+		<icon>icon.skill1064</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>SILENCE</abnormalType>
+		<abnormalVisualEffect>SILENCE</abnormalVisualEffect>
+		<activateRate>5</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<trait>DERANGEMENT</trait>
+		<effects>
+			<effect name="Mute" />
+		</effects>
+	</skill>
 	<skill id="3591" toLevel="1" name="Special Ability: Infinity Spear">
-		<!-- Max HP +20%, Max MP +15%, Max CP +30%, P. Atk. +10%, P. Critical Damage +10%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+		<!-- During a critical attack, this ability removes one or more of the enemy's buffs. It increases Max HP, Max CP, Atk. Spd., and Accuracy, and gives a bonus to damage inflicted on the enemy during PvP. It reflects debuffs targeted upon the character back upon the enemy. It enables the character to attack multiple enemies. -->
 		<icon>icon.weapon_the_pole_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>20</amount>
-				<mode>PER</mode>
+			<effect name="Accuracy">
+				<amount>4.89</amount>
+				<mode>DIFF</mode>
 			</effect>
-			<effect name="MaxMp">
-				<amount>15</amount>
+			<effect name="PhysicalAttackSpeed">
+				<amount>7</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
-				<amount>30</amount>
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PhysicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="CriticalDamage">
-				<amount>10</amount>
-				<mode>PER</mode>
+			<effect name="HitNumber">
+				<amount>8</amount>
+				<mode>DIFF</mode>
+				<weaponType>
+					<item>POLE</item>
+				</weaponType>
 			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>25</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReflectSkill">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+				<type>MAGIC</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3592" toLevel="1" name="Dispel">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<effects>
+			<!-- NOTE: The Cancel effect have been reduced in H5, value unconfirmed -->
+			<effect name="DispelByCategory">
+				<slot>BUFF</slot>
+				<rate>5</rate>
+				<max>2</max>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3593" toLevel="1" name="Special Ability: Infinity Bow">
-		<!-- Max HP +15%, Max MP +25%, Max CP +30%, Atk. Spd. +10%, PvP Damage +5%, and Skills MP Consumptions -5%. Can also uses weapon's special ability. -->
+		<!-- Decreases the enemy's Speed during a critical attack. Increases Max MP, Max CP, and damage inflicted during PvP. The skill cooldown is short. Has a chance to decrease MP Consumption. -->
 		<icon>icon.weapon_the_bow_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>15</amount>
+			<effect name="MaxCp">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
-				<amount>25</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicMpCost">
-				<amount>-5</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="PhysicalAttackSpeed">
+			<effect name="PvpPhysicalAttackDamageBonus">
 				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3594" toLevel="1" name="Infinity Power - Archery">
-		<!-- Movement Speed +15 and Max Range +100 for 5 minutes. -->
-		<icon>icon.skill0431</icon>
+	<skill id="3594" toLevel="1" name="Decrease Speed">
+		<!-- Temporarily decreases Speed. Effect 3. -->
+		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
+		<targetType>ENEMY_ONLY</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>7</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
 		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
+		<basicProperty>MAGIC</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>10</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
 		<effects>
 			<effect name="Speed">
-				<amount>15</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="PhysicalAttackRange">
-				<amount>100</amount>
-				<mode>DIFF</mode>
-				<weaponType>
-					<item>BOW</item>
-				</weaponType>
+				<amount>-30</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3595" toLevel="1" name="Special Ability: Infinity Scepter">
-		<!-- Max HP +10%, Max MP +25%, Max CP +30%, M. Atk. +10%, M. Critical Damage +10%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+		<!-- Regenerates HP by 100% when using a good magic. Increases Max HP, Max CP, M. Atk., and Critical Rate of a magic damage. Inflicts additional damage during PvP. Decreases MP Consumption and cancel rate when casting a magic. -->
 		<icon>icon.weapon_the_staff_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>10</amount>
+			<effect name="MagicalAttack">
+				<amount>29.67</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxMp">
-				<amount>25</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxCp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttack">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicCriticalDamage">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="ReduceCancel">
+				<amount>-106</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-4</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3596" toLevel="1" name="Infinity Power - Vampiric Mana">
-		<!-- For 5 min. increases Speed and the bow's range. -->
-		<icon>icon.skill1268</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>300</abnormalTime>
+	<skill id="3596" toLevel="1" name="Full Recovery">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY_NOT</targetType>
 		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MpVampiricAttack">
-				<amount>3</amount>
-				<chance>30</chance>
+			<effect name="HealPercent">
+				<power>100</power>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3597" toLevel="1" name="Special Ability: Infinity Rod">
-		<!-- Max HP +10%, Max MP +25%, Max CP +30%, M. Critical Rate +20, Casting Spd. +5%, and PvP Damage +5%. Can also uses weapon's special ability. -->
+		<!-- Regenerates HP by 100% when using a good magic. Increases Max MP, Max CP, Casting Spd, MP Recovery Rate, and damage inflicted during PvP. -->
 		<icon>icon.weapon_the_mace_of_hero_i00</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MaxHp">
-				<amount>10</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MaxMp">
-				<amount>25</amount>
+			<effect name="MagicalAttackSpeed">
+				<amount>15</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="MaxCp">
+				<amount>50</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
 				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicCriticalRate">
-				<amount>20</amount>
+			<effect name="MpRegen">
+				<amount>0.51</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>5</amount>
-				<mode>PER</mode>
-			</effect>
 			<effect name="PvpPhysicalAttackDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpMagicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="PvpPhysicalSkillDamageBonus">
-				<amount>5</amount>
+				<amount>10</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3598" toLevel="1" name="Infinity Power - Mana Limit">
-		<!-- For 30 sec. magic skills don't consume MP. -->
+	<skill id="3598" toLevel="1" name="Full Recovery">
 		<icon>icon.skill0000</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<operateType>A1</operateType>
+		<targetType>ENEMY_NOT</targetType>
 		<affectScope>SINGLE</affectScope>
-		<effectPoint>379</effectPoint>
-		<hitTime>1500</hitTime>
-		<isMagic>4</isMagic>
-		<reuseDelay>600000</reuseDelay>
+		<effectPoint>100</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
 		<effects>
-			<effect name="MagicMpCost">
-				<amount>-100</amount>
-				<mode>PER</mode>
-				<magicType>1</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-100</amount>
-				<mode>PER</mode>
-				<magicType>0</magicType>
-			</effect>
-			<effect name="MagicMpCost">
-				<amount>-100</amount>
-				<mode>PER</mode>
-				<magicType>3</magicType>
+			<effect name="HealPercent">
+				<power>100</power>
 			</effect>
 		</effects>
 	</skill>

@@ -188,7 +188,7 @@
 		</effects>
 	</skill>
 	<skill id="2011" toLevel="1" name="Wind Walk Potion">
-		<!-- Movement Speed has been increased by 20. -->
+		<!-- Increases Speed. Effect 1. -->
 		<icon>icon.etc_potion_green_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -209,7 +209,7 @@
 		</effects>
 	</skill>
 	<skill id="2012" toLevel="1" name="Haste Potion">
-		<!-- Atk. Spd. has been increased by 15%. -->
+		<!-- Temporarily increases Atk. Spd. Effect 1. -->
 		<icon>icon.etc_reagent_green_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -229,21 +229,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="2013" toLevel="2" name="Scroll of Escape">
+	<skill id="2013" toLevel="1" name="Scroll of Escape">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<hitTime>
-			<value level="1">20000</value>
-			<value level="2">1000</value>
-		</hitTime>
+		<hitTime>20000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>
-			<value level="1">736</value> <!-- Scroll of Escape -->
-			<value level="2">49087</value> <!-- Improved Scroll of Escape -->
-		</itemConsumeId>
+		<itemConsumeId>736</itemConsumeId> <!-- Scroll of Escape -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<conditions>
@@ -370,7 +364,7 @@
 		<magicLevel>1</magicLevel>
 		<reuseDelay>700</reuseDelay>
 	</skill>
-	<skill id="2024" toLevel="2" name="Firecracker">
+	<skill id="2024" toLevel="1" name="Firecracker">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -395,6 +389,16 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="2026" toLevel="1" name="Blessed Scroll: Enchant Weapon (S-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="2027" toLevel="1" name="Blessed Scroll: Enchant Weapon (A-grade)">
 		<icon>icon.skill0000</icon>
@@ -437,7 +441,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="2031" toLevel="1" name="Healing Potion">
-		<!-- HP Recovery Bonus has been increased. -->
+		<!-- Greatly increases HP recovery bonus. Effect 1. -->
 		<icon>icon.etc_lesser_potion_red_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -450,6 +454,7 @@
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
 		<effects>
 			<effect name="HealOverTime">
 				<power>8</power>
@@ -458,7 +463,7 @@
 		</effects>
 	</skill>
 	<skill id="2032" toLevel="1" name="Greater Healing Potion">
-		<!-- HP Recovery Bonus has been slightly increased. -->
+		<!-- Greatly increases HP recovery bonus. Effect 2. -->
 		<icon>icon.etc_potion_scarlet_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -471,6 +476,7 @@
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
 		<effects>
 			<effect name="HealOverTime">
 				<power>24</power>
@@ -489,7 +495,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="2034" toLevel="1" name="Greater Wind Walk Potion">
-		<!-- Movement Speed has been increased by 33. -->
+		<!-- Increases Speed. Effect 2. -->
 		<icon>icon.etc_lesser_potion_green_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -510,7 +516,7 @@
 		</effects>
 	</skill>
 	<skill id="2035" toLevel="1" name="Greater Haste Potion">
-		<!-- Atk. Spd. has been increased by 33%. -->
+		<!-- Increases Atk. Spd. Effect 2. -->
 		<icon>icon.etc_lesser_potion_purple_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -555,7 +561,7 @@
 		</effects>
 	</skill>
 	<skill id="2037" toLevel="1" name="Major Healing Potion">
-		<!-- HP Recovery Bonus has been greatly increased. -->
+		<!-- Greatly increases HP recovery bonus. Effect 3. -->
 		<icon>icon.etc_reagent_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -568,6 +574,7 @@
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
 		<effects>
 			<effect name="HealOverTime">
 				<power>50</power>
@@ -787,70 +794,70 @@
 		</effects>
 	</skill>
 	<skill id="2050" toLevel="1" name="Scroll: Guidance">
-		<!-- For 20 minutes, P. Accuracy +2. -->
+		<!-- Increases Accuracy. Effect 3. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>HIT_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3926</itemConsumeId>
+		<itemConsumeId>3926</itemConsumeId> <!-- L2Day - Guidance Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="Accuracy">
-				<amount>2</amount>
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2051" toLevel="1" name="Scroll: Death Whisper">
-		<!-- For 20 minutes, P. Critical Damage +25%. -->
+		<!-- Increases Critical Damage. Effect 3. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>CRITICAL_DMG_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3927</itemConsumeId>
+		<itemConsumeId>3927</itemConsumeId> <!-- L2Day - Death Whisper Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="CriticalDamage">
-				<amount>25</amount>
+				<amount>35</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2052" toLevel="1" name="Scroll: Focus">
-		<!-- For 20 minutes, P. Critical Rate +20%. -->
+		<!-- Increases Critical Rate. Effect 3. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>CRITICAL_PROB_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3928</itemConsumeId>
+		<itemConsumeId>3928</itemConsumeId> <!-- L2Day - Focus Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="CriticalRate">
-				<amount>20</amount>
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -861,42 +868,42 @@
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>CASTING_TIME_DOWN</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3929</itemConsumeId>
+		<itemConsumeId>3929</itemConsumeId> <!-- L2Day - Greater Acumen Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="MagicalAttackSpeed">
-				<amount>15</amount>
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2054" toLevel="1" name="Scroll: Haste">
-		<!-- Increases Atk. Spd. by 15% for 20 minutes. -->
+		<!-- Increases Atk. Spd. Effect 2. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3930</itemConsumeId>
+		<itemConsumeId>3930</itemConsumeId> <!-- L2Day - Haste Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
-				<amount>15</amount>
+				<amount>33</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -907,42 +914,42 @@
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>AVOID_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3931</itemConsumeId>
+		<itemConsumeId>3931</itemConsumeId> <!-- L2Day - Agility Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="PhysicalEvasion">
-				<amount>2</amount>
+				<amount>4</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="2056" toLevel="1" name="Scroll: Empower">
-		<!-- Increases M. Atk. by 55% for 20 minutes. -->
+		<!-- Increases M. Atk. Effect 3. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3932</itemConsumeId>
+		<itemConsumeId>3932</itemConsumeId> <!-- L2Day - Mystic Empower Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="MagicalAttack">
-				<amount>55</amount>
+				<amount>75</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
@@ -953,14 +960,14 @@
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PA_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3933</itemConsumeId>
+		<itemConsumeId>3933</itemConsumeId> <!-- L2Day - Might Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
@@ -976,19 +983,19 @@
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>SPEED_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3934</itemConsumeId>
+		<itemConsumeId>3934</itemConsumeId> <!-- L2Day - Windwalk Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
 			<effect name="Speed">
-				<amount>20</amount>
+				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
@@ -999,14 +1006,14 @@
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>3935</itemConsumeId>
+		<itemConsumeId>3935</itemConsumeId> <!-- L2Day - Shield Scroll -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
@@ -1083,19 +1090,19 @@
 		</effects>
 	</skill>
 	<skill id="2064" toLevel="1" name="Scroll: Mana Regeneration">
-		<!-- MP Recovery Bonus has been increased. -->
+		<!-- Greatly increases MP Recovery Bonus. Effect 4. -->
 		<icon>icon.etc_scroll_white_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>4</abnormalLevel>
-		<abnormalTime>1200</abnormalTime>
+		<abnormalTime>3600</abnormalTime>
 		<abnormalType>MP_REGEN_UP</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<itemConsumeCount>1</itemConsumeCount>
-		<itemConsumeId>29688</itemConsumeId>
+		<itemConsumeId>4218</itemConsumeId> <!-- L2 Day - Scroll of Mana Regeneration -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<effects>
@@ -1140,7 +1147,7 @@
 			<effect name="OpenChest" />
 		</effects>
 	</skill>
-	<skill id="2066" toLevel="1" name="Item - Fight Song Crystal">
+	<skill id="2066" toLevel="1" name="Item - Theme Sound Crystal">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1150,7 +1157,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="2067" toLevel="1" name="Item - Fight Song Crystal">
+	<skill id="2067" toLevel="1" name="Item - Theme Sound Crystal">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1210,7 +1217,7 @@
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="2073" toLevel="1" name="Item - Fight Song Crystal">
+	<skill id="2073" toLevel="1" name="Item - Theme Sound Crystal">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1266,7 +1273,7 @@
 		</effects>
 	</skill>
 	<skill id="2076" toLevel="1" name="Eva's Blessing">
-		<!-- Lung capacity has been increased by 400%. -->
+		<!-- Increase lung capacity. Effect 1. -->
 		<icon>icon.etc_bless_of_eva_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1287,7 +1294,7 @@
 		</effects>
 	</skill>
 	<skill id="2077" toLevel="1" name="Potion of Revenge">
-		<!-- P. Def. has been decreased by 17% and a certain amount of damage is reflected back to the enemy. -->
+		<!-- Decreases P. Def. and reflects a certain amount of damage back to the enemy. Effect 3. -->
 		<icon>icon.etc_potion_blue_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1420,6 +1427,28 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="2083" toLevel="1" name="Soulshot Compressed Package (S-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>1467</itemId>
+				<itemCount>300</itemCount>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="2084" toLevel="1" name="Spiritshot Compressed Package (No-grade)">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1526,6 +1555,28 @@
 		<effects>
 			<effect name="Restoration">
 				<itemId>2513</itemId>
+				<itemCount>300</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="2089" toLevel="1" name="Spiritshot Compressed Package (S-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>2514</itemId>
 				<itemCount>300</itemCount>
 			</effect>
 		</effects>
@@ -1640,6 +1691,28 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="2095" toLevel="1" name="Blessed Spiritshot Compressed Package (S-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>10</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>3952</itemId>
+				<itemCount>300</itemCount>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="2096" toLevel="1" name="Soul Crystal">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1655,6 +1728,49 @@
 		<magicLevel>1</magicLevel>
 		<mpConsume>26</mpConsume>
 		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="2097" toLevel="3" name="Sowing">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY_ONLY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>150</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>1800</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">10</value>
+			<value level="2">20</value>
+			<value level="3">30</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">4</value>
+			<value level="2">6</value>
+			<value level="3">8</value>
+		</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>10000</reuseDelay>
+		<effects>
+			<effect name="Sow" />
+		</effects>
+	</skill>
+	<skill id="2098" toLevel="1" name="Harvesting">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>NPC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>20</castRange>
+		<effectRange>400</effectRange>
+		<hitTime>500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>3</mpConsume>
+		<reuseDelay>1000</reuseDelay>
+		<effects>
+			<effect name="Harvesting" />
+		</effects>
 	</skill>
 	<skill id="2099" toLevel="1" name="Escape (5-minute)">
 		<icon>icon.skill0000</icon>

@@ -109,8 +109,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="4515" toLevel="1" name="Raid Curse">
-		<!-- The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 9 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
+	<skill id="4515" toLevel="2" name="Raid Curse">
+		<!-- Level 1: The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 9 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
+		<!-- Level 2: The curse of the Raid Boss guardian spirit temporarily petrifies the target, immobilizing it like a stone. This curse befalls those who attempt to challenge a raid boss who is 5 or more Lv.s below their own, or those who do not meet the requirements for the raid. The curse is irreversible. -->
 		<icon>icon.skill4111</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -132,9 +133,7 @@
 		<magicLevel>-1</magicLevel>
 		<specialLevel>-1</specialLevel>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="4516" toLevel="1" name="Orfen Heal">
@@ -232,7 +231,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4521" toLevel="1" name="Bow Attack Resistance">
+	<skill id="4521" toLevel="1" name="Bow Resistance">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -250,7 +249,7 @@
 		</effects>
 	</skill>
 	<skill id="4522" toLevel="1" name="Eye of Assassin">
-		<!-- Assassin's senses are greatly heightened. Greatly increases the P. Crit. Rate when attacking from behind. -->
+		<!-- Greatly increases the critical success rate of dagger and rapier skills. -->
 		<icon>icon.skill0016</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -470,7 +469,7 @@
 		</effects>
 	</skill>
 	<skill id="4533" toLevel="1" name="Dance of Resistance">
-		<!-- Momentarily decreases Movement Speed and P. Accuracy significantly. Dance of Inspiration can remove the curse. -->
+		<!-- Momentarily decreases Speed and Accuracy significantly. Dance of Inspiration can remove the curse. -->
 		<icon>icon.skill0272</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -498,7 +497,7 @@
 		</effects>
 	</skill>
 	<skill id="4534" toLevel="1" name="Nihilistic Dance">
-		<!-- Atk. Spd. decreases momentarily. and P. Evasion significantly. Dance of Fury can remove the curse. -->
+		<!-- Atk. Spd. decreases momentarily. and Evasion significantly. Dance of Fury can remove the curse. -->
 		<icon>icon.skill0275</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -554,7 +553,7 @@
 		</effects>
 	</skill>
 	<skill id="4536" toLevel="1" name="Song of Seduction">
-		<!-- Momentarily decreases Movement Speed and P. Accuracy significantly. Song of Wind can remove the curse. -->
+		<!-- Momentarily decreases Speed and Accuracy significantly. Song of Wind can remove the curse. -->
 		<icon>icon.skill0268</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -582,7 +581,7 @@
 		</effects>
 	</skill>
 	<skill id="4537" toLevel="1" name="Song of Sweet Whispers">
-		<!-- Atk. Spd. decreases momentarily. and P. Evasion significantly. Song of Water can remove the curse. -->
+		<!-- Atk. Spd. decreases momentarily. and Evasion significantly. Song of Water can remove the curse. -->
 		<icon>icon.skill0266</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -638,7 +637,7 @@
 		</effects>
 	</skill>
 	<skill id="4539" toLevel="1" name="Vague Curse">
-		<!-- Momentarily decreases Movement Speed and P. Accuracy significantly. Guidance spell can remove the curse. -->
+		<!-- Momentarily decreases Speed and Accuracy significantly. Guidance spell can remove the curse. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -667,7 +666,7 @@
 		</effects>
 	</skill>
 	<skill id="4540" toLevel="1" name="Curse of Weakness">
-		<!-- P. Def. decreases momentarily. and Movement Speed significantly. Shield spell can remove the curse. -->
+		<!-- P. Def. decreases momentarily. and Speed significantly. Shield spell can remove the curse. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -885,16 +884,16 @@
 		<magicLevel>99</magicLevel>
 	</skill>
 	<skill id="4551" toLevel="10" name="Hot Springs Rheumatism">
-		<!-- Level 1: Infected with Hot Springs Flu. P. Atk. momentarily increased by 3. -->
-		<!-- Level 2: Infected with Hot Springs Flu. Momentarily P. Critical Rate increased by 5 and P. Def. decreased by 4%. -->
-		<!-- Level 3: Infected with Hot Springs Flu. Momentarily P. Critical Rate increased by 5 and P. Def. decreased by 4%. -->
-		<!-- Level 4: Infected with Hot Springs Flu. Momentarily P. Critical Rate increased by 5 and P. Def. decreased by 4%. -->
-		<!-- Level 5: Infected with Hot Springs Flu. Momentarily P. Critical Rate increased by 5 and P. Def. decreased by 4%. -->
-		<!-- Level 6: Infected with Hot Springs Flu. P. Def. momentarily decreased by 8%. -->
-		<!-- Level 7: Infected with Hot Springs Flu. P. Def. momentarily decreased by 8%. -->
-		<!-- Level 8: Infected with Hot Springs Flu. P. Def. momentarily decreased by 8%. -->
-		<!-- Level 9: Infected with Hot Springs Flu. P. Def. momentarily decreased by 8%. -->
-		<!-- Level 10: Infected with Hot Springs Flu. P. Def. momentarily decreased by 8%. -->
+		<!-- Level 1: Infected with Hot Springs Rheumatism. While afflicted, Critical Rate increases temporarily. Effect 1. -->
+		<!-- Level 2: Infected with Hot Springs Rheumatism. While afflicted, Critical Rate increases and P. Def. decreases temporarily. Effect 2. -->
+		<!-- Level 3: Infected with Hot Springs Rheumatism. While afflicted, Critical Rate increases and P. Def. decreases temporarily. Effect 3. -->
+		<!-- Level 4: Infected with Hot Springs Rheumatism. While afflicted, Critical Rate increases and P. Def. decreases temporarily. Effect 4. -->
+		<!-- Level 5: Infected with Hot Springs Rheumatism. While afflicted, Critical Rate increases and P. Def. decreases temporarily. Effect 5. -->
+		<!-- Level 6: Infected with Hot Springs Rheumatism. While afflicted, P. Def. decreases temporarily. Effect 6. -->
+		<!-- Level 7: Infected with Hot Springs Rheumatism. While afflicted, P. Def. decreases temporarily. Effect 7. -->
+		<!-- Level 8: Infected with Hot Springs Rheumatism. While afflicted, P. Def. decreases temporarily. Effect 8. -->
+		<!-- Level 9: Infected with Hot Springs Rheumatism. While afflicted, P. Def. decreases temporarily. Effect 9. -->
+		<!-- Level 10: Infected with Hot Springs Rheumatism. While afflicted, P. Def. decreases temporarily. Effect 10. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -959,16 +958,16 @@
 		</effects>
 	</skill>
 	<skill id="4552" toLevel="10" name="Hot Springs Cholera">
-		<!-- Level 1: Infected with Hot Springs Flu. P. Accuracy momentarily increased by 3. -->
-		<!-- Level 2: Infected with Hot Springs Flu. Momentarily P. Accuracy increased by 6 and P. Evasion decreased by 3. -->
-		<!-- Level 3: Infected with Hot Springs Flu. Momentarily P. Accuracy increased by 6 and P. Evasion decreased by 3. -->
-		<!-- Level 4: Infected with Hot Springs Flu. Momentarily P. Accuracy increased by 6 and P. Evasion decreased by 3. -->
-		<!-- Level 5: Infected with Hot Springs Flu. Momentarily P. Accuracy increased by 6 and P. Evasion decreased by 3. -->
-		<!-- Level 6: Infected with Hot Springs Flu. P. Evasion momentarily decreased by 5. -->
-		<!-- Level 7: Infected with Hot Springs Flu. P. Evasion momentarily decreased by 5. -->
-		<!-- Level 8: Infected with Hot Springs Flu. P. Evasion momentarily decreased by 5. -->
-		<!-- Level 9: Infected with Hot Springs Flu. P. Evasion momentarily decreased by 5. -->
-		<!-- Level 10: Infected with Hot Springs Flu. P. Evasion momentarily decreased by 5. -->
+		<!-- Level 1: Infected with Hot Springs Cholera. While afflicted, Accuracy increases temporarily. Effect 1. -->
+		<!-- Level 2: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 2. -->
+		<!-- Level 3: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 3. -->
+		<!-- Level 4: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 4. -->
+		<!-- Level 5: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 5. -->
+		<!-- Level 6: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 6. -->
+		<!-- Level 7: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 7. -->
+		<!-- Level 8: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 8. -->
+		<!-- Level 9: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 9. -->
+		<!-- Level 10: Infected with Hot Springs Cholera. While afflicted, Accuracy increases and Evasion decreases temporarily. Effect 10. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1033,16 +1032,16 @@
 		</effects>
 	</skill>
 	<skill id="4553" toLevel="10" name="Hot Springs Flu">
-		<!-- Level 1: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases for a set time. -->
-		<!-- Level 2: Infected with Hot Springs Flu. Momentarily Atk. Spd. increased by 4% and P. Atk. decreased. -->
-		<!-- Level 3: Infected with Hot Springs Flu. Momentarily Atk. Spd. increased by 4% and P. Atk. decreased. -->
-		<!-- Level 4: Infected with Hot Springs Flu. Momentarily Atk. Spd. increased by 4% and P. Atk. decreased. -->
-		<!-- Level 5: Infected with Hot Springs Flu. Momentarily Atk. Spd. increased by 4% and P. Atk. decreased. -->
-		<!-- Level 6: Infected with Hot Springs Flu. P. Atk. momentarily decreased by 8%. -->
-		<!-- Level 7: Infected with Hot Springs Flu. P. Atk. momentarily decreased by 8%. -->
-		<!-- Level 8: Infected with Hot Springs Flu. P. Atk. momentarily decreased by 8%. -->
-		<!-- Level 9: Infected with Hot Springs Flu. P. Atk. momentarily decreased by 8%. -->
-		<!-- Level 10: Infected with Hot Springs Flu. P. Atk. momentarily decreased by 8%. -->
+		<!-- Level 1: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases temporarily. Effect 1. -->
+		<!-- Level 2: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 2. -->
+		<!-- Level 3: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 3. -->
+		<!-- Level 4: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 4. -->
+		<!-- Level 5: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 5. -->
+		<!-- Level 6: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 6. -->
+		<!-- Level 7: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 7. -->
+		<!-- Level 8: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 8. -->
+		<!-- Level 9: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 9. -->
+		<!-- Level 10: Infected with Hot Springs Flu. While afflicted, Atk. Spd. increases and P. Atk. decreases temporarily. Effect 10. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1107,16 +1106,16 @@
 		</effects>
 	</skill>
 	<skill id="4554" toLevel="10" name="Hot Spring Malaria">
-		<!-- Level 1: Infected with Hot Springs Flu. Casting Spd. momentarily decreased by 4%. -->
-		<!-- Level 2: Infected with Hot Springs Flu. Momentarily Casting Spd. decreased by 8% and MP Consumption increased. -->
-		<!-- Level 3: Infected with Hot Springs Flu. Momentarily Casting Spd. decreased by 8% and MP Consumption increased. -->
-		<!-- Level 4: Infected with Hot Springs Flu. Momentarily Casting Spd. decreased by 8% and MP Consumption increased. -->
-		<!-- Level 5: Infected with Hot Springs Flu. Momentarily Casting Spd. decreased by 8% and MP Consumption increased. -->
-		<!-- Level 6: Infected with Hot Springs Flu. MP Consumption momentarily increased. -->
-		<!-- Level 7: Infected with Hot Springs Flu. MP Consumption momentarily increased. -->
-		<!-- Level 8: Infected with Hot Springs Flu. MP Consumption momentarily increased. -->
-		<!-- Level 9: Infected with Hot Springs Flu. MP Consumption momentarily increased. -->
-		<!-- Level 10: Infected with Hot Springs Flu. MP Consumption momentarily increased. -->
+		<!-- Level 1: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases temporarily. Effect 1. -->
+		<!-- Level 2: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 2. -->
+		<!-- Level 3: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 3. -->
+		<!-- Level 4: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 4. -->
+		<!-- Level 5: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 5. -->
+		<!-- Level 6: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 6. -->
+		<!-- Level 7: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 7. -->
+		<!-- Level 8: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 8. -->
+		<!-- Level 9: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 9. -->
+		<!-- Level 10: Infected with Hot Springs Malaria. While afflicted, Casting Spd. increases and MP Consumption decreases temporarily. Effect 10. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1188,11 +1187,7 @@
 		<magicLevel>75</magicLevel>
 		<effects>
 			<effect name="DefenceTrait">
-				<POISON>20</POISON>
-				<HOLD>20</HOLD>
-				<PARALYZE>20</PARALYZE>
-				<BLEED>20</BLEED>
-				<SHOCK>20</SHOCK>
+				<CHANGEBODY>20</CHANGEBODY>
 			</effect>
 		</effects>
 	</skill>
@@ -1376,6 +1371,7 @@
 			<value level="11">20</value>
 			<value level="12">20</value>
 		</mpConsume>
+		<nextAction>CAST</nextAction>
 		<effects>
 			<effect name="MagicalDamage">
 				<power>
@@ -2282,8 +2278,8 @@
 		</effects>
 	</skill>
 	<skill id="4575" toLevel="2" name="Haste">
-		<!-- Level 1: Atk. Spd. has been increased by 15%. -->
-		<!-- Level 2: Atk. Spd. has been increased by 33%. -->
+		<!-- Level 1: Atk. Spd. is increased by 15%. Effect 1. -->
+		<!-- Level 2: Atk. Spd. is increased by 33%. Effect 2. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2325,9 +2321,9 @@
 		</effects>
 	</skill>
 	<skill id="4576" toLevel="3" name="Reflect Damage">
-		<!-- Level 1: 10% of received damage will be deflected. -->
-		<!-- Level 2: 15% of received damage will be deflected. -->
-		<!-- Level 3: 20% of received damage will be deflected. -->
+		<!-- Level 1: Reflects 10% of received damage. Effect 1. -->
+		<!-- Level 2: Reflects 15% of received damage. Effect 2. -->
+		<!-- Level 3: Reflects 20% of received damage. Effect 3. -->
 		<icon>icon.skill0086</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2372,8 +2368,19 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4577" toLevel="12" name="Decrease P. Accuracy">
-		<!-- P. Accuracy has been momentarily decreased. -->
+	<skill id="4577" toLevel="12" name="Decrease Accuracy">
+		<!-- Level 1: Accuracy decreases momentarily. Effect 1. -->
+		<!-- Level 2: Accuracy decreases momentarily. Effect 2. -->
+		<!-- Level 3: Accuracy decreases momentarily. Effect 2. -->
+		<!-- Level 4: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 5: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 6: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 7: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 8: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 9: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 10: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 11: Accuracy decreases momentarily. Effect 3. -->
+		<!-- Level 12: Accuracy decreases momentarily. Effect 3. -->
 		<icon>icon.skill1222</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2480,9 +2487,7 @@
 		<mpConsume>58</mpConsume>
 		<mpInitialConsume>15</mpInitialConsume>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 			<effect name="DamageBlock">
 				<type>BLOCK_HP</type>
 			</effect>
@@ -2498,7 +2503,18 @@
 		</effects>
 	</skill>
 	<skill id="4579" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2593,12 +2609,23 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4580" toLevel="12" name="Decrease P. Atk.">
-		<!-- P. Atk. has been momentarily decreased by 17%. -->
+		<!-- Level 1: P. Atk. decreases momentarily. Effect 1. -->
+		<!-- Level 2: P. Atk. decreases momentarily. Effect 2. -->
+		<!-- Level 3: P. Atk. decreases momentarily. Effect 2. -->
+		<!-- Level 4: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 5: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 6: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 7: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 8: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 9: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 10: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 11: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 12: P. Atk. decreases momentarily. Effect 3. -->
 		<icon>icon.skill4037</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2678,7 +2705,7 @@
 		</effects>
 	</skill>
 	<skill id="4581" toLevel="12" name="Hold">
-		<!-- Afflicted with Hold and unable to move momentarily. -->
+		<!-- Inflicted with hold and unable to move momentarily. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2731,7 +2758,18 @@
 		</effects>
 	</skill>
 	<skill id="4582" toLevel="12" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 2. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 3. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 4. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 5. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 6. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 10: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 11: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 12: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2809,12 +2847,23 @@
 					<value level="11">68</value>
 					<value level="12">68</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4583" toLevel="12" name="Decrease Speed">
-		<!-- Movement Speed has been momentarily decreased by 10%. -->
+		<!-- Level 1: Speed decreases momentarily. Effect 1. -->
+		<!-- Level 2: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 3: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 4: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 5: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 6: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 7: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 8: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 9: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 10: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 11: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 12: Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2893,8 +2942,19 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4584" toLevel="12" name="Stunned and P. Def. decreased.">
-		<!-- P. Def. has been momentarily decreased and immobile due to stun. -->
+	<skill id="4584" toLevel="12" name="P. Def.-decreasing Stun">
+		<!-- Level 1: State of momentarily decreased defense and immobility due to the Stun effect. Effect 1 -->
+		<!-- Level 2: State of momentarily decreased defense and immobility due to the Stun effect. Effect 2 -->
+		<!-- Level 3: State of momentarily decreased defense and immobility due to the Stun effect. Effect 2 -->
+		<!-- Level 4: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 5: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 6: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 7: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 8: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 9: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 10: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 11: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
+		<!-- Level 12: State of momentarily decreased defense and immobility due to the Stun effect. Effect 3 -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2971,7 +3031,7 @@
 		<effects>
 			<effect name="PhysicalDamage" />
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="PhysicalDefence">
 				<amount>
@@ -2993,9 +3053,9 @@
 		</effects>
 	</skill>
 	<skill id="4585" toLevel="3" name="Berserker Spirit">
-		<!-- Level 1: P. Atk. +5%, M. Atk. +10%, Atk. Spd. +2, Casting Spd. +13%, and Movement Speed +10%. P. Def. -5%, M. Def. -5%, and P. Evasion -5. -->
-		<!-- Level 2: P. Atk. +5%, M. Atk. +10%, Atk. Spd. +2, Casting Spd. +18%, and Movement Speed +10%. P. Def. -5%, M. Def. -5%, and P. Evasion -5. -->
-		<!-- Level 3: P. Atk. +8%, M. Atk. +16%, Atk. Spd. +4, Casting Spd. +24%, and Movement Speed +16%. P. Def. -8%, M. Def. -8%, and P. Evasion -8. -->
+		<!-- Level 1: P. Def. decreases momentarily by 5%, M. Def. by 10%, and Evasion by 2. Increases P. Atk. by 13%, M. Atk. by 10%, Atk. Spd. by 5%, Casting Spd. by 5%, and Speed by 5. -->
+		<!-- Level 2: P. Def. decreases momentarily by 5%, M. Def. by 10%, and Evasion by 2. Increases P. Atk. by 18%, M. Atk. by 10%, Atk. Spd. by 5%, Casting Spd. by 5%, and Speed by 5. -->
+		<!-- Level 3: P. Def. decreases momentarily by 8%, M. Def. by 16%, and Evasion by 4. Increases P. Atk. by 24%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3092,8 +3152,19 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4586" toLevel="12" name="Decrease P. Evasion">
-		<!-- P. Evasion has been momentarily decreased by 10. -->
+	<skill id="4586" toLevel="12" name="Decrease Evasion">
+		<!-- Level 1: Evasion decreases momentarily. Effect 1. -->
+		<!-- Level 2: Evasion decreases momentarily. Effect 2. -->
+		<!-- Level 3: Evasion decreases momentarily. Effect 2. -->
+		<!-- Level 4: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 5: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 6: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 7: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 8: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 9: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 10: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 11: Evasion decreases momentarily. Effect 3. -->
+		<!-- Level 12: Evasion decreases momentarily. Effect 3. -->
 		<icon>icon.skill1222</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3174,7 +3245,18 @@
 		</effects>
 	</skill>
 	<skill id="4587" toLevel="12" name="Decrease P. Atk.">
-		<!-- P. Atk. has been momentarily decreased by 17%. -->
+		<!-- Level 1: P. Atk. decreases momentarily. Effect 1. -->
+		<!-- Level 2: P. Atk. decreases momentarily. Effect 2. -->
+		<!-- Level 3: P. Atk. decreases momentarily. Effect 2. -->
+		<!-- Level 4: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 5: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 6: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 7: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 8: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 9: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 10: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 11: P. Atk. decreases momentarily. Effect 3. -->
+		<!-- Level 12: P. Atk. decreases momentarily. Effect 3. -->
 		<icon>icon.skill4037</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3340,7 +3422,18 @@
 		</effects>
 	</skill>
 	<skill id="4589" toLevel="12" name="Decrease Speed">
-		<!-- Movement Speed has been momentarily decreased by 10%. -->
+		<!-- Level 1: Speed decreases momentarily. Effect 1. -->
+		<!-- Level 2: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 3: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 4: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 5: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 6: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 7: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 8: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 9: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 10: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 11: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 12: Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3425,7 +3518,18 @@
 		</effects>
 	</skill>
 	<skill id="4590" toLevel="12" name="Decrease Speed">
-		<!-- Movement Speed has been momentarily decreased by 10%. -->
+		<!-- Level 1: Speed decreases momentarily. Effect 1. -->
+		<!-- Level 2: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 3: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 4: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 5: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 6: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 7: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 8: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 9: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 10: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 11: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 12: Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3510,7 +3614,18 @@
 		</effects>
 	</skill>
 	<skill id="4591" toLevel="12" name="Decrease Speed">
-		<!-- Movement Speed has been momentarily decreased by 10%. -->
+		<!-- Level 1: Speed decreases momentarily. Effect 1. -->
+		<!-- Level 2: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 3: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 4: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 5: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 6: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 7: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 8: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 9: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 10: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 11: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 12: Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3595,7 +3710,18 @@
 		</effects>
 	</skill>
 	<skill id="4592" toLevel="12" name="Decrease P. Def.">
-		<!-- P. Def has been momentarily decreased. -->
+		<!-- Level 1: P. Def. decreases momentarily. Effect 1. -->
+		<!-- Level 2: P. Def. decreases momentarily. Effect 2. -->
+		<!-- Level 3: P. Def. decreases momentarily. Effect 2. -->
+		<!-- Level 4: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 5: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 6: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 7: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 8: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 9: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 10: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 11: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 12: P. Def. decreases momentarily. Effect 3. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3678,7 +3804,18 @@
 		</effects>
 	</skill>
 	<skill id="4593" toLevel="12" name="Decrease P. Def.">
-		<!-- P. Def has been momentarily decreased. -->
+		<!-- Level 1: P. Def. decreases momentarily. Effect 1. -->
+		<!-- Level 2: P. Def. decreases momentarily. Effect 2. -->
+		<!-- Level 3: P. Def. decreases momentarily. Effect 2. -->
+		<!-- Level 4: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 5: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 6: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 7: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 8: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 9: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 10: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 11: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 12: P. Def. decreases momentarily. Effect 3. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3761,7 +3898,18 @@
 		</effects>
 	</skill>
 	<skill id="4594" toLevel="12" name="Decrease P. Def.">
-		<!-- P. Def has been momentarily decreased. -->
+		<!-- Level 1: P. Def. decreases momentarily. Effect 1. -->
+		<!-- Level 2: P. Def. decreases momentarily. Effect 2. -->
+		<!-- Level 3: P. Def. decreases momentarily. Effect 2. -->
+		<!-- Level 4: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 5: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 6: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 7: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 8: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 9: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 10: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 11: P. Def. decreases momentarily. Effect 3. -->
+		<!-- Level 12: P. Def. decreases momentarily. Effect 3. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3898,7 +4046,18 @@
 		</effects>
 	</skill>
 	<skill id="4596" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3977,12 +4136,23 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4597" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -4061,12 +4231,23 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4598" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -4145,12 +4326,23 @@
 					<value level="11">71</value>
 					<value level="12">71</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4599" toLevel="12" name="Decrease Speed">
-		<!-- Movement Speed has been momentarily decreased. -->
+		<!-- Level 1: Speed decreases momentarily. Effect 1. -->
+		<!-- Level 2: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 3: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 4: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 5: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 6: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 7: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 8: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 9: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 10: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 11: Speed decreases momentarily. Effect 3. -->
+		<!-- Level 12: Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>

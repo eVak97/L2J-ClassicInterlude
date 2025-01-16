@@ -14,6 +14,33 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>30000</reuseDelay>
 	</skill>
+	<skill id="5401" toLevel="1" name="Stun">
+		<!-- Momentarily immobile due to the Stun effect. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2</abnormalTime>
+		<abnormalType>FLY_AWAY</abnormalType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>-100</effectPoint>
+		<hitTime>5800</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="FlyAway">
+				<radius>300</radius>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="5402" toLevel="1" name="Presentation - Baylor 2">
 		<!-- Baylor - Magic Skill1 -->
 		<icon>icon.skill0000</icon>
@@ -210,20 +237,40 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="5417" toLevel="1" name="Invincibility">
-		<!-- Invincible against normal attacks, skills, and debuff cancel/debuffs. -->
+		<!-- Invincible against general attack and skill, buff/de-buff. -->
 		<icon>icon.skill0000</icon>
 		<operateType>T</operateType>
 		<targetType>SELF</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY_SPECIAL</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5418" toLevel="1" name="Invincibility">
-		<!-- Invincible against normal attacks, skills, and debuff cancel/debuffs. -->
+		<!-- Invincible against general attack and skill, buff/de-buff. -->
 		<icon>icon.skill0000</icon>
 		<operateType>T</operateType>
 		<targetType>SELF</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY_SPECIAL</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5419" toLevel="1" name="Invincible Blow">
 		<!-- Crystalline Golem -->
@@ -240,12 +287,22 @@
 		<magicLevel>85</magicLevel>
 	</skill>
 	<skill id="5420" toLevel="1" name="Invincibility">
-		<!-- Invincible against normal attacks, skills, and debuff cancel/debuffs. -->
+		<!-- Invincible against general attack and skill, buff/de-buff. -->
 		<icon>icon.skill0000</icon>
 		<operateType>T</operateType>
 		<targetType>SELF</targetType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="BlockAbnormalSlot">
+				<slot>INVINCIBILITY_SPECIAL</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5422" toLevel="12" name="Flame">
 		<!-- Body is on fire. HP continually decreases. -->
@@ -298,7 +355,7 @@
 					<value level="11">113.38</value>
 					<value level="12">123.15</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="MagicalAttack">
 				<amount>
@@ -375,7 +432,7 @@
 					<value level="11">324</value>
 					<value level="12">354</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -384,7 +441,18 @@
 		</effects>
 	</skill>
 	<skill id="5424" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -435,7 +503,7 @@
 					<value level="11">265</value>
 					<value level="12">295</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-30</amount>
@@ -468,7 +536,7 @@
 		</effects>
 	</skill>
 	<skill id="5426" toLevel="1" name="Counter Chance">
-		<!-- Skill Casting Spd. and MP Consumption decreased. -->
+		<!-- Increases Casting Spd. and decreases Skill MP Consumption. -->
 		<icon>icon.skill0532</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -499,7 +567,7 @@
 		</effects>
 	</skill>
 	<skill id="5427" toLevel="1" name="Counter Rapid Shot">
-		<!-- Bow Atk. Spd. increased. -->
+		<!-- Bow/Crossbow Atk. Spd. has been increased. -->
 		<icon>icon.skill0533</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -589,7 +657,7 @@
 		</effects>
 	</skill>
 	<skill id="5431" toLevel="1" name="Decrease Speed">
-		<!-- Atk. Spd. and Casting Spd. decreases for a set time. -->
+		<!-- Atk. Spd. and Casting Spd. decreases temporarily. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -653,12 +721,12 @@
 		<effects>
 			<effect name="PhysicalDamage" />
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 		<endEffects>
 			<effect name="CallSkill">
-				<skillId>5494</skillId>
+				<skillId>5494</skillId> <!-- Gust -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
@@ -688,17 +756,17 @@
 		<effects>
 			<effect name="PhysicalDamage" />
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 		<endEffects>
 			<effect name="CallSkill">
-				<skillId>5494</skillId>
+				<skillId>5494</skillId> <!-- Gust -->
 				<skillLevel>1</skillLevel>
 			</effect>
 		</endEffects>
 	</skill>
-	<skill id="5436" toLevel="1" name="Recovery Bonus Increase">
+	<skill id="5436" toLevel="1" name="Increase Recovery Rate">
 		<!-- HP and MP recovery bonus are increased. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
@@ -979,7 +1047,7 @@
 		</effects>
 	</skill>
 	<skill id="5444" toLevel="2" name="Maul">
-		<!-- Attacks with fore-claws to create wound. -->
+		<!-- Attacks with fore-claws to create wound. Power 1.. Effect 3. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1013,8 +1081,8 @@
 		<effects>
 			<effect name="PhysicalDamage">
 				<power>
-					<value level="1">917</value>
-					<value level="2">1084</value>
+					<value level="1">1</value>
+					<value level="2">1</value>
 				</power>
 			</effect>
 			<effect name="DamOverTime">
@@ -1022,7 +1090,7 @@
 					<value level="1">62</value>
 					<value level="2">67</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1078,51 +1146,51 @@
 		</effects>
 	</skill>
 	<skill id="5446" toLevel="45" name="Soul Expansion">
-		<!-- Level 1: Soul increased to Lv. 1 -->
-		<!-- Level 2: Soul increased to Lv. 2 -->
-		<!-- Level 3: Soul increased to Lv. 3 -->
-		<!-- Level 4: Soul increased to Lv. 4 -->
-		<!-- Level 5: Soul increased to Lv. 5 -->
-		<!-- Level 6: Soul increased to Lv. 6 -->
-		<!-- Level 7: Soul increased to Lv. 7 -->
-		<!-- Level 8: Soul increased to Lv. 8 -->
-		<!-- Level 9: Soul increased to Lv. 9 -->
-		<!-- Level 10: Soul increased to Lv. 10 -->
-		<!-- Level 11: Soul increased to Lv. 11 -->
-		<!-- Level 12: Soul increased to Lv. 12 -->
-		<!-- Level 13: Soul increased to Lv. 13 -->
-		<!-- Level 14: Soul increased to Lv. 14 -->
-		<!-- Level 15: Soul increased to Lv. 15 -->
-		<!-- Level 16: Soul increased to Lv. 16 -->
-		<!-- Level 17: Soul increased to Lv. 17 -->
-		<!-- Level 18: Soul increased to Lv. 18 -->
-		<!-- Level 19: Soul increased to Lv. 19 -->
-		<!-- Level 20: Soul increased to Lv. 20 -->
-		<!-- Level 21: Soul increased to Lv. 21 -->
-		<!-- Level 22: Soul increased to Lv. 22 -->
-		<!-- Level 23: Soul increased to Lv. 23 -->
-		<!-- Level 24: Soul increased to Lv. 24 -->
-		<!-- Level 25: Soul increased to Lv. 25 -->
-		<!-- Level 26: Soul increased to Lv. 26 -->
-		<!-- Level 27: Soul increased to Lv. 27 -->
-		<!-- Level 28: Soul increased to Lv. 28 -->
-		<!-- Level 29: Soul increased to Lv. 29 -->
-		<!-- Level 30: Soul increased to Lv. 30 -->
-		<!-- Level 31: Soul increased to Lv. 31 -->
-		<!-- Level 32: Soul increased to Lv. 32 -->
-		<!-- Level 33: Soul increased to Lv. 33 -->
-		<!-- Level 34: Soul increased to Lv. 34 -->
-		<!-- Level 35: Soul increased to Lv. 35 -->
-		<!-- Level 36: Soul increased to Lv. 36 -->
-		<!-- Level 37: Soul increased to Lv. 37 -->
-		<!-- Level 38: Soul increased to Lv. 38 -->
-		<!-- Level 39: Soul increased to Lv. 39 -->
-		<!-- Level 40: Soul increased to Lv. 40 -->
-		<!-- Level 41: Soul increased to Lv. 41 -->
-		<!-- Level 42: Soul increased to Lv. 42 -->
-		<!-- Level 43: Soul increased to Lv. 43 -->
-		<!-- Level 44: Soul increased to Lv. 44 -->
-		<!-- Level 45: Soul increased to Lv. 45 -->
+		<!-- Level 1: Soul increased to Lv. 1. -->
+		<!-- Level 2: Soul increased to Lv. 2. -->
+		<!-- Level 3: Soul increased to Lv. 3. -->
+		<!-- Level 4: Soul increased to Lv. 4. -->
+		<!-- Level 5: Soul increased to Lv. 5. -->
+		<!-- Level 6: Soul increased to Lv. 6. -->
+		<!-- Level 7: Soul increased to Lv. 7. -->
+		<!-- Level 8: Soul increased to Lv. 8. -->
+		<!-- Level 9: Soul increased to Lv. 9. -->
+		<!-- Level 10: Soul increased to Lv. 10. -->
+		<!-- Level 11: Soul increased to Lv. 11. -->
+		<!-- Level 12: Soul increased to Lv. 12. -->
+		<!-- Level 13: Soul increased to Lv. 13. -->
+		<!-- Level 14: Soul increased to Lv. 14. -->
+		<!-- Level 15: Soul increased to Lv. 15. -->
+		<!-- Level 16: Soul increased to Lv. 16. -->
+		<!-- Level 17: Soul increased to Lv. 17. -->
+		<!-- Level 18: Soul increased to Lv. 18. -->
+		<!-- Level 19: Soul increased to Lv. 19. -->
+		<!-- Level 20: Soul increased to Lv. 20. -->
+		<!-- Level 21: Soul increased to Lv. 21. -->
+		<!-- Level 22: Soul increased to Lv. 22. -->
+		<!-- Level 23: Soul increased to Lv. 23. -->
+		<!-- Level 24: Soul increased to Lv. 24. -->
+		<!-- Level 25: Soul increased to Lv. 25. -->
+		<!-- Level 26: Soul increased to Lv. 26. -->
+		<!-- Level 27: Soul increased to Lv. 27. -->
+		<!-- Level 28: Soul increased to Lv. 28. -->
+		<!-- Level 29: Soul increased to Lv. 29. -->
+		<!-- Level 30: Soul increased to Lv. 30. -->
+		<!-- Level 31: Soul increased to Lv. 31. -->
+		<!-- Level 32: Soul increased to Lv. 32. -->
+		<!-- Level 33: Soul increased to Lv. 33. -->
+		<!-- Level 34: Soul increased to Lv. 34. -->
+		<!-- Level 35: Soul increased to Lv. 35. -->
+		<!-- Level 36: Soul increased to Lv. 36. -->
+		<!-- Level 37: Soul increased to Lv. 37. -->
+		<!-- Level 38: Soul increased to Lv. 38. -->
+		<!-- Level 39: Soul increased to Lv. 39. -->
+		<!-- Level 40: Soul increased to Lv. 40. -->
+		<!-- Level 41: Soul increased to Lv. 41. -->
+		<!-- Level 42: Soul increased to Lv. 42. -->
+		<!-- Level 43: Soul increased to Lv. 43. -->
+		<!-- Level 44: Soul increased to Lv. 44. -->
+		<!-- Level 45: Soul increased to Lv. 45. -->
 		<icon>
 			<value level="1">icon.skill5446_1</value>
 			<value level="2">icon.skill5446_2</value>
@@ -1204,7 +1272,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1222,7 +1290,7 @@
 		</effects>
 	</skill>
 	<skill id="5449" toLevel="1" name="Weak Constitution">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1238,12 +1306,18 @@
 		<magicLevel>79</magicLevel>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5450" toLevel="7" name="Thin Skin">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1296,7 +1370,7 @@
 					<value level="6">335</value>
 					<value level="7">335</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1331,7 +1405,7 @@
 		</effects>
 	</skill>
 	<skill id="5452" toLevel="3" name="Spite">
-		<!-- Greatly increases the amount of P. Critical Damage received -->
+		<!-- Greatly increases the amount of Critical Damage received -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1584,6 +1658,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>FIRE</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5463" toLevel="1" name="Water Attack">
 		<!-- Strong against the element of water. -->
@@ -1591,6 +1671,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>WATER</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5464" toLevel="1" name="Wind Attack">
 		<!-- Strong against the element of wind. -->
@@ -1598,6 +1684,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>WIND</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5465" toLevel="1" name="Earth Attack">
 		<!-- Strong against the element of earth. -->
@@ -1605,6 +1697,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>EARTH</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5466" toLevel="1" name="Holy Attacks">
 		<!-- Strong against the holy elemental. -->
@@ -1612,6 +1710,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>HOLY</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5467" toLevel="1" name="Dark Attack">
 		<!-- Strong against the dark elemental. -->
@@ -1619,6 +1723,12 @@
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="DefenceAttribute">
+				<amount>100</amount>
+				<attribute>DARK</attribute>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5468" toLevel="12" name="Fire Shot">
 		<icon>icon.skill0000</icon>
@@ -1681,70 +1791,70 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5469" toLevel="1" name="Lv. 22 Raid Boss">
+	<skill id="5469" toLevel="1" name="Raid Boss (Lv. 22)">
 		<!-- Past the secure entrance to this large cavern waits Mother Nornil, the ruler of Nornil's Garden. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5470" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="5470" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This cruel, soulless woman handled much of Beleth' dirty work. Her wickedness became even more pronounced after Kechi, the object of her affection, aspired unsuccessfully to become Chief Guard. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5471" toLevel="1" name="Lv. 82 Raid Boss">
+	<skill id="5471" toLevel="1" name="Raid Boss (Lv. 82)">
 		<!-- Kechi aspired to be the Chief Guard of the Crystal Caverns, but Beleth bypassed him in favor of Barler. Furious at the slight, Kechi plots his revenge. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5472" toLevel="1" name="Lv. 83 Raid Boss">
+	<skill id="5472" toLevel="1" name="Raid Boss (Lv. 83)">
 		<!-- Originally a handmaiden for Parme within the order of Fafurion, her mind was infected by the seed of evil scattered by Beleth, and she is under his control. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5473" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="5473" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This once-noble soul was originally a powerful seer able to communicate directly with the divine; now only his overwhelming hatred against Beleth remains. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5474" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="5474" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This supernatural wind tore through ancient Hellbound, filled with evil spirits and possessing a malicious will of its own. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5475" toLevel="1" name="Lv. 83 Raid Boss">
+	<skill id="5475" toLevel="1" name="Raid Boss (Lv. 83)">
 		<!-- This high-Lv. Demon general, royalty even to the infernal, was ordered by Darion to capture the Tower of Infinitum. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5476" toLevel="1" name="Lv. 83 Raid Boss">
+	<skill id="5476" toLevel="1" name="Raid Boss (Lv. 83)">
 		<!-- Along with Darion, this Demon was involved in the alliance against Beleth and was particularly involved in Beleth' invasion of the mainland. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5477" toLevel="1" name="Lv. 83 Raid Boss">
+	<skill id="5477" toLevel="1" name="Raid Boss (Lv. 83)">
 		<!-- Beleth' right hand, he designed the Iron Castle and created a number of powerful magical tools for his master. Because of his long association with the Demon, his soul has been irretrievably corrupted. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5478" toLevel="1" name="Lv. 83 Raid Boss">
+	<skill id="5478" toLevel="1" name="Raid Boss (Lv. 83)">
 		<!-- The Chief Guard of the Crystal Caverns, selected because of his strength and power. It is his responsibility to keep an eye on the imprisoned Parme as well as represent all the Demons on the island. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -1781,6 +1891,42 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="5481" toLevel="1" name="Transformation Penalty">
+		<!-- You cannot be transformed while under this effect. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM_HANGOVER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+	</skill>
+	<skill id="5482" toLevel="1" name="Transformation Penalty">
+		<!-- You cannot be transformed while under this effect. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>480</abnormalTime>
+		<abnormalType>TRANSFORM_HANGOVER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+	</skill>
 	<skill id="5483" toLevel="1" name="Counter Aggression">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -1794,7 +1940,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="5484" toLevel="1" name="Endurance Defense Up">
-		<!-- P. Def. decreased by 500. -->
+		<!-- Increases P. Def. Effect 1. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1810,7 +1956,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="5485" toLevel="1" name="Endurance Defense Up">
-		<!-- Casting Spd. is increased by 300. -->
+		<!-- M. Def. is increased. Effect 1. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1826,7 +1972,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="5486" toLevel="1" name="Endurance Offense Up">
-		<!-- P. Atk. is increased by 100%. -->
+		<!-- P. Atk. is increased. Effect 1. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1854,7 +2000,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="5488" toLevel="1" name="Counter Critical Damage Up">
-		<!-- P. Critical Damage increased by 80. -->
+		<!-- Increases critical P. Atk. Effect 1. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1872,7 +2018,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="5489" toLevel="1" name="Counter Critical Rate Up">
-		<!-- P. Critical Rate is increased by 80. -->
+		<!-- Increases critical attack rate. Effect 1. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1907,8 +2053,8 @@
 		<magicLevel>-1</magicLevel>
 		<specialLevel>-1</specialLevel>
 	</skill>
-	<skill id="5491" toLevel="1" name="Bow Atk. Spd. Reduction">
-		<!-- Atk. Spd. decreased when equipped with a bow while being transformed. -->
+	<skill id="5491" toLevel="1" name="Decrease Bow/Crossbow Atk. Spd.">
+		<!-- Decreases Atk. Spd. when equipped with bow/crossbow while transformed. -->
 		<icon>icon.skilltransform3</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1988,8 +2134,52 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="5493" toLevel="1" name="Naia Production">
+		<icon>icon.skill0000</icon>
+		<operateType>CA5</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>800</castRange>
+		<channelingSkillId>5106</channelingSkillId> <!-- Capture A State -->
+		<channelingStart>3.6</channelingStart>
+		<channelingTickInterval>2</channelingTickInterval>
+		<effectPoint>1</effectPoint>
+		<effectRange>1000</effectRange>
+		<hitTime>25000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>8764</itemConsumeId> <!-- Trap Stone -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<mpPerChanneling>15</mpPerChanneling>
+		<reuseDelay>1000</reuseDelay>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>32331</item>
+				</npcIds>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="5494" toLevel="1" name="Gust">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>86</magicLevel>
+		<effects>
+			<effect name="FlyAway">
+				<radius>300</radius>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="5495" toLevel="1" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2017,7 +2207,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>71</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -2045,7 +2235,7 @@
 		</effects>
 	</skill>
 	<skill id="5497" toLevel="1" name="Horn of Rising Darkness">
-		<!-- Cannot move and HP decreases temporarily due to the stun and bleeding. -->
+		<!-- Temporarily immobile due to the Stun and Bleed effect and your HP is draining. Effect 1 -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2070,12 +2260,10 @@
 			<effect name="PhysicalDamage">
 				<power>2319</power>
 			</effect>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 			<effect name="DamOverTime">
 				<power>52</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

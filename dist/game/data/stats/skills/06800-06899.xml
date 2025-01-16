@@ -113,7 +113,7 @@
 		</effects>
 	</skill>
 	<skill id="6806" toLevel="1" name="Arena Acumen">
-		<!-- Increases Casting Spd. +30% for 5 minutes. -->
+		<!-- Increases Casting Spd. by 30% for 5 minutes. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -138,7 +138,7 @@
 		</effects>
 	</skill>
 	<skill id="6807" toLevel="1" name="Arena Concentration">
-		<!-- Decreases magic cancel damage by 53 for 5 minutes. -->
+		<!-- Decreases magic cancel rate by 53 for 5 minutes. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -188,7 +188,7 @@
 		</effects>
 	</skill>
 	<skill id="6809" toLevel="1" name="Arena Guidance">
-		<!-- Increases P. Accuracy +4 for 5 minutes. -->
+		<!-- Increases Accuracy by 4 for 5 minutes. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -213,7 +213,7 @@
 		</effects>
 	</skill>
 	<skill id="6810" toLevel="1" name="Arena Focus">
-		<!-- Increases P. Critical Rate +30% for 5 minutes. -->
+		<!-- Increases critical attack rate by 30% for 5 minutes. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -238,7 +238,7 @@
 		</effects>
 	</skill>
 	<skill id="6811" toLevel="1" name="Arena Death Whisper">
-		<!-- Increases P. Critical Damage +35% for 5 minutes. -->
+		<!-- Increases critical attack effect by 35% for 5 minutes. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -263,7 +263,7 @@
 		</effects>
 	</skill>
 	<skill id="6812" toLevel="1" name="Arena Berserker Spirit">
-		<!-- P. Def. decreases momentarily. -8%, M. Def. -16%, P. Evasion -4 and increases P. Atk. +8%, M. Atk. +16%, Atk. Spd. +8%, Casting Spd. +8%, and Movement Speed. +8 for 5 minutes. -->
+		<!-- P. Def. decreases momentarily. by 8%, M. Def. by 16%, and evasion by 4, and increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8 for 5 minutes. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -317,11 +317,13 @@
 	</skill>
 	<skill id="6813" toLevel="8" name="Sonic Focus">
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>A1</operateType> <!-- FIXME: value unconfirmed -->
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<hitCancelTime>0</hitCancelTime>
 		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">40</value>
 			<value level="2">43</value>
@@ -371,11 +373,12 @@
 	</skill>
 	<skill id="6814" toLevel="8" name="Focus Force">
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>A1</operateType> <!-- FIXME: value unconfirmed -->
 		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
 		<isTriggeredSkill>true</isTriggeredSkill>
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">24</value>
 			<value level="2">32</value>
@@ -805,7 +808,7 @@
 		<reuseDelay>1500</reuseDelay>
 	</skill>
 	<skill id="6830" toLevel="1" name="Bleed">
-		<!-- For 5 seconds, inflicts bleed and decreases 100 HP per second and Heal Received by 600%. -->
+		<!-- For 5 seconds, inflicts bleed and decreases 100 HP every second. Decreases the effect of recovery magic by 600. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -992,7 +995,7 @@
 		<magicLevel>84</magicLevel>
 	</skill>
 	<skill id="6842" toLevel="2" name="Enhance">
-		<!-- Level 1: Increases P. Atk. +12% and Atk. Spd. +15%. -->
+		<!-- Level 1: Increases P. Atk. by 12% and Atk. Spd. by 15%. -->
 		<!-- Level 2: Atk. Spd. is increased by 40%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
@@ -1221,7 +1224,7 @@
 		</effects>
 	</skill>
 	<skill id="6853" toLevel="1" name="Sleep">
-		<!-- Sleep state for 6 seconds. -->
+		<!-- Inflicts sleep for 6 seconds. -->
 		<icon>icon.skill1069</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1247,7 +1250,7 @@
 		<trait>SLEEP</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1387,7 +1390,7 @@
 		</effects>
 	</skill>
 	<skill id="6861" toLevel="1" name="Enhance">
-		<!-- Increases P. Atk. +20% and Atk. Spd. +30%. -->
+		<!-- Increases P. Atk. by 20% and Atk. Spd. by 30%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1825,7 +1828,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1920,10 +1923,30 @@
 		<mpConsume>80</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
+	</skill>
+	<skill id="6883" toLevel="1" name="Vitality Recovery Effect">
+		<!-- For 5 minutes, energy is recovered. -->
+		<icon>icon.skilltransform4</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>VP_CHANGE</abnormalType>
+		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
+		<affectRange>1000</affectRange>
+		<affectScope>PARTY</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitTime>100</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<reuseDelay>2000</reuseDelay>
+		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="6884" toLevel="1" name="Morale Boost">
 		<icon>icon.skill0000</icon>
@@ -1941,9 +1964,9 @@
 		<magicLevel>80</magicLevel>
 	</skill>
 	<skill id="6885" toLevel="3" name="Morale Boost">
-		<!-- Level 1: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance +50 P. Critical Rate +10% and P. Critical Damage +10%. -->
-		<!-- Level 2: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance +80 P. Critical Rate +30%, P. Critical Damage +15%, P. Atk. +15% and M. Atk. +15%. -->
-		<!-- Level 3: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance +90 P. Critical Rate +50%, P. Critical Damage +20%, P. Atk. +15%, M. Atk. +15% and Atk. Spd. +15%, Casting Spd. +15% and XP Gain +20%. -->
+		<!-- Level 1: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 50, Critical Rate + 10%, and Critical Damage + 10%. -->
+		<!-- Level 2: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 80, Critical Rate + 30%, Critical Damage + 15%, P. Atk. + 15%, and M. Atk. + 15%. -->
+		<!-- Level 3: The brave who fight together in Dragon Valley receive Paralysis/Bleed/Poison/Stun Resistance + 90, Critical Rate + 50%, Critical Damage + 20%, P. Atk. + 15%, M. Atk. + 15%, Atk. Spd. + 15%, Casting Spd. + 15%, and XP bonus + 20%. -->
 		<icon>icon.skill6885</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2279,7 +2302,7 @@
 		</effects>
 	</skill>
 	<skill id="6897" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2328,14 +2351,14 @@
 		</mpConsume>
 		<trait>SHOCK</trait>
 	</skill>
-	<skill id="6898" toLevel="1" name="Lv. 84 Raid Boss">
+	<skill id="6898" toLevel="1" name="Raid Boss (Lv. 84)">
 		<!-- It was one of the dragons that was born out of the blood that was thrown up by Antharas. After swallowing the Ancient Drake and absorbing its power, it quickly arose as a Commander that rules over the monsters nearby. It has good hearing but its vision is very poor, so it waits in a quiet, dark place, listening to the enemy's heartbeat, before swooping in for an attack. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6899" toLevel="1" name="Lv. 84 Raid Boss">
+	<skill id="6899" toLevel="1" name="Raid Boss (Lv. 84)">
 		<!-- It was one of the dragons that was born out of the blood that was thrown up by Antharas. It swallowed up its brethren and gained a greater power. Antharas, whose heart was filled with innate cruelty and madness of a Dust Rider, appointed him as the Valley's Eradicator and commanded him to build the Tower of Corpses. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>

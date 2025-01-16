@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="700" toLevel="1" name="Divine Healer Group Heal">
-		<!-- Recovers a party member's HP with 400 Power, and additionally recovers 27 HP per second for 15 seconds. -->
+		<!-- Restores HP of a party member by 400 power and causes 27 HP recovery every second for 15 seconds. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -31,7 +31,7 @@
 		</effects>
 	</skill>
 	<skill id="701" toLevel="1" name="Divine Healer Resurrection">
-		<!-- Resurrects a corpse. Additionally restores approximately 70% XP. -->
+		<!-- Resurrects a corpse. Restores XP by about 70 percent additionally. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
 		<targetType>PC_BODY</targetType>
@@ -114,7 +114,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="704" toLevel="1" name="Divine Enchanter Water Spirit">
-		<!-- A selected party member's M. Critical Rate +2, MP Recovery Bonus +20%, P. Atk. +10%, P. Def +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def +20%, Casting Spd. +20%, Debuff Resistance +10%, Movement Speed +20%, and Skill MP Consumption -5% for 2 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
+		<!-- For 2 minutes, receives help from a great spirit to increase a party member's chance of prominent magic damage by 2, MP Recovery Bonus by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20% and MP Consumption for skill use by 5%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -188,7 +188,7 @@
 		</effects>
 	</skill>
 	<skill id="705" toLevel="1" name="Divine Enchanter Fire Spirit">
-		<!-- A party member's Max MP +20%, HP Recovery Bonus +20%, M. Critical Rate +2%, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def +20%, Casting Spd. +20%, Debuff Resistance +10%, and Movement Speed -20% for 2 minutes with the hlpe of a great spirit. Consumes 10 Spirit Ore. -->
+		<!-- For 2 minutes, receives help from a great spirit to increase a party member's Max MP by 20%, HP Recovery Bonus by 20%, the chance of prominent magic damage by 2, Critical Damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -269,7 +269,7 @@
 		</effects>
 	</skill>
 	<skill id="706" toLevel="1" name="Divine Enchanter Wind Spirit">
-		<!-- A party member's Max HP +20%, P. Critical Rate +20%, M. Critical Damage +20%, P. Atk. +10%, P. Def +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def +20%, Casting Spd. +20%, Debuff Resistance +10%, and Movement Speed -20% for 2 minutes with the help of a great spirit. Has a chance to absorb 5% of physical damage dealt to enemies as HP. Consumes 10 Spirit Ore. -->
+		<!-- For 2 minutes, receives help from a great spirit to increase a party member's Max HP by 20%, Critical Rate by 20%, rate of Prominent Damage through magic damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Has a chance of recovering 5% of physical damage inflicted on the enemy as HP. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -301,7 +301,7 @@
 			</effect>
 			<effect name="VampiricAttack">
 				<amount>5</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 			<effect name="PhysicalAttack">
 				<amount>10</amount>
@@ -346,7 +346,7 @@
 		</effects>
 	</skill>
 	<skill id="707" toLevel="1" name="Divine Enchanter Hero Spirit">
-		<!-- A party member's Max HP +20%, M. Critical Rate +2%, P. Critical Damage +20%, P. Atk. +10%, P. Def. +20%, Atk. Spd. +20%, M. Atk. +20%, M. Def +20%, Casting Spd. +20%, Debuff Resistance +10%, and Movement Speed -20% for 2 minutes with the help of a great spirit. Consumes 10 Spirit Ore. -->
+		<!-- For 2 minutes, receives help from a great spirit to increase a party member's Max MP by 20%, the chance of prominent magic damage by 2, Critical Damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and Debuff Resistance by 10%. Decreases Speed by 20%. Consumes 10 Spirit Ore. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -529,7 +529,7 @@
 		</selfEffects>
 	</skill>
 	<skill id="710" toLevel="1" name="Divine Summoner Summon Divine Beast">
-		<!-- Summons a Holy Beast. Requires 2 A-grade Crystals. -->
+		<!-- Summons a Holy Wild Beat. Requires 2 A-grade Crystals. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -549,6 +549,7 @@
 		<effects>
 			<effect name="Summon">
 				<npcId>14870</npcId> <!-- Divine Beast -->
+				<lifeTime>3600</lifeTime>
 				<consumeItemId>1461</consumeItemId> <!-- Crystal (A-grade) -->
 				<consumeItemCount>1</consumeItemCount>
 				<expMultiplier>0.7</expMultiplier>
@@ -566,7 +567,7 @@
 		<effects>
 			<effect name="MpConsumePerLevel">
 				<power>0.4</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="TransferDamageToSummon">
 				<amount>50</amount>
@@ -574,7 +575,7 @@
 		</effects>
 	</skill>
 	<skill id="712" toLevel="1" name="Divine Summoner Final Servitor">
-		<!-- Temporarily causes the Servitor to be possessed with the spirit of an ancient hero. Consumes 20 Spirit Ore. -->
+		<!-- Temporarily causes the summoner to be possessed with the spirit of an ancient hero. Consumes 20 Spirit Ore. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>SUMMON</targetType>
@@ -648,7 +649,7 @@
 		</effects>
 	</skill>
 	<skill id="713" toLevel="1" name="Divine Summoner Servitor Hill">
-		<!-- Recovers the Servitor's HP with 991 power. -->
+		<!-- Restores the servitor's HP by 991 power. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
 		<targetType>SUMMON</targetType>
@@ -669,7 +670,7 @@
 		</effects>
 	</skill>
 	<skill id="714" toLevel="1" name="Sacrifice Summoner">
-		<!-- Increase the party member's P. Critical abilities by sacrificing yourself. Available only when MP is at 10% or below. -->
+		<!-- Increase the party member's critical abilities by sacrificing yourself. Usable only when MP is under 10 percent. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -809,10 +810,10 @@
 		</effects>
 	</skill>
 	<skill id="717" toLevel="4" name="Zaken Concentrated Attack">
-		<!-- Level 1: Deals a focused attack. Over-hit. Power: 2751. -->
-		<!-- Level 2: Deals a focused attack. Over-hit. Power: 3252. -->
-		<!-- Level 3: Deals a focused attack. Over-hit. Power: 3752. -->
-		<!-- Level 4: Deals a focused attack. Over-hit. Power: 4224. -->
+		<!-- Level 1: Focuses on one specific place and attacks. Over-hit. Power 2751. -->
+		<!-- Level 2: Focuses on one specific place and attacks. Over-hit. Power 3252. -->
+		<!-- Level 3: Focuses on one specific place and attacks. Over-hit. Power 3752. -->
+		<!-- Level 4: Focuses on one specific place and attacks. Over-hit. Power 4224. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -854,10 +855,10 @@
 		</effects>
 	</skill>
 	<skill id="718" toLevel="4" name="Zaken Dancing Sword">
-		<!-- Level 1: Uses Dancing Swords to attack all at once. Over-hit. Power: 1651. -->
-		<!-- Level 2: Uses Dancing Swords to attack all at once. Over-hit. Power: 1951. -->
-		<!-- Level 3: Uses Dancing Swords to attack all at once. Over-hit. Power: 2251. -->
-		<!-- Level 4: Uses Dancing Swords to attack all at once. Over-hit. Power: 2534. -->
+		<!-- Level 1: Uses Dancing Swords to attack all at once. Over-hit. Power 1651. -->
+		<!-- Level 2: Uses Dancing Swords to attack all at once. Over-hit. Power 1951. -->
+		<!-- Level 3: Uses Dancing Swords to attack all at once. Over-hit. Power 2251. -->
+		<!-- Level 4: Uses Dancing Swords to attack all at once. Over-hit. Power 2534. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -899,7 +900,7 @@
 		</effects>
 	</skill>
 	<skill id="719" toLevel="1" name="Zaken Vampiric Rage">
-		<!-- Has a chance to temporarily absorb some of the physical damage dealt to enemies as HP. -->
+		<!-- Absorbs some HP from damage inflicted on enemies with a certain probability. Effect 4. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -921,13 +922,13 @@
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>15</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="720" toLevel="2" name="Anakim Holy Light Burst">
-		<!-- Level 1: Gathers power to smash mightily. Over-hit. Power: 3189. -->
-		<!-- Level 2: Gathers power to smash mightily. Over-hit. Power: 3590. -->
+		<!-- Level 1: Strong pound attack. Over-hit. Power 3189. -->
+		<!-- Level 2: Strong pound attack. Over-hit. Power 3590. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1085,8 +1086,8 @@
 		</effects>
 	</skill>
 	<skill id="725" toLevel="2" name="Venom Power Smash">
-		<!-- Level 1: Unleashes a powerful strike. Over-hit. Power: 2626. -->
-		<!-- Level 2: Unleashes a powerful strike. Over-hit. Power: 2957. -->
+		<!-- Level 1: Unleashes a powerful strike. Over-hit. Power 2626. -->
+		<!-- Level 2: Unleashes a powerful strike. Over-hit. Power 2957. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1143,7 +1144,7 @@
 		</effects>
 	</skill>
 	<skill id="727" toLevel="1" name="Venom Disillusion">
-		<!-- P. Atk. +8% for a set time. -->
+		<!-- Temporarily increases P. Atk. Effect 1. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1168,7 +1169,7 @@
 		</effects>
 	</skill>
 	<skill id="728" toLevel="1" name="Gordon Beast Attack">
-		<!-- Inflicts a beast attack. Over-hit. Power: 2957. -->
+		<!-- Inflicts a beast attack. Over-hit. Power 2957. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1190,7 +1191,7 @@
 		</effects>
 	</skill>
 	<skill id="729" toLevel="1" name="Gordon Sword Stab">
-		<!-- Attacks frontal enemies. Over-hit. Power: 2957. -->
+		<!-- Attacks the enemies in front of the player. Over-hit. Power 2957. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1213,7 +1214,7 @@
 		</effects>
 	</skill>
 	<skill id="730" toLevel="1" name="Gordon Press">
-		<!-- Surrounding enemies' Movement Speed, Atk. Spd., Casting Spd. -23%. -->
+		<!-- Momentarily decreases Spd./Atk. Spd./Casting Spd. of surrounding enemies. Effect 3. -->
 		<icon>icon.skill_transform_debuff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1252,7 +1253,7 @@
 		</effects>
 	</skill>
 	<skill id="731" toLevel="1" name="Ranku Dark Explosion">
-		<!-- Attack by detonating the evil energy. Power: 162. -->
+		<!-- Attack by detonating the devil's energy. Power 162. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1277,7 +1278,7 @@
 		</effects>
 	</skill>
 	<skill id="732" toLevel="1" name="Ranku Stun Attack">
-		<!-- Inflicts damage and briefly stuns the enemy. Over-hit. Power: 1. -->
+		<!-- Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. Over-hit. 1 power. -->
 		<icon>icon.skill_transform_debuff</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1307,12 +1308,12 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="733" toLevel="1" name="Kechi Double Cutter">
-		<!-- Criss-crosses swords to attack. Over-hit. Power: 2957. -->
+		<!-- Attacks by crossing a sword. Over-hit. Power 2957. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1334,7 +1335,7 @@
 		</effects>
 	</skill>
 	<skill id="734" toLevel="1" name="Kechi Air Blade">
-		<!-- Strikes an enemy at a distance by using Momentum. Critical. Over-hit. Power: 1812. -->
+		<!-- Strikes a distant enemy by using Momentum. Critical. Over-hit. Power 1812. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1408,7 +1409,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>351</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -1419,7 +1420,7 @@
 		</endEffects>
 	</skill>
 	<skill id="737" toLevel="1" name="Devil Ultimate Defense">
-		<!-- Spontaneously increases P. Def/M. Def, Buff-canceling Attack Resistance significantly. The caster cannot move while the effect lasts. -->
+		<!-- Momentarily and drastically increases resistance to attacks that decreases P. Def./M. Def. or cancels buffs. The player cannot move while the effect lasts. Effect 2. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1483,9 +1484,9 @@
 		</effects>
 	</skill>
 	<skill id="739" toLevel="3" name="Heretic Battle Heal">
-		<!-- Level 1: Quickly recovers the target's HP with 743 Power. -->
-		<!-- Level 2: Quickly recovers the target's HP with 772 Power. -->
-		<!-- Level 3: Quickly recovers the target's HP with 796 Power. -->
+		<!-- Level 1: Immediately restores the target's HP with 743 Power. -->
+		<!-- Level 2: Immediately restores the target's HP with 772 Power. -->
+		<!-- Level 3: Immediately restores the target's HP with 796 Power. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
 		<targetType>TARGET</targetType>
@@ -1527,9 +1528,9 @@
 		</effects>
 	</skill>
 	<skill id="740" toLevel="3" name="Heretic Resurrection">
-		<!-- Level 1: Resurrects a corpse. Additionally restores approximately 50% XP. -->
-		<!-- Level 2: Resurrects a corpse. Additionally restores approximately 55% XP. -->
-		<!-- Level 3: Resurrects a corpse. Additionally restores approximately 60% XP. -->
+		<!-- Level 1: Resurrects a corpse. In addition, restores about 50% of XP. -->
+		<!-- Level 2: Resurrects a corpse. In addition, restores about 55% of XP. -->
+		<!-- Level 3: Resurrects a corpse. In addition, restores about 60% of XP. -->
 		<icon>icon.skill_transform_etc</icon>
 		<operateType>A1</operateType>
 		<targetType>PC_BODY</targetType>
@@ -1543,7 +1544,7 @@
 		</effectPoint>
 		<effectRange>900</effectRange>
 		<hitTime>2000</hitTime>
-		<isMagic>4</isMagic> <!-- Magic Skill -->
+		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">70</value>
@@ -1576,7 +1577,7 @@
 		</effects>
 	</skill>
 	<skill id="741" toLevel="3" name="Heretic Heal Side Effect">
-		<!-- Causes side effects to healing. Momentarily poisons the enemy. -->
+		<!-- Cause side effects of the heal. Momentarily make the enemy addicted. Effect 8. -->
 		<icon>icon.skill_transform_debuff</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1620,7 +1621,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>52</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1800,9 +1801,9 @@
 		</effects>
 	</skill>
 	<skill id="746" toLevel="3" name="Saber Tooth Tiger Bite">
-		<!-- Level 1: Bites ferociously. Over-hit. Power: 1789. -->
-		<!-- Level 2: Bites ferociously. Over-hit. Power: 1955. -->
-		<!-- Level 3: Bites ferociously. Over-hit. Power: 2117. -->
+		<!-- Level 1: Bites ferociously. Over-hit. Power 1789. -->
+		<!-- Level 2: Bites ferociously. Over-hit. Power 1955. -->
+		<!-- Level 3: Bites ferociously. Over-hit. Power 2117. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1837,9 +1838,9 @@
 		</effects>
 	</skill>
 	<skill id="747" toLevel="3" name="Saber Tooth Tiger Fear">
-		<!-- Level 1: Inflicts damage to nearby enemies and causes them to flee. Over-hit. Power: 895. -->
-		<!-- Level 2: Inflicts damage to nearby enemies and causes them to flee. Over-hit. Power: 978. -->
-		<!-- Level 3: Inflicts damage to nearby enemies and causes them to flee. Over-hit. Power: 1059. -->
+		<!-- Level 1: Inflicts damage on surrounding enemies and causes them to flee. Over-hit. Power 895. -->
+		<!-- Level 2: Inflicts damage on surrounding enemies and causes them to flee. Over-hit. Power 978. -->
+		<!-- Level 3: Inflicts damage on surrounding enemies and causes them to flee. Over-hit. Power 1059. -->
 		<icon>icon.skill_transform_debuff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1888,7 +1889,7 @@
 		</effects>
 	</skill>
 	<skill id="748" toLevel="1" name="Saber Tooth Tiger Sprint">
-		<!-- Movement Speed +33 for a set time. -->
+		<!-- Temporarily increases your Spd. Effect 2. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1913,9 +1914,9 @@
 		</effects>
 	</skill>
 	<skill id="749" toLevel="3" name="Oel Mahum Stun Attack">
-		<!-- Level 1: Inflicts damage and briefly stuns the enemy. Over-hit. Power: 895. -->
-		<!-- Level 2: Inflicts damage and briefly stuns the enemy. Over-hit. Power: 978. -->
-		<!-- Level 3: Inflicts damage and briefly stuns the enemy. Over-hit. Power: 1059. -->
+		<!-- Level 1: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. Over-hit. 895 power. -->
+		<!-- Level 2: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. Over-hit. 978 power. -->
+		<!-- Level 3: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. Over-hit. 1059 power. -->
 		<icon>icon.skill_transform_debuff</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1961,12 +1962,12 @@
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="750" toLevel="1" name="Oel Mahum Ultimate Defense">
-		<!-- Spontaneously increases P. Def/M. Def, Buff-canceling Attack Resistance significantly. The caster cannot move while the effect lasts. -->
+		<!-- Momentarily and drastically increases resistance to attacks that decreases P. Def./M. Def. or cancels buffs. The player cannot move while the effect lasts. Effect 2. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1998,9 +1999,9 @@
 		</effects>
 	</skill>
 	<skill id="751" toLevel="3" name="Oel Mahum Arm Flourish">
-		<!-- Level 1: Swings the weapon widely to attack nearby enemies. Over-hit. Power: 1073. -->
-		<!-- Level 2: Swings the weapon widely to attack nearby enemies. Over-hit. Power: 1173. -->
-		<!-- Level 3: Swings the weapon widely to attack nearby enemies. Over-hit. Power: 1271. -->
+		<!-- Level 1: Flourish weapons to attack surrounding enemy. Over-hit. Power 1073. -->
+		<!-- Level 2: Flourish weapons to attack surrounding enemy. Over-hit. Power 1173. -->
+		<!-- Level 3: Flourish weapons to attack surrounding enemy. Over-hit. Power 1271. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2043,7 +2044,9 @@
 		</effects>
 	</skill>
 	<skill id="752" toLevel="3" name="Doll Blader Sting">
-		<!-- Aims at vital points to injure the target. Momentarily causes the enemy to bleed. Over-hit. -->
+		<!-- Level 1: Causes injury by deadly attacks. Momentarily causes the enemies to bleed. Over-hit. Power 1193.. Effect 3. -->
+		<!-- Level 2: Causes injury by deadly attacks. Momentarily causes the enemies to bleed. Over-hit. Power 1303.. Effect 3. -->
+		<!-- Level 3: Causes injury by deadly attacks. Momentarily causes the enemies to bleed. Over-hit. Power 1412.. Effect 3. -->
 		<icon>icon.skill_transform_debuff</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2091,14 +2094,14 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>134</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="753" toLevel="3" name="Doll Blader Throwing Knife">
-		<!-- Level 1: Throws a dagger to attack an enemy at a distance. Over-hit. Power: 4769. -->
-		<!-- Level 2: Throws a dagger to attack an enemy at a distance. Over-hit. Power: 5211. -->
-		<!-- Level 3: Throws a dagger to attack an enemy at a distance. Over-hit. Power: 5645. -->
+		<!-- Level 1: Throw a dagger to attack enemy in the distance. Over-hit. Power 4769. -->
+		<!-- Level 2: Throw a dagger to attack enemy in the distance. Over-hit. Power 5211. -->
+		<!-- Level 3: Throw a dagger to attack enemy in the distance. Over-hit. Power 5645. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2136,7 +2139,7 @@
 		</effects>
 	</skill>
 	<skill id="754" toLevel="1" name="Doll Blader Clairvoyance">
-		<!-- P. Critical Rate +30% for a set time. -->
+		<!-- Temporarily increase the probability of Critical Damage. Effect 3. -->
 		<icon>icon.skill_transform_buff</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2185,7 +2188,7 @@
 		</effects>
 	</skill>
 	<skill id="756" toLevel="1" name="Protection of Elemental">
-		<!-- Resistance to Elemental Attributes +20. When damage is incurred, has a chance of additionally increasing M. Def. and Attribute Resistance momentarily. -->
+		<!-- Resistance to elemental attributes +20. When damage is incurred, has a chance of additionally increasing M. Def. and Resistance to elemental attributes momentarily. -->
 		<icon>icon.skill0756</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2219,7 +2222,7 @@
 		</effects>
 	</skill>
 	<skill id="757" toLevel="1" name="Protection of Alignment">
-		<!-- Resistance to Inclination Attributes +20. When damage is incurred, has a chance of additionally increasing M. Def. and Attribute Resistance momentarily. -->
+		<!-- Resistance to tendency attributes +20. When damage is incurred, has a chance of additionally increasing M. Def. and Resistance to elemental attributes momentarily. -->
 		<icon>icon.skill0757</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2245,7 +2248,7 @@
 		</effects>
 	</skill>
 	<skill id="758" toLevel="1" name="Fighter's Will">
-		<!-- When using a short-range weapon, P. Atk. +100 and Atk. Spd. +10%. When attacking, has a chance to increases P. Skill Power and P. Critical Rate. -->
+		<!-- When using a short-range weapon, increases P. Atk. by 100 and Atk. Spd. by 10%. When attacking, has a chance to increases physical skills' Power and Critical Rate. -->
 		<icon>icon.skill0758</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2295,7 +2298,7 @@
 		</effects>
 	</skill>
 	<skill id="759" toLevel="1" name="Archer's Will">
-		<!-- When using a bow, P. Accuracy +8 and Range +50. When attacking, has a chance to increases P. Skill Power and P. Critical Rate. -->
+		<!-- When a bow/crossbow is used, Accuracy increases by 8 and range increases by 50. When attacking, the physical skill's power and Critical Rate are increased at a fixed rate. -->
 		<icon>icon.skill0759</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2355,7 +2358,7 @@
 		</effects>
 	</skill>
 	<skill id="761" toLevel="1" name="Seed of Revenge">
-		<!-- Plants a Seed of Revenge in yourself. There is a chance that the Seed of Revenge will grow when inflicted with damage. P. Atk. increases as the seed grows. -->
+		<!-- One sows a seed of wrath himself. There is a chance that the Seed of Wrath will grow when being attacked. P. Atk. increases with growth. -->
 		<icon>icon.skill0761</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2389,31 +2392,28 @@
 		</effects>
 	</skill>
 	<skill id="762" toLevel="1" name="Insane Crusher">
-		<!-- Unleashes rage to deal a powerful strike with bonus 8409 Power and cast a dark curse to surrounding enemies. Cancels at least one of the enemy's buffs, and temporarily decreases Max CP significantly. Decreases Debuff Resistance and Heal Received. Requires a sword or blunt weapon. Ignores Shield Defense. Critical. Over-hit. -->
+		<!-- Unleashes a powerful strike with 8409 Power added to P. Atk. and Dark Curse to surrounding enemies when rage reaches its peak. Cancels at least one of the enemy's buffs, and temporarily decreases Max CP greatly, Debuff Resistance, and effectiveness of receiving HP recovery. Requires a sword or blunt weapon. Ignores shield defense. Critical and Over-hit are possible. -->
 		<icon>icon.skill0762</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
-		<abnormalLevel>2</abnormalLevel>
+		<abnormalLevel>1</abnormalLevel>
 		<abnormalTime>60</abnormalTime>
 		<abnormalType>TOUCH_OF_DEATH</abnormalType>
-		<abnormalVisualEffect>REVENGE_AURA</abnormalVisualEffect>
 		<activateRate>90</activateRate>
 		<affectLimit>5-12</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>300</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
-		<attributeType>DARK</attributeType>
-		<attributeValue>20</attributeValue>
 		<basicProperty>PHYSICAL</basicProperty>
 		<coolTime>700</coolTime>
-		<effectPoint>-4100</effectPoint>
+		<effectPoint>-1357</effectPoint>
 		<hitTime>1300</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>20</lvlBonusRate>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>81</magicLevel>
 		<mpConsume>80</mpConsume>
-		<reuseDelay>60000</reuseDelay>
+		<reuseDelay>10000</reuseDelay>
 		<trait>DEATH</trait>
 		<conditions>
 			<condition name="EquipWeapon">
@@ -2421,6 +2421,11 @@
 					<item>SWORD</item>
 					<item>BLUNT</item>
 				</weaponType>
+			</condition>
+			<condition name="OpCheckAbnormal">
+				<type>SEED_OF_KNIGHT</type>
+				<level>4</level>
+				<hasAbnormal>true</hasAbnormal>
 			</condition>
 		</conditions>
 		<effects>
@@ -2433,7 +2438,7 @@
 			<effect name="DispelByCategory">
 				<slot>BUFF</slot>
 				<rate>25</rate>
-				<max>3</max>
+				<max>5</max>
 			</effect>
 			<effect name="MaxCp">
 				<amount>-90</amount>
@@ -2494,6 +2499,36 @@
 	</skill>
 	<skill id="764" toLevel="1" name="Windstorm Song">
 		<!-- For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1001 (+ 8 seconds Time): For 2 minutes 8 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1002 (+ 8 seconds Time): For 2 minutes 16 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1003 (+ 8 seconds Time): For 2 minutes 24 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1004 (+ 8 seconds Time): For 2 minutes 32 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1005 (+ 8 seconds Time): For 2 minutes 40 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1006 (+ 8 seconds Time): For 2 minutes 48 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1007 (+ 8 seconds Time): For 2 minutes 56 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1008 (+ 8 seconds Time): For 3 minutes 4 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1009 (+ 8 seconds Time): For 3 minutes 12 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1010 (+ 8 seconds Time): For 3 minutes 20 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1011 (+ 8 seconds Time): For 3 minutes 28 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1012 (+ 8 seconds Time): For 3 minutes 36 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1013 (+ 8 seconds Time): For 3 minutes 44 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1014 (+ 8 seconds Time): For 3 minutes 52 seconds, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 1015 (+ 8 seconds Time): For 4 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2001 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2002 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2003 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2004 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2005 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2006 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2007 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2008 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2009 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2010 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2011 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2012 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2013 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2014 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
+		<!-- Level 1 - SubLevel 2015 (+ 1 Cost): For 2 minutes, increases a party member's Bow Resistance by 10 and Crossbow Resistance by 5. Increases the additional MP Consumption when singing while sing/dance effect lasts. -->
 		<icon>icon.skill0764</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2519,7 +2554,37 @@
 		</effects>
 	</skill>
 	<skill id="765" toLevel="1" name="Dance of Blade Storm">
-		<!-- For 15 seconds, a party member's Bow Resistance +45, Crossbow Resistance +25, and M. Atk. -99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1001 (+ 1 second Time): For 16 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1002 (+ 1 second Time): For 17 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1003 (+ 1 second Time): For 18 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1004 (+ 1 second Time): For 19 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1005 (+ 1 second Time): For 20 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1006 (+ 1 second Time): For 21 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1007 (+ 1 second Time): For 22 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1008 (+ 1 second Time): For 23 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1009 (+ 1 second Time): For 24 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1010 (+ 1 second Time): For 25 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1011 (+ 1 second Time): For 26 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1012 (+ 1 second Time): For 27 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1013 (+ 1 second Time): For 28 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1014 (+ 1 second Time): For 29 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 1015 (+ 1 second Time): For 30 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2001 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2002 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2003 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2004 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2005 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2006 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2007 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2008 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2009 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2010 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2011 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2012 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2013 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2014 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
+		<!-- Level 1 - SubLevel 2015 (+ 1 Cost): For 15 seconds, increases a party member's Bow Resistance by 45 and Crossbow Resistance by 25. Decreases M. Atk. by 99%. Additionally increases MP Consumption when singing while song/dance is in effect. Requires a dualsword. -->
 		<icon>icon.skill0765</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2541,6 +2606,7 @@
 			<condition name="EquipWeapon">
 				<weaponType>
 					<item>DUAL</item>
+					<item>DUALBLUNT</item>
 				</weaponType>
 			</condition>
 		</conditions>
@@ -2556,7 +2622,7 @@
 		</effects>
 	</skill>
 	<skill id="766" toLevel="1" name="Sixth Sense">
-		<!-- Increases your senses to the maximum when stamina is at the lowest point. P. Evasion +15 when HP is at 30% or below. -->
+		<!-- When stamina is at its limit, sensation reaches its peak to increase Evasion by 15 when HP is below 30%. -->
 		<icon>icon.skill0766</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2570,7 +2636,7 @@
 		</effects>
 	</skill>
 	<skill id="767" toLevel="1" name="Expose Vulnerability">
-		<!-- Decreases the enemy's P. Def. by momentarily exposing their weakness when receiving the enemy's attack. Increases the Critical Rate of normal attacks. -->
+		<!-- Gives flesh and takes a bone. Decreases the enemy's P. Def. by momentarily exposing his weakness when receiving the enemy's attack. Increases the critical hit rate of general attacks. -->
 		<icon>icon.skill0767</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2588,7 +2654,7 @@
 		</effects>
 	</skill>
 	<skill id="768" toLevel="1" name="Exciting Adventure">
-		<!-- Feels extreme excitement during a skirmish. For 30 seconds, Movement Speed +10, P. Evasion +10, Deadly Stab Rate +15%, P. Evasion Rate +40%, and Buff-canceling Attack Resistance +90%. <Auto Use Skill> -->
+		<!-- Feels extreme excitement during a melee. For 30 sec., increases Speed by 20, Evasion by 15, Vital Spot Attack Rate by 30%, physical skill Evasion Rate by 40%, and Buff-canceling Attack Resistance by 90. -->
 		<icon>icon.skill0768</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2601,7 +2667,7 @@
 		<effectPoint>679</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>81</magicLevel>
 		<mpConsume>36</mpConsume>
 		<reuseDelay>900000</reuseDelay>
 		<effects>
@@ -2610,15 +2676,15 @@
 				<amount>40</amount>
 			</effect>
 			<effect name="Speed">
-				<amount>10</amount>
+				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
-				<amount>10</amount>
+				<amount>15</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="FatalBlowRate">
-				<amount>15</amount>
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistDispelByCategory">
@@ -2628,7 +2694,7 @@
 		</effects>
 	</skill>
 	<skill id="769" toLevel="1" name="Wind Riding">
-		<!-- Storms the battleground while riding the wind. For 30 seconds, Movement Speed +30, P. Evasion +15, Deadly Stab Rate +10%, P. Evasion Rate +60%, and Buff-canceling Attack Resistance +80%. <Auto Use Skill> -->
+		<!-- Storms the battleground riding the Wind. For 30 sec., increases Speed by 50, Evasion by 20, Vital Spot Attack Rate by 20%, physical skill Evasion Rate by 75%, and Buff-canceling Attack Resistance by 80. -->
 		<icon>icon.skill0769</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2641,24 +2707,24 @@
 		<effectPoint>679</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>81</magicLevel>
 		<mpConsume>36</mpConsume>
 		<reuseDelay>900000</reuseDelay>
 		<effects>
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
-				<amount>60</amount>
+				<amount>75</amount>
 			</effect>
 			<effect name="Speed">
-				<amount>30</amount>
+				<amount>50</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
-				<amount>15</amount>
+				<amount>20</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="FatalBlowRate">
-				<amount>10</amount>
+				<amount>20</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistDispelByCategory">
@@ -2668,7 +2734,7 @@
 		</effects>
 	</skill>
 	<skill id="770" toLevel="1" name="Ghost Walking">
-		<!-- Infiltrates the battleground like a ghost. For 20 seconds, Movement Speed +20, P. Evasion +10, Deadly Stab Rate +20%, P. Evasion Rate +50%, and Buff-canceling Attack Resistance +80%. <Auto Use Skill> -->
+		<!-- Infiltrates the battleground like a ghost. For 30 sec., increases Speed by 33, Evasion by 15, Vital Spot Attack Rate by 40%, physical skill Evasion Rate by 60%, and Buff-canceling Attack Resistance by 90. -->
 		<icon>icon.skill0770</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2681,34 +2747,34 @@
 		<effectPoint>679</effectPoint>
 		<hitTime>1000</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>81</magicLevel>
 		<mpConsume>36</mpConsume>
 		<reuseDelay>900000</reuseDelay>
 		<effects>
 			<effect name="SkillEvasion">
 				<magicType>0</magicType>
-				<amount>10</amount>
+				<amount>60</amount>
 			</effect>
 			<effect name="Speed">
-				<amount>20</amount>
+				<amount>33</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="PhysicalEvasion">
-				<amount>50</amount>
+				<amount>15</amount>
 				<mode>DIFF</mode>
 			</effect>
 			<effect name="FatalBlowRate">
-				<amount>20</amount>
+				<amount>40</amount>
 				<mode>PER</mode>
 			</effect>
 			<effect name="ResistDispelByCategory">
-				<amount>-80</amount>
+				<amount>-90</amount>
 				<slot>BUFF</slot>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="771" toLevel="1" name="Flame Hawk">
-		<!-- Fires an arrow instilled with the power of the flame hawk to attack frontal enemies with bonus 8049 Power. For 10 seconds, inflicts 250 damage per second. Ignores 10% of enemy's defense. Requires a bow. Critical. Over-hit. -->
+		<!-- Shoots an arrow filled with the energy of the phoenix to attack the enemies with 8049 Power added to P. Atk. For 10 seconds, inflicts 300 fire damage every second. Requires a bow. Over-hit. Critical. -->
 		<icon>icon.skill0771</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2718,14 +2784,14 @@
 		<affectScope>FAN</affectScope>
 		<castRange>900</castRange>
 		<coolTime>1000</coolTime>
-		<effectPoint>-500</effectPoint>
+		<effectPoint>-686</effectPoint>
 		<effectRange>1400</effectRange>
 		<fanRange>0;0;900;40</fanRange>
 		<hitTime>3500</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<mpConsume>280</mpConsume>
-		<reuseDelay>30000</reuseDelay>
+		<magicLevel>83</magicLevel>
+		<mpConsume>160</mpConsume>
+		<reuseDelay>75000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -2738,7 +2804,6 @@
 				<power>8049</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
-				<pDefMod>0.9</pDefMod>
 			</effect>
 			<effect name="CallSkill">
 				<skillId>23298</skillId> <!-- Flame Hawk -->
@@ -2747,7 +2812,7 @@
 		</effects>
 	</skill>
 	<skill id="772" toLevel="1" name="Arrow Rain">
-		<!-- Fires a volley of arrows to attack the enemy's surroundings with bonus 7043 Power. For 10 seconds, inflicts 250 damage per second. Ignores 10% of enemy's defense. Requires a bow. Critical. Over-hit. -->
+		<!-- Causes arrows to rain down from the sky to attack near the enemy with 7043 Power added to P. Atk. For 10 seconds, inflicts 300 wind damage every second. Requires a bow. Over-hit. Critical. -->
 		<icon>icon.skill0772</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2755,15 +2820,15 @@
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>RANGE</affectScope>
-		<castRange>900</castRange>
+		<castRange>600</castRange>
 		<coolTime>1000</coolTime>
-		<effectPoint>-500</effectPoint>
-		<effectRange>1400</effectRange>
+		<effectPoint>-686</effectPoint>
+		<effectRange>1100</effectRange>
 		<hitTime>4000</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<mpConsume>280</mpConsume>
-		<reuseDelay>30000</reuseDelay>
+		<magicLevel>83</magicLevel>
+		<mpConsume>160</mpConsume>
+		<reuseDelay>75000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -2776,7 +2841,6 @@
 				<power>7043</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
-				<pDefMod>0.9</pDefMod>
 			</effect>
 			<effect name="CallSkill">
 				<skillId>23299</skillId> <!-- Arrow Rain -->
@@ -2785,7 +2849,7 @@
 		</effects>
 	</skill>
 	<skill id="773" toLevel="1" name="Ghost Piercing">
-		<!-- Shoots an arrow mixed with the energy of a ghost to attack frontal enemies with bonus 8452 Power. For 10 seconds, inflicts 300 damage per second. Ignores 5% of enemy's defense. Requires a bow. Critical. Over-hit. -->
+		<!-- Shoots an arrow mixed with the energy of a ghost to attack the enemies in front with 8452 Power added to P. Atk. For 10 seconds, inflicts 300 dark damage every second. Requires a bow. Over-hit. Critical. -->
 		<icon>icon.skill0773</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2795,14 +2859,14 @@
 		<affectScope>SQUARE</affectScope>
 		<castRange>900</castRange>
 		<coolTime>1000</coolTime>
-		<effectPoint>-500</effectPoint>
+		<effectPoint>-686</effectPoint>
 		<effectRange>1400</effectRange>
 		<fanRange>0;0;900;100</fanRange>
 		<hitTime>3000</hitTime>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<mpConsume>280</mpConsume>
-		<reuseDelay>30000</reuseDelay>
+		<magicLevel>83</magicLevel>
+		<mpConsume>160</mpConsume>
+		<reuseDelay>75000</reuseDelay>
 		<conditions>
 			<condition name="EquipWeapon">
 				<weaponType>
@@ -2815,7 +2879,6 @@
 				<power>8452</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
-				<pDefMod>0.9</pDefMod>
 			</effect>
 			<effect name="CallSkill">
 				<skillId>23300</skillId> <!-- Ghost Piercing -->
@@ -2824,7 +2887,7 @@
 		</effects>
 	</skill>
 	<skill id="774" toLevel="1" name="Dread Pool">
-		<!-- Spreads fear around the area. Nearby enemies' Movement Speed -33%, P. Def. -33%, and P. Evasion -10. Inflicts fear and causes enemies to flee for 8 seconds. -->
+		<!-- Fear spreads around the area. Decreases nearby enemies' Speed by 33%, P. Def. by 33%, and Evasion by 10. Inflicts fear and causes them to flee for 8 seconds. -->
 		<icon>icon.skill0774</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2866,7 +2929,7 @@
 		</effects>
 	</skill>
 	<skill id="775" toLevel="1" name="Weapon Blockade">
-		<!-- Disarms the enemy with a dazzling movement for 5 seconds. Requires Momentum Stage 2 recharge. Requires a dualsword. -->
+		<!-- Cancels the enemy's weapon with a dazzling movement for 5 seconds. Need to recharge 2nd stage of Momentum. Requires a dualsword. -->
 		<icon>icon.skill0775</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2910,7 +2973,7 @@
 		</effects>
 	</skill>
 	<skill id="776" toLevel="1" name="Force of Destruction">
-		<!-- Attacks the enemy with bonus 4500 Power and permeate the target with destructive energy. Requires Momentum Stage 2 recharge. Requires a fist weapon. Critical. Over-hit. -->
+		<!-- Attacks the enemy with 4500 Power added to P. Atk. and penetrates the target with destructive energy. Momentum Stage 2 Recharge needed. Requires a fist weapon. Over-hit. Critical. -->
 		<icon>icon.skill0776</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2922,6 +2985,7 @@
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
+		<chargeConsume>2</chargeConsume>
 		<effectPoint>-679</effectPoint>
 		<effectRange>200</effectRange>
 		<hitTime>1200</hitTime>
@@ -2943,7 +3007,6 @@
 		</conditions>
 		<effects>
 			<effect name="EnergyDamage">
-				<chargeConsume>2</chargeConsume>
 				<criticalChance>20</criticalChance>
 				<power>4500</power>
 				<overHit>true</overHit>
@@ -2955,28 +3018,23 @@
 		</effects>
 	</skill>
 	<skill id="777" toLevel="1" name="Demolition Impact">
-		<!-- Unleashes a shock of destruction to attack a frontal enemy with bonus 5980 Power. P. Def. -30% and M. Def. -30%. Requires a sword, blunt weapon, two-handed sword, or two-handed blunt weapon. Critical. Over-hit. -->
+		<!-- Unleashes a shock of destruction to attack nearby enemies with 7475 Power added to P. Atk. Requires a sword or blunt weapon. Over-hit. Critical. -->
 		<icon>icon.skill0777</icon>
-		<operateType>A2</operateType>
+		<operateType>A1</operateType>
 		<targetType>ENEMY_ONLY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
-		<abnormalType>ULTIMATE_DEBUFF</abnormalType>
-		<activateRate>60</activateRate>
+		<affectRange>500</affectRange>
 		<affectScope>SINGLE</affectScope>
 		<castRange>150</castRange>
 		<effectPoint>-686</effectPoint>
 		<effectRange>200</effectRange>
+		<fanRange>0;0;500;60</fanRange>
 		<hitTime>1200</hitTime>
-		<isDebuff>true</isDebuff>
-		<lvlBonusRate>20</lvlBonusRate>
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<mpConsume>240</mpConsume>
-		<nextAction>ATTACK</nextAction>
+		<magicLevel>81</magicLevel>
+		<mpConsume>160</mpConsume>
 		<reuseDelay>75000</reuseDelay>
 		<conditions>
-			<condition name="EquipWeapon">
+			<condition name="Op2hWeapon">
 				<weaponType>
 					<item>SWORD</item>
 					<item>BLUNT</item>
@@ -2985,22 +3043,46 @@
 		</conditions>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>5980</power>
+				<power>7475</power>
 				<overHit>true</overHit>
 				<criticalChance>15</criticalChance>
 			</effect>
-			<effect name="PhysicalDefence">
-				<amount>-30</amount>
-				<mode>PER</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>-30</amount>
-				<mode>PER</mode>
+		</effects>
+	</skill>
+	<skill id="778" toLevel="1" name="Golem Armor">
+		<!-- Transforms into a Golem with increased battle abilities. -->
+		<icon>icon.skill0778</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<mpConsume>44</mpConsume>
+		<reuseDelay>3600000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>259</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>259</transformationId>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="779" toLevel="1" name="Summon Smart Cubic">
-		<!-- Summons a Smart Cubic. Cancels all debuffs cast on the master, and additionally uses useful skills. Consumes 38 Spirit Ore when summoned. -->
+		<!-- Summons Smart Cubic. Cancels all the bad abnormal conditions which were cast on the master, and uses useful skills additionally. Consumes 38 Spirit Ore when summoning. -->
 		<icon>icon.skill0779</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -3025,7 +3107,7 @@
 		</effects>
 	</skill>
 	<skill id="780" toLevel="1" name="Summon Smart Cubic">
-		<!-- Summons a Smart Cubic. Cancels all debuffs cast on the master, and additionally uses useful skills. Consumes 38 Spirit Ore when summoned. -->
+		<!-- Summons Smart Cubic. Cancels all the bad abnormal conditions which were cast on the master, and uses useful skills additionally. Consumes 38 Spirit Ore when summoning. -->
 		<icon>icon.skill0779</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -3050,7 +3132,7 @@
 		</effects>
 	</skill>
 	<skill id="781" toLevel="1" name="Summon Smart Cubic">
-		<!-- Summons a Smart Cubic. Cancels all debuffs cast on the master, and additionally uses useful skills. Consumes 38 Spirit Ore when summoned. -->
+		<!-- Summons Smart Cubic. Cancels all the bad abnormal conditions which were cast on the master, and uses useful skills additionally. Consumes 38 Spirit Ore when summoning. -->
 		<icon>icon.skill0779</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -3075,7 +3157,7 @@
 		</effects>
 	</skill>
 	<skill id="782" toLevel="1" name="Summon Smart Cubic">
-		<!-- Summons a Smart Cubic. Cancels all debuffs cast on the master, and additionally uses useful skills. Consumes 38 Spirit Ore when summoned. -->
+		<!-- Summons Smart Cubic. Cancels all the bad abnormal conditions which were cast on the master, and uses useful skills additionally. Consumes 38 Spirit Ore when summoning. -->
 		<icon>icon.skill0779</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -3100,7 +3182,7 @@
 		</effects>
 	</skill>
 	<skill id="783" toLevel="1" name="Summon Smart Cubic">
-		<!-- Summons a Smart Cubic. Cancels all debuffs cast on the master, and additionally uses useful skills. Consumes 38 Spirit Ore when summoned. -->
+		<!-- Summons Smart Cubic. Cancels all the bad abnormal conditions which were cast on the master, and uses useful skills additionally. Consumes 38 Spirit Ore when summoning. -->
 		<icon>icon.skill0779</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -3125,7 +3207,7 @@
 		</effects>
 	</skill>
 	<skill id="784" toLevel="1" name="Spirit of the Phoenix">
-		<!-- Shares yours and the Phoenix's spirit. Has a chance to expand the Phoenix's spirit when being attack. Additional effects appear as it expands. -->
+		<!-- Share Phoenix's spirit and yours. There is a chance that the Spirit of the Phoenix will expand when being attacked. Additional effects appear as it expands. -->
 		<icon>icon.skill0784</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3159,7 +3241,7 @@
 		</effects>
 	</skill>
 	<skill id="785" toLevel="1" name="Flame Archon">
-		<!-- Receives the will of the Phoenix to greatly increase the fighting ability of a party member. For 1 minute, Debuff Resistance +40%, P. Def. +50%, M. Def. +50%, Atk. Spd. +30%, P. Accuracy +6, Movement Speed +30, Buff-canceling Attack Resistance +40%, and Heal Received -80%. P. Critical Rate +100 when a sword is equipped. P. Critical Damage +100% when a blunt weapon is equipped. -->
+		<!-- Receives the will of the phoenix to drastically increase the fighting ability of party members. For 1 minute, increases Debuff Resistance by 40%, P. Def. by 50%, M. Def. by 50%, Atk. Spd. by 30%, Accuracy by 6, Speed by 30, and Buff-canceling Attack Resistance by 40%. Decreases the effectiveness of received recovery magic by 80%. When a sword is equipped, increases Critical Rate by 100. When a blunt is equipped, increases Critical Damage by 100%. -->
 		<icon>icon.skill0785</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3233,7 +3315,7 @@
 		</effects>
 	</skill>
 	<skill id="786" toLevel="1" name="Eva's Will">
-		<!-- Show Will of Eva through yourself. Has a chance to grow the Will of Eva when being attacked. Additional effects appear with growth. -->
+		<!-- Show Will of Eva through yourself. There is a chance that the Will of Eva will expand when being attacked. Additional effects appear with growth. -->
 		<icon>icon.skill0786</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3267,7 +3349,7 @@
 		</effects>
 	</skill>
 	<skill id="787" toLevel="1" name="Touch of Eva">
-		<!-- Recovers 50% HP of party members. For 1 minute, Buff-canceling Attack Resistance +100%, Debuff Resistance+ 30%, Heal Received +30%, and recovers 50 HP per second. -->
+		<!-- Restores HP of party members by 50%. For 1 minute, increases Buff-canceling Attack Resistance by 100%, the Healing power received by 30%, and received HP Recovery Magic Power by 30%. Restores 50 HP every second. -->
 		<icon>icon.skill0787</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3298,7 +3380,7 @@
 		<effects>
 			<effect name="HealOverTime">
 				<power>50</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="HealPercent">
 				<power>50</power>
@@ -3318,7 +3400,7 @@
 		</effects>
 	</skill>
 	<skill id="788" toLevel="1" name="Pain of Shilen">
-		<!-- Shilen's pain becomes your own. Has a chance to increase Shilen's pain when being attacked. Additional effects appear with the increase. -->
+		<!-- Shilen's pain becomes your own. Shilen's suffering wracks your body, having a chance to increase when you are being attacked. Additional effects appear with each increase. When level 3 is achieved, you can then use the Spirit of Shilen. -->
 		<icon>icon.skill0788</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3352,7 +3434,7 @@
 		</effects>
 	</skill>
 	<skill id="789" toLevel="1" name="Spirit of Shilen">
-		<!-- Receives the Will of Shilen to drastically increase the fighting ability of a party member. For 1 minute, P. Atk. +30%, Movement Speed +30, Atk. Spd. +30%, M. Atk. +30%, P. Critical Rate +100 when a sword is equipped, and P. Critical Damage +100% when a blunt weapon is equipped. Has a chance to absorb 40% of physical damage dealt to enemies as HP. Heal Received -80%. -->
+		<!-- Receives the will of Shilen to drastically increase the fighting ability of party member. For 1 min., P. Atk. +30%, Speed +3, Atk. Spd. +30%, M. Atk. +30%, Critical Rate when a sword is equipped +100, and Critical Damage when a blunt weapon is equipped +100%. Has a chance to recover 40% of the damage inflicted on the enemy as HP. Received HP Recovery - 80%. -->
 		<icon>icon.skill0789</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3379,7 +3461,7 @@
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>40</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 			<effect name="PhysicalAttack">
 				<amount>30</amount>
@@ -3418,7 +3500,7 @@
 		</effects>
 	</skill>
 	<skill id="790" toLevel="1" name="Wild Shot">
-		<!-- Blindly fires a bolt to attack frontal enemies bonus 7475 Power. Requires a crossbow. Critical. Over-hit. Increases Power upon the consumption of up to 5 souls. -->
+		<!-- Fires bolt at random to attack enemies in front with 7475 Power added to P. Atk. Requires a crossbow. Over-hit. Critical. Increases Power upon the consumption of up to 5 souls. -->
 		<icon>icon.skill0790</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3453,9 +3535,215 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="791" toLevel="2" name="Lightning Shock">
-		<!-- Level 1: Sends an electric current to attack nearby enemies with bonus 149 M. Atk. Power. Immediately paralyzes for 3 seconds, Heal Received -10%. Over-hit. -->
-		<!-- Level 2: Sends an electric current to attack nearby enemies with bonus 158 M. Atk. Power. Immediately paralyzes for 3 seconds, Heal Received -20%. Over-hit. -->
+	<skill id="791" toLevel="8" name="Lightning Shock">
+		<!-- Level 1: Sends an electric current to attack nearby enemies with 149 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 10%. Over-hit. -->
+		<!-- Level 2: Sends an electric current to attack nearby enemies with 158 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - #s3. Over-hit. -->
+		<!-- Level 3: Sends an electric current to attack nearby enemies with 169 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 30%. -->
+		<!-- Level 4: Sends an electric current to attack nearby enemies with 179 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 40%. -->
+		<!-- Level 5: Sends an electric current to attack nearby enemies with 188 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 50%. -->
+		<!-- Level 6: Sends an electric current to attack nearby enemies with 191 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 50%. -->
+		<!-- Level 7: Sends an electric current to attack nearby enemies with 195 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 50%. -->
+		<!-- Level 8: Sends an electric current to attack nearby enemies with 199 Power added to M. Atk. Paralyzes for 3 seconds. Decreases received HP Recovery Rate - 50%. -->
+		<!-- Level 4 - SubLevel 1001 (+ 1% Power) -->
+		<!-- Level 4 - SubLevel 1002 (+ 1.4% Power) -->
+		<!-- Level 4 - SubLevel 1003 (+ 1.8% Power) -->
+		<!-- Level 4 - SubLevel 1004 (+ 2.2% Power) -->
+		<!-- Level 4 - SubLevel 1005 (+ 2.6% Power) -->
+		<!-- Level 4 - SubLevel 1006 (+ 2.8% Power) -->
+		<!-- Level 4 - SubLevel 1007 (+ 3.3% Power) -->
+		<!-- Level 4 - SubLevel 1008 (+ 3.6% Power) -->
+		<!-- Level 4 - SubLevel 1009 (+ 4% Power) -->
+		<!-- Level 4 - SubLevel 1010 (+ 4.4% Power) -->
+		<!-- Level 4 - SubLevel 1011 (+ 4.8% Power) -->
+		<!-- Level 4 - SubLevel 1012 (+ 5.1% Power) -->
+		<!-- Level 4 - SubLevel 1013 (+ 5.5% Power) -->
+		<!-- Level 4 - SubLevel 1014 (+ 5.9% Power) -->
+		<!-- Level 4 - SubLevel 1015 (+ 6.2% Power) -->
+		<!-- Level 4 - SubLevel 1016 (+ 6.6% Power) -->
+		<!-- Level 4 - SubLevel 1017 (+ 7% Power) -->
+		<!-- Level 4 - SubLevel 1018 (+ 7.4% Power) -->
+		<!-- Level 4 - SubLevel 1019 (+ 7.7% Power) -->
+		<!-- Level 4 - SubLevel 1020 (+ 8.1% Power) -->
+		<!-- Level 4 - SubLevel 2001 (+ 1% Chance) -->
+		<!-- Level 4 - SubLevel 2002 (+ 2% Chance) -->
+		<!-- Level 4 - SubLevel 2003 (+ 3% Chance) -->
+		<!-- Level 4 - SubLevel 2004 (+ 4% Chance) -->
+		<!-- Level 4 - SubLevel 2005 (+ 5% Chance) -->
+		<!-- Level 4 - SubLevel 2006 (+ 6% Chance) -->
+		<!-- Level 4 - SubLevel 2007 (+ 7% Chance) -->
+		<!-- Level 4 - SubLevel 2008 (+ 8% Chance) -->
+		<!-- Level 4 - SubLevel 2009 (+ 9% Chance) -->
+		<!-- Level 4 - SubLevel 2010 (+ 10% Chance) -->
+		<!-- Level 4 - SubLevel 2011 (+ 11% Chance) -->
+		<!-- Level 4 - SubLevel 2012 (+ 12% Chance) -->
+		<!-- Level 4 - SubLevel 2013 (+ 13% Chance) -->
+		<!-- Level 4 - SubLevel 2014 (+ 14% Chance) -->
+		<!-- Level 4 - SubLevel 2015 (+ 15% Chance) -->
+		<!-- Level 4 - SubLevel 2016 (+ 16% Chance) -->
+		<!-- Level 4 - SubLevel 2017 (+ 17% Chance) -->
+		<!-- Level 4 - SubLevel 2018 (+ 18% Chance) -->
+		<!-- Level 4 - SubLevel 2019 (+ 19% Chance) -->
+		<!-- Level 4 - SubLevel 2020 (+ 20% Chance) -->
+		<!-- Level 5 - SubLevel 1001 (+ 1% Power) -->
+		<!-- Level 5 - SubLevel 1002 (+ 1.4% Power) -->
+		<!-- Level 5 - SubLevel 1003 (+ 1.8% Power) -->
+		<!-- Level 5 - SubLevel 1004 (+ 2.2% Power) -->
+		<!-- Level 5 - SubLevel 1005 (+ 2.6% Power) -->
+		<!-- Level 5 - SubLevel 1006 (+ 2.8% Power) -->
+		<!-- Level 5 - SubLevel 1007 (+ 3.3% Power) -->
+		<!-- Level 5 - SubLevel 1008 (+ 3.6% Power) -->
+		<!-- Level 5 - SubLevel 1009 (+ 4% Power) -->
+		<!-- Level 5 - SubLevel 1010 (+ 4.4% Power) -->
+		<!-- Level 5 - SubLevel 1011 (+ 4.8% Power) -->
+		<!-- Level 5 - SubLevel 1012 (+ 5.1% Power) -->
+		<!-- Level 5 - SubLevel 1013 (+ 5.5% Power) -->
+		<!-- Level 5 - SubLevel 1014 (+ 5.9% Power) -->
+		<!-- Level 5 - SubLevel 1015 (+ 6.2% Power) -->
+		<!-- Level 5 - SubLevel 1016 (+ 6.6% Power) -->
+		<!-- Level 5 - SubLevel 1017 (+ 7% Power) -->
+		<!-- Level 5 - SubLevel 1018 (+ 7.4% Power) -->
+		<!-- Level 5 - SubLevel 1019 (+ 7.7% Power) -->
+		<!-- Level 5 - SubLevel 1020 (+ 8.1% Power) -->
+		<!-- Level 5 - SubLevel 2001 (+ 1% Chance) -->
+		<!-- Level 5 - SubLevel 2002 (+ 2% Chance) -->
+		<!-- Level 5 - SubLevel 2003 (+ 3% Chance) -->
+		<!-- Level 5 - SubLevel 2004 (+ 4% Chance) -->
+		<!-- Level 5 - SubLevel 2005 (+ 5% Chance) -->
+		<!-- Level 5 - SubLevel 2006 (+ 6% Chance) -->
+		<!-- Level 5 - SubLevel 2007 (+ 7% Chance) -->
+		<!-- Level 5 - SubLevel 2008 (+ 8% Chance) -->
+		<!-- Level 5 - SubLevel 2009 (+ 9% Chance) -->
+		<!-- Level 5 - SubLevel 2010 (+ 10% Chance) -->
+		<!-- Level 5 - SubLevel 2011 (+ 11% Chance) -->
+		<!-- Level 5 - SubLevel 2012 (+ 12% Chance) -->
+		<!-- Level 5 - SubLevel 2013 (+ 13% Chance) -->
+		<!-- Level 5 - SubLevel 2014 (+ 14% Chance) -->
+		<!-- Level 5 - SubLevel 2015 (+ 15% Chance) -->
+		<!-- Level 5 - SubLevel 2016 (+ 16% Chance) -->
+		<!-- Level 5 - SubLevel 2017 (+ 17% Chance) -->
+		<!-- Level 5 - SubLevel 2018 (+ 18% Chance) -->
+		<!-- Level 5 - SubLevel 2019 (+ 19% Chance) -->
+		<!-- Level 5 - SubLevel 2020 (+ 20% Chance) -->
+		<!-- Level 6 - SubLevel 1001 (+ 1% Power) -->
+		<!-- Level 6 - SubLevel 1002 (+ 1.4% Power) -->
+		<!-- Level 6 - SubLevel 1003 (+ 1.8% Power) -->
+		<!-- Level 6 - SubLevel 1004 (+ 2.2% Power) -->
+		<!-- Level 6 - SubLevel 1005 (+ 2.6% Power) -->
+		<!-- Level 6 - SubLevel 1006 (+ 2.8% Power) -->
+		<!-- Level 6 - SubLevel 1007 (+ 3.3% Power) -->
+		<!-- Level 6 - SubLevel 1008 (+ 3.6% Power) -->
+		<!-- Level 6 - SubLevel 1009 (+ 4% Power) -->
+		<!-- Level 6 - SubLevel 1010 (+ 4.4% Power) -->
+		<!-- Level 6 - SubLevel 1011 (+ 4.8% Power) -->
+		<!-- Level 6 - SubLevel 1012 (+ 5.1% Power) -->
+		<!-- Level 6 - SubLevel 1013 (+ 5.5% Power) -->
+		<!-- Level 6 - SubLevel 1014 (+ 5.9% Power) -->
+		<!-- Level 6 - SubLevel 1015 (+ 6.2% Power) -->
+		<!-- Level 6 - SubLevel 1016 (+ 6.6% Power) -->
+		<!-- Level 6 - SubLevel 1017 (+ 7% Power) -->
+		<!-- Level 6 - SubLevel 1018 (+ 7.4% Power) -->
+		<!-- Level 6 - SubLevel 1019 (+ 7.7% Power) -->
+		<!-- Level 6 - SubLevel 1020 (+ 8.1% Power) -->
+		<!-- Level 6 - SubLevel 2001 (+ 1% Chance) -->
+		<!-- Level 6 - SubLevel 2002 (+ 2% Chance) -->
+		<!-- Level 6 - SubLevel 2003 (+ 3% Chance) -->
+		<!-- Level 6 - SubLevel 2004 (+ 4% Chance) -->
+		<!-- Level 6 - SubLevel 2005 (+ 5% Chance) -->
+		<!-- Level 6 - SubLevel 2006 (+ 6% Chance) -->
+		<!-- Level 6 - SubLevel 2007 (+ 7% Chance) -->
+		<!-- Level 6 - SubLevel 2008 (+ 8% Chance) -->
+		<!-- Level 6 - SubLevel 2009 (+ 9% Chance) -->
+		<!-- Level 6 - SubLevel 2010 (+ 10% Chance) -->
+		<!-- Level 6 - SubLevel 2011 (+ 11% Chance) -->
+		<!-- Level 6 - SubLevel 2012 (+ 12% Chance) -->
+		<!-- Level 6 - SubLevel 2013 (+ 13% Chance) -->
+		<!-- Level 6 - SubLevel 2014 (+ 14% Chance) -->
+		<!-- Level 6 - SubLevel 2015 (+ 15% Chance) -->
+		<!-- Level 6 - SubLevel 2016 (+ 16% Chance) -->
+		<!-- Level 6 - SubLevel 2017 (+ 17% Chance) -->
+		<!-- Level 6 - SubLevel 2018 (+ 18% Chance) -->
+		<!-- Level 6 - SubLevel 2019 (+ 19% Chance) -->
+		<!-- Level 6 - SubLevel 2020 (+ 20% Chance) -->
+		<!-- Level 7 - SubLevel 1001 (+ 1% Power) -->
+		<!-- Level 7 - SubLevel 1002 (+ 1.4% Power) -->
+		<!-- Level 7 - SubLevel 1003 (+ 1.8% Power) -->
+		<!-- Level 7 - SubLevel 1004 (+ 2.2% Power) -->
+		<!-- Level 7 - SubLevel 1005 (+ 2.6% Power) -->
+		<!-- Level 7 - SubLevel 1006 (+ 2.8% Power) -->
+		<!-- Level 7 - SubLevel 1007 (+ 3.3% Power) -->
+		<!-- Level 7 - SubLevel 1008 (+ 3.6% Power) -->
+		<!-- Level 7 - SubLevel 1009 (+ 4% Power) -->
+		<!-- Level 7 - SubLevel 1010 (+ 4.4% Power) -->
+		<!-- Level 7 - SubLevel 1011 (+ 4.8% Power) -->
+		<!-- Level 7 - SubLevel 1012 (+ 5.1% Power) -->
+		<!-- Level 7 - SubLevel 1013 (+ 5.5% Power) -->
+		<!-- Level 7 - SubLevel 1014 (+ 5.9% Power) -->
+		<!-- Level 7 - SubLevel 1015 (+ 6.2% Power) -->
+		<!-- Level 7 - SubLevel 1016 (+ 6.6% Power) -->
+		<!-- Level 7 - SubLevel 1017 (+ 7% Power) -->
+		<!-- Level 7 - SubLevel 1018 (+ 7.4% Power) -->
+		<!-- Level 7 - SubLevel 1019 (+ 7.7% Power) -->
+		<!-- Level 7 - SubLevel 1020 (+ 8.1% Power) -->
+		<!-- Level 7 - SubLevel 2001 (+ 1% Chance) -->
+		<!-- Level 7 - SubLevel 2002 (+ 2% Chance) -->
+		<!-- Level 7 - SubLevel 2003 (+ 3% Chance) -->
+		<!-- Level 7 - SubLevel 2004 (+ 4% Chance) -->
+		<!-- Level 7 - SubLevel 2005 (+ 5% Chance) -->
+		<!-- Level 7 - SubLevel 2006 (+ 6% Chance) -->
+		<!-- Level 7 - SubLevel 2007 (+ 7% Chance) -->
+		<!-- Level 7 - SubLevel 2008 (+ 8% Chance) -->
+		<!-- Level 7 - SubLevel 2009 (+ 9% Chance) -->
+		<!-- Level 7 - SubLevel 2010 (+ 10% Chance) -->
+		<!-- Level 7 - SubLevel 2011 (+ 11% Chance) -->
+		<!-- Level 7 - SubLevel 2012 (+ 12% Chance) -->
+		<!-- Level 7 - SubLevel 2013 (+ 13% Chance) -->
+		<!-- Level 7 - SubLevel 2014 (+ 14% Chance) -->
+		<!-- Level 7 - SubLevel 2015 (+ 15% Chance) -->
+		<!-- Level 7 - SubLevel 2016 (+ 16% Chance) -->
+		<!-- Level 7 - SubLevel 2017 (+ 17% Chance) -->
+		<!-- Level 7 - SubLevel 2018 (+ 18% Chance) -->
+		<!-- Level 7 - SubLevel 2019 (+ 19% Chance) -->
+		<!-- Level 7 - SubLevel 2020 (+ 20% Chance) -->
+		<!-- Level 8 - SubLevel 1001 (+ 1% Power) -->
+		<!-- Level 8 - SubLevel 1002 (+ 1.4% Power) -->
+		<!-- Level 8 - SubLevel 1003 (+ 1.8% Power) -->
+		<!-- Level 8 - SubLevel 1004 (+ 2.2% Power) -->
+		<!-- Level 8 - SubLevel 1005 (+ 2.6% Power) -->
+		<!-- Level 8 - SubLevel 1006 (+ 2.8% Power) -->
+		<!-- Level 8 - SubLevel 1007 (+ 3.3% Power) -->
+		<!-- Level 8 - SubLevel 1008 (+ 3.6% Power) -->
+		<!-- Level 8 - SubLevel 1009 (+ 4% Power) -->
+		<!-- Level 8 - SubLevel 1010 (+ 4.4% Power) -->
+		<!-- Level 8 - SubLevel 1011 (+ 4.8% Power) -->
+		<!-- Level 8 - SubLevel 1012 (+ 5.1% Power) -->
+		<!-- Level 8 - SubLevel 1013 (+ 5.5% Power) -->
+		<!-- Level 8 - SubLevel 1014 (+ 5.9% Power) -->
+		<!-- Level 8 - SubLevel 1015 (+ 6.2% Power) -->
+		<!-- Level 8 - SubLevel 1016 (+ 6.6% Power) -->
+		<!-- Level 8 - SubLevel 1017 (+ 7% Power) -->
+		<!-- Level 8 - SubLevel 1018 (+ 7.4% Power) -->
+		<!-- Level 8 - SubLevel 1019 (+ 7.7% Power) -->
+		<!-- Level 8 - SubLevel 1020 (+ 8.1% Power) -->
+		<!-- Level 8 - SubLevel 2001 (+ 1% Chance) -->
+		<!-- Level 8 - SubLevel 2002 (+ 2% Chance) -->
+		<!-- Level 8 - SubLevel 2003 (+ 3% Chance) -->
+		<!-- Level 8 - SubLevel 2004 (+ 4% Chance) -->
+		<!-- Level 8 - SubLevel 2005 (+ 5% Chance) -->
+		<!-- Level 8 - SubLevel 2006 (+ 6% Chance) -->
+		<!-- Level 8 - SubLevel 2007 (+ 7% Chance) -->
+		<!-- Level 8 - SubLevel 2008 (+ 8% Chance) -->
+		<!-- Level 8 - SubLevel 2009 (+ 9% Chance) -->
+		<!-- Level 8 - SubLevel 2010 (+ 10% Chance) -->
+		<!-- Level 8 - SubLevel 2011 (+ 11% Chance) -->
+		<!-- Level 8 - SubLevel 2012 (+ 12% Chance) -->
+		<!-- Level 8 - SubLevel 2013 (+ 13% Chance) -->
+		<!-- Level 8 - SubLevel 2014 (+ 14% Chance) -->
+		<!-- Level 8 - SubLevel 2015 (+ 15% Chance) -->
+		<!-- Level 8 - SubLevel 2016 (+ 16% Chance) -->
+		<!-- Level 8 - SubLevel 2017 (+ 17% Chance) -->
+		<!-- Level 8 - SubLevel 2018 (+ 18% Chance) -->
+		<!-- Level 8 - SubLevel 2019 (+ 19% Chance) -->
+		<!-- Level 8 - SubLevel 2020 (+ 20% Chance) -->
 		<icon>icon.skill0791</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3464,8 +3752,8 @@
 		<abnormalType>PARALYZE</abnormalType>
 		<abnormalVisualEffect>PARALYZE</abnormalVisualEffect>
 		<activateRate>
-			<value fromLevel="1" toLevel="5">50</value>
-			<value fromLevel="5" toLevel="5" fromSubLevel="2001" toSubLevel="2030">{base + base / 100 * subIndex}</value>
+			<value fromLevel="1" toLevel="8">50</value>
+			<value fromLevel="5" toLevel="8" fromSubLevel="2001" toSubLevel="2020">{base + base / 100 * subIndex}</value>
 		</activateRate>
 		<activateRate>50</activateRate>
 		<affectLimit>6-12</affectLimit>
@@ -3486,6 +3774,9 @@
 			<value level="3">90</value>
 			<value level="4">95</value>
 			<value level="5">99</value>
+			<value level="6">101</value>
+			<value level="7">103</value>
+			<value level="8">105</value>
 		</magicLevel>
 		<mpConsume>52</mpConsume>
 		<reuseDelay>5000</reuseDelay>
@@ -3499,34 +3790,27 @@
 					<value level="3">169</value>
 					<value level="4">179</value>
 					<value level="5">188</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1001" toSubLevel="1005">{base + base / 100 * (1 + 0.4 * (subIndex - 1))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1006" toSubLevel="1006">{base + base / 100 * (2 + 0.8 * (subIndex - 5))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1007" toSubLevel="1007">{base + base / 100 * (3 + 0.3 * (subIndex - 6))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1008" toSubLevel="1008">{base + base / 100 * (3 + 0.3 * (subIndex - 7))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1009" toSubLevel="1011">{base + base / 100 * (4 + 0.4 * (subIndex - 8))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1012" toSubLevel="1012">{base + base / 100 * (5 + 0.1 * (subIndex - 11))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1013" toSubLevel="1013">{base + base / 100 * (5 + 0.5 * (subIndex - 12))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1014" toSubLevel="1014">{base + base / 100 * (5 + 0.9 * (subIndex - 13))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1015" toSubLevel="1015">{base + base / 100 * (6 + 0.2 * (subIndex - 14))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1016" toSubLevel="1016">{base + base / 100 * (6 + 0.6 * (subIndex - 15))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1017" toSubLevel="1017">{base + base / 100 * (7 + 0.2 * (subIndex - 16))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1018" toSubLevel="1018">{base + base / 100 * (7 + 0.4 * (subIndex - 17))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1019" toSubLevel="1019">{base + base / 100 * (7 + 0.7 * (subIndex - 18))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1020" toSubLevel="1020">{base + base / 100 * (8 + 0.1 * (subIndex - 19))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1021" toSubLevel="1021">{base + base / 100 * (8 + 0.5 * (subIndex - 20))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1022" toSubLevel="1022">{base + base / 100 * (8 + 0.8 * (subIndex - 21))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1023" toSubLevel="1023">{base + base / 100 * (9 + 0.2 * (subIndex - 22))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1024" toSubLevel="1024">{base + base / 100 * (9 + 0.6 * (subIndex - 23))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1025" toSubLevel="1025">{base + base / 100 * (10 * (subIndex - 24))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1026" toSubLevel="1026">{base + base / 100 * (10 + 0.3 * (subIndex - 25))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1027" toSubLevel="1027">{base + base / 100 * (10 + 0.7 * (subIndex - 26))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1028" toSubLevel="1028">{base + base / 100 * (11 + 0.1 * (subIndex - 27))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1029" toSubLevel="1029">{base + base / 100 * (11 + 0.4 * (subIndex - 28))}</value>
-					<value fromLevel="5" toLevel="5" fromSubLevel="1030" toSubLevel="1030">{base + base / 100 * (11 + 0.8 * (subIndex - 29))}</value>
+					<value level="6">191</value>
+					<value level="7">195</value>
+					<value level="8">199</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1001" toSubLevel="1005">{base + base / 100 * (1 + 0.4 * (subIndex - 1))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1006" toSubLevel="1006">{base + base / 100 * (2 + 0.8 * (subIndex - 5))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1007" toSubLevel="1007">{base + base / 100 * (3 + 0.3 * (subIndex - 6))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1008" toSubLevel="1008">{base + base / 100 * (3 + 0.3 * (subIndex - 7))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1009" toSubLevel="1011">{base + base / 100 * (4 + 0.4 * (subIndex - 8))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1012" toSubLevel="1012">{base + base / 100 * (5 + 0.1 * (subIndex - 11))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1013" toSubLevel="1013">{base + base / 100 * (5 + 0.5 * (subIndex - 12))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1014" toSubLevel="1014">{base + base / 100 * (5 + 0.9 * (subIndex - 13))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1015" toSubLevel="1015">{base + base / 100 * (6 + 0.2 * (subIndex - 14))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1016" toSubLevel="1016">{base + base / 100 * (6 + 0.6 * (subIndex - 15))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1017" toSubLevel="1017">{base + base / 100 * (7 + 0.2 * (subIndex - 16))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1018" toSubLevel="1018">{base + base / 100 * (7 + 0.4 * (subIndex - 17))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1019" toSubLevel="1019">{base + base / 100 * (7 + 0.7 * (subIndex - 18))}</value>
+					<value fromLevel="5" toLevel="8" fromSubLevel="1020" toSubLevel="1020">{base + base / 100 * (8 + 0.1 * (subIndex - 19))}</value>
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="HealEffect">
 				<amount>
@@ -3535,6 +3819,9 @@
 					<value level="3">-30</value>
 					<value level="4">-40</value>
 					<value level="5">-50</value>
+					<value level="6">-50</value>
+					<value level="7">-50</value>
+					<value level="8">-50</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3582,9 +3869,390 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="793" toLevel="2" name="Rush Impact">
-		<!-- Level 1: Rushes forward to attack frontal enemies with bonus 4040 Power, and stuns for 5 seconds. Requires an ancient sword, sword, blunt weapon, spear, fist weapon, dual blunt weapon, or dualsword. -->
-		<!-- Level 2: Rushes forward to attack frontal enemies with bonus 11557 Power, and stuns for 5 seconds. Requires an ancient sword, sword, blunt weapon, spear, fist weapon, dual blunt weapon, or dualsword. -->
+	<skill id="793" toLevel="8" name="Rush Impact">
+		<!-- Level 1: Charges forward to attack the enemies in front with 4040 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 2: Charges forward to attack the enemies in front with 11557 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 3: Charges forward to attack the enemies in front with 13553 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 4: Charges forward to attack the enemies in front with 15150 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 5: Charges forward to attack the enemies in front with 16747 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 6: Charges forward to attack the enemies in front with 17896 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 7: Charges forward to attack the enemies in front with 18622 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 8: Charges forward to attack the enemies in front with 19348 power added to P. Atk. and inflicts Stun for 5 seconds. Requires an ancient sword/sword/blunt/spear/fist weapon/dual blunt/dual sword weapon. -->
+		<!-- Level 4 - SubLevel 1001 (+ 1% Chance) -->
+		<!-- Level 4 - SubLevel 1002 (+ 2% Chance) -->
+		<!-- Level 4 - SubLevel 1003 (+ 3% Chance) -->
+		<!-- Level 4 - SubLevel 1004 (+ 4% Chance) -->
+		<!-- Level 4 - SubLevel 1005 (+ 5% Chance) -->
+		<!-- Level 4 - SubLevel 1006 (+ 6% Chance) -->
+		<!-- Level 4 - SubLevel 1007 (+ 7% Chance) -->
+		<!-- Level 4 - SubLevel 1008 (+ 8% Chance) -->
+		<!-- Level 4 - SubLevel 1009 (+ 9% Chance) -->
+		<!-- Level 4 - SubLevel 1010 (+ 10% Chance) -->
+		<!-- Level 4 - SubLevel 1011 (+ 11% Chance) -->
+		<!-- Level 4 - SubLevel 1012 (+ 12% Chance) -->
+		<!-- Level 4 - SubLevel 1013 (+ 13% Chance) -->
+		<!-- Level 4 - SubLevel 1014 (+ 14% Chance) -->
+		<!-- Level 4 - SubLevel 1015 (+ 15% Chance) -->
+		<!-- Level 4 - SubLevel 1016 (+ 16% Chance) -->
+		<!-- Level 4 - SubLevel 1017 (+ 17% Chance) -->
+		<!-- Level 4 - SubLevel 1018 (+ 18% Chance) -->
+		<!-- Level 4 - SubLevel 1019 (+ 19% Chance) -->
+		<!-- Level 4 - SubLevel 1020 (+ 20% Chance) -->
+		<!-- Level 4 - SubLevel 2001 (+ 1% Hex) -->
+		<!-- Level 4 - SubLevel 2002 (+ 1.4% Hex) -->
+		<!-- Level 4 - SubLevel 2003 (+ 1.8% Hex) -->
+		<!-- Level 4 - SubLevel 2004 (+ 2.2% Hex) -->
+		<!-- Level 4 - SubLevel 2005 (+ 2.6% Hex) -->
+		<!-- Level 4 - SubLevel 2006 (+ 3% Hex) -->
+		<!-- Level 4 - SubLevel 2007 (+ 3.4% Hex) -->
+		<!-- Level 4 - SubLevel 2008 (+ 3.8% Hex) -->
+		<!-- Level 4 - SubLevel 2009 (+ 4.2% Hex) -->
+		<!-- Level 4 - SubLevel 2010 (+ 4.6% Hex) -->
+		<!-- Level 4 - SubLevel 2011 (+ 5% Hex) -->
+		<!-- Level 4 - SubLevel 2012 (+ 5.4% Hex) -->
+		<!-- Level 4 - SubLevel 2013 (+ 5.8% Hex) -->
+		<!-- Level 4 - SubLevel 2014 (+ 6.2% Hex) -->
+		<!-- Level 4 - SubLevel 2015 (+ 6.6% Hex) -->
+		<!-- Level 4 - SubLevel 2016 (+ 7% Hex) -->
+		<!-- Level 4 - SubLevel 2017 (+ 7.4% Hex) -->
+		<!-- Level 4 - SubLevel 2018 (+ 7.8% Hex) -->
+		<!-- Level 4 - SubLevel 2019 (+ 8.2% Hex) -->
+		<!-- Level 4 - SubLevel 2020 (+ 8.6% Hex) -->
+		<!-- Level 4 - SubLevel 3001 (+ 1% Mind) -->
+		<!-- Level 4 - SubLevel 3002 (+ 1.4% Mind) -->
+		<!-- Level 4 - SubLevel 3003 (+ 1.8% Mind) -->
+		<!-- Level 4 - SubLevel 3004 (+ 2.2% Mind) -->
+		<!-- Level 4 - SubLevel 3005 (+ 2.6% Mind) -->
+		<!-- Level 4 - SubLevel 3006 (+ 3% Mind) -->
+		<!-- Level 4 - SubLevel 3007 (+ 3.4% Mind) -->
+		<!-- Level 4 - SubLevel 3008 (+ 3.8% Mind) -->
+		<!-- Level 4 - SubLevel 3009 (+ 4.2% Mind) -->
+		<!-- Level 4 - SubLevel 3010 (+ 4.6% Mind) -->
+		<!-- Level 4 - SubLevel 3011 (+ 5% Mind) -->
+		<!-- Level 4 - SubLevel 3012 (+ 5.4% Mind) -->
+		<!-- Level 4 - SubLevel 3013 (+ 5.8% Mind) -->
+		<!-- Level 4 - SubLevel 3014 (+ 6.2% Mind) -->
+		<!-- Level 4 - SubLevel 3015 (+ 6.6% Mind) -->
+		<!-- Level 4 - SubLevel 3016 (+ 7% Mind) -->
+		<!-- Level 4 - SubLevel 3017 (+ 7.4% Mind) -->
+		<!-- Level 4 - SubLevel 3018 (+ 7.8% Mind) -->
+		<!-- Level 4 - SubLevel 3019 (+ 8.2% Mind) -->
+		<!-- Level 4 - SubLevel 3020 (+ 8.6% Mind) -->
+		<!-- Level 5 - SubLevel 1001 (+ 1% Chance) -->
+		<!-- Level 5 - SubLevel 1002 (+ 2% Chance) -->
+		<!-- Level 5 - SubLevel 1003 (+ 3% Chance) -->
+		<!-- Level 5 - SubLevel 1004 (+ 4% Chance) -->
+		<!-- Level 5 - SubLevel 1005 (+ 5% Chance) -->
+		<!-- Level 5 - SubLevel 1006 (+ 6% Chance) -->
+		<!-- Level 5 - SubLevel 1007 (+ 7% Chance) -->
+		<!-- Level 5 - SubLevel 1008 (+ 8% Chance) -->
+		<!-- Level 5 - SubLevel 1009 (+ 9% Chance) -->
+		<!-- Level 5 - SubLevel 1010 (+ 10% Chance) -->
+		<!-- Level 5 - SubLevel 1011 (+ 11% Chance) -->
+		<!-- Level 5 - SubLevel 1012 (+ 12% Chance) -->
+		<!-- Level 5 - SubLevel 1013 (+ 13% Chance) -->
+		<!-- Level 5 - SubLevel 1014 (+ 14% Chance) -->
+		<!-- Level 5 - SubLevel 1015 (+ 15% Chance) -->
+		<!-- Level 5 - SubLevel 1016 (+ 16% Chance) -->
+		<!-- Level 5 - SubLevel 1017 (+ 17% Chance) -->
+		<!-- Level 5 - SubLevel 1018 (+ 18% Chance) -->
+		<!-- Level 5 - SubLevel 1019 (+ 19% Chance) -->
+		<!-- Level 5 - SubLevel 1020 (+ 20% Chance) -->
+		<!-- Level 5 - SubLevel 2001 (+ 1% Hex) -->
+		<!-- Level 5 - SubLevel 2002 (+ 1.4% Hex) -->
+		<!-- Level 5 - SubLevel 2003 (+ 1.8% Hex) -->
+		<!-- Level 5 - SubLevel 2004 (+ 2.2% Hex) -->
+		<!-- Level 5 - SubLevel 2005 (+ 2.6% Hex) -->
+		<!-- Level 5 - SubLevel 2006 (+ 3% Hex) -->
+		<!-- Level 5 - SubLevel 2007 (+ 3.4% Hex) -->
+		<!-- Level 5 - SubLevel 2008 (+ 3.8% Hex) -->
+		<!-- Level 5 - SubLevel 2009 (+ 4.2% Hex) -->
+		<!-- Level 5 - SubLevel 2010 (+ 4.6% Hex) -->
+		<!-- Level 5 - SubLevel 2011 (+ 5% Hex) -->
+		<!-- Level 5 - SubLevel 2012 (+ 5.4% Hex) -->
+		<!-- Level 5 - SubLevel 2013 (+ 5.8% Hex) -->
+		<!-- Level 5 - SubLevel 2014 (+ 6.2% Hex) -->
+		<!-- Level 5 - SubLevel 2015 (+ 6.6% Hex) -->
+		<!-- Level 5 - SubLevel 2016 (+ 7% Hex) -->
+		<!-- Level 5 - SubLevel 2017 (+ 7.4% Hex) -->
+		<!-- Level 5 - SubLevel 2018 (+ 7.8% Hex) -->
+		<!-- Level 5 - SubLevel 2019 (+ 8.2% Hex) -->
+		<!-- Level 5 - SubLevel 2020 (+ 8.6% Hex) -->
+		<!-- Level 5 - SubLevel 3001 (+ 1% Mind) -->
+		<!-- Level 5 - SubLevel 3002 (+ 1.4% Mind) -->
+		<!-- Level 5 - SubLevel 3003 (+ 1.8% Mind) -->
+		<!-- Level 5 - SubLevel 3004 (+ 2.2% Mind) -->
+		<!-- Level 5 - SubLevel 3005 (+ 2.6% Mind) -->
+		<!-- Level 5 - SubLevel 3006 (+ 3% Mind) -->
+		<!-- Level 5 - SubLevel 3007 (+ 3.4% Mind) -->
+		<!-- Level 5 - SubLevel 3008 (+ 3.8% Mind) -->
+		<!-- Level 5 - SubLevel 3009 (+ 4.2% Mind) -->
+		<!-- Level 5 - SubLevel 3010 (+ 4.6% Mind) -->
+		<!-- Level 5 - SubLevel 3011 (+ 5% Mind) -->
+		<!-- Level 5 - SubLevel 3012 (+ 5.4% Mind) -->
+		<!-- Level 5 - SubLevel 3013 (+ 5.8% Mind) -->
+		<!-- Level 5 - SubLevel 3014 (+ 6.2% Mind) -->
+		<!-- Level 5 - SubLevel 3015 (+ 6.6% Mind) -->
+		<!-- Level 5 - SubLevel 3016 (+ 7% Mind) -->
+		<!-- Level 5 - SubLevel 3017 (+ 7.4% Mind) -->
+		<!-- Level 5 - SubLevel 3018 (+ 7.8% Mind) -->
+		<!-- Level 5 - SubLevel 3019 (+ 8.2% Mind) -->
+		<!-- Level 5 - SubLevel 3020 (+ 8.6% Mind) -->
+		<!-- Level 5 - SubLevel 4001 (+ 4 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4002 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4003 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4004 (+ 4 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4005 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4006 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4007 (+ 4 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4008 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4009 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4010 (+ 4 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4011 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4012 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4013 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4014 (+ 4 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 4015 (+ 3 Fire Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5001 (+ 4 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5002 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5003 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5004 (+ 4 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5005 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5006 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5007 (+ 4 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5008 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5009 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5010 (+ 4 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5011 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5012 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5013 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5014 (+ 4 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 5015 (+ 3 Water Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6001 (+ 4 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6002 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6003 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6004 (+ 4 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6005 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6006 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6007 (+ 4 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6008 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6009 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6010 (+ 4 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6011 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6012 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6013 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6014 (+ 4 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 6015 (+ 3 Wind Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7001 (+ 4 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7002 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7003 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7004 (+ 4 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7005 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7006 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7007 (+ 4 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7008 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7009 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7010 (+ 4 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7011 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7012 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7013 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7014 (+ 4 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 7015 (+ 3 Earth Attack): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8001 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8002 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8003 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8004 (+ 65 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8005 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8006 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8007 (+ 65 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8008 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8009 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8010 (+ 65 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8011 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8012 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8013 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8014 (+ 65 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 5 - SubLevel 8015 (+ 64 Duel): Rushes forward to attack enemies at the front with 4040 Power added to P. Atk. inflicts Stun for 9 seconds. Requires an ancient sword, dagger, blunt weapon,spear, fist weapon, dual blunt weapon, or dualsword to be equipped. Consumes up to 5 souls to increase power. -->
+		<!-- Level 6 - SubLevel 1001 (+ 1% Chance) -->
+		<!-- Level 6 - SubLevel 1002 (+ 2% Chance) -->
+		<!-- Level 6 - SubLevel 1003 (+ 3% Chance) -->
+		<!-- Level 6 - SubLevel 1004 (+ 4% Chance) -->
+		<!-- Level 6 - SubLevel 1005 (+ 5% Chance) -->
+		<!-- Level 6 - SubLevel 1006 (+ 6% Chance) -->
+		<!-- Level 6 - SubLevel 1007 (+ 7% Chance) -->
+		<!-- Level 6 - SubLevel 1008 (+ 8% Chance) -->
+		<!-- Level 6 - SubLevel 1009 (+ 9% Chance) -->
+		<!-- Level 6 - SubLevel 1010 (+ 10% Chance) -->
+		<!-- Level 6 - SubLevel 1011 (+ 11% Chance) -->
+		<!-- Level 6 - SubLevel 1012 (+ 12% Chance) -->
+		<!-- Level 6 - SubLevel 1013 (+ 13% Chance) -->
+		<!-- Level 6 - SubLevel 1014 (+ 14% Chance) -->
+		<!-- Level 6 - SubLevel 1015 (+ 15% Chance) -->
+		<!-- Level 6 - SubLevel 1016 (+ 16% Chance) -->
+		<!-- Level 6 - SubLevel 1017 (+ 17% Chance) -->
+		<!-- Level 6 - SubLevel 1018 (+ 18% Chance) -->
+		<!-- Level 6 - SubLevel 1019 (+ 19% Chance) -->
+		<!-- Level 6 - SubLevel 1020 (+ 20% Chance) -->
+		<!-- Level 6 - SubLevel 2001 (+ 1% Hex) -->
+		<!-- Level 6 - SubLevel 2002 (+ 1.4% Hex) -->
+		<!-- Level 6 - SubLevel 2003 (+ 1.8% Hex) -->
+		<!-- Level 6 - SubLevel 2004 (+ 2.2% Hex) -->
+		<!-- Level 6 - SubLevel 2005 (+ 2.6% Hex) -->
+		<!-- Level 6 - SubLevel 2006 (+ 3% Hex) -->
+		<!-- Level 6 - SubLevel 2007 (+ 3.4% Hex) -->
+		<!-- Level 6 - SubLevel 2008 (+ 3.8% Hex) -->
+		<!-- Level 6 - SubLevel 2009 (+ 4.2% Hex) -->
+		<!-- Level 6 - SubLevel 2010 (+ 4.6% Hex) -->
+		<!-- Level 6 - SubLevel 2011 (+ 5% Hex) -->
+		<!-- Level 6 - SubLevel 2012 (+ 5.4% Hex) -->
+		<!-- Level 6 - SubLevel 2013 (+ 5.8% Hex) -->
+		<!-- Level 6 - SubLevel 2014 (+ 6.2% Hex) -->
+		<!-- Level 6 - SubLevel 2015 (+ 6.6% Hex) -->
+		<!-- Level 6 - SubLevel 2016 (+ 7% Hex) -->
+		<!-- Level 6 - SubLevel 2017 (+ 7.4% Hex) -->
+		<!-- Level 6 - SubLevel 2018 (+ 7.8% Hex) -->
+		<!-- Level 6 - SubLevel 2019 (+ 8.2% Hex) -->
+		<!-- Level 6 - SubLevel 2020 (+ 8.6% Hex) -->
+		<!-- Level 6 - SubLevel 3001 (+ 1% Mind) -->
+		<!-- Level 6 - SubLevel 3002 (+ 1.4% Mind) -->
+		<!-- Level 6 - SubLevel 3003 (+ 1.8% Mind) -->
+		<!-- Level 6 - SubLevel 3004 (+ 2.2% Mind) -->
+		<!-- Level 6 - SubLevel 3005 (+ 2.6% Mind) -->
+		<!-- Level 6 - SubLevel 3006 (+ 3% Mind) -->
+		<!-- Level 6 - SubLevel 3007 (+ 3.4% Mind) -->
+		<!-- Level 6 - SubLevel 3008 (+ 3.8% Mind) -->
+		<!-- Level 6 - SubLevel 3009 (+ 4.2% Mind) -->
+		<!-- Level 6 - SubLevel 3010 (+ 4.6% Mind) -->
+		<!-- Level 6 - SubLevel 3011 (+ 5% Mind) -->
+		<!-- Level 6 - SubLevel 3012 (+ 5.4% Mind) -->
+		<!-- Level 6 - SubLevel 3013 (+ 5.8% Mind) -->
+		<!-- Level 6 - SubLevel 3014 (+ 6.2% Mind) -->
+		<!-- Level 6 - SubLevel 3015 (+ 6.6% Mind) -->
+		<!-- Level 6 - SubLevel 3016 (+ 7% Mind) -->
+		<!-- Level 6 - SubLevel 3017 (+ 7.4% Mind) -->
+		<!-- Level 6 - SubLevel 3018 (+ 7.8% Mind) -->
+		<!-- Level 6 - SubLevel 3019 (+ 8.2% Mind) -->
+		<!-- Level 6 - SubLevel 3020 (+ 8.6% Mind) -->
+		<!-- Level 7 - SubLevel 1001 (+ 1% Chance) -->
+		<!-- Level 7 - SubLevel 1002 (+ 2% Chance) -->
+		<!-- Level 7 - SubLevel 1003 (+ 3% Chance) -->
+		<!-- Level 7 - SubLevel 1004 (+ 4% Chance) -->
+		<!-- Level 7 - SubLevel 1005 (+ 5% Chance) -->
+		<!-- Level 7 - SubLevel 1006 (+ 6% Chance) -->
+		<!-- Level 7 - SubLevel 1007 (+ 7% Chance) -->
+		<!-- Level 7 - SubLevel 1008 (+ 8% Chance) -->
+		<!-- Level 7 - SubLevel 1009 (+ 9% Chance) -->
+		<!-- Level 7 - SubLevel 1010 (+ 10% Chance) -->
+		<!-- Level 7 - SubLevel 1011 (+ 11% Chance) -->
+		<!-- Level 7 - SubLevel 1012 (+ 12% Chance) -->
+		<!-- Level 7 - SubLevel 1013 (+ 13% Chance) -->
+		<!-- Level 7 - SubLevel 1014 (+ 14% Chance) -->
+		<!-- Level 7 - SubLevel 1015 (+ 15% Chance) -->
+		<!-- Level 7 - SubLevel 1016 (+ 16% Chance) -->
+		<!-- Level 7 - SubLevel 1017 (+ 17% Chance) -->
+		<!-- Level 7 - SubLevel 1018 (+ 18% Chance) -->
+		<!-- Level 7 - SubLevel 1019 (+ 19% Chance) -->
+		<!-- Level 7 - SubLevel 1020 (+ 20% Chance) -->
+		<!-- Level 7 - SubLevel 2001 (+ 1% Hex) -->
+		<!-- Level 7 - SubLevel 2002 (+ 1.4% Hex) -->
+		<!-- Level 7 - SubLevel 2003 (+ 1.8% Hex) -->
+		<!-- Level 7 - SubLevel 2004 (+ 2.2% Hex) -->
+		<!-- Level 7 - SubLevel 2005 (+ 2.6% Hex) -->
+		<!-- Level 7 - SubLevel 2006 (+ 3% Hex) -->
+		<!-- Level 7 - SubLevel 2007 (+ 3.4% Hex) -->
+		<!-- Level 7 - SubLevel 2008 (+ 3.8% Hex) -->
+		<!-- Level 7 - SubLevel 2009 (+ 4.2% Hex) -->
+		<!-- Level 7 - SubLevel 2010 (+ 4.6% Hex) -->
+		<!-- Level 7 - SubLevel 2011 (+ 5% Hex) -->
+		<!-- Level 7 - SubLevel 2012 (+ 5.4% Hex) -->
+		<!-- Level 7 - SubLevel 2013 (+ 5.8% Hex) -->
+		<!-- Level 7 - SubLevel 2014 (+ 6.2% Hex) -->
+		<!-- Level 7 - SubLevel 2015 (+ 6.6% Hex) -->
+		<!-- Level 7 - SubLevel 2016 (+ 7% Hex) -->
+		<!-- Level 7 - SubLevel 2017 (+ 7.4% Hex) -->
+		<!-- Level 7 - SubLevel 2018 (+ 7.8% Hex) -->
+		<!-- Level 7 - SubLevel 2019 (+ 8.2% Hex) -->
+		<!-- Level 7 - SubLevel 2020 (+ 8.6% Hex) -->
+		<!-- Level 7 - SubLevel 3001 (+ 1% Mind) -->
+		<!-- Level 7 - SubLevel 3002 (+ 1.4% Mind) -->
+		<!-- Level 7 - SubLevel 3003 (+ 1.8% Mind) -->
+		<!-- Level 7 - SubLevel 3004 (+ 2.2% Mind) -->
+		<!-- Level 7 - SubLevel 3005 (+ 2.6% Mind) -->
+		<!-- Level 7 - SubLevel 3006 (+ 3% Mind) -->
+		<!-- Level 7 - SubLevel 3007 (+ 3.4% Mind) -->
+		<!-- Level 7 - SubLevel 3008 (+ 3.8% Mind) -->
+		<!-- Level 7 - SubLevel 3009 (+ 4.2% Mind) -->
+		<!-- Level 7 - SubLevel 3010 (+ 4.6% Mind) -->
+		<!-- Level 7 - SubLevel 3011 (+ 5% Mind) -->
+		<!-- Level 7 - SubLevel 3012 (+ 5.4% Mind) -->
+		<!-- Level 7 - SubLevel 3013 (+ 5.8% Mind) -->
+		<!-- Level 7 - SubLevel 3014 (+ 6.2% Mind) -->
+		<!-- Level 7 - SubLevel 3015 (+ 6.6% Mind) -->
+		<!-- Level 7 - SubLevel 3016 (+ 7% Mind) -->
+		<!-- Level 7 - SubLevel 3017 (+ 7.4% Mind) -->
+		<!-- Level 7 - SubLevel 3018 (+ 7.8% Mind) -->
+		<!-- Level 7 - SubLevel 3019 (+ 8.2% Mind) -->
+		<!-- Level 7 - SubLevel 3020 (+ 8.6% Mind) -->
+		<!-- Level 8 - SubLevel 1001 (+ 1% Chance) -->
+		<!-- Level 8 - SubLevel 1002 (+ 2% Chance) -->
+		<!-- Level 8 - SubLevel 1003 (+ 3% Chance) -->
+		<!-- Level 8 - SubLevel 1004 (+ 4% Chance) -->
+		<!-- Level 8 - SubLevel 1005 (+ 5% Chance) -->
+		<!-- Level 8 - SubLevel 1006 (+ 6% Chance) -->
+		<!-- Level 8 - SubLevel 1007 (+ 7% Chance) -->
+		<!-- Level 8 - SubLevel 1008 (+ 8% Chance) -->
+		<!-- Level 8 - SubLevel 1009 (+ 9% Chance) -->
+		<!-- Level 8 - SubLevel 1010 (+ 10% Chance) -->
+		<!-- Level 8 - SubLevel 1011 (+ 11% Chance) -->
+		<!-- Level 8 - SubLevel 1012 (+ 12% Chance) -->
+		<!-- Level 8 - SubLevel 1013 (+ 13% Chance) -->
+		<!-- Level 8 - SubLevel 1014 (+ 14% Chance) -->
+		<!-- Level 8 - SubLevel 1015 (+ 15% Chance) -->
+		<!-- Level 8 - SubLevel 1016 (+ 16% Chance) -->
+		<!-- Level 8 - SubLevel 1017 (+ 17% Chance) -->
+		<!-- Level 8 - SubLevel 1018 (+ 18% Chance) -->
+		<!-- Level 8 - SubLevel 1019 (+ 19% Chance) -->
+		<!-- Level 8 - SubLevel 1020 (+ 20% Chance) -->
+		<!-- Level 8 - SubLevel 2001 (+ 1% Hex) -->
+		<!-- Level 8 - SubLevel 2002 (+ 1.4% Hex) -->
+		<!-- Level 8 - SubLevel 2003 (+ 1.8% Hex) -->
+		<!-- Level 8 - SubLevel 2004 (+ 2.2% Hex) -->
+		<!-- Level 8 - SubLevel 2005 (+ 2.6% Hex) -->
+		<!-- Level 8 - SubLevel 2006 (+ 3% Hex) -->
+		<!-- Level 8 - SubLevel 2007 (+ 3.4% Hex) -->
+		<!-- Level 8 - SubLevel 2008 (+ 3.8% Hex) -->
+		<!-- Level 8 - SubLevel 2009 (+ 4.2% Hex) -->
+		<!-- Level 8 - SubLevel 2010 (+ 4.6% Hex) -->
+		<!-- Level 8 - SubLevel 2011 (+ 5% Hex) -->
+		<!-- Level 8 - SubLevel 2012 (+ 5.4% Hex) -->
+		<!-- Level 8 - SubLevel 2013 (+ 5.8% Hex) -->
+		<!-- Level 8 - SubLevel 2014 (+ 6.2% Hex) -->
+		<!-- Level 8 - SubLevel 2015 (+ 6.6% Hex) -->
+		<!-- Level 8 - SubLevel 2016 (+ 7% Hex) -->
+		<!-- Level 8 - SubLevel 2017 (+ 7.4% Hex) -->
+		<!-- Level 8 - SubLevel 2018 (+ 7.8% Hex) -->
+		<!-- Level 8 - SubLevel 2019 (+ 8.2% Hex) -->
+		<!-- Level 8 - SubLevel 2020 (+ 8.6% Hex) -->
+		<!-- Level 8 - SubLevel 3001 (+ 1% Mind) -->
+		<!-- Level 8 - SubLevel 3002 (+ 1.4% Mind) -->
+		<!-- Level 8 - SubLevel 3003 (+ 1.8% Mind) -->
+		<!-- Level 8 - SubLevel 3004 (+ 2.2% Mind) -->
+		<!-- Level 8 - SubLevel 3005 (+ 2.6% Mind) -->
+		<!-- Level 8 - SubLevel 3006 (+ 3% Mind) -->
+		<!-- Level 8 - SubLevel 3007 (+ 3.4% Mind) -->
+		<!-- Level 8 - SubLevel 3008 (+ 3.8% Mind) -->
+		<!-- Level 8 - SubLevel 3009 (+ 4.2% Mind) -->
+		<!-- Level 8 - SubLevel 3010 (+ 4.6% Mind) -->
+		<!-- Level 8 - SubLevel 3011 (+ 5% Mind) -->
+		<!-- Level 8 - SubLevel 3012 (+ 5.4% Mind) -->
+		<!-- Level 8 - SubLevel 3013 (+ 5.8% Mind) -->
+		<!-- Level 8 - SubLevel 3014 (+ 6.2% Mind) -->
+		<!-- Level 8 - SubLevel 3015 (+ 6.6% Mind) -->
+		<!-- Level 8 - SubLevel 3016 (+ 7% Mind) -->
+		<!-- Level 8 - SubLevel 3017 (+ 7.4% Mind) -->
+		<!-- Level 8 - SubLevel 3018 (+ 7.8% Mind) -->
+		<!-- Level 8 - SubLevel 3019 (+ 8.2% Mind) -->
+		<!-- Level 8 - SubLevel 3020 (+ 8.6% Mind) -->
 		<icon>icon.skill0793</icon>
 		<operateType>DA2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3594,13 +4262,16 @@
 			<value level="3">3</value>
 			<value level="4">4</value>
 			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
 		</abnormalLevel>
 		<abnormalTime>5</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
 		<activateRate>
-			<value fromLevel="1" toLevel="5">60</value>
-			<value fromLevel="4" toLevel="5" fromSubLevel="1001" toSubLevel="1030">{base + base / 100 * subIndex}</value>
+			<value fromLevel="1" toLevel="8">60</value>
+			<value fromLevel="4" toLevel="8" fromSubLevel="1001" toSubLevel="1020">{base + base / 100 * subIndex}</value>
 		</activateRate>
 		<affectLimit>5-12</affectLimit>
 		<affectObject>NOT_FRIEND</affectObject>
@@ -3623,6 +4294,9 @@
 			<value level="3">90</value>
 			<value level="4">95</value>
 			<value level="5">99</value>
+			<value level="6">101</value>
+			<value level="7">103</value>
+			<value level="8">105</value>
 		</magicLevel>
 		<mpConsume>
 			<value level="1">83</value>
@@ -3630,6 +4304,9 @@
 			<value level="3">98</value>
 			<value level="4">104</value>
 			<value level="5">110</value>
+			<value level="6">116</value>
+			<value level="7">122</value>
+			<value level="8">128</value>
 		</mpConsume>
 		<nextAction>ATTACK</nextAction>
 		<soulMaxConsumeCount>5</soulMaxConsumeCount>
@@ -3658,20 +4335,23 @@
 					<value level="3">13553</value>
 					<value level="4">15150</value>
 					<value level="5">16747</value>
+					<value level="6">17896</value>
+					<value level="7">18622</value>
+					<value level="8">19348</value>
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
-			<effect name="PhysicalDefence" fromLevel="4" toLevel="8" fromSubLevel="2001" toSubLevel="2030">
+			<effect name="PhysicalDefence" fromLevel="4" toLevel="8" fromSubLevel="2001" toSubLevel="2020">
 				<amount>
-					<value fromLevel="4" toLevel="5" fromSubLevel="2001" toSubLevel="2030">{-0.6 - 0.4 * subIndex}</value>
+					<value fromLevel="4" toLevel="8" fromSubLevel="2001" toSubLevel="2020">{-0.6 - 0.4 * subIndex}</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalDefence" fromLevel="4" toLevel="8" fromSubLevel="2001" toSubLevel="2030">
+			<effect name="MagicalDefence" fromLevel="4" toLevel="8" fromSubLevel="2001" toSubLevel="2020">
 				<amount>
-					<value fromLevel="4" toLevel="5" fromSubLevel="3001" toSubLevel="3030">{-0.6 - 0.4 * subIndex}</value>
+					<value fromLevel="4" toLevel="8" fromSubLevel="3001" toSubLevel="3020">{-0.6 - 0.4 * subIndex}</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -3679,6 +4359,36 @@
 	</skill>
 	<skill id="794" toLevel="1" name="Mass Disarm">
 		<!-- Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1001 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1002 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1003 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1004 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1005 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1006 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1007 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1008 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1009 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1010 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1011 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1012 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1013 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1014 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 1015 (+ Chance): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2001 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2002 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2003 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2004 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2005 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2006 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2007 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2008 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2009 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2010 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2011 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2012 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2013 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2014 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
+		<!-- Level 1 - SubLevel 2015 (+ 5 seconds Recovery): Disarms nearby enemies for 5 seconds. -->
 		<icon>icon.skill0794</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3711,7 +4421,7 @@
 		</effects>
 	</skill>
 	<skill id="795" toLevel="1" name="Divine Knight Brandish">
-		<!-- Attacks frontal enemies by brandishing an ax. Over-hit. Power: 2322. -->
+		<!-- Attacks the enemies in front by flourishing an ax. Over-hit. Power 2322. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3759,7 +4469,7 @@
 		</effects>
 	</skill>
 	<skill id="797" toLevel="1" name="Divine Rogue Piercing Attack">
-		<!-- Thrusts strongly to attack the target and enemies behind the target. Over-hit. Power: 2111. -->
+		<!-- Attacks all enemies, even the enemies behind you, with a strong thrust. Over-hit. Power 2111. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -3785,7 +4495,7 @@
 		</effects>
 	</skill>
 	<skill id="798" toLevel="1" name="Divine Warrior Crippling Attack">
-		<!-- Unexpectedly stabs with a poisoned needle to poison the enemy. -->
+		<!-- Poisons the enemy with an unexpected poison attack. Power 1689. Effect 3. -->
 		<icon>icon.skill_transform_s_attack</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3816,7 +4526,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>69</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

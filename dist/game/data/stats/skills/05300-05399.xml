@@ -54,7 +54,7 @@
 		</effects>
 	</skill>
 	<skill id="5301" toLevel="9" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -112,12 +112,20 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5302" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -196,12 +204,20 @@
 					<value level="8">338</value>
 					<value level="9">338</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5303" toLevel="9" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -280,7 +296,7 @@
 					<value level="8">168</value>
 					<value level="9">168</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -345,12 +361,20 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5305" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -419,7 +443,7 @@
 					<value level="8">450</value>
 					<value level="9">450</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -483,12 +507,12 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5307" toLevel="9" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -545,12 +569,20 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5308" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -628,12 +660,20 @@
 					<value level="8">338</value>
 					<value level="9">338</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5309" toLevel="9" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -711,7 +751,7 @@
 					<value level="8">168</value>
 					<value level="9">168</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1883,7 +1923,15 @@
 		</effects>
 	</skill>
 	<skill id="5333" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3121,7 +3169,7 @@
 		</mpConsume>
 	</skill>
 	<skill id="5362" toLevel="9" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3179,12 +3227,20 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5363" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3263,12 +3319,20 @@
 					<value level="8">338</value>
 					<value level="9">338</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5364" toLevel="9" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3347,7 +3411,7 @@
 					<value level="8">168</value>
 					<value level="9">168</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3400,12 +3464,20 @@
 		<effects>
 			<effect name="PhysicalDamage" />
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5366" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3474,7 +3546,7 @@
 					<value level="8">450</value>
 					<value level="9">450</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3527,12 +3599,12 @@
 		<effects>
 			<effect name="PhysicalDamage" />
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5368" toLevel="9" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3576,7 +3648,15 @@
 		<trait>SHOCK</trait>
 	</skill>
 	<skill id="5369" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3654,12 +3734,20 @@
 					<value level="8">338</value>
 					<value level="9">338</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5370" toLevel="9" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -4803,7 +4891,15 @@
 		</effects>
 	</skill>
 	<skill id="5394" toLevel="9" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -5023,7 +5119,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>75</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>

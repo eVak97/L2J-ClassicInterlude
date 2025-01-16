@@ -173,7 +173,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5905" toLevel="3" name="Confusing Nuph">
+	<skill id="5905" toLevel="1" name="Confusing Nuph">
 		<!-- Physical and magic skills are all blocked. -->
 		<icon>icon.skill1064</icon>
 		<operateType>A2</operateType>
@@ -321,7 +321,7 @@
 		<magicLevel>83</magicLevel>
 	</skill>
 	<skill id="5912" toLevel="1" name="Pestilence Cleanse">
-		<!-- P. Atk., M. Atk., Atk. Spd., P. Accuracy, P. Critical Rate and P. Critical Damage are decreased. Skill Cooldown is increased. -->
+		<!-- P. Atk., M. Atk., Atk. Spd., Accuracy, Critical Rate, and Critical Impact are increased. Skill Cooldown is increased. -->
 		<icon>icon.skill1337</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -360,7 +360,7 @@
 		</effects>
 	</skill>
 	<skill id="5914" toLevel="1" name="Putrefaction Cleanse">
-		<!-- P. Def./M. Def./P. Evasion/Movement Speed decreased. -->
+		<!-- P. Def., M. Def., Evasion, and Speed are decreased. -->
 		<icon>icon.skill1337</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -543,7 +543,7 @@
 		</effects>
 	</skill>
 	<skill id="5921" toLevel="1" name="Inhale">
-		<!-- P. Atk., Atk. Spd., M. Atk., P. Accuracy, P. Critical and P. Critical Damage are decreased. -->
+		<!-- P. Atk., Atk. Spd., M. Atk., Accuracy, critical attack rate and Critical Damage are decreased. -->
 		<icon>icon.skill1337</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -601,7 +601,7 @@
 		</effects>
 	</skill>
 	<skill id="5922" toLevel="1" name="Exhale">
-		<!-- P. Evasion/P. Def./M. Def./Movement Speed decreased. -->
+		<!-- Evasion, P. Def., M. Def. and speed are decreased. -->
 		<icon>icon.skill1263</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -983,7 +983,7 @@
 		<magicLevel>85</magicLevel>
 		<specialLevel>-1</specialLevel>
 	</skill>
-	<skill id="5939" toLevel="5" name="P. Def. Up">
+	<skill id="5939" toLevel="5" name="Defense Ability Up">
 		<!-- Defense abilities are enhanced. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
@@ -1060,7 +1060,7 @@
 		<magicLevel>10</magicLevel>
 	</skill>
 	<skill id="5942" toLevel="1" name="Energy of Pollution">
-		<!-- The amount of Heal received and MP received from Recharge decreased momentarily. -->
+		<!-- HP/MP recovery magic effect decreases temporarily. -->
 		<icon>icon.skill0052</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1094,7 +1094,7 @@
 		<magicLevel>10</magicLevel>
 	</skill>
 	<skill id="5944" toLevel="1" name="Energy of Oblivion">
-		<!-- P. Accuracy is decreased. -->
+		<!-- Accuracy is decreased. -->
 		<icon>icon.skill0107</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1178,6 +1178,32 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="5950" toLevel="1" name="Birthday Gift">
+		<!-- Birthday cake received once a year. Recovers Vitality through the acquisition of XP. -->
+		<icon>icon.skill5950</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>9</abnormalLevel>
+		<abnormalTime>43200</abnormalTime>
+		<abnormalType>VP_UP</abnormalType>
+		<abnormalVisualEffect>VP_UP</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>1500</effectRange>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic> <!-- Item Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>1000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5951" toLevel="1" name="Agathion's Blessing">
 		<!-- The summoned spirit uses a blessing. -->
@@ -1336,7 +1362,7 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5961" toLevel="1" name="Barrier Thunder Storm">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1448,7 +1474,8 @@
 		<staticReuse>true</staticReuse>
 	</skill>
 	<skill id="5968" toLevel="2" name="Rapid Shot">
-		<!-- Increases Bow Atk. Spd. for a set time. -->
+		<!-- Level 1: Momentarily increases your own bow Atk. Spd. Effect 1. -->
+		<!-- Level 2: Momentarily increases your own bow Atk. Spd. Effect 2. -->
 		<icon>icon.skill0099</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1478,8 +1505,8 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="5969" toLevel="2" name="Punch of Doom">
-		<!-- Level 1: Becomes shocked momentarily while propelling a powerful iron-fist to enemy that gives significant damage. Requires a fist weapon. Ignores shield defense. Over-hit. Power 10331. -->
-		<!-- Level 2: Becomes shocked momentarily while propelling a powerful iron-fist to enemy that gives significant damage. Requires a fist weapon. Ignores shield defense. Over-hit. Power 12288. -->
+		<!-- Level 1: Throws Iron Fist which inflicts significant damage to the enemy while inflicting Stun on you momentarily. Requires a fist weapon. Ignores Shield Defense. Over-hit. 10331 power. -->
+		<!-- Level 2: Throws Iron Fist which inflicts significant damage to the enemy while inflicting Stun on you momentarily. Requires a fist weapon. Ignores Shield Defense. Over-hit. 12288 power. -->
 		<icon>icon.skill005969</icon>
 		<operateType>A3</operateType>
 		<targetType>ENEMY</targetType>
@@ -1807,8 +1834,104 @@
 			<value level="3">79</value>
 		</magicLevel>
 	</skill>
+	<skill id="5982" toLevel="1" name="Aura Bird - Falcon">
+		<!-- Mounts the Aura Bird - Falcon. -->
+		<icon>icon.skill0841</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-2</magicLevel>
+		<mpConsume>75</mpConsume>
+		<reuseDelay>7200000</reuseDelay>
+		<specialLevel>-2</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>8</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>8</transformationId>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5983" toLevel="1" name="Aura Bird - Owl">
+		<!-- Mounts the Aura Bird - Owl. -->
+		<icon>icon.skill0842</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>1</effectPoint>
+		<effectRange>1200</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-2</magicLevel>
+		<mpConsume>75</mpConsume>
+		<reuseDelay>7200000</reuseDelay>
+		<specialLevel>-2</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>9</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>9</transformationId>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>PK</type>
+			</effect>
+			<effect name="ReduceDropPenalty">
+				<exp>-90</exp>
+				<mode>PER</mode>
+				<type>RAID</type>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="5984" toLevel="1" name="Hand of Death">
-		<!-- Decreases P. Def./M. Def./Movement Speed. -->
+		<!-- P. Def., M. Def., and speed are greatly decreased. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1998,7 +2121,7 @@
 		</effects>
 	</skill>
 	<skill id="5989" toLevel="1" name="Invincibility">
-		<!-- Invincible against normal attacks, skills, and debuff cancel/debuffs. -->
+		<!-- Invincible against standard attacks, skills and buffs/debuffs. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2014,6 +2137,23 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>6000</reuseDelay>
 		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5990" toLevel="3" name="Lesser Heal">
 		<!-- Level 1: Quickly restores HP. Power 817. -->

@@ -32,8 +32,78 @@
 			<condition name="OpNeedAgathion" />
 		</conditions>
 	</skill>
+	<skill id="6702" toLevel="1" name="Blessing of Cheers">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>false</blockedInOlympiad>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2700</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>17235</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6703" toLevel="1" name="Blessing of Cheers">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2700</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>17235</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6704" toLevel="1" name="Blessing of Cheers">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<coolTime>1000</coolTime>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2700</hitTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>17235</itemId>
+				<itemCount>1</itemCount>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="6705" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -245,7 +315,7 @@
 		</effects>
 	</skill>
 	<skill id="6717" toLevel="1" name="Berserker Spirit of Elcadia">
-		<!-- For 10 minutes, reduces party members' P. Def. by 8%, M. Def. by 16%, and P. evasion by 4. Increases P. Atk. +8%, M. Atk. +16%, Atk. Spd. +8%, Casting Spd. +8%, and Movement Speed +8. -->
+		<!-- For 10 minutes, reduces party members' P. Def. by 8%, M. Def. by 16%, and evasion by 4. Increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -298,7 +368,7 @@
 		</effects>
 	</skill>
 	<skill id="6718" toLevel="1" name="Death Whisper of Elcadia">
-		<!-- Increases P. Critical Damage +35% for 10 minutes. -->
+		<!-- Increases critical attack effect by 35% for 10 minutes. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -323,7 +393,7 @@
 		</effects>
 	</skill>
 	<skill id="6719" toLevel="1" name="Guidance of Elcadia">
-		<!-- Increases P. Accuracy +4 for 10 minutes. -->
+		<!-- Increases Accuracy by 4 for 10 minutes. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -348,7 +418,7 @@
 		</effects>
 	</skill>
 	<skill id="6720" toLevel="1" name="Focus of Elcadia">
-		<!-- Increases P. Critical Rate +30% for 10 minutes. -->
+		<!-- Increases critical attack rate by 30% for 10 minutes. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -398,7 +468,7 @@
 		</effects>
 	</skill>
 	<skill id="6722" toLevel="1" name="Acumen of Elcadia">
-		<!-- Increases Casting Spd. +30% for 10 minutes. -->
+		<!-- Increases Casting Spd. by 30% for 10 minutes. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -423,7 +493,7 @@
 		</effects>
 	</skill>
 	<skill id="6723" toLevel="1" name="Concentration of Elcadia">
-		<!-- Decreases magic cancel damage by 53 for 20 minutes. -->
+		<!-- Decreases magic cancel rate by 53 for 20 minutes. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -839,7 +909,7 @@
 		<magicLevel>85</magicLevel>
 	</skill>
 	<skill id="6743" toLevel="1" name="Dark Wound">
-		<!-- Dark attribute is weakened; inflicted with bleed and 200 HP is decreased per second. -->
+		<!-- Dark attribute is weakened; inflicted with bleed and 200 HP is decreased every second. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -999,7 +1069,7 @@
 				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1115,7 +1185,7 @@
 		</effects>
 	</skill>
 	<skill id="6754" toLevel="1" name="Bleed">
-		<!-- Inflicted with bleed and 200 HP decreases per second. -->
+		<!-- Inflicted with bleed and 200 HP decreases every second. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1484,7 +1554,7 @@
 				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1516,9 +1586,7 @@
 		<mpConsume>155</mpConsume>
 		<reuseDelay>5000</reuseDelay>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="6770" toLevel="1" name="Heal">
@@ -1654,7 +1722,7 @@
 				<criticalChance>20</criticalChance>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1730,7 +1798,7 @@
 		</endEffects>
 	</skill>
 	<skill id="6777" toLevel="1" name="Bleeding Gash">
-		<!-- For 20 seconds, slows down Movement Speed and inflicts bleed so that 200 HP is decreased per second. Inflicted with paralysis for 10 seconds. -->
+		<!-- For 20 seconds, slows down Speed and inflicts bleed so that 200 HP is decreased every second. Inflicted with paralysis for 10 seconds. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1761,7 +1829,7 @@
 				<ticks>1</ticks>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -1810,7 +1878,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>

@@ -265,6 +265,25 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="6024" toLevel="1" name="Weight Aerial Cleft">
+		<!-- Renders target unable to transform into a flying transformed object. -->
+		<icon>icon.skill6024</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>40</abnormalTime>
+		<abnormalType>PUBLIC_SLOT</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>900</castRange>
+		<effectPoint>-10</effectPoint>
+		<effectRange>1400</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>14</magicLevel>
+	</skill>
 	<skill id="6025" toLevel="1" name="not_used">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
@@ -362,9 +381,69 @@
 				<amount>-100</amount>
 				<slot>ALL</slot>
 			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 			<effect name="BlockMove" />
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
+	<skill id="6035" toLevel="1" name="Transform Red Team">
+		<!-- You are transformed into a wee Red Smidge with a big red hammer. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>121</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>121</transformationId>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="6036" toLevel="1" name="Transform Blue Team">
+		<!-- You are transformed into a wee Blue Smidge with a big blue hammer. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<deleteAbnormalOnLeave>true</deleteAbnormalOnLeave>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<specialLevel>-1</specialLevel>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>122</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>122</transformationId>
 			</effect>
 		</effects>
 	</skill>
@@ -1274,7 +1353,7 @@
 		</effects>
 	</skill>
 	<skill id="6059" toLevel="1" name="Counter Critical">
-		<!-- P. Critical Damage is increased by 100%. -->
+		<!-- Critical Damage is greatly increased. -->
 		<icon>icon.skill1542</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1287,7 +1366,7 @@
 		<isMagic>4</isMagic>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>81</magicLevel>
 		<reuseDelay>15000</reuseDelay>
 		<effects>
 			<effect name="CriticalDamage">
@@ -1308,7 +1387,7 @@
 		</effects>
 	</skill>
 	<skill id="6060" toLevel="1" name="Great Fury">
-		<!-- Increases Atk. Spd. by 30% for 8 seconds. -->
+		<!-- Increases Atk. Spd. by 50% for 8 seconds. -->
 		<icon>icon.skill1543</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1323,198 +1402,198 @@
 		<isMagic>4</isMagic>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>81</magicLevel>
 		<reuseDelay>15000</reuseDelay>
 		<effects>
 			<effect name="PhysicalAttackSpeed">
-				<amount>30</amount>
+				<amount>50</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6061" toLevel="1" name="Decrease Weight">
-		<!-- Weight Penalty Segment +9000, and the number of items an individual can possess increases. -->
+		<!-- Weight penalty interval increases by 9000, and the number of items an individual can possess increases. -->
 		<icon>icon.skill1257</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>52</magicLevel>
 	</skill>
-	<skill id="6062" toLevel="1" name="Lv. 99 Raid Boss">
+	<skill id="6062" toLevel="1" name="Raid Boss (Lv. 99)">
 		<!-- An evil undead version of the elder of twin knights who were famous warriors in Gracia before the fall. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6063" toLevel="1" name="Lv. 99 Raid Boss">
+	<skill id="6063" toLevel="1" name="Raid Boss (Lv. 99)">
 		<!-- An evil undead version of the younger of twin knights who were famous warriors in Gracia before the fall. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6064" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6064" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- An undead version of a famous healer in Gracia before the fall. It served Ekimus and later aspired to rule the Hall of Erosion. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6065" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6065" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- An undead version of an infamous serial killer infamous throughout Gracia before the fall. He attempted to preserve his life by threatening Cohemenes, but was deceived and became an undead slave. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6066" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6066" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- Steals souls in order to secrete matter from the Seed of Infinity. These Soul Devourers eventually lose all capacity for thought, driven only by their unholy appetite. Thy particularly favor souls that suffered a horrific and agonizing death. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6067" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6067" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- An undead version of the royal astrologer in Gracia before the fall. While alive, his intentionally false prophecy opened the kingdom to the influence of Ekimus and the Seed of Infinity. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6068" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6068" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- An undead version of a former Gracian high priest. Obsessed with attaining eternal life, he played a pivotal role in bringing the Seed of Infinity to the capital. He styled himself the 1st priest of Ekimus. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6069" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6069" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- An exceptionally efficient pre-fall Gracian provincial official infamous for his brutal interrogation methods. He was transformed into undead by the Seed of Infinity. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6070" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6070" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- In his bid for power, he committed atrocities in Gracia rarely seen before the fall. Because of his thirst for violence and bloodshed, he was transformed into undead by the Seed of Infinity. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6071" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6071" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster was once a powerful warlord on the frontier of pre-fall Gracia. He believed that the enemy's power was contained in their blood, and so he killed countless prisoners in order to absorb their strength. He was transformed into undead by the Seed of Infinity. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6072" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6072" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster was once of the most powerful warlords in Gracia. He gained popularity among the fallen nobles for mercilessly carrying out his missions, whatever the cost. He was also a secret worshipper of the Goddess of Death. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6073" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6073" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster was created from the rage and pain of prisoners tortured and killed in ancient Gracia. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6074" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6074" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster was created to protect a sacred burial ground for nobles in ancient Gracia. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6075" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6075" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster was created to prevent the corpses left on the battlegrounds of ancient Gracia from being raised. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6076" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6076" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster fed on the souls of ancient Gracians. It awoke from its long slumber though the magic of Ekimus. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6077" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6077" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This undead monster fed on the souls of ancient Gracians. It awoke from its long slumber though the magic of Ekimus. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6078" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6078" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This ancient undead monster awoke through the M. Atk. of the Seed of Infinity. Once it was a powerful Gracian warrior, but now it lacks any vestige of its former self. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6079" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6079" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This ancient undead monster awoke through the M. Atk. of the Seed of Infinity. Once it was a powerful Gracian warrior, but now it lacks any vestige of its former self. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6080" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6080" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This ancient undead monster awoke through the M. Atk. of the Seed of Infinity. Once it was a powerful Gracian warrior, but now it lacks any vestige of its former self. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6081" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6081" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This ancient undead monster awoke through the M. Atk. of the Seed of Infinity. Once it was a powerful Gracian warrior, but now it lacks any vestige of its former self. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6082" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6082" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This ancient undead monster awoke through the M. Atk. of the Seed of Infinity. Once it was a powerful Gracian warrior, but now it lacks any vestige of its former self. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6083" toLevel="1" name="Lv. 81 Raid Boss">
+	<skill id="6083" toLevel="1" name="Raid Boss (Lv. 81)">
 		<!-- This ancient undead monster awoke through the M. Atk. of the Seed of Infinity. Once it was a powerful Gracian warrior, but now it lacks any vestige of its former self. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6084" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="6084" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- Lord of ancient Hwuh whose hand was imbued with Demon power in return for not taking action while Hwuh was being conquered by the Seed of Infinity. He now has the power to control Aurabirds and has become a Master Rider. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6085" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="6085" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- This ill-tempered king of the birds in Gracia has become even more violent after losing its sky nest to the Storm Dragon Lindvior. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6086" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="6086" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- One of the ladies-in-waiting of the Banshee Queen, she became close to Ekimus and eventually was transformed into a Banshee Queen herself. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="6087" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="6087" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- This Drake originally appeared with the Seed of Destruction. Though one of the children of Skellus, the Dragon of Darkness , it does not serve Tiat. Instead, it watches Tiat's actions for Skellus. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -1561,7 +1640,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1585,7 +1664,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1610,12 +1689,12 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="6093" toLevel="1" name="Panther Hide">
-		<!-- Allows one to stay hidden. Movement speed is decreased by 10%. The effect is canceled if any action other than movement is initiated. -->
+		<!-- Allows one to stay hidden. Speed is decreased by 10%. The effect is canceled if any action other than movement is initiated. -->
 		<icon>icon.skill0922</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1650,19 +1729,7 @@
 		<castRange>40</castRange>
 		<effectPoint>-475</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>
-			<value level="1">1000</value>
-			<value level="2">1000</value>
-			<value level="3">1000</value>
-			<value level="4">1500</value>
-			<value level="5">1000</value>
-			<value level="6">1500</value>
-			<value level="7">1000</value>
-			<value level="8">1500</value>
-			<value level="9">1500</value>
-			<value level="10">1500</value>
-			<value level="11">1500</value>
-		</hitTime>
+		<hitTime>1500</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">68</value>
@@ -1687,7 +1754,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="6095" toLevel="15" name="Panther Dark Claw">
+	<skill id="6095" toLevel="15" name="Panther Cancel">
 		<!-- Level 1: Attacker's P. Atk. is supplemented with 469 power, decreasing Dark Attack Resistance by 25 for 30 seconds. -->
 		<!-- Level 2: Attacker's P. Atk. is supplemented with 758 power, decreasing Dark Attack Resistance by 25 for 30 seconds. -->
 		<!-- Level 3: Attacker's P. Atk. is supplemented with 1136 power, decreasing Dark Attack Resistance by 25 for 30 seconds. -->
@@ -1717,23 +1784,7 @@
 		<castRange>40</castRange>
 		<effectPoint>-475</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>
-			<value level="1">1000</value>
-			<value level="2">1000</value>
-			<value level="3">1000</value>
-			<value level="4">1000</value>
-			<value level="5">1000</value>
-			<value level="6">1000</value>
-			<value level="7">1000</value>
-			<value level="8">1500</value>
-			<value level="9">1000</value>
-			<value level="10">1500</value>
-			<value level="11">1000</value>
-			<value level="12">1500</value>
-			<value level="13">1500</value>
-			<value level="14">1500</value>
-			<value level="15">1500</value>
-		</hitTime>
+		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<lvlBonusRate>2</lvlBonusRate>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1804,21 +1855,7 @@
 		<coolTime>720</coolTime>
 		<effectPoint>-475</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>
-			<value level="1">1000</value>
-			<value level="2">1000</value>
-			<value level="3">1000</value>
-			<value level="4">1000</value>
-			<value level="5">1000</value>
-			<value level="6">1080</value>
-			<value level="7">1000</value>
-			<value level="8">1080</value>
-			<value level="9">1000</value>
-			<value level="10">1080</value>
-			<value level="11">1080</value>
-			<value level="12">1080</value>
-			<value level="13">1080</value>
-		</hitTime>
+		<hitTime>1080</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">60</value>

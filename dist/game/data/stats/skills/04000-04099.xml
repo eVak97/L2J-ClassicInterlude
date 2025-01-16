@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="4000" toLevel="1" name="Returning Warrior's Bracelet">
+		<!-- 5 Talisman can be equipped. -->
+		<icon>icon.high_agathion_bracelet_i01</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="TalismanSlot">
+				<slots>5</slots>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="4001" toLevel="12" name="Gust">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -220,52 +231,52 @@
 		</effects>
 	</skill>
 	<skill id="4009" toLevel="5" name="Fire Resistance">
-		<!-- Increases Fire Resistance. -->
+		<!-- Resistant to Fire attacks. -->
 		<icon>icon.skill4009</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="4010" toLevel="5" name="Water Resistance">
-		<!-- Strong Water attack resistance. -->
+		<!-- Resistant to Water attacks. -->
 		<icon>icon.skill4010</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="4011" toLevel="5" name="Wind Resistance">
-		<!-- Strong Wind attack resistance. -->
+		<!-- Resistant to Wind attacks. -->
 		<icon>icon.skill4011</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="4012" toLevel="5" name="Earth Resistance">
-		<!-- Strong Earth attack resistance. -->
+		<!-- Resistant to Earth attacks. -->
 		<icon>icon.skill4012</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="4013" toLevel="1" name="Strong against Fire attack and vulnerable to Water attack">
+	<skill id="4013" toLevel="1" name="Fire Resistance, Water Vulnerability">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="4014" toLevel="1" name="Strong against Water attack and vulnerable to Fire attack">
+	<skill id="4014" toLevel="1" name="Water Resistance, Fire Vulnerability">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="4015" toLevel="1" name="Strong against Wind attack and vulnerable to Earth attack">
+	<skill id="4015" toLevel="1" name="Wind Resistance, Earth Vulnerability">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="4016" toLevel="1" name="Strong against Earth attack and vulnerable to Wind attack">
+	<skill id="4016" toLevel="1" name="Earth Resistance, Wind Vulnerability">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -290,7 +301,7 @@
 		</effects>
 	</skill>
 	<skill id="4018" toLevel="1" name="Decrease Speed">
-		<!-- Movement Speed has momentarily decreased by 30%. -->
+		<!-- Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill4018</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -320,7 +331,7 @@
 		</effects>
 	</skill>
 	<skill id="4019" toLevel="1" name="Decrease Speed">
-		<!-- Momentarily decreases Movement Speed by 30% and continuously decreases HP. -->
+		<!-- Momentarily decreases Speed and continuously consumes HP. Effect 3. -->
 		<icon>icon.skill4019</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -371,7 +382,7 @@
 		</effects>
 	</skill>
 	<skill id="4021" toLevel="1" name="Queen Ant">
-		<!-- The prohibited magic used by the Ivory Tower Wizards to seal Beleth also affected the monsters near the area. The Queen Ant absorbed the prohibited power of chaos, produced the giant ants forming a big army and went underground in the Wasteland. -->
+		<!-- Vulnerable to Fire attacks but highly resistant to archery attacks. -->
 		<icon>icon.skillboss</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -413,7 +424,6 @@
 		</effects>
 	</skill>
 	<skill id="4025" toLevel="12" name="Master Recharge">
-		<!-- Recovers MP. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -434,20 +444,7 @@
 			<value level="12">709</value>
 		</effectPoint>
 		<effectRange>900</effectRange>
-		<hitTime>
-			<value level="1">2500</value>
-			<value level="2">1000</value>
-			<value level="3">1000</value>
-			<value level="4">1000</value>
-			<value level="5">1000</value>
-			<value level="6">1000</value>
-			<value level="7">1000</value>
-			<value level="8">2500</value>
-			<value level="9">2500</value>
-			<value level="10">2500</value>
-			<value level="11">2500</value>
-			<value level="12">2500</value>
-		</hitTime>
+		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
@@ -674,11 +671,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4031" toLevel="4" name="Clan Shield">
-		<!-- Level 1: For 5 minutes P. Def. +8%. -->
-		<!-- Level 2: For 5 minutes P. Def. +12%. -->
-		<!-- Level 3: For 5 minutes P. Def. +15%. -->
-		<!-- Level 4: For 5 minutes P. Def. +30%. -->
+	<skill id="4031" toLevel="3" name="Might">
 		<icon>icon.skill4031</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -686,7 +679,6 @@
 			<value level="1">1</value>
 			<value level="2">2</value>
 			<value level="3">3</value>
-			<value level="4">4</value>
 		</abnormalLevel>
 		<abnormalTime>300</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
@@ -698,19 +690,16 @@
 		<hitTime>2500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>-1</magicLevel>
+		<magicLevel>
+			<value level="1">20</value>
+			<value level="2">40</value>
+			<value level="3">70</value>
+		</magicLevel>
 		<mpConsume>
-			<value level="1">8</value>
-			<value level="2">14</value>
-			<value level="3">26</value>
-			<value level="4">47</value>
+			<value level="1">10</value>
+			<value level="2">18</value>
+			<value level="3">33</value>
 		</mpConsume>
-		<mpInitialConsume>
-			<value level="1">2</value>
-			<value level="2">4</value>
-			<value level="3">7</value>
-			<value level="4">12</value>
-		</mpInitialConsume>
 		<reuseDelay>8000</reuseDelay>
 		<specialLevel>-1</specialLevel>
 		<effects>
@@ -719,7 +708,6 @@
 					<value level="1">8</value>
 					<value level="2">12</value>
 					<value level="3">15</value>
-					<value level="4">30</value>
 				</amount>
 				<mode>PER</mode>
 			</effect>
@@ -845,7 +833,7 @@
 		</effects>
 	</skill>
 	<skill id="4034" toLevel="12" name="Ice Bolt">
-		<!-- Movement Speed momentarily decreased by 20%. -->
+		<!-- Speed decreases momentarily. Effect 2. -->
 		<icon>icon.skill1184</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -919,7 +907,18 @@
 		</effects>
 	</skill>
 	<skill id="4035" toLevel="12" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 2. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 3. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 4. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 5. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 6. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 10: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 11: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 12: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1004,7 +1003,18 @@
 		</effects>
 	</skill>
 	<skill id="4036" toLevel="12" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 2. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 3. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 4. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 5. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 6. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 10: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 11: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 12: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4036</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1091,7 +1101,9 @@
 		</effects>
 	</skill>
 	<skill id="4037" toLevel="3" name="Weakness">
-		<!-- P. Atk. has been momentarily decreased by 17%. -->
+		<!-- Level 1: P. Atk. decreases momentarily. Effect 1. -->
+		<!-- Level 2: P. Atk. decreases momentarily. Effect 2. -->
+		<!-- Level 3: P. Atk. decreases momentarily. Effect 3. -->
 		<icon>icon.skill4037</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1136,7 +1148,11 @@
 		</effects>
 	</skill>
 	<skill id="4038" toLevel="5" name="Shackle">
-		<!-- Atk. Spd. momentarily decreased by 17%. -->
+		<!-- Level 1: Atk. Spd. decreases momentarily. Effect 1. -->
+		<!-- Level 2: Atk. Spd. decreases momentarily. Effect 2. -->
+		<!-- Level 3: Atk. Spd. decreases momentarily. Effect 2. -->
+		<!-- Level 4: Atk. Spd. decreases momentarily. Effect 3. -->
+		<!-- Level 5: Atk. Spd. decreases momentarily. Effect 3. -->
 		<icon>icon.skill4038</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1410,28 +1426,27 @@
 			<!-- TODO p_abnormal_rate_limit -->
 			<effect name="DefenceTrait">
 				<HOLD>100</HOLD>
-				<SLEEP>100</SLEEP>
 				<DERANGEMENT>100</DERANGEMENT>
-				<PARALYZE>100</PARALYZE>
 				<SHOCK>100</SHOCK>
-				<BOSS>100</BOSS>
 				<PHYSICAL_BLOCKADE>100</PHYSICAL_BLOCKADE>
-				<KNOCKDOWN>100</KNOCKDOWN>
 				<KNOCKBACK>100</KNOCKBACK>
-				<AIRBIND>100</AIRBIND>
 				<PULL>100</PULL>
-				<CHANGEBODY>100</CHANGEBODY>
 				<DISARM>100</DISARM>
-				<DEPORT>100</DEPORT>
 				<TURN_STONE>100</TURN_STONE>
+				<SLEEP>100</SLEEP>
+				<BOSS>100</BOSS>
+				<AIRBIND>100</AIRBIND>
+				<DEPORT>100</DEPORT>
+				<PARALYZE>100</PARALYZE>
+				<CHANGEBODY>100</CHANGEBODY>
+				<KNOCKDOWN>100</KNOCKDOWN>
 				<ZONE>100</ZONE>
 				<PSYCHIC>100</PSYCHIC>
-				<BLUFF>100</BLUFF>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4046" toLevel="12" name="Sleep">
-		<!-- Momentarily immobile due to the Sleep effect. -->
+		<!-- Afflicted with Sleep and unable to move momentarily. -->
 		<icon>icon.skill4046</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1484,7 +1499,7 @@
 		<trait>SLEEP</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1590,20 +1605,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4049" toLevel="13" name="Cubic Strike">
-		<!-- Level 1: Attacks the enemy with 436 Power. -->
-		<!-- Level 2: Attacks the enemy with 645 Power. -->
-		<!-- Level 3: Attacks the enemy with 936 Power. -->
-		<!-- Level 4: Attacks the enemy with 1242 Power. -->
-		<!-- Level 5: Attacks the enemy with 1520 Power. -->
-		<!-- Level 6: Attacks the enemy with 1792 Power. -->
-		<!-- Level 7: Attacks the enemy with 2086 Power. -->
-		<!-- Level 8: Attacks the enemy with 2399 Power. -->
-		<!-- Level 9: Attacks the enemy with 2459 Power. -->
-		<!-- Level 10: Attacks the enemy with 2542 Power. -->
-		<!-- Level 11: Attacks the enemy with 2626 Power. -->
-		<!-- Level 12: Attacks the enemy with 2710 Power. -->
-		<!-- Level 13: Attacks the enemy with 2794 Power. -->
+	<skill id="4049" toLevel="16" name="Cubic Strike">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1622,6 +1624,9 @@
 			<value level="11">-679</value>
 			<value level="12">-679</value>
 			<value level="13">-681</value>
+			<value level="14">-684</value>
+			<value level="15">-687</value>
+			<value level="16">-689</value>
 		</effectPoint>
 		<hitCancelTime>0</hitCancelTime>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1666,20 +1671,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4050" toLevel="13" name="Cubic Drain">
-		<!-- Level 1: Has a chance to absorb HP by 543 Power when attacking. -->
-		<!-- Level 2: Has a chance to absorb HP by 760 Power when attacking. -->
-		<!-- Level 3: Has a chance to absorb HP by 1084 Power when attacking. -->
-		<!-- Level 4: Has a chance to absorb HP by 1377 Power when attacking. -->
-		<!-- Level 5: Has a chance to absorb HP by 1635 Power when attacking. -->
-		<!-- Level 6: Has a chance to absorb HP by 1955 Power when attacking. -->
-		<!-- Level 7: Has a chance to absorb HP by 2262 Power when attacking. -->
-		<!-- Level 8: Has a chance to absorb HP by 2386 Power when attacking. -->
-		<!-- Level 9: Has a chance to absorb HP by 2425 Power when attacking. -->
-		<!-- Level 10: Has a chance to absorb HP by 2524 Power when attacking. -->
-		<!-- Level 11: Has a chance to absorb HP by 2632 Power when attacking. -->
-		<!-- Level 12: Has a chance to absorb HP by 2722 Power when attacking. -->
-		<!-- Level 13: Has a chance to absorb HP by 2812 Power when attacking. -->
+	<skill id="4050" toLevel="16" name="Cubic Drain">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1698,6 +1690,9 @@
 			<value level="11">-676</value>
 			<value level="12">-679</value>
 			<value level="13">-681</value>
+			<value level="14">-684</value>
+			<value level="15">-687</value>
+			<value level="16">-689</value>
 		</effectPoint>
 		<hitCancelTime>0</hitCancelTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
@@ -1744,20 +1739,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4051" toLevel="13" name="Cubic Heal">
-		<!-- Level 1: Recovers HP 201 Power. -->
-		<!-- Level 2: Recovers HP 241 Power. -->
-		<!-- Level 3: Recovers HP 281 Power. -->
-		<!-- Level 4: Recovers HP 314 Power. -->
-		<!-- Level 5: Recovers HP 339 Power. -->
-		<!-- Level 6: Recovers HP 361 Power. -->
-		<!-- Level 7: Recovers HP 382 Power. -->
-		<!-- Level 8: Recovers HP 401 Power. -->
-		<!-- Level 9: Recovers HP 410 Power. -->
-		<!-- Level 10: Recovers HP 420 Power. -->
-		<!-- Level 11: Recovers HP 430 Power. -->
-		<!-- Level 12: Recovers HP 440 Power. -->
-		<!-- Level 13: Recovers HP 450 Power. -->
+	<skill id="4051" toLevel="20" name="Cubic Heal">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>TARGET</targetType>
@@ -1777,10 +1759,15 @@
 			<value level="11">674</value>
 			<value level="12">677</value>
 			<value level="13">679</value>
+			<value level="14">682</value>
+			<value level="15">685</value>
+			<value level="16">687</value>
+			<value level="20">1</value>
 		</effectPoint>
 		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">43</value>
 			<value level="2">49</value>
@@ -1798,6 +1785,10 @@
 			<value level="14">83</value>
 			<value level="15">84</value>
 			<value level="16">85</value>
+			<value level="17">0</value>
+			<value level="18">0</value>
+			<value level="19">0</value>
+			<value level="20">18</value>
 		</magicLevel>
 		<effects>
 			<effect name="Heal">
@@ -1809,21 +1800,39 @@
 					<value level="5">339</value>
 					<value level="6">361</value>
 					<value level="7">382</value>
-					<value level="8">401</value>
-					<value level="9">410</value>
-					<value level="10">420</value>
-					<value level="11">430</value>
-					<value level="12">440</value>
-					<value level="13">450</value>
-					<value level="14">450</value>
-					<value level="15">450</value>
-					<value level="16">450</value>
+					<value level="8">390</value>
+					<value level="9">398</value>
+					<value level="10">405</value>
+					<value level="11">413</value>
+					<value level="12">418</value>
+					<value level="13">422</value>
+					<value level="14">426</value>
+					<value level="15">430</value>
+					<value level="16">434</value>
+					<value level="17">0</value>
+					<value level="18">0</value>
+					<value level="19">0</value>
+					<value level="20">68</value>
 				</power>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4052" toLevel="12" name="Cubic Poison">
-		<!-- Poisoned and HP continuously decreases. -->
+	<skill id="4052" toLevel="15" name="Cubic Poison">
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 5. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 6. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 10: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 11: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 12: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 13: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 14: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 15: Poisons a target, momentarily decreasing HP. Effect 8. -->
 		<icon>icon.skill1168</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1844,10 +1853,10 @@
 			<value level="14">8</value>
 			<value level="15">8</value>
 		</abnormalLevel>
-		<abnormalTime>20</abnormalTime>
+		<abnormalTime>30</abnormalTime>
 		<abnormalType>POISON</abnormalType>
 		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
-		<activateRate>100</activateRate>
+		<activateRate>70</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
 		<effectPoint>
@@ -1863,10 +1872,15 @@
 			<value level="10">-676</value>
 			<value level="11">-679</value>
 			<value level="12">-681</value>
+			<value level="13">-684</value>
+			<value level="14">-687</value>
+			<value level="15">-689</value>
 		</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">49</value>
 			<value level="2">55</value>
@@ -1878,10 +1892,10 @@
 			<value level="8">76</value>
 			<value level="9">78</value>
 			<value level="10">80</value>
-			<value level="11">82</value>
-			<value level="12">84</value>
-			<value level="13">85</value>
-			<value level="14">85</value>
+			<value level="11">81</value>
+			<value level="12">82</value>
+			<value level="13">83</value>
+			<value level="14">84</value>
 			<value level="15">85</value>
 		</magicLevel>
 		<subordinationAbnormalType>POISON</subordinationAbnormalType>
@@ -1891,32 +1905,32 @@
 					<value level="1">41</value>
 					<value level="2">50</value>
 					<value level="3">58</value>
-					<value level="4">63</value>
-					<value level="5">68</value>
-					<value level="6">73</value>
-					<value level="7">77</value>
-					<value level="8">81</value>
-					<value level="9">85</value>
-					<value level="10">90</value>
-					<value level="11">95</value>
-					<value level="12">100</value>
-					<value level="13">100</value>
-					<value level="14">100</value>
-					<value level="15">100</value>
+					<value level="4">58</value>
+					<value level="5">58</value>
+					<value level="6">63</value>
+					<value level="7">63</value>
+					<value level="8">63</value>
+					<value level="9">63</value>
+					<value level="10">66</value>
+					<value level="11">66</value>
+					<value level="12">66</value>
+					<value level="13">66</value>
+					<value level="14">66</value>
+					<value level="15">66</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>3</ticks>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4053" toLevel="13" name="Cubic Weakness">
-		<!-- P. Atk. momentarily decreased by 23%. -->
+	<skill id="4053" toLevel="16" name="Cubic Weakness">
+		<!-- P. Atk. decreases momentarily. Effect 3. -->
 		<icon>icon.skill1164</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>120</abnormalTime>
 		<abnormalType>PA_DOWN</abnormalType>
-		<activateRate>100</activateRate>
+		<activateRate>80</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>
@@ -1933,10 +1947,15 @@
 			<value level="11">-676</value>
 			<value level="12">-679</value>
 			<value level="13">-681</value>
+			<value level="14">-684</value>
+			<value level="15">-687</value>
+			<value level="16">-689</value>
 		</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">40</value>
 			<value level="2">46</value>
@@ -1949,10 +1968,10 @@
 			<value level="9">76</value>
 			<value level="10">78</value>
 			<value level="11">80</value>
-			<value level="12">82</value>
-			<value level="13">84</value>
-			<value level="14">85</value>
-			<value level="15">85</value>
+			<value level="12">81</value>
+			<value level="13">82</value>
+			<value level="14">83</value>
+			<value level="15">84</value>
 			<value level="16">85</value>
 		</magicLevel>
 		<effects>
@@ -1962,15 +1981,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4054" toLevel="13" name="Cubic Hex">
-		<!-- P. Def momentarily decreased by 23%. -->
+	<skill id="4054" toLevel="16" name="Cubic Hex">
+		<!-- P. Def. decreases temporarily. Effect 3. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>120</abnormalTime>
 		<abnormalType>PD_DOWN</abnormalType>
-		<activateRate>100</activateRate>
+		<activateRate>80</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>
@@ -1987,10 +2006,15 @@
 			<value level="11">-676</value>
 			<value level="12">-679</value>
 			<value level="13">-681</value>
+			<value level="14">-684</value>
+			<value level="15">-687</value>
+			<value level="16">-689</value>
 		</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">40</value>
 			<value level="2">46</value>
@@ -2003,10 +2027,10 @@
 			<value level="9">76</value>
 			<value level="10">78</value>
 			<value level="11">80</value>
-			<value level="12">82</value>
-			<value level="13">84</value>
-			<value level="14">85</value>
-			<value level="15">85</value>
+			<value level="12">81</value>
+			<value level="13">82</value>
+			<value level="14">83</value>
+			<value level="15">84</value>
 			<value level="16">85</value>
 		</magicLevel>
 		<effects>
@@ -2016,15 +2040,15 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4055" toLevel="13" name="Cubic Shackle">
-		<!-- Atk. Spd. momentarily decreased by 23%. -->
+	<skill id="4055" toLevel="16" name="Cubic Shackle">
+		<!-- Atk. Spd. decreases temporarily. Effect 3. -->
 		<icon>icon.skill1206</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>3</abnormalLevel>
-		<abnormalTime>30</abnormalTime>
+		<abnormalTime>120</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
-		<activateRate>100</activateRate>
+		<activateRate>80</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>
@@ -2041,10 +2065,15 @@
 			<value level="11">-676</value>
 			<value level="12">-679</value>
 			<value level="13">-681</value>
+			<value level="14">-684</value>
+			<value level="15">-687</value>
+			<value level="16">-689</value>
 		</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">40</value>
 			<value level="2">46</value>
@@ -2057,10 +2086,10 @@
 			<value level="9">76</value>
 			<value level="10">78</value>
 			<value level="11">80</value>
-			<value level="12">82</value>
-			<value level="13">84</value>
-			<value level="14">85</value>
-			<value level="15">85</value>
+			<value level="12">81</value>
+			<value level="13">82</value>
+			<value level="14">83</value>
+			<value level="15">84</value>
 			<value level="16">85</value>
 		</magicLevel>
 		<effects>
@@ -2168,7 +2197,7 @@
 				<power>916</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -2196,7 +2225,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -2513,7 +2542,7 @@
 		</effects>
 	</skill>
 	<skill id="4070" toLevel="1" name="Decrease Atk. Spd.">
-		<!-- Atk. Spd. has momentarily decreased by 23%. -->
+		<!-- Atk. Spd. decreases momentarily. Effect 3. -->
 		<icon>icon.skill1206</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2536,8 +2565,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="4071" toLevel="5" name="Bow Weapon Resistance">
-		<!-- Strong Bow resistance. -->
+	<skill id="4071" toLevel="5" name="Bow/Crossbow Resistance">
+		<!-- Resistant to Bow/Crossbow attacks. -->
 		<icon>
 			<value level="1">icon.skill4071</value>
 			<value level="2">icon.skill4071</value>
@@ -2568,7 +2597,7 @@
 		</effects>
 	</skill>
 	<skill id="4072" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2648,12 +2677,12 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4073" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2733,13 +2762,13 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4074" toLevel="2" name="Haste">
-		<!-- Level 1: Atk. Spd. +15%. -->
-		<!-- Level 2: Atk. Spd. +33%. -->
+		<!-- Level 1: Increases Speed by 15%. -->
+		<!-- Level 2: Increases Speed by 33%. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2778,7 +2807,7 @@
 		</effects>
 	</skill>
 	<skill id="4075" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0092</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2829,12 +2858,14 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="4076" toLevel="3" name="Decrease Speed">
-		<!-- Movement Speed has been momentarily decreased by 10%. -->
+		<!-- Level 1: Speed decreases momentarily. Effect 1. -->
+		<!-- Level 2: Speed decreases momentarily. Effect 2. -->
+		<!-- Level 3: Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3029,6 +3060,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>49</magicLevel>
 		<reuseDelay>5000</reuseDelay>
+		<conditions>
+			<condition name="OpSiegeHammer" />
+		</conditions>
 		<effects>
 			<effect name="PhysicalDamage">
 				<power>665060</power>
@@ -3048,6 +3082,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>60</magicLevel>
 		<mpConsume>98</mpConsume>
+		<conditions>
+			<condition name="OpSiegeHammer" />
+		</conditions>
 		<effects>
 			<effect name="Heal">
 				<power>628</power>
@@ -3116,17 +3153,17 @@
 		</effects>
 	</skill>
 	<skill id="4084" toLevel="11" name="Physical Attack Resistance">
-		<!-- Level 1: Strong Physical attack resistance. -->
-		<!-- Level 2: Strong Physical attack resistance. -->
-		<!-- Level 3: Strong Physical attack resistance. -->
-		<!-- Level 4: Strong Physical attack resistance. -->
-		<!-- Level 5: Strong Physical attack resistance. -->
-		<!-- Level 6: Strong Physical attack resistance. -->
-		<!-- Level 7: Strong Physical attack resistance. -->
-		<!-- Level 8: Strong Physical attack resistance. -->
-		<!-- Level 9: Resistant to physical attacks. -->
-		<!-- Level 10: Resistant to physical attacks. -->
-		<!-- Level 11: Resistant to physical attacks. -->
+		<!-- Level 1: Resistant to physical attacks. -->
+		<!-- Level 2: Resistant to physical attacks. -->
+		<!-- Level 3: Resistant to physical attacks. -->
+		<!-- Level 4: Resistant to physical attacks. -->
+		<!-- Level 5: Resistant to physical attacks. -->
+		<!-- Level 6: Resistant to physical attacks. -->
+		<!-- Level 7: Resistant to physical attacks. -->
+		<!-- Level 8: Resistant to physical attacks. -->
+		<!-- Level 9: Extremely resistant to physical attacks. -->
+		<!-- Level 10: Extremely resistant to physical attacks. -->
+		<!-- Level 11: Extremely resistant to physical attacks. -->
 		<icon>icon.skill4084</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3151,7 +3188,7 @@
 		</effects>
 	</skill>
 	<skill id="4085" toLevel="1" name="Critical Damage">
-		<!-- Deals significant P. Critical Damage. -->
+		<!-- Increases Critical Damage. -->
 		<icon>icon.skill4085</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3164,7 +3201,7 @@
 		</effects>
 	</skill>
 	<skill id="4086" toLevel="1" name="Critical Chance">
-		<!-- Has a high chance of P. Critical Rate. -->
+		<!-- Increases Critical Rate. -->
 		<icon>icon.skill4086</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3238,7 +3275,18 @@
 		</effects>
 	</skill>
 	<skill id="4088" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3323,7 +3371,7 @@
 		</effects>
 	</skill>
 	<skill id="4089" toLevel="1" name="Spirit Bear">
-		<!-- P. Atk. + 15% and Speed + 15%. -->
+		<!-- P. Atk. +15% and Speed +15%. -->
 		<icon>icon.skill0076</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3351,7 +3399,7 @@
 		</effects>
 	</skill>
 	<skill id="4090" toLevel="1" name="Spirit Wolf">
-		<!-- Increases Movement Speed +40. -->
+		<!-- Increases Speed by 40. -->
 		<icon>icon.skill0083</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3375,9 +3423,9 @@
 		</effects>
 	</skill>
 	<skill id="4091" toLevel="3" name="Spirit Ogre">
-		<!-- Level 1: Increases P. Atk. +5%, P. Def. +10%, P. Accuracy +3, and Max HP +14%. Decreases P. evasion -10 and speed -15%. -->
-		<!-- Level 2: Increases P. Atk. +15%, P. Def. +30%, P. Accuracy +7, and Max HP +21%. Decreases P. evasion -10 and speed -15%. -->
-		<!-- Level 3: Increases P. Atk. +15%, P. Def. +30%, P. Accuracy +7, and Max HP +21%. Decreases P. evasion -5 and speed -10%. -->
+		<!-- Level 1: Increases P. Atk. by 5%, P. Def. by 10%, Accuracy by 3, and Max HP by 14%. Decreases evasion by 10 and speed by 15%. -->
+		<!-- Level 2: Increases P. Atk. by 15%, P. Def. by 30%, Accuracy by 7, and Max HP by 21%. Decreases evasion by 10 and speed by 15%. -->
+		<!-- Level 3: Increases P. Atk. by 15%, P. Def. by 30%, Accuracy by 7, and Max HP by 21%. Decreases evasion by 5 and speed by 10%. -->
 		<icon>icon.skill0109</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3457,7 +3505,7 @@
 		</effects>
 	</skill>
 	<skill id="4092" toLevel="1" name="Spirit Puma">
-		<!-- Increases Atk. Spd. +30% and P. evasion +4. Decreases P. Def. -20%. -->
+		<!-- Increases Atk. Spd. by 30% and evasion by 4. Decreases P. Def. by 20%. -->
 		<icon>icon.skill0282</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3489,7 +3537,7 @@
 		</effects>
 	</skill>
 	<skill id="4093" toLevel="1" name="Evasion">
-		<!-- P. Evasion +4. -->
+		<!-- Increases Evasion by 4. -->
 		<icon>icon.skill4093</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3571,9 +3619,9 @@
 		</effects>
 	</skill>
 	<skill id="4096" toLevel="3" name="Hawk Eye">
-		<!-- Level 1: P. Def. decreases momentarily. -10% and increases P. Accuracy +6. -->
-		<!-- Level 2: P. Def. decreases momentarily. -10% and increases P. Accuracy +8. -->
-		<!-- Level 3: P. Def. decreases momentarily. -10% and increases P. Accuracy +10. -->
+		<!-- Level 1: P. Def. decreases momentarily by 10% and increases Accuracy by 6. -->
+		<!-- Level 2: P. Def. decreases momentarily by 10% and increases Accuracy by 8. -->
+		<!-- Level 3: P. Def. decreases momentarily by 10% and increases Accuracy by 10. -->
 		<icon>icon.skill0131</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3601,6 +3649,7 @@
 		</mpConsume>
 		<reuseDelay>6000</reuseDelay>
 		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="PhysicalDefence">
 				<amount>-10</amount>
@@ -3751,8 +3800,8 @@
 		</effects>
 	</skill>
 	<skill id="4099" toLevel="2" name="Berserker Spirit">
-		<!-- Level 1: P. Atk. +5%, M. Atk. +10%, Atk. Spd. +2, Casting Spd. +5%, and Movement Speed +10%. P. Def. -5%, M. Def. -5%, and P. Evasion -5. -->
-		<!-- Level 2: P. Atk. +8%, M. Atk. +16%, Atk. Spd. +4, Casting Spd. +8%, and Movement Speed +16%. P. Def. -8%, M. Def. -8%, and P. Evasion -8. -->
+		<!-- Level 1: P. Def. decreases momentarily by 5%, M. Def. by 10%, and Evasion by 2. Increases P. Atk. by 5%, M. Atk. by 10%, Atk. Spd. by 5%, Casting Spd. by 5%, and Speed by 5. -->
+		<!-- Level 2: P. Def. decreases momentarily by 8%, M. Def. by 16%, and Evasion by 4. Increases P. Atk. by 8%, M. Atk. by 16%, Atk. Spd. by 8%, Casting Spd. by 8%, and Speed by 8. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>

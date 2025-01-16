@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="3100" toLevel="10" name="Item Skill: Sleep">
-		<!-- Effect: Upon using magic, momentarily inflicts Sleep on the target. Greatly decreases the chance to inflict additional Sleep state while effects last. -->
+		<!-- Chance: Momentarily inflicts Sleep on the target during magic use. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -36,7 +36,7 @@
 		<trait>SLEEP</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
@@ -44,7 +44,7 @@
 		</effects>
 	</skill>
 	<skill id="3101" toLevel="10" name="Item Skill: Paralyze">
-		<!-- Skill Effect: Petrifies an enemy for 15 seconds upon using magic. When fully petrified, becomes paralyzed for 10 seconds. -->
+		<!-- Chance: Momentarily paralyzes the target during magic use. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -133,9 +133,7 @@
 		</magicLevel>
 		<reuseDelay>30000</reuseDelay>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="3103" toLevel="10" name="Item Skill: Fear">
@@ -177,8 +175,22 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="3104" toLevel="15" name="Item Skill: Poison (Magic)">
-		<!-- Effect: Upon using magic, momentarily inflicts Poison on the target. -->
+	<skill id="3104" toLevel="15" name="Item Skill: Poison (Magic Active)">
+		<!-- Level 1: Chance: Momentarily inflicts Poison on the target during magic use. Effect 5. -->
+		<!-- Level 2: Chance: Momentarily inflicts Poison on the target during magic use. Effect 5. -->
+		<!-- Level 3: Chance: Momentarily inflicts Poison on the target during magic use. Effect 6. -->
+		<!-- Level 4: Chance: Momentarily inflicts Poison on the target during magic use. Effect 6. -->
+		<!-- Level 5: Chance: Momentarily inflicts Poison on the target during magic use. Effect 6. -->
+		<!-- Level 6: Chance: Momentarily inflicts Poison on the target during magic use. Effect 7. -->
+		<!-- Level 7: Chance: Momentarily inflicts Poison on the target during magic use. Effect 7. -->
+		<!-- Level 8: Chance: Momentarily inflicts Poison on the target during magic use. Effect 7. -->
+		<!-- Level 9: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
+		<!-- Level 10: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
+		<!-- Level 11: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
+		<!-- Level 12: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
+		<!-- Level 13: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
+		<!-- Level 14: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
+		<!-- Level 15: Chance: Momentarily inflicts Poison on the target during magic use. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -252,12 +264,26 @@
 					<value level="14">87</value>
 					<value level="15">98</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3105" toLevel="15" name="Item Skill: Bleed (Magic)">
-		<!-- Effect: Upon using magic, momentarily inflicts Bleed on the target. -->
+	<skill id="3105" toLevel="15" name="Item Skill: Bleed (Magic Active)">
+		<!-- Level 1: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 5. -->
+		<!-- Level 2: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 5. -->
+		<!-- Level 3: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 6. -->
+		<!-- Level 4: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 6. -->
+		<!-- Level 5: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 6. -->
+		<!-- Level 6: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 7. -->
+		<!-- Level 7: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 7. -->
+		<!-- Level 8: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 7. -->
+		<!-- Level 9: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
+		<!-- Level 10: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
+		<!-- Level 11: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
+		<!-- Level 12: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
+		<!-- Level 13: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
+		<!-- Level 14: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
+		<!-- Level 15: Chance: Momentarily inflicts Bleed on the target during magic use. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -332,7 +358,7 @@
 					<value level="14">87</value>
 					<value level="15">98</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -375,7 +401,7 @@
 		</effects>
 	</skill>
 	<skill id="3107" toLevel="10" name="Item Skill: Doom">
-		<!-- Effect: Upon using magic, momentarily blocks all of the target's P. Skills/M. Skills. -->
+		<!-- Chance: Momentarily blocks all of the target's physical and magic skills during magic use. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -414,21 +440,21 @@
 		</effects>
 	</skill>
 	<skill id="3108" toLevel="15" name="Item Skill: Aggression Up">
-		<!-- Level 1: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 438. -->
-		<!-- Level 2: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 467. -->
-		<!-- Level 3: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 495. -->
-		<!-- Level 4: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 523. -->
-		<!-- Level 5: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 549. -->
-		<!-- Level 6: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 574. -->
-		<!-- Level 7: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 597. -->
-		<!-- Level 8: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 617. -->
-		<!-- Level 9: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 635. -->
-		<!-- Level 10: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 659. -->
-		<!-- Level 11: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 659. -->
-		<!-- Level 12: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 659. -->
-		<!-- Level 13: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 659. -->
-		<!-- Level 14: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 659. -->
-		<!-- Level 15: Effect: Increases the target's urge to attack upon a P. Critical attack. Power: 659. -->
+		<!-- Level 1: Chance: Increases the target's urge to attack during a critical attack. Power 438. -->
+		<!-- Level 2: Chance: Increases the target's urge to attack during a critical attack. Power 467. -->
+		<!-- Level 3: Chance: Increases the target's urge to attack during a critical attack. Power 495. -->
+		<!-- Level 4: Chance: Increases the target's urge to attack during a critical attack. Power 523. -->
+		<!-- Level 5: Chance: Increases the target's urge to attack during a critical attack. Power 549. -->
+		<!-- Level 6: Chance: Increases the target's urge to attack during a critical attack. Power 574. -->
+		<!-- Level 7: Chance: Increases the target's urge to attack during a critical attack. Power 597. -->
+		<!-- Level 8: Chance: Increases the target's urge to attack during a critical attack. Power 617. -->
+		<!-- Level 9: Chance: Increases the target's urge to attack during a critical attack. Power 635. -->
+		<!-- Level 10: Chance: Increases the target's urge to attack during a critical attack. Power 659. -->
+		<!-- Level 11: Chance: Increases the target's urge to attack during a critical attack. Power 659. -->
+		<!-- Level 12: Chance: Increases the target's urge to attack during a critical attack. Power 659. -->
+		<!-- Level 13: Chance: Increases the target's urge to attack during a critical attack. Power 659. -->
+		<!-- Level 14: Chance: Increases the target's urge to attack during a critical attack. Power 659. -->
+		<!-- Level 15: Chance: Increases the target's urge to attack during a critical attack. Power 659. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -464,21 +490,21 @@
 		</effects>
 	</skill>
 	<skill id="3109" toLevel="15" name="Item Skill: Aggression Down">
-		<!-- Level 1: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 219. -->
-		<!-- Level 2: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 234. -->
-		<!-- Level 3: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 248. -->
-		<!-- Level 4: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 262. -->
-		<!-- Level 5: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 275. -->
-		<!-- Level 6: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 287. -->
-		<!-- Level 7: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 299. -->
-		<!-- Level 8: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 309. -->
-		<!-- Level 9: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 318. -->
-		<!-- Level 10: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 330. -->
-		<!-- Level 11: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 342. -->
-		<!-- Level 12: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 354. -->
-		<!-- Level 13: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 366. -->
-		<!-- Level 14: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 378. -->
-		<!-- Level 15: Effect: Decreases the target's urge to attack upon P. Critical damage. Power: 390. -->
+		<!-- Level 1: Chance: Decreases the target's urge to attack during a critical attack. Power 219. -->
+		<!-- Level 2: Chance: Decreases the target's urge to attack during a critical attack. Power 234. -->
+		<!-- Level 3: Chance: Decreases the target's urge to attack during a critical attack. Power 248. -->
+		<!-- Level 4: Chance: Decreases the target's urge to attack during a critical attack. Power 262. -->
+		<!-- Level 5: Chance: Decreases the target's urge to attack during a critical attack. Power 275. -->
+		<!-- Level 6: Chance: Decreases the target's urge to attack during a critical attack. Power 287. -->
+		<!-- Level 7: Chance: Decreases the target's urge to attack during a critical attack. Power 299. -->
+		<!-- Level 8: Chance: Decreases the target's urge to attack during a critical attack. Power 309. -->
+		<!-- Level 9: Chance: Decreases the target's urge to attack during a critical attack. Power 318. -->
+		<!-- Level 10: Chance: Decreases the target's urge to attack during a critical attack. Power 330. -->
+		<!-- Level 11: Chance: Decreases the target's urge to attack during a critical attack. Power 342. -->
+		<!-- Level 12: Chance: Decreases the target's urge to attack during a critical attack. Power 354. -->
+		<!-- Level 13: Chance: Decreases the target's urge to attack during a critical attack. Power 366. -->
+		<!-- Level 14: Chance: Decreases the target's urge to attack during a critical attack. Power 378. -->
+		<!-- Level 15: Chance: Decreases the target's urge to attack during a critical attack. Power 390. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -530,16 +556,16 @@
 		</effects>
 	</skill>
 	<skill id="3110" toLevel="10" name="Item Skill: Mana Burn">
-		<!-- Level 1: Effect: Burns the target's MP upon P. Critical damage. Power: 49. -->
-		<!-- Level 2: Effect: Burns the target's MP upon P. Critical damage. Power: 53. -->
-		<!-- Level 3: Effect: Burns the target's MP upon P. Critical damage. Power: 57. -->
-		<!-- Level 4: Effect: Burns the target's MP upon P. Critical damage. Power: 61. -->
-		<!-- Level 5: Effect: Burns the target's MP upon P. Critical damage. Power: 66. -->
-		<!-- Level 6: Effect: Burns the target's MP upon P. Critical damage. Power: 70. -->
-		<!-- Level 7: Effect: Burns the target's MP upon P. Critical damage. Power: 74. -->
-		<!-- Level 8: Effect: Burns the target's MP upon P. Critical damage. Power: 78. -->
-		<!-- Level 9: Effect: Burns the target's MP upon P. Critical damage. Power: 82. -->
-		<!-- Level 10: Effect: Burns the target's MP upon P. Critical damage. Power: 88. -->
+		<!-- Level 1: Chance: Burns up the target's MP during a critical attack. Power 49. -->
+		<!-- Level 2: Chance: Burns up the target's MP during a critical attack. Power 53. -->
+		<!-- Level 3: Chance: Burns up the target's MP during a critical attack. Power 57. -->
+		<!-- Level 4: Chance: Burns up the target's MP during a critical attack. Power 61. -->
+		<!-- Level 5: Chance: Burns up the target's MP during a critical attack. Power 66. -->
+		<!-- Level 6: Chance: Burns up the target's MP during a critical attack. Power 70. -->
+		<!-- Level 7: Chance: Burns up the target's MP during a critical attack. Power 74. -->
+		<!-- Level 8: Chance: Burns up the target's MP during a critical attack. Power 78. -->
+		<!-- Level 9: Chance: Burns up the target's MP during a critical attack. Power 82. -->
+		<!-- Level 10: Chance: Burns up the target's MP during a critical attack. Power 88. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -582,7 +608,7 @@
 		</effects>
 	</skill>
 	<skill id="3111" toLevel="15" name="Item Skill: Slow (Critical)">
-		<!-- Effect: The target's Movement Speed -30% upon P. Critical damage. -->
+		<!-- Chance: Momentarily decreases the target's Speed during a critical attack. Effect 3. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -625,7 +651,7 @@
 		</effects>
 	</skill>
 	<skill id="3112" toLevel="15" name="Item Skill: Winter (Critical)">
-		<!-- Effect: The target's Atk. Spd. -23% upon P. Critical damage. -->
+		<!-- Chance: Momentarily decreases the target's Atk. Spd. during a critical attack. Effect 3. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -668,7 +694,7 @@
 		</effects>
 	</skill>
 	<skill id="3113" toLevel="10" name="Item Skill: Stun">
-		<!-- Effect: Momentarily stuns the target upon P. Critical damage. -->
+		<!-- Activated skill: Causes a target to enter the Stun state momentarily if critically hit. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -702,12 +728,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3114" toLevel="15" name="Item Skill: Hold">
-		<!-- Effect: Momentarily inflicts hold on the target upon P. Critical damage. The target cannot be affected by any additional hold attacks while the effect lasts. -->
+		<!-- Chance: Momentarily inflicts Hold on the target during a critical attack. The target cannot be affected by any additional hold attacks while the effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -752,7 +778,7 @@
 		</effects>
 	</skill>
 	<skill id="3115" toLevel="10" name="Item Skill: Sleep">
-		<!-- Effect: Momentarily inflicts Sleep on the target upon P. Critical damage. Greatly decreases the chance to inflict additional Sleep state while effects last. -->
+		<!-- Chance: Momentarily inflicts Sleep on the target during a critical attack. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -786,7 +812,7 @@
 		<trait>SLEEP</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
@@ -794,7 +820,7 @@
 		</effects>
 	</skill>
 	<skill id="3116" toLevel="10" name="Item Skill: Paralyze">
-		<!-- Effect: Petrifies an enemy for 15 seconds upon P. Critical. When fully petrified, becomes paralyzed for 10 seconds. -->
+		<!-- Chance: Momentarily paralyzes the target during a critical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -847,7 +873,7 @@
 		</endEffects>
 	</skill>
 	<skill id="3117" toLevel="10" name="Item Skill: Medusa">
-		<!-- Effect: Momentarily inflicts Sleep on the target upon P. Critical damage. -->
+		<!-- Chance: Momentarily petrifies the target during a critical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -881,13 +907,11 @@
 		</magicLevel>
 		<reuseDelay>30000</reuseDelay>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="3118" toLevel="10" name="Item Skill: Fear">
-		<!-- Effect: Momentarily causes your enemy to flee in fear upon P. Critical damage. -->
+		<!-- Chance: Momentarily inflicts Fear on the target and causes him to flee during a critical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -925,7 +949,21 @@
 		</effects>
 	</skill>
 	<skill id="3119" toLevel="15" name="Item Skill: Poison (Critical)">
-		<!-- Effect: Momentarily poisons the target upon P. Critical damage. -->
+		<!-- Level 1: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 5. -->
+		<!-- Level 2: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 5. -->
+		<!-- Level 3: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 6. -->
+		<!-- Level 4: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 6. -->
+		<!-- Level 5: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 6. -->
+		<!-- Level 6: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 7. -->
+		<!-- Level 7: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 7. -->
+		<!-- Level 8: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 7. -->
+		<!-- Level 9: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
+		<!-- Level 10: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
+		<!-- Level 11: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
+		<!-- Level 12: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
+		<!-- Level 13: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
+		<!-- Level 14: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
+		<!-- Level 15: Chance: Momentarily inflicts Poison on the target during a critical attack. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -998,12 +1036,26 @@
 					<value level="14">87</value>
 					<value level="15">98</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3120" toLevel="15" name="Item Skill: Bleed (Critical)">
-		<!-- Effect: Momentarily causes the target to bleed upon P. Critical damage. -->
+		<!-- Level 1: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 5. -->
+		<!-- Level 2: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 5. -->
+		<!-- Level 3: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 6. -->
+		<!-- Level 4: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 6. -->
+		<!-- Level 5: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 6. -->
+		<!-- Level 6: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 7. -->
+		<!-- Level 7: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 7. -->
+		<!-- Level 8: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 7. -->
+		<!-- Level 9: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
+		<!-- Level 10: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
+		<!-- Level 11: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
+		<!-- Level 12: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
+		<!-- Level 13: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
+		<!-- Level 14: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
+		<!-- Level 15: Chance: Momentarily inflicts Bleed on the target during a critical attack. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1077,12 +1129,12 @@
 					<value level="14">67</value>
 					<value level="15">67</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3121" toLevel="10" name="Item Skill: Silence">
-		<!-- Effect: Momentarily blocks the target's M. Skills upon P. Critical damage. -->
+		<!-- Chance: Momentarily blocks the target's magic skill during a critical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1119,7 +1171,7 @@
 		</effects>
 	</skill>
 	<skill id="3122" toLevel="10" name="Item Skill: Doom">
-		<!-- Effect: Momentarily blocks the target's entire P. Skills/M. Skills upon P. Critical damage. -->
+		<!-- Chance: Momentarily blocks all of the target's physical and magic skills during a critical attack. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1242,16 +1294,16 @@
 		</effects>
 	</skill>
 	<skill id="3124" toLevel="10" name="Item Skill: Blessed Body">
-		<!-- Level 1: Active Skill: Max HP +30 for a set time. -->
-		<!-- Level 2: Active Skill: Max HP +60 for a set time. -->
-		<!-- Level 3: Active Skill: Max HP +90 for a set time. -->
-		<!-- Level 4: Active Skill: Max HP +120 for a set time. -->
-		<!-- Level 5: Active Skill: Max HP +150 for a set time. -->
-		<!-- Level 6: Active Skill: Max HP +180 for a set time. -->
-		<!-- Level 7: Active Skill: Max HP +210 for a set time. -->
-		<!-- Level 8: Active Skill: Max HP +240 for a set time. -->
-		<!-- Level 9: Active Skill: Max HP +270 for a set time. -->
-		<!-- Level 10: Active Skill: Max HP +300 for a set time. -->
+		<!-- Level 1: Active: Increases Max HP by 30 temporarily. -->
+		<!-- Level 2: Active: Increases Max HP by 60 temporarily. -->
+		<!-- Level 3: Active: Increases Max HP by 90 temporarily. -->
+		<!-- Level 4: Active: Increases Max HP by 120 temporarily. -->
+		<!-- Level 5: Active: Increases Max HP by 150 temporarily. -->
+		<!-- Level 6: Active: Increases Max HP by 180 temporarily. -->
+		<!-- Level 7: Active: Increases Max HP by 210 temporarily. -->
+		<!-- Level 8: Active: Increases Max HP by 240 temporarily. -->
+		<!-- Level 9: Active: Increases Max HP by 270 temporarily. -->
+		<!-- Level 10: Active: Increases Max HP by 300 temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1331,7 +1383,7 @@
 		</effects>
 	</skill>
 	<skill id="3125" toLevel="10" name="Item Skill: Battle Roar">
-		<!-- Active Skill: Increases Max HP for a set time and restores HP by the increased amount. -->
+		<!-- Active: Increases Max HP temporarily and restores HP by the increased amount. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1401,7 +1453,7 @@
 		</effects>
 	</skill>
 	<skill id="3126" toLevel="10" name="Item Skill: Prayer">
-		<!-- Active Skill: Increases Heal Received for a set time. -->
+		<!-- Active: Increases the effectiveness of HP recovery magic temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1567,16 +1619,16 @@
 		</effects>
 	</skill>
 	<skill id="3128" toLevel="10" name="Item Skill: Blessed Soul">
-		<!-- Level 1: Active Skill: Max MP +20 for a set time. -->
-		<!-- Level 2: Active Skill: Max MP +40 for a set time. -->
-		<!-- Level 3: Active Skill: Max MP +60 for a set time. -->
-		<!-- Level 4: Active Skill: Max MP +80 for a set time. -->
-		<!-- Level 5: Active Skill: Max MP +100 for a set time. -->
-		<!-- Level 6: Active Skill: Max MP +120 for a set time. -->
-		<!-- Level 7: Active Skill: Max MP +140 for a set time. -->
-		<!-- Level 8: Active Skill: Max MP +160 for a set time. -->
-		<!-- Level 9: Active Skill: Max MP +180 for a set time. -->
-		<!-- Level 10: Active Skill: Max MP +200 for a set time. -->
+		<!-- Level 1: Active: Increases Max MP by 20 temporarily. -->
+		<!-- Level 2: Active: Increases Max MP by 40 temporarily. -->
+		<!-- Level 3: Active: Increases Max MP by 60 temporarily. -->
+		<!-- Level 4: Active: Increases Max MP by 80 temporarily. -->
+		<!-- Level 5: Active: Increases Max MP by 100 temporarily. -->
+		<!-- Level 6: Active: Increases Max MP by 120 temporarily. -->
+		<!-- Level 7: Active: Increases Max MP by 140 temporarily. -->
+		<!-- Level 8: Active: Increases Max MP by 160 temporarily. -->
+		<!-- Level 9: Active: Increases Max MP by 180 temporarily. -->
+		<!-- Level 10: Active: Increases Max MP by 200 temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1656,7 +1708,7 @@
 		</effects>
 	</skill>
 	<skill id="3129" toLevel="15" name="Item Skill: Mana Gain">
-		<!-- Active Skill: Increases recovery bonus during MP Recovery through recharge. -->
+		<!-- Active: Increases the recharge recover rate of MP. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1846,16 +1898,16 @@
 		</effects>
 	</skill>
 	<skill id="3131" toLevel="10" name="Item Skill: Cheer">
-		<!-- Level 1: Active Skill: Max CP +30 for a set time. -->
-		<!-- Level 2: Active Skill: Max CP +60 for a set time. -->
-		<!-- Level 3: Active Skill: Max CP +90 for a set time. -->
-		<!-- Level 4: Active Skill: Max CP +120 for a set time. -->
-		<!-- Level 5: Active Skill: Max CP +150 for a set time. -->
-		<!-- Level 6: Active Skill: Max CP +180 for a set time. -->
-		<!-- Level 7: Active Skill: Max CP +210 for a set time. -->
-		<!-- Level 8: Active Skill: Max CP +240 for a set time. -->
-		<!-- Level 9: Active Skill: Max CP +270 for a set time. -->
-		<!-- Level 10: Active Skill: Max CP +300 for a set time. -->
+		<!-- Level 1: Active: Increases Max CP by 30 temporarily. -->
+		<!-- Level 2: Active: Increases Max CP by 60 temporarily. -->
+		<!-- Level 3: Active: Increases Max CP by 90 temporarily. -->
+		<!-- Level 4: Active: Increases Max CP by 120 temporarily. -->
+		<!-- Level 5: Active: Increases Max CP by 150 temporarily. -->
+		<!-- Level 6: Active: Increases Max CP by 180 temporarily. -->
+		<!-- Level 7: Active: Increases Max CP by 210 temporarily. -->
+		<!-- Level 8: Active: Increases Max CP by 240 temporarily. -->
+		<!-- Level 9: Active: Increases Max CP by 270 temporarily. -->
+		<!-- Level 10: Active: Increases Max CP by 300 temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1935,7 +1987,7 @@
 		</effects>
 	</skill>
 	<skill id="3132" toLevel="15" name="Item Skill: Might">
-		<!-- Active Skill: Increases P. Atk. for a set time. -->
+		<!-- Active: Increases P. Atk. temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2040,7 +2092,7 @@
 		</effects>
 	</skill>
 	<skill id="3133" toLevel="15" name="Item Skill: Empower">
-		<!-- Active Skill: Increases M. Atk. for a set time. -->
+		<!-- Active: Increases M. Atk. temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2144,8 +2196,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3134" toLevel="10" name="Item Skill: Might in Duel - PvP">
-		<!-- Active Skill: Increases your P. Atk. in PvP for a set time. -->
+	<skill id="3134" toLevel="10" name="Item Skill: Duel Might">
+		<!-- Active: Increases PvP P. Atk. temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2218,7 +2270,7 @@
 		</effects>
 	</skill>
 	<skill id="3135" toLevel="15" name="Item Skill: Shield">
-		<!-- Active Skill: Increases P. Def. for a set time. -->
+		<!-- Active: Increases P. Def. temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2323,7 +2375,7 @@
 		</effects>
 	</skill>
 	<skill id="3136" toLevel="15" name="Item Skill: Magic Barrier">
-		<!-- Active Skill: Increases M. Def. for a set time. -->
+		<!-- Active: Increases M. Def. temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2427,8 +2479,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3137" toLevel="10" name="Item Skill: Weakness in Duel">
-		<!-- Active Skill: Decreases enemy's P. Atk. in PvP for a set time. -->
+	<skill id="3137" toLevel="10" name="Item Skill: Duel Weakness">
+		<!-- Active: Decreases the opponent's PvP P. Atk. temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2506,7 +2558,7 @@
 		</effects>
 	</skill>
 	<skill id="3138" toLevel="10" name="Item Skill: Heal Empower">
-		<!-- Active Skill: Increases the amount of Heal given for a set time. -->
+		<!-- Active: Increases the power of HP recovery magic temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2586,7 +2638,7 @@
 		</effects>
 	</skill>
 	<skill id="3139" toLevel="15" name="Item Skill: Agility">
-		<!-- Active Skill: Increases P. Evasion for a set time. -->
+		<!-- Active: Increases Evasion temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2691,7 +2743,7 @@
 		</effects>
 	</skill>
 	<skill id="3140" toLevel="15" name="Item Skill: Guidance">
-		<!-- Active Skill: Increases P. Accuracy for a set time. -->
+		<!-- Active: Increases Accuracy temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2796,7 +2848,7 @@
 		</effects>
 	</skill>
 	<skill id="3141" toLevel="10" name="Item Skill: Focus">
-		<!-- Active Skill: Increases P. Critical Rate for a set time. -->
+		<!-- Active: Increases Critical Rate temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2876,7 +2928,7 @@
 		</effects>
 	</skill>
 	<skill id="3142" toLevel="10" name="Item Skill: Wild Magic">
-		<!-- Active Skill: Increases M. Critical Rate for a set time. -->
+		<!-- Active: Increases M. Critical Rate temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2956,7 +3008,7 @@
 		</effects>
 	</skill>
 	<skill id="3143" toLevel="10" name="Item Skill: Eva's Kiss">
-		<!-- Active Skill: Increases Lung Capacity for a set time. -->
+		<!-- Active: Increases Lung Capacity temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3025,7 +3077,7 @@
 		</effects>
 	</skill>
 	<skill id="3144" toLevel="10" name="Item Skill: Acrobatics">
-		<!-- Active Skill: Increases the height from which you can jump without sustaining damage for a set time. -->
+		<!-- Active: Increases the height from which you can jump without sustaining damage temporarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3194,7 +3246,6 @@
 					<value level="14">-50</value>
 					<value level="15">-50</value>
 				</amount>
-				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
@@ -3245,7 +3296,7 @@
 		</effects>
 	</skill>
 	<skill id="3148" toLevel="10" name="Item Skill: Vampiric Rage">
-		<!-- Active Skill: Has a chance to absorb some of the damage inflicted on the enemy as HP for a set time. -->
+		<!-- Active: Increases the ability to restore some HP from the damage inflicted on the enemy temporarily with a certain probability. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3320,7 +3371,7 @@
 					<value level="9">5</value>
 					<value level="10">6</value>
 				</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 		</effects>
 	</skill>
@@ -3801,8 +3852,8 @@
 		</effects>
 	</skill>
 	<skill id="3155" toLevel="10" name="Item Skill: Unlock">
-		<!-- Level 1: Active: Opens doors Lv. 1 with 100% chance, doors Lv. 2 with 30% chance, and chests Lv. 36 or below with 90% chance. Requires 4 Keys of a Thief. -->
-		<!-- Level 2: Active: Opens doors Lv. 1 with 100% chance, doors Lv. 2 with 75% chance, and chests Lv. 40 or below with 90% chance. Requires 5 Keys of a Thief. -->
+		<!-- Level 1: Active: Opens doors Lv. $2 with 100% chance, doors Lv. 2 with 30% chance, and chests Lv. 36 or below with 90% chance. Requires 4 Keys of a Thief. -->
+		<!-- Level 2: Active: Opens doors Lv. $2 with 100% chance, doors Lv. 2 with 75% chance, and chests Lv. 40 or below with 90% chance. Requires 5 Keys of a Thief. -->
 		<!-- Level 3: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 5% chance, and chests Lv. 44 or below with 90% chance. Requires 6 Keys of a Thief. -->
 		<!-- Level 4: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 30% chance, and chests Lv. 48 or below with 90% chance. Requires 7 Keys of a Thief. -->
 		<!-- Level 5: Active: Opens doors Lv. 2 or below with 100% chance, doors Lv. 3 with 75% chance, and chests Lv. 52 or below with 90% chance. Requires 8 Keys of a Thief. -->
@@ -3932,6 +3983,15 @@
 			<effect name="DamageBlock">
 				<type>BLOCK_MP</type>
 			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3159" toLevel="3" name="Item Skill: Stealth">
@@ -4004,14 +4064,14 @@
 	</skill>
 	<skill id="3160" toLevel="9" name="Item Skill: Resurrection">
 		<!-- Level 1: Active: Resurrects a corpse. -->
-		<!-- Level 2: Active Skill: Resurrects a corpse. Also restores about 20% of XP. -->
-		<!-- Level 3: Active Skill: Resurrects a corpse. Also restores about 30% of XP. -->
-		<!-- Level 4: Active Skill: Resurrects a corpse. Also restores about 40% of XP. -->
-		<!-- Level 5: Active Skill: Resurrects a corpse. Also restores about 50% of XP. -->
-		<!-- Level 6: Active Skill: Resurrects a corpse. Also restores about 55% of XP. -->
-		<!-- Level 7: Active Skill: Resurrects a corpse. Also restores about 60% of XP. -->
-		<!-- Level 8: Active Skill: Resurrects a corpse. Also restores about 65% of XP. -->
-		<!-- Level 9: Active Skill: Resurrects a corpse. Also restores about 70% of XP. -->
+		<!-- Level 2: Active: Resurrects a corpse. Restores about 20% of additional XP. -->
+		<!-- Level 3: Active: Resurrects a corpse. Restores about 30% of additional XP. -->
+		<!-- Level 4: Active: Resurrects a corpse. Restores about 40% of additional XP. -->
+		<!-- Level 5: Active: Resurrects a corpse. Restores about 50% of additional XP. -->
+		<!-- Level 6: Active: Resurrects a corpse. Restores about 55% of additional XP. -->
+		<!-- Level 7: Active: Resurrects a corpse. Restores about 60% of additional XP. -->
+		<!-- Level 8: Active: Resurrects a corpse. Restores about 65% of additional XP. -->
+		<!-- Level 9: Active: Resurrects a corpse. Restores about 70% of additional XP. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>PC_BODY</targetType>
@@ -4087,7 +4147,7 @@
 		</effects>
 	</skill>
 	<skill id="3161" toLevel="8" name="Item Skill: Skill Clarity">
-		<!-- Active Skill: Decreases P. Skill MP Consumption for a set time. -->
+		<!-- Active: Temporarily decreases MP Consumption for physical skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -4161,7 +4221,7 @@
 		</effects>
 	</skill>
 	<skill id="3162" toLevel="8" name="Item Skill: Spell Clarity">
-		<!-- Active Skill: Decreases M. Skill MP Consumption for a set time. -->
+		<!-- Active: Temporarily decreases MP Consumption for magical skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -4278,7 +4338,7 @@
 		</effects>
 	</skill>
 	<skill id="3164" toLevel="3" name="Item Skill: Clarity">
-		<!-- Active Skill: Decreases MP Consumptions of all skills for a set time. -->
+		<!-- Active: Temporarily decreases MP Consumptions for all skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -4605,16 +4665,16 @@
 		</effects>
 	</skill>
 	<skill id="3169" toLevel="10" name="Item Skill: Stone">
-		<!-- Level 1: Active Skill: Attacks the target with a stone boulder. Power: 61. -->
-		<!-- Level 2: Active Skill: Attacks the target with a stone boulder. Power: 66. -->
-		<!-- Level 3: Active Skill: Attacks the target with a stone boulder. Power: 72. -->
-		<!-- Level 4: Active Skill: Attacks the target with a stone boulder. Power: 77. -->
-		<!-- Level 5: Active Skill: Attacks the target with a stone boulder. Power: 82. -->
-		<!-- Level 6: Active Skill: Attacks the target with a stone boulder. Power: 87. -->
-		<!-- Level 7: Active Skill: Attacks the target with a stone boulder. Power: 92. -->
-		<!-- Level 8: Active Skill: Attacks the target with a stone boulder. Power: 97. -->
-		<!-- Level 9: Active Skill: Attacks the target with a stone boulder. Power: 102. -->
-		<!-- Level 10: Active Skill: Attacks the target with a stone boulder. Power: 110. -->
+		<!-- Level 1: Active: Attacks the target with a stone boulder. Power 61. -->
+		<!-- Level 2: Active: Attacks the target with a stone boulder. Power 66. -->
+		<!-- Level 3: Active: Attacks the target with a stone boulder. Power 72. -->
+		<!-- Level 4: Active: Attacks the target with a stone boulder. Power 77. -->
+		<!-- Level 5: Active: Attacks the target with a stone boulder. Power 82. -->
+		<!-- Level 6: Active: Attacks the target with a stone boulder. Power 87. -->
+		<!-- Level 7: Active: Attacks the target with a stone boulder. Power 92. -->
+		<!-- Level 8: Active: Attacks the target with a stone boulder. Power 97. -->
+		<!-- Level 9: Active: Attacks the target with a stone boulder. Power 102. -->
+		<!-- Level 10: Active: Attacks the target with a stone boulder. Power 110. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -4694,16 +4754,16 @@
 		</effects>
 	</skill>
 	<skill id="3170" toLevel="10" name="Item Skill: Solar Flare">
-		<!-- Level 1: Active Skill: Unleashes a Holy Attack. Power: 61. -->
-		<!-- Level 2: Active Skill: Unleashes a Holy Attack. Power: 66. -->
-		<!-- Level 3: Active Skill: Unleashes a Holy Attack. Power: 72. -->
-		<!-- Level 4: Active Skill: Unleashes a Holy Attack. Power: 77. -->
-		<!-- Level 5: Active Skill: Unleashes a Holy Attack. Power: 82. -->
-		<!-- Level 6: Active Skill: Unleashes a Holy Attack. Power: 87. -->
-		<!-- Level 7: Active Skill: Unleashes a Holy Attack. Power: 92. -->
-		<!-- Level 8: Active Skill: Unleashes a Holy Attack. Power: 97. -->
-		<!-- Level 9: Active Skill: Unleashes a Holy Attack. Power: 102. -->
-		<!-- Level 10: Active Skill: Unleashes a Holy Attack. Power: 110. -->
+		<!-- Level 1: Active: Unleashes a holy attack. Power 61. -->
+		<!-- Level 2: Active: Unleashes a holy attack. Power 66. -->
+		<!-- Level 3: Active: Unleashes a holy attack. Power 72. -->
+		<!-- Level 4: Active: Unleashes a holy attack. Power 77. -->
+		<!-- Level 5: Active: Unleashes a holy attack. Power 82. -->
+		<!-- Level 6: Active: Unleashes a holy attack. Power 87. -->
+		<!-- Level 7: Active: Unleashes a holy attack. Power 92. -->
+		<!-- Level 8: Active: Unleashes a holy attack. Power 97. -->
+		<!-- Level 9: Active: Unleashes a holy attack. Power 102. -->
+		<!-- Level 10: Active: Unleashes a holy attack. Power 110. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -4783,16 +4843,16 @@
 		</effects>
 	</skill>
 	<skill id="3171" toLevel="10" name="Item Skill: Shadow Flare">
-		<!-- Level 1: Active Skill: Unleashes a Dark Attack. Power: 61. -->
-		<!-- Level 2: Active Skill: Unleashes a Dark Attack. Power: 66. -->
-		<!-- Level 3: Active Skill: Unleashes a Dark Attack. Power: 72. -->
-		<!-- Level 4: Active Skill: Unleashes a Dark Attack. Power: 77. -->
-		<!-- Level 5: Active Skill: Unleashes a Dark Attack. Power: 82. -->
-		<!-- Level 6: Active Skill: Unleashes a Dark Attack. Power: 87. -->
-		<!-- Level 7: Active Skill: Unleashes a Dark Attack. Power: 92. -->
-		<!-- Level 8: Active Skill: Unleashes a Dark Attack. Power: 97. -->
-		<!-- Level 9: Active Skill: Unleashes a Dark Attack. Power: 102. -->
-		<!-- Level 10: Active Skill: Unleashes a Dark Attack. Power: 110. -->
+		<!-- Level 1: Active: Unleashes a dark attack. Power 61. -->
+		<!-- Level 2: Active: Unleashes a dark attack. Power 66. -->
+		<!-- Level 3: Active: Unleashes a dark attack. Power 72. -->
+		<!-- Level 4: Active: Unleashes a dark attack. Power 77. -->
+		<!-- Level 5: Active: Unleashes a dark attack. Power 82. -->
+		<!-- Level 6: Active: Unleashes a dark attack. Power 87. -->
+		<!-- Level 7: Active: Unleashes a dark attack. Power 92. -->
+		<!-- Level 8: Active: Unleashes a dark attack. Power 97. -->
+		<!-- Level 9: Active: Unleashes a dark attack. Power 102. -->
+		<!-- Level 10: Active: Unleashes a dark attack. Power 110. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -4872,16 +4932,16 @@
 		</effects>
 	</skill>
 	<skill id="3172" toLevel="10" name="Item Skill: Aura Flare">
-		<!-- Level 1: Active Skill: Attacks the target with magic. Power: 61. -->
-		<!-- Level 2: Active Skill: Attacks the target with magic. Power: 66. -->
-		<!-- Level 3: Active Skill: Attacks the target with magic. Power: 72. -->
-		<!-- Level 4: Active Skill: Attacks the target with magic. Power: 77. -->
-		<!-- Level 5: Active Skill: Attacks the target with magic. Power: 82. -->
-		<!-- Level 6: Active Skill: Attacks the target with magic. Power: 87. -->
-		<!-- Level 7: Active Skill: Attacks the target with magic. Power: 92. -->
-		<!-- Level 8: Active Skill: Attacks the target with magic. Power: 97. -->
-		<!-- Level 9: Active Skill: Attacks the target with magic. Power: 102. -->
-		<!-- Level 10: Active Skill: Attacks the target with magic. Power: 110. -->
+		<!-- Level 1: Active: Unleashes an elemental attack. Power 61. -->
+		<!-- Level 2: Active: Unleashes an elemental attack. Power 66. -->
+		<!-- Level 3: Active: Unleashes an elemental attack. Power 72. -->
+		<!-- Level 4: Active: Unleashes an elemental attack. Power 77. -->
+		<!-- Level 5: Active: Unleashes an elemental attack. Power 82. -->
+		<!-- Level 6: Active: Unleashes an elemental attack. Power 87. -->
+		<!-- Level 7: Active: Unleashes an elemental attack. Power 92. -->
+		<!-- Level 8: Active: Unleashes an elemental attack. Power 97. -->
+		<!-- Level 9: Active: Unleashes an elemental attack. Power 102. -->
+		<!-- Level 10: Active: Unleashes an elemental attack. Power 110. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -4959,16 +5019,16 @@
 		</effects>
 	</skill>
 	<skill id="3173" toLevel="10" name="Item Skill: Prominence">
-		<!-- Level 1: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Fire Attack against enemies near the target. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a fire attack against the enemies near a target. Power 31. -->
+		<!-- Level 2: Active: Unleashes a fire attack against the enemies near a target. Power 33. -->
+		<!-- Level 3: Active: Unleashes a fire attack against the enemies near a target. Power 36. -->
+		<!-- Level 4: Active: Unleashes a fire attack against the enemies near a target. Power 39. -->
+		<!-- Level 5: Active: Unleashes a fire attack against the enemies near a target. Power 41. -->
+		<!-- Level 6: Active: Unleashes a fire attack against the enemies near a target. Power 44. -->
+		<!-- Level 7: Active: Unleashes a fire attack against the enemies near a target. Power 46. -->
+		<!-- Level 8: Active: Unleashes a fire attack against the enemies near a target. Power 49. -->
+		<!-- Level 9: Active: Unleashes a fire attack against the enemies near a target. Power 51. -->
+		<!-- Level 10: Active: Unleashes a fire attack against the enemies near a target. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5051,16 +5111,16 @@
 		</effects>
 	</skill>
 	<skill id="3174" toLevel="10" name="Item Skill: Hydro Blast">
-		<!-- Level 1: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Water Attack against the enemies near a target. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a water attack against the enemies near a target. Power 31. -->
+		<!-- Level 2: Active: Unleashes a water attack against the enemies near a target. Power 33. -->
+		<!-- Level 3: Active: Unleashes a water attack against the enemies near a target. Power 36. -->
+		<!-- Level 4: Active: Unleashes a water attack against the enemies near a target. Power 39. -->
+		<!-- Level 5: Active: Unleashes a water attack against the enemies near a target. Power 41. -->
+		<!-- Level 6: Active: Unleashes a water attack against the enemies near a target. Power 44. -->
+		<!-- Level 7: Active: Unleashes a water attack against the enemies near a target. Power 46. -->
+		<!-- Level 8: Active: Unleashes a water attack against the enemies near a target. Power 49. -->
+		<!-- Level 9: Active: Unleashes a water attack against the enemies near a target. Power 51. -->
+		<!-- Level 10: Active: Unleashes a water attack against the enemies near a target. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5143,16 +5203,16 @@
 		</effects>
 	</skill>
 	<skill id="3175" toLevel="10" name="Item Skill: Hurricane">
-		<!-- Level 1: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Wind Attack against enemies near the target. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a wind attack against the enemies near a target. Power 31. -->
+		<!-- Level 2: Active: Unleashes a wind attack against the enemies near a target. Power 33. -->
+		<!-- Level 3: Active: Unleashes a wind attack against the enemies near a target. Power 36. -->
+		<!-- Level 4: Active: Unleashes a wind attack against the enemies near a target. Power 39. -->
+		<!-- Level 5: Active: Unleashes a wind attack against the enemies near a target. Power 41. -->
+		<!-- Level 6: Active: Unleashes a wind attack against the enemies near a target. Power 44. -->
+		<!-- Level 7: Active: Unleashes a wind attack against the enemies near a target. Power 46. -->
+		<!-- Level 8: Active: Unleashes a wind attack against the enemies near a target. Power 49. -->
+		<!-- Level 9: Active: Unleashes a wind attack against the enemies near a target. Power 51. -->
+		<!-- Level 10: Active: Unleashes a wind attack against the enemies near a target. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5235,16 +5295,16 @@
 		</effects>
 	</skill>
 	<skill id="3176" toLevel="10" name="Item Skill: Stone">
-		<!-- Level 1: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 31. -->
-		<!-- Level 2: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 33. -->
-		<!-- Level 3: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 36. -->
-		<!-- Level 4: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 39. -->
-		<!-- Level 5: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 41. -->
-		<!-- Level 6: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 44. -->
-		<!-- Level 7: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 46. -->
-		<!-- Level 8: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 49. -->
-		<!-- Level 9: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 51. -->
-		<!-- Level 10: Active Skill: Attacks the enemies near a target with a stone boulder. Power: 55. -->
+		<!-- Level 1: Active: Attacks the enemies near a target with a stone boulder. Power 31. -->
+		<!-- Level 2: Active: Attacks the enemies near a target with a stone boulder. Power 33. -->
+		<!-- Level 3: Active: Attacks the enemies near a target with a stone boulder. Power 36. -->
+		<!-- Level 4: Active: Attacks the enemies near a target with a stone boulder. Power 39. -->
+		<!-- Level 5: Active: Attacks the enemies near a target with a stone boulder. Power 41. -->
+		<!-- Level 6: Active: Attacks the enemies near a target with a stone boulder. Power 44. -->
+		<!-- Level 7: Active: Attacks the enemies near a target with a stone boulder. Power 46. -->
+		<!-- Level 8: Active: Attacks the enemies near a target with a stone boulder. Power 49. -->
+		<!-- Level 9: Active: Attacks the enemies near a target with a stone boulder. Power 51. -->
+		<!-- Level 10: Active: Attacks the enemies near a target with a stone boulder. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5327,16 +5387,16 @@
 		</effects>
 	</skill>
 	<skill id="3177" toLevel="10" name="Item Skill: Solar Flare">
-		<!-- Level 1: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Holy Attack against the enemies near a target. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a holy attack against the enemies near a target. Power 31. -->
+		<!-- Level 2: Active: Unleashes a holy attack against the enemies near a target. Power 33. -->
+		<!-- Level 3: Active: Unleashes a holy attack against the enemies near a target. Power 36. -->
+		<!-- Level 4: Active: Unleashes a holy attack against the enemies near a target. Power 39. -->
+		<!-- Level 5: Active: Unleashes a holy attack against the enemies near a target. Power 41. -->
+		<!-- Level 6: Active: Unleashes a holy attack against the enemies near a target. Power 44. -->
+		<!-- Level 7: Active: Unleashes a holy attack against the enemies near a target. Power 46. -->
+		<!-- Level 8: Active: Unleashes a holy attack against the enemies near a target. Power 49. -->
+		<!-- Level 9: Active: Unleashes a holy attack against the enemies near a target. Power 51. -->
+		<!-- Level 10: Active: Unleashes a holy attack against the enemies near a target. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5419,16 +5479,16 @@
 		</effects>
 	</skill>
 	<skill id="3178" toLevel="10" name="Item Skill: Shadow Flare">
-		<!-- Level 1: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Dark Attack against the enemies near a target. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a dark attack against the enemies near a target. Power 31. -->
+		<!-- Level 2: Active: Unleashes a dark attack against the enemies near a target. Power 33. -->
+		<!-- Level 3: Active: Unleashes a dark attack against the enemies near a target. Power 36. -->
+		<!-- Level 4: Active: Unleashes a dark attack against the enemies near a target. Power 39. -->
+		<!-- Level 5: Active: Unleashes a dark attack against the enemies near a target. Power 41. -->
+		<!-- Level 6: Active: Unleashes a dark attack against the enemies near a target. Power 44. -->
+		<!-- Level 7: Active: Unleashes a dark attack against the enemies near a target. Power 46. -->
+		<!-- Level 8: Active: Unleashes a dark attack against the enemies near a target. Power 49. -->
+		<!-- Level 9: Active: Unleashes a dark attack against the enemies near a target. Power 51. -->
+		<!-- Level 10: Active: Unleashes a dark attack against the enemies near a target. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5511,16 +5571,16 @@
 		</effects>
 	</skill>
 	<skill id="3179" toLevel="10" name="Item Skill: Aura Flare">
-		<!-- Level 1: Active Skill: Attacks the enemies near a target. Power: 31. -->
-		<!-- Level 2: Active Skill: Attacks the enemies near a target. Power: 33. -->
-		<!-- Level 3: Active Skill: Attacks the enemies near a target. Power: 36. -->
-		<!-- Level 4: Active Skill: Attacks the enemies near a target. Power: 39. -->
-		<!-- Level 5: Active Skill: Attacks the enemies near a target. Power: 41. -->
-		<!-- Level 6: Active Skill: Attacks the enemies near a target. Power: 44. -->
-		<!-- Level 7: Active Skill: Attacks the enemies near a target. Power: 46. -->
-		<!-- Level 8: Active Skill: Attacks the enemies near a target. Power: 49. -->
-		<!-- Level 9: Active Skill: Attacks the enemies near a target. Power: 51. -->
-		<!-- Level 10: Active Skill: Attacks the enemies near a target. Power: 55. -->
+		<!-- Level 1: Active: Unleashes an elemental attack against the enemies near a target. Power 31. -->
+		<!-- Level 2: Active: Unleashes an elemental attack against the enemies near a target. Power 33. -->
+		<!-- Level 3: Active: Unleashes an elemental attack against the enemies near a target. Power 36. -->
+		<!-- Level 4: Active: Unleashes an elemental attack against the enemies near a target. Power 39. -->
+		<!-- Level 5: Active: Unleashes an elemental attack against the enemies near a target. Power 41. -->
+		<!-- Level 6: Active: Unleashes an elemental attack against the enemies near a target. Power 44. -->
+		<!-- Level 7: Active: Unleashes an elemental attack against the enemies near a target. Power 46. -->
+		<!-- Level 8: Active: Unleashes an elemental attack against the enemies near a target. Power 49. -->
+		<!-- Level 9: Active: Unleashes an elemental attack against the enemies near a target. Power 51. -->
+		<!-- Level 10: Active: Unleashes an elemental attack against the enemies near a target. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -5601,16 +5661,16 @@
 		</effects>
 	</skill>
 	<skill id="3180" toLevel="10" name="Item Skill: Prominence">
-		<!-- Level 1: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Fire Attack against nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a flaming attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes a flaming attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes a flaming attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes a flaming attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes a flaming attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes a flaming attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes a flaming attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes a flaming attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes a flaming attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes a flaming attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -5691,16 +5751,16 @@
 		</effects>
 	</skill>
 	<skill id="3181" toLevel="10" name="Item Skill: Hydro Blast">
-		<!-- Level 1: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Water Attack against nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a water attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes a water attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes a water attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes a water attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes a water attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes a water attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes a water attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes a water attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes a water attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes a water attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -5781,16 +5841,16 @@
 		</effects>
 	</skill>
 	<skill id="3182" toLevel="10" name="Item Skill: Hurricane">
-		<!-- Level 1: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Wind Attack against nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a wind attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes a wind attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes a wind attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes a wind attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes a wind attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes a wind attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes a wind attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes a wind attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes a wind attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes a wind attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -5871,16 +5931,16 @@
 		</effects>
 	</skill>
 	<skill id="3183" toLevel="10" name="Item Skill: Stone">
-		<!-- Level 1: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Earth Attack against nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes an earth attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes an earth attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes an earth attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes an earth attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes an earth attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes an earth attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes an earth attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes an earth attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes an earth attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes an earth attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -5961,16 +6021,16 @@
 		</effects>
 	</skill>
 	<skill id="3184" toLevel="10" name="Item Skill: Solar Flare">
-		<!-- Level 1: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Holy Attack against nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a holy attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes a holy attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes a holy attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes a holy attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes a holy attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes a holy attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes a holy attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes a holy attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes a holy attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes a holy attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -6051,16 +6111,16 @@
 		</effects>
 	</skill>
 	<skill id="3185" toLevel="10" name="Item Skill: Shadow Flare">
-		<!-- Level 1: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Unleashes a Dark Attack against nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes a dark attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes a dark attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes a dark attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes a dark attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes a dark attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes a dark attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes a dark attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes a dark attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes a dark attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes a dark attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -6141,16 +6201,16 @@
 		</effects>
 	</skill>
 	<skill id="3186" toLevel="10" name="Item Skill: Aura Flare">
-		<!-- Level 1: Active Skill: Attacks nearby enemies. Power: 31. -->
-		<!-- Level 2: Active Skill: Attacks nearby enemies. Power: 33. -->
-		<!-- Level 3: Active Skill: Attacks nearby enemies. Power: 36. -->
-		<!-- Level 4: Active Skill: Attacks nearby enemies. Power: 39. -->
-		<!-- Level 5: Active Skill: Attacks nearby enemies. Power: 41. -->
-		<!-- Level 6: Active Skill: Attacks nearby enemies. Power: 44. -->
-		<!-- Level 7: Active Skill: Attacks nearby enemies. Power: 46. -->
-		<!-- Level 8: Active Skill: Attacks nearby enemies. Power: 49. -->
-		<!-- Level 9: Active Skill: Attacks nearby enemies. Power: 51. -->
-		<!-- Level 10: Active Skill: Attacks nearby enemies. Power: 55. -->
+		<!-- Level 1: Active: Unleashes an elemental attack against nearby enemies. Power 31. -->
+		<!-- Level 2: Active: Unleashes an elemental attack against nearby enemies. Power 33. -->
+		<!-- Level 3: Active: Unleashes an elemental attack against nearby enemies. Power 36. -->
+		<!-- Level 4: Active: Unleashes an elemental attack against nearby enemies. Power 39. -->
+		<!-- Level 5: Active: Unleashes an elemental attack against nearby enemies. Power 41. -->
+		<!-- Level 6: Active: Unleashes an elemental attack against nearby enemies. Power 44. -->
+		<!-- Level 7: Active: Unleashes an elemental attack against nearby enemies. Power 46. -->
+		<!-- Level 8: Active: Unleashes an elemental attack against nearby enemies. Power 49. -->
+		<!-- Level 9: Active: Unleashes an elemental attack against nearby enemies. Power 51. -->
+		<!-- Level 10: Active: Unleashes an elemental attack against nearby enemies. Power 55. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -6228,7 +6288,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3187" toLevel="15" name="Item Skill: Slow">
+	<skill id="3187" toLevel="15" name="Item Skill: Slow (Active)">
 		<!-- Active: Momentarily decreases the target's Speed. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
@@ -6323,8 +6383,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3188" toLevel="15" name="Item Skill: Winter">
-		<!-- Active Skill: Momentarily decreases the target's Atk. Spd. -->
+	<skill id="3188" toLevel="15" name="Item Skill: Winter (Active)">
+		<!-- Active: Momentarily decreases the target's Atk. Spd. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -6419,7 +6479,7 @@
 		</effects>
 	</skill>
 	<skill id="3189" toLevel="10" name="Item Skill: Stun">
-		<!-- Active Skill: Momentarily stuns the target. -->
+		<!-- Applied skill: Inflicts Stun on the target momentarily. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -6500,7 +6560,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -6582,7 +6642,7 @@
 		</effects>
 	</skill>
 	<skill id="3191" toLevel="10" name="Item Skill: Sleep">
-		<!-- Active Skill: Momentarily puts a target into sleep. Greatly decreases the chance to inflict additional Sleep state while effects last. -->
+		<!-- Active: Momentarily puts a target into sleep. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -6654,7 +6714,7 @@
 		<trait>SLEEP</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
@@ -6662,7 +6722,7 @@
 		</effects>
 	</skill>
 	<skill id="3192" toLevel="10" name="Item Skill: Paralyze">
-		<!-- Skill Used: Petrifies an enemy for 15 seconds. When fully petrified, becomes paralyzed for 10 seconds. -->
+		<!-- Active: Momentarily paralyzes the target. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -6823,9 +6883,7 @@
 		<reuseDelay>30000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="3194" toLevel="10" name="Item Skill: Fear">
@@ -6903,8 +6961,22 @@
 			<effect name="Fear" />
 		</effects>
 	</skill>
-	<skill id="3195" toLevel="15" name="Item Skill: Poison">
-		<!-- Active Skill: Momentarily poisons a target. -->
+	<skill id="3195" toLevel="15" name="Item Skill: Poison (Active)">
+		<!-- Level 1: Active: Momentarily poisons a target. Effect 5. -->
+		<!-- Level 2: Active: Momentarily poisons a target. Effect 5. -->
+		<!-- Level 3: Active: Momentarily poisons a target. Effect 6. -->
+		<!-- Level 4: Active: Momentarily poisons a target. Effect 6. -->
+		<!-- Level 5: Active: Momentarily poisons a target. Effect 6. -->
+		<!-- Level 6: Active: Momentarily poisons a target. Effect 7. -->
+		<!-- Level 7: Active: Momentarily poisons a target. Effect 7. -->
+		<!-- Level 8: Active: Momentarily poisons a target. Effect 7. -->
+		<!-- Level 9: Active: Momentarily poisons a target. Effect 8. -->
+		<!-- Level 10: Active: Momentarily poisons a target. Effect 8. -->
+		<!-- Level 11: Active: Momentarily poisons a target. Effect 8. -->
+		<!-- Level 12: Active: Momentarily poisons a target. Effect 8. -->
+		<!-- Level 13: Active: Momentarily poisons a target. Effect 8. -->
+		<!-- Level 14: Active: Momentarily poisons a target. Effect 8. -->
+		<!-- Level 15: Active: Momentarily poisons a target. Effect 8. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -7033,8 +7105,22 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3196" toLevel="15" name="Item Skill: Bleed">
-		<!-- Active Skill: Momentarily causes a target to bleed. -->
+	<skill id="3196" toLevel="15" name="Item Skill: Bleed (Active)">
+		<!-- Level 1: Active: Momentarily inflicts Bleed on the target. Effect 5. -->
+		<!-- Level 2: Active: Momentarily inflicts Bleed on the target. Effect 5. -->
+		<!-- Level 3: Active: Momentarily inflicts Bleed on the target. Effect 6. -->
+		<!-- Level 4: Active: Momentarily inflicts Bleed on the target. Effect 6. -->
+		<!-- Level 5: Active: Momentarily inflicts Bleed on the target. Effect 6. -->
+		<!-- Level 6: Active: Momentarily inflicts Bleed on the target. Effect 7. -->
+		<!-- Level 7: Active: Momentarily inflicts Bleed on the target. Effect 7. -->
+		<!-- Level 8: Active: Momentarily inflicts Bleed on the target. Effect 7. -->
+		<!-- Level 9: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 10: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 11: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 12: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 13: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 14: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 15: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -7238,7 +7324,7 @@
 		</effects>
 	</skill>
 	<skill id="3198" toLevel="10" name="Item Skill: Doom">
-		<!-- Active Skill: Momentarily blocks all of the target's P. Skills/M. Skills. -->
+		<!-- Active: Momentarily blocks all of the target's physical/magic skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -7313,7 +7399,7 @@
 		</effects>
 	</skill>
 	<skill id="3199" toLevel="3" name="Item Skill: Skill Refresh">
-		<!-- Active Skill: Temporarily decreases the P. Skill Cooldown. -->
+		<!-- Active: Temporarily decreases the Cooldown for physical skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -7351,6 +7437,11 @@
 				<amount>-15</amount>
 				<mode>PER</mode>
 				<magicType>0</magicType>
+			</effect>
+			<effect name="Reuse">
+				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
 			</effect>
 		</effects>
 	</skill>

@@ -385,6 +385,26 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 	</skill>
+	<skill id="16031" toLevel="1" name="Attraction">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>5000</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-2</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>500</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="PullBack">
+				<speed>5000</speed>
+				<delay>5000</delay>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
+	</skill>
 	<skill id="16032" toLevel="1" name="Gi-Sung Bae's Lineage II">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -469,7 +489,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>250</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -504,7 +524,6 @@
 		</effects>
 	</skill>
 	<skill id="16038" toLevel="1" name="Idle Effect">
-		<!-- Dangerous state right before the explosion. -->
 		<icon>icon.skill11062</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>

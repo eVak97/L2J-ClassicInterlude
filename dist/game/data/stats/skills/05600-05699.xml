@@ -22,7 +22,7 @@
 		</effects>
 	</skill>
 	<skill id="5601" toLevel="12" name="Melee Attack Resistance">
-		<!-- Resistant to melee attacks. -->
+		<!-- Resistant to melee physical attack. -->
 		<icon>icon.skill5601</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -186,7 +186,7 @@
 		</effects>
 	</skill>
 	<skill id="5603" toLevel="1" name="Dagger Mastery">
-		<!-- A state in which MP consumption of skills is greatly decreased, and the probability of a vital spot jab is increased. -->
+		<!-- A state in which MP consumption of skills is greatly decreased, and the Vital Spot Attack Rate jab is increased. -->
 		<icon>icon.skill0209</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -241,8 +241,7 @@
 		</effects>
 	</skill>
 	<skill id="5605" toLevel="2" name="Power of Apella">
-		<!-- Level 1: Power of Apella. M. Def. increases and the chance of being hit by physical critical attack decreased. -->
-		<!-- Level 2: Power of Apella. M. Def. and M. Critical Rate increased and the chance of being hit by physical critical attack decreased. -->
+		<!-- Power of Apella. Increased M. Def., increased Critical Rate, and decreased Critical Damage. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -285,7 +284,7 @@
 		</effects>
 	</skill>
 	<skill id="5607" toLevel="2" name="Power of Apella">
-		<!-- Power of Apella. Increased P. Evasion, increased Atk. Spd., and decreased P. Critical Damage. -->
+		<!-- Power of Apella. Increased Evasion, increased Atk. Spd., and decreased Critical Damage. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -328,8 +327,7 @@
 		</effects>
 	</skill>
 	<skill id="5608" toLevel="2" name="Power of Apella">
-		<!-- Level 1: Power of Apella. Increased P. Def., increased M. Atk., and decreased Speed. -->
-		<!-- Level 2: Power of Apella. Increased P. Def., increased M. Atk., and decreased Movement Speed. -->
+		<!-- Power of Apella. Increased P. Def., increased M. Atk., and decreased Speed. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -409,7 +407,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="5613" toLevel="4" name="Vampiric Rage">
-		<!-- Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. -->
+		<!-- Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. Effect 4. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -422,35 +420,35 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>72</magicLevel>
 	</skill>
-	<skill id="5614" toLevel="1" name="Lv. 87 Raid Boss">
+	<skill id="5614" toLevel="1" name="Raid Boss (Lv. 87)">
 		<!-- He was one of the Devil's retainers from Asmodae, and Beleth placed him among the people in order to rule Hellbound. Although he took over the power and turned Hellbound into the devil's territory after Beleth disappeared for magic experiments. Beleth does not really care about it. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5615" toLevel="1" name="Lv. 87 Raid Boss">
+	<skill id="5615" toLevel="1" name="Raid Boss (Lv. 87)">
 		<!-- He was created when a large number of elemental spirits that were constrained in the basement of Tower of Naia were transformed after being affected by Beleth' magic and Core Naia. Although it is a monster with an unstable shape and mind, which is about to be destroyed, it is still slightly conscious as a nature spirit. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5616" toLevel="1" name="Lv. 87 Raid Boss">
+	<skill id="5616" toLevel="1" name="Raid Boss (Lv. 87)">
 		<!-- He was created when a large number of elemental spirits that were constrained in the basement of Tower of Naia were transformed after being affected by Beleth' magic and Core Naia. Although it is a monster with an unstable shape and mind, which is about to be destroyed, it is still slightly conscious as a nature spirit. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5617" toLevel="1" name="Lv. 87 Raid Boss">
+	<skill id="5617" toLevel="1" name="Raid Boss (Lv. 87)">
 		<!-- He was created when a large number of elemental spirits that were constrained in the basement of Tower of Naia were transformed after being affected by Beleth' magic and Core Naia. Although it is a monster with an unstable shape and mind, which is about to be destroyed, it is still slightly conscious as a nature spirit. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5618" toLevel="1" name="Lv. 87 Raid Boss">
+	<skill id="5618" toLevel="1" name="Raid Boss (Lv. 87)">
 		<!-- He was created when a large number of elemental spirits that were constrained in the basement of Tower of Naia were transformed after being affected by Beleth' magic and Core Naia. Although it is a monster with an unstable shape and mind, which is about to be destroyed, it is still slightly conscious as a nature spirit. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -671,7 +669,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="5624" toLevel="1" name="Soul Confinement">
-		<!-- The soul is confined, making it impossible to move, but in addition, damage is not incurred. -->
+		<!-- The soul is confined, making it impossible to move, but in addition, damage is not incurred. Effect 1. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -689,9 +687,26 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>51</magicLevel>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5625" toLevel="1" name="Soul Confinement">
-		<!-- The soul is confined, making it impossible to move, but in addition, damage is not incurred. -->
+		<!-- The soul is confined, making it impossible to move, but in addition, damage is not incurred. Effect 1. -->
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -709,6 +724,23 @@
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>95</magicLevel>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5626" toLevel="1" name="Raid Boss">
 		<!-- Mutants that suddenly appeared in Aden world. They often possess great strength and special abilities, but their activity is limited, so they seem unable to directly walk around on Aden's ground. -->
@@ -721,7 +753,7 @@
 		<!-- For 60 minutes, Spd. increases by 33. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>SPEED_UP</abnormalType>
@@ -744,7 +776,7 @@
 		<!-- For 60 minutes P. Def. increases by 15% -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>PD_UP</abnormalType>
@@ -767,7 +799,7 @@
 		<!-- For 60 minutes, Max HP increases by 35%. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>ENEMY_NOT</targetType>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>MAX_HP_UP</abnormalType>
@@ -790,7 +822,7 @@
 		<!-- For 60 minutes, 9% of the physical damage inflicted on the enemy is recovered as HP with a certain probability. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>5</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
@@ -813,7 +845,7 @@
 		<!-- For 60 minutes, HP Recovery Rate increases by 20%. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>HP_REGEN_UP</abnormalType>
@@ -836,7 +868,7 @@
 		<!-- Increases Atk. Spd. by 33% for 60 minutes. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>ATTACK_TIME_DOWN</abnormalType>
@@ -859,7 +891,7 @@
 		<!-- For 60 minutes, Max HP is increased by 35%. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>7</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>MAX_MP_UP</abnormalType>
@@ -879,10 +911,10 @@
 		</effects>
 	</skill>
 	<skill id="5634" toLevel="1" name="Adventurer's Acumen">
-		<!-- Increases Casting Spd. +30% for 60 minutes. -->
+		<!-- For 60 minutes, Casting Spd. increases by 30% -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>CASTING_TIME_DOWN</abnormalType>
@@ -905,7 +937,7 @@
 		<!-- For 60 minutes, decreases magic cancel rate by 18. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>CANCEL_PROB_DOWN</abnormalType>
@@ -928,7 +960,7 @@
 		<!-- For 60 minutes, M. Atk. increases by 55%. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>2</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>MA_UP</abnormalType>
@@ -951,7 +983,7 @@
 		<!-- Increases M. Def. by 30% for 60 minutes. -->
 		<icon>icon.skill1036</icon>
 		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
+		<targetType>TARGET</targetType>
 		<abnormalLevel>4</abnormalLevel>
 		<abnormalTime>3600</abnormalTime>
 		<abnormalType>MD_UP</abnormalType>
@@ -971,7 +1003,10 @@
 		</effects>
 	</skill>
 	<skill id="5638" toLevel="4" name="Feline Queen - Blessed Body">
-		<!-- Increases maximum HP for a set time. -->
+		<!-- Level 1: Increases maximum HP temporarily. Effect 3. -->
+		<!-- Level 2: Increases maximum HP temporarily. Effect 4. -->
+		<!-- Level 3: Increases maximum HP temporarily. Effect 5. -->
+		<!-- Level 4: Increases maximum HP temporarily. Effect 6. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_NOT</targetType>
@@ -1028,7 +1063,10 @@
 		</effects>
 	</skill>
 	<skill id="5639" toLevel="4" name="Feline Queen - Blessed Soul">
-		<!-- Increases maximum MP for a set time. -->
+		<!-- Level 1: Increases maximum MP temporarily. Effect 3. -->
+		<!-- Level 2: Increases maximum MP temporarily. Effect 4. -->
+		<!-- Level 3: Increases maximum MP temporarily. Effect 5. -->
+		<!-- Level 4: Increases maximum MP temporarily. Effect 6. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1085,7 +1123,8 @@
 		</effects>
 	</skill>
 	<skill id="5640" toLevel="2" name="Feline Queen - Haste">
-		<!-- Increases Atk. Spd. for a set time. -->
+		<!-- Level 1: Atk. Spd. increases temporarily. Effect 1. -->
+		<!-- Level 2: Atk. Spd. increases temporarily. Effect 2. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1190,7 +1229,7 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="5643" toLevel="1" name="Seraphim the Unicorn - Acumen">
-		<!-- Increases Casting Spd. for a certain amount of time. -->
+		<!-- Increases Casting Spd. temporarily. Effect 3. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1292,7 +1331,8 @@
 		</effects>
 	</skill>
 	<skill id="5646" toLevel="3" name="Seraphim the Unicorn - Wild Magic">
-		<!-- Increases M. Critical Rate for a set time. -->
+		<!-- Level 1: Momentarily increases M. Critical Rate. Effect 1. -->
+		<!-- Level 2: Momentarily increases M. Critical Rate. Effect 2. -->
 		<icon>
 			<value level="1">icon.skill1303</value>
 			<value level="2">icon.skill1303</value>
@@ -1351,9 +1391,9 @@
 		</effects>
 	</skill>
 	<skill id="5647" toLevel="3" name="Seraphim the Unicorn - Clarity">
-		<!-- Level 1: Momentarily decreases the MP consumption of skills of the target. Consumes 1 Spirit Ore. -->
-		<!-- Level 2: Momentarily decreases the MP consumption of skills of the target. Consumes 2 Spirit Ore. -->
-		<!-- Level 3: Momentarily decreases the MP consumption of skills of the target. Consumes 3 Spirit Ore. -->
+		<!-- Level 1: Momentarily decreases the MP consumption of skills of the target. Consumes 1 Spirit Ore. Effect 1. -->
+		<!-- Level 2: Momentarily decreases the MP consumption of skills of the target. Consumes 2 Spirit Ore. Effect 2. -->
+		<!-- Level 3: Momentarily decreases the MP consumption of skills of the target. Consumes 3 Spirit Ore. Effect 3. -->
 		<icon>icon.skill1397</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1429,7 +1469,8 @@
 		</effects>
 	</skill>
 	<skill id="5648" toLevel="2" name="Seraphim the Unicorn - Empower">
-		<!-- Temporarily increases M. Atk. +65%. -->
+		<!-- Level 1: Increases M. Atk. power temporarily. Effect 2. -->
+		<!-- Level 2: Increases M. Atk. power temporarily. Effect 3. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1559,7 +1600,9 @@
 		<reuseDelay>6000</reuseDelay>
 	</skill>
 	<skill id="5652" toLevel="3" name="Nightshade - Death Whisper">
-		<!-- Temporarily increases P. Critical Damage +25%. -->
+		<!-- Level 1: Momentarily increases critical P. Atk. Effect 1. -->
+		<!-- Level 2: Momentarily increases critical P. Atk. Effect 2. -->
+		<!-- Level 3: Momentarily increases critical P. Atk. Effect 3. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1610,7 +1653,8 @@
 		</effects>
 	</skill>
 	<skill id="5653" toLevel="2" name="Nightshade - Focus">
-		<!-- Temporarily increases P. Critical Rate +25%. -->
+		<!-- Level 1: Momentarily increases critical P. Atk. rate. Effect 2. -->
+		<!-- Level 2: Momentarily increases critical P. Atk. rate. Effect 3. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1655,7 +1699,9 @@
 		</effects>
 	</skill>
 	<skill id="5654" toLevel="3" name="Nightshade - Guidance">
-		<!-- Temporarily increases P. Accuracy +2. -->
+		<!-- Level 1: Increases Accuracy temporarily. Effect 1. -->
+		<!-- Level 2: Increases Accuracy temporarily. Effect 2. -->
+		<!-- Level 3: Increases Accuracy temporarily. Effect 3. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1704,6 +1750,594 @@
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
+	</skill>
+	<skill id="5655" toLevel="1" name="Transform Gatekeeper">
+		<!-- Transforms into a gatekeeper. -->
+		<icon>icon.skilltransform1</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7200</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<mpConsume>31</mpConsume>
+		<specialLevel>-1</specialLevel>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="CanTransform">
+				<transformId>107</transformId>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>319</transformationId>
+			</effect>
+			<effect name="VitalityPointsRate">
+				<amount>-10</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5656" toLevel="85" name="Gatekeeper Aura Flare">
+		<!-- Level 1: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 60. -->
+		<!-- Level 2: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 64. -->
+		<!-- Level 3: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 68. -->
+		<!-- Level 4: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 73. -->
+		<!-- Level 5: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 77. -->
+		<!-- Level 6: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 82. -->
+		<!-- Level 7: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 87. -->
+		<!-- Level 8: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 93. -->
+		<!-- Level 9: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 98. -->
+		<!-- Level 10: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 104. -->
+		<!-- Level 11: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 110. -->
+		<!-- Level 12: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 116. -->
+		<!-- Level 13: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 122. -->
+		<!-- Level 14: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 129. -->
+		<!-- Level 15: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 136. -->
+		<!-- Level 16: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 142. -->
+		<!-- Level 17: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 150. -->
+		<!-- Level 18: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 157. -->
+		<!-- Level 19: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 165. -->
+		<!-- Level 20: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 173. -->
+		<!-- Level 21: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 181. -->
+		<!-- Level 22: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 189. -->
+		<!-- Level 23: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 197. -->
+		<!-- Level 24: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 206. -->
+		<!-- Level 25: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 215. -->
+		<!-- Level 26: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 224. -->
+		<!-- Level 27: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 233. -->
+		<!-- Level 28: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 243. -->
+		<!-- Level 29: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 253. -->
+		<!-- Level 30: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 263. -->
+		<!-- Level 31: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 273. -->
+		<!-- Level 32: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 283. -->
+		<!-- Level 33: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 294. -->
+		<!-- Level 34: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 305. -->
+		<!-- Level 35: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 316. -->
+		<!-- Level 36: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 327. -->
+		<!-- Level 37: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 338. -->
+		<!-- Level 38: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 350. -->
+		<!-- Level 39: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 361. -->
+		<!-- Level 40: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 373. -->
+		<!-- Level 41: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 385. -->
+		<!-- Level 42: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 397. -->
+		<!-- Level 43: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 410. -->
+		<!-- Level 44: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 422. -->
+		<!-- Level 45: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 435. -->
+		<!-- Level 46: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 447. -->
+		<!-- Level 47: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 460. -->
+		<!-- Level 48: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 473. -->
+		<!-- Level 49: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 486. -->
+		<!-- Level 50: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 499. -->
+		<!-- Level 51: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 512. -->
+		<!-- Level 52: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 525. -->
+		<!-- Level 53: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 539. -->
+		<!-- Level 54: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 552. -->
+		<!-- Level 55: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 565. -->
+		<!-- Level 56: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 579. -->
+		<!-- Level 57: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 592. -->
+		<!-- Level 58: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 605. -->
+		<!-- Level 59: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 619. -->
+		<!-- Level 60: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 632. -->
+		<!-- Level 61: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 645. -->
+		<!-- Level 62: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 658. -->
+		<!-- Level 63: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 672. -->
+		<!-- Level 64: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 685. -->
+		<!-- Level 65: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 697. -->
+		<!-- Level 66: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 710. -->
+		<!-- Level 67: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 723. -->
+		<!-- Level 68: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 735. -->
+		<!-- Level 69: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 748. -->
+		<!-- Level 70: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 760. -->
+		<!-- Level 71: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 772. -->
+		<!-- Level 72: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 784. -->
+		<!-- Level 73: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 795. -->
+		<!-- Level 74: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 806. -->
+		<!-- Level 75: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 817. -->
+		<!-- Level 76: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 830. -->
+		<!-- Level 77: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 845. -->
+		<!-- Level 78: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 862. -->
+		<!-- Level 79: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 884. -->
+		<!-- Level 80: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 906. -->
+		<!-- Level 81: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 929. -->
+		<!-- Level 82: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 952. -->
+		<!-- Level 83: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 976. -->
+		<!-- Level 84: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 1001. -->
+		<!-- Level 85: Attacks target using a non-attribute attack; momentarily decreases M. Atk. during PvP. Power 1024. -->
+		<icon>icon.skill1231</icon>
+		<operateType>A3</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>0</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>MA_DOWN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>150</castRange>
+		<effectPoint>
+			<value level="1">-74</value>
+			<value level="2">-77</value>
+			<value level="3">-81</value>
+			<value level="4">-85</value>
+			<value level="5">-89</value>
+			<value level="6">-93</value>
+			<value level="7">-97</value>
+			<value level="8">-101</value>
+			<value level="9">-106</value>
+			<value level="10">-110</value>
+			<value level="11">-115</value>
+			<value level="12">-120</value>
+			<value level="13">-125</value>
+			<value level="14">-130</value>
+			<value level="15">-135</value>
+			<value level="16">-140</value>
+			<value level="17">-146</value>
+			<value level="18">-151</value>
+			<value level="19">-157</value>
+			<value level="20">-163</value>
+			<value level="21">-169</value>
+			<value level="22">-175</value>
+			<value level="23">-181</value>
+			<value level="24">-188</value>
+			<value level="25">-194</value>
+			<value level="26">-201</value>
+			<value level="27">-208</value>
+			<value level="28">-214</value>
+			<value level="29">-221</value>
+			<value level="30">-228</value>
+			<value level="31">-236</value>
+			<value level="32">-243</value>
+			<value level="33">-250</value>
+			<value level="34">-258</value>
+			<value level="35">-265</value>
+			<value level="36">-273</value>
+			<value level="37">-280</value>
+			<value level="38">-288</value>
+			<value level="39">-296</value>
+			<value level="40">-303</value>
+			<value level="41">-311</value>
+			<value level="42">-319</value>
+			<value level="43">-327</value>
+			<value level="44">-335</value>
+			<value level="45">-343</value>
+			<value level="46">-350</value>
+			<value level="47">-358</value>
+			<value level="48">-366</value>
+			<value level="49">-374</value>
+			<value level="50">-381</value>
+			<value level="51">-389</value>
+			<value level="52">-396</value>
+			<value level="53">-404</value>
+			<value level="54">-411</value>
+			<value level="55">-419</value>
+			<value level="56">-426</value>
+			<value level="57">-433</value>
+			<value level="58">-440</value>
+			<value level="59">-446</value>
+			<value level="60">-453</value>
+			<value level="61">-459</value>
+			<value level="62">-466</value>
+			<value level="63">-472</value>
+			<value level="64">-478</value>
+			<value level="65">-483</value>
+			<value level="66">-489</value>
+			<value level="67">-494</value>
+			<value level="68">-499</value>
+			<value level="69">-504</value>
+			<value level="70">-508</value>
+			<value level="71">-513</value>
+			<value level="72">-517</value>
+			<value level="73">-520</value>
+			<value level="74">-524</value>
+			<value level="75">-527</value>
+			<value level="76">-530</value>
+			<value level="77">-533</value>
+			<value level="78">-536</value>
+			<value level="79">-538</value>
+			<value level="80">-541</value>
+			<value level="81">-543</value>
+			<value level="82">-545</value>
+			<value level="83">-547</value>
+			<value level="84">-549</value>
+			<value level="85">-551</value>
+		</effectPoint>
+		<effectRange>650</effectRange>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">3</value>
+			<value level="4">4</value>
+			<value level="5">5</value>
+			<value level="6">6</value>
+			<value level="7">7</value>
+			<value level="8">8</value>
+			<value level="9">9</value>
+			<value level="10">10</value>
+			<value level="11">11</value>
+			<value level="12">12</value>
+			<value level="13">13</value>
+			<value level="14">14</value>
+			<value level="15">15</value>
+			<value level="16">16</value>
+			<value level="17">17</value>
+			<value level="18">18</value>
+			<value level="19">19</value>
+			<value level="20">20</value>
+			<value level="21">21</value>
+			<value level="22">22</value>
+			<value level="23">23</value>
+			<value level="24">24</value>
+			<value level="25">25</value>
+			<value level="26">26</value>
+			<value level="27">27</value>
+			<value level="28">28</value>
+			<value level="29">29</value>
+			<value level="30">30</value>
+			<value level="31">31</value>
+			<value level="32">32</value>
+			<value level="33">33</value>
+			<value level="34">34</value>
+			<value level="35">35</value>
+			<value level="36">36</value>
+			<value level="37">37</value>
+			<value level="38">38</value>
+			<value level="39">39</value>
+			<value level="40">40</value>
+			<value level="41">41</value>
+			<value level="42">42</value>
+			<value level="43">43</value>
+			<value level="44">44</value>
+			<value level="45">45</value>
+			<value level="46">46</value>
+			<value level="47">47</value>
+			<value level="48">48</value>
+			<value level="49">49</value>
+			<value level="50">50</value>
+			<value level="51">51</value>
+			<value level="52">52</value>
+			<value level="53">53</value>
+			<value level="54">54</value>
+			<value level="55">55</value>
+			<value level="56">56</value>
+			<value level="57">57</value>
+			<value level="58">58</value>
+			<value level="59">59</value>
+			<value level="60">60</value>
+			<value level="61">61</value>
+			<value level="62">62</value>
+			<value level="63">63</value>
+			<value level="64">64</value>
+			<value level="65">65</value>
+			<value level="66">66</value>
+			<value level="67">67</value>
+			<value level="68">68</value>
+			<value level="69">69</value>
+			<value level="70">70</value>
+			<value level="71">71</value>
+			<value level="72">72</value>
+			<value level="73">73</value>
+			<value level="74">74</value>
+			<value level="75">75</value>
+			<value level="76">76</value>
+			<value level="77">77</value>
+			<value level="78">78</value>
+			<value level="79">79</value>
+			<value level="80">80</value>
+			<value level="81">81</value>
+			<value level="82">82</value>
+			<value level="83">83</value>
+			<value level="84">84</value>
+			<value level="85">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">9</value>
+			<value level="2">9</value>
+			<value level="3">9</value>
+			<value level="4">9</value>
+			<value level="5">10</value>
+			<value level="6">10</value>
+			<value level="7">10</value>
+			<value level="8">12</value>
+			<value level="9">12</value>
+			<value level="10">13</value>
+			<value level="11">14</value>
+			<value level="12">15</value>
+			<value level="13">15</value>
+			<value level="14">15</value>
+			<value level="15">17</value>
+			<value level="16">17</value>
+			<value level="17">18</value>
+			<value level="18">19</value>
+			<value level="19">19</value>
+			<value level="20">20</value>
+			<value level="21">20</value>
+			<value level="22">20</value>
+			<value level="23">22</value>
+			<value level="24">22</value>
+			<value level="25">23</value>
+			<value level="26">24</value>
+			<value level="27">24</value>
+			<value level="28">25</value>
+			<value level="29">27</value>
+			<value level="30">27</value>
+			<value level="31">28</value>
+			<value level="32">28</value>
+			<value level="33">29</value>
+			<value level="34">30</value>
+			<value level="35">30</value>
+			<value level="36">32</value>
+			<value level="37">33</value>
+			<value level="38">34</value>
+			<value level="39">34</value>
+			<value level="40">35</value>
+			<value level="41">37</value>
+			<value level="42">38</value>
+			<value level="43">38</value>
+			<value level="44">39</value>
+			<value level="45">40</value>
+			<value level="46">42</value>
+			<value level="47">43</value>
+			<value level="48">44</value>
+			<value level="49">44</value>
+			<value level="50">45</value>
+			<value level="51">47</value>
+			<value level="52">48</value>
+			<value level="53">49</value>
+			<value level="54">49</value>
+			<value level="55">50</value>
+			<value level="56">52</value>
+			<value level="57">53</value>
+			<value level="58">54</value>
+			<value level="59">55</value>
+			<value level="60">55</value>
+			<value level="61">57</value>
+			<value level="62">58</value>
+			<value level="63">59</value>
+			<value level="64">60</value>
+			<value level="65">60</value>
+			<value level="66">62</value>
+			<value level="67">63</value>
+			<value level="68">64</value>
+			<value level="69">64</value>
+			<value level="70">65</value>
+			<value level="71">67</value>
+			<value level="72">67</value>
+			<value level="73">68</value>
+			<value level="74">69</value>
+			<value level="75">69</value>
+			<value level="76">70</value>
+			<value level="77">70</value>
+			<value level="78">72</value>
+			<value level="79">73</value>
+			<value level="80">73</value>
+			<value level="81">73</value>
+			<value level="82">74</value>
+			<value level="83">74</value>
+			<value level="84">75</value>
+			<value level="85">75</value>
+		</mpConsume>
+		<reuseDelay>1500</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<pveEffects>
+			<effect name="MagicalDamage">
+				<power>
+					<value level="1">60</value>
+					<value level="2">64</value>
+					<value level="3">68</value>
+					<value level="4">73</value>
+					<value level="5">77</value>
+					<value level="6">82</value>
+					<value level="7">87</value>
+					<value level="8">93</value>
+					<value level="9">98</value>
+					<value level="10">104</value>
+					<value level="11">110</value>
+					<value level="12">116</value>
+					<value level="13">122</value>
+					<value level="14">129</value>
+					<value level="15">136</value>
+					<value level="16">142</value>
+					<value level="17">150</value>
+					<value level="18">157</value>
+					<value level="19">165</value>
+					<value level="20">173</value>
+					<value level="21">181</value>
+					<value level="22">189</value>
+					<value level="23">197</value>
+					<value level="24">206</value>
+					<value level="25">215</value>
+					<value level="26">224</value>
+					<value level="27">233</value>
+					<value level="28">243</value>
+					<value level="29">253</value>
+					<value level="30">263</value>
+					<value level="31">273</value>
+					<value level="32">283</value>
+					<value level="33">294</value>
+					<value level="34">305</value>
+					<value level="35">316</value>
+					<value level="36">327</value>
+					<value level="37">338</value>
+					<value level="38">350</value>
+					<value level="39">361</value>
+					<value level="40">373</value>
+					<value level="41">385</value>
+					<value level="42">397</value>
+					<value level="43">410</value>
+					<value level="44">422</value>
+					<value level="45">435</value>
+					<value level="46">447</value>
+					<value level="47">460</value>
+					<value level="48">473</value>
+					<value level="49">486</value>
+					<value level="50">499</value>
+					<value level="51">512</value>
+					<value level="52">525</value>
+					<value level="53">539</value>
+					<value level="54">552</value>
+					<value level="55">565</value>
+					<value level="56">579</value>
+					<value level="57">592</value>
+					<value level="58">605</value>
+					<value level="59">619</value>
+					<value level="60">632</value>
+					<value level="61">645</value>
+					<value level="62">658</value>
+					<value level="63">672</value>
+					<value level="64">685</value>
+					<value level="65">697</value>
+					<value level="66">710</value>
+					<value level="67">723</value>
+					<value level="68">735</value>
+					<value level="69">748</value>
+					<value level="70">760</value>
+					<value level="71">772</value>
+					<value level="72">784</value>
+					<value level="73">795</value>
+					<value level="74">806</value>
+					<value level="75">817</value>
+					<value level="76">830</value>
+					<value level="77">845</value>
+					<value level="78">862</value>
+					<value level="79">884</value>
+					<value level="80">906</value>
+					<value level="81">929</value>
+					<value level="82">952</value>
+					<value level="83">976</value>
+					<value level="84">1001</value>
+					<value level="85">1024</value>
+				</power>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<model>PER</model>
+			</effect>
+		</pveEffects>
+		<pvpEffects>
+			<effect name="MagicalDamage">
+				<power>
+					<value level="1">38</value>
+					<value level="2">40</value>
+					<value level="3">43</value>
+					<value level="4">46</value>
+					<value level="5">49</value>
+					<value level="6">52</value>
+					<value level="7">55</value>
+					<value level="8">58</value>
+					<value level="9">62</value>
+					<value level="10">65</value>
+					<value level="11">69</value>
+					<value level="12">73</value>
+					<value level="13">77</value>
+					<value level="14">81</value>
+					<value level="15">85</value>
+					<value level="16">89</value>
+					<value level="17">94</value>
+					<value level="18">98</value>
+					<value level="19">103</value>
+					<value level="20">108</value>
+					<value level="21">113</value>
+					<value level="22">118</value>
+					<value level="23">124</value>
+					<value level="24">129</value>
+					<value level="25">135</value>
+					<value level="26">140</value>
+					<value level="27">146</value>
+					<value level="28">152</value>
+					<value level="29">158</value>
+					<value level="30">164</value>
+					<value level="31">171</value>
+					<value level="32">177</value>
+					<value level="33">184</value>
+					<value level="34">191</value>
+					<value level="35">197</value>
+					<value level="36">204</value>
+					<value level="37">212</value>
+					<value level="38">219</value>
+					<value level="39">226</value>
+					<value level="40">233</value>
+					<value level="41">241</value>
+					<value level="42">248</value>
+					<value level="43">256</value>
+					<value level="44">264</value>
+					<value level="45">272</value>
+					<value level="46">280</value>
+					<value level="47">288</value>
+					<value level="48">296</value>
+					<value level="49">304</value>
+					<value level="50">312</value>
+					<value level="51">320</value>
+					<value level="52">329</value>
+					<value level="53">337</value>
+					<value level="54">345</value>
+					<value level="55">354</value>
+					<value level="56">362</value>
+					<value level="57">370</value>
+					<value level="58">379</value>
+					<value level="59">387</value>
+					<value level="60">395</value>
+					<value level="61">403</value>
+					<value level="62">412</value>
+					<value level="63">420</value>
+					<value level="64">428</value>
+					<value level="65">436</value>
+					<value level="66">444</value>
+					<value level="67">452</value>
+					<value level="68">460</value>
+					<value level="69">468</value>
+					<value level="70">475</value>
+					<value level="71">483</value>
+					<value level="72">490</value>
+					<value level="73">497</value>
+					<value level="74">504</value>
+					<value level="75">511</value>
+					<value level="76">519</value>
+					<value level="77">528</value>
+					<value level="78">539</value>
+					<value level="79">552</value>
+					<value level="80">566</value>
+					<value level="81">581</value>
+					<value level="82">595</value>
+					<value level="83">610</value>
+					<value level="84">626</value>
+					<value level="85">640</value>
+				</power>
+			</effect>
+			<effect name="PvpMagicalSkillDamageBonus">
+				<amount>-50</amount>
+				<model>PER</model>
+			</effect>
+		</pvpEffects>
 	</skill>
 	<skill id="5657" toLevel="85" name="Gatekeeper Prominence">
 		<!-- Level 1: Compresses air until it bursts into flames. Power 75. -->
@@ -2793,7 +3427,8 @@
 		</pvpEffects>
 	</skill>
 	<skill id="5659" toLevel="2" name="Gatekeeper Berserker Spirit">
-		<!-- P. Def. decreases momentarily./M. Def./P. evasion and increases P. Atk./M. Atk./Atk. Spd./Casting Spd./Speed. -->
+		<!-- Level 1: P. Def. decreases momentarily./M. Def./evasion and increases P. Atk./M. Atk./Atk. Spd./Casting Spd./Speed. Effect 1. -->
+		<!-- Level 2: P. Def. decreases momentarily./M. Def./evasion and increases P. Atk./M. Atk./Atk. Spd./Casting Spd./Speed. Effect 2. -->
 		<icon>icon.skill1062</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2887,7 +3522,11 @@
 		</effects>
 	</skill>
 	<skill id="5660" toLevel="5" name="Battleground Death Syndrome">
-		<!-- Combat power is decreased after death on the battleground. Condition is removed at the end of the war. -->
+		<!-- Level 1: Combat power is decreased after death on the battleground. Effect 1. -->
+		<!-- Level 2: Combat power is decreased after death on the battleground. Effect 2. -->
+		<!-- Level 3: Combat power is decreased after death on the battleground. Effect 3. -->
+		<!-- Level 4: Combat power is decreased after death on the battleground. Effect 4. -->
+		<!-- Level 5: Combat power is decreased after death on the battleground. Effect 5. -->
 		<icon>icon.skill5076_a</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2998,7 +3637,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="5663" toLevel="5" name="Ancient Sword Resistance">
-		<!-- Strong Ancient Sword resistance. -->
+		<!-- Strong against ancient sword attacks. -->
 		<icon>icon.skill5663</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3016,7 +3655,7 @@
 		</effects>
 	</skill>
 	<skill id="5664" toLevel="5" name="Ancient Sword Vulnerability">
-		<!-- Vulnerable to Ancient Sword attack. -->
+		<!-- Weak against ancient sword attacks. -->
 		<icon>icon.skill5664</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -3034,7 +3673,7 @@
 		</effects>
 	</skill>
 	<skill id="5665" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3057,12 +3696,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5666" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3085,12 +3724,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5667" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3113,12 +3752,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5668" toLevel="1" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- HP decreases from Poison momentarily. Effect 8. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3144,12 +3783,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>63</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5669" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3172,12 +3811,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5670" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3200,12 +3839,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5671" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3228,12 +3867,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5672" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3256,12 +3895,11 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5673" toLevel="1" name="Evasion Counter">
-		<!-- For 9 seconds, has a chance to return shock to the enemy and make them faint. -->
 		<icon>icon.skill0818</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3285,12 +3923,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5674" toLevel="1" name="Evasion Chance">
-		<!-- For 2 minutes, increases one's own deadly attack rate by 10%. -->
+		<!-- For 2 minutes, increases one's own Vital Spot Attack Rate by 10%. -->
 		<icon>icon.skill0819</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3314,7 +3952,7 @@
 		</effects>
 	</skill>
 	<skill id="5675" toLevel="1" name="Evasion Haste">
-		<!-- Increases Atk. Spd. +15% for 10 seconds. -->
+		<!-- Increases Atk. Spd. by 15% for 10 seconds. -->
 		<icon>icon.skill0820</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3389,7 +4027,7 @@
 		</effects>
 	</skill>
 	<skill id="5679" toLevel="3" name="Oblivion Trap">
-		<!-- Trap of forgetfulness. When attacking, the enemy has a chance to lose their target. -->
+		<!-- Trap of forgetfulness. when attacking, the enemy has a chance to lose their target. -->
 		<icon>icon.skill0836</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3489,7 +4127,7 @@
 		</effects>
 	</skill>
 	<skill id="5683" toLevel="1" name="PvP Weapon - Ignore Shield Defense">
-		<!-- Shield Def. significantly decreased momentarily. -->
+		<!-- Shield Defense greatly decreases momentarily. -->
 		<icon>icon.skill1304</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3539,7 +4177,7 @@
 		</effects>
 	</skill>
 	<skill id="5685" toLevel="1" name="PvP Weapon - Casting">
-		<!-- Casting Spd. decreased momentarily. -->
+		<!-- Casting Spd. increases momentarily. -->
 		<icon>icon.skill0228</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3566,7 +4204,7 @@
 		</effects>
 	</skill>
 	<skill id="5686" toLevel="1" name="PvP Weapon - Rapid Fire">
-		<!-- Bow Atk. Spd. decreased momentarily. -->
+		<!-- Bow/Crossbow Atk. Spd. increases momentarily. -->
 		<icon>icon.skill0413</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -3592,7 +4230,7 @@
 		</effects>
 	</skill>
 	<skill id="5687" toLevel="1" name="PvP Weapon - Decrease Range">
-		<!-- Bow Range decreased momentarily. -->
+		<!-- Bow/Crossbow range decreases momentarily. -->
 		<icon>icon.skill0486</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -3693,6 +4331,145 @@
 			<effect name="DamageShield">
 				<amount>50</amount>
 			</effect>
+		</effects>
+	</skill>
+	<skill id="5690" toLevel="1" name="PvP Armor - Damage Down">
+		<!-- Damage received during PvP is decreased. -->
+		<icon>icon.skill1040</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PVP_WEAPON_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>100</hitTime>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="PvpPhysicalAttackDefenceBonus">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpMagicalSkillDefenceBonus">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PvpPhysicalSkillDefenceBonus">
+				<amount>30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5691" toLevel="1" name="PvP Armor - Critical Down">
+		<!-- The chance of receiving critical attacks and the amount of received critical damage decreases temporarily. -->
+		<icon>icon.skill1242</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PVP_WEAPON_BUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>100</hitTime>
+		<isMagic>4</isMagic>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DefenceCriticalDamage">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="DefenceCriticalRate">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5692" toLevel="1" name="PvP Armor - Heal">
+		<icon>icon.skill1011</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>100</hitTime>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="Heal">
+				<power>200</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5693" toLevel="1" name="PvP Armor - Speed Down">
+		<!-- All speeds decreases momentarily. -->
+		<icon>icon.skill1160</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>PVP_WEAPON_DEBUFF</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>100</hitTime>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="Speed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalAttackSpeed">
+				<amount>-20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-30</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5694" toLevel="1" name="PvP Armor - Mirage">
+		<icon>icon.skill0445</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>600</castRange>
+		<effectPoint>-1</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>100</hitTime>
+		<isDebuff>true</isDebuff>
+		<isTriggeredSkill>true</isTriggeredSkill>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>80</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="TargetCancel" />
 		</effects>
 	</skill>
 	<skill id="5695" toLevel="1" name="Talisman - Increase Momentum">
@@ -3870,7 +4647,7 @@
 		</effects>
 	</skill>
 	<skill id="5699" toLevel="7" name="Decrease P. Def.">
-		<!-- P. Def. decreased. -->
+		<!-- P. Def. is decreased. Effect 3. -->
 		<icon>icon.skill0122</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>

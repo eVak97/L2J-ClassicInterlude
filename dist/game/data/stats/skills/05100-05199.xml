@@ -322,7 +322,7 @@
 		</effects>
 	</skill>
 	<skill id="5112" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -373,7 +373,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -494,24 +494,27 @@
 			<effect name="Root" />
 		</effects>
 	</skill>
-	<skill id="5115" toLevel="9" name="Cubic Hate">
-		<!-- Forces the enemy to look at the caster. -->
+	<skill id="5115" toLevel="12" name="Cubic Hate">
 		<icon>icon.skill0100</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
 		<affectScope>SINGLE</affectScope>
 		<effectPoint>
-			<value level="1">-9585</value>
-			<value level="2">-10060</value>
-			<value level="3">-10465</value>
-			<value level="4">-10785</value>
-			<value level="5">-10855</value>
-			<value level="6">-11000</value>
-			<value level="7">-11145</value>
-			<value level="8">-11285</value>
-			<value level="9">-11430</value>
+			<value level="1">-2908</value>
+			<value level="2">-3052</value>
+			<value level="3">-3175</value>
+			<value level="4">-3271</value>
+			<value level="5">-3310</value>
+			<value level="6">-3345</value>
+			<value level="7">-3376</value>
+			<value level="8">-3391</value>
+			<value level="9">-3405</value>
+			<value level="10">-3418</value>
+			<value level="11">-3431</value>
+			<value level="12">-3444</value>
 		</effectPoint>
-		<magicCriticalRate>5</magicCriticalRate>
+		<hitCancelTime>0</hitCancelTime>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">62</value>
 			<value level="2">66</value>
@@ -520,8 +523,11 @@
 			<value level="5">76</value>
 			<value level="6">78</value>
 			<value level="7">80</value>
-			<value level="8">82</value>
-			<value level="9">84</value>
+			<value level="8">81</value>
+			<value level="9">82</value>
+			<value level="10">83</value>
+			<value level="11">84</value>
+			<value level="12">85</value>
 		</magicLevel>
 		<effects>
 			<effect name="TargetMeProbability">
@@ -529,21 +535,23 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5116" toLevel="9" name="Cubic Hold">
-		<!-- Inflicted with Hold and temporarily rendered immobile. -->
+	<skill id="5116" toLevel="12" name="Hold">
+		<!-- Inflicted with hold and unable to move momentarily. -->
 		<icon>icon.skill4047</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
+		<abnormalTime>30</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
-		<activateRate>100</activateRate>
+		<activateRate>70</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>MAGIC</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
+		<lvlBonusRate>1</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
 			<value level="1">62</value>
 			<value level="2">66</value>
@@ -552,8 +560,11 @@
 			<value level="5">76</value>
 			<value level="6">78</value>
 			<value level="7">80</value>
-			<value level="8">82</value>
-			<value level="9">84</value>
+			<value level="8">81</value>
+			<value level="9">82</value>
+			<value level="10">83</value>
+			<value level="11">84</value>
+			<value level="12">85</value>
 		</magicLevel>
 		<trait>HOLD</trait>
 		<effects>
@@ -564,7 +575,7 @@
 		</effects>
 	</skill>
 	<skill id="5117" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -593,11 +604,11 @@
 				<power>829</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5118" toLevel="1" name="Cancel Sailren Use">
+	<skill id="5118" toLevel="1" name="Cancel Sairen Use">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -644,7 +655,7 @@
 		</effects>
 	</skill>
 	<skill id="5120" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -673,7 +684,7 @@
 				<power>703</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -710,7 +721,7 @@
 		</effects>
 	</skill>
 	<skill id="5123" toLevel="1" name="Maximum Defense">
-		<!-- Momentarily Maximizes P. Def./M. Def. and Shield Defense and increases Buff-canceling Attack Resistance. -->
+		<!-- Maximizes P. Def., M. Def. and Shield Defense momentarily. -->
 		<icon>icon.skill0454</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -783,7 +794,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5126" toLevel="1" name="Maximum Recovery Bonus">
+	<skill id="5126" toLevel="1" name="Maximum Recovery">
 		<!-- HP and CP recovery bonus are maximized. -->
 		<icon>icon.skill0457</icon>
 		<operateType>A2</operateType>
@@ -839,7 +850,7 @@
 		</effects>
 	</skill>
 	<skill id="5128" toLevel="1" name="Maximize long-range weapon use">
-		<!-- Maximizes bow proficiency. -->
+		<!-- Maximizes bow/crossbow use abilities. -->
 		<icon>icon.skill0459</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -875,7 +886,7 @@
 		</effects>
 	</skill>
 	<skill id="5129" toLevel="1" name="Smokescreen">
-		<!-- Smokescreen maximizes P. Evasion and assassination skills. -->
+		<!-- Maximizes Evasion and assassination skill. -->
 		<icon>icon.skill0460</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1024,13 +1035,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5135" toLevel="6" name="Slash">
-		<!-- Level 1: Attacks the enemy with 8264 Power. -->
-		<!-- Level 2: Attacks the enemy with 8597 Power. -->
-		<!-- Level 3: Attacks the enemy with 8945 Power. -->
-		<!-- Level 4: Attacks the enemy with 9302 Power. -->
-		<!-- Level 5: Attacks the enemy with 9674 Power. -->
-		<!-- Level 6: Attacks the enemy with 10061 Power. -->
+	<skill id="5135" toLevel="1" name="Slash">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1039,47 +1044,20 @@
 		<coolTime>720</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>1000</hitTime>
+		<hitTime>1080</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">214</value>
-			<value level="2">220</value>
-			<value level="3">226</value>
-			<value level="4">232</value>
-			<value level="5">238</value>
-			<value level="6">244</value>
-		</mpConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>214</mpConsume>
 		<nextAction>ATTACK</nextAction>
 		<reuseDelay>8000</reuseDelay>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>
-					<value level="1">8264</value>
-					<value level="2">8597</value>
-					<value level="3">8945</value>
-					<value level="4">9302</value>
-					<value level="5">9674</value>
-					<value level="6">10061</value>
-				</power>
+				<power>8264</power>
 				<overHit>true</overHit>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5136" toLevel="6" name="Spin Slash">
-		<!-- Level 1: Attacks enemies with 4132 Power. -->
-		<!-- Level 2: Attacks enemies with 4298 Power. -->
-		<!-- Level 3: Attacks enemies with 4470 Power. -->
-		<!-- Level 4: Attacks enemies with 4647 Power. -->
-		<!-- Level 5: Attacks enemies with 4834 Power. -->
-		<!-- Level 6: Attacks enemies with 5027 Power. -->
+	<skill id="5136" toLevel="1" name="Spin Slash">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1088,80 +1066,40 @@
 		<affectScope>POINT_BLANK</affectScope>
 		<coolTime>733</coolTime>
 		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<hitTime>1067</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">322</value>
-			<value level="2">332</value>
-			<value level="3">342</value>
-			<value level="4">352</value>
-			<value level="5">362</value>
-			<value level="6">372</value>
-		</mpConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>322</mpConsume>
 		<reuseDelay>17000</reuseDelay>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>
-					<value level="1">4132</value>
-					<value level="2">4298</value>
-					<value level="3">4470</value>
-					<value level="4">4647</value>
-					<value level="5">4834</value>
-					<value level="6">5027</value>
-				</power>
+				<power>4132</power>
 				<overHit>true</overHit>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5137" toLevel="5" name="Grip of the Cat">
-		<!-- Hold status for 15 seconds by Feline King's attack. -->
+	<skill id="5137" toLevel="1" name="Grip of the Cat">
 		<icon>icon.skill1201</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>5</abnormalTime>
+		<abnormalTime>30</abnormalTime>
 		<abnormalType>ROOT_MAGICALLY</abnormalType>
 		<abnormalVisualEffect>ROOT</abnormalVisualEffect>
-		<activateRate>80</activateRate>
+		<activateRate>61</activateRate>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<hitTime>4000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<lvlBonusRate>20</lvlBonusRate>
+		<lvlBonusRate>2</lvlBonusRate>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">258</value>
-			<value level="2">260</value>
-			<value level="3">262</value>
-			<value level="4">264</value>
-			<value level="5">266</value>
-		</mpConsume>
-		<mpInitialConsume>
-			<value level="1">64</value>
-			<value level="2">65</value>
-			<value level="3">66</value>
-			<value level="4">67</value>
-			<value level="5">68</value>
-		</mpInitialConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>258</mpConsume>
+		<mpInitialConsume>64</mpInitialConsume>
 		<reuseDelay>20000</reuseDelay>
 		<trait>HOLD</trait>
 		<effects>
@@ -1171,69 +1109,41 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5138" toLevel="6" name="Whiplash">
-		<!-- Stunned for 5 seconds by Magnus the Unicorn's attack. -->
+	<skill id="5138" toLevel="1" name="Whiplash">
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>5</abnormalTime>
+		<abnormalTime>9</abnormalTime>
 		<abnormalType>STUN</abnormalType>
 		<abnormalVisualEffect>STUN</abnormalVisualEffect>
-		<activateRate>80</activateRate>
+		<activateRate>60</activateRate>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>PHYSICAL</basicProperty>
 		<castRange>40</castRange>
 		<coolTime>720</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>1000</hitTime>
+		<hitTime>1080</hitTime>
 		<isDebuff>true</isDebuff>
-		<lvlBonusRate>30</lvlBonusRate>
+		<lvlBonusRate>1</lvlBonusRate>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">214</value>
-			<value level="2">220</value>
-			<value level="3">226</value>
-			<value level="4">232</value>
-			<value level="5">238</value>
-			<value level="6">244</value>
-		</mpConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>214</mpConsume>
 		<nextAction>ATTACK</nextAction>
 		<reuseDelay>8000</reuseDelay>
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>
-					<value level="1">6198</value>
-					<value level="2">6448</value>
-					<value level="3">6708</value>
-					<value level="4">6842</value>
-					<value level="5">6979</value>
-					<value level="6">7118</value>
-				</power>
+				<power>6198</power>
 				<overHit>true</overHit>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5139" toLevel="6" name="Tidal Wave">
-		<!-- Level 1: Attacks multiple enemies simultaneously with bonus 228 M. Atk. Power. -->
-		<!-- Level 2: Attacks multiple enemies simultaneously with bonus 230 M. Atk. Power. -->
-		<!-- Level 3: Attacks multiple enemies simultaneously with bonus 232 M. Atk. Power. -->
-		<!-- Level 4: Attacks multiple enemies simultaneously with bonus 234 M. Atk. Power. -->
-		<!-- Level 5: Attacks multiple enemies simultaneously with bonus 236 M. Atk. Power. -->
-		<!-- Level 6: Attacks multiple enemies simultaneously with bonus 240 M. Atk. Power. -->
+	<skill id="5139" toLevel="1" name="Tidal Wave">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1246,120 +1156,54 @@
 		<castRange>500</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>1000</effectRange>
-		<hitTime>1000</hitTime>
+		<hitTime>4000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">258</value>
-			<value level="2">260</value>
-			<value level="3">262</value>
-			<value level="4">264</value>
-			<value level="5">266</value>
-			<value level="6">268</value>
-		</mpConsume>
-		<mpInitialConsume>
-			<value level="1">64</value>
-			<value level="2">65</value>
-			<value level="3">66</value>
-			<value level="4">67</value>
-			<value level="5">68</value>
-			<value level="6">70</value>
-		</mpInitialConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>258</mpConsume>
+		<mpInitialConsume>64</mpInitialConsume>
 		<reuseDelay>8000</reuseDelay>
 		<effects>
 			<effect name="MagicalDamage">
-				<power>
-					<value level="1">228</value>
-					<value level="2">230</value>
-					<value level="3">232</value>
-					<value level="4">234</value>
-					<value level="5">236</value>
-					<value level="6">240</value>
-				</power>
+				<power>228</power>
+				<overHit>true</overHit>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5140" toLevel="6" name="Dark Curse">
-		<!-- Cursed. Atk. Spd./Casting Spd. decreased and receives damage over time. -->
+	<skill id="5140" toLevel="1" name="Dark Curse">
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
-		<activateRate>80</activateRate>
+		<activateRate>60</activateRate>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
-		<hitTime>1000</hitTime>
+		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<lvlBonusRate>30</lvlBonusRate>
+		<lvlBonusRate>1</lvlBonusRate>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">258</value>
-			<value level="2">260</value>
-			<value level="3">262</value>
-			<value level="4">264</value>
-			<value level="5">266</value>
-			<value level="6">268</value>
-		</mpConsume>
-		<mpInitialConsume>
-			<value level="1">64</value>
-			<value level="2">65</value>
-			<value level="3">66</value>
-			<value level="4">67</value>
-			<value level="5">68</value>
-			<value level="6">70</value>
-		</mpInitialConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>258</mpConsume>
+		<mpInitialConsume>64</mpInitialConsume>
 		<reuseDelay>8000</reuseDelay>
 		<effects>
 			<effect name="DamOverTime">
-				<power>
-					<value level="1">109</value>
-					<value level="2">112</value>
-					<value level="3">115</value>
-					<value level="4">118</value>
-					<value level="5">121</value>
-					<value level="6">124</value>
-				</power>
-				<ticks>1</ticks>
+				<power>109</power>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>-23</amount>
-				<mode>PER</mode>
-			</effect>
 		</effects>
 	</skill>
-	<skill id="5141" toLevel="6" name="Dicing Death">
-		<!-- Level 1: Attacks enemies with 8264 Power. Has a chance to cancel the target. -->
-		<!-- Level 2: Attacks enemies with 8597 Power. Has a chance to cancel the target. -->
-		<!-- Level 3: Attacks enemies with 8945 Power. Has a chance to cancel the target. -->
-		<!-- Level 4: Attacks enemies with 9302 Power. Has a chance to cancel the target. -->
-		<!-- Level 5: Attacks enemies with 9674 Power. Has a chance to cancel the target. -->
-		<!-- Level 6: Attacks enemies with 10061 Power. Has a chance to cancel the target. -->
+	<skill id="5141" toLevel="1" name="Dicing Death">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1368,43 +1212,19 @@
 		<coolTime>720</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>1000</hitTime>
+		<hitTime>1080</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
+		<magicLevel>80</magicLevel>
 		<mpConsume>214</mpConsume>
 		<nextAction>ATTACK</nextAction>
 		<reuseDelay>8000</reuseDelay>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>
-					<value level="1">8264</value>
-					<value level="2">8597</value>
-					<value level="3">8945</value>
-					<value level="4">9302</value>
-					<value level="5">9674</value>
-					<value level="6">10061</value>
-				</power>
-				<overHit>true</overHit>
-			</effect>
-			<effect name="TargetCancel">
-				<chance>30</chance>
+				<power>8264</power>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5142" toLevel="6" name="Corpse Burst">
-		<!-- Level 1: Attacks multiple enemies simultaneously with bonus 228 M. Atk. Power. -->
-		<!-- Level 2: Attacks multiple enemies simultaneously with bonus 230 M. Atk. Power. -->
-		<!-- Level 3: Attacks multiple enemies simultaneously with bonus 232 M. Atk. Power. -->
-		<!-- Level 4: Attacks multiple enemies simultaneously with bonus 234 M. Atk. Power. -->
-		<!-- Level 5: Attacks multiple enemies simultaneously with bonus 236 M. Atk. Power. -->
-		<!-- Level 6: Attacks multiple enemies simultaneously with bonus 240 M. Atk. Power. -->
+	<skill id="5142" toLevel="1" name="Corpse Burst">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>NPC_BODY</targetType>
@@ -1414,33 +1234,12 @@
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
-		<hitTime>1000</hitTime>
+		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">77</value>
-			<value level="2">81</value>
-			<value level="3">82</value>
-			<value level="4">83</value>
-			<value level="5">84</value>
-			<value level="6">85</value>
-		</magicLevel>
-		<mpConsume>
-			<value level="1">258</value>
-			<value level="2">260</value>
-			<value level="3">262</value>
-			<value level="4">264</value>
-			<value level="5">266</value>
-			<value level="6">268</value>
-		</mpConsume>
-		<mpInitialConsume>
-			<value level="1">64</value>
-			<value level="2">65</value>
-			<value level="3">66</value>
-			<value level="4">67</value>
-			<value level="5">68</value>
-			<value level="6">70</value>
-		</mpInitialConsume>
+		<magicLevel>80</magicLevel>
+		<mpConsume>258</mpConsume>
+		<mpInitialConsume>64</mpInitialConsume>
 		<reuseDelay>20000</reuseDelay>
 		<conditions>
 			<condition name="ConsumeBody" />
@@ -1448,14 +1247,7 @@
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalDamage">
-				<power>
-					<value level="1">228</value>
-					<value level="2">230</value>
-					<value level="3">232</value>
-					<value level="4">234</value>
-					<value level="5">236</value>
-					<value level="6">240</value>
-				</power>
+				<power>228</power>
 			</effect>
 		</effects>
 	</skill>
@@ -1604,7 +1396,7 @@
 		</effects>
 	</skill>
 	<skill id="5147" toLevel="10" name="Blessed Body">
-		<!-- Effect: Increases the maximum HP for a set time. -->
+		<!-- Active: Increases the maximum HP temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1649,7 +1441,7 @@
 		</effects>
 	</skill>
 	<skill id="5148" toLevel="10" name="Prayer">
-		<!-- Effect: Increases Heal Received for a set time. -->
+		<!-- Active: Increases the effect of HP recovery magic temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1743,16 +1535,16 @@
 		</effects>
 	</skill>
 	<skill id="5150" toLevel="10" name="Blessed Soul">
-		<!-- Level 1: Effect: Increases the maximum MP +16 for a set time. -->
-		<!-- Level 2: Effect: Increases the maximum MP +32 for a set time. -->
-		<!-- Level 3: Effect: Increases the maximum MP +48 for a set time. -->
-		<!-- Level 4: Effect: Increases the maximum MP +68 for a set time. -->
-		<!-- Level 5: Effect: Increases the maximum MP +80 for a set time. -->
-		<!-- Level 6: Effect: Increases the maximum MP +96 for a set time. -->
-		<!-- Level 7: Effect: Increases the maximum MP +112 for a set time. -->
-		<!-- Level 8: Effect: Increases the maximum MP +128 for a set time. -->
-		<!-- Level 9: Effect: Increases the maximum MP +144 for a set time. -->
-		<!-- Level 10: Effect: Increases the maximum MP +160 for a set time. -->
+		<!-- Level 1: Active: Increases the maximum MP by 16 temporarily. -->
+		<!-- Level 2: Active: Increases the maximum MP by 32 temporarily. -->
+		<!-- Level 3: Active: Increases the maximum MP by 48 temporarily. -->
+		<!-- Level 4: Active: Increases the maximum MP by 68 temporarily. -->
+		<!-- Level 5: Active: Increases the maximum MP by 80 temporarily. -->
+		<!-- Level 6: Active: Increases the maximum MP by 96 temporarily. -->
+		<!-- Level 7: Active: Increases the maximum MP by 112 temporarily. -->
+		<!-- Level 8: Active: Increases the maximum MP by 128 temporarily. -->
+		<!-- Level 9: Active: Increases the maximum MP by 144 temporarily. -->
+		<!-- Level 10: Active: Increases the maximum MP by 160 temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1797,7 +1589,7 @@
 		</effects>
 	</skill>
 	<skill id="5151" toLevel="15" name="Mana Gain">
-		<!-- Effect: Increases the recovery rate of MP. -->
+		<!-- Active: Increases MP recovery recharge rate. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1886,16 +1678,16 @@
 		</effects>
 	</skill>
 	<skill id="5153" toLevel="10" name="Cheer">
-		<!-- Level 1: Effect: Increases maximum CP +24 for a set time. -->
-		<!-- Level 2: Effect: Increases maximum CP +48 for a set time. -->
-		<!-- Level 3: Effect: Increases maximum CP +72 for a set time. -->
-		<!-- Level 4: Effect: Increases maximum CP +96 for a set time. -->
-		<!-- Level 5: Effect: Increases maximum CP +120 for a set time. -->
-		<!-- Level 6: Effect: Increases maximum CP +144 for a set time. -->
-		<!-- Level 7: Effect: Increases maximum CP +168 for a set time. -->
-		<!-- Level 8: Effect: Increases maximum CP +192 for a set time. -->
-		<!-- Level 9: Effect: Increases maximum CP +216 for a set time. -->
-		<!-- Level 10: Effect: Increases maximum CP +240 for a set time. -->
+		<!-- Level 1: Active: Increases maximum CP by 24 temporarily. -->
+		<!-- Level 2: Active: Increases maximum CP by 48 temporarily. -->
+		<!-- Level 3: Active: Increases maximum CP by 72 temporarily. -->
+		<!-- Level 4: Active: Increases maximum CP by 96 temporarily. -->
+		<!-- Level 5: Active: Increases maximum CP by 120 temporarily. -->
+		<!-- Level 6: Active: Increases maximum CP by 144 temporarily. -->
+		<!-- Level 7: Active: Increases maximum CP by 168 temporarily. -->
+		<!-- Level 8: Active: Increases maximum CP by 192 temporarily. -->
+		<!-- Level 9: Active: Increases maximum CP by 216 temporarily. -->
+		<!-- Level 10: Active: Increases maximum CP by 240 temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1940,7 +1732,7 @@
 		</effects>
 	</skill>
 	<skill id="5154" toLevel="15" name="Might">
-		<!-- Effect: Increases P. Atk. for a set time. -->
+		<!-- Active: Increases P. Atk. temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1995,7 +1787,7 @@
 		</effects>
 	</skill>
 	<skill id="5156" toLevel="15" name="Empower">
-		<!-- Effect: Increases M. Atk. for a set time. -->
+		<!-- Active: Increases M. Atk. temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2050,7 +1842,7 @@
 		</effects>
 	</skill>
 	<skill id="5157" toLevel="10" name="Duel Might">
-		<!-- Effect: Temporarily increases your P. Atk. in PvP. -->
+		<!-- Active: Increases PvP P. Atk. temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2088,7 +1880,7 @@
 		</effects>
 	</skill>
 	<skill id="5158" toLevel="15" name="Shield">
-		<!-- Effect: Increases P. Def. for a set time. -->
+		<!-- Active: Increases P. Def. temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2143,7 +1935,7 @@
 		</effects>
 	</skill>
 	<skill id="5159" toLevel="15" name="Magic Barrier">
-		<!-- Effect: Increases M. Def. for a set time. -->
+		<!-- Active: Increases M. Def. temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2198,7 +1990,7 @@
 		</effects>
 	</skill>
 	<skill id="5160" toLevel="10" name="Duel Weakness">
-		<!-- Effect: temporarily decreases P. Atk. in PvP. -->
+		<!-- Active: Decreases your opponent's PvP P. Atk. temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2241,7 +2033,7 @@
 		</effects>
 	</skill>
 	<skill id="5161" toLevel="15" name="Agility">
-		<!-- Effect: Increases P. Evasion for a set time. -->
+		<!-- Active: Increases Evasion temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2296,7 +2088,7 @@
 		</effects>
 	</skill>
 	<skill id="5162" toLevel="15" name="Guidance">
-		<!-- Effect: Increases P. Accuracy for a set time. -->
+		<!-- Active: Increases Accuracy temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2351,7 +2143,7 @@
 		</effects>
 	</skill>
 	<skill id="5163" toLevel="10" name="Focus">
-		<!-- Effect: Increases P. Critical Rate for a set time. -->
+		<!-- Active: Increases critical attack rate temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2396,7 +2188,7 @@
 		</effects>
 	</skill>
 	<skill id="5164" toLevel="10" name="Wild Magic">
-		<!-- Effect: Increases M. Critical Rate for a set time. -->
+		<!-- Active: Increases M. Critical Rate temporarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2508,7 +2300,7 @@
 		</effects>
 	</skill>
 	<skill id="5166" toLevel="15" name="Decrease Speed">
-		<!-- Effect: Increases Movement Speed momentarily. -->
+		<!-- Active: Momentarily decreases the target's Speed. Effect 3. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2552,7 +2344,7 @@
 		</effects>
 	</skill>
 	<skill id="5167" toLevel="15" name="Winter">
-		<!-- Effect: Increases Atk. Spd. momentarily. -->
+		<!-- Active: Momentarily decreases the target's Atk. Spd. Effect 3. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2596,7 +2388,7 @@
 		</effects>
 	</skill>
 	<skill id="5168" toLevel="10" name="Stun">
-		<!-- Effect: Momentarily Stuns the target. -->
+		<!-- Activated skill: Causes a target to enter the Stun state momentarily. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2631,12 +2423,12 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5169" toLevel="10" name="Hold">
-		<!-- Active: Momentarily inflicts Hold on the target. Chance to father be inflicted with Hold greatly decreases while effect lasts. -->
+		<!-- Active: Momentarily inflicts Hold on the target. Chance to further be inflicted with Hold greatly decreases while effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2677,7 +2469,7 @@
 		</effects>
 	</skill>
 	<skill id="5170" toLevel="10" name="Sleep">
-		<!-- Effect: Momentarily inflicts Sleep on the target. Greatly decreases the chance to inflict additional Sleep state while effects last. -->
+		<!-- Active: Momentarily inflicts Sleep on the target. Chance to further be inflicted with Sleep greatly decreases while effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2712,7 +2504,7 @@
 		<trait>SLEEP</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
@@ -2755,7 +2547,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -2795,9 +2587,7 @@
 		</magicLevel>
 		<reuseDelay>30000</reuseDelay>
 		<effects>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect>
+			<effect name="BlockActions" />
 		</effects>
 	</skill>
 	<skill id="5173" toLevel="10" name="Fear">
@@ -2841,7 +2631,21 @@
 		</effects>
 	</skill>
 	<skill id="5174" toLevel="15" name="Poison">
-		<!-- Effect: Momentarily poisons the target. -->
+		<!-- Level 1: Active: Momentarily poisons the target. Effect 5. -->
+		<!-- Level 2: Active: Momentarily poisons the target. Effect 5. -->
+		<!-- Level 3: Active: Momentarily poisons the target. Effect 6. -->
+		<!-- Level 4: Active: Momentarily poisons the target. Effect 6. -->
+		<!-- Level 5: Active: Momentarily poisons the target. Effect 6. -->
+		<!-- Level 6: Active: Momentarily poisons the target. Effect 7. -->
+		<!-- Level 7: Active: Momentarily poisons the target. Effect 7. -->
+		<!-- Level 8: Active: Momentarily poisons the target. Effect 7. -->
+		<!-- Level 9: Active: Momentarily poisons the target. Effect 8. -->
+		<!-- Level 10: Active: Momentarily poisons the target. Effect 8. -->
+		<!-- Level 11: Active: Momentarily poisons the target. Effect 8. -->
+		<!-- Level 12: Active: Momentarily poisons the target. Effect 8. -->
+		<!-- Level 13: Active: Momentarily poisons the target. Effect 8. -->
+		<!-- Level 14: Active: Momentarily poisons the target. Effect 8. -->
+		<!-- Level 15: Active: Momentarily poisons the target. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2915,12 +2719,26 @@
 					<value level="14">83</value>
 					<value level="15">88</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5175" toLevel="15" name="Bleed">
-		<!-- Effect: Momentarily inflicts Bleed on the target. -->
+		<!-- Level 1: Active: Momentarily inflicts Bleed on the target. Effect 5. -->
+		<!-- Level 2: Active: Momentarily inflicts Bleed on the target. Effect 5. -->
+		<!-- Level 3: Active: Momentarily inflicts Bleed on the target. Effect 6. -->
+		<!-- Level 4: Active: Momentarily inflicts Bleed on the target. Effect 6. -->
+		<!-- Level 5: Active: Momentarily inflicts Bleed on the target. Effect 6. -->
+		<!-- Level 6: Active: Momentarily inflicts Bleed on the target. Effect 7. -->
+		<!-- Level 7: Active: Momentarily inflicts Bleed on the target. Effect 7. -->
+		<!-- Level 8: Active: Momentarily inflicts Bleed on the target. Effect 7. -->
+		<!-- Level 9: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 10: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 11: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 12: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 13: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 14: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
+		<!-- Level 15: Active: Momentarily inflicts Bleed on the target. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2995,7 +2813,7 @@
 					<value level="14">71</value>
 					<value level="15">72</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -3038,7 +2856,7 @@
 		</effects>
 	</skill>
 	<skill id="5177" toLevel="10" name="Doom">
-		<!-- Effect: Momentarily blocks the target's physical/magic skills. -->
+		<!-- Active: Momentarily blocks the target's physical/magic skills. -->
 		<icon>icon.skill3080</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -3097,21 +2915,21 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5179" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="5179" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- The younger brother of the Elrokian chief, Mushika, he is notoriously ambitious, jealous and prone to fits of violence. Where his legendary brother is concerned, he also suffers from something of an inferiority complex. He currently leads the Elrokian faction opposed to Mushika's policies and is scheming to depose his brother and make himself chief. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5180" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="5180" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- Sailren, an enormous, vicious and dangerous dinosaur who inhabits the Primeval Isle, was sealed inside the Lost Nest ages ago by Shilen and the ancient Elrokian warriors. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="5181" toLevel="1" name="Lv. 80 Raid Boss">
+	<skill id="5181" toLevel="1" name="Raid Boss (Lv. 80)">
 		<!-- Wandering near Goddard Castle, this seemingly ordinary Human knight is actually a demon searching for a powerful weapon to increase its strength. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -3119,7 +2937,7 @@
 		<magicLevel>1</magicLevel>
 	</skill>
 	<skill id="5182" toLevel="1" name="Blessing of Protection">
-		<!-- Keeps you safe from an attack by a chaotic character who is more than 10 Lv.s apart from you. Caution) If you attack a character or abuse the skill, the Blessing of Protection will be canceled. -->
+		<!-- Keeps you safe from an attack by a chaotic character who is more than 10 Lv.s apart from you. -->
 		<icon>icon.skill0194</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -3138,6 +2956,25 @@
 		<specialLevel>-1</specialLevel>
 		<effects>
 			<effect name="ProtectionBlessing" />
+		</effects>
+	</skill>
+	<skill id="5183" toLevel="1" name="Dimensional Stun">
+		<!-- Momentarily immobile due to the Stun effect. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="FlyAway">
+				<radius>300</radius>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5184" toLevel="1" name="Dragon Breath">
@@ -3178,7 +3015,8 @@
 		</effects>
 	</skill>
 	<skill id="5186" toLevel="2" name="Pet Haste">
-		<!-- Increases Atk. Spd. +15% for a set time. -->
+		<!-- Level 1: Atk. Spd. increases temporarily. Effect 1. -->
+		<!-- Level 2: Atk. Spd. increases temporarily. Effect 2. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3220,7 +3058,10 @@
 		</effects>
 	</skill>
 	<skill id="5187" toLevel="4" name="Pet Vampiric Rage">
-		<!-- Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. -->
+		<!-- Level 1: Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. Effect 1. -->
+		<!-- Level 2: Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. Effect 2. -->
+		<!-- Level 3: Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. Effect 3. -->
+		<!-- Level 4: Provides the ability to recover HP temporarily by damaging the enemy with a certain probability. Effect 4. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3267,12 +3108,14 @@
 					<value level="3">8</value>
 					<value level="4">9</value>
 				</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5188" toLevel="3" name="Pet Regeneration">
-		<!-- Temporarily increases HP Recovery Bonus +10%. -->
+		<!-- Level 1: Increases HP recovery bonus for a fixed time. Effect 1. -->
+		<!-- Level 2: Increases HP recovery bonus for a fixed time. Effect 2. -->
+		<!-- Level 3: Increases HP recovery bonus for a fixed time. Effect 3. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3323,7 +3166,12 @@
 		</effects>
 	</skill>
 	<skill id="5189" toLevel="6" name="Pet Blessed Body">
-		<!-- Temporarily increases Max HP +10%. -->
+		<!-- Level 1: Increases maximum HP temporarily. Effect 1. -->
+		<!-- Level 2: Increases maximum HP temporarily. Effect 2. -->
+		<!-- Level 3: Increases maximum HP temporarily. Effect 3. -->
+		<!-- Level 4: Increases maximum HP temporarily. Effect 4. -->
+		<!-- Level 5: Increases maximum HP temporarily. Effect 5. -->
+		<!-- Level 6: Increases maximum HP temporarily. Effect 6. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3392,7 +3240,12 @@
 		</effects>
 	</skill>
 	<skill id="5190" toLevel="6" name="Pet Blessed Soul">
-		<!-- Temporarily increases Max MP +10%. -->
+		<!-- Level 1: Increases maximum MP temporarily. Effect 1. -->
+		<!-- Level 2: Increases maximum MP temporarily. Effect 2. -->
+		<!-- Level 3: Increases maximum MP temporarily. Effect 3. -->
+		<!-- Level 4: Increases maximum MP temporarily. Effect 4. -->
+		<!-- Level 5: Increases maximum MP temporarily. Effect 5. -->
+		<!-- Level 6: Increases maximum MP temporarily. Effect 6. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3461,7 +3314,9 @@
 		</effects>
 	</skill>
 	<skill id="5191" toLevel="3" name="Pet Guidance">
-		<!-- Temporarily increases P. Accuracy +2. -->
+		<!-- Level 1: Increases Accuracy temporarily. Effect 1. -->
+		<!-- Level 2: Increases Accuracy temporarily. Effect 2. -->
+		<!-- Level 3: Increases Accuracy temporarily. Effect 3. -->
 		<icon>icon.skill1240</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3512,7 +3367,8 @@
 		</effects>
 	</skill>
 	<skill id="5192" toLevel="2" name="Pet Wind Walk">
-		<!-- Increases Movement Speed +20 for a set time. -->
+		<!-- Level 1: Increases Speed temporarily. Effect 1. -->
+		<!-- Level 2: Increases Speed temporarily. Effect 2. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3557,7 +3413,9 @@
 		</effects>
 	</skill>
 	<skill id="5193" toLevel="3" name="Pet Acumen">
-		<!-- Increases Casting Spd. +15% for a set time. -->
+		<!-- Level 1: Increases Casting Spd. temporarily. Effect 1. -->
+		<!-- Level 2: Increases Casting Spd. temporarily. Effect 2. -->
+		<!-- Level 3: Increases Casting Spd. temporarily. Effect 3. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3608,7 +3466,9 @@
 		</effects>
 	</skill>
 	<skill id="5194" toLevel="3" name="Pet Empower">
-		<!-- Temporarily increases M. Atk. +55%. -->
+		<!-- Level 1: Increases M. Atk. power temporarily. Effect 1. -->
+		<!-- Level 2: Increases M. Atk. power temporarily. Effect 2. -->
+		<!-- Level 3: Increases M. Atk. power temporarily. Effect 3. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -3659,7 +3519,18 @@
 		</effects>
 	</skill>
 	<skill id="5195" toLevel="12" name="Pet Greater Heal">
-		<!-- Recovers HP and momentarily increases HP Recovery Bonus. -->
+		<!-- Level 1: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 50. -->
+		<!-- Level 2: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 92. -->
+		<!-- Level 3: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 148. -->
+		<!-- Level 4: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 219. -->
+		<!-- Level 5: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 299. -->
+		<!-- Level 6: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 380. -->
+		<!-- Level 7: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 450. -->
+		<!-- Level 8: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 477. -->
+		<!-- Level 9: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 500. -->
+		<!-- Level 10: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 525. -->
+		<!-- Level 11: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 542. -->
+		<!-- Level 12: Recovers HP and momentarily increases HP Recovery Bonus. Power 50. Effect 550. -->
 		<icon>icon.skill1217</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>

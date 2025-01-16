@@ -33,6 +33,40 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="15401" toLevel="1" name="Burning Blood">
+		<!-- Restored to full health from death. Buffs/ Debuffs remain even after death, but the Noblesse Blessing and Raid Blessing disappear. (Effect only applied at Kartia's Labyrinth - Tainted Dimension Attacker.) -->
+		<icon>icon.skill5873</icon>
+		<operateType>A2</operateType>
+		<targetType>TARGET</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>2400</abnormalTime>
+		<abnormalType>RESURRECTION_SPECIAL</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>687</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1000</hitTime>
+		<isMagic>22</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpCheckAbnormal">
+				<type>RESURRECTION_SPECIAL</type>
+				<level>1</level>
+				<hasAbnormal>false</hasAbnormal>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="ResurrectionSpecial">
+				<power>100</power>
+				<instanceId>205;206;207</instanceId>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="15402" toLevel="1" name="Wisp's Blessing">
 		<!-- P. Atk. And M. Atk. increases temporarily. -->
 		<icon>icon.skill11046</icon>
@@ -62,7 +96,7 @@
 		</effects>
 	</skill>
 	<skill id="15403" toLevel="1" name="Favor Exchange">
-		<!-- For 15 seconds, Movement Speed +30%. -->
+		<!-- For 15 sec., Speed +30%. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -165,6 +199,44 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>1000</reuseDelay>
 	</skill>
+	<skill id="15410" toLevel="1" name="Full Attack">
+		<!-- Pulls in PCs within range and inflicts damage. -->
+		<icon>icon.skill10015</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<activateRate>200</activateRate>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>800</affectRange>
+		<affectScope>RANGE</affectScope>
+		<attributeType>EARTH</attributeType>
+		<attributeValue>50</attributeValue>
+		<basicProperty>NONE</basicProperty>
+		<castRange>500</castRange>
+		<coolTime>1000</coolTime>
+		<effectPoint>-2066</effectPoint>
+		<effectRange>900</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>96</magicLevel>
+		<mpConsume>10</mpConsume>
+		<reuseDelay>10000</reuseDelay>
+		<trait>PULL</trait>
+		<effects>
+			<effect name="PullBack">
+				<speed>600</speed>
+				<delay>600</delay>
+			</effect>
+			<effect name="BlockActions" />
+			<effect name="PhysicalDamage">
+				<power>80000</power>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="15411" toLevel="1" name="Soul Break">
 		<!-- Inflicts a powerful attack on a target. -->
 		<icon>icon.skill0223</icon>
@@ -198,7 +270,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15412" toLevel="1" name="Toad Cannon Explosion - Presentation">
+	<skill id="15412" toLevel="1" name="Presentation - Toad Cannon Explosion">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -209,14 +281,14 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 	</skill>
-	<skill id="15413" toLevel="1" name="Lv. 96 Raid Boss">
+	<skill id="15413" toLevel="1" name="Raid Boss (Lv. 96)">
 		<!-- Giant golem created by Dr. Chaos to excavate the Nornil Ruins. This Detector Golem is equipped with attack functions as well, and is a complete collection of all of Dr. Chaos' technological wonders. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>1</magicLevel>
 	</skill>
-	<skill id="15414" toLevel="1" name="Lv. 96 Raid Boss">
+	<skill id="15414" toLevel="1" name="Raid Boss (Lv. 96)">
 		<!-- Leader of the Spiculas that activated the Intruder Elimination Project under Mother Nornil's orders. This prototype Spicula is emotionless and almost machine-like. It is currently creating mutations in various machines by spreading the Laido Virus. -->
 		<icon>icon.skillraid</icon>
 		<operateType>P</operateType>
@@ -308,7 +380,7 @@
 		<specialLevel>-3</specialLevel>
 	</skill>
 	<skill id="15419" toLevel="1" name="Appearance Modification (A-grade)">
-		<!-- Changed to the appearance of a A-grade item. -->
+		<!-- Changed to the appearance of an A-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -355,6 +427,16 @@
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 	</skill>
+	<skill id="15428" toLevel="1" name="Knock Back">
+		<!-- AoE Knock Back. -->
+		<icon>icon.skill10549</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-574</effectPoint>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+	</skill>
 	<skill id="15429" toLevel="1" name="Yoke">
 		<!-- Lindvior's AoE Aerial Yoke. -->
 		<icon>icon.skill1042</icon>
@@ -364,6 +446,34 @@
 		<hitTime>10000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic>
+	</skill>
+	<skill id="15430" toLevel="1" name="Lindvior's Jump">
+		<!-- Ranged attack. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<abnormalTime>9</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>1100</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<coolTime>5000</coolTime>
+		<effectPoint>-574</effectPoint>
+		<hitTime>5000</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>118</magicLevel>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>10000</power>
+			</effect>
+			<effect name="BlockActions" />
+		</effects>
 	</skill>
 	<skill id="15431" toLevel="1" name="Supersonic Blaster">
 		<icon>icon.skill0000</icon>
@@ -405,7 +515,7 @@
 		</effects>
 	</skill>
 	<skill id="15433" toLevel="1" name="Surrender to Dark">
-		<!-- Dark Attack Resistance decreased, and Holy Attack Resistance increases momentarily. -->
+		<!-- State of momentarily decreased Dark Resistance and increased Holy Resistance. -->
 		<icon>icon.skill4336_new</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -611,7 +721,7 @@
 		</effects>
 	</skill>
 	<skill id="15442" toLevel="1" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -639,7 +749,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -668,7 +778,7 @@
 		</effects>
 	</skill>
 	<skill id="15444" toLevel="1" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -697,7 +807,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -746,7 +856,7 @@
 		</effects>
 	</skill>
 	<skill id="15447" toLevel="1" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -774,7 +884,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>70</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -793,7 +903,7 @@
 		<magicLevel>97</magicLevel>
 		<mpConsume>3</mpConsume>
 	</skill>
-	<skill id="15449" toLevel="1" name="Storm Strike">
+	<skill id="15449" toLevel="1" name="(Wind Strike)">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -845,7 +955,7 @@
 		</effects>
 	</skill>
 	<skill id="15451" toLevel="1" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -869,7 +979,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>78</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -921,7 +1031,7 @@
 		</effects>
 	</skill>
 	<skill id="15454" toLevel="1" name="Memorable Raid Blessing">
-		<!-- For 2 hr., P. Atk. +5%, M. Atk. +20%, P. Def. +5%, M. Def. +5%, Atk. Spd. +5%, Casting Spd. +5%, Max HP/MP +5%, and XP/SP gained through hunting +30%. -->
+		<!-- For 2 hr., P. Atk. +5%, M. Atk. +20%, P. Def. +5%, M. Def. +5%, Atk. Spd. +5%, Casting Spd. +5%, Max HP/ MP +5%, and XP/ SP gained through hunting +30%. -->
 		<icon>icon.skilltransform4</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -994,12 +1104,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>450</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15458" toLevel="1" name="Memorable Raid Shield">
-		<!-- Defensive shield cast by the Memorable Raid boss unto itself. For 10 minutes, it only receives a certain amount of damage. -->
+		<!-- Defensive shield cast by the Memorable Raid boss unto itself. For 10 min., it only receives a certain amount of damage. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1069,7 +1179,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>350</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
@@ -1160,6 +1270,86 @@
 			</effect>
 		</effects>
 	</skill>
+	<skill id="15465" toLevel="19" name="Vitality Reward 1 (Quest)">
+		<!-- Level 16: Recovers 1 bar of Vitality. -->
+		<!-- Level 17: Recovers 2 bars of Vitality. -->
+		<!-- Level 18: Recovers 3 bars of Vitality. -->
+		<!-- Level 19: Recovers 4 bars of Vitality. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>
+			<value level="1">900</value>
+			<value level="2">900</value>
+			<value level="3">900</value>
+			<value level="4">900</value>
+			<value level="5">900</value>
+			<value level="6">900</value>
+			<value level="7">900</value>
+			<value level="8">900</value>
+			<value level="9">900</value>
+			<value level="10">900</value>
+			<value level="11">900</value>
+			<value level="12">900</value>
+			<value level="13">900</value>
+			<value level="14">900</value>
+			<value level="15">-1</value>
+			<value level="16">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="17">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="18">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="19">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</castRange>
+		<effectPoint>
+			<value level="1">100</value>
+			<value level="2">100</value>
+			<value level="3">100</value>
+			<value level="4">100</value>
+			<value level="5">100</value>
+			<value level="6">100</value>
+			<value level="7">100</value>
+			<value level="8">100</value>
+			<value level="9">100</value>
+			<value level="10">100</value>
+			<value level="11">100</value>
+			<value level="12">100</value>
+			<value level="13">100</value>
+			<value level="14">100</value>
+			<value level="15">100</value>
+			<value level="16">0</value>
+			<value level="17">0</value>
+			<value level="18">0</value>
+			<value level="19">0</value>
+		</effectPoint>
+		<effectRange>
+			<value level="1">1400</value>
+			<value level="2">1400</value>
+			<value level="3">1400</value>
+			<value level="4">1400</value>
+			<value level="5">1400</value>
+			<value level="6">1400</value>
+			<value level="7">1400</value>
+			<value level="8">1400</value>
+			<value level="9">1400</value>
+			<value level="10">1400</value>
+			<value level="11">1400</value>
+			<value level="12">1400</value>
+			<value level="13">1400</value>
+			<value level="14">1400</value>
+			<value level="15">-1</value>
+			<value level="16">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="17">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="18">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+			<value level="19">-1</value> <!-- FIXME: AUTO GENERATED LEVEL -->
+		</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem" />
+		</conditions>
+	</skill>
 	<skill id="15466" toLevel="1" name="Triol's CON Increase">
 		<!-- Max HP +200%. -->
 		<icon>icon.skill1045</icon>
@@ -1175,8 +1365,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="15467" toLevel="1" name="Triol's Def. Increase">
-		<!-- P. Def. increased by 200%. -->
+	<skill id="15467" toLevel="1" name="Triol's P. Def. Increase">
+		<!-- P. Def. +200%. -->
 		<icon>icon.skill1040</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1189,7 +1379,7 @@
 		</effects>
 	</skill>
 	<skill id="15468" toLevel="1" name="Triol's M. Def. Decrease">
-		<!-- M. Def decreased by 50%. -->
+		<!-- M. Def. +50%. -->
 		<icon>icon.skill1388</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1202,7 +1392,7 @@
 		</effects>
 	</skill>
 	<skill id="15469" toLevel="1" name="Rites for Triol">
-		<!-- For 60 min., HP Recovery Bonus + 20%. -->
+		<!-- For 60 min., HP Recovery Bonus +20%. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1324,7 +1514,7 @@
 		<specialLevel>-3</specialLevel>
 	</skill>
 	<skill id="15475" toLevel="1" name="Appearance Modification (A-grade) (Raid)">
-		<!-- Changed to the appearance of a A-grade item. -->
+		<!-- Changed to the appearance of an A-grade item. -->
 		<icon>BranchSys2.icon.br_royal_crown_of_vesper_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1345,7 +1535,7 @@
 		<specialLevel>-3</specialLevel>
 	</skill>
 	<skill id="15476" toLevel="1" name="Spore Spray">
-		<!-- HP and Movement Speed decreased due to spores. -->
+		<!-- HP and Speed decreased due to spores. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1367,7 +1557,7 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>100</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-20</amount>
@@ -1487,12 +1677,12 @@
 		<effects>
 			<effect name="DamOverTime">
 				<power>100</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="15481" toLevel="1" name="Shoot Spider Web">
-		<!-- The web decreases Movement Speed by 10%. -->
+		<!-- The web decreases Speed by 10%. -->
 		<icon>icon.skill0102</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1527,130 +1717,281 @@
 		<!-- P. Atk. On a single enemy. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
 		<hitTime>1500</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>28833</power> <!-- Fix: Retail Missed -->
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15484" toLevel="1" name="Lightning">
 		<!-- M. Atk. On a single enemy. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectScope>RANGE</affectScope>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>900</effectRange>
 		<hitTime>1500</hitTime>
 		<isMagic>1</isMagic>
 		<mpConsume>10</mpConsume>
+		<nextAction>CAST</nextAction>
+		<effects>
+			<effect name="MagicalDamage">
+				<power>553</power>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15485" toLevel="1" name="Eliminate">
 		<!-- P. Atk. On a single enemy. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
 		<hitTime>1500</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>28833</power> <!-- Fix: Retail Missed -->
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15486" toLevel="1" name="Straight Blow">
 		<!-- Bleed on a single enemy. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>POISON</abnormalType>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>1100</effectRange>
 		<hitTime>750</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic>
 		<mpConsume>10</mpConsume>
+		<trait>POISON</trait>
+		<effects>
+			<effect name="DamOverTime">
+				<power>1000</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15487" toLevel="1" name="Disarray">
 		<!-- P. Atk. On a single enemy. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
 		<hitTime>1500</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>28833</power> <!-- Fix: Retail Missed -->
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15488" toLevel="1" name="Penetrate">
 		<!-- P. Atk. On a single enemy. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
 		<hitTime>1500</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>28833</power> <!-- Fix: Retail Missed -->
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15489" toLevel="1" name="Vivacity">
 		<!-- Increases P. Def. for 5 sec. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
 		<hitTime>750</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<mpConsume>10</mpConsume>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15490" toLevel="1" name="Rush">
 		<!-- Rush toward enemy. -->
 		<icon>icon.skill0000</icon>
-		<operateType>A1</operateType>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>0</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="15491" toLevel="1" name="Deadly Weapon">
 		<!-- P. Atk. On a single enemy. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>40</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>100</effectRange>
 		<hitTime>1500</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>28833</power> <!-- Fix: Retail Missed -->
+				<overHit>true</overHit>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15492" toLevel="1" name="Immediate Response">
 		<!-- Poison on a single enemy. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>POISON</abnormalType>
+		<abnormalVisualEffect>DOT_POISON</abnormalVisualEffect>
+		<activateRate>100</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<castRange>600</castRange>
 		<coolTime>500</coolTime>
 		<effectPoint>-100</effectPoint>
+		<effectRange>1100</effectRange>
 		<hitTime>1500</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic>
 		<mpConsume>10</mpConsume>
+		<trait>POISON</trait>
+		<effects>
+			<effect name="DamOverTime">
+				<power>1000</power>
+				<ticks>5</ticks>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15493" toLevel="1" name="Forward March">
 		<!-- Rush toward enemy. -->
 		<icon>icon.skill0000</icon>
-		<operateType>A2</operateType>
+		<operateType>DA1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
 		<castRange>600</castRange>
 		<effectPoint>-100</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>0</hitTime>
 		<mpConsume>10</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<conditions>
+			<condition name="OpCheckCastRange">
+				<distance>200</distance>
+			</condition>
+		</conditions>
 	</skill>
 	<skill id="15494" toLevel="1" name="Strategic Response">
 		<!-- Increases Atk. Spd. for 5 sec. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
 		<hitTime>750</hitTime>
 		<isMagic>1</isMagic>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<mpConsume>10</mpConsume>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15495" toLevel="1" name="Ingenious Response">
 		<!-- Increases P. Def. for 5 sec. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>5</abnormalTime>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<coolTime>500</coolTime>
 		<effectPoint>100</effectPoint>
 		<hitTime>750</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
 		<mpConsume>10</mpConsume>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>100</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="15496" toLevel="1" name="Travis' Authority">
 		<!-- AoE M. Atk. On target's area. -->
@@ -1672,7 +2013,7 @@
 		<mpConsume>10</mpConsume>
 	</skill>
 	<skill id="15498" toLevel="1" name="Dragon Defender">
-		<!-- For 2 hr., Atk. Spd. +10%, Casting Spd. +10%, Max HP/MP +10%, and Movement Speed +10. -->
+		<!-- For 2 hr., Atk. Spd. +10%, Casting Spd. +10%, Max HP/MP +10%, and Speed +10. -->
 		<icon>icon.skill4689</icon>
 		<operateType>A2</operateType>
 		<effectPoint>1</effectPoint>

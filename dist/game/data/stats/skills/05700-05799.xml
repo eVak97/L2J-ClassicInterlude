@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5700" toLevel="7" name="Decrease M. Def.">
-		<!-- M. Def. decreased. -->
+		<!-- M. Def. is decreased. Effect 3. -->
 		<icon>icon.skill1263</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -23,7 +23,13 @@
 		</effects>
 	</skill>
 	<skill id="5701" toLevel="7" name="Decrease P. Atk.">
-		<!-- P. Atk.. decreased. -->
+		<!-- Level 1: P. Atk. is decreased. Effect 2. -->
+		<!-- Level 2: P. Atk. is decreased. Effect 2. -->
+		<!-- Level 3: P. Atk. is decreased. Effect 3. -->
+		<!-- Level 4: P. Atk. is decreased. Effect 3. -->
+		<!-- Level 5: P. Atk. is decreased. Effect 3. -->
+		<!-- Level 6: P. Atk. is decreased. Effect 3. -->
+		<!-- Level 7: P. Atk. is decreased. Effect 3. -->
 		<icon>icon.skill4037</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -136,7 +142,7 @@
 		<magicLevel>36</magicLevel>
 	</skill>
 	<skill id="5706" toLevel="1" name="Poison">
-		<!-- HP decreases from Poison momentarily. The body is paralyzed after a set amount of time. -->
+		<!-- HP decreases from Poison momentarily. The body is paralyzed after a set amount of time. Effect 7. -->
 		<icon>icon.skill4036</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -393,7 +399,7 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>55</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 			<effect name="Speed">
 				<amount>-23</amount>
@@ -402,7 +408,7 @@
 		</effects>
 	</skill>
 	<skill id="5716" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1159,7 +1165,7 @@
 		</effects>
 	</skill>
 	<skill id="5735" toLevel="6" name="Curse of Steward">
-		<!-- Momentarily inflicts Sleep on the target. Greatly decreases the chance to inflict additional Sleep state while effects last. -->
+		<!-- Momentarily inflicts Sleep on the target. Decrease probability of additional sleep state while effects last. -->
 		<icon>icon.skill1069</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1224,7 +1230,7 @@
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="DefenceTrait">
 				<SLEEP>100</SLEEP>
@@ -1376,6 +1382,14 @@
 				<type>BLOCK_MP</type>
 			</effect>
 			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5740" toLevel="1" name="Recovery Pot">
@@ -1462,6 +1476,23 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>99</magicLevel>
 		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="DamageBlock">
+				<type>BLOCK_HP</type>
+			</effect>
+			<effect name="DamageBlock">
+				<type>BLOCK_MP</type>
+			</effect>
+			<effect name="DebuffBlock" />
+			<effect name="ResistDispelByCategory">
+				<amount>-100</amount>
+				<slot>ALL</slot>
+			</effect>
+			<effect name="ResistAbnormalByCategory">
+				<amount>-100</amount>
+				<slot>DEBUFF</slot>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5745" toLevel="12" name="Death Blow">
 		<!-- Level 1: Draws on your HP to summon your strength and unleash a punishing attack. Power 183. -->
@@ -1647,18 +1678,18 @@
 		</effects>
 	</skill>
 	<skill id="5747" toLevel="12" name="Spin Attack">
-		<!-- Level 1: Damages and stuns the target simultaneously. Power 55. -->
-		<!-- Level 2: Damages and stuns the target simultaneously. Power 126. -->
-		<!-- Level 3: Damages and stuns the target simultaneously. Power 263. -->
-		<!-- Level 4: Damages and stuns the target simultaneously. Power 500. -->
-		<!-- Level 5: Damages and stuns the target simultaneously. Power 866. -->
-		<!-- Level 6: Damages and stuns the target simultaneously. Power 1364. -->
-		<!-- Level 7: Damages and stuns the target simultaneously. Power 1951. -->
-		<!-- Level 8: Damages and stuns the target simultaneously. Power 2251. -->
-		<!-- Level 9: Damages and stuns the target simultaneously. Power 2534. -->
-		<!-- Level 10: Damages and stuns the target simultaneously. Power 2784. -->
-		<!-- Level 11: Damages and stuns the target simultaneously. Power 2985. -->
-		<!-- Level 12: Damages and stuns the target simultaneously. Power 3140. -->
+		<!-- Level 1: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 55 power. -->
+		<!-- Level 2: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 126 power. -->
+		<!-- Level 3: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 263 power. -->
+		<!-- Level 4: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 500 power. -->
+		<!-- Level 5: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 866 power. -->
+		<!-- Level 6: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 1364 power. -->
+		<!-- Level 7: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 1951 power. -->
+		<!-- Level 8: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 2251 power. -->
+		<!-- Level 9: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 2534 power. -->
+		<!-- Level 10: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 2784 power. -->
+		<!-- Level 11: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 2985 power. -->
+		<!-- Level 12: Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. 3140 power. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1724,22 +1755,22 @@
 		<effects>
 			<effect name="PhysicalDamage">
 				<power>
-					<value level="1">55</value>
-					<value level="2">126</value>
-					<value level="3">263</value>
-					<value level="4">500</value>
-					<value level="5">866</value>
-					<value level="6">1364</value>
-					<value level="7">1951</value>
-					<value level="8">2251</value>
-					<value level="9">2534</value>
-					<value level="10">2784</value>
-					<value level="11">2985</value>
-					<value level="12">3140</value>
+					<value level="1">60</value>
+					<value level="2">136</value>
+					<value level="3">281</value>
+					<value level="4">530</value>
+					<value level="5">910</value>
+					<value level="6">1420</value>
+					<value level="7">2012</value>
+					<value level="8">2310</value>
+					<value level="9">2588</value>
+					<value level="10">2829</value>
+					<value level="11">3018</value>
+					<value level="12">3172</value>
 				</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -2329,7 +2360,15 @@
 		<magicLevel>73</magicLevel>
 	</skill>
 	<skill id="5760" toLevel="9" name="Critical Hit">
-		<!-- Increases P. Critical Rate +30% and Atk. Spd. +33%. Has a chance of stacking physical critical hits that deliver powerful AoE attack when physical critical attack is triggered. -->
+		<!-- Level 1: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 1. -->
+		<!-- Level 2: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 2. -->
+		<!-- Level 3: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 3. -->
+		<!-- Level 4: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 4. -->
+		<!-- Level 5: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 5. -->
+		<!-- Level 6: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 6. -->
+		<!-- Level 7: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 7. -->
+		<!-- Level 8: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 8. -->
+		<!-- Level 9: Increases Critical Rate and Atk. Spd. Improves chance of a critical hit from range attacks. Effect 9. -->
 		<icon>icon.skill5760</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2597,7 +2636,7 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="5772" toLevel="1" name="Surrender to Fire">
-		<!-- Fire Resistance decreases and Water Resistance increases momentarily. -->
+		<!-- Fire Resistance decreases and Water Resistance increases momentarily. Effect 4. -->
 		<icon>icon.skill4279_new</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2616,7 +2655,7 @@
 		<specialLevel>-1</specialLevel>
 	</skill>
 	<skill id="5773" toLevel="1" name="Surrender to Water">
-		<!-- Water Resistance decreases and Fire Resistance increases momentarily. -->
+		<!-- Water Resistance decreases and Fire Resistance increases momentarily. Effect 4. -->
 		<icon>icon.skill4280_new</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2633,6 +2672,30 @@
 		<magicLevel>-1</magicLevel>
 		<reuseDelay>8000</reuseDelay>
 		<specialLevel>-1</specialLevel>
+	</skill>
+	<skill id="5774" toLevel="2" name="Replenish Pailaka Reward Vitality">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>900</castRange>
+		<effectPoint>100</effectPoint>
+		<effectRange>1400</effectRange>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="CanUseVitalityIncreaseItem" />
+		</conditions>
+		<effects>
+			<effect name="VitalityPointUp">
+				<value>
+					<value level="1">10000</value>
+					<value level="2">20000</value>
+				</value>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="5775" toLevel="1" name="Greater Blessing of Pathfinder">
 		<!-- The Pathfinder's blessing. All battle abilities are increased. -->
@@ -2809,6 +2872,36 @@
 			</condition>
 		</passiveConditions>
 	</skill>
+	<skill id="5780" toLevel="9" name="Agathion Collection">
+		<!-- The summoned Spirit collects the essence of the Seeds of Infinity and Destruction. -->
+		<icon>icon.skill_agathion_cute</icon>
+		<operateType>CA1</operateType>
+		<targetType>TARGET</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>100</castRange>
+		<channelingStart>1</channelingStart>
+		<channelingTickInterval>5.8</channelingTickInterval>
+		<effectPoint>-1</effectPoint>
+		<effectRange>400</effectRange>
+		<hitTime>6000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>18678</item>
+					<item>18679</item>
+					<item>18680</item>
+					<item>18681</item>
+					<item>18682</item>
+					<item>18683</item>
+				</npcIds>
+			</condition>
+		</conditions>
+	</skill>
 	<skill id="5781" toLevel="1" name="Presentation - Lindvior Approach">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -2943,7 +3036,7 @@
 		<magicLevel>85</magicLevel>
 	</skill>
 	<skill id="5794" toLevel="1" name="Decrease Speed">
-		<!-- Movement Speed has momentarily decreased by 30%. -->
+		<!-- Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2995,7 +3088,7 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5796" toLevel="1" name="Decrease Speed">
-		<!-- Movement Speed has momentarily decreased by 30%. -->
+		<!-- Speed decreases momentarily. Effect 3. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>

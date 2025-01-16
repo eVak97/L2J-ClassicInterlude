@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="5500" toLevel="1" name="Black Dragon Claw">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -32,12 +32,12 @@
 			</effect>
 			<effect name="DamOverTime">
 				<power>52</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5501" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -62,7 +62,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -70,7 +70,7 @@
 		</effects>
 	</skill>
 	<skill id="5502" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -92,7 +92,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -540,7 +540,7 @@
 		<effects>
 			<effect name="VampiricAttack">
 				<amount>9</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 			<effect name="DamageShield">
 				<amount>60</amount>
@@ -777,7 +777,18 @@
 		<magicLevel>85</magicLevel>
 	</skill>
 	<skill id="5529" toLevel="12" name="Surrender to Dark">
-		<!-- Dark attribute weakened momentarily. -->
+		<!-- Level 1: Dark attribute weakened momentarily. Effect 2. -->
+		<!-- Level 2: Dark attribute weakened momentarily. Effect 2. -->
+		<!-- Level 3: Dark attribute weakened momentarily. Effect 2. -->
+		<!-- Level 4: Dark attribute weakened momentarily. Effect 3. -->
+		<!-- Level 5: Dark attribute weakened momentarily. Effect 3. -->
+		<!-- Level 6: Dark attribute weakened momentarily. Effect 3. -->
+		<!-- Level 7: Dark attribute weakened momentarily. Effect 4. -->
+		<!-- Level 8: Dark attribute weakened momentarily. Effect 4. -->
+		<!-- Level 9: Dark attribute weakened momentarily. Effect 4. -->
+		<!-- Level 10: Dark attribute weakened momentarily. Effect 5. -->
+		<!-- Level 11: Dark attribute weakened momentarily. Effect 5. -->
+		<!-- Level 12: Dark attribute weakened momentarily. Effect 5. -->
 		<icon>icon.skill1445</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -872,7 +883,7 @@
 		</effects>
 	</skill>
 	<skill id="5530" toLevel="12" name="Blood Storm">
-		<!-- Delivers a blow and inflicts Bleed on surrounding enemies. -->
+		<!-- Inflicts damage and Bleed on the target simultaneously. Effect 1. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -1039,6 +1050,9 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<reuseDelay>1500</reuseDelay>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5539" toLevel="1" name="Little Angel Agathion Special Skill: Mysterious Power">
 		<!-- Mysterious power with no explanation. Be careful when using! -->
@@ -1058,6 +1072,9 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>1800000</reuseDelay>
 		<trait>ETC</trait>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
 	<skill id="5540" toLevel="1" name="Little Angel Agathion Special Skill: Blessed Escape">
 		<!-- Blessed Escape is available. -->
@@ -1074,6 +1091,7 @@
 		<reuseDelay>86400000</reuseDelay>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1097,6 +1115,7 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>259200000</reuseDelay>
 		<conditions>
+			<condition name="OpNeedAgathion" />
 			<condition name="OpResurrection" />
 		</conditions>
 		<effects>
@@ -1116,8 +1135,11 @@
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<reuseDelay>1500</reuseDelay>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
-	<skill id="5543" toLevel="1" name="Little Devil  Agathion Special Skill: Mysterious Power">
+	<skill id="5543" toLevel="1" name="Little Devil Agathion Special Skill: Mysterious Power">
 		<!-- Mysterious power with no explanation. Be careful when using! -->
 		<icon>icon.skill_agathion_special</icon>
 		<operateType>A2</operateType>
@@ -1135,8 +1157,11 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>1800000</reuseDelay>
 		<trait>ETC</trait>
+		<conditions>
+			<condition name="OpNeedAgathion" />
+		</conditions>
 	</skill>
-	<skill id="5544" toLevel="1" name="Little Devil Agathion Special Skill: Ability of Blessed Escape">
+	<skill id="5544" toLevel="1" name="Little Devil Agathion Special Skill: Blessed Escape">
 		<!-- Blessed Escape is available. -->
 		<icon>icon.skill_agathion_special</icon>
 		<operateType>A1</operateType>
@@ -1151,6 +1176,7 @@
 		<reuseDelay>86400000</reuseDelay>
 		<conditions>
 			<condition name="OpCanEscape" />
+			<condition name="OpNeedAgathion" />
 		</conditions>
 		<effects>
 			<effect name="Escape">
@@ -1174,6 +1200,7 @@
 		<magicLevel>85</magicLevel>
 		<reuseDelay>259200000</reuseDelay>
 		<conditions>
+			<condition name="OpNeedAgathion" />
 			<condition name="OpResurrection" />
 		</conditions>
 		<effects>
@@ -1239,7 +1266,7 @@
 		</effects>
 	</skill>
 	<skill id="5548" toLevel="4" name="Critical Momentum Attack">
-		<!-- Absorbs Soul when physical critical occurs. -->
+		<!-- Absorbs Soul after Critical. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -1328,7 +1355,7 @@
 		</effects>
 	</skill>
 	<skill id="5551" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -1364,7 +1391,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>80</chance>
@@ -1409,7 +1436,7 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5553" toLevel="12" name="Recovery Bonus">
+	<skill id="5553" toLevel="12" name="Recovery">
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
@@ -1602,7 +1629,7 @@
 		<reuseDelay>30000</reuseDelay>
 	</skill>
 	<skill id="5559" toLevel="1" name="Physical Pose">
-		<!-- P. Critical Damage and P. Skill Power increased. -->
+		<!-- Critical rate and P. Atk. skill power are increased. -->
 		<icon>icon.skill0758</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -1647,8 +1674,8 @@
 	</skill>
 	<skill id="5561" toLevel="3" name="Seed of Revenge">
 		<!-- Level 1: The growing seed of revenge. P. Atk. increases. -->
-		<!-- Level 2: The growing seed of revenge. P. Atk. and the probability of P. Critical Hit increase. -->
-		<!-- Level 3: The full grown seed of revenge. P. Atk. and the probability of P. Critical hit/damage increase, and the Insane Crusher can be used. -->
+		<!-- Level 2: The growing seed of revenge. P. Atk. and the probability of Critical Hit increase. -->
+		<!-- Level 3: The full grown seed of revenge. P. Atk. and the probability of Critical hit/damage increase, and the Insane Crusher can be used. -->
 		<icon>
 			<value level="1">icon.skill0761</value>
 			<value level="2">icon.skill0761_2</value>
@@ -1788,7 +1815,7 @@
 	<skill id="5563" toLevel="3" name="Eva's Will">
 		<!-- Level 1: The growing will of Eva. Increases M. Def. -->
 		<!-- Level 2: The growing will of Eva. M. Def. and Water attribute attacking power increase. -->
-		<!-- Level 3: Revealed Eva's will. M. Def., Water attribute attacking power, and P. Critical hit probability increase. Touch of Eva can be used. -->
+		<!-- Level 3: Revealed Eva's will. M. Def., Water attribute attacking power, and Critical hit probability increase. Touch of Eva can be used. -->
 		<icon>
 			<value level="1">icon.skill0786</value>
 			<value level="2">icon.skill0786_2</value>
@@ -1852,9 +1879,9 @@
 		</effects>
 	</skill>
 	<skill id="5564" toLevel="3" name="Pain of Shilen">
-		<!-- Level 1: Shilen's Growing Pain - P. Critical Damage is increased. -->
-		<!-- Level 2: Shilen's Growing Pain - P. Critical Damage and Wind attack attribute are increased. -->
-		<!-- Level 3: Shilen's Growing Pain - P. Critical Damage and Wind attack attribute are increased. In addition, a portion of the damage you inflict on your enemy can be absorbed as HP. The Spirit of Shilen can now be used! -->
+		<!-- Level 1: Shilen's Growing Pain - Critical Damage is increased. -->
+		<!-- Level 2: Shilen's Growing Pain - Critical Damage and Wind attack attribute are increased. -->
+		<!-- Level 3: Shilen's Growing Pain - Critical Damage and Wind attack attribute are increased. In addition, a portion of the damage you inflict on your enemy can be absorbed as HP. The Spirit of Shilen can now be used! -->
 		<icon>
 			<value level="1">icon.skill0788</value>
 			<value level="2">icon.skill0788_2</value>
@@ -1897,7 +1924,7 @@
 			</effect>
 			<effect name="VampiricAttack" fromLevel="3" toLevel="3">
 				<amount>8</amount>
-				<chance>80</chance>
+				<chance>30</chance>
 			</effect>
 			<effect name="CriticalDamage">
 				<amount>20</amount>
@@ -1914,7 +1941,7 @@
 		</effects>
 	</skill>
 	<skill id="5565" toLevel="1" name="Expose Vulnerability">
-		<!-- The probability of P. Critical hit has been increased, and defense power has been decreased. -->
+		<!-- The probability of Critical hit has been increased, and defense power has been decreased. -->
 		<icon>icon.skill0767</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -2084,7 +2111,7 @@
 		</effects>
 	</skill>
 	<skill id="5572" toLevel="1" name="Warrior Ability: Haste">
-		<!-- Momentarily increases Atk. Spd. -->
+		<!-- Warrior's Atk. Spd. Atk. Spd increases momentarily. Excludes damage caused by a skill or ranged attack. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2108,7 +2135,7 @@
 		</effects>
 	</skill>
 	<skill id="5573" toLevel="1" name="Knight Ability: Defense">
-		<!-- P. Def. and M. Def. increases momentarily. -->
+		<!-- Knight's P. Def. P. Def. and M. Def. increases momentarily. -->
 		<icon>icon.skill0110</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2136,7 +2163,7 @@
 		</effects>
 	</skill>
 	<skill id="5574" toLevel="1" name="Rogue Ability: Critical Chance">
-		<!-- Momentarily increases P. Critical Rate. -->
+		<!-- Rogue's Critical. Critical Rate increases momentarily. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2159,8 +2186,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5575" toLevel="1" name="Wizard Ability - Mana Steal">
-		<!-- Steals Mana. -->
+	<skill id="5575" toLevel="1" name="Wizard Ability: Mana Steal">
+		<!-- Wizard's Mana. -->
 		<icon>icon.skill1398</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -2177,7 +2204,7 @@
 		</effects>
 	</skill>
 	<skill id="5576" toLevel="1" name="Enchanter Ability: Barrier">
-		<!-- Becomes invincible momentarily. -->
+		<!-- Enchanter's Defense Barrier. Becomes invincible momentarily. -->
 		<icon>icon.skill1418</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2208,7 +2235,7 @@
 		</effects>
 	</skill>
 	<skill id="5577" toLevel="1" name="Healer Ability: Heal">
-		<!-- Recovers HP. -->
+		<!-- Cure by Healer. -->
 		<icon>icon.skill1011</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -2225,7 +2252,7 @@
 		</effects>
 	</skill>
 	<skill id="5578" toLevel="1" name="Summoner Ability: Spirit">
-		<!-- Being possessed by the ancient summoner, increases P. Atk./Atk. Spd./M. Atk./Casting Spd. -->
+		<!-- Summoner's Possessed Soul. Due to being possessed by the ancient summoner, P. Atk./Atk. Spd./M. Atk./Casting Spd. increase. -->
 		<icon>icon.skill1349</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2302,7 +2329,7 @@
 		</effects>
 	</skill>
 	<skill id="5581" toLevel="1" name="Divine Beast Stun Attack">
-		<!-- Damages and stuns the target simultaneously. Over-hit. Power 704. -->
+		<!-- Deals damage and shock simultaneously. Momentarily inflicts Stun on the enemy. Over-hit. 704 power. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -2324,9 +2351,9 @@
 				<power>704</power>
 				<overHit>true</overHit>
 			</effect>
-			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
-			</effect> <!-- using 1 second due abnormal don't have abnormal time -->
+			<effect name="BlockActions"> <!-- using 1 second due abnormal don't have abnormal time -->
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="5582" toLevel="1" name="Divine Beast Fire Breath">
@@ -2452,7 +2479,9 @@
 		</effects>
 	</skill>
 	<skill id="5586" toLevel="3" name="Pet Might">
-		<!-- Increases P. Atk. for a set time. -->
+		<!-- Level 1: Increases attacking power temporarily. Effect 1. -->
+		<!-- Level 2: Increases attacking power temporarily. Effect 2. -->
+		<!-- Level 3: Increases attacking power temporarily. Effect 3. -->
 		<icon>icon.skill1068</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -2503,7 +2532,9 @@
 		</effects>
 	</skill>
 	<skill id="5587" toLevel="3" name="Pet Shield">
-		<!-- Increases P. Def. for a set time. -->
+		<!-- Level 1: Increases defense power temporarily. Effect 1. -->
+		<!-- Level 2: Increases defense power temporarily. Effect 2. -->
+		<!-- Level 3: Increases defense power temporarily. Effect 3. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -2554,7 +2585,9 @@
 		</effects>
 	</skill>
 	<skill id="5588" toLevel="3" name="Pet Focus">
-		<!-- Temporarily increases P. Critical Rate. -->
+		<!-- Level 1: Momentarily increase the probability of Critical P. Atk. Effect 1. -->
+		<!-- Level 2: Momentarily increase the probability of Critical P. Atk. Effect 2. -->
+		<!-- Level 3: Momentarily increase the probability of Critical P. Atk. Effect 3. -->
 		<icon>icon.skill1077</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -2605,7 +2638,9 @@
 		</effects>
 	</skill>
 	<skill id="5589" toLevel="3" name="Pet Death Whisper">
-		<!-- Temporarily increases P. Critical Damage. -->
+		<!-- Level 1: Momentarily increase the Critical P. Atk. Effect 1. -->
+		<!-- Level 2: Momentarily increase the Critical P. Atk. Effect 2. -->
+		<!-- Level 3: Momentarily increase the Critical P. Atk. Effect 3. -->
 		<icon>icon.skill1242</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -2846,7 +2881,7 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -2878,7 +2913,7 @@
 		</effects>
 	</skill>
 	<skill id="5594" toLevel="1" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- HP decreases from Poison momentarily. Effect 11. -->
 		<icon>icon.skill4036</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2899,7 +2934,7 @@
 		<trait>POISON</trait>
 	</skill>
 	<skill id="5595" toLevel="1" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- HP decreases from bleeding momentarily. Effect 11. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2920,7 +2955,7 @@
 		<trait>BLEED</trait>
 	</skill>
 	<skill id="5596" toLevel="1" name="Flame">
-		<!-- HP decreases momentarily from burning flame. -->
+		<!-- HP decreases from flame momentarily. Effect 11. -->
 		<icon>icon.skill1100</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -2958,8 +2993,20 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5598" toLevel="12" name="Petrification Resistance">
-		<icon>icon.skill0000</icon>
+	<skill id="5598" toLevel="12" name="Petrifaction Attack Resistance">
+		<!-- Level 1: Slightly resistant to Petrifaction. -->
+		<!-- Level 2: Slightly resistant to Petrifaction. -->
+		<!-- Level 3: Slightly resistant to Petrifaction. -->
+		<!-- Level 4: Slightly resistant to Petrifaction. -->
+		<!-- Level 5: Resistant to Petrifaction. -->
+		<!-- Level 6: Resistant to Petrifaction. -->
+		<!-- Level 7: Resistant to Petrifaction. -->
+		<!-- Level 8: Resistant to Petrifaction. -->
+		<!-- Level 9: Highly resistant to Petrifaction. -->
+		<!-- Level 10: Highly resistant to Petrifaction. -->
+		<!-- Level 11: Highly resistant to Petrifaction. -->
+		<!-- Level 12: Petrifaction Immunity -->
+		<icon>icon.skill11359</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>
@@ -2995,7 +3042,19 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5599" toLevel="12" name="Stun Resistance">
+	<skill id="5599" toLevel="12" name="Stun Attack Resistance">
+		<!-- Level 1: Slightly resistant to Sleep. -->
+		<!-- Level 2: Slightly resistant to Sleep. -->
+		<!-- Level 3: Slightly resistant to Sleep. -->
+		<!-- Level 4: Slightly resistant to Sleep. -->
+		<!-- Level 5: Resistant to Stun. -->
+		<!-- Level 6: Resistant to Stun. -->
+		<!-- Level 7: Resistant to Stun. -->
+		<!-- Level 8: Resistant to Stun. -->
+		<!-- Level 9: Highly resistant to Stun. -->
+		<!-- Level 10: Highly resistant to Stun. -->
+		<!-- Level 11: Highly resistant to Stun. -->
+		<!-- Level 12: Stun Immunity -->
 		<icon>icon.skill0000</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>-5</magicCriticalRate>

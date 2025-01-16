@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
 	<skill id="3200" toLevel="3" name="Item Skill: Spell Refresh">
-		<!-- Active Skill: Decreases M. Skill Cooldown for a set time. -->
+		<!-- Active: Temporarily decreases the Cooldown for magic skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -40,10 +40,15 @@
 				<mode>PER</mode>
 				<magicType>1</magicType>
 			</effect>
+			<effect name="Reuse">
+				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3201" toLevel="3" name="Item Skill: Music Refresh">
-		<!-- Active Skill: Decreases the song/dance skill Cooldown for a set time. -->
+		<!-- Active: Temporarily decreases the Cooldown for song/dance skills. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -85,7 +90,7 @@
 		</effects>
 	</skill>
 	<skill id="3202" toLevel="3" name="Item Skill: Refresh">
-		<!-- Active Skill: Decreases the Cooldown for all skills for a set time. Does not apply to skills with fixed cooldowns. -->
+		<!-- Active: Temporarily decreases the Cooldown for all skills except for those with a fixed Cooldown time. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -134,6 +139,11 @@
 				<mode>PER</mode>
 				<magicType>3</magicType>
 			</effect>
+			<effect name="Reuse">
+				<amount>-15</amount>
+				<mode>PER</mode>
+				<magicType>22</magicType>
+			</effect>
 		</effects>
 	</skill>
 	<skill id="3203" toLevel="1" name="Item Skill: Mystery Skill">
@@ -157,7 +167,7 @@
 		<trait>ETC</trait>
 	</skill>
 	<skill id="3204" toLevel="3" name="Item Skill: Reflect Damage">
-		<!-- Active Skill: Allows you to reflect some of the damage received back to the enemy for a set time. -->
+		<!-- Active: Allows you to reflect some of the damage you incurred back to the enemy for a certain amount of time. -->
 		<icon>icon.skill3123</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -189,7 +199,7 @@
 			<value level="2">6</value>
 			<value level="3">7</value>
 		</mpInitialConsume>
-		<reuseDelay>60000</reuseDelay>
+		<reuseDelay>6000</reuseDelay>
 		<effects>
 			<effect name="DamageShield">
 				<amount>
@@ -261,7 +271,7 @@
 		<reuseDelay>12000</reuseDelay>
 	</skill>
 	<skill id="3207" toLevel="10" name="Item Skill: Heal">
-		<!-- Effect: Has a chance of recovering HP when attacked. -->
+		<!-- Chance: Has a chance of restoring HP when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -301,7 +311,7 @@
 		</effects>
 	</skill>
 	<skill id="3208" toLevel="10" name="Item Skill: Blessed Body">
-		<!-- Effect: Has a chance of increasing Max HP for a set time when attacked. -->
+		<!-- Chance: Has a chance of increasing Max HP for a certain amount of time when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -341,7 +351,7 @@
 		</effects>
 	</skill>
 	<skill id="3209" toLevel="10" name="Item Skill: Prayer">
-		<!-- Effect: Increases Heal Received for a set time when attacked. -->
+		<!-- Chance: Has a chance of increasing the effect of HP recovery magic for a certain amount of time when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -381,7 +391,7 @@
 		</effects>
 	</skill>
 	<skill id="3210" toLevel="10" name="Item Skill: Recharge">
-		<!-- Effect: Has a chance of restoring MP when attacked. -->
+		<!-- Chance: Has a chance of restoring MP when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -421,7 +431,7 @@
 		</effects>
 	</skill>
 	<skill id="3211" toLevel="10" name="Item Skill: Blessed Soul">
-		<!-- Effect: Increases Max MP for a set time when attacked. -->
+		<!-- Chance: Increases Max MP for a certain amount of time when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -461,7 +471,7 @@
 		</effects>
 	</skill>
 	<skill id="3212" toLevel="15" name="Item Skill: Mana Gain">
-		<!-- Effect: Increases recovery bonus during MP Recovery through recharge when attacked. -->
+		<!-- Chance: Increases the recharge recovery rate of MP when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -511,7 +521,7 @@
 		</effects>
 	</skill>
 	<skill id="3213" toLevel="10" name="Item Skill: Ritual">
-		<!-- Effect: Restores CP when attacked. -->
+		<!-- Chance: Restores CP when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -551,7 +561,7 @@
 		</effects>
 	</skill>
 	<skill id="3214" toLevel="10" name="Item Skill: Cheer">
-		<!-- Effect: Increases Max CP for a set time when attacked. -->
+		<!-- Chance: Temporarily increases Max CP when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -591,7 +601,7 @@
 		</effects>
 	</skill>
 	<skill id="3215" toLevel="15" name="Item Skill: Might">
-		<!-- Effect: Increases P. Atk. for a set time when attacked. -->
+		<!-- Chance: Temporarily increases P. Atk. when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -641,7 +651,7 @@
 		</effects>
 	</skill>
 	<skill id="3216" toLevel="15" name="Item Skill: Empower">
-		<!-- Effect: Increases M. Atk. for a set time when attacked. -->
+		<!-- Chance: Temporarily increases M. Atk. when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -690,8 +700,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3217" toLevel="10" name="Item Skill: Might in Duel - PvP">
-		<!-- Effect: Increases PvP P. Atk. for a set time when attacked. -->
+	<skill id="3217" toLevel="10" name="Item Skill: Duel Might">
+		<!-- Chance: Temporarily increases PvP P. Atk. when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -731,7 +741,7 @@
 		</effects>
 	</skill>
 	<skill id="3218" toLevel="15" name="Item Skill: Shield">
-		<!-- Effect: Increases P. Def. for a set time when attacked. -->
+		<!-- Chance: Temporarily increases P. Def. when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -781,7 +791,7 @@
 		</effects>
 	</skill>
 	<skill id="3219" toLevel="15" name="Item Skill: Magic Barrier">
-		<!-- Effect: Increases M. Def. for a set time when attacked. -->
+		<!-- Chance: Temporarily increases M. Def. when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -830,8 +840,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3220" toLevel="10" name="Item Skill: Weakness in Duel">
-		<!-- Effect: Decreases enemy's PvP P. Atk. for a set time when attacked -->
+	<skill id="3220" toLevel="10" name="Item Skill: Duel Weakness">
+		<!-- Chance: Temporarily decreases the opponent's PvP P. Atk. when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -871,7 +881,7 @@
 		</effects>
 	</skill>
 	<skill id="3221" toLevel="15" name="Item Skill: Agility">
-		<!-- Effect: Increases P. Evasion for a set time when attacked. -->
+		<!-- Chance: Temporarily increases Evasion when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -921,7 +931,7 @@
 		</effects>
 	</skill>
 	<skill id="3222" toLevel="15" name="Item Skill: Guidance">
-		<!-- Effect: Increases P. Accuracy for a set time when attacked. -->
+		<!-- Chance: Temporarily increases Accuracy when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -971,7 +981,7 @@
 		</effects>
 	</skill>
 	<skill id="3223" toLevel="10" name="Item Skill: Focus">
-		<!-- Effect: Increases P. Critical Rate for a set time when attacked. -->
+		<!-- Chance: Temporarily increases Critical Rate when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1011,7 +1021,7 @@
 		</effects>
 	</skill>
 	<skill id="3224" toLevel="10" name="Item Skill: Wild Magic">
-		<!-- Effect: Increases M. Critical Rate for a set time when attacked. -->
+		<!-- Chance: Temporarily increases M. Critical Rate when attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1051,7 +1061,7 @@
 		</effects>
 	</skill>
 	<skill id="3225" toLevel="15" name="Item Skill: Charm">
-		<!-- Effect: Decreases the enemy's urge to attack you when attacked. -->
+		<!-- Chance: Decreases the enemy's aggression when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1101,7 +1111,7 @@
 		</effects>
 	</skill>
 	<skill id="3226" toLevel="15" name="Item Skill: Slow">
-		<!-- Effect: Momentarily decreases the target's Movement Speed when attacked. -->
+		<!-- Chance: Momentarily decreases the target's Speed when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1151,7 +1161,7 @@
 		</effects>
 	</skill>
 	<skill id="3227" toLevel="15" name="Item Skill: Winter">
-		<!-- Effect: Momentarily decreases the target's Atk. Spd. when attacked. -->
+		<!-- Chance: Momentarily decreases the target's Atk. Spd. when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1201,7 +1211,7 @@
 		</effects>
 	</skill>
 	<skill id="3228" toLevel="10" name="Item Skill: Stun">
-		<!-- Effect: Momentarily stuns the target when attacked. -->
+		<!-- Activated skill: Causes a target to enter the Stun state momentarily if successfully hit. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1241,7 +1251,7 @@
 		</effects>
 	</skill>
 	<skill id="3229" toLevel="10" name="Item Skill: Hold">
-		<!-- Effect: Momentarily holds the target when attacked. Greatly decreases the chance to inflict additional Hold state while effects last. -->
+		<!-- Chance: Momentarily inflicts Hold on the target when you are attacked. Additional chance to be put into hold greatly decreases while the effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1281,7 +1291,7 @@
 		</effects>
 	</skill>
 	<skill id="3230" toLevel="10" name="Item Skill: Sleep">
-		<!-- Effect: Momentarily causes the target to fall asleep when attacked. Greatly decreases the chance to inflict additional Sleep state while effects last. -->
+		<!-- Chance: Momentarily inflicts Sleep on the target when you are attacked. Additional chance to be put into sleep greatly decreases while the effect lasts. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1321,7 +1331,7 @@
 		</effects>
 	</skill>
 	<skill id="3231" toLevel="10" name="Item Skill: Paralyze">
-		<!-- Effect: Momentarily paralyzes the target when attacked. -->
+		<!-- Chance: Momentarily paralyzes the target when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1361,7 +1371,7 @@
 		</effects>
 	</skill>
 	<skill id="3232" toLevel="10" name="Item Skill: Medusa">
-		<!-- Effect: Momentarily petrifies the target when attacked. -->
+		<!-- Chance: Momentarily petrifies the target when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1401,7 +1411,7 @@
 		</effects>
 	</skill>
 	<skill id="3233" toLevel="10" name="Item Skill: Fear">
-		<!-- Effect: Momentarily causes the target to flee in fear when attacked. -->
+		<!-- Chance: Momentarily inflicts Fear on the target and causes it to flee when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1441,7 +1451,21 @@
 		</effects>
 	</skill>
 	<skill id="3234" toLevel="15" name="Item Skill: Poison">
-		<!-- Effect: Momentarily poisons the target when attacked. -->
+		<!-- Level 1: Chance: Momentarily poisons the target when you are attacked. Effect 5. -->
+		<!-- Level 2: Chance: Momentarily poisons the target when you are attacked. Effect 5. -->
+		<!-- Level 3: Chance: Momentarily poisons the target when you are attacked. Effect 6. -->
+		<!-- Level 4: Chance: Momentarily poisons the target when you are attacked. Effect 6. -->
+		<!-- Level 5: Chance: Momentarily poisons the target when you are attacked. Effect 6. -->
+		<!-- Level 6: Chance: Momentarily poisons the target when you are attacked. Effect 7. -->
+		<!-- Level 7: Chance: Momentarily poisons the target when you are attacked. Effect 7. -->
+		<!-- Level 8: Chance: Momentarily poisons the target when you are attacked. Effect 7. -->
+		<!-- Level 9: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
+		<!-- Level 10: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
+		<!-- Level 11: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
+		<!-- Level 12: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
+		<!-- Level 13: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
+		<!-- Level 14: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
+		<!-- Level 15: Chance: Momentarily poisons the target when you are attacked. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1491,7 +1515,21 @@
 		</effects>
 	</skill>
 	<skill id="3235" toLevel="15" name="Item Skill: Bleed">
-		<!-- Effect: Momentarily causes the target to bleed when attacked. -->
+		<!-- Level 1: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 5. -->
+		<!-- Level 2: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 5. -->
+		<!-- Level 3: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 6. -->
+		<!-- Level 4: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 6. -->
+		<!-- Level 5: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 6. -->
+		<!-- Level 6: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 7. -->
+		<!-- Level 7: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 7. -->
+		<!-- Level 8: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 7. -->
+		<!-- Level 9: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
+		<!-- Level 10: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
+		<!-- Level 11: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
+		<!-- Level 12: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
+		<!-- Level 13: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
+		<!-- Level 14: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
+		<!-- Level 15: Chance: Momentarily inflicts Bleed on the target and causes when you are attacked. Effect 8. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1541,7 +1579,7 @@
 		</effects>
 	</skill>
 	<skill id="3236" toLevel="10" name="Item Skill: Silence">
-		<!-- Effect: Momentarily blocks the target's M. Skills when attacked. -->
+		<!-- Chance: Momentarily blocks the target's magic skills when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1581,7 +1619,7 @@
 		</effects>
 	</skill>
 	<skill id="3237" toLevel="10" name="Item Skill: Doom">
-		<!-- Effect: Momentarily blocks the target's P. Skills/M. Skills when attacked. -->
+		<!-- Chance: Momentarily blocks all of the target's physical and magic skills when you are attacked. -->
 		<icon>icon.skill3080</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1621,7 +1659,7 @@
 		</effects>
 	</skill>
 	<skill id="3238" toLevel="10" name="Item Skill: Prayer">
-		<!-- Item Skill: Increases Heal Received when equipped. -->
+		<!-- Passive: Increases the effect of HP recovery magic when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1645,7 +1683,7 @@
 		</effects>
 	</skill>
 	<skill id="3239" toLevel="15" name="Item Skill: Mana Gain">
-		<!-- Item Skill: Increases recovery bonus during MP Recovery through recharge when equipped. -->
+		<!-- Passive: Increases the recharge recovery rate of MP when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1674,7 +1712,7 @@
 		</effects>
 	</skill>
 	<skill id="3240" toLevel="15" name="Item Skill: Might">
-		<!-- Item Skill: Increases P. Atk. when equipped. -->
+		<!-- Passive: Increases P. Atk. when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1719,7 +1757,7 @@
 		</effects>
 	</skill>
 	<skill id="3241" toLevel="15" name="Item Skill: Empower">
-		<!-- Item Skill: Increases M. Atk. when equipped. -->
+		<!-- Passive: Increases M. Atk. when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1747,8 +1785,8 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3243" toLevel="10" name="Item Skill: Might in Duel - PvP">
-		<!-- Item Skill: Increases PvP P. Atk. when equipped. -->
+	<skill id="3243" toLevel="10" name="Item Skill: Duel Might">
+		<!-- Passive: Increases PvP P. Atk. when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1776,7 +1814,7 @@
 		</effects>
 	</skill>
 	<skill id="3244" toLevel="15" name="Item Skill: Shield">
-		<!-- Item Skill: Increases P. Def when equipped. -->
+		<!-- Passive: Increases P. Def. when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1821,7 +1859,7 @@
 		</effects>
 	</skill>
 	<skill id="3245" toLevel="15" name="Item Skill: Magic Barrier">
-		<!-- Item Skill: Increases M. Def when equipped. -->
+		<!-- Passive: Increases M. Def. when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1866,7 +1904,7 @@
 		</effects>
 	</skill>
 	<skill id="3246" toLevel="10" name="Item Skill: Heal Empower">
-		<!-- Item Skill: Increases the amount of Heal given when equipped. -->
+		<!-- Passive: Increases the power of HP recovery magic when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1901,7 +1939,7 @@
 		</effects>
 	</skill>
 	<skill id="3247" toLevel="15" name="Item Skill: Agility">
-		<!-- Item Skill: Increases P. Evasion when equipped. -->
+		<!-- Passive: Increases Evasion when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1930,7 +1968,7 @@
 		</effects>
 	</skill>
 	<skill id="3248" toLevel="15" name="Item Skill: Guidance">
-		<!-- Item Skill: Increases P. Accuracy when equipped. -->
+		<!-- Passive: Increases Accuracy when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1959,7 +1997,7 @@
 		</effects>
 	</skill>
 	<skill id="3249" toLevel="10" name="Item Skill: Focus">
-		<!-- Item Skill: Increases P. Critical Rate when equipped. -->
+		<!-- Passive: Increases Critical Rate when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -1983,7 +2021,7 @@
 		</effects>
 	</skill>
 	<skill id="3250" toLevel="10" name="Item Skill: Wild Magic">
-		<!-- Item Skill: Increases M. Critical Rate when equipped. -->
+		<!-- Passive: Increases M. Critical Rate when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2007,7 +2045,7 @@
 		</effects>
 	</skill>
 	<skill id="3251" toLevel="10" name="Item Skill: Weight Limit">
-		<!-- Passive: Weight limit x2 when equipped. -->
+		<!-- Passive: Increases weight limit by 2 times. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2031,7 +2069,7 @@
 		</effects>
 	</skill>
 	<skill id="3252" toLevel="10" name="Item Skill: Eva's Kiss">
-		<!-- Item Skill: Increases Lung Capacity when equipped. -->
+		<!-- Passive: Increases lung capacity when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2079,7 +2117,7 @@
 		</effects>
 	</skill>
 	<skill id="3254" toLevel="15" name="Item Skill: Iron Body">
-		<!-- Passive: Increases Terrain Damage Resistance when equipped. -->
+		<!-- Passive: Increases Resistance to damage from falling when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2103,12 +2141,11 @@
 		<effects>
 			<effect name="AreaDamage">
 				<amount>-40</amount>
-				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="3255" toLevel="8" name="Item Skill: Skill Clarity">
-		<!-- Passive: Decreases P. Skills MP Consumption when equipped. -->
+		<!-- Passive: Decreases MP Consumption for physical skills when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2140,7 +2177,7 @@
 		</effects>
 	</skill>
 	<skill id="3256" toLevel="8" name="Item Skill: Spell Clarity">
-		<!-- Passive: Decreases M. Skill MP Consumption when equipped. -->
+		<!-- Passive: Decreases MP Consumption for magic skills when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2172,7 +2209,7 @@
 		</effects>
 	</skill>
 	<skill id="3257" toLevel="3" name="Item Skill: Music Clarity">
-		<!-- Passive: Decreases song/dance skill MP Consumption when equipped. -->
+		<!-- Passive: Decreases MP Consumption for song/dance skills when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2230,7 +2267,7 @@
 		</effects>
 	</skill>
 	<skill id="3259" toLevel="3" name="Item Skill: Reflect Damage">
-		<!-- Passive: Allows you to reflect some of the damage incurred back to the enemy when equipped. -->
+		<!-- Passive: Increases the ability to reflect some of the damage you incur back to the enemy when equipped. -->
 		<icon>icon.skill3238</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
@@ -2246,6 +2283,45 @@
 					<value level="2">15</value>
 					<value level="3">20</value>
 				</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3260" toLevel="1" name="Forgiveness">
+		<!-- Sends mutated animals a Heart with love. -->
+		<icon>icon.skill3260</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>500</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-1</effectPoint>
+		<effectRange>700</effectRange>
+		<hitTime>2500</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>3000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>13031</item>
+					<item>13032</item>
+					<item>13033</item>
+					<item>13034</item>
+					<item>13035</item>
+					<item>13120</item>
+					<item>13121</item>
+					<item>13122</item>
+					<item>13123</item>
+					<item>13124</item>
+				</npcIds>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RealDamage">
+				<power>100</power>
 			</effect>
 		</effects>
 	</skill>
@@ -2267,8 +2343,47 @@
 		<reuseDelay>3000</reuseDelay>
 		<staticReuse>true</staticReuse>
 	</skill>
+	<skill id="3262" toLevel="1" name="Pardon">
+		<!-- Continuously sends two hearts filled with love to mutated animals. -->
+		<icon>icon.skill3260</icon>
+		<operateType>A1</operateType>
+		<targetType>ENEMY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<castRange>500</castRange>
+		<coolTime>800</coolTime>
+		<effectPoint>-1</effectPoint>
+		<effectRange>700</effectRange>
+		<hitTime>3200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<mpConsume>1</mpConsume>
+		<reuseDelay>40000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="OpTargetNpc">
+				<npcIds>
+					<item>13031</item>
+					<item>13032</item>
+					<item>13033</item>
+					<item>13034</item>
+					<item>13035</item>
+					<item>13120</item>
+					<item>13121</item>
+					<item>13122</item>
+					<item>13123</item>
+					<item>13124</item>
+				</npcIds>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RealDamage">
+				<power>200</power>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="3263" toLevel="1" name="Blessed Resurrection">
-		<!-- Blessed Resurrection is available. -->
+		<!-- Allows the use of Blessed Resurrection. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>PC_BODY</targetType>
@@ -2294,7 +2409,7 @@
 		</effects>
 	</skill>
 	<skill id="3264" toLevel="1" name="Blessed Escape">
-		<!-- Blessed Escape is available. -->
+		<!-- Allows the use of Blessed Escape. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>SELF</targetType>
@@ -2378,7 +2493,7 @@
 		<magicLevel>75</magicLevel>
 		<effects>
 			<effect name="SummonAgathion">
-				<npcId>16028</npcId>
+				<npcId>16028</npcId> <!-- Lord Agathion -->
 			</effect>
 		</effects>
 	</skill>
@@ -2395,7 +2510,7 @@
 		<magicLevel>65</magicLevel>
 		<effects>
 			<effect name="SummonAgathion">
-				<npcId>16027</npcId>
+				<npcId>16027</npcId> <!-- Rainbow Agathion -->
 			</effect>
 		</effects>
 	</skill>
@@ -2412,600 +2527,697 @@
 		<magicLevel>65</magicLevel>
 		<effects>
 			<effect name="SummonAgathion">
-				<npcId>16026</npcId>
+				<npcId>16026</npcId> <!-- Beastly Agathion -->
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3271" toLevel="2" name="Blue Talisman - P. Crit.">
-		<!-- Level 1: P. Critical Rate +10. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<!-- Level 2: P. Critical Rate +20. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-		</icon>
-		<operateType>P</operateType>
+	<skill id="3271" toLevel="1" name="Blue Talisman - P. Atk.">
+		<!-- Increases P. Atk with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
-		<effects>
-			<effect name="CriticalRate">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-				</amount>
-				<mode>DIFF</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3272" toLevel="3" name="Blue Talisman - P. Atk.">
-		<!-- Level 1: P. Atk. +3%. Effects from two such Talismans do not stack. -->
-		<!-- Level 2: P. Atk. +4%. Effects from two such Talismans do not stack. -->
-		<!-- Level 3: P. Atk. +5%. Effects from two such Talismans do not stack. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="PhysicalAttack">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">4</value>
-					<value level="3">5</value>
-				</amount>
-				<mode>PER</mode>
+				<amount>63</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3273" toLevel="3" name="Blue Talisman - P. Def.">
-		<!-- Level 1: P. Def. +3%. Effects from two such Talismans do not stack. -->
-		<!-- Level 2: P. Def. +5%. Effects from two such Talismans do not stack. -->
-		<!-- Level 3: M. Def. +6%. Effects from two such Talismans do not stack. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
+	<skill id="3272" toLevel="1" name="Blue Talisman - P. Def.">
+		<!-- Increases P. Def. with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="PhysicalDefence">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">5</value>
-					<value level="3">6</value>
-				</amount>
-				<mode>PER</mode>
+				<amount>72</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3274" toLevel="3" name="Blue Talisman - Physical Skill Evasion Rate">
-		<!-- Level 1: P. Skill Evasion +10%. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<!-- Level 2: P. Skill Evasion +15%. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<!-- Level 3: P. Skill Evasion +18%. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
+	<skill id="3273" toLevel="1" name="Red Talisman - HP/CP Recovery">
+		<!-- Recover HP/CP with the power of Talisman. -->
+		<icon>icon.etc_talisman_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>300000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="PhysicalEvasion">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">18</value>
-				</amount>
+			<effect name="Heal">
+				<power>200</power>
+			</effect>
+			<effect name="Cp">
+				<amount>200</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3274" toLevel="1" name="Blue Talisman - Shield Defense">
+		<!-- Increases Shield Defense with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="ShieldDefence">
+				<amount>220</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3275" toLevel="1" name="Blue Talisman - Shield Defense">
+		<!-- Increases Shield Defense Rate with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="ShieldDefenceRate">
+				<amount>30</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3275" toLevel="2" name="Blue Talisman - M. Crit.">
-		<!-- Level 1: M. Critical Rate +10. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<!-- Level 2: M. Critical Rate +20. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-		</icon>
-		<operateType>P</operateType>
+	<skill id="3276" toLevel="1" name="Blue Talisman - M. Def.">
+		<!-- Increases M. Def. with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-		</magicLevel>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3277" toLevel="1" name="Blue Talisman - M. Critical Rate">
+		<!-- Increases M. Critical Rate with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
 			<effect name="MagicCriticalRate">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">20</value>
-				</amount>
+				<amount>2</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3276" toLevel="3" name="Blue Talisman - M. Atk.">
-		<!-- Level 1: M. Atk. +3%. Effects from two such Talismans do not stack. -->
-		<!-- Level 2: M. Atk. +4%. Effects from two such Talismans do not stack. -->
-		<!-- Level 3: M. Atk. +5%. Effects from two such Talismans do not stack. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
-		<effects>
-			<effect name="MagicalAttack">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">4</value>
-					<value level="3">5</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3277" toLevel="3" name="Blue Talisman - M. Def.">
-		<!-- Level 1: M. Def. +3%. Effects from two such Talismans do not stack. -->
-		<!-- Level 2: Magic Skill Evasion Rate +15%. Effects from two such Talismans do not stack. -->
-		<!-- Level 3: P. Def. +6%. Effects from two such Talismans do not stack. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
-		<effects>
-			<effect name="MagicalDefence">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">5</value>
-					<value level="3">6</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3278" toLevel="3" name="Blue Talisman - Magic Skill Evasion Rate">
-		<!-- Level 1: M. Skill Evasion +10%. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<!-- Level 2: M. Skill Evasion +15%. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<!-- Level 3: M. Skill Evasion +18%. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
-		<effects>
-			<effect name="MagicalEvasion">
-				<amount>
-					<value level="1">10</value>
-					<value level="2">15</value>
-					<value level="3">18</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3279" toLevel="3" name="Blue Talisman - Max. HP">
-		<!-- Level 1: Max. HP +3%. Effects from two such Talismans do not stack. -->
-		<!-- Level 2: Max. HP +5%. Effects from two such Talismans do not stack. -->
-		<!-- Level 3: Max HP +7%. Effects from two such Talismans do not stack. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
-		<effects>
-			<effect name="MaxHp">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">5</value>
-					<value level="3">7</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3280" toLevel="3" name="Blue Talisman - Max. MP">
-		<!-- Level 1: Max. MP +3%. Effects from two such Talismans do not stack. -->
-		<!-- Level 2: Magic Skill Evasion Rate +15%. Effects from two such Talismans do not stack. -->
-		<!-- Level 3: Max MP +7%. Effects from two such Talismans do not stack. -->
-		<icon>
-			<value level="1">icon.etc_talisman_i01</value>
-			<value level="2">icon.etc_talisman_i00</value>
-			<value level="3">icon.etc_wise_man_stone_i04</value>
-		</icon>
-		<operateType>P</operateType>
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>
-			<value level="1">55</value>
-			<value level="2">55</value>
-			<value level="3">55</value>
-		</magicLevel>
-		<effects>
-			<effect name="MaxMp">
-				<amount>
-					<value level="1">3</value>
-					<value level="2">5</value>
-					<value level="3">7</value>
-				</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3281" toLevel="1" name="Grey Talisman Box - Guard">
-		<!-- For 10 sec., can protect from debuffs 5 times, when used. Effects from two such Talismans do not stack. Cooldown - 5 min. -->
-		<icon>icon.etc_talisman_i07</icon>
+	<skill id="3278" toLevel="1" name="Red Talisman - Mental Regeneration">
+		<!-- Increases MP Recovery Rate with the power of Talisman. -->
+		<icon>icon.etc_talisman_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
+		<abnormalTime>120</abnormalTime>
 		<abnormalType>TALISMAN</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>532</effectPoint>
-		<hitTime>3000</hitTime>
+		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
-		<reuseDelay>300000</reuseDelay>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="AbnormalShield">
-				<times>5</times>
+			<effect name="MpRegen">
+				<amount>10</amount>
+				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3282" toLevel="1" name="Grey Talisman - Denial">
-		<!-- Removes a debuff when used. Effects from two such Talismans do not stack. Cooldown - 5 min. -->
-		<icon>icon.etc_talisman_i07</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<basicProperty>NONE</basicProperty>
-		<canCastWhileDisabled>true</canCastWhileDisabled>
-		<effectPoint>532</effectPoint>
-		<hitTime>3000</hitTime>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>55</magicLevel>
-		<reuseDelay>300000</reuseDelay>
-		<effects>
-			<effect name="DispelByCategory">
-				<slot>DEBUFF</slot>
-				<rate>100</rate>
-				<max>-1</max>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3283" toLevel="1" name="Grey Talisman - Benefaction">
-		<!-- For 10 sec., P. Def. +1800 and M. Def. +1620. Buff-canceling Attack Resistance +80%. Effects from two such Talismans do not stack. Cooldown - 15 min. -->
-		<icon>icon.etc_talisman_i07</icon>
+	<skill id="3279" toLevel="1" name="Red Talisman - Meditation">
+		<!-- Greatly increases MP Recovery Rate with the power of Talisman. Immobilized while being healed. -->
+		<icon>icon.etc_talisman_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
+		<abnormalTime>30</abnormalTime>
 		<abnormalType>TALISMAN</abnormalType>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>532</effectPoint>
-		<hitTime>3000</hitTime>
+		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<removedOnDamage>true</removedOnDamage>
 		<reuseDelay>900000</reuseDelay>
 		<staticReuse>true</staticReuse>
 		<effects>
+			<effect name="BlockActions" />
+			<effect name="ManaHealOverTime">
+				<power>27</power>
+				<ticks>5</ticks>
+			</effect>
 			<effect name="PhysicalDefence">
-				<amount>1800</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="MagicalDefence">
-				<amount>1620</amount>
-				<mode>DIFF</mode>
-			</effect>
-			<effect name="ResistDispelByCategory">
-				<amount>-80</amount>
-				<slot>BUFF</slot>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3284" toLevel="1" name="Grey Talisman - Block">
-		<!-- For 15 seconds, restricts the target's HP recovery to 70% when used during PvP. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. Can only be used on a PC. Cooldown is 4 minutes. -->
-		<icon>icon.etc_talisman_i07</icon>
-		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>TALISMAN</abnormalType>
-		<activateRate>70</activateRate>
-		<affectScope>SINGLE</affectScope>
-		<basicProperty>MAGIC</basicProperty>
-		<castRange>900</castRange>
-		<effectPoint>-679</effectPoint>
-		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>55</magicLevel>
-		<reuseDelay>180000</reuseDelay>
-		<effects>
-			<effect name="LimitHp">
-				<amount>-70</amount>
+				<amount>-90</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3285" toLevel="1" name="Grey Talisman - Gravity">
-		<!-- For 15 seconds, target's Atk. Spd. and Casting Spd. -20% when used. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. Cooldown is 4 minutes. -->
-		<icon>icon.etc_talisman_i07</icon>
+	<skill id="3280" toLevel="1" name="Blue Talisman - Invisibility">
+		<!-- Uses power of Talisman to disable preemptive attacks from enemies. -->
+		<icon>icon.etc_talisman_i01</icon>
 		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
+		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
+		<abnormalTime>120</abnormalTime>
 		<abnormalType>TALISMAN</abnormalType>
-		<activateRate>70</activateRate>
+		<abnormalVisualEffect>STEALTH</abnormalVisualEffect>
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
-		<castRange>600</castRange>
-		<effectPoint>-679</effectPoint>
-		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
-		<reuseDelay>180000</reuseDelay>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>240000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="PhysicalAttackSpeed">
-				<amount>-20</amount>
-				<mode>PER</mode>
+			<effect name="SilentMove">
+				<chance>100</chance>
 			</effect>
-			<effect name="MagicalAttackSpeed">
-				<amount>-20</amount>
-				<mode>PER</mode>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3286" toLevel="1" name="Grey Talisman - Bond">
-		<!-- For 15 seconds, target's Movement Speed -30% when used. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. Cooldown is 4 minutes. -->
-		<icon>icon.etc_talisman_i07</icon>
-		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>TALISMAN</abnormalType>
-		<activateRate>70</activateRate>
-		<affectScope>SINGLE</affectScope>
-		<castRange>600</castRange>
-		<effectPoint>-655</effectPoint>
-		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>55</magicLevel>
-		<reuseDelay>180000</reuseDelay>
-		<effects>
 			<effect name="Speed">
-				<amount>-30</amount>
+				<amount>-40</amount>
 				<mode>PER</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3287" toLevel="1" name="Yellow Talisman - Guard">
-		<!-- For 10 sec., can protect from debuffs 5 times, when used. Effects from two such Talismans do not stack. Cooldown - 4 min. -->
-		<icon>icon.etc_talisman_i02</icon>
+	<skill id="3281" toLevel="1" name="Red Talisman - Clarity">
+		<!-- Decreases MP Consumption for a skill with the power of the Talisman. -->
+		<icon>icon.etc_talisman_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
+		<abnormalTime>300</abnormalTime>
 		<abnormalType>TALISMAN</abnormalType>
 		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<effectPoint>532</effectPoint>
-		<hitTime>3000</hitTime>
+		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
-		<reuseDelay>240000</reuseDelay>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="AbnormalShield">
-				<times>5</times>
+			<effect name="MagicMpCost">
+				<amount>-4</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-10</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3288" toLevel="1" name="Yellow Talisman - Denial">
-		<!-- Removes a debuff when used. Effects from two such Talismans do not stack. Cooldown - 4 min. -->
-		<icon>icon.etc_talisman_i02</icon>
-		<operateType>A2</operateType>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<canCastWhileDisabled>true</canCastWhileDisabled>
-		<effectPoint>532</effectPoint>
-		<hitTime>3000</hitTime>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>55</magicLevel>
-		<reuseDelay>240000</reuseDelay>
-		<effects>
-			<effect name="DispelByCategory">
-				<slot>DEBUFF</slot>
-				<rate>100</rate>
-				<max>-1</max>
-			</effect>
-		</effects>
-	</skill>
-	<skill id="3289" toLevel="1" name="Yellow Talisman - Benefaction">
-		<!-- For 10 seconds, P. Def. +3600 and M. Def. +3240, when used. Buff-canceling Attack Resistance +80%. Effects from two such Talismans do not stack. Cooldown - 15 min. -->
-		<icon>icon.etc_talisman_i02</icon>
+	<skill id="3282" toLevel="1" name="Red Talisman - Maximum Clarity">
+		<!-- Decreases MP Consumption for a skill with the power of the Talisman. -->
+		<icon>icon.etc_talisman_i00</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>10</abnormalTime>
+		<abnormalTime>90</abnormalTime>
 		<abnormalType>TALISMAN</abnormalType>
 		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
 		<effectPoint>532</effectPoint>
-		<hitTime>3000</hitTime>
+		<hitTime>4000</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
 		<reuseDelay>900000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
+			<effect name="MagicMpCost">
+				<amount>-100</amount>
+				<mode>PER</mode>
+				<magicType>1</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-100</amount>
+				<mode>PER</mode>
+				<magicType>0</magicType>
+			</effect>
+			<effect name="MagicMpCost">
+				<amount>-100</amount>
+				<mode>PER</mode>
+				<magicType>3</magicType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3283" toLevel="1" name="Blue Talisman - Healing">
+		<!-- Increases the power of HP recovery magic. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>300000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="HealEffect">
+				<amount>100</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3284" toLevel="1" name="Blue Talisman - Divine Protection">
+		<!-- Significantly increases P. Def. and M. Def. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>900000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>2700</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="PhysicalDefence">
 				<amount>3600</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="MagicalDefence">
-				<amount>3240</amount>
+		</effects>
+	</skill>
+	<skill id="3285" toLevel="1" name="Blue Talisman - Berserker">
+		<!-- Temporarily decrease P. Def./M. Def./Evasion and increases P. Atk./M. Atk./Atk. Spd./Casting Spd./speed with the power of Talisman. -->
+		<icon>icon.etc_talisman_i01</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>120</abnormalTime>
+		<abnormalType>TALISMAN</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>532</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>8.7</amount>
 				<mode>DIFF</mode>
 			</effect>
-			<effect name="ResistDispelByCategory">
-				<amount>-80</amount>
-				<slot>BUFF</slot>
+			<effect name="MagicalAttack">
+				<amount>10.1</amount>
+				<mode>DIFF</mode>
 			</effect>
-		</effects>
-	</skill>
-	<skill id="3290" toLevel="1" name="Yellow Talisman - Block">
-		<!-- For 15 seconds, restricts the target's HP recovery to 70% when used during PvP. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. Can only be used on a PC. Cooldown is 3 minutes. -->
-		<icon>icon.etc_talisman_i02</icon>
-		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>TALISMAN</abnormalType>
-		<activateRate>70</activateRate>
-		<affectScope>SINGLE</affectScope>
-		<castRange>900</castRange>
-		<effectPoint>-679</effectPoint>
-		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>55</magicLevel>
-		<reuseDelay>120000</reuseDelay>
-		<effects>
-			<effect name="LimitHp">
-				<amount>-70</amount>
-				<mode>PER</mode>
+			<effect name="Speed">
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
-		</effects>
-	</skill>
-	<skill id="3291" toLevel="1" name="Yellow Talisman - Gravity">
-		<!-- For 15 seconds, target's Atk. Spd. and Casting Spd. -20% when used. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. Cooldown is 3 minutes. -->
-		<icon>icon.etc_talisman_i02</icon>
-		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>TALISMAN</abnormalType>
-		<activateRate>70</activateRate>
-		<affectScope>SINGLE</affectScope>
-		<castRange>600</castRange>
-		<effectPoint>-679</effectPoint>
-		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
-		<isMagic>2</isMagic> <!-- Static Skill -->
-		<magicCriticalRate>5</magicCriticalRate>
-		<magicLevel>55</magicLevel>
-		<reuseDelay>120000</reuseDelay>
-		<effects>
+			<effect name="MagicalDefence">
+				<amount>-11</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>-13.6</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="PhysicalEvasion">
+				<amount>-1</amount>
+				<mode>DIFF</mode>
+			</effect>
 			<effect name="PhysicalAttackSpeed">
-				<amount>-20</amount>
-				<mode>PER</mode>
+				<amount>4</amount>
+				<mode>DIFF</mode>
 			</effect>
 			<effect name="MagicalAttackSpeed">
-				<amount>-20</amount>
-				<mode>PER</mode>
+				<amount>3</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3292" toLevel="1" name="Yellow Talisman - Bond">
-		<!-- For 15 seconds, target's Movement Speed -30% when used. When two or more Talismans of identical effects are equipped, the effect of only one Talisman will be applied. Cooldown is 4 minutes -->
-		<icon>icon.etc_talisman_i02</icon>
-		<operateType>A2</operateType>
-		<targetType>ENEMY</targetType>
-		<abnormalLevel>1</abnormalLevel>
-		<abnormalTime>15</abnormalTime>
-		<abnormalType>TALISMAN</abnormalType>
-		<activateRate>70</activateRate>
+	<skill id="3286" toLevel="1" name="Black Talisman - Mending">
+		<!-- Cure bleeding with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
 		<affectScope>SINGLE</affectScope>
-		<castRange>600</castRange>
-		<effectPoint>-655</effectPoint>
-		<hitTime>3000</hitTime>
-		<isDebuff>true</isDebuff>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
 		<isMagic>2</isMagic> <!-- Static Skill -->
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
-		<reuseDelay>120000</reuseDelay>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
 		<effects>
-			<effect name="Speed">
-				<amount>-30</amount>
-				<mode>PER</mode>
+			<effect name="DispelBySlot">
+				<dispel>BLEEDING,9</dispel>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3293" toLevel="1" name="Talisman of Darkness - Healing Power">
-		<!-- Healing Power +4%. Effects from two such Talismans do not stack. -->
-		<icon>icon.etc_wise_man_stone_i04</icon>
+	<skill id="3287" toLevel="1" name="Black Talisman - Physical Freedom">
+		<!-- Cancels Physical Movement Inability State with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>ROOT_PHYSICALLY,9</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3288" toLevel="1" name="Black Talisman - Arcane Freedom">
+		<!-- Cancels Magical Movement Inability State with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>ROOT_MAGICALLY,9</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3289" toLevel="1" name="Black Talisman - Escape">
+		<!-- Cancels All Movement Inability State with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3290" toLevel="1" name="Black Talisman - Rescue">
+		<!-- Cancels Physical Skill Inability State with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SILENCE_PHYSICAL,9</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3291" toLevel="1" name="Black Talisman - Vocalization">
+		<!-- Cancels Magical Skill Inability State with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SILENCE,9</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3292" toLevel="1" name="Black Talisman - Free Speech">
+		<!-- Cancels Skill Inability State with the power of Talisman. -->
+		<icon>icon.etc_talisman_i05</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>532</effectPoint>
+		<hitTime>1200</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<mpConsume>40</mpConsume>
+		<mpInitialConsume>10</mpInitialConsume>
+		<reuseDelay>360000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>SILENCE_ALL,9</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3293" toLevel="1" name="Yellow Talisman - P. Atk.">
+		<!-- Increases P. Atk when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
 		<effects>
-			<effect name="Heal">
-				<power>4</power>
-				<mode>PER</mode>
+			<effect name="PhysicalAttack">
+				<amount>20.8</amount>
+				<mode>DIFF</mode>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="3294" toLevel="1" name="Talisman of Darkness - Power of Healing Magic">
-		<!-- Power of healing magic +43. Effects from two such Talismans do not stack. -->
-		<icon>icon.etc_wise_man_stone_i04</icon>
+	<skill id="3294" toLevel="1" name="Yellow Talisman - M. Atk.">
+		<!-- Increases M. Atk when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
 		<operateType>P</operateType>
 		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>55</magicLevel>
 		<effects>
-			<effect name="HealEffect">
-				<amount>43</amount>
+			<effect name="MagicalAttack">
+				<amount>24.3</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3295" toLevel="1" name="Yellow Talisman - P. Def.">
+		<!-- Increases P. Def. when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>32.8</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3296" toLevel="1" name="Yellow Talisman - M. Def.">
+		<!-- Increases M. Def. when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>26.4</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3297" toLevel="1" name="Yellow Talisman - Accuracy">
+		<!-- Increases Accuracy when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="Accuracy">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3298" toLevel="1" name="Yellow Talisman - Evasion">
+		<!-- Increases Evasion when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="PhysicalEvasion">
+				<amount>2</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="3299" toLevel="1" name="Yellow Talisman - Critical Damage">
+		<!-- Increases Critical Damage when equipped. -->
+		<icon>icon.etc_talisman_i02</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>55</magicLevel>
+		<effects>
+			<effect name="CriticalDamage">
+				<amount>30</amount>
 				<mode>DIFF</mode>
 			</effect>
 		</effects>

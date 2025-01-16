@@ -68,7 +68,12 @@
 		</effects>
 	</skill>
 	<skill id="5201" toLevel="6" name="Pet Concentration">
-		<!-- Temporarily decreases Magic Cancellation Rate of damage. -->
+		<!-- Level 1: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 1. -->
+		<!-- Level 2: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 2. -->
+		<!-- Level 3: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 3. -->
+		<!-- Level 4: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 4. -->
+		<!-- Level 5: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 5. -->
+		<!-- Level 6: Momentarily lowers the probability of magic being canceled due to damage taken. Effect 6. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
 		<targetType>OWNER_PET</targetType>
@@ -137,7 +142,7 @@
 		</effects>
 	</skill>
 	<skill id="5202" toLevel="12" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -189,7 +194,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -241,7 +246,7 @@
 			<value level="11">42</value>
 			<value level="12">43</value>
 		</mpConsume>
-		<reuseDelay>30000</reuseDelay>
+		<reuseDelay>6000</reuseDelay>
 		<trait>DERANGEMENT</trait>
 		<effects>
 			<effect name="BlockControl" />
@@ -272,7 +277,7 @@
 		</effects>
 	</skill>
 	<skill id="5206" toLevel="1" name="Decrease Speed">
-		<!-- Mutant Curse: Movement Speed momentarily decreased by 15%. -->
+		<!-- Curse of mutated animals: Speed decreases momentarily. Effect 1. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -303,7 +308,7 @@
 		</effects>
 	</skill>
 	<skill id="5207" toLevel="1" name="Decrease Atk. Spd.">
-		<!-- Mutant Curse: Atk. Spd. momentarily decreased by 15%. -->
+		<!-- Curse of mutated animals: Atk. Spd. decreases momentarily. Effect 1. -->
 		<icon>icon.skill4038</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -333,7 +338,7 @@
 		</effects>
 	</skill>
 	<skill id="5208" toLevel="1" name="Wind Walk (Event)">
-		<!-- Movement Speed temporarily increased by 33. -->
+		<!-- Speed increases temporarily. Effect 2. -->
 		<icon>icon.skill1204</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -357,7 +362,7 @@
 		</effects>
 	</skill>
 	<skill id="5209" toLevel="1" name="Shield (Event)">
-		<!-- Movement Speed temporarily increased by 15%. -->
+		<!-- P. Def. increases temporarily. Effect 3. -->
 		<icon>icon.skill1040</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -381,7 +386,7 @@
 		</effects>
 	</skill>
 	<skill id="5210" toLevel="1" name="Blessed Body (Event)">
-		<!-- Max HP temporarily increased by 35% -->
+		<!-- Momentarily increases maximum HP. Effect 6. -->
 		<icon>icon.skill1045</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_NOT</targetType>
@@ -405,7 +410,7 @@
 		</effects>
 	</skill>
 	<skill id="5211" toLevel="1" name="Vampiric Rage (Event)">
-		<!-- Momentarily restores HP using damage inflicted upon the enemy with a certain probability. -->
+		<!-- Uses damage inflicted upon the enemy to temporarily restore HP with a certain probability. Effect 4. -->
 		<icon>icon.skill1268</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -429,7 +434,7 @@
 		</effects>
 	</skill>
 	<skill id="5212" toLevel="1" name="Regeneration (Event)">
-		<!-- HP Recovery Bonus temporarily increased by 20%. -->
+		<!-- HP recovery bonus is increased for a fixed time. Effect 3. -->
 		<icon>icon.skill1044</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -453,7 +458,7 @@
 		</effects>
 	</skill>
 	<skill id="5213" toLevel="1" name="Haste (Event)">
-		<!-- Atk. Spd. temporarily increased. -->
+		<!-- Atk. Spd. increases temporarily. Effect 1. -->
 		<icon>icon.skill1086</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -477,7 +482,7 @@
 		</effects>
 	</skill>
 	<skill id="5214" toLevel="1" name="Blessed Soul (Event)">
-		<!-- Momentarily increases maximum MP. -->
+		<!-- Momentarily increases maximum MP. Effect 6. -->
 		<icon>icon.skill1048</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -501,7 +506,7 @@
 		</effects>
 	</skill>
 	<skill id="5215" toLevel="1" name="Acumen (Event)">
-		<!-- Casting Spd. temporarily increased by 30%. -->
+		<!-- Momentarily increases Casting Spd. Effect 3. -->
 		<icon>icon.skill1085</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -525,7 +530,7 @@
 		</effects>
 	</skill>
 	<skill id="5216" toLevel="1" name="Concentration (Event)">
-		<!-- Momentarily lowers the probability of magic being canceled due to damage taken. -->
+		<!-- Momentarily decreases the probability of magic being canceled due to damage taken. Effect 1. -->
 		<icon>icon.skill1078</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -549,7 +554,7 @@
 		</effects>
 	</skill>
 	<skill id="5217" toLevel="1" name="Empower (Event)">
-		<!-- M. Atk. temporarily increased by 55%. -->
+		<!-- M. Atk. increases temporarily. Effect 1. -->
 		<icon>icon.skill1059</icon>
 		<operateType>A2</operateType>
 		<targetType>TARGET</targetType>
@@ -585,7 +590,7 @@
 		<magicLevel>76</magicLevel>
 	</skill>
 	<skill id="5219" toLevel="1" name="Giant Mutant Stun">
-		<!-- Curse of giant mutated animal: Stunned and unable to move momentarily. -->
+		<!-- Giant Mutant Curse: Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY_ONLY</targetType>
@@ -613,7 +618,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -720,7 +725,7 @@
 		</effects>
 	</skill>
 	<skill id="5225" toLevel="1" name="Invincibility">
-		<!-- Invincible against normal attacks, skills, and debuff cancel/debuffs. -->
+		<!-- Invincible against general attack and skill, buff/de-buff. -->
 		<icon>icon.skill1427</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -731,9 +736,11 @@
 		<affectScope>SINGLE</affectScope>
 		<basicProperty>NONE</basicProperty>
 		<effectPoint>100</effectPoint>
+		<hitTime>3500</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
 		<magicLevel>85</magicLevel>
 		<mpConsume>60</mpConsume>
+		<reuseDelay>6000</reuseDelay>
 		<specialLevel>-1</specialLevel>
 		<effects>
 			<effect name="DamageBlock">
@@ -766,8 +773,111 @@
 		<mpConsume>60</mpConsume>
 		<mpInitialConsume>15</mpInitialConsume>
 	</skill>
+	<skill id="5227" toLevel="2" name="Ground Strike">
+		<!-- Powerful attack on surrounding area. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>300</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-100</effectPoint>
+		<hitTime>3000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">85</value>
+			<value level="2">98</value>
+		</magicLevel>
+		<mpConsume>187</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">100756</value>
+					<value level="2">213631</value>
+				</power>
+				<criticalChance>20</criticalChance>
+			</effect>
+			<effect name="FlyAway"> <!-- TODO: {i_fly_away;curve;push;200} -->
+				<radius>200</radius>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5228" toLevel="2" name="Jump Attack">
+		<!-- Powerful attack on surrounding area. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<abnormalResists>TURN_FLEE;KNOCKDOWN;DEPORT;SILENCE;PARALYZE;ABSORB;DISARM;SILENCE_PHYSICAL;SILENCE_ALL;CHANGEBODY;TURN_STONE;DERANGEMENT;AIRBIND;SLEEP;OBLIVION;MIRAGE;MIRAGE_TRAP;ROOT_MAGICALLY;ROOT_PHYSICALLY;STUN;PUBLIC_SLOT</abnormalResists>
+		<affectObject>NOT_FRIEND</affectObject>
+		<affectRange>200</affectRange>
+		<affectScope>POINT_BLANK</affectScope>
+		<effectPoint>-100</effectPoint>
+		<hitTime>3000</hitTime>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">85</value>
+			<value level="2">98</value>
+		</magicLevel>
+		<mpConsume>373</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">100756</value>
+					<value level="2">213631</value>
+				</power>
+				<criticalChance>20</criticalChance>
+			</effect>
+			<effect name="FlyAway"> <!-- TODO: {i_fly_away;curve;push;200} -->
+				<radius>200</radius>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="5229" toLevel="2" name="Strong Punch">
+		<!-- Stunned by a Heavy Punch Attack. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>3</abnormalTime>
+		<abnormalType>STUN</abnormalType>
+		<abnormalVisualEffect>STUN</abnormalVisualEffect>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>PHYSICAL</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>3000</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>2</lvlBonusRate>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>
+			<value level="1">85</value>
+			<value level="2">98</value>
+		</magicLevel>
+		<mpConsume>75</mpConsume>
+		<reuseDelay>5000</reuseDelay>
+		<trait>SHOCK</trait>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>
+					<value level="1">125946</value>
+					<value level="2">267038</value>
+				</power>
+				<criticalChance>20</criticalChance>
+			</effect>
+			<effect name="BlockActions">
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
+			</effect>
+			<effect name="FlyAway"> <!-- TODO: {i_fly_away;curve;push;300} -->
+				<radius>300</radius>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="5230" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -793,12 +903,12 @@
 				<power>2784</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5231" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -824,12 +934,12 @@
 				<power>5704</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5232" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -855,7 +965,7 @@
 				<power>11407</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -917,7 +1027,7 @@
 		</effects>
 	</skill>
 	<skill id="5236" toLevel="1" name="Speed Up">
-		<!-- Movement Speed has been increased by 33. -->
+		<!-- Increases Speed. Effect 2. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -940,7 +1050,7 @@
 		</effects>
 	</skill>
 	<skill id="5237" toLevel="1" name="Speed Down">
-		<!-- Decreases Movement Speed by 20%. -->
+		<!-- Decreases Speed. Effect 2. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -997,7 +1107,7 @@
 				<power>298</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1027,7 +1137,7 @@
 		<stayAfterDeath>true</stayAfterDeath>
 	</skill>
 	<skill id="5240" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1055,12 +1165,12 @@
 				<power>6723</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5241" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1087,7 +1197,7 @@
 				<power>11205</power>
 			</effect>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
@@ -1329,7 +1439,7 @@
 					<value level="11">360</value>
 					<value level="12">360</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -1474,7 +1584,7 @@
 		</effects>
 	</skill>
 	<skill id="5250" toLevel="1" name="Stun">
-		<!-- Stunned and temporarily rendered immobile. -->
+		<!-- Momentarily immobile due to the Stun effect. -->
 		<icon>icon.skill0100</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1499,12 +1609,23 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5251" toLevel="12" name="Poison">
-		<!-- HP has been momentarily decreased due to Poison. -->
+		<!-- Level 1: Poisons a target, momentarily decreasing HP. Effect 2. -->
+		<!-- Level 2: Poisons a target, momentarily decreasing HP. Effect 3. -->
+		<!-- Level 3: Poisons a target, momentarily decreasing HP. Effect 4. -->
+		<!-- Level 4: Poisons a target, momentarily decreasing HP. Effect 5. -->
+		<!-- Level 5: Poisons a target, momentarily decreasing HP. Effect 6. -->
+		<!-- Level 6: Poisons a target, momentarily decreasing HP. Effect 7. -->
+		<!-- Level 7: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 8: Poisons a target, momentarily decreasing HP. Effect 8. -->
+		<!-- Level 9: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 10: Poisons a target, momentarily decreasing HP. Effect 9. -->
+		<!-- Level 11: Poisons a target, momentarily decreasing HP. Effect 10. -->
+		<!-- Level 12: Poisons a target, momentarily decreasing HP. Effect 10. -->
 		<icon>icon.skill4035</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1582,7 +1703,7 @@
 					<value level="11">132</value>
 					<value level="12">135</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -1639,12 +1760,23 @@
 		<trait>PARALYZE</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5253" toLevel="12" name="Bleed">
-		<!-- HP has been momentarily decreased due to Bleed. -->
+		<!-- Level 1: Causes target to bleed, momentarily reducing HP. Effect 2. -->
+		<!-- Level 2: Causes target to bleed, momentarily reducing HP. Effect 3. -->
+		<!-- Level 3: Causes target to bleed, momentarily reducing HP. Effect 4. -->
+		<!-- Level 4: Causes target to bleed, momentarily reducing HP. Effect 5. -->
+		<!-- Level 5: Causes target to bleed, momentarily reducing HP. Effect 6. -->
+		<!-- Level 6: Causes target to bleed, momentarily reducing HP. Effect 7. -->
+		<!-- Level 7: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 8: Causes target to bleed, momentarily reducing HP. Effect 8. -->
+		<!-- Level 9: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 10: Causes target to bleed, momentarily reducing HP. Effect 9. -->
+		<!-- Level 11: Causes target to bleed, momentarily reducing HP. Effect 10. -->
+		<!-- Level 12: Causes target to bleed, momentarily reducing HP. Effect 10. -->
 		<icon>icon.skill0096</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1724,7 +1856,7 @@
 					<value level="11">142</value>
 					<value level="12">142</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -1748,7 +1880,18 @@
 		</endEffects>
 	</skill>
 	<skill id="5254" toLevel="12" name="Invasion of Spirit">
-		<!-- MP decreases. -->
+		<!-- Level 1: MP decreases. Effect 2. -->
+		<!-- Level 2: MP decreases. Effect 2. -->
+		<!-- Level 3: MP decreases. Effect 2. -->
+		<!-- Level 4: MP decreases. Effect 2. -->
+		<!-- Level 5: MP decreases. Effect 2. -->
+		<!-- Level 6: MP decreases. Effect 3. -->
+		<!-- Level 7: MP decreases. Effect 4. -->
+		<!-- Level 8: MP decreases. Effect 5. -->
+		<!-- Level 9: MP decreases. Effect 6. -->
+		<!-- Level 10: MP decreases. Effect 7. -->
+		<!-- Level 11: MP decreases. Effect 8. -->
+		<!-- Level 12: MP decreases. Effect 8. -->
 		<icon>icon.skill1102</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -1823,7 +1966,7 @@
 					<value level="11">23</value>
 					<value level="12">23</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 		<endEffects>
@@ -2134,6 +2277,32 @@
 			<effect name="Disarm" />
 		</effects>
 	</skill>
+	<skill id="5261" toLevel="1" name="Zombie">
+		<!-- Condition causing target to transform into zombie. Condition to decrease physical ability. -->
+		<icon>icon.skilltransform3</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>7</abnormalTime>
+		<abnormalType>TRANSFORM</abnormalType>
+		<abnormalVisualEffect>DOT_BLEEDING</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<castRange>600</castRange>
+		<effectPoint>-100</effectPoint>
+		<effectRange>1100</effectRange>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>60</magicLevel>
+		<mpConsume>44</mpConsume>
+		<mpInitialConsume>11</mpInitialConsume>
+		<effects>
+			<effect name="Transformation">
+				<transformationId>303</transformationId>
+			</effect>
+		</effects>
+	</skill>
 	<skill id="5262" toLevel="12" name="Rising Shot">
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
@@ -2272,7 +2441,18 @@
 		</effects>
 	</skill>
 	<skill id="5264" toLevel="12" name="Death Mark">
-		<!-- Marked with the brand of darkness. -->
+		<!-- Level 1: Marked with the brand of darkness. Effect 1. -->
+		<!-- Level 2: Marked with the brand of darkness. Effect 2. -->
+		<!-- Level 3: Marked with the brand of darkness. Effect 3. -->
+		<!-- Level 4: Marked with the brand of darkness. Effect 4. -->
+		<!-- Level 5: Marked with the brand of darkness. Effect 5. -->
+		<!-- Level 6: Marked with the brand of darkness. Effect 6. -->
+		<!-- Level 7: Marked with the brand of darkness. Effect 7. -->
+		<!-- Level 8: Marked with the brand of darkness. Effect 8. -->
+		<!-- Level 9: Marked with the brand of darkness. Effect 9. -->
+		<!-- Level 10: Marked with the brand of darkness. Effect 10. -->
+		<!-- Level 11: Marked with the brand of darkness. Effect 11. -->
+		<!-- Level 12: Marked with the brand of darkness. Effect 12. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2413,7 +2593,18 @@
 		</effects>
 	</skill>
 	<skill id="5266" toLevel="12" name="Magical Backfire">
-		<!-- Skill MP Consumption increased by 100%. -->
+		<!-- Level 1: Increased MP consumption. Effect 1. -->
+		<!-- Level 2: Increased MP consumption. Effect 2. -->
+		<!-- Level 3: Increased MP consumption. Effect 2. -->
+		<!-- Level 4: Increased MP consumption. Effect 3. -->
+		<!-- Level 5: Increased MP consumption. Effect 3. -->
+		<!-- Level 6: Increased MP consumption. Effect 3. -->
+		<!-- Level 7: Increased MP consumption. Effect 3. -->
+		<!-- Level 8: Increased MP consumption. Effect 3. -->
+		<!-- Level 9: Increased MP consumption. Effect 3. -->
+		<!-- Level 10: Increased MP consumption. Effect 3. -->
+		<!-- Level 11: Increased MP consumption. Effect 3. -->
+		<!-- Level 12: Increased MP consumption. Effect 3. -->
 		<icon>icon.skill1396</icon>
 		<operateType>A2</operateType>
 		<targetType>ENEMY</targetType>
@@ -2657,12 +2848,12 @@
 					<value level="16">57</value>
 					<value level="17">57</value>
 				</power>
-				<ticks>1</ticks>
+				<ticks>5</ticks>
 			</effect>
 		</effects>
 	</skill>
 	<skill id="5269" toLevel="17" name="Slow Trap">
-		<!-- Movement Speed decreased by 23%, Casting Spd. decreased by 30% and Movement Speed decreased by 30%. -->
+		<!-- Decreases Atk. Spd. and Casting Spd. Effect 3. -->
 		<icon>icon.skill0516</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
@@ -2755,7 +2946,7 @@
 		<trait>SHOCK</trait>
 		<effects>
 			<effect name="BlockActions">
-				<allowedSkills>10279;10517;11264;11093;1904;1912;13314;13542;30010;30018;30516;461;35016;35045</allowedSkills>
+				<allowedSkills>10279;10517;10025;10776;11770;1904;11264;11093;13314;1912</allowedSkills>
 			</effect>
 			<effect name="TargetCancel">
 				<chance>100</chance>
