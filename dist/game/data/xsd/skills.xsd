@@ -62,6 +62,10 @@
 													<xs:simpleContent>
 														<xs:extension base="xs:string">
 															<xs:attribute name="level" type="xs:unsignedByte" use="required" />
+															<xs:attribute name="fromLevel" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="toLevel" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="fromSubLevel" type="xs:unsignedShort" use="optional" />
+															<xs:attribute name="toSubLevel" type="xs:unsignedShort" use="optional" />
 														</xs:extension>
 													</xs:simpleContent>
 												</xs:complexType>
@@ -211,7 +215,11 @@
 												<xs:complexType>
 													<xs:simpleContent>
 														<xs:extension base="xs:short">
-															<xs:attribute name="level" type="xs:unsignedByte" use="required" />
+															<xs:attribute name="level" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="fromLevel" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="toLevel" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="fromSubLevel" type="xs:unsignedShort" use="optional" />
+															<xs:attribute name="toSubLevel" type="xs:unsignedShort" use="optional" />								
 														</xs:extension>
 													</xs:simpleContent>
 												</xs:complexType>
@@ -357,7 +365,11 @@
 												<xs:complexType>
 													<xs:simpleContent>
 														<xs:extension base="xs:byte">
-															<xs:attribute name="level" type="xs:unsignedByte" use="required" />
+															<xs:attribute name="level" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="fromLevel" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="toLevel" type="xs:unsignedByte" use="optional" />
+															<xs:attribute name="fromSubLevel" type="xs:unsignedShort" use="optional" />
+															<xs:attribute name="toSubLevel" type="xs:unsignedShort" use="optional" />
 														</xs:extension>
 													</xs:simpleContent>
 												</xs:complexType>
@@ -1134,8 +1146,21 @@
 																	<xs:attribute name="level" type="xs:unsignedByte" use="optional" />
 																</xs:complexType>
 															</xs:element>
-															<xs:element name="pAccuracyAmount" type="xs:decimal" />
-															<xs:element name="pAccuracyMode" type="xs:string" />
+															<xs:element name="pAccuracyAmount">
+																<xs:complexType mixed="true">
+																	<xs:sequence minOccurs="0">
+																		<xs:element maxOccurs="unbounded" name="value">
+																			<xs:complexType>
+																				<xs:simpleContent>
+																					<xs:extension base="xs:decimal">
+																						<xs:attribute name="level" type="xs:unsignedByte" use="required" />
+																					</xs:extension>
+																				</xs:simpleContent>
+																			</xs:complexType>
+																		</xs:element>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>															<xs:element name="pAccuracyMode" type="xs:string" />
 															<xs:element name="hpPercent" type="xs:unsignedByte" />
 															<xs:element name="attribute" type="xs:string" />
 															<xs:element name="attackerType" type="xs:string" />

@@ -1181,7 +1181,13 @@ public class CreatureStat
 	 */
 	public int getReuseTime(Skill skill)
 	{
-		return (skill.isStaticReuse() || skill.isStatic()) ? skill.getReuseDelay() : (int) (skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType()));
+		if (skill.isStaticReuse() || skill.isStatic())
+		{
+			return skill.getReuseDelay();
+		}
+		
+		final float speedModifier = (skill.isMagic() ? 333f : 300f) / (skill.isMagic() ? _creature.getMAtkSpd() : _creature.getPAtkSpd());
+		return (int) (skill.getReuseDelay() * getReuseTypeValue(skill.getMagicType()) * speedModifier);
 	}
 	
 	/**

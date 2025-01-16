@@ -194,7 +194,7 @@ public class SkillCaster implements Runnable
 	@Override
 	public void run()
 	{
-		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction() || _skill.isToggle();
+		final boolean instantCast = (_castingType == SkillCastingType.SIMULTANEOUS) || _skill.isAbnormalInstant() || _skill.isWithoutAction();
 		
 		// Skills with instant cast are never launched.
 		if (instantCast)
@@ -211,12 +211,13 @@ public class SkillCaster implements Runnable
 			{
 				hasNextPhase = startCasting();
 				nextTaskDelay = _hitTime;
+				
 				break;
 			}
 			case 1: // Launch the skill.
 			{
 				hasNextPhase = launchSkill();
-				nextTaskDelay = _cancelTime;
+				nextTaskDelay = _skill.isToggle() ? 0 : _cancelTime;
 				break;
 			}
 			case 2: // Finish launching and apply effects.

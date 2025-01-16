@@ -853,6 +853,67 @@
 			<effect name="NoblesseBless" />
 		</effects>
 	</skill>
+	<skill id="1324" toLevel="1" name="Summon CP Potion">
+		<!-- Summons 20 Superior CP Potions. Consumes 500 Soulstones. -->
+		<icon>icon.skill1324</icon>
+		<hitTime>20000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<itemConsumeCount>50</itemConsumeCount>
+		<itemConsumeId>1785</itemConsumeId>	<!-- Soul Ore -->				
+		<magicLevel>-1</magicLevel>
+		<mpInitialConsume>
+			<value level="1">412</value>
+		</mpInitialConsume>
+		<operateType>A1</operateType>
+		<reuseDelay>600000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="Restoration">
+				<itemId>5592</itemId>	<!-- Greater CP Potion -->	
+				<itemCount>20</itemCount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="1325" toLevel="1" name="Noblesse Fortune">
+		<!-- Allows a party member to avoid negative after-death effects after being killed by a boss or raid monster. Consumes 4 A-grade Lucky Amulets. -->
+		<icon>icon.skill1325</icon>
+		<abnormalLevel>6</abnormalLevel>
+		<abnormalTime>3600</abnormalTime>
+		<abnormalType>REDUCE_DROP_PENALTY</abnormalType>
+		<affectRange>1000</affectRange>
+		<effectPoint>659</effectPoint>
+		<hitTime>4000</hitTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<itemConsumeCount>4</itemConsumeCount>
+		<itemConsumeId>5806</itemConsumeId>	<!-- Lucky Charm (A-Grade) -->					
+		<magicLevel>-1</magicLevel>
+		<mpConsume>220</mpConsume>
+		<mpInitialConsume>55</mpInitialConsume>
+		<operateType>A2</operateType>
+		<reuseDelay>5000</reuseDelay>
+		<basicProperty>NONE</basicProperty>
+		<magicCriticalRate>5</magicCriticalRate>
+		<specialLevel>-1</specialLevel>
+		<targetType>SELF</targetType>
+		<affectScope>PARTY</affectScope>
+		<affectObject>FRIEND</affectObject>
+		<effects>
+			<effect name="ReduceDropPenalty">
+				<deathPenalty>-100</deathPenalty>
+				<mode>PER</mode>
+				<type>RAID</type>
+			</effect>
+		</effects>
+	</skill>		
 	<skill id="1326" toLevel="1" name="Noblesse Harmony">
 		<!-- Advances to the frontline of the battleground. For 15 seconds, P. Def. +3000, Movement Speed +25%, Buff-canceling Attack Resistance +80%, Bow Attack Resistance +10, Crossbow Attack Resistance +6, and CP -20%. Can only be used on the battleground when CP is at least 50%. Consumes 5 Spirit Ore. Maximum CP and HP are limited. -->
 		<icon>icon.skill1326</icon>
@@ -1480,46 +1541,100 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="1334" toLevel="2" name="Summon Cursed Man">
-		<!-- Level 1: Summons Servitor Cursed Man. Consumes 12 Spirit Ore when summoned. -->
-		<!-- Level 2: Summons Servitor Cursed Man. Consumes 14 Spirit Ore when summoned. -->
+	<skill id="1334" toLevel="7" name="Summon Cursed Man">
+		<!-- Summons a Cursed Man. Requires 1 Spirit Ore. -->
 		<icon>icon.skill1334</icon>
-		<operateType>A1</operateType>
-		<targetType>SELF</targetType>
-		<affectScope>SINGLE</affectScope>
-		<coolTime>500</coolTime>
-		<effectRange>400</effectRange>
-		<hitTime>3500</hitTime>
-		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<itemConsumeCount>
-			<value level="1">12</value>
-			<value level="2">14</value>
-		</itemConsumeCount>
-		<itemConsumeId>3031</itemConsumeId>
-		<magicCriticalRate>5</magicCriticalRate>
 		<magicLevel>
-			<value level="1">79</value>
-			<value level="2">83</value>
+			<value level="1">56</value>
+			<value level="2">60</value>
+			<value level="3">64</value>
+			<value level="4">68</value>
+			<value level="5">70</value>
+			<value level="6">72</value>
+			<value level="7">74</value>
 		</magicLevel>
 		<mpConsume>
-			<value level="1">120</value>
-			<value level="2">133</value>
+			<value level="1">82</value>
+			<value level="2">88</value>
+			<value level="3">95</value>
+			<value level="4">102</value>
+			<value level="5">104</value>
+			<value level="6">106</value>
+			<value level="7">110</value>
 		</mpConsume>
 		<mpInitialConsume>
-			<value level="1">31</value>
-			<value level="2">34</value>
+			<value level="1">21</value>
+			<value level="2">22</value>
+			<value level="3">24</value>
+			<value level="4">25</value>
+			<value level="5">26</value>
+			<value level="6">27</value>
+			<value level="7">27</value>
 		</mpInitialConsume>
-		<reuseDelay>5000</reuseDelay>
+		<hitTime>1500</hitTime>
+		<hitCancelTime>0.5</hitCancelTime>
+		<isMagic>1</isMagic> <!-- Magic Skill -->
+		<itemConsumeId>1459</itemConsumeId>	<!-- Crystal (C-Grade) -->		
+		<itemConsumeCount>
+			<value level="1">1</value>
+			<value level="2">2</value>
+			<value level="3">2</value>
+			<value level="4">3</value>
+			<value level="5">3</value>
+			<value level="6">3</value>
+			<value level="7">3</value>
+		</itemConsumeCount>		
+		<operateType>A1</operateType>
+		<reuseDelay>20000</reuseDelay>
+		<magicCriticalRate>5</magicCriticalRate>
+		<castRange>40</castRange>
+		<effectRange>400</effectRange>
+		<targetType>NPC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>		
 		<conditions>
-			<condition name="CanSummon" />
+			<condition name="CanSummon" />		
+			<condition name="ConsumeBody" />
 		</conditions>
 		<effects>
 			<effect name="Summon">
 				<npcId>
-					<value level="1">14087</value>
-					<value level="2">14089</value>
+					<value level="1">14074</value>
+					<value level="2">14075</value>
+					<value level="3">14076</value>
+					<value level="4">14077</value>
+					<value level="5">14078</value>
+					<value level="6">14079</value>
+					<value level="7">14080</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1001" toSubLevel="1001">14081</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1002" toSubLevel="1002">14082</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1003" toSubLevel="1003">14083</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1004" toSubLevel="1004">14084</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1005" toSubLevel="1005">14085</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1006" toSubLevel="1006">14086</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1007" toSubLevel="1007">14087</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1008" toSubLevel="1008">14088</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1009" toSubLevel="1009">14089</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1010" toSubLevel="1010">14090</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1011" toSubLevel="1011">14091</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1012" toSubLevel="1012">14092</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1013" toSubLevel="1013">14093</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1014" toSubLevel="1014">14094</value>
+					<value fromLevel="7" toLevel="7" fromSubLevel="1015" toSubLevel="1015">14095</value>
 				</npcId>
+				<consumeItemId>1459</consumeItemId> <!-- Crystal (C-Grade) -->
+				<consumeItemCount>
+					<value level="1">2</value>
+					<value level="2">2</value>
+					<value level="3">3</value>
+					<value level="4">3</value>
+					<value level="5">3</value>
+					<value level="6">4</value>
+					<value level="7">4</value>
+				</consumeItemCount>				
+				<lifeTime>3600</lifeTime>
+				<expMultiplier>0.85</expMultiplier>
 			</effect>
+			<effect name="ConsumeBody" />			
 		</effects>
 	</skill>
 	<skill id="1335" toLevel="1" name="Balance Life">
