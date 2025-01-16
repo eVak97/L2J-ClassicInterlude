@@ -1,5 +1,62 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="3500" name="Dragonflute of Wind" type="EtcItem">
+		<!-- Flute used to call up a Hatchling of the Wind. Takes a part of the XP gained by the Pet master. -->
+		<set name="icon" val="icon.etc_flute_i00" />
+		<set name="default_action" val="SKILL_MAINTAIN" />
+		<set name="etcitem_type" val="PET_COLLAR" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="20" />
+		<set name="price" val="1000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="SummonItems" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
+	</item>
+	<item id="3501" name="Star Dragon Flute" type="EtcItem">
+		<!-- Flute used to call up a Hatchling of Star. Takes a part of the XP gained by the Pet master. -->
+		<set name="icon" val="icon.etc_flute_i00" />
+		<set name="default_action" val="SKILL_MAINTAIN" />
+		<set name="etcitem_type" val="PET_COLLAR" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="20" />
+		<set name="price" val="1000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="SummonItems" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
+	</item>
+	<item id="3502" name="Dragonflute of Twilight" type="EtcItem">
+		<!-- Flute used to call up a Hatchling of Twilight. Takes a part of the XP gained by the Pet master. -->
+		<set name="icon" val="icon.etc_flute_i00" />
+		<set name="default_action" val="SKILL_MAINTAIN" />
+		<set name="etcitem_type" val="PET_COLLAR" />
+		<set name="material" val="STEEL" />
+		<set name="weight" val="20" />
+		<set name="price" val="1000" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="SummonItems" />
+		<set name="commissionItemType" val="PET_SUPPLIES" />
+		<set name="use_condition" val="{{uc_transmode_exclude;{tt_pure_stat}}}" />
+		<cond addName="1" msgId="113">
+			<player flyMounted="false" />
+		</cond>
+		<skills>
+			<skill id="2046" level="1" /> <!-- Summon Pet -->
+		</skills>
+	</item>
 	<item id="3503" name="Deliverymen Certificate" type="EtcItem">
 		<!-- Official certification for making deliveries. Issued by the Iron Gate Guild. Seal of Lockirin of the Iron Gate is affixed. -->
 		<set name="icon" val="icon.etc_paper_white_i00" />
@@ -48,7 +105,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3507" name="Supplies" type="EtcItem">
+	<item id="3507" name="Supplies to Alex" type="EtcItem">
 		<!-- Supply item. It's really heavy. Let's take it to Alex in Florin Village. -->
 		<set name="icon" val="icon.etc_squares_wood_i00" />
 		<set name="immediate_effect" val="true" />
@@ -60,7 +117,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3508" name="Supplies" type="EtcItem">
+	<item id="3508" name="Supplies to Endrigo" type="EtcItem">
 		<!-- Supply item. It's really heavy. Let's take it to Watchman Endrigo at the Execution Grounds. -->
 		<set name="icon" val="icon.etc_squares_wood_i00" />
 		<set name="immediate_effect" val="true" />
@@ -240,7 +297,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3523" name="Send Mail" type="EtcItem">
+	<item id="3523" name="Letter" type="EtcItem">
 		<!-- Letter to be taken to Lighthouse Keeper Rockswell of Talking Island. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />
@@ -276,7 +333,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3526" name="Send Mail" type="EtcItem">
+	<item id="3526" name="Letter" type="EtcItem">
 		<!-- Letter to be taken to Sir Collin Windawood in front of the Obelisk of Victory on Talking Island. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />
@@ -300,7 +357,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3528" name="Send Mail" type="EtcItem">
+	<item id="3528" name="Letter" type="EtcItem">
 		<!-- Letter to be taken to Lighthouse Keeper Perrin at the wharf in Gludin Village. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />
@@ -408,7 +465,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3537" name="Send Mail" type="EtcItem">
+	<item id="3537" name="Letter" type="EtcItem">
 		<!-- Letter to be taken to Karna in Dark Elf Village. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />
@@ -564,7 +621,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3550" name="Cloth" type="EtcItem">
+	<item id="3550" name="Fabric" type="EtcItem">
 		<!-- Fabric to be taken to Guard Makhis in Hunter Village. -->
 		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
 		<set name="immediate_effect" val="true" />
@@ -636,7 +693,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3556" name="Send Mail" type="EtcItem">
+	<item id="3556" name="Letter" type="EtcItem">
 		<!-- Letter to be taken to Fisherman Evert in Floran Village. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />
@@ -648,7 +705,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3557" name="Cloth" type="EtcItem">
+	<item id="3557" name="Fabric" type="EtcItem">
 		<!-- Fabric to be taken to Astrologer Creta in Floran Village. -->
 		<set name="icon" val="icon.etc_piece_of_cloth_blue_i00" />
 		<set name="immediate_effect" val="true" />
@@ -972,7 +1029,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3584" name="Send Mail" type="EtcItem">
+	<item id="3584" name="Letter" type="EtcItem">
 		<!-- Letter to be taken to Katari at the altar on the north side of the marshlands waterfall in the Dark Elven autonomous region. -->
 		<set name="icon" val="icon.etc_letter_envelope_i00" />
 		<set name="immediate_effect" val="true" />

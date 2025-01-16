@@ -361,7 +361,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="3830" name="Scale of Wyvern Shamhai" type="EtcItem">
-		<!-- Scale of wyvern shamhai. Take this and recover 20 eggs from deadseekers of the Execution Grounds. -->
+		<!-- Scale of Wyvern Shamhai. Take this and recover 20 eggs from the Basilisks and Lesser Basilisks of the Wasteland. -->
 		<set name="icon" val="icon.etc_seed_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -373,7 +373,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="3831" name="Egg of Wyvern Shamhai" type="EtcItem">
-		<!-- Egg of wyvern shamhai recovered from deadseekers. -->
+		<!-- Egg of Wyvern Shamhai recovered from the Basilisks and Lesser Basilisks. -->
 		<set name="icon" val="icon.etc_dragon_egg_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -424,8 +424,8 @@
 		<set name="is_questitem" val="true" />
 		<set name="is_depositable" val="false" />
 	</item>
-	<item id="3836" name="Ritasha's Coin" type="EtcItem">
-		<!-- If you collect three Ritasha's coins and take them to Sorceress Ritasha, you will be able to obtain Blood of Eva. -->
+	<item id="3836" name="Athrea's Coin" type="EtcItem">
+		<!-- If you collect three Athrea's coins and take them to Witch Athrea, you will be able to obtain Blood of Eva. -->
 		<set name="icon" val="icon.etc_coins_gold_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -494,7 +494,7 @@
 		<set name="is_depositable" val="false" />
 	</item>
 	<item id="3842" name="Thunder Wyrm Egg" type="EtcItem">
-		<!-- Thunder Wyrm Egg. The clan leader must collect ten of each of the four kinds of eggs and take them to Martien. -->
+		<!-- Egg of thunder Wyrm. The clan leader must collect ten of each of four kinds of eggs and take them to Martien. -->
 		<set name="icon" val="icon.etc_dragon_egg_i03" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -702,7 +702,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3860" name="1st Fragment of Abyssal Jewel" type="EtcItem">
+	<item id="3860" name="2nd Fragment of Abyssal Jewel" type="EtcItem">
 		<!-- Fragment obtained by destroying an Abyssal Jewel in Oren. Take it to Blacksmith Helton, the Watchman of the Seal. -->
 		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
 		<set name="immediate_effect" val="true" />
@@ -714,7 +714,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3861" name="1st Fragment of Abyssal Jewel" type="EtcItem">
+	<item id="3861" name="3rd Fragment of Abyssal Jewel" type="EtcItem">
 		<!-- Fragment obtained from destroying Abyssal Jewel. Take this to Antharas Watchman Theodric at the entrance to Antharas' Lair. -->
 		<set name="icon" val="icon.etc_broken_crystal_gold_i00" />
 		<set name="immediate_effect" val="true" />
@@ -767,10 +767,12 @@
 		<set name="icon" val="icon.etc_plate_blue_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
-		<set name="is_depositable" val="false" />
 	</item>
 	<item id="3866" name="Gustav's 1st Letter" type="EtcItem">
 		<!-- Secret letter sent by Sir Gustav Athebaldt to his aides. Get a hold of it and take it to Martien of the Town of Giran. -->
@@ -784,7 +786,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3867" name="Gustav's 1st Letter" type="EtcItem">
+	<item id="3867" name="Gustav's 2nd Letter" type="EtcItem">
 		<!-- Letter sent by Sir Gustav Athebaldt to those supporting him. Take it to Balthazar of Hunter Village. -->
 		<set name="icon" val="icon.etc_scroll_gray_i00" />
 		<set name="immediate_effect" val="true" />
@@ -796,7 +798,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3868" name="Gustav's 1st Letter" type="EtcItem">
+	<item id="3868" name="Gustav's 3rd Letter" type="EtcItem">
 		<!-- Letter sent by Sir Gustav Athebaldt to those supporting him. Take it to Sir Eric Rodemai of the Town of Aden. -->
 		<set name="icon" val="icon.etc_scroll_gray_i00" />
 		<set name="immediate_effect" val="true" />
@@ -882,119 +884,119 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="3875" name="Letter A" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3875" name="Letter - A" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_a_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3876" name="Letter C" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3876" name="Letter - C" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_c_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3877" name="Letter E" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3877" name="Letter - E" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_e_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3878" name="Letter F" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3878" name="Letter - F" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_f_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3879" name="Letter G" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3879" name="Letter - G" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_g_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3880" name="Letter H" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3880" name="Letter - H" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_h_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3881" name="Letter I" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3881" name="Letter - I" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_i_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3882" name="Letter L" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3882" name="Letter - L" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_l_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3883" name="Letter N" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3883" name="Letter - N" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_n_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3884" name="Letter O" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3884" name="Letter - O" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_o_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3885" name="Letter R" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3885" name="Letter - R" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_r_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3886" name="Letter S" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3886" name="Letter - S" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_s_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3887" name="Letter T" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3887" name="Letter - T" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_t_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3888" name="Number II" type="EtcItem">
-		<!-- Combine with other letters to create a special word and bring it to Angel Cat to receive a great gift! -->
+	<item id="3888" name="Letter - II" additionalName="Event" type="EtcItem">
+		<!-- Bring the letter to a GM to receive a great gift! -->
 		<set name="icon" val="icon.etc_alphabet_ii_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="3889" name="Antidote" type="EtcItem">
+	<item id="3889" name="Potion of Recovery" type="EtcItem">
 		<!-- Remedy that can neutralize the Poison of Witch Kalis. If the clan leader uses this, the Poisoning is healed. -->
 		<set name="icon" val="icon.etc_herb_green_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
@@ -1006,7 +1008,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
-		<set name="is_questitem" val="true" />
+		<set name="is_questitem" val="false" />
 		<set name="is_depositable" val="false" />
 		<skills>
 			<skill id="2060" level="1" /> <!-- Healing Medicine -->
@@ -1023,5 +1025,194 @@
 		<set name="is_depositable" val="false" />
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
+	</item>
+	<item id="3891" name="Wolf's Hide Armor" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="7800" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">16</stat>
+			<stat type="pDef">13</stat>
+		</stats>
+	</item>
+	<item id="3892" name="Wolf's Durable Leather Armor" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="14200" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">18</stat>
+			<stat type="pDef">16</stat>
+		</stats>
+	</item>
+	<item id="3893" name="Wolf's Wooden Armor" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="24100" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">20</stat>
+			<stat type="pDef">19</stat>
+		</stats>
+	</item>
+	<item id="3894" name="Wolf's Ring Mail" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="38450" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">23</stat>
+			<stat type="pDef">22</stat>
+		</stats>
+	</item>
+	<item id="3895" name="Wolf's Bone Armor" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="58500" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">26</stat>
+			<stat type="pDef">26</stat>
+		</stats>
+	</item>
+	<item id="3896" name="Wolf's Scale Mail" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="86000" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">29</stat>
+			<stat type="pDef">30</stat>
+		</stats>
+	</item>
+	<item id="3897" name="Wolf's Bronze Armor" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="113000" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">31</stat>
+			<stat type="pDef">33</stat>
+		</stats>
+	</item>
+	<item id="3898" name="Wolf's Plate Mail" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="145500" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">33</stat>
+			<stat type="pDef">37</stat>
+		</stats>
+	</item>
+	<item id="3899" name="Wolf's Steel Armor" type="Armor">
+		<!-- Double-click to wear. Only for wolves, great wolves, and fenrir. -->
+		<set name="icon" val="icon.etc_pet_armor_i02" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="LIGHT" />
+		<set name="bodypart" val="chest" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="weight" val="160" />
+		<set name="price" val="186000" />
+		<set name="commissionItemType" val="PET_EQUIPMENT" />
+		<set name="isAppearanceable" val="true" />
+		<set name="for_npc" val="true" />
+		<cond msgId="600">
+			<player categoryType="ALL_WOLF_GROUP" />
+		</cond>
+		<stats>
+			<stat type="mDef">36</stat>
+			<stat type="pDef">40</stat>
+		</stats>
 	</item>
 </list>

@@ -16,7 +16,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="7461" />
+		<set name="price" val="800" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -96,7 +96,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="43681" />
+		<set name="price" val="2450" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -151,12 +151,12 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1415" name="Spellbook: Dryad Root" type="EtcItem">
-		<!-- Spellbook needed to learn Dryad Root. Used by Clerics, Oracles, and Shillien Oracles. Required level: 23 -->
+		<!-- Spellbook needed to learn Dryard Root. Used by Clerics, Oracles and Shillien Oracles. Required level: 25 -->
 		<set name="icon" val="icon.etc_spell_books_assistance_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="10603" />
+		<set name="price" val="1250" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -166,7 +166,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="43681" />
+		<set name="price" val="2450" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -191,7 +191,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1419" name="Proof of Blood" type="EtcItem">
-		<!-- Item needed to upgrade a clan to level 5. -->
+		<!-- Item needed to upgrade a clan to level 3. Only the Clan Leader may use it. -->
 		<set name="icon" val="icon.etc_broken_crystal_red_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -450,7 +450,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1441" name="Monster Eye's Meat" type="EtcItem">
+	<item id="1441" name="Monster Eye Meat" type="EtcItem">
 		<!-- The dead body of a monster eye, ready to cook. One of the five ingredients needed for Jonas' cooking. -->
 		<set name="icon" val="icon.etc_pouch_yellow_i00" />
 		<set name="immediate_effect" val="true" />
@@ -474,7 +474,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1443" name="Jonas' 1st Steak Dish" type="EtcItem">
+	<item id="1443" name="Jonas' 2nd Steak Dish" type="EtcItem">
 		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="immediate_effect" val="true" />
@@ -486,7 +486,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1444" name="Jonas' 1st Steak Dish" type="EtcItem">
+	<item id="1444" name="Jonas' 3rd Steak Dish" type="EtcItem">
 		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="immediate_effect" val="true" />
@@ -498,7 +498,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1445" name="Jonas' 1st Steak Dish" type="EtcItem">
+	<item id="1445" name="Jonas' 4th Steak Dish" type="EtcItem">
 		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="immediate_effect" val="true" />
@@ -510,7 +510,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1446" name="Jonas' 1st Steak Dish" type="EtcItem">
+	<item id="1446" name="Jonas' 5th Steak Dish" type="EtcItem">
 		<!-- Plate that contains Jonas' monster eye steak. Take this to Magister Mirien. -->
 		<set name="icon" val="icon.etc_jewel_box_i00" />
 		<set name="immediate_effect" val="true" />
@@ -525,6 +525,54 @@
 	<item id="1447" name="Mirien's Review" type="EtcItem">
 		<!-- Letter from Magister Mirien about the taste of Jonas' dish. Take this to Jonas. -->
 		<set name="icon" val="icon.etc_letter_red_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1448" name="Mirien's Review" type="EtcItem">
+		<!-- Letter from Magister Mirien about the taste of Jonas' dish. Take this to Jonas. -->
+		<set name="icon" val="icon.item_normal129" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1449" name="Mirien's Review" type="EtcItem">
+		<!-- Letter from Magister Mirien about the taste of Jonas' dish. Take this to Jonas. -->
+		<set name="icon" val="icon.item_normal129" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1450" name="Mirien's Review" type="EtcItem">
+		<!-- Letter from Magister Mirien about the taste of Jonas' dish. Take this to Jonas. -->
+		<set name="icon" val="icon.item_normal129" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1451" name="Mirien's Review" type="EtcItem">
+		<!-- Letter from Magister Mirien about the taste of Jonas' dish. Take this to Jonas. -->
+		<set name="icon" val="icon.item_normal129" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -651,12 +699,15 @@
 		<set name="commissionItemType" val="CRYSTAL" />
 	</item>
 	<item id="1462" name="Crystal (S-grade)" type="EtcItem">
-		<!-- An S-grade crystal. -->
+		<!-- Crystal of S-grade. -->
 		<set name="icon" val="icon.etc_crystal_gold_i00" />
-		<set name="crystal_type" val="S" />
+		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="price" val="15000" />
 		<set name="is_stackable" val="true" />
+		<set name="crystal_type" val="S" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="CRYSTAL" />
 	</item>
 	<item id="1463" name="Soulshot (D-grade)" type="EtcItem">
 		<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with a D-grade weapon. -->
@@ -665,7 +716,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
-		<set name="price" val="10" />
+		<set name="price" val="14" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SoulShots" />
 		<set name="crystal_type" val="D" />
@@ -683,7 +734,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="2" />
-		<set name="price" val="15" />
+		<set name="price" val="22" />
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="SoulShots" />
 		<set name="crystal_type" val="C" />
@@ -713,7 +764,7 @@
 		</skills>
 	</item>
 	<item id="1466" name="Soulshot (A-grade)" type="EtcItem">
-		<!-- The power of a Soulshot is bestowed upon a weapon, temporarily increasing the power of attack. Used with A-grade weapons. -->
+		<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an A-grade weapon. -->
 		<set name="icon" val="icon.etc_spirit_bullet_silver_i00" />
 		<set name="default_action" val="SOULSHOT" />
 		<set name="immediate_effect" val="true" />
@@ -731,7 +782,7 @@
 		</skills>
 	</item>
 	<item id="1467" name="Soulshot (S-grade)" type="EtcItem">
-		<!-- The power of a higher-level spirit is bestowed upon a weapon, spontaneously increasing power of attack. Used with an S-grade weapon. -->
+		<!-- The power of a higher-level spirit is bestowed upon a weapon, temporarily increasing power of attack. Used with an S-grade weapon. -->
 		<set name="icon" val="icon.etc_spirit_bullet_gold_i00" />
 		<set name="default_action" val="SOULSHOT" />
 		<set name="immediate_effect" val="true" />
@@ -748,6 +799,36 @@
 			<skill id="2154" level="1" /> <!-- Soulshot (S-grade) -->
 		</skills>
 	</item>
+	<item id="1468" name="Gludin Panacen" type="EtcItem">
+		<!-- Medicated herb from Gludio. Purchase at the Castle Gludio. -->
+		<set name="icon" val="icon.etc_reagent_gold_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="crystal_type" val="S" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1469" name="Gludin Vermouth" type="EtcItem">
+		<!-- Medicated wine from Gludio. Purchase at the Castle Gludio. -->
+		<set name="icon" val="icon.etc_fruit_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="crystal_type" val="S" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1470" name="Artemeter" type="EtcItem">
+		<!-- Medicated herb from Gludio. Purchase at the Castle Gludio. -->
+		<set name="icon" val="icon.etc_leaf_green_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="PAPER" />
+		<set name="crystal_type" val="S" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="OTHER_ITEM" />
+		<set name="is_stackable" val="true" />
+	</item>
 	<item id="1471" name="Silenos Blowgun" type="Weapon">
 		<set name="icon" val="icon.weapon_monster_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -759,9 +840,9 @@
 		<set name="crystal_type" val="D" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="300" />
-		<set name="price" val="80" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
+		<set name="price" val="81800" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
 		<set name="commissionItemType" val="DAGGER" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -786,9 +867,9 @@
 		<set name="crystal_type" val="D" />
 		<set name="material" val="BRONZE" />
 		<set name="weight" val="300" />
-		<set name="price" val="80" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
+		<set name="price" val="81800" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="SPEAR" />
 		<set name="isAppearanceable" val="true" />
@@ -974,7 +1055,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1487" name="Suspicious Contract" type="EtcItem">
-		<!-- Suspicious contract completed by collecting Suspicious Memos. This contract reveals that the Silver Scale Guild requested the brigands to attack the freight wagons. -->
+		<!-- Suspicious contract completed by collecting suspicious memos. This contract reveals that the Silver Scale Guild requested the brigands to attack the freight wagons. -->
 		<set name="icon" val="icon.etc_letter_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -1045,7 +1126,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1493" name="Tarantula's Spider Silk" type="EtcItem">
+	<item id="1493" name="Tarantula Spider Silk" type="EtcItem">
 		<!-- The spider silk that makes when making their nests. Collect these and take them to Trader Mion. -->
 		<set name="icon" val="icon.etc_skein_white_i00" />
 		<set name="immediate_effect" val="true" />

@@ -11,7 +11,7 @@
 		<set name="weight" val="2120" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="2430" />
+		<set name="price" val="374" />
 		<stats>
 			<stat type="pDef">21</stat>
 			<stat type="maxMp">38</stat>
@@ -27,14 +27,14 @@
 		<set name="weight" val="2090" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="20300" />
+		<set name="price" val="3120" />
 		<stats>
 			<stat type="pDef">30</stat>
 			<stat type="maxMp">67</stat>
 		</stats>
 	</item>
 	<item id="1102" name="Tunic of Magic" type="Armor">
-		<!-- Tunic that is designed to be comfortable for those who use magic. -->
+		<!-- Tunic, comfortably designed for mages. -->
 		<set name="icon" val="icon.armor_t58_u_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -44,7 +44,7 @@
 		<set name="weight" val="2080" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="36900" />
+		<set name="price" val="5680" />
 		<stats>
 			<stat type="pDef">34</stat>
 			<stat type="maxMp">86</stat>
@@ -61,7 +61,7 @@
 		<set name="weight" val="1060" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="1520" />
+		<set name="price" val="234" />
 		<stats>
 			<stat type="pDef">13</stat>
 			<stat type="maxMp">23</stat>
@@ -78,14 +78,14 @@
 		<set name="weight" val="1040" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="12700" />
+		<set name="price" val="1954" />
 		<stats>
 			<stat type="pDef">19</stat>
 			<stat type="maxMp">42</stat>
 		</stats>
 	</item>
 	<item id="1105" name="Stockings of Magic" type="Armor">
-		<!-- A pair of pants that is designed to be comfortable for those who use magic. -->
+		<!-- Pair of pants, comfortably designed for mages. -->
 		<set name="icon" val="icon.armor_t58_l_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="armor_type" val="MAGIC" />
@@ -95,7 +95,7 @@
 		<set name="weight" val="1030" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="23000" />
+		<set name="price" val="3540" />
 		<stats>
 			<stat type="pDef">21</stat>
 			<stat type="maxMp">54</stat>
@@ -116,6 +116,50 @@
 	<item id="1107" name="Bone Fragment" type="EtcItem">
 		<!-- Bone fragments of the undead skeletons. Collect ten of these and go back to Magister Harne. -->
 		<set name="icon" val="icon.etc_piece_bone_white_i00" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1108" name="Arbon's Letter" type="EtcItem">
+		<set name="icon" val="icon.item_normal20" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1109" name="Roien's Letter" type="EtcItem">
+		<set name="icon" val="icon.item_normal20" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1110" name="Bone Fragment" type="EtcItem">
+		<set name="icon" val="icon.item_normal05" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_questitem" val="true" />
+	</item>
+	<item id="1111" name="_" type="EtcItem">
+		<set name="icon" val="icon.item_normal49" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="is_tradable" val="false" />
@@ -216,7 +260,7 @@
 		<set name="weight" val="660" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="607" />
+		<set name="price" val="94" />
 		<stats>
 			<stat type="pDef">11</stat>
 		</stats>
@@ -226,11 +270,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="gloves" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="64" />
+		<set name="crystal_count" val="7" />
 		<set name="crystal_type" val="C" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1600" />
-		<set name="price" val="123900" />
+		<set name="price" val="24780" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -247,7 +291,7 @@
 		<set name="weight" val="1320" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="7" />
+		<set name="price" val="5" />
 		<stats>
 			<stat type="pDef">8</stat>
 		</stats>
@@ -261,7 +305,7 @@
 		<set name="weight" val="1320" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="607" />
+		<set name="price" val="94" />
 		<stats>
 			<stat type="pDef">11</stat>
 		</stats>
@@ -271,11 +315,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="60" />
+		<set name="crystal_count" val="7" />
 		<set name="crystal_type" val="D" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1300" />
-		<set name="price" val="33300" />
+		<set name="price" val="5120" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -288,11 +332,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="135" />
+		<set name="crystal_count" val="15" />
 		<set name="crystal_type" val="D" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1250" />
-		<set name="price" val="74700" />
+		<set name="price" val="11480" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -305,11 +349,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="177" />
+		<set name="crystal_count" val="19" />
 		<set name="crystal_type" val="D" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1240" />
-		<set name="price" val="97800" />
+		<set name="price" val="15040" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -322,11 +366,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="64" />
+		<set name="crystal_count" val="7" />
 		<set name="crystal_type" val="C" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="1210" />
-		<set name="price" val="161000" />
+		<set name="price" val="24780" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -339,11 +383,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="98" />
+		<set name="crystal_count" val="10" />
 		<set name="crystal_type" val="C" />
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="4000" />
-		<set name="price" val="245000" />
+		<set name="price" val="37760" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -356,11 +400,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="feet" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="143" />
+		<set name="crystal_count" val="15" />
 		<set name="crystal_type" val="C" />
 		<set name="material" val="ADAMANTAITE" />
 		<set name="weight" val="4000" />
-		<set name="price" val="358000" />
+		<set name="price" val="55020" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="true" />
@@ -377,7 +421,7 @@
 		<set name="weight" val="1320" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
-		<set name="price" val="607" />
+		<set name="price" val="94" />
 		<stats>
 			<stat type="pDef">11</stat>
 		</stats>
@@ -455,7 +499,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1136" name="Spiritbound Wand" type="EtcItem">
-		<!-- The wand where the Spirit of Mirrors is bound to. Trap all three Spirits of Mirrors into a the wand and take it to Grand Magister Gallint. -->
+		<!-- The wand where the spirit of mirrors is bound to. Trap all three spirits of mirrors into a the wand and take it to Grand Magister Gallint. -->
 		<set name="icon" val="icon.weapon_club_i01" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -535,8 +579,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1400" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_depositable" val="false" />
@@ -597,9 +641,7 @@
 		<set name="weight" val="3301" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<set name="is_sellable" val="false" />
 		<stats>
 			<stat type="pDef">33</stat>
 		</stats>
@@ -614,9 +656,7 @@
 		<set name="weight" val="1750" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
-		<set name="is_depositable" val="false" />
 		<set name="isAppearanceable" val="true" />
-		<set name="is_sellable" val="false" />
 		<stats>
 			<stat type="pDef">20</stat>
 		</stats>
@@ -629,7 +669,7 @@
 		<set name="material" val="LEATHER" />
 		<set name="weight" val="640" />
 		<set name="commissionItemType" val="HELMET" />
-		<set name="price" val="18400" />
+		<set name="price" val="2840" />
 		<stats>
 			<stat type="pDef">26</stat>
 		</stats>
@@ -639,11 +679,11 @@
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="head" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="147" />
+		<set name="crystal_count" val="16" />
 		<set name="crystal_type" val="C" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="600" />
-		<set name="price" val="368000" />
+		<set name="price" val="56640" />
 		<set name="enchant_enabled" val="true" />
 		<set name="commissionItemType" val="HELMET" />
 		<stats>
@@ -764,7 +804,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1160" name="Dark Bezoar" type="EtcItem">
+	<item id="1160" name="Abyss Spirit Ore" type="EtcItem">
 		<!-- Gather 13 dark bezoars and take them to Sentry Nelsya. -->
 		<set name="icon" val="icon.etc_bead_gold_i00" />
 		<set name="immediate_effect" val="true" />
@@ -789,7 +829,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1162" name="Coin of Lords" type="EtcItem">
-		<!-- Gold coin engraved with the Gludio Lord's Badge. Gather two or more of these to end the Apprentice Knight's Trial. -->
+		<!-- Gold coin engraved with the mark of the lord of Gludio. Gather three or more of these to end the Trial of the Esquire. -->
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -801,7 +841,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1163" name="Coin of Lords" type="EtcItem">
-		<!-- Gold coin engraved with the Gludio Lord's Badge. Gather two or more of these to end the Apprentice Knight's Trial. -->
+		<!-- Gold coin engraved with the mark of the lord of Gludio. Gather three or more of these to end the Trial of the Esquire. -->
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -813,7 +853,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1164" name="Coin of Lords" type="EtcItem">
-		<!-- Gold coin engraved with the Gludio Lord's Badge. Gather two or more of these to end the Apprentice Knight's Trial. -->
+		<!-- Gold coin engraved with the mark of the lord of Gludio. Gather three or more of these to end the Trial of the Esquire. -->
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -825,7 +865,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1165" name="Coin of Lords" type="EtcItem">
-		<!-- Gold coin engraved with the Gludio Lord's Badge. Gather two or more of these to end the Apprentice Knight's Trial. -->
+		<!-- Gold coin engraved with the mark of the lord of Gludio. Gather three or more of these to end the Trial of the Esquire. -->
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -837,7 +877,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1166" name="Coin of Lords" type="EtcItem">
-		<!-- Gold coin engraved with the Gludio Lord's Badge. Gather two or more of these to end the Apprentice Knight's Trial. -->
+		<!-- Gold coin engraved with the mark of the lord of Gludio. Gather three or more of these to end Trial of the Esquire. -->
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -849,7 +889,7 @@
 		<set name="is_questitem" val="true" />
 	</item>
 	<item id="1167" name="Coin of Lords" type="EtcItem">
-		<!-- Gold coin engraved with the Gludio Lord's Badge. Gather two or more of these to end the Apprentice Knight's Trial. -->
+		<!-- Gold coin engraved with the mark of the lord of Gludio. Gather three or more of these to end the Trial of the Esquire. -->
 		<set name="icon" val="icon.etc_coins_silver_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
@@ -908,7 +948,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1172" name="Gludio Guard's 1st Crest" type="EtcItem">
+	<item id="1172" name="Gludio Guard's 2nd Crest" type="EtcItem">
 		<!-- Crest that distinguishes guard membership. As Captain Bezique requested, hunt giant spiders. -->
 		<set name="icon" val="icon.etc_badge_silver_i00" />
 		<set name="immediate_effect" val="true" />
@@ -932,7 +972,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1174" name="Einhasad's 1st Temple Badge" type="EtcItem">
+	<item id="1174" name="Einhasad's 2nd Temple Badge" type="EtcItem">
 		<!-- As High Priest Levian requested, kill Langk lizardmen and collect the proof. -->
 		<set name="icon" val="icon.accessary_earing_of_holy_spirit_i00" />
 		<set name="immediate_effect" val="true" />
@@ -956,7 +996,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1176" name="Gludio Guard's 1st Crest" type="EtcItem">
+	<item id="1176" name="Gludio Guard's 3rd Crest" type="EtcItem">
 		<!-- Crest that proves guard membership. As Captain Gilbert requested, hunt giant spiders. -->
 		<set name="icon" val="icon.etc_badge_silver_i00" />
 		<set name="immediate_effect" val="true" />
@@ -980,7 +1020,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1178" name="Einhasad's 1st Temple Badge" type="EtcItem">
+	<item id="1178" name="Einhasad's 3rd Temple Badge" type="EtcItem">
 		<!-- As High Priest Biotin requested, hunt Silent Horrors in the Elven Ruins. -->
 		<set name="icon" val="icon.accessary_earing_of_holy_spirit_i00" />
 		<set name="immediate_effect" val="true" />
@@ -1026,8 +1066,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="1850" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
+		<set name="soulshots" val="7" />
+		<set name="spiritshots" val="2" />
 		<set name="mp_consume" val="1" />
 		<set name="reuse_delay" val="1500" />
 		<set name="is_tradable" val="false" />
@@ -1055,8 +1095,8 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="STEEL" />
 		<set name="weight" val="1000" />
-		<set name="soulshots" val="1" />
-		<set name="spiritshots" val="1" />
+		<set name="soulshots" val="2" />
+		<set name="spiritshots" val="2" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_depositable" val="false" />

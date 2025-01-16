@@ -8,7 +8,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="636" />
+		<set name="price" val="128" />
 		<set name="recipe_id" val="16" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -22,7 +22,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="397" />
+		<set name="price" val="80" />
 		<set name="recipe_id" val="17" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -36,7 +36,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="93" />
+		<set name="price" val="19" />
 		<set name="recipe_id" val="18" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -50,7 +50,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="238" />
+		<set name="price" val="48" />
 		<set name="recipe_id" val="19" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -112,8 +112,8 @@
 		<set name="handler" val="Recipes" />
 		<set name="commissionItemType" val="RECIPE" />
 	</item>
-	<item id="1808" name="Recipe: Soulshot (S-grade) (100%)" type="EtcItem">
-		<!-- For Dwarves only. Recipe for a Soulshot (S-grade). Create Item skill must be level 8. The success rate is 100%. -->
+	<item id="1808" name="Recipe: Soulshot (S-grade)" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a soulshot-S-grade. Requires Create Item - Skill Lv. 8. The success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_black_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
@@ -121,9 +121,70 @@
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
 		<set name="price" val="450000" />
-		<set name="is_stackable" val="true" />
 		<set name="recipe_id" val="24" />
+		<set name="is_stackable" val="true" />
+		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1809" name="Recipe: Durable Stem" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a Durable Stem. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1810" name="Recipe: Wooden Frame" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a Wooden Frame. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1811" name="Recipe: Bark of Treant" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a bark of ant. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1812" name="Recipe: Coarse Bone Powder" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Coarse Bone Powder. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1813" name="Recipe: Refined Steel" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Refined Steel. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1814" name="Recipe: Leather" type="EtcItem">
 		<!-- For Dwarves only. Recipe for Leather. Requires Create Item - Skill Lv. 1. The success rate is 100%. -->
@@ -139,6 +200,30 @@
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
+	<item id="1815" name="Recipe: Bowstring" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a Bowstring. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="100" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1816" name="Recipe: Steel Frame" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a Steel Frame. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
 	<item id="1817" name="Recipe: Cord" type="EtcItem">
 		<!-- For Dwarves only. Recipe for Cord. Requires Create Item - Skill Lv. 2. The success rate is 100%. -->
 		<set name="icon" val="icon.etc_recipe_white_i00" />
@@ -152,6 +237,90 @@
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
+	</item>
+	<item id="1818" name="Recipe: Refined Bronze" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Refined Bronze. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1819" name="Recipe: Treant Potion" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a ant potion. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1820" name="Recipe: Magic Paper" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Magic Paper. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1821" name="Recipe: Flaming Oil" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Flaming Oil. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_white_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="500" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1822" name="Recipe: Magic Powder" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Magic Powder. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1823" name="Recipe: Refined Mithril" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Refined Mithril. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1824" name="Recipe: Reinforced Steel" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Reinforced Steel. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1825" name="Recipe: Oriharukon" type="EtcItem">
 		<!-- For Dwarves only. Recipe for Oriharukon. Requires Create Item - Skill Lv. 4. The success rate is 100%. -->
@@ -167,13 +336,49 @@
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
+	<item id="1826" name="Recipe: Enchanted Solution" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a Enchanted Solution. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1827" name="Recipe: Metal Frame" type="EtcItem">
+		<!-- For Dwarves only. Recipe for a Metal Frame. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
+	<item id="1828" name="Recipe: Top-grade Steel" type="EtcItem">
+		<!-- For Dwarves only. Recipe for Top-grade Steel. Requires Create Item - Skill Lv. 2. -->
+		<set name="icon" val="icon.etc_recipe_blue_i00" />
+		<set name="default_action" val="RECIPE" />
+		<set name="etcitem_type" val="RECIPE" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LIQUID" />
+		<set name="weight" val="30" />
+		<set name="price" val="1000" />
+		<set name="commissionItemType" val="RECIPE" />
+		<set name="is_stackable" val="true" />
+	</item>
 	<item id="1829" name="Scroll of Escape: Clan Hall" type="EtcItem">
 		<!-- Scroll that relocates you to your clan hall. If you don't have a clan hall, it will relocate you to the nearest village. -->
 		<set name="icon" val="icon.etc_scroll_of_return_agit_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<set name="weight" val="120" />
+		<set name="weight" val="10" />
 		<set name="price" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
@@ -192,7 +397,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
-		<set name="weight" val="120" />
+		<set name="weight" val="10" />
 		<set name="price" val="500" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
@@ -310,7 +515,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1837" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1837" name="Kendell's 2nd Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Kracha. He should be somewhere around the Nine obelisk, southwest of the Elven Village. -->
 		<set name="icon" val="icon.etc_recipe_blue_i00" />
 		<set name="immediate_effect" val="true" />
@@ -322,7 +527,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1838" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1838" name="Kendell's 3rd Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Batoh. He should be somewhere around the entrance of the underground fortress of the Elves. -->
 		<set name="icon" val="icon.etc_recipe_blue_i00" />
 		<set name="immediate_effect" val="true" />
@@ -334,7 +539,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1839" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1839" name="Kendell's 4th Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Tanukia. He should be somewhere around the open-air theatre ruins, southwest of the Elven Village. -->
 		<set name="icon" val="icon.etc_recipe_blue_i00" />
 		<set name="immediate_effect" val="true" />
@@ -346,7 +551,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1840" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1840" name="Kendell's 5th Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Turel. He should be somewhere around the seashore ruins, northwest of Lake Iris. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="immediate_effect" val="true" />
@@ -358,7 +563,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1841" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1841" name="Kendell's 6th Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Roko. He should be somewhere around the seashore ruins, west of Lake Iris. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="immediate_effect" val="true" />
@@ -370,7 +575,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1842" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1842" name="Kendell's 7th Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Kamut. He should be somewhere around the seashore ruins, south of Lake Iris. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="immediate_effect" val="true" />
@@ -382,7 +587,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1843" name="Kendell's 1st Order" type="EtcItem">
+	<item id="1843" name="Kendell's 8th Order" type="EtcItem">
 		<!-- Punish Kaboo Chief Murtika. He should be somewhere around the seashore ruins, east of Lake Iris. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="immediate_effect" val="true" />
@@ -394,7 +599,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1844" name="Kaboo Chief's Necklace" type="EtcItem">
+	<item id="1844" name="Kaboo Chief's 1st Torque" type="EtcItem">
 		<!-- Necklace taken by killing the chief of Kaboo orcs. Take this to Sentinel Kendell. -->
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="immediate_effect" val="true" />
@@ -406,7 +611,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_questitem" val="true" />
 	</item>
-	<item id="1845" name="Kaboo Chief's Necklace" type="EtcItem">
+	<item id="1845" name="Kaboo Chief's 2nd Torque" type="EtcItem">
 		<!-- Necklace taken by killing the chief of Kaboo orcs. Take this to Sentinel Kendell. -->
 		<set name="icon" val="icon.accessary_necklace_of_black_ore_i00" />
 		<set name="immediate_effect" val="true" />
@@ -454,7 +659,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="is_depositable" val="false" />
 	</item>
-	<item id="1849" name="Brass Tiara Piece" type="EtcItem">
+	<item id="1849" name="Brass Trinket Piece" type="EtcItem">
 		<!-- Relic of the Elmoreden empire. Part of a brass trinket. -->
 		<set name="icon" val="icon.etc_broken_crystal_gold_i00" />
 		<set name="immediate_effect" val="true" />
@@ -491,7 +696,7 @@
 		<set name="is_depositable" val="false" />
 	</item>
 	<item id="1852" name="Ancient Clay Urn" type="EtcItem">
-		<!-- Clay urn of the Elmoreden empire. Can be sold at a store. -->
+		<!-- Clay urn of the Elmoreden empire. -->
 		<set name="icon" val="icon.etc_oil_pot_white_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -503,7 +708,7 @@
 		<set name="is_depositable" val="false" />
 	</item>
 	<item id="1853" name="Ancient Brass Tiara" type="EtcItem">
-		<!-- Relic of the Elmoreden empire. Formal brass tiara. Can be sold at a store. -->
+		<!-- Relic of the Elmoreden empire. Formal brass tiara. -->
 		<set name="icon" val="icon.etc_ancient_crown_i03" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -515,7 +720,7 @@
 		<set name="is_depositable" val="false" />
 	</item>
 	<item id="1854" name="Ancient Bronze Mirror" type="EtcItem">
-		<!-- Relic of the Elmoreden empire. Bronze mirror. Can be sold at a store. -->
+		<!-- Relic of the Elmoreden empire. Bronze mirror. -->
 		<set name="icon" val="icon.etc_mirror_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -527,7 +732,7 @@
 		<set name="is_depositable" val="false" />
 	</item>
 	<item id="1855" name="Ancient Jade Necklace" type="EtcItem">
-		<!-- Relic of the Elmoreden empire. Jade necklace. Can be sold at a store. -->
+		<!-- Relic of the Elmoreden empire. Jade necklace. -->
 		<set name="icon" val="icon.etc_leash_i00" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
@@ -630,29 +835,29 @@
 		<set name="handler" val="Maps" />
 	</item>
 	<item id="1864" name="Stem" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_branch_gold_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
-		<set name="price" val="100" />
+		<set name="price" val="20" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1865" name="Varnish" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_pouch_yellow_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="2" />
-		<set name="price" val="200" />
+		<set name="price" val="40" />
 		<set name="commissionItemType" val="OTHER_ITEM" />
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1866" name="Suede" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_suede_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -663,7 +868,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1867" name="Animal Skin" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_leather_brown_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -674,7 +879,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1868" name="Thread" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_skein_white_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -685,7 +890,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1869" name="Iron Ore" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_lump_gray_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -696,7 +901,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1870" name="Coal" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_coal_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -707,7 +912,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1871" name="Charcoal" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_charcoal_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -718,7 +923,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1872" name="Animal Bone" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_piece_bone_white_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -729,7 +934,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1873" name="Silver Nugget" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_silver_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -740,7 +945,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1874" name="Oriharukon Ore" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_oriharukon_ore_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -751,7 +956,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1875" name="Stone of Purity" type="EtcItem">
-		<!-- Sell at a store or trade in for new materials at the Aden Reconstruction Society. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_crystal_ball_white_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -762,7 +967,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1876" name="Mithril Ore" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_mithril_ore_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -773,7 +978,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1877" name="Adamantite Nugget" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_adamantite_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -784,7 +989,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1878" name="Durable Braid" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_braided_hemp_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -795,7 +1000,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1879" name="Cokes" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_oil_pot_black_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -806,7 +1011,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1880" name="Steel" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_lump_black_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -817,7 +1022,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1881" name="Coarse Bone Powder" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_powder_white_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -828,7 +1033,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1882" name="Leather" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_leather_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -839,7 +1044,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1883" name="Steel Mold" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_mold_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -850,7 +1055,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1884" name="Cord" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_skein_gray_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -861,7 +1066,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1885" name="High-grade Suede" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_pouch_yellow_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -872,7 +1077,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1886" name="Silver Mold" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_silver_mold_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -883,7 +1088,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1887" name="Varnish of Purity" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_potion_clear_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -894,7 +1099,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1888" name="Synthetic Cokes" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_synthetic_cokes_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -905,7 +1110,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1889" name="Synthetic Braid" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_compound_braid_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -916,7 +1121,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1890" name="Mithril Alloy" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_lump_white_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -927,7 +1132,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1891" name="Artisan's Frame" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_artisans_frame_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -938,7 +1143,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1892" name="Blacksmith' Frame" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_blacksmiths_frame_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -949,7 +1154,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1893" name="Oriharukon" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_oriharukon_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -960,7 +1165,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1894" name="Crafted Leather" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_crafted_leather_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -971,7 +1176,7 @@
 		<set name="is_stackable" val="true" />
 	</item>
 	<item id="1895" name="Metallic Fiber" type="EtcItem">
-		<!-- Sell it to a store or trade it in through the Aden Reconstruction Society for a new ingredient. -->
+		<!-- Material used to make Dwarven items. Can be sold in any shop. -->
 		<set name="icon" val="icon.etc_metallic_fiber_i00" />
 		<set name="etcitem_type" val="MATERIAL" />
 		<set name="immediate_effect" val="true" />
@@ -988,7 +1193,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="60" />
-		<set name="price" val="472" />
+		<set name="price" val="95" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -999,7 +1204,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="60" />
-		<set name="price" val="840" />
+		<set name="price" val="168" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -1010,7 +1215,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="60" />
-		<set name="price" val="1947" />
+		<set name="price" val="390" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -1021,7 +1226,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="60" />
-		<set name="price" val="1280" />
+		<set name="price" val="256" />
 		<set name="commissionItemType" val="MAJOR_CRAFTING_INGREDIENTS" />
 		<set name="is_stackable" val="true" />
 	</item>

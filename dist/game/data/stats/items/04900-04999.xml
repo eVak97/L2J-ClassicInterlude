@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
-	<item id="4900" name="Staff of Evil Spirits" additionalName="Empower" type="Weapon">
-		<!-- <Soul Crystal Enhancement>. Increases M. Atk. by 100. -->
+	<item id="4900" name="Staff of Evil Spirits" additionalName="Magic Focus" type="Weapon">
+		<!-- <Soul Crystal Enhancement>. Has a 20% chance of casting Focus on the target during magic use. -->
 		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="1746" />
+		<set name="crystal_count" val="180" />
 		<set name="crystal_type" val="B" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="930" />
-		<set name="price" val="13100000" />
+		<set name="price" val="2018280" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
@@ -32,19 +32,19 @@
 			<skill id="1077" level="3" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Focus -->
 		</skills>
 	</item>
-	<item id="4901" name="Staff of Evil Spirits" additionalName="Acumen" type="Weapon">
-		<!-- <Soul Crystal Enhancement>. Increases Casting Spd. by 12%. -->
+	<item id="4901" name="Staff of Evil Spirits" additionalName="Blessed Body" type="Weapon">
+		<!-- <Soul Crystal Enhancement>. Has a 20% chance of casting Blessed Body on the target during magic use. -->
 		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="1746" />
+		<set name="crystal_count" val="180" />
 		<set name="crystal_type" val="B" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="930" />
-		<set name="price" val="13100000" />
+		<set name="price" val="2018280" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
@@ -64,19 +64,19 @@
 			<skill id="1045" level="5" type_chance="20" type="ON_MAGIC_SKILL" /> <!-- Blessed Body -->
 		</skills>
 	</item>
-	<item id="4902" name="Staff of Evil Spirits" additionalName="Magic Regeneration" type="Weapon">
-		<!-- <Soul Crystal Enhancement>. Increases MP Recovery Rate by 14%. -->
+	<item id="4902" name="Staff of Evil Spirits" additionalName="Magic Poison" type="Weapon">
+		<!-- <Soul Crystal Enhancement>. Has a 6% chance of casting Curse Poison on the target during magic use. -->
 		<set name="icon" val="icon.weapon_staff_of_evil_sprit_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
 		<set name="damage_range" val="0;0;46;120" />
 		<set name="immediate_effect" val="true" />
-		<set name="crystal_count" val="1746" />
+		<set name="crystal_count" val="180" />
 		<set name="crystal_type" val="B" />
 		<set name="material" val="WOOD" />
 		<set name="weight" val="930" />
-		<set name="price" val="13100000" />
+		<set name="price" val="2018280" />
 		<set name="soulshots" val="1" />
 		<set name="spiritshots" val="1" />
 		<set name="enchant_enabled" val="true" />
@@ -94,6 +94,96 @@
 		</stats>
 		<skills>
 			<skill id="1168" level="6" type_chance="6" type="ON_MAGIC_SKILL" /> <!-- Curse Poison -->
+		</skills>
+	</item>
+	<item id="4903" name="Dasparion's Staff" type="Weapon">
+		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="751" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="920" />
+		<set name="price" val="18300000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+	</item>
+	<item id="4904" name="Dasparion's Staff" type="Weapon">
+		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="751" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="920" />
+		<set name="price" val="18300000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="1164" level="14" type_chance="4" type="ON_MAGIC_SKILL" /> <!-- Curse Weakness -->
+		</skills>
+	</item>
+	<item id="4905" name="Dasparion's Staff" type="Weapon">
+		<set name="icon" val="icon.weapon_dasparions_staff_i01" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="BLUNT" />
+		<set name="bodypart" val="lrhand" />
+		<set name="damage_range" val="0;0;46;120" />
+		<set name="immediate_effect" val="true" />
+		<set name="crystal_count" val="751" />
+		<set name="crystal_type" val="A" />
+		<set name="material" val="ADAMANTAITE" />
+		<set name="weight" val="920" />
+		<set name="price" val="18300000" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="enchant_enabled" val="true" />
+		<set name="is_magic_weapon" val="true" />
+		<set name="commissionItemType" val="TWO_HAND_MAGIC_BLUNT_WEAPON" />
+		<set name="isAppearanceable" val="true" />
+		<stats>
+			<stat type="pAtk">207</stat>
+			<stat type="mAtk">143</stat>
+			<stat type="rCrit">6</stat>
+			<stat type="accCombat">8</stat>
+			<stat type="pAtkSpd">325</stat>
+			<stat type="randomDamage">20</stat>
+			<stat type="pAtkRange">40</stat>
+		</stats>
+		<skills>
+			<skill id="1222" level="10" type_chance="4" type="ON_MAGIC_SKILL" /> <!-- Curse Chaos -->
 		</skills>
 	</item>
 	<item id="4906" name="Spellbook: Solar Spark" type="EtcItem">
@@ -162,7 +252,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="200000" />
+		<set name="price" val="8700" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -192,7 +282,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="100000" />
+		<set name="price" val="6750" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -262,7 +352,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="100000" />
+		<set name="price" val="3200" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -272,7 +362,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="100000" />
+		<set name="price" val="3200" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -282,7 +372,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
-		<set name="price" val="100000" />
+		<set name="price" val="3200" />
 		<set name="commissionItemType" val="SPELLBOOK" />
 		<set name="is_stackable" val="true" />
 	</item>
@@ -404,7 +494,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10900" />
+		<set name="price" val="2180" />
 		<set name="recipe_id" val="478" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -418,7 +508,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="12120" />
+		<set name="price" val="2424" />
 		<set name="recipe_id" val="328" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -432,7 +522,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="8080" />
+		<set name="price" val="1616" />
 		<set name="recipe_id" val="330" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -446,7 +536,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16160" />
+		<set name="price" val="3232" />
 		<set name="recipe_id" val="332" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -460,7 +550,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="41600" />
+		<set name="price" val="8320" />
 		<set name="recipe_id" val="341" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -474,7 +564,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="26000" />
+		<set name="price" val="5200" />
 		<set name="recipe_id" val="343" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -488,7 +578,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="347" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -502,7 +592,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="349" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -516,7 +606,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="41600" />
+		<set name="price" val="8320" />
 		<set name="recipe_id" val="357" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -530,7 +620,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="26000" />
+		<set name="price" val="5200" />
 		<set name="recipe_id" val="359" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -544,7 +634,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="31200" />
+		<set name="price" val="6240" />
 		<set name="recipe_id" val="361" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -558,7 +648,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="19460" />
+		<set name="price" val="3892" />
 		<set name="recipe_id" val="363" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -572,7 +662,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="45600" />
+		<set name="price" val="9120" />
 		<set name="recipe_id" val="365" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -586,7 +676,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="31200" />
+		<set name="price" val="6240" />
 		<set name="recipe_id" val="367" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -600,7 +690,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="19460" />
+		<set name="price" val="3892" />
 		<set name="recipe_id" val="369" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -614,21 +704,21 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="45600" />
+		<set name="price" val="9120" />
 		<set name="recipe_id" val="371" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="4952" name="Recipe: Avadon Circlet (60%)" type="EtcItem">
-		<!-- For Dwarves only. Recipe for a Sealed Avadon Circlet. Requires Create Item - Skill Lv. 6. The success rate is 60%. -->
+		<!-- For Dwarves only. Recipe for an Avadon Circlet. Requires Create Item - Skill Lv. 6. The success rate is 60%. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="15560" />
+		<set name="price" val="3112" />
 		<set name="recipe_id" val="373" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -642,7 +732,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="375" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -656,7 +746,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="377" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -670,7 +760,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="379" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -684,7 +774,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="381" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -698,7 +788,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="387" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -712,7 +802,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="423" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -726,7 +816,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="425" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -740,7 +830,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10380" />
+		<set name="price" val="2076" />
 		<set name="recipe_id" val="429" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -754,21 +844,21 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="10900" />
+		<set name="price" val="2180" />
 		<set name="recipe_id" val="431" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="4962" name="Recipe: Zubei's Helmet (60%)" type="EtcItem">
-		<!-- For Dwarves only. Recipe for a Sealed Zubei's Helmet. Requires Create Item - Skill Lv. 6. The success rate is 60%. -->
+		<!-- For Dwarves only. Recipe for a Zubei's Helmet. Requires Create Item - Skill Lv. 6. The success rate is 60%. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="15560" />
+		<set name="price" val="3112" />
 		<set name="recipe_id" val="433" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -782,7 +872,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="438" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -796,7 +886,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="440" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -810,7 +900,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="442" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -824,7 +914,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="444" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -838,7 +928,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="446" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -852,7 +942,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="448" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -866,7 +956,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="450" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -880,7 +970,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="452" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -894,7 +984,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="454" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -908,7 +998,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="173600" />
+		<set name="price" val="34720" />
 		<set name="recipe_id" val="456" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -922,7 +1012,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="18480" />
+		<set name="price" val="3696" />
 		<set name="recipe_id" val="334" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -936,7 +1026,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="12320" />
+		<set name="price" val="2464" />
 		<set name="recipe_id" val="336" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -950,7 +1040,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="24600" />
+		<set name="price" val="4920" />
 		<set name="recipe_id" val="338" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -964,7 +1054,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="345" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -978,7 +1068,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="351" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -992,7 +1082,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="353" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1006,7 +1096,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="355" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1020,7 +1110,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16900" />
+		<set name="price" val="3380" />
 		<set name="recipe_id" val="383" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1034,7 +1124,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="64400" />
+		<set name="price" val="12880" />
 		<set name="recipe_id" val="385" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1048,7 +1138,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="40200" />
+		<set name="price" val="8040" />
 		<set name="recipe_id" val="389" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1062,7 +1152,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="94200" />
+		<set name="price" val="18840" />
 		<set name="recipe_id" val="391" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1076,7 +1166,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="70600" />
+		<set name="price" val="14120" />
 		<set name="recipe_id" val="393" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1090,7 +1180,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="70600" />
+		<set name="price" val="14120" />
 		<set name="recipe_id" val="395" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1104,7 +1194,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="48200" />
+		<set name="price" val="9640" />
 		<set name="recipe_id" val="397" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1118,7 +1208,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="48200" />
+		<set name="price" val="9640" />
 		<set name="recipe_id" val="399" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1132,7 +1222,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="30200" />
+		<set name="price" val="6040" />
 		<set name="recipe_id" val="401" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1146,35 +1236,35 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="30200" />
+		<set name="price" val="6040" />
 		<set name="recipe_id" val="403" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="4990" name="Recipe: Blue Wolf Helmet (60%)" type="EtcItem">
-		<!-- For Dwarves only. Recipe for a Sealed Blue Wolf Helmet. Requires Create Item - Skill Lv. 7. The success rate is 60%. -->
+		<!-- For Dwarves only. Recipe for a Blue Wolf Helmet. Requires Create Item - Skill Lv. 7. The success rate is 60%. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="24200" />
+		<set name="price" val="4840" />
 		<set name="recipe_id" val="405" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
 		<set name="handler" val="Recipes" />
 	</item>
 	<item id="4991" name="Recipe: Doom Helmet (60%)" type="EtcItem">
-		<!-- For Dwarves only. Recipe for a Sealed Doom Helmet. Requires Create Item - Skill Lv. 7. The success rate is 60%. -->
+		<!-- For Dwarves only. Recipe for a Doom Helmet. Requires Create Item - Skill Lv. 7. The success rate is 60%. -->
 		<set name="icon" val="icon.etc_recipe_red_i00" />
 		<set name="default_action" val="RECIPE" />
 		<set name="etcitem_type" val="RECIPE" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="24200" />
+		<set name="price" val="4840" />
 		<set name="recipe_id" val="407" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1188,7 +1278,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="409" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1202,7 +1292,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="411" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1216,7 +1306,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="413" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1230,7 +1320,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="415" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1244,7 +1334,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="417" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1258,7 +1348,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="419" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1272,7 +1362,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="421" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
@@ -1286,7 +1376,7 @@
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="30" />
-		<set name="price" val="16080" />
+		<set name="price" val="3216" />
 		<set name="recipe_id" val="427" />
 		<set name="is_stackable" val="true" />
 		<set name="commissionItemType" val="RECIPE" />
