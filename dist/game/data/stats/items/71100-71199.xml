@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="71100" name="Wedding Bouquet" type="Weapon">
+		<!-- A Wedding Bouquet composed of lovely flowers, intended for female characters only. -->
+		<set name="icon" val="BranchSys2.icon.br_wedding_bouquet_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="weapon_type" val="ETC" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="STEEL" />
+		<set name="soulshots" val="1" />
+		<set name="spiritshots" val="1" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="weight" val="1600" />
+		<stats>
+			<stat type="pAtk">1</stat>
+			<stat type="mAtk">1</stat>
+			<stat type="rCrit">1</stat>
+			<stat type="pAtkSpd">379</stat>
+			<stat type="randomDamage">1</stat>
+		</stats>
+	</item>
+	<item id="71101" name="XP and SP Rune - 50%" additionalName="1 hour" type="EtcItem">
+		<!-- 1-hour item. When in inventory, your XP and SP gain is increased by 50%. Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.skill19226" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="60" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71102" name="Package: XP and SP Rune - 50% (1 hour)" type="EtcItem">
+		<!-- Double-click to obtain XP/SP Rune - 50% (1 hour). Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71103" name="XP and SP Rune - 50%" additionalName="5 hours" type="EtcItem">
+		<!-- 5-hour item. When in inventory, your XP and SP gain is increased by 50%. Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.skill19226" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="time" val="300" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71104" name="Package: XP and SP Rune - 50% (5 hours)" type="EtcItem">
+		<!-- Double-click to obtain XP/SP Rune - 50% (5 hours). Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71105" name="XP and SP Rune - 50%" additionalName="7-day" type="EtcItem">
+		<!-- 7-day item. When in inventory, your XP and SP gain is increased by 50%. Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.skill19226" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="time" val="10080" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71106" name="Package: XP and SP Rune - 50% (7-day)" type="EtcItem">
+		<!-- Double-click to obtain XP/SP Rune - 50% (7 days). Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71107" name="Irene' Hourglass - 1 Hour" type="EtcItem">
+		<!-- When used, provides 50% XP bonus for 1 hour. Intended for Lv. 1~19. -->
+		<set name="icon" val="icon.etc_dragons_blood_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="71108" name="Package: Irene' Hourglass (1 hour)" type="EtcItem">
+		<!-- Double-click to obtain Irene' Hourglass - 1 Hour. Intended for Lv. 1 - 75 characters. -->
+		<set name="icon" val="icon.etc_pi_gift_box_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71109" name="Package: Golden Mermaid's Fishing Rod (7-day)" type="EtcItem">
+		<!-- Double-click to obtain Golden Mermaid's Fishing Rod (7 days). -->
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71110" name="Package: Golden Mermaid's Fishing Rod (30-day)" type="EtcItem">
+		<!-- Double-click to obtain Golden Mermaid's Fishing Rod (30 days). -->
+		<set name="icon" val="icon.etc_pi_gift_box_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71111" name="Ruthless Tribe Mask" type="Armor">
+		<!-- A mask which formerly belonged to Looters. -->
+		<set name="icon" val="BranchSys.icon.br_mask_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71112" name="Artisan's Goggles" type="Armor">
+		<!-- Large goggles used to protect eyes. Occupies 2 Accessory slots. -->
+		<set name="icon" val="icon.accessory_dwarf_goggle_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="armor_type" val="HEAVY" />
+		<set name="bodypart" val="alldress" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71113" name="Fairy Antennae" type="Armor">
+		<!-- A lovely hair accessory shaped as antennae with stars. -->
+		<set name="icon" val="icon.accessory_hair_feeler_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="maxMp">22</stat>
+		</stats>
+	</item>
+	<item id="71114" name="Assassin's Bamboo Hat" type="Armor">
+		<!-- A bamboo hat made from bulrush. Occupies 2 Hair Accessory slots. -->
+		<set name="icon" val="BranchSys.icon.br_Bamboo_Hat_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="maxMp">28</stat>
+		</stats>
+	</item>
+	<item id="71115" name="Little Angel Wings" type="Armor">
+		<!-- A hair accessory in the shape of a wing.Can be shared within the account. -->
+		<set name="icon" val="icon.accessory_hair_ring_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="maxMp">34</stat>
+		</stats>
+	</item>
+	<item id="71116" name="Black Gem Mask" type="Armor">
+		<!-- A luxurious Black Gem Mask made of metal.Can be shared within the account. -->
+		<set name="icon" val="BranchSys.icon.br_black_gem_mask_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<stats>
+			<stat type="maxMp">22</stat>
+		</stats>
+	</item>
+	<item id="71117" name="Circlet of Eva" type="Armor">
+		<!-- A circlet imbued with Eva's mysterious power. Occupies 2 Hair Accessory slots.Can be shared within the account. -->
+		<set name="icon" val="BranchSys.icon.br_circlet_of_eva_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71118" name="Outlaw Eyepatch" type="Armor">
+		<!-- A purple colored eye patch accessory.Can be shared within the account. -->
+		<set name="icon" val="icon.accessory_outlaw_eyepatch_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71119" name="Monocle" type="Armor">
+		<!-- An monocle accessory with a ring attached.Can be shared within the account. -->
+		<set name="icon" val="icon.accessory_glasses_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="WOOD" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71120" name="Sing Of Adventurer - Recovery" type="EtcItem">
+		<!-- Endowed with a mysterious power, the song allows resurrecting a character and restoring their lost experience at the death of an NPC. -->
+		<set name="icon" val="BranchSys3.Icon.g_sing_of_adventurer_recovery" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="71121" name="Agathion - Bugbear" type="Armor">
+		<!-- Equipping it in the main slot summons the Agathion. -->
+		<set name="icon" val="BranchSys.icon.br_aga_bugbear_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71122" name="Agathion - Dryad" type="Armor">
+		<!-- Equipping it in the main slot summons the Agathion. -->
+		<set name="icon" val="BranchSys.icon.br_aga_dryad_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="hairall" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71123" name="Agathion - Griffin" type="Armor">
+		<!-- Equipping it in the main slot summons the Agathion. -->
+		<set name="icon" val="BranchIcon.icon.Item_g_rbracelet_griffin" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="underwear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+		<set name="weight" val="5" />
+	</item>
+	<item id="71124" name="Stable Cloak Enchantment Scroll - Legendary" type="EtcItem">
+		<!-- Enchant scroll for the Ancient Kingdom's Cloak. Can be enchanted between +1-+10. Enchant level goes up by 1 when it succeeds, and if it fails, the enchant level remains the same. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_enchant_scroll_normal" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71125" name="Legendary Scroll (High-grade)" type="EtcItem">
+		<!-- Exchange a Elmoreden/Aden/Elmore/Ferios Cloak for a legendary cloak through the Dimensional Merchant. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_legend_scroll" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LIQUID" />
+	</item>
+	<item id="71126" name="High-grade Life Stone - Ancient Kingdom" type="EtcItem">
+		<!-- High-grade Life Stone for the Ancient Kingdom Cloak. Can augment all Ancient Kingdom Cloaks enchanted to +10 or higher and add a random effect. The effect bestowed through augmentation applies to the cloak when its enchant level is +10 or higher. Once augmented, it cannot be canceled but can be augmented again. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_mineral_normal" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="WOOD" />
+	</item>
+	<item id="71127" name="High-grade Life Stone - Elmoreden" type="EtcItem">
+		<!-- High-grade Life Stone for the Legendary Elmoreden Cloak. Can augment Legendary Elmoreden Cloaks enchanted to +15 or higher and add a random effect. The effect bestowed through augmentation applies to the cloak when its enchant level is +15 or higher. Once augmented, it cannot be canceled but can be augmented again. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_mineral_elmoreden" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71128" name="High-grade Life Stone - Aden" type="EtcItem">
+		<!-- High-grade Life Stone for the Legendary Aden Cloak. Can augment Legendary Aden Cloaks enchanted to +15 or higher and add a random effect. The effect bestowed through augmentation applies to the cloak when its enchant level is +15 or higher. Once augmented, it cannot be canceled but can be augmented again. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_mineral_aden" />
+		<set name="is_sellable" val="false" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71129" name="High-grade Life Stone - Elmore" type="EtcItem">
+		<!-- High-grade Life Stone for the Legendary Elmore Cloak. Can augment Legendary Elmore Cloaks enchanted to +15 or higher and add a random effect. The effect bestowed through augmentation applies to the cloak when its enchant level is +15 or higher. Once augmented, it cannot be canceled but can be augmented again. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_mineral_elmore" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71130" name="High-grade Life Stone - Ferios" type="EtcItem">
+		<!-- High-grade Life Stone for the Legendary Ferios Cloak. Can augment Legendary Ferios Cloaks enchanted to +15 or higher and add a random effect. The effect bestowed through augmentation applies to the cloak when its enchant level is +15 or higher. Once augmented, it cannot be canceled but can be augmented again. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_cloak_mineral_perios" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71131" name="High-grade Life Stone Pack - Legendary" type="EtcItem">
+		<!-- Double-click to obtain 1 High-grade Life Stone - Ancient Kingdom/Elmoreden/Aden/Elmore/Ferios randomly. -->
+		<set name="icon" val="icon.bm_freya_2016_gift_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71132" name="High-grade Life Stone Pack - Cloak" type="EtcItem">
+		<!-- Double-click to obtain 1 High-grade Life Stone - Ancient Kingdom/Elmoreden/Aden/Elmore/Ferios randomly. -->
+		<set name="icon" val="icon.bm_freya_2016_gift_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71133" name="Mermaid Agathion" type="Armor">
+		<!-- Equip it to summon a Mermaid Agathion. -->
+		<set name="icon" val="icon.agathion_base" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="weight" val="120" />
+	</item>
+	<item id="71134" name="Master's Fishing Coin" type="EtcItem">
+		<!-- A coin obtainable from Master Fishing. Take the coin to a Dimensional Merchant to exchange for a Fishing XP Box. -->
+		<set name="icon" val="icon.etc_coins_blue_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71135" name="Agathion Mermaid Enchant Scroll" type="EtcItem">
+		<!-- An enchant scroll for mermaid Agathion. Increases the Agathion's magic resistance and also adds a special ability from +4 enchantment. Can enchant a mermaid Agathion safely to +3 and up to a max of +10. Increases unique abilities gradually from +1. -->
+		<set name="icon" val="icon.star_scrl_of_ench_ag" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="weight" val="120" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71136" name="Mermaid's Trace" type="EtcItem">
+		<!-- Gather 20 Mermaid's Traces and take them to a Dimensional Merchant to get the Mermaid Agathion Charm. -->
+		<set name="icon" val="icon.etc_oren_fish_scale_i00" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71137" name="Master's Fishing Potion" additionalName="1 h." type="EtcItem">
+		<!-- Increases XP/SP gain for successful fishing by 50% for 1 hour when used. Applies to all bait. Can be used together with the Fishing Guild's Support Certificate. -->
+		<set name="icon" val="BranchIcon.etc_sign_agathion_feed_blue_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71139" name="Fishing XP Box" type="EtcItem">
+		<!-- Contains a Scroll: Fishing XP. A chance to get a Shining Fishing Box additionally. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71140" name="Shining Fishing Box" type="EtcItem">
+		<!-- Shining Fishing Box. Use it to obtain an item. -->
+		<set name="icon" val="icon.bm_sheep_agathion_30d_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71141" name="Fishing XP Scroll" type="EtcItem">
+		<!-- A fishing XP scroll rewarded for hard fishing. Cannot be used on chaotic characters. -->
+		<set name="icon" val="icon.exp_bottle_scroll" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="weight" val="120" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71142" name="Complete Arms Supplies Pack" type="EtcItem">
+		<!-- Double-click to get one of the items in the Full Load Support Pack Box. -->
+		<set name="icon" val="icon.etc_treasure_box_i07" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71143" name="Cloak of Light for the Chosen" type="Armor">
+		<!-- A cloak for a few chosen ones who have proven themselves as Lineage 2 Game Testers. Increases Max. HP/MP/CP by 5%, P. Def. by 3%, Magic Resistance by 5% and Speed by 10 when equipped. -->
+		<set name="icon" val="icon.amor_goodness_cloak" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71144" name="Cloak of Darkness for the Chosen" type="Armor">
+		<!-- A cloak for a few chosen ones who have proven themselves as Lineage 2 Game Testers. Increases Max. HP/MP/CP by 5%, P. Def. by 3%, Magic Resistance by 5% and Speed by 10 when equipped. -->
+		<set name="icon" val="icon.amor_evilness_cloak" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="LEATHER" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_depositable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71145" name="Improved Scroll: Castle Blessing - Party" type="EtcItem">
+		<!-- Gives the Blessing of Castle effect to all party members. Buffs and debuffs do not disappear upon death, but Noblesse Blessing and Lucky Charm disappear. -->
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="weight" val="120" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71146" name="Scroll: Improved Castle Buff - Party" type="EtcItem">
+		<!-- Bestows all party members with the effects of Might Lv. 2, Empower Lv. 2, Acumen Lv. 1, and Haste Lv. 1. -->
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="weight" val="120" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71147" name="Scroll: Castle Wind Walk - Party" type="EtcItem">
+		<!-- Increases Speed of all party members by 33. -->
+		<set name="icon" val="icon.etc_scroll_white_i00" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="weight" val="120" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71148" name="Reinforced Castle Ring (10-day)" type="Armor">
+		<!-- 10-day item. HP +25, M. Atk. +3%, and P. Atk. +3%. The effects do not stack even if two identical earrings are equipped. -->
+		<set name="icon" val="icon.ev_11th_rare_acc_ring" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rfinger;lfinger" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<stats>
+			<stat type="mDef">32</stat>
+		</stats>
+	</item>
+	<item id="71149" name="Reinforced Castle Earring (10-day)" type="Armor">
+		<!-- 10-day item. MP +15, MP Recovery +0.2, Healing Effect +2%, Skill MP Cost -1%. The effect does not stack if two identical earrings are worn. -->
+		<set name="icon" val="icon.ev_11th_rare_acc_earing" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="rear;lear" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<stats>
+			<stat type="mDef">48</stat>
+		</stats>
+	</item>
+	<item id="71150" name="Reinforced Castle Necklace (10-day)" type="Armor">
+		<!-- 10-day item. MP +25, M. Def +3, P. Def. +5, MEN Attack and Resistance +3%, Skill MP Cost -1%. -->
+		<set name="icon" val="icon.ev_11th_rare_acc_necklace" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="neck" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<stats>
+			<stat type="mDef">64</stat>
+		</stats>
+	</item>
+	<item id="71151" name="Agathion Bracelet - Lv. 3" additionalName="60 d." type="Armor">
+		<!-- 60-day item. Opens 1 main Agathion slot and 2 subslots when equipped. STR/INT/CON/MEN +1. -->
+		<set name="icon" val="icon.lbracelet_agathion_charm" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="100" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51025" level="4" /> <!-- Expand Primary and Secondary Agathion Slots -->
+			<skill id="55885" level="1" /> <!-- Agathion Bracelet Stats Increase -->
+		</skills>
+	</item>
+	<item id="71152" name="Agathion Bracelet - Lv. 5" type="Armor">
+		<!-- Opens 1 main Agathion slot and 4 subslots when equipped. STR/INT/CON/MEN/DEX/WIT +1, MEN/Stun/Sleep/Paralysis Resistance +8%. -->
+		<set name="icon" val="icon.lbracelet_agathion_charm" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="100" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<skills>
+			<skill id="51025" level="4" /> <!-- Expand Primary and Secondary Agathion Slots -->
+			<skill id="55885" level="2" /> <!-- Agathion Bracelet Stats Increase -->
+			<skill id="55886" level="2" /> <!-- Agathion Bracelet Resistance Increase -->
+		</skills>
+	</item>
+	<item id="71153" name="+7 Elmoreden Cloak Box" type="EtcItem">
+		<!-- Double-click to obtain a +7 Elmoreden Cloak. -->
+		<set name="icon" val="BranchIcon.icon.etc_g_bm_godspirit_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71154" name="+7 Aden Cloak Box" type="EtcItem">
+		<!-- Double-click to obtain a +7 Aden Cloak. -->
+		<set name="icon" val="BranchIcon.icon.etc_g_bm_godspirit_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71155" name="+7 Elmore Cloak Box" type="EtcItem">
+		<!-- Double-click to obtain a +7 Elmore Cloak. -->
+		<set name="icon" val="BranchIcon.icon.etc_g_bm_godspirit_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71156" name="+7 Ferios Cloak Box" type="EtcItem">
+		<!-- Double-click to obtain a +7 Ferios Cloak. -->
+		<set name="icon" val="BranchIcon.icon.etc_g_bm_godspirit_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71157" name="Agathion Ball Trapping Gnosian" type="Armor">
+		<!-- Bracelet that summons a ball trapping Gnosian. It wears a red uniform. -->
+		<set name="icon" val="BranchSys2.icon.br_aga_kball_male_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71158" name="Agathion Ball Trapping Orodriel" type="Armor">
+		<!-- Bracelet that summons a ball trapping Orodriel. It wears a red uniform. -->
+		<set name="icon" val="BranchSys2.icon.br_aga_kball_female_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71159" name="Agathion Penalty Kick" type="Armor">
+		<!-- Bracelet that summons a Gnosian and Orodriel who are practicing penalty kicks. All are wearing red uniforms. -->
+		<set name="icon" val="BranchSys2.icon.br_aga_kball_kick_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="lbracelet" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="150" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_freightable" val="true" />
+	</item>
+	<item id="71160" name="Seven Signs Miracle Box" type="EtcItem">
+		<!-- Double-click to obtain a random item. -->
+		<set name="icon" val="icon.bm_sayha_gold_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="71161" name="Legendary Card: Antharas" type="EtcItem">
+		<set name="icon" val="icon.card_dragon_anta" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71162" name="Legendary Card: Valakas" type="EtcItem">
+		<set name="icon" val="icon.card_dragon_vala" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71163" name="Legendary Card: Lindvior" type="EtcItem">
+		<set name="icon" val="icon.card_dragon_rind" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71164" name="Legendary Card: Astair van Halter" type="EtcItem">
+		<set name="icon" val="icon.card_hero_holter" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71165" name="Legendary Card: Amadeo Cadmus" type="EtcItem">
+		<set name="icon" val="icon.card_hero_amadeose" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71166" name="Legendary Card: Lionel Hunter" type="EtcItem">
+		<set name="icon" val="icon.card_hero_hunter" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71167" name="Legendary Card: Sieghardt Ein" type="EtcItem">
+		<set name="icon" val="icon.card_hero_zigharte" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71168" name="Legendary Card: Elcadia" type="EtcItem">
+		<set name="icon" val="icon.card_hero_elcardia" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71169" name="Legendary Card: Baium" type="EtcItem">
+		<set name="icon" val="icon.card_devil_baium" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71170" name="Legendary Card: Beleth" type="EtcItem">
+		<set name="icon" val="icon.card_devil_verese" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71171" name="Legendary Card: Tiat" type="EtcItem">
+		<set name="icon" val="icon.card_devil_tiate" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71172" name="Legendary Card: Lilith" type="EtcItem">
+		<set name="icon" val="icon.card_devil_lilith" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71173" name="Legendary Card: Paulina" type="EtcItem">
+		<set name="icon" val="icon.card_angel_polline" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71174" name="Legendary Card: Anakim" type="EtcItem">
+		<set name="icon" val="icon.card_angel_anakim" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71175" name="Aspiring Orc Ruler of Aden" type="EtcItem">
+		<set name="icon" val="icon.card_orc" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71176" name="Hidden Card" type="EtcItem">
+		<set name="icon" val="icon.card_hidden" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="LEATHER" />
+	</item>
+	<item id="71177" name="Daily Present - VIP 1" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Scroll of Escape, 3 Healing Potions. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i00" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71178" name="Daily Present - VIP 2" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Scroll of Resurrection, 3 Healing Potions. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i01" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71179" name="Daily Present - VIP 3" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Scroll of Escape, 1 Scroll of Resurrection, 5 Healing Potions. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i02" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71180" name="Daily Present - VIP 4" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Scroll of Escape, 1 Scroll of Resurrection, 3 Greater Healing Potions. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i03" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71181" name="Daily Present - VIP 5" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Blessed Scroll of Escape, 3 Greater Healing Potions, 40 VIP Coins. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i04" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71182" name="Daily Present - VIP 6" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Blessed Scroll of Resurrection, 3 Greater Healing Potions, 100 VIP Coins. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i05" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71183" name="Daily Present - VIP 7" type="EtcItem">
+		<!-- Double-click to obtain the following: 1 Blessed Scroll of Escape, 1 Blessed Scroll of Resurrection, 3 Greater Healing Potions, 150 VIP Coins. -->
+		<set name="icon" val="BranchIcon.Icon.etc_vip_present_i06" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="weight" val="10" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="71184" name="Agathion Meliodas" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Meliodas Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Meliodas Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_meliodas_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71185" name="Agathion Elizabeth" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Elizabeth Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Elizabeth Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_elizabeth_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71186" name="Agathion Hawk" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Hawk Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Hawk Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_hawk_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71187" name="Agathion Ban" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Ban Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Ban Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_ban_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71188" name="Agathion Diane" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Diane Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Diane Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_diane_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71189" name="Agathion King" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the King Agathion.. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. King Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_king_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71190" name="Agathion Merlin" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Merlin Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Merlin Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_merlin_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71191" name="Agathion Gowther" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Gowther Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Gowther Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_gowther_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71192" name="Agathion Escanor" additionalName="Lv. 1" type="Armor">
+		<!-- An Agathion that activates the power of the Escanor Agathion. Equipping it in the main slot summons the Agathion and activates the Special Ability option. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Escanor Agathion +7 to upgrade to Stage 2. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_escanor_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71193" name="Agathion Meliodas" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the Meliodas Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Meliodas Agathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_meliodas_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71194" name="Agathion Elizabeth" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the Elizabeth Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Elizabeth Agathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_elizabeth_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71195" name="Agathion Hawk" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the Hawk Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Hawk Agathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_hawk_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71196" name="Agathion Ban" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the Ban Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Ban Agathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_ban_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71197" name="Agathion Diane" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the Diane Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. DianeAgathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_diane_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71198" name="Agathion King" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the King Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. King Agathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_king_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="71199" name="Agathion Merlin" additionalName="Lv. 2" type="Armor">
+		<!-- An Agathion that activates the power of the Merlin Agathion. Equipping it in the main slot summons the Agathion and activates the Special and Unique abilities. When equipped in a side slot, only the unique ability is applied. Upgrade to +7 by using Seven Deadly Sins Agathion Book of Growth. <Upgrade Requirement>. Merlin Agathion +7 to upgrade to Stage 3. -->
+		<set name="icon" val="BranchIcon.icon.g_bm_merlin_agathion_charm_lv1_jp" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="gloves" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="SILVER" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+</list>

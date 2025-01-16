@@ -1,0 +1,872 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/items.xsd">
+	<item id="90500" name="Dragon's Treasure Chest" type="EtcItem">
+		<!-- Double-click to randomly receive a rare item such as one of Enchant Scroll. -->
+		<set name="icon" val="icon.bm_dragon_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="90501" name="Dragon's Shining Treasure Chest" type="EtcItem">
+		<!-- Double-click to randomly receive one of the following items: Rare Belt, Lv. 5 Gem, Armor Enchant Stone, any other rare item. -->
+		<set name="icon" val="icon.bm_dragon_shinning_present" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="90502" name="Lucky Enchant Stone: Armor (D-grade)" additionalName="Event" type="EtcItem">
+		<!-- Enchant success rate +10% for standard armor (D-grade) when using an Enchant Scroll. Only for items enchanted between +3 and +8. For full-body armor, enchant must be between +4 and +8. Can be stored in private warehouse. -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90503" name="Lucky Enchant Stone: Armor (C-grade)" additionalName="Event" type="EtcItem">
+		<!-- Enchant success rate +10% for standard armor (C-grade) when using an Enchant Scroll. Only for items enchanted between +3 and +8. For full-body armor, enchant must be between +4 and +8. Can be stored in private warehouse. -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90504" name="Lucky Enchant Stone: Armor (B-grade)" additionalName="Event" type="EtcItem">
+		<!-- Enchant success rate +10% for standard armor (B-grade) when using an Enchant Scroll. Only for items enchanted between +3 and +8. For full-body armor, enchant must be between +4 and +8. Can be stored in private warehouse. -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90505" name="Lucky Enchant Stone: Armor (A-grade)" additionalName="Event" type="EtcItem">
+		<!-- Enchant success rate +10% for standard armor (A-grade) when using an Enchant Scroll. Only for items enchanted between +3 and +8. For full-body armor, enchant must be between +4 and +8. Can be stored in private warehouse. -->
+		<set name="icon" val="icon.bless_ench_amr_stone_i00" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90506" name="Valuable Mark of Balthus Knights" type="EtcItem">
+		<!-- XP/SP gain ++20% and a chance to get Special Supplies for 2 hour. Intended for Lv. 20 and higher. -->
+		<set name="icon" val="icon.ev_balthus_token" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="39272" level="1" /> <!-- Officer of Balthus Knights -->
+		</skills>
+	</item>
+	<item id="90507" name="Dragon's Balthus Chest" type="EtcItem">
+		<!-- Double-click to receive 30 Dragon's Treasure Chests that can contain random rare accessories or various Enchant Scrolls. -->
+		<set name="icon" val="icon.bm_dragon_present" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90500" min="30" max="30" chance="100" /> <!-- Dragon's Treasure Chest -->
+		</capsuled_items>
+	</item>
+	<item id="90508" name="Special Dragon's Fruit" additionalName="Event" type="EtcItem">
+		<!-- For 20 minutes, P./M. Atk. +12%, P./M. Def. +15%, Max. HP/CP/MP +25%, P./M. Critical Rate +10, P./M. Critical Damage +5%, HP/MP Recovery +30%. At a certain chance absorbs 5% of the damage inflicted on target as HP. XP and SP gained through hunting +10%. Cooldown is 1 minute. Buff remains after death. Can be stored in private warehouse. -->
+		<set name="icon" val="icon.bm_dragon_fruit" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="material" val="PAPER" />
+		<skills>
+			<skill id="55682" level="1" /> <!-- Special Dragons Fruit -->
+		</skills>
+	</item>
+	<item id="90509" name="Dragon's Gold Key" type="EtcItem">
+		<!-- Take 1 Gold Key and 15 Melissa's Recovery Potions to the Dimensional Merchant to exchange them for Shining Dragon's Treasure Chest. The item will be removed after the event is over on Jule 6, 2016. -->
+		<set name="icon" val="icon.bm_dragon_key" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90510" name="Talisman of Border Pack +5" type="EtcItem">
+		<!-- Double-click to obtain Talisman of Border - Lv. 5.. Note: cannot be returned once opened. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49731" min="1" max="1" chance="100" /> <!-- Talisman of Border - Lv. 5 -->
+		</capsuled_items>
+	</item>
+	<item id="90511" name="Talisman of Border Pack +6" type="EtcItem">
+		<!-- Double-click to obtain Talisman of Border - Lv. 6.. Note: cannot be returned once opened. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49732" min="1" max="1" chance="100" /> <!-- Talisman of Border - Lv. 6 -->
+		</capsuled_items>
+	</item>
+	<item id="90512" name="Talisman of Border Pack +7" type="EtcItem">
+		<!-- Double-click to obtain Talisman of Border - Lv. 7.. Note: cannot be returned once opened. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49733" min="1" max="1" chance="100" /> <!-- Talisman of Border - Lv. 7 -->
+		</capsuled_items>
+	</item>
+	<item id="90513" name="Talisman of Border Pack Lv. 8" type="EtcItem">
+		<!-- Double-click to obtain Talisman of Border - Lv. 8.. Note: cannot be returned once opened. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49734" min="1" max="1" chance="100" /> <!-- Talisman of Border - Lv. 8 -->
+		</capsuled_items>
+	</item>
+	<item id="90514" name="Talisman of Border Pack Lv. 9" type="EtcItem">
+		<!-- Double-click to obtain Talisman of Border - Lv. 9.. Note: cannot be returned once opened. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49735" min="1" max="1" chance="100" /> <!-- Talisman of Border - Lv. 9 -->
+		</capsuled_items>
+	</item>
+	<item id="90515" name="Talisman of Border Pack Lv. 10" type="EtcItem">
+		<!-- Double-click to obtain Talisman of Border - Lv. 10.. Note: cannot be returned once opened. -->
+		<set name="icon" val="icon.bm_special_pendant_abradant_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49736" min="1" max="1" chance="100" /> <!-- Talisman of Border - Lv. 10 -->
+		</capsuled_items>
+	</item>
+	<item id="90516" name="Lesser GM's Blessing Chest" type="EtcItem">
+		<!-- Double-click to receive one of the following items: Dandy's Home Run Ball, Angel Cat's Blessing, Sayha's Holy Water, Soulshot Ticket, Warrior's Major Healing Potion. -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+	</item>
+	<item id="90517" name="Greater GM's Blessing Chest" type="EtcItem">
+		<!-- Double-click to receive one of the following items: Spellbook Box - 3rd Class Transfer, Magic Tablet, Spellbook Box, Common Life Stone, Scroll of Mood Melody. -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+	</item>
+	<item id="90518" name="Greatest GM's Blessing Chest" type="EtcItem">
+		<!-- Double-click to receive one of the following items: Refined Rare Accessory Pack (30-day), Rare Accessory Pack (15-day), Unidentified Stone, Dandy's Shining Pendant (7-day), Dandy's Shining Pendant (1-day), Dandy's Pendant (7-day), Dandy's Pendant (1-day). -->
+		<set name="icon" val="icon.event_six_party_box_i00" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="is_freightable" val="true" />
+		<set name="material" val="STEEL" />
+	</item>
+	<item id="90519" name="Shining Scroll of Mood Melody" type="EtcItem">
+		<!-- For 20 minutes activates the following effects: Might, Shield, Haste, Empower, Acumen, Wind Walk, Vampiric Rage, Berserker Spirit, Focus, Death Whisper, Guidance, Purity, Wild Magic, Concentration. Cannot be used together with Scroll of Mood Melody. This effect will not be removed after death. -->
+		<set name="icon" val="icon.bm_magmeld" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90520" name="Fire Dragon's Blessing Scroll" type="EtcItem">
+		<!-- For 20 minutes. Blessing Of Fire Dragon: Buff/ debuff effects remain after death, but Blessing of Fire Dragon is consumed. -->
+		<set name="icon" val="icon.bm_blessing_dragon" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90521" name="Golden Fishing Rod Pouch" type="EtcItem">
+		<!-- Double-click to obtain 180 Golden Bait, 180 Fishing Shots. -->
+		<set name="icon" val="Icon.bm_gold_fishing_poket" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49589" min="180" max="180" chance="100" /> <!-- Golden Bait -->
+			<item id="38154" min="180" max="180" chance="100" /> <!-- Fishing Shot -->
+		</capsuled_items>
+	</item>
+	<item id="90522" name="Golden Treasure Chest" type="EtcItem">
+		<!-- Double-click on the Golden Treasure Chest to obtain one of its treasures. -->
+		<set name="icon" val="icon.bm_gold_relic_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="PAPER" />
+	</item>
+	<item id="90523" name="Shining Fishing kit" type="EtcItem">
+		<!-- Double-click to obtain 2 Golden Mermaid's Fishing Rod Packs (30-day), 25920 Silver Bait, 20 Einhasad's Protections, 1 Talisman of Baium Pack (30-day), and 1 Shining Jewel Box (30-day). -->
+		<set name="icon" val="icon.bm_freya_gift_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="49588" min="2" max="2" chance="100" /> <!-- Golden Mermaid's Fishing Rod Box - 30-day -->
+			<item id="90139" min="25920" max="25920" chance="100" /> <!-- Silver Bait -->
+			<item id="90143" min="20" max="20" chance="100" /> <!-- Einsahad's Protection -->
+			<item id="90526" min="1" max="1" chance="100" /> <!-- Talisman of Baium Box - 30 days -->
+			<item id="90528" min="1" max="1" chance="100" /> <!-- Shining Jewel Box - 30 days -->
+		</capsuled_items>
+	</item>
+	<item id="90524" name="Lucky Enchant Stone Chest - A-grade" type="EtcItem">
+		<!-- Double-click to randomly receive one of the following items: Lucky Enchant Stone: Armor (A-grade), Lucky Enchant Stone: Save Armor (A-grade), Lucky Enchant Stone: Protect Armor (A-grade). -->
+		<set name="icon" val="icon.etc_pi_gift_box_i03" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="90525" name="Lucky Enchant Stone Chest - B-grade" type="EtcItem">
+		<!-- Double-click to randomly receive one of the following items: Lucky Enchant Stone: Armor (B-grade), Lucky Enchant Stone: Save Armor (B-grade), Lucky Enchant Stone: Protect Armor (B-grade). -->
+		<set name="icon" val="icon.etc_pi_gift_box_i02" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="90526" name="Talisman of Baium Box" additionalName="30 days" type="EtcItem">
+		<!-- Double-click to obtain a Talisman of Baium Pack (30-day). -->
+		<set name="icon" val="icon.npoint_tauti_30day_box" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90527" min="1" max="1" chance="100" /> <!-- Talisman of Baium - 30 days -->
+		</capsuled_items>
+	</item>
+	<item id="90527" name="Talisman of Baium" additionalName="30 days" type="Armor">
+		<!-- A 30-day item. P. Atk. +284, M. Atk. +392, Magic Attack Resistance +10%, Skill Power +5%, all kinds of Weapon Resistance +5%, CON +1, MEN +1, STR +1, INT +1, DEX +1, WIT +1. P./ M. Critical Rate +20. MP Consumption for skill use -5%. Skill Reuse Time -3%. Available only for Lv. 60 and higher. Effects from two such Talismans do not stack. -->
+		<set name="icon" val="icon.tallisman_baium" />
+		<set name="default_action" val="EQUIP" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="120" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="bodypart" val="talisman" />
+		<set name="time" val="43200" />
+		<cond msgId="113" addName="1">
+			<player level="60" />
+		</cond>
+		<skills>
+			<skill id="35020" level="1" type="ON_EQUIP" /> <!-- Equip Talisman - Baium -->
+			<skill id="35021" level="1" type="ON_UNEQUIP" /> <!-- Unequip Talisman - Baium -->
+			<skill id="35017" level="7" /> <!-- Equip Talisman - Baium -->
+		</skills>
+	</item>
+	<item id="90528" name="Shining Jewel Box" additionalName="30 days" type="EtcItem">
+		<!-- Double-click to obtain 1 Jade Lv. 5 (30-day), 1 Vital Stone Lv. 5 (30-day), and 1 Garnet Lv. 5 (30-day). -->
+		<set name="icon" val="icon.etc_pi_box_wish_pack" />
+		<set name="default_action" val="PEEL" />
+		<set name="immediate_effect" val="true" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+		<set name="handler" val="ExtractableItems" />
+		<capsuled_items>
+			<item id="90529" min="1" max="1" chance="100" /> <!-- Jade Lv. 5 - 30 days -->
+			<item id="90530" min="1" max="1" chance="100" /> <!-- Vital Stone Lv. 5 - 30 days -->
+			<item id="90531" min="1" max="1" chance="100" /> <!-- Garnet Lv. 5 - 30 days -->
+		</capsuled_items>
+	</item>
+	<item id="90529" name="Lv. 5 Jade" additionalName="30 days" type="Armor">
+		<!-- 30-day item. Atk. Spd./Casting Spd. +14%, when equipped. Effect does not stack with additional jewels of the same type. -->
+		<set name="icon" val="icon.etc_bm_jewel_jade_i00" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90530" name="Lv. 5 Vital Stone" additionalName="30 days" type="Armor">
+		<!-- A 30-day item. XP/SP gain +15% and Sayha's Grace Consumption Rate -30% while hunting during Sayha's Grace effect. If identical Gems are equipped, only the effect of the highest level Gem is applied. -->
+		<set name="icon" val="icon.etc_bm_jewel_vital" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90531" name="Lv. 5 Garnet" additionalName="30 days" type="Armor">
+		<!-- 30-day item. Stun/Pulling/Silence/Paralysis/Fear Resistance +20% when equipped. Invincibility with Debuff effective for 15 sec when skill is used. Effect does not stack with additional jewels of the same type. -->
+		<set name="icon" val="icon.etc_bm_jewel_garnet" />
+		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch_jewel" />
+		<set name="immediate_effect" val="true" />
+		<set name="material" val="GOLD" />
+		<set name="weight" val="5" />
+		<set name="is_tradable" val="false" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+	</item>
+	<item id="90532" name="Refined Rare Accessory Pack" type="EtcItem">
+		<!-- Double-click to randomly receive one of the following items: Refined Queen Ant's Ring, Refined Orfen's Earring, Refined Ring of Core, Refined Baium's Ring. -->
+		<set name="icon" val="icon.npoint_earthworm_30day_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="90533" name="Rare Accessory Box" type="EtcItem">
+		<!-- Double-click to randomly receive one of the following items: Queen Ant's Ring, Orfen's Earring, Ring of Core, Baium's Ring. -->
+		<set name="icon" val="icon.npoint_valakas_30day_box" />
+		<set name="default_action" val="SKILL_REDUCE_ON_SKILL_SUCCESS" />
+		<set name="is_dropable" val="false" />
+		<set name="is_sellable" val="false" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="FISH" />
+	</item>
+	<item id="90534" name="Sigel's Rune - Stage 1" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90535" name="Sigel's Rune - Stage 2" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90536" name="Sigel's Rune - Stage 3" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90537" name="Sigel's Rune - Stage 4" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90538" name="Sigel's Rune - Stage 5" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90539" name="Sigel's Rune - Stage 6" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90540" name="Sigel's Rune - Stage 7" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90541" name="Sigel's Rune - Stage 8" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90542" name="Sigel's Rune - Stage 9" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90543" name="Sigel's Rune - Stage 10" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90544" name="Sigel's Rune - Stage 11" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90545" name="Sigel's Rune - Stage 12" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90546" name="Sigel's Rune - Stage 13" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90547" name="Sigel's Rune - Stage 14" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90548" name="Sigel's Rune - Stage 15" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_sigel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90549" name="Sigel's Rune - Stage 16" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90550" name="Sigel's Rune - Stage 17" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90551" name="Sigel's Rune - Stage 18" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90552" name="Sigel's Rune - Stage 19" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90553" name="Sigel's Rune - Stage 20" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90554" name="Tyrr's Rune - Stage 1" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90555" name="Tyrr's Rune - Stage 2" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90556" name="Tyrr's Rune - Stage 3" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90557" name="Tyrr's Rune - Stage 4" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90558" name="Tyrr's Rune - Stage 5" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv00" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90559" name="Tyrr's Rune - Stage 6" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90560" name="Tyrr's Rune - Stage 7" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90561" name="Tyrr's Rune - Stage 8" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90562" name="Tyrr's Rune - Stage 9" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90563" name="Tyrr's Rune - Stage 10" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90564" name="Tyrr's Rune - Stage 11" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90565" name="Tyrr's Rune - Stage 12" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90566" name="Tyrr's Rune - Stage 13" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90567" name="Tyrr's Rune - Stage 14" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90568" name="Tyrr's Rune - Stage 15" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_tir_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90569" name="Tyrr's Rune - Stage 16" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90570" name="Tyrr's Rune - Stage 17" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90571" name="Tyrr's Rune - Stage 18" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90572" name="Tyrr's Rune - Stage 19" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90573" name="Tyrr's Rune - Stage 20" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90574" name="Othell's Rune - Stage 1" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90575" name="Othell's Rune - Stage 2" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90576" name="Othell's Rune - Stage 3" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90577" name="Othell's Rune - Stage 4" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90578" name="Othell's Rune - Stage 5" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90579" name="Othell's Rune - Stage 6" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90580" name="Othell's Rune - Stage 7" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90581" name="Othell's Rune - Stage 8" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90582" name="Othell's Rune - Stage 9" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90583" name="Othell's Rune - Stage 10" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90584" name="Othell's Rune - Stage 11" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90585" name="Othell's Rune - Stage 12" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90586" name="Othell's Rune - Stage 13" additionalName="Super" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90587" name="Othell's Rune - Stage 14" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90588" name="Othell's Rune - Stage 15" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_othel_lv03" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90589" name="Othell's Rune - Stage 16" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90590" name="Othell's Rune - Stage 17" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90591" name="Othell's Rune - Stage 18" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90592" name="Othell's Rune - Stage 19" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90593" name="Othell's Rune - Stage 20" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="icon.ensoul_big_p" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90594" name="Yul's Rune - Stage 1" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90595" name="Yul's Rune - Stage 2" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90596" name="Yul's Rune - Stage 3" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90597" name="Yul's Rune - Stage 4" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90598" name="Yul's Rune - Stage 5" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv01" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+	<item id="90599" name="Yul's Rune - Stage 6" type="EtcItem">
+		<!-- A stone with a symbol of ancient Giants engraved. Can be Enchanted through Compounding to make a Top-grade Rune. If a top-rank blacksmith puts it in the slot, the weapon will be endowed with the Rune's power. -->
+		<set name="icon" val="BranchIcon.Icon.g_rune_yr_lv02" />
+		<set name="weight" val="20" />
+		<set name="is_stackable" val="true" />
+		<set name="material" val="CRYSTAL" />
+	</item>
+</list>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="10539" toLevel="9" name="Throwing Dagger">
+		<!-- Level 1: Attacks the enemy by throwing a dagger with bonus 396 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 2: Attacks the enemy by throwing a dagger with bonus 415 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 3: Attacks the enemy by throwing a dagger with bonus 435 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 4: Attacks the enemy by throwing a dagger with bonus 456 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 5: Attacks the enemy by throwing a dagger with bonus 478 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 6: Attacks the enemy by throwing a dagger with bonus 501 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 7: Attacks the enemy by throwing a dagger with bonus 526 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 8: Attacks the enemy by throwing a dagger with bonus 552 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<!-- Level 9: Attacks the enemy by throwing a dagger with bonus 579 Power. For 30 seconds, Movement Speed -60. Requires a dagger. Over-hit. -->
+		<icon>icon.skill10539</icon>
+		<operateType>A2</operateType>
+		<targetType>ENEMY</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>10</abnormalTime>
+		<abnormalType>SPEED_DOWN</abnormalType>
+		<activateRate>80</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>MAGIC</basicProperty>
+		<castRange>800</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>
+			<value level="1">-707</value>
+			<value level="2">-724</value>
+			<value level="3">-742</value>
+			<value level="4">-760</value>
+			<value level="5">-779</value>
+			<value level="6">-798</value>
+			<value level="7">-817</value>
+			<value level="8">-837</value>
+			<value level="9">-857</value>
+		</effectPoint>
+		<effectRange>900</effectRange>
+		<hitTime>1500</hitTime>
+		<isDebuff>true</isDebuff>
+		<lvlBonusRate>20</lvlBonusRate>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>76</magicLevel>
+		<mpConsume>60</mpConsume>
+		<nextAction>ATTACK</nextAction>
+		<reuseDelay>30000</reuseDelay>
+		<staticReuse>true</staticReuse>
+		<conditions>
+			<condition name="EquipWeapon">
+				<weaponType>
+					<item>DAGGER</item>
+				</weaponType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PhysicalDamage">
+				<power>396</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="Speed">
+				<amount>-60</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+</list>

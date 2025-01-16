@@ -1,0 +1,1558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="39000" toLevel="1" name="Ol Mahum Adena Bank">
+		<!-- Double-click to randomly obtain 1 to 1,000,000 Adena or a battle item. Available once a day. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39001" toLevel="1" name="Turek Orc Adena Bank">
+		<!-- Double-click to randomly obtain 1 to 10,000,000 Adena or a battle item. Available once a day. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39002" toLevel="1" name="Healing Potion">
+		<!-- Magical potion that slowly restores HP. Lasts 15 sec. -->
+		<icon>icon.etc_lesser_potion_red_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39003" toLevel="1" name="Major Healing Potion">
+		<!-- Magical potion that slowly restores HP. Lasts 15 sec. -->
+		<icon>icon.etc_potion_scarlet_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39004" toLevel="1" name="Facelifting Potion - A">
+		<!-- Beauty potion that changes one's facial appearance to Type A. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39005" toLevel="1" name="Facelifting Potion - B">
+		<!-- Beauty potion that changes one's facial appearance to Type B. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39006" toLevel="1" name="Facelifting Potion - C">
+		<!-- Beauty potion that changes one's facial appearance to Type C. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39007" toLevel="1" name="Dye Potion - A">
+		<!-- Beauty potion that changes one's hair color to Type A. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39008" toLevel="1" name="Dye Potion - B">
+		<!-- Beauty potion that changes one's hair color to Type B. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39009" toLevel="1" name="Dye Potion - C">
+		<!-- Beauty potion that changes one's hair color to Type C. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39010" toLevel="1" name="Dye Potion - D">
+		<!-- Beauty potion that changes one's hair color to Type D. Both genders. The results may be viewed on the Character Creation Screen. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39011" toLevel="1" name="Facelifting Potion Pack">
+		<!-- Wrapped Pack containing either Facelifting Potion A, B, or C. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39012" toLevel="1" name="Dye Potion Pack">
+		<!-- Wrapped Pack containing either Dye Potion A, B, C, or D. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39013" toLevel="1" name="Scroll: Empower">
+		<!-- M. Atk. has been increased by 55%. -->
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MA_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>3932</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>55</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39014" toLevel="1" name="Scroll: Might">
+		<!-- P. Atk. has been increased by 8%. -->
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PA_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29685</itemConsumeId> <!-- L2Day - Might Scroll -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39015" toLevel="1" name="Scroll: Shield">
+		<!-- P. Def. has been decreased by 8%. -->
+		<icon>icon.etc_scroll_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>4</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitTime>4000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29684</itemConsumeId> <!-- L2Day - Shield Scroll -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>12</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39016" toLevel="1" name="Dance of Fury">
+		<!-- For 20 min., Atk. Spd. + 5%. -->
+		<icon>icon.bm_agathion_fury</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>AGATHION_SONG_DANCE</abnormalType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>4</isMagic> <!-- Dance Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>58</magicLevel>
+		<mpConsume>60</mpConsume>
+		<effects>
+			<effect name="PhysicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39017" toLevel="1" name="Dance of Concentration">
+		<!-- For 20 min., Casting Spd. + 5%. -->
+		<icon>icon.bm_agathion_concentration</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>AGATHION_SONG_DANCE</abnormalType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>4</isMagic> <!-- Dance Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>52</magicLevel>
+		<mpConsume>60</mpConsume>
+		<effects>
+			<effect name="MagicalAttackSpeed">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39018" toLevel="1" name="Song of Wind">
+		<!-- For 5 min., Speed + 20. -->
+		<icon>icon.bm_agathion_wind</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>300</abnormalTime>
+		<abnormalType>AGATHION_SONG_DANCE</abnormalType>
+		<affectObject>FRIEND</affectObject>
+		<affectRange>1000</affectRange>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>4</isMagic> <!-- Dance Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>46</magicLevel>
+		<mpConsume>60</mpConsume>
+		<reuseDelay>600000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39019" toLevel="1" name="Chronicle Ring">
+		<!-- HP Recovery Bonus +5%, P. Accuracy +1, M. Accuracy +1, and Weight Limit +5000. -->
+		<icon>icon.event_classic_ring</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="WeightLimit">
+				<amount>5000</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>1.05</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="Accuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+			<effect name="MagicAccuracy">
+				<amount>1</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39020" toLevel="1" name="Scroll: PK (No-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>0</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49026</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpNotCursed" />
+			<condition name="OpPkcount">
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PkCount">
+				<amount>-1</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39021" toLevel="1" name="Scroll: PK (D-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>2000</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49027</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpNotCursed" />
+			<condition name="OpPkcount">
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PkCount">
+				<amount>-1</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39022" toLevel="1" name="Scroll: PK (C-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>2000</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49028</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpNotCursed" />
+			<condition name="OpPkcount">
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PkCount">
+				<amount>-1</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39023" toLevel="1" name="Scroll: PK (B-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>2000</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49029</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpNotCursed" />
+			<condition name="OpPkcount">
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PkCount">
+				<amount>-1</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39024" toLevel="1" name="Scroll: PK (A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>2000</hitTime>
+		<isMagic>2</isMagic>
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49030</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpNotCursed" />
+			<condition name="OpPkcount">
+				<affectType>CASTER</affectType>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="PkCount">
+				<amount>-1</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39025" toLevel="1" name="Adventurer's Scroll of Escape">
+		<!-- Escape to the nearest town. -->
+		<icon>icon.bm_soaring_escape</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>20000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39026" toLevel="1" name="Ol Mahum Adena Pouch (Event)">
+		<!-- Ol Mahum Adena Pouch. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39027" toLevel="1" name="Turek Orc Adena Pouch (Event)">
+		<!-- Turek Orc Adena Pouch. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39028" toLevel="1" name="Adventurer's Wind Walk Potion">
+		<!-- Movement Speed has been increased by 20. -->
+		<icon>icon.etc_potion_green_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>SPEED_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="Speed">
+				<amount>20</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39029" toLevel="1" name="Mysterious Spiritshot (No-grade)">
+		<icon>icon.etc_spell_shot_white_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="39030" toLevel="1" name="Mysterious Spiritshot (D-grade)">
+		<icon>icon.etc_spell_shot_blue_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="39031" toLevel="1" name="Mysterious Spiritshot (C-grade)">
+		<icon>icon.etc_spell_shot_green_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="39032" toLevel="1" name="Lucky Soul Pack (No-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Soulshots. Pack randomly contains 100 to 10,000 Soulshots (No-grade). -->
+		<icon>icon.etc_treasure_box_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39033" toLevel="1" name="Lucky Soul Pack (D-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Soulshots. Open the pack to randomly obtain between 100 to 10,000 D-grade Soulshots. -->
+		<icon>icon.etc_treasure_box_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39034" toLevel="1" name="Lucky Soul Pack (C-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Soulshots. Open the pack to randomly obtain between 50 to 5,000 C-grade Soulshots. -->
+		<icon>icon.etc_treasure_box_i07</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39035" toLevel="1" name="Lucky Spirit Pack (No-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Spiritshots. Pack randomly contains 50 to 1,000 Spiritshots (No-grade). -->
+		<icon>icon.etc_treasure_box_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39036" toLevel="1" name="Lucky Spirit Pack (D-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Spiritshots. Open the pack to randomly obtain between 80 to 3,000 D-grade Spiritshots. -->
+		<icon>icon.etc_treasure_box_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39037" toLevel="1" name="Lucky Spirit Pack (C-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Spiritshots. Open the pack to randomly obtain between 30 to 1,000 C-grade Spiritshots. -->
+		<icon>icon.etc_treasure_box_i07</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39038" toLevel="1" name="Blessed Lucky Spirit Pack (No-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Blessed Spiritshots. Pack randomly contains 20 to 1,000 Blessed Spiritshots (No-grade). -->
+		<icon>icon.etc_treasure_box_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39039" toLevel="1" name="Blessed Lucky Spirit Pack (D-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Blessed Spiritshots. Open the pack to randomly obtain between 20 to 1,000 D-grade Blessed Spiritshots. -->
+		<icon>icon.etc_treasure_box_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39040" toLevel="1" name="Blessed Lucky Spirit Pack (C-grade)">
+		<!-- A lucky pack obtainable from Spirit Boom when exchanging Blessed Spiritshots. Open the pack to randomly obtain between 10 to 1,000 C-grade Blessed Spiritshots. -->
+		<icon>icon.etc_treasure_box_i07</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39041" toLevel="1" name="Relentless Quick Step">
+		<!-- For 20 minutes, XP/SP Gain +10%,and Movement Speed +20. Cooldown is 10 minutes. Only the Quick Step buff will be applied when Wind Walk or Wind Walk Potion is used while Quick Step is in effect. Effect remains even after death. -->
+		<icon>icon.stone_8_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>600000</reuseDelay>
+	</skill>
+	<skill id="39042" toLevel="1" name="Spirit Firecracker">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1500</reuseDelay>
+	</skill>
+	<skill id="39043" toLevel="1" name="Chapeau's Side Effect">
+		<!-- Head has been enlarged for 10 minutes due to a side effect. Cooldown is 30 minutes. -->
+		<icon>icon.skill2513</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>0</abnormalLevel>
+		<abnormalTime>600</abnormalTime>
+		<abnormalType>BIG_HEAD</abnormalType>
+		<abnormalVisualEffect>BIG_HEAD</abnormalVisualEffect>
+		<activateRate>0</activateRate>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<trait>ETC</trait>
+		<conditions>
+			<condition name="CannotUseInTransform">
+				<transformId>103</transformId>
+			</condition>
+		</conditions>
+	</skill>
+	<skill id="39044" toLevel="1" name="Holy Chapeau">
+		<!-- Resurrects a corpse and restores 50% XP. Consumes 1 Spirit Ore. Cooldown is 30 minutes. -->
+		<icon>icon.bm_romantic_chaperon_gold</icon>
+		<operateType>A1</operateType>
+		<targetType>PC_BODY</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<effectRange>600</effectRange>
+		<hitTime>5000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>3031</itemConsumeId> <!-- Spirit Ore -->
+		<magicCriticalRate>-5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<reuseDelay>1800000</reuseDelay>
+		<conditions>
+			<condition name="OpResurrection" />
+		</conditions>
+		<effects>
+			<effect name="Resurrection">
+				<power>50</power>
+			</effect>
+			<effect name="HealPercent">
+				<power>50</power>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39045" toLevel="1" name="Chapeau's Authority">
+		<!-- For 20 minutes, XP/SP Gain +5%. Effect remains even after death. -->
+		<icon>icon.skill19226</icon>
+		<operateType>A2</operateType>
+		<abnormalTime>1200</abnormalTime>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>3600000</reuseDelay>
+		<effects>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39046" toLevel="1" name="Letter Collector's Gift">
+		<!-- Appearance changes to that of Santa. For 1 hour, XP/SP Gain +10%, Max HP/Max MP/+ 10%, and Movement Speed +5. Cooldown is 30 minutes. Effect remains even after death. -->
+		<icon>icon.shield_bread_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>1800000</reuseDelay>
+	</skill>
+	<skill id="39047" toLevel="3" name="Fish Stew - Might">
+		<!-- Level 1: For 20 minutes, P. Atk. + 8%. -->
+		<!-- Level 2: For 20 minutes, P. Atk. + 12%. -->
+		<!-- Level 3: For 20 minutes, P. Atk. + 15%. -->
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>26</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PA_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49460</itemConsumeId> <!-- Fish Stew: Might -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39048" toLevel="3" name="Fish Stew - Shield">
+		<!-- Level 1: For 20 minutes, P. Def. + 8%. -->
+		<!-- Level 2: For 20 minutes, P. Def. + 12%. -->
+		<!-- Level 3: For 20 minutes, P. Def. + 15%. -->
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>26</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>PD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49461</itemConsumeId> <!-- Fish Stew: Shield -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="PhysicalDefence">
+				<amount>8</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39049" toLevel="2" name="Fish Stew - Magic Barrier">
+		<!-- Level 1: For 20 minutes, M. Def. + 23%. -->
+		<!-- Level 2: For 20 minutes, M. Def. + 30%. -->
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>26</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MD_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49462</itemConsumeId> <!-- Fish Stew: Magic Barrier -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MagicalDefence">
+				<amount>23</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39050" toLevel="3" name="Fish Stew - Vampiric Rage">
+		<!-- Level 1: For 20 minutes, has a chance of recovering 6% of physical damage dealt to enemy as HP. -->
+		<!-- Level 2: For 20 minutes, has a chance of recovering 7% of physical damage dealt to enemy as HP. -->
+		<!-- Level 3: For 20 minutes, has a chance of recovering 8% of physical damage dealt to enemy as HP. -->
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>26</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VAMPIRIC_ATTACK</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49463</itemConsumeId> <!-- Fish Stew: Vampiric Rage -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="VampiricAttack">
+				<amount>6</amount>
+				<chance>80</chance>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39051" toLevel="3" name="Fish Stew - Empower">
+		<!-- Level 1: For 20 minutes, M. Atk. + 55%. -->
+		<!-- Level 2: For 20 minutes, M. Atk. + 65%. -->
+		<!-- Level 3: For 20 minutes, M. Atk. + 75%. -->
+		<icon>icon.fish_stew_buff</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>26</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>MA_UP</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>1000</hitTime>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49464</itemConsumeId> <!-- Fish Stew: Empower -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>10000</reuseDelay>
+		<specialLevel>-1</specialLevel>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>55</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39052" toLevel="1" name="Golden Treasure Chest">
+		<icon>icon.new_user_box</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39053" toLevel="1" name="Agathion Teleport: Town of Gludio">
+		<!-- Telepot to Town of Gludio. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-14225</x>
+				<y>123540</y>
+				<z>-3116</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39054" toLevel="1" name="Agathion Teleport: Town of Dion">
+		<!-- Telepot to Town of Dion. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>18748</x>
+				<y>145437</y>
+				<z>-3127</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39055" toLevel="1" name="Agathion Teleport: Town of Giran">
+		<!-- Telepot to Town of Giran. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>82698</x>
+				<y>148638</y>
+				<z>-3468</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39056" toLevel="1" name="Agathion Teleport: Town of Oren">
+		<!-- Telepot to Town of Oren. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<blockedInOlympiad>true</blockedInOlympiad>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Magic Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-1</magicLevel>
+		<reuseDelay>3600000</reuseDelay>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>82321</x>
+				<y>55139</y>
+				<z>-1524</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39057" toLevel="1" name="Warrior's XP Rune">
+		<!-- XP/SP Gain +20%. -->
+		<icon>icon.skill19226</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39058" toLevel="1" name="Rare Accessory Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29578</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="100.0">
+						<item id="29575" count="1" /> <!-- Queen Ant's Ring - 30 days -->
+					</item>
+					<item chance="100.0">
+						<item id="29576" count="1" /> <!-- Orfen's Earring - 30 days -->
+					</item>
+					<item chance="100.0">
+						<item id="29577" count="1" /> <!-- Ring of Core - 30 days -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39059" toLevel="1" name="Spellbook Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49541</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="2.5">
+						<item id="3047" count="1" /> <!-- Spellbook: Iron Will -->
+					</item>
+					<item chance="2.5">
+						<item id="3046" count="1" /> <!-- Spellbook: Sacrifice -->
+					</item>
+					<item chance="2.5">
+						<item id="3052" count="1" /> <!-- Spellbook: Hamstring -->
+					</item>
+					<item chance="2.5">
+						<item id="3044" count="1" /> <!-- Spellbook: Horror -->
+					</item>
+					<item chance="2.5">
+						<item id="3080" count="1" /> <!-- Spellbook: Sleeping Cloud -->
+					</item>
+					<item chance="2.5">
+						<item id="3079" count="1" /> <!-- Spellbook: Cancel -->
+					</item>
+					<item chance="2.5">
+						<item id="8891" count="1" /> <!-- Spellbook: Aura Flash -->
+					</item>
+					<item chance="2.5">
+						<item id="3064" count="1" /> <!-- Spellbook: Silence -->
+					</item>
+					<item chance="2.5">
+						<item id="3063" count="1" /> <!-- Spellbook: Anchor -->
+					</item>
+					<item chance="2.5">
+						<item id="3066" count="1" /> <!-- Spellbook: Curse Death Link -->
+					</item>
+					<item chance="2.5">
+						<item id="5811" count="1" /> <!-- Spellbook: Mass Slow -->
+					</item>
+					<item chance="2.5">
+						<item id="4922" count="1" /> <!-- Spellbook: Summon Binding Cubic -->
+					</item>
+					<item chance="2.5">
+						<item id="3072" count="1" /> <!-- Spellbook: Purify -->
+					</item>
+					<item chance="2.5">
+						<item id="6398" count="1" /> <!-- Spellbook: Body of Avatar -->
+					</item>
+					<item chance="2.5">
+						<item id="4912" count="1" /> <!-- Spellbook: Benediction -->
+					</item>
+					<item chance="2.5">
+						<item id="3101" count="1" /> <!-- Spellbook: Death Whisper -->
+					</item>
+					<item chance="2.5">
+						<item id="3099" count="1" /> <!-- Spellbook: Haste -->
+					</item>
+					<item chance="2.5">
+						<item id="8388" count="1" /> <!-- Spellbook: Greater Might -->
+					</item>
+					<item chance="2.5">
+						<item id="8389" count="1" /> <!-- Spellbook: Greater Shield -->
+					</item>
+					<item chance="2.5">
+						<item id="3051" count="1" /> <!-- Spellbook: Spirit Barrier -->
+					</item>
+					<item chance="2.5">
+						<item id="3045" count="1" /> <!-- Spellbook: Summon Life Cubic -->
+					</item>
+					<item chance="2.5">
+						<item id="8890" count="1" /> <!-- Spellbook - Summon Attractive Cubic -->
+					</item>
+					<item chance="2.5">
+						<item id="4923" count="1" /> <!-- Spellbook: Summon Aqua Cubic -->
+					</item>
+					<item chance="2.5">
+						<item id="3942" count="1" /> <!-- Spellbook: Party Return -->
+					</item>
+					<item chance="2.5">
+						<item id="8397" count="1" /> <!-- Spellbook: Clarity -->
+					</item>
+					<item chance="2.5">
+						<item id="5815" count="1" /> <!-- Spellbook: Wild Magic -->
+					</item>
+					<item chance="2.5">
+						<item id="3050" count="1" /> <!-- Spellbook: Hex -->
+					</item>
+					<item chance="2.5">
+						<item id="3041" count="1" /> <!-- Spellbook: Summon Phantom Cubic -->
+					</item>
+					<item chance="2.5">
+						<item id="3055" count="1" /> <!-- Spellbook: Lightning Strike -->
+					</item>
+					<item chance="2.5">
+						<item id="3089" count="1" /> <!-- Spellbook: Tempest -->
+					</item>
+					<item chance="2.5">
+						<item id="4924" count="1" /> <!-- Spellbook: Summon Spark Cubic -->
+					</item>
+					<item chance="2.5">
+						<item id="4205" count="1" /> <!-- Amulet: Pa'agrio's Rage -->
+					</item>
+					<item chance="2.5">
+						<item id="3109" count="1" /> <!-- Amulet: Seal of Silence -->
+					</item>
+					<item chance="2.5">
+						<item id="3111" count="1" /> <!-- Amulet: Seal of Suspension -->
+					</item>
+					<item chance="2.5">
+						<item id="3118" count="1" /> <!-- Amulet: Chant of Rage -->
+					</item>
+					<item chance="2.5">
+						<item id="6397" count="1" /> <!-- Amulet: Chant of Vampire -->
+					</item>
+					<item chance="2.5">
+						<item id="3116" count="1" /> <!-- Amulet: Chant of Fury -->
+					</item>
+					<item chance="2.5">
+						<item id="3940" count="1" /> <!-- Blueprint: Summon Siege Golem -->
+					</item>
+					<item chance="2.5">
+						<item id="4915" count="1" /> <!-- Blueprint: Summon Wild Hog Cannon -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39060" toLevel="1" name="Pendant Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39061" toLevel="1" name="Shiny Pendant Varnish">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39062" toLevel="1" name="Return of the Black Mask">
+		<!-- Teleports to a village. Cooldown 2 hrs. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>200</hitTime>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="39063" toLevel="1" name="Stable Armor Enchant Scroll (D grade)">
+		<icon>icon.giant_scrl_of_ench_am_d</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39064" toLevel="1" name="Stable Weapon Enchant Scroll (D grade)">
+		<icon>icon.giant_scrl_of_ench_wp_d</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39065" toLevel="1" name="Stable Armor Enchant Scroll (C grade)">
+		<icon>icon.giant_scrl_of_ench_am_c</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39066" toLevel="1" name="Stable Weapon Enchant Scroll (C grade)">
+		<icon>icon.giant_scrl_of_ench_wp_c</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39067" toLevel="1" name="Stable Armor Enchant Scroll (B grade)">
+		<icon>icon.giant_scrl_of_ench_am_b</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39068" toLevel="1" name="Stable Weapon Enchant Scroll (B grade)">
+		<icon>icon.giant_scrl_of_ench_wp_b</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39069" toLevel="1" name="Warrior's Major Healing Potion">
+		<!-- HP Recovery Bonus has been greatly increased. -->
+		<icon>icon.etc_reagent_white_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>3</abnormalLevel>
+		<abnormalTime>15</abnormalTime>
+		<abnormalType>HP_RECOVER</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="HealOverTime">
+				<power>50</power>
+				<ticks>3</ticks>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39070" toLevel="1" name="Enchant Scroll Fragment Box">
+		<icon>icon.etc_treasure_box_i08</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39071" toLevel="1" name="Lucky Cube">
+		<icon>icon.special_cube_i00</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39072" toLevel="1" name="D grade Weapon Pack">
+		<icon>icon.etc_raid_e_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49491</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="7.14">
+						<item id="2499" count="1" /> <!-- Elven Long Sword -->
+					</item>
+					<item chance="7.14">
+						<item id="70" count="1" /> <!-- Claymore -->
+					</item>
+					<item chance="7.14">
+						<item id="224" count="1" /> <!-- Maingauche -->
+					</item>
+					<item chance="7.14">
+						<item id="225" count="1" /> <!-- Mithril Dagger -->
+					</item>
+					<item chance="7.14">
+						<item id="1660" count="1" /> <!-- Cursed Maingauche -->
+					</item>
+					<item chance="7.14">
+						<item id="278" count="1" /> <!-- Gastraphetes -->
+					</item>
+					<item chance="7.14">
+						<item id="279" count="1" /> <!-- Reinforced Longbow -->
+					</item>
+					<item chance="7.14">
+						<item id="280" count="1" /> <!-- Light Crossbow -->
+					</item>
+					<item chance="7.14">
+						<item id="262" count="1" /> <!-- Scallop Jamadhr -->
+					</item>
+					<item chance="7.14">
+						<item id="297" count="1" /> <!-- Glaive -->
+					</item>
+					<item chance="7.14">
+						<item id="159" count="1" /> <!-- Bonebreaker -->
+					</item>
+					<item chance="7.14">
+						<item id="189" count="1" /> <!-- Staff of Life -->
+					</item>
+					<item chance="7.14">
+						<item id="188" count="1" /> <!-- Ghost Staff -->
+					</item>
+					<item chance="7.14">
+						<item id="190" count="1" /> <!-- Atuba Mace -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39073" toLevel="1" name="C grade Weapon Pack">
+		<icon>icon.etc_raid_e_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49492</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpEncumbered">
+				<weightPercent>20</weightPercent>
+				<slotsPercent>10</slotsPercent>
+			</condition>
+		</conditions>
+		<effects>
+			<effect name="RestorationRandom">
+				<items>
+					<item chance="8.3">
+						<item id="242" count="1" /> <!-- Soulfire Dirk -->
+					</item>
+					<item chance="8.3">
+						<item id="7887" count="1" /> <!-- Mysterious Sword -->
+					</item>
+					<item chance="8.3">
+						<item id="72" count="1" /> <!-- Stormbringer -->
+					</item>
+					<item chance="8.3">
+						<item id="71" count="1" /> <!-- Flamberge -->
+					</item>
+					<item chance="8.3">
+						<item id="281" count="1" /> <!-- Crystallized Ice Bow -->
+					</item>
+					<item chance="8.3">
+						<item id="193" count="1" /> <!-- Stick of Faith -->
+					</item>
+					<item chance="8.3">
+						<item id="160" count="1" /> <!-- Battle Axe -->
+					</item>
+					<item chance="8.3">
+						<item id="161" count="1" /> <!-- Silver Axe -->
+					</item>
+					<item chance="8.3">
+						<item id="192" count="1" /> <!-- Crystal Staff -->
+					</item>
+					<item chance="8.3">
+						<item id="194" count="1" /> <!-- Heavy Doom Axe -->
+					</item>
+					<item chance="8.3">
+						<item id="302" count="1" /> <!-- Body Slasher -->
+					</item>
+					<item chance="8.3">
+						<item id="263" count="1" /> <!-- Chakram -->
+					</item>
+				</items>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39074" toLevel="1" name="Angel Cat's Energy">
+		<!-- For 30 minutes, Max HP/Max MP +5% and Hunting XP/SP Gain +20%. Effect remains even after death. -->
+		<icon>icon.skilltransform4</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>2</abnormalLevel>
+		<abnormalTime>1800</abnormalTime>
+		<abnormalType>BR_EVENT_BUF1</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>4</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-3</magicLevel>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="MaxHp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>5</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="ExpModify">
+				<amount>20</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>20</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39075" toLevel="1" name="Advanced Return Scroll">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>1000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49500</itemConsumeId> <!-- Greater Scroll of Escape -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Escape">
+				<escapeType>TOWN</escapeType>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39076" toLevel="2" name="Fish Stew- Guildsman's Gratitude">
+		<!-- Level 1: Hunting XP/SP Gain +10% for 20 minutes. -->
+		<!-- Level 2: Hunting XP/SP Gain +30% for 20 minutes. -->
+		<icon>icon.ev_invasion_buff_box</icon>
+		<operateType>A2</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+		<reuseDelay>3000</reuseDelay>
+		<effects>
+			<effect name="ExpModify">
+				<amount>30</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>30</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39077" toLevel="1" name="Return: Gludin Harbor">
+		<!-- Teleports you to Gludin Harbor. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49503</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>-91191</x>
+				<y>150344</y>
+				<z>-3624</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39078" toLevel="1" name="Return: Giran Harbor">
+		<!-- Teleports you to Giran Harbor. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>49502</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<conditions>
+			<condition name="OpAlignment">
+				<affectType>CASTER</affectType>
+				<alignment>LAWFUL</alignment>
+			</condition>
+			<condition name="OpCanEscape" />
+		</conditions>
+		<effects>
+			<effect name="Teleport">
+				<x>47874</x>
+				<y>186700</y>
+				<z>-3486</z>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39079" toLevel="1" name="I Wool Resurrect">
+		<!-- Resurrects a corpse through the Sheep Blessing. Additionally restores 70% XP. -->
+		<icon>icon.skill11784</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>5000</hitTime>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="39080" toLevel="2" name="Sheep Blessing">
+		<!-- Level 1: For 3 hours, P. Atk./M. Atk. +7%, P. Def/M. Def +10%, HP/MP/CP +15%, and HP Recovery Bonus/MP Recovery Bonus +20% due to the Sheep Blessing. This Blessing can be used once a day and is reset at 6:30 AM. Effect remains even after death. When the buff is over, you can receive a sheep's gift. <Caution> You cannot receive the gift if your character is dead when the item is being provided or if there are no empty slots in your inventory. -->
+		<!-- Level 2: When the buff is over, you can obtain Sheepish Gift. -->
+		<icon>icon.accessory_sheep_cap_white_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="39081" toLevel="1" name="Sheepish Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39082" toLevel="1" name="Perfect Charm">
+		<!-- All stats rise as you wish. STR + 1, DEX +1, CON +1, INT +1, WIT +1, MEN +1. -->
+		<icon>BranchSys3.lcon.g_rune_itemdrop_up</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<effects>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>STR</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>DEX</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>CON</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>INT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>WIT</stat>
+			</effect>
+			<effect name="StatUp">
+				<amount>1</amount>
+				<stat>MEN</stat>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39083" toLevel="1" name="Get Sheepish Gift">
+		<icon>icon.accessory_sheep_cap_white_i00</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+	</skill>
+	<skill id="39084" toLevel="1" name="Pirate's Island Treasure Chest">
+		<icon>icon.freya_box_i01</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39085" toLevel="1" name="Pirates' Special Fruit">
+		<!-- For 20 minutes bonus XP/SP gain +5%, P. Atk./M. Atk. +7%, P. Def./M. Def. +10%, HP/MP/CP +15%, HP Recovery Bonus/MP Recovery Bonus +20%, and has a chance to absorb 3% of physical damage dealt to enemies as HP. Effect remains even after death. -->
+		<icon>icon.etc_codran_i09</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>1200</abnormalTime>
+		<abnormalType>VOTE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<itemConsumeCount>1</itemConsumeCount>
+		<itemConsumeId>29817</itemConsumeId>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>60000</reuseDelay>
+		<stayAfterDeath>true</stayAfterDeath>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalAttack">
+				<amount>7</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="PhysicalDefence">
+				<amount>10</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxHp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxMp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MaxCp">
+				<amount>15</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MpRegen">
+				<amount>20</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="HpDrain">
+				<power>49</power>
+				<percentage>3</percentage>
+			</effect>
+			<effect name="ExpModify">
+				<amount>5</amount>
+			</effect>
+			<effect name="SpModify">
+				<amount>5</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="39086" toLevel="1" name="Pirate King's Treasure Chest">
+		<icon>icon.card_event_blue_box</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39087" toLevel="1" name="Pirate King's Hat Box">
+		<icon>icon.card_event_black_box</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="39088" toLevel="1" name="Greater Scroll of Resurrection">
+		<icon>icon.etc_scroll_of_resurrection_i01</icon>
+		<operateType>A1</operateType>
+		<castRange>400</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="39089" toLevel="1" name="Pirate's Recovery Potion">
+		<icon>icon.etc_bm_hero_red_potion</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="39090" toLevel="1" name="Agathion Teleport: Town of Giran">
+		<!-- Teleport to the Town of Giran. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1800000</reuseDelay>
+	</skill>
+	<skill id="39091" toLevel="1" name="Agathion Teleport: Town of Dion">
+		<!-- Teleport to the Town of Dion. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1800000</reuseDelay>
+	</skill>
+	<skill id="39092" toLevel="1" name="Agathion Teleport: Town of Oren">
+		<!-- Teleport to the Town of Oren. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1800000</reuseDelay>
+	</skill>
+	<skill id="39093" toLevel="1" name="Agathion Teleport: Town of Gludio">
+		<!-- Teleport to the Town of Gludio. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>1800000</reuseDelay>
+	</skill>
+	<skill id="39094" toLevel="2" name="Ares' Power">
+		<!-- Level 1: STR/INT/CON/MEN +1. -->
+		<!-- Level 2: Increases STR/INT/CON/MEN/DEX/WIT +1. -->
+		<icon>icon.skill6343_2</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="39095" toLevel="2" name="Ares' Blessing">
+		<!-- Level 1: MEN/Stun/Sleep/Paralysis Resistance +5%. -->
+		<!-- Level 2: MEN/Stun/Sleep/Paralysis Resistance +8%. -->
+		<icon>icon.skill6366_2</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="39096" toLevel="1" name="Agathion Teleport: Town of Giran">
+		<!-- Teleport to the Town of Giran. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="39097" toLevel="1" name="Agathion Teleport: Town of Gludio">
+		<!-- Teleport to the Town of Gludio. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="39098" toLevel="1" name="Agathion Teleport: Town of Dion">
+		<!-- Teleport to the Town of Dion. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+	<skill id="39099" toLevel="1" name="Agathion Teleport: Town of Oren">
+		<!-- Teleport to the Town of Oren. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+		<reuseDelay>60000</reuseDelay>
+	</skill>
+</list>

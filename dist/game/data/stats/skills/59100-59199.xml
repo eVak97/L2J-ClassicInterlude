@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="59100" toLevel="1" name="Master's Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59101" toLevel="1" name="Holy Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59102" toLevel="1" name="Brilliant Jewelry Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59103" toLevel="1" name="Brilliant Jewelry Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59104" toLevel="1" name="Fortune Jewelry Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59105" toLevel="11" name="Taurus Agathion Unique Ability">
+		<!-- Level 1: P. Def. +1%. P. Def. increases when Agathion is upgraded. -->
+		<!-- Level 2: P. Def. +1.5%. -->
+		<!-- Level 3: P. Def. +2%. -->
+		<!-- Level 4: P. Def. +2.5%. -->
+		<!-- Level 5: P. Def. +3%. -->
+		<!-- Level 6: P. Def. +4%. -->
+		<!-- Level 7: P. Def. +5%, bonus to stun attacks +5%. P. Def. and stun attack bonus increase when Agathion is upgraded. -->
+		<!-- Level 8: P. Def. +6%, bonus to stun attacks +8%. -->
+		<!-- Level 9: P. Def. +7%, bonus to stun attacks +14%. -->
+		<!-- Level 10: P. Def. +8%, bonus to stun attacks +22%. -->
+		<!-- Level 11: P. Def. +12%, bonus to stun attacks +30%. -->
+		<icon>icon.agathion_tau_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59106" toLevel="11" name="Leo Agathion Unique Ability">
+		<!-- Level 1: P. Atk. +1%. P. Atk. increases when Agathion is upgraded. -->
+		<!-- Level 2: P. Atk. +1.5%. -->
+		<!-- Level 3: P. Atk. +2%. -->
+		<!-- Level 4: P. Atk. +2.5%. -->
+		<!-- Level 5: P. Atk. +3%. -->
+		<!-- Level 6: P. Atk. +4%. -->
+		<!-- Level 7: P. Atk. +4%, bonus to paralyse attacks +5%. P. Atk. and paralyse attack bonus increase when Agathion is upgraded. -->
+		<!-- Level 8: P. Atk. +5%, bonus to paralyse attacks +8%. -->
+		<!-- Level 9: P. Atk. +6%, bonus to paralyse attacks +14%. -->
+		<!-- Level 10: P. Atk. +7%, bonus to paralyse attacks +22%. -->
+		<!-- Level 11: P. Atk. +10%, bonus to paralyse attacks +30%. -->
+		<icon>icon.agathion_leo_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59107" toLevel="11" name="Scorpio Agathion Unique Ability">
+		<!-- Level 1: P. Critical Rate +1%. P. Critical Rate increases when Agathion is upgraded. -->
+		<!-- Level 2: P. Critical Rate +2%. -->
+		<!-- Level 3: P. Critical Rate +3%. -->
+		<!-- Level 4: P. Critical Rate +4%. -->
+		<!-- Level 5: P. Critical Rate +5%. -->
+		<!-- Level 6: P. Critical Rate +7%. -->
+		<!-- Level 7: Cooldown of P. Skills and songs/ dances -1%, P. Critical Rate +7%. P. Critical Rate increases, cooldown of P. Skills and songs/ dances decreases when Agathion is upgraded. -->
+		<!-- Level 8: Cooldown of P. Skills and songs/ dances -3%, P. Critical Rate +7%. -->
+		<!-- Level 9: Cooldown of P. Skills and songs/ dances -5%, P. Critical Rate +8%. -->
+		<!-- Level 10: Cooldown of P. Skills and songs/ dances -7%, P. Critical Rate +12%. -->
+		<!-- Level 11: Cooldown of P. Skills and songs/ dances -10%, P. Critical Rate +18%. -->
+		<icon>icon.agathion_sco_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59108" toLevel="11" name="Sagittarius Agathion Unique Ability">
+		<!-- Level 1: Atk. Spd. +2. Atk. Spd. increases when Agathion is upgraded. -->
+		<!-- Level 2: Atk. Spd. +3. -->
+		<!-- Level 3: Atk. Spd. +4. -->
+		<!-- Level 4: Atk. Spd. +5. -->
+		<!-- Level 5: Atk. Spd. +10. -->
+		<!-- Level 6: Atk. Spd. +15. -->
+		<!-- Level 7: Cooldown of P. Skills and songs/ dances -1%, Atk. Spd. +15. Atk. Spd. increases, cooldown of P. Skills and songs/ dances decreases when Agathion is upgraded. -->
+		<!-- Level 8: Cooldown of P. Skills and songs/ dances -3%, Atk. Spd. +30. -->
+		<!-- Level 9: Cooldown of P. Skills and songs/ dances -5%, Atk. Spd. +40. -->
+		<!-- Level 10: Cooldown of P. Skills and songs/ dances -7%, Atk. Spd. +50. -->
+		<!-- Level 11: Cooldown of P. Skills and songs/ dances -10%, Atk. Spd. +70. -->
+		<icon>icon.agathion_sag_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59109" toLevel="11" name="Virgo Agathion Unique Ability">
+		<!-- Level 1: M. Def. +1%. M. Def. increases when Agathion is upgraded. -->
+		<!-- Level 2: M. Def. +1.5%. -->
+		<!-- Level 3: M. Def. +2%. -->
+		<!-- Level 4: M. Def. +2.5%. -->
+		<!-- Level 5: M. Def. +3%. -->
+		<!-- Level 6: M. Def. +4%. -->
+		<!-- Level 7: M. Def. +5%, bonus to mental attacks +5%. M. Def. and mental attacks bonus increase when Agathion is upgraded. -->
+		<!-- Level 8: M. Def. +6%, bonus to mental attacks +8%. -->
+		<!-- Level 9: M. Def. +7%, bonus to mental attacks +14%. -->
+		<!-- Level 10: M. Def. +8%, bonus to mental attacks +22%. -->
+		<!-- Level 11: M. Def. +12%, bonus to mental attacks +30%. -->
+		<icon>icon.agathion_virgo_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59110" toLevel="11" name="Aquarius Agathion Unique Ability">
+		<!-- Level 1: M. Atk. +1%. M. Atk. increases when Agathion is upgraded. -->
+		<!-- Level 2: M. Atk. +1.5%. -->
+		<!-- Level 3: M. Atk. +2%. -->
+		<!-- Level 4: M. Atk. +2.5%. -->
+		<!-- Level 5: M. Atk. +3%. -->
+		<!-- Level 6: M. Atk. +4%. -->
+		<!-- Level 7: M. Atk. +4%, bonus to hold/ sleep +5%. M. Atk. and bonus to hold/ sleep increase when Agathion is upgraded. -->
+		<!-- Level 8: M. Atk. +5%, bonus to hold/ sleep +8%. -->
+		<!-- Level 9: M. Atk. +6%, bonus to hold/ sleep +14%. -->
+		<!-- Level 10: M. Atk. +7%, bonus to hold/ sleep +22%. -->
+		<!-- Level 11: M. Atk. +10%, bonus to hold/ sleep +30%. -->
+		<icon>icon.agathion_aqu_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59111" toLevel="11" name="Capricorn Agathion Unique Ability">
+		<!-- Level 1: M. Critical Rate +1%. M. Critical Rate increases when Agathion is upgraded. -->
+		<!-- Level 2: M. Critical Rate +2%. -->
+		<!-- Level 3: M. Critical Rate +3%. -->
+		<!-- Level 4: M. Critical Rate +4%. -->
+		<!-- Level 5: M. Critical Rate +5%. -->
+		<!-- Level 6: M. Critical Rate +7%. -->
+		<!-- Level 7: Cooldown of P. Skills and songs/ dances -1%, M. Critical Rate +7%. M. Critical Rate increases, cooldown of P. Skills and songs/ dances decreases when Agathion is upgraded. -->
+		<!-- Level 8: Cooldown of P. Skills and songs/ dances -3%, M. Critical Rate +7%. -->
+		<!-- Level 9: Cooldown of P. Skills and songs/ dances -5%, M. Critical Rate +8%. -->
+		<!-- Level 10: Cooldown of P. Skills and songs/ dances -7%, M. Critical Rate +12%. -->
+		<!-- Level 11: Cooldown of P. Skills and songs/ dances -10%, M. Critical Rate +18%. -->
+		<icon>icon.agathion_capr_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59112" toLevel="11" name="Libra Agathion Unique Ability">
+		<!-- Level 1: Casting Spd. +2. M. Casting Spd. increases when Agathion is upgraded. -->
+		<!-- Level 2: Casting Spd. +3. -->
+		<!-- Level 3: Casting Spd. +4. -->
+		<!-- Level 4: Casting Spd. +5. -->
+		<!-- Level 5: Casting Spd. +10. -->
+		<!-- Level 6: Casting Spd. +15. -->
+		<!-- Level 7: Cooldown of P. Skills and songs/ dances -2%, Casting Spd. +15. Casting Spd. increases, cooldown of P. Skills and songs/ dances decreases when Agathion is upgraded. -->
+		<!-- Level 8: Cooldown of P. Skills and songs/ dances -4%, Casting Spd. +25. -->
+		<!-- Level 9: Cooldown of P. Skills and songs/ dances -6%, Casting Spd. +35. -->
+		<!-- Level 10: Cooldown of P. Skills and songs/ dances -8%, Casting Spd. +45. -->
+		<!-- Level 11: Cooldown of P. Skills and songs/ dances -12%, Casting Spd. +60. -->
+		<icon>icon.agathion_lib_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59113" toLevel="11" name="Gemini Agathion Unique Ability">
+		<!-- Level 1: XP/ SP gain +1%. XP/SP Bonus increases when Agathion is upgraded. -->
+		<!-- Level 2: XP/ SP gain +2%. -->
+		<!-- Level 3: XP/ SP gain +3%. -->
+		<!-- Level 4: XP/ SP gain +4%. -->
+		<!-- Level 5: XP/ SP gain +6%. -->
+		<!-- Level 6: XP/ SP gain +9%. -->
+		<!-- Level 7: Max HP/ MP +2%, XP/ SP gain +9%. Max HP/ MP and XP/SP Bonus increase when Agathion is upgraded. -->
+		<!-- Level 8: Max HP/ MP +4%, XP/ SP gain +12%. -->
+		<!-- Level 9: Max HP/ MP +5%, XP/ SP gain +16%. -->
+		<!-- Level 10: Max HP/ MP +7%, XP/ SP gain +20%. -->
+		<!-- Level 11: Max HP/ MP +10%, XP/ SP gain +25%. -->
+		<icon>icon.agathion_gem_star_1</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59114" toLevel="1" name="Agathion - Taurus">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59115" toLevel="1" name="Agathion - Leo">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59116" toLevel="1" name="Agathion - Scorpio">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59117" toLevel="1" name="Agathion - Sagittarius">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59118" toLevel="1" name="Agathion - Virgo">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59119" toLevel="1" name="Agathion - Aquarius">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59120" toLevel="1" name="Agathion - Capricorn">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59121" toLevel="1" name="Agathion - Libra">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59122" toLevel="1" name="Agathion - Gemini">
+		<!-- Releases Agathion's Seal. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59123" toLevel="1" name="Seal Agathion">
+		<!-- Dismiss a summoned Agathion. -->
+		<icon>icon.etc_unsummon_aga_agit_i01</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>3000</hitTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>65</magicLevel>
+		<effects>
+			<effect name="UnsummonAgathion" />
+		</effects>
+	</skill>
+	<skill id="59124" toLevel="1" name="Zodiac Agathion Box">
+		<icon>icon.star_agathion_cube</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+	</skill>
+	<skill id="59125" toLevel="1" name="VIP Scroll - 800">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59126" toLevel="1" name="VIP Scroll - 2400">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59127" toLevel="1" name="VIP Scroll - 80">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59128" toLevel="1" name="VIP Scroll - 240">
+		<icon>BranchIcon.Icon.g_bm_vip_potion_i00</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59129" toLevel="1" name="Transformation Sealbook: Kat the Cat">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1500</hitTime>
+	</skill>
+	<skill id="59130" toLevel="1" name="Transform: Kat the Cat">
+		<!-- Transforms into Kat the Cat. -->
+		<icon>icon.skilltransform1</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<hitTime>1000</hitTime>
+	</skill>
+	<skill id="59131" toLevel="1" name="Angler's Fishing Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59132" toLevel="1" name="Angler's Silver Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59133" toLevel="1" name="Angler's Gold Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="59134" toLevel="1" name="Scroll: Enchant Fishing Weapon">
+		<!-- Can only be used together with fishing weapons. Disappears after an unsuccessful Enchant. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59135" toLevel="1" name="Pumpkin Seed">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="59136" toLevel="1" name="Honey Pumpkin Seed">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<hitTime>1500</hitTime>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="59137" toLevel="1" name="Monster Energy">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>200</castRange>
+		<effectPoint>-150</effectPoint>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="59138" toLevel="1" name="Halloween Pumpkin - Level Up">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59139" toLevel="1" name="Halloween Pumpkin - Poison">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+	</skill>
+	<skill id="59140" toLevel="1" name="Halloween Gift">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59141" toLevel="1" name="Lingering Halloween">
+		<!-- Lingering Halloween. XP/SP Gain when hunting +10%, P./M. Atk. +5%, Atk. Spd./Casting Spd. +5%. Cannot use this item when having Pumpkinface's Halloween Curse, and these buff effects disappear when obtaining Pumpkinface's buff. -->
+		<icon>icon.event_halloween_pumpkin_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59142" toLevel="1" name="Lingering Halloween">
+		<!-- Lingering Halloween. XP/SP Gain when hunting +20%, P./M. Atk. +5%, Atk. Spd./Casting Spd. +5%. Cannot use this item when having Pumpkinface's Halloween Curse, and these buff effects disappear when obtaining Pumpkinface's buff. -->
+		<icon>icon.event_halloween_pumpkin_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59143" toLevel="1" name="Lingering Halloween">
+		<!-- Lingering Halloween. XP/SP Gain when hunting +30%, P./M. Atk. +5%, Atk. Spd./Casting Spd. +5%. Cannot use this item when having Pumpkinface's Halloween Curse, and these buff effects disappear when obtaining Pumpkinface's buff. -->
+		<icon>icon.event_halloween_pumpkin_i00</icon>
+		<operateType>A1</operateType>
+		<isMagic>4</isMagic>
+	</skill>
+	<skill id="59144" toLevel="1" name="Magic Trumpet">
+		<!-- World Chat +20. Resets every day at 7:00 am. -->
+		<icon>icon.skill18578</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59145" toLevel="1" name="Magic Warehouse Summoning SCroll">
+		<!-- Summons the Magic Warehouse. -->
+		<icon>BranchIcon.icon.g_bm_shop_add_i00</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="59146" toLevel="1" name="Magic Warehouse Summoning Scroll - Inventory +12">
+		<!-- Expands inventory by 12 slots. -->
+		<icon>BranchIcon.icon.g_bm_shop_add_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59147" toLevel="1" name="Party Member Scroll of Escape">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>5500</hitTime>
+		<reuseDelay>1800000</reuseDelay>
+	</skill>
+	<skill id="59148" toLevel="1" name="Antharas' Cute Tricks">
+		<!-- See the summoned spirit perform cute tricks. -->
+		<icon>icon.skill_agathion_cute</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59149" toLevel="1" name="Summon Agathion - Antharas">
+		<!-- Summons Agathion. -->
+		<icon>icon.etc_summon_aga_agit_i00</icon>
+		<operateType>A1</operateType>
+		<hitTime>3000</hitTime>
+	</skill>
+	<skill id="59150" toLevel="10" name="Ruby">
+		<!-- Level 1: Increases Damage from Soulshot, Blessed Soulshot, and Beast Soulshot by 2%. -->
+		<!-- Level 2: Increases Damage from Soulshot, Blessed Soulshot, and Beast Soulshot by 3%. -->
+		<!-- Level 3: Increases Damage from Soulshot, Blessed Soulshot, and Beast Soulshot by 5%. -->
+		<!-- Level 4: Increases Damage from Soulshot, Blessed Soulshot, and Beast Soulshot by 8%. -->
+		<!-- Level 5: Increases Damage from Soulshot, Blessed Soulshot, and Beast Soulshot by 16%. -->
+		<!-- Level 6: Soulshot, Blessed Soulshot and Beast Soulshot Damage +17% and P. Atk. +1%. -->
+		<!-- Level 7: Soulshot, Blessed Soulshot and Beast Soulshot Damage +18% and P. Atk. +2%. -->
+		<!-- Level 8: Soulshot, Blessed Soulshot and Beast Soulshot Damage +19% and P. Atk. +3%. -->
+		<!-- Level 9: Soulshot, Blessed Soulshot and Beast Soulshot Damage +20% and P. Atk. +5%. -->
+		<!-- Level 10: Soulshot, Blessed Soulshot and Beast Soulshot Damage +20%, P. Atk. +7%, P. Critical Rate +5%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="2">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="3">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="4">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="5">icon.etc_bm_jewel_ruby_i00</value>
+			<value level="6">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_ssdmg_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="PhysicalAttack">
+				<amount>
+					<value level="6">1</value>
+					<value level="7">2</value>
+					<value level="8">3</value>
+					<value level="9">5</value>
+					<value level="10">7</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="CriticalRate">
+				<amount>
+					<value level="9">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59151" toLevel="10" name="Sapphire">
+		<!-- Level 1: Increases Damage from Spiritshot, Blessed Spiritshot, and Beast Spiritshot by 2%. -->
+		<!-- Level 2: Increases Damage from Spiritshot, Blessed Spiritshot, and Beast Spiritshot by 3%. -->
+		<!-- Level 3: Increases Damage from Spiritshot, Blessed Spiritshot, and Beast Spiritshot by 5%. -->
+		<!-- Level 4: Increases Damage from Spiritshot, Blessed Spiritshot, and Beast Spiritshot by 8%. -->
+		<!-- Level 5: Increases Damage from Spiritshot, Blessed Spiritshot, and Beast Spiritshot by 16%. -->
+		<!-- Level 6: Soulshot, Blessed Soulshot and Beast Soulshot Damage +17% and M. Atk. +2%. -->
+		<!-- Level 7: Soulshot, Blessed Soulshot and Beast Soulshot Damage +18% and M. Atk. +4%. -->
+		<!-- Level 8: Soulshot, Blessed Soulshot and Beast Soulshot Damage +19% and M. Atk. +6%. -->
+		<!-- Level 9: Soulshot, Blessed Soulshot and Beast Soulshot Damage +20% and M. Atk. +10%. -->
+		<!-- Level 10: Soulshot, Blessed Soulshot and Beast Soulshot Damage +20%, M. Atk. +14%, M. Critical Rate +10%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="2">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="3">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="4">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="5">icon.etc_bm_jewel_sapphire_i00</value>
+			<value level="6">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_spsdmg_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="MagicalAttack">
+				<amount>
+					<value level="6">2</value>
+					<value level="7">4</value>
+					<value level="8">6</value>
+					<value level="9">10</value>
+					<value level="10">14</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+			<effect name="MagicCriticalRate">
+				<amount>
+					<value level="10">10</value>
+				</amount>
+				<mode>PER</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59152" toLevel="10" name="Emerald">
+		<!-- Level 1: CON +1. -->
+		<!-- Level 2: CON +1, MEN +1. -->
+		<!-- Level 3: CON +1, MEN +1, DEX +1. -->
+		<!-- Level 4: CON +1, MEN +1, DEX +1, WIT +1. -->
+		<!-- Level 5: CON +1, MEN +1, DEX +1, WIT +1, STR +1, INT +1. -->
+		<!-- Level 6: CON +2, MEN +1, DEX +1, WIT +1, STR +1, INT +1 and Damage Reflect Resistance +2%. -->
+		<!-- Level 7: CON +2, MEN +2, DEX +1, WIT +1, STR +1, INT +1 and Damage Reflect Resistance +4%. -->
+		<!-- Level 8: CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 and Damage Reflect Resistance +6%. -->
+		<!-- Level 9: CON +2, MEN +2, DEX +2, WIT +2, STR +1, INT +1 and Damage Reflect Resistance +10%. -->
+		<!-- Level 10: CON +2, MEN +2, DEX +2, WIT +2, STR +2, INT +2 and Damage Reflect Resistance +20%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_emerald_i00</value>
+			<value level="2">icon.etc_bm_jewel_emerald_i00</value>
+			<value level="3">icon.etc_bm_jewel_emerald_i00</value>
+			<value level="4">icon.etc_bm_jewel_emerald_i00</value>
+			<value level="5">icon.etc_bm_jewel_emerald_i00</value>
+			<value level="6">icon.bm_jewel_allstat_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_allstat_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_allstat_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_allstat_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_allstat_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59153" toLevel="1" name="Level 5 Brooch">
+		<!-- Can equip 6 gems. -->
+		<icon>icon.etc_bm_brooch_lavianrose_i04</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>6</amount>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59154" toLevel="1" name="Level 5 Brooch Additional Effect">
+		<!-- Expands inventory by 15 slots. -->
+		<icon>icon.etc_bm_brooch_lavianrose_i04</icon>
+		<operateType>P</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>15</amount>
+				<type>INVENTORY_NORMAL</type>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="59155" toLevel="1" name="Greater Topaz - Special Ability">
+		<!-- Cancels up to 3 buffs from the enemy. -->
+		<icon>icon.bm_jewel_absdmg_high_lv1_lavianrose</icon>
+		<operateType>A1</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-1000</effectPoint>
+		<hitTime>1000</hitTime>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="59156" toLevel="1" name="Greater Aquamarine - Special Ability">
+		<!-- Recovers 10% of MP right away. -->
+		<icon>icon.bm_jewel_castmpup_high_lv1_lavianrose</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="59157" toLevel="1" name="XP/SP Rune 50%">
+		<!-- XP/SP Gain from hunting +50%. -->
+		<icon>icon.skill19226</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="59158" toLevel="1" name="Santa">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59159" toLevel="1" name="Santa">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59160" toLevel="1" name="Santa">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59161" toLevel="1" name="Santa">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59162" toLevel="1" name="Santa">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>BranchIcon.Icon.g_bm_costume_santa</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59163" toLevel="1" name="School Uniform A">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>BranchSys3.icon1.Br_schoollook</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59164" toLevel="1" name="School Uniform A">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>BranchSys3.icon1.Br_schoollook</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59165" toLevel="1" name="School Uniform A">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>BranchSys3.icon1.Br_schoollook</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59166" toLevel="1" name="School Uniform A">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>BranchSys3.icon1.Br_schoollook</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59167" toLevel="1" name="School Uniform A">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>BranchSys3.icon1.Br_schoollook</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59168" toLevel="1" name="Beach Swimsuit">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59169" toLevel="1" name="Beach Swimsuit">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59170" toLevel="1" name="Beach Swimsuit">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59171" toLevel="1" name="Beach Swimsuit">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59172" toLevel="1" name="Beach Swimsuit">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>BranchIcon.Icon.g_bm_costume_swimsuit_a</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59173" toLevel="1" name="Teddy Bear">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59174" toLevel="1" name="Teddy Bear">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59175" toLevel="1" name="Teddy Bear">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59176" toLevel="1" name="Teddy Bear">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59177" toLevel="1" name="Teddy Bear">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>icon.gomdori_chest_change</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59178" toLevel="1" name="Kitty Plushy">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59179" toLevel="1" name="Kitty Plushy">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59180" toLevel="1" name="Kitty Plushy">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59181" toLevel="1" name="Kitty Plushy">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59182" toLevel="1" name="Kitty Plushy">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>icon.sayha2017_cat</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59183" toLevel="1" name="Panda Plushy">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59184" toLevel="1" name="Panda Plushy">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59185" toLevel="1" name="Panda Plushy">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59186" toLevel="1" name="Panda Plushy">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59187" toLevel="1" name="Panda Plushy">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>icon.sayha2017_panda</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59188" toLevel="1" name="Baseball Uniform">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59189" toLevel="1" name="Baseball Uniform">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59190" toLevel="1" name="Baseball Uniform">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59191" toLevel="1" name="Baseball Uniform">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59192" toLevel="1" name="Baseball Uniform">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>BranchIcon.Icon.g_bm_costume_baseball</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59193" toLevel="1" name="Seductive Swimsuit">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59194" toLevel="1" name="Seductive Swimsuit">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59195" toLevel="1" name="Seductive Swimsuit">
+		<!-- Transformed into a rare transformation. XP gain +20%, P. Atk. +10% M. Atk. +10%, P. Critical Damage/M. Critical Damage +5%, Movement Speed +5. Transformation remains after death.. <Special Ability>. CON +1, MEN +1, DEX +1 -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59196" toLevel="1" name="Seductive Swimsuit">
+		<!-- Transformed into a legendary transformation. XP gain +30%, P. Atk. +15%, M. Atk. +15%, P. Critical Damage/M. Critical Damage +10%, Movement Speed +10, PvP Damage Received -10%. Transformation remains after death.. <Special Ability>. CON +2, MEN +2, DEX +2, WIT +1, STR +1, INT +1 -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59197" toLevel="1" name="Seductive Swimsuit">
+		<!-- Transformed into a mythic transformation. XP gain +50%, P. Atk. +20%, M. Atk. +20%, P. Critical Damage/M. Critical Damage +15%, Movement Speed +20, PvP Damage +10%, PvP Damage Received -20%. Transformation remains after death.. <Special Ability>. All stats +3 -->
+		<icon>BranchSys3.icon1.g_co_swimsuit_event_03</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>7200000</reuseDelay>
+	</skill>
+	<skill id="59198" toLevel="1" name="School Uniform B">
+		<!-- Transformed into a standard transformation. XP gain +5%. Transformation remains after death. -->
+		<icon>BranchIcon.Icon.g_bm_costume_schoollook_b</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+	<skill id="59199" toLevel="1" name="School Uniform B">
+		<!-- Transformed into a high-grade transformation. XP gain +10%, P. Atk. +5%, M. Atk. +5%. Transformation remains after death.. <Special Ability>. CON +1, MEN +1 -->
+		<icon>BranchIcon.Icon.g_bm_costume_schoollook_b</icon>
+		<operateType>A1</operateType>
+		<isMagic>50</isMagic>
+		<reuseDelay>10800000</reuseDelay>
+	</skill>
+</list>

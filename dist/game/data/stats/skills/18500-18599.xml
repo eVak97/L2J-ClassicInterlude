@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="18564" toLevel="1" name="Shiny Jewelry Box">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+	<skill id="18566" toLevel="10" name="Garnet">
+		<!-- Level 1: Stun/Pull/Paralysis/MEN Attack Resistance +3%. -->
+		<!-- Level 2: Stun/Pull/Paralysis/MEN Attack Resistance +5%. -->
+		<!-- Level 3: Stun/Pull/Paralysis/MEN Attack Resistance +8%. -->
+		<!-- Level 4: Stun/Pull/Paralysis/MEN Attack Resistance +11%. -->
+		<!-- Level 5: Stun/Pull/Paralysis/MEN Attack Resistance +20%. -->
+		<!-- Level 6: Stun/Pull/Paralysis/MEN Attack Resistance +22%. -->
+		<!-- Level 7: Stun/Pull/Paralysis/MEN Attack Resistance +24%. -->
+		<!-- Level 8: Stun/Pull/Paralysis/MEN Attack Resistance +26%. -->
+		<!-- Level 9: Stun/Pull/Paralysis/MEN Attack Resistance +30%. -->
+		<!-- Level 10: Stun/Pull/Paralysis/MEN Attack Resistance +40% Sleep/Poison Resistance +10%. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_garnet</value>
+			<value level="2">icon.etc_bm_jewel_garnet</value>
+			<value level="3">icon.etc_bm_jewel_garnet</value>
+			<value level="4">icon.etc_bm_jewel_garnet</value>
+			<value level="5">icon.etc_bm_jewel_garnet</value>
+			<value level="6">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="8">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="9">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="10">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>P</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<magicCriticalRate>5</magicCriticalRate>
+		<effects>
+			<effect name="DefenceTrait">
+				<SHOCK>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</SHOCK>
+				<PULL>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</PULL>
+				<PARALYZE>
+					<value level="1">3</value>
+					<value level="2">5</value>
+					<value level="3">8</value>
+					<value level="4">11</value>
+					<value level="5">20</value>
+					<value level="6">22</value>
+					<value level="7">24</value>
+					<value level="8">26</value>
+					<value level="9">30</value>
+					<value level="10">40</value>
+				</PARALYZE>
+				<POISON>
+					<value level="10">10</value>
+				</POISON>
+				<SLEEP>
+					<value level="10">10</value>
+				</SLEEP>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="18567" toLevel="7" name="Garnet - Special Ability">
+		<!-- Level 1: Becomes invincible to debuff attacks for 5 seconds. -->
+		<!-- Level 2: Becomes invincible to debuff attacks for 15 seconds. -->
+		<!-- Level 3: Becomes invincible to debuff attacks for 16 seconds. -->
+		<!-- Level 4: Becomes invincible to debuff attacks for 17 seconds. -->
+		<!-- Level 5: Becomes invincible to debuff attacks for 18 seconds. -->
+		<!-- Level 6: Becomes invincible to debuff attacks for 20 seconds. -->
+		<!-- Level 7: Becomes invincible to debuff attacks for 25 seconds. -->
+		<icon>
+			<value level="1">icon.etc_bm_jewel_garnet</value>
+			<value level="2">icon.etc_bm_jewel_garnet</value>
+			<value level="3">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="4">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="5">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="6">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+			<value level="7">icon.bm_jewel_garnet_high_lv1_lavianrose</value>
+		</icon>
+		<operateType>A1</operateType>
+		<effectPoint>1</effectPoint>
+		<reuseDelay>300000</reuseDelay>
+	</skill>
+	<skill id="18571" toLevel="1" name="Hero's Basics - I">
+		<!-- XP/SP gain +3%. -->
+		<icon>icon.skill18571</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18572" toLevel="1" name="Hero's Basics - II">
+		<!-- XP/SP gain +7%. -->
+		<icon>icon.skill18572</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18573" toLevel="1" name="Hero's Basics - III">
+		<!-- XP/SP gain +3% and XP penalty on death -20%. -->
+		<icon>icon.skill18573</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18575" toLevel="1" name="Call to Hunt - I">
+		<!-- Max HP/Max MP/Max CP +200, P. Atk./M. Atk. +5%, and P. Def/M. Def +5%. -->
+		<icon>icon.skill18575</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18576" toLevel="1" name="Call to Hunt - II">
+		<!-- P. Critical Damage +45, M. Critical Damage +30, and P. Critical/M. Critical Rate +10. -->
+		<icon>icon.skill18576</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18577" toLevel="1" name="Call to Battle">
+		<!-- PvP Damage Received -5%, Debuff Resistance +10%. -->
+		<icon>icon.skill18577</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18578" toLevel="1" name="Song Contest">
+		<!-- World Chat Points +20. -->
+		<icon>icon.skill18578</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="18588" toLevel="1" name="Fortune Brooch">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<coolTime>500</coolTime>
+		<hitTime>500</hitTime>
+		<reuseDelay>1000</reuseDelay>
+	</skill>
+</list>

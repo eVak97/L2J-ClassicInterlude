@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="9206" toLevel="1" name="Fast Run">
+		<!-- Movement Speed +95 for 30 minutes. -->
+		<icon>icon.skill9206</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>30</abnormalTime>
+		<abnormalType>SPECIAL_RIDE</abnormalType>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic> <!-- Static Skill -->
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+		<reuseDelay>45000</reuseDelay>
+		<effects>
+			<effect name="Speed">
+				<amount>95</amount>
+				<mode>DIFF</mode>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="9210" toLevel="1" name="Dismount">
+		<!-- Dismounts from a kukuru. -->
+		<icon>icon.skill9210</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<effectPoint>10</effectPoint>
+		<hitCancelTime>0</hitCancelTime>
+		<hitTime>2500</hitTime>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>85</magicLevel>
+		<effects>
+			<effect name="DispelBySlot">
+				<dispel>TRANSFORM,-1;SPECIAL_RIDE,1</dispel>
+			</effect>
+		</effects>
+	</skill>
+	<skill id="9244" toLevel="1" name="Greater Scroll: Enchant Weapon (D-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9245" toLevel="1" name="Greater Scroll: Enchant Armor (D-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9246" toLevel="1" name="Greater Scroll: Enchant Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9247" toLevel="1" name="Greater Scroll: Enchant Armor (C-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9248" toLevel="1" name="Greater Scroll: Enchant Weapon (B-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9249" toLevel="1" name="Greater Scroll: Enchant Armor (B-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9250" toLevel="1" name="Improved Scroll: Enchant Weapon (A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9251" toLevel="1" name="Improved Scroll: Enchant Armor (A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9257" toLevel="1" name="Mentor's Scroll: Enchant Weapon (D-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9259" toLevel="1" name="Mentor's Scroll: Enchant Weapon (C-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>ITEM</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9279" toLevel="1" name="PC Progression Support">
+		<!-- PC-exclusive growth support buff. XP/SP Gain +10%. Not for servitors. -->
+		<icon>icon.etc_pccafe_exp_i00</icon>
+		<operateType>A2</operateType>
+		<targetType>SELF</targetType>
+		<abnormalLevel>1</abnormalLevel>
+		<abnormalTime>-1</abnormalTime>
+		<abnormalType>BUFF_PCCAFE_EXP1</abnormalType>
+		<abnormalVisualEffect>VP_KEEP</abnormalVisualEffect>
+		<affectScope>SINGLE</affectScope>
+		<basicProperty>NONE</basicProperty>
+		<effectPoint>1</effectPoint>
+		<irreplacableBuff>true</irreplacableBuff>
+		<isMagic>3</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>-2</magicLevel>
+		<specialLevel>-2</specialLevel>
+	</skill>
+	<skill id="9293" toLevel="1" name="Mysterious Soulshot (No-grade)">
+		<icon>icon.etc_spirit_bullet_white_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9294" toLevel="1" name="Mysterious Soulshot (D-grade)">
+		<icon>icon.etc_spirit_bullet_blue_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9295" toLevel="1" name="Mysterious Soulshot (C-grade)">
+		<icon>icon.etc_spirit_bullet_green_i00</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9296" toLevel="1" name="Mysterious Soulshot (B-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+	<skill id="9297" toLevel="1" name="Mysterious Soulshot (A-grade)">
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<targetType>SELF</targetType>
+		<affectScope>SINGLE</affectScope>
+		<hitCancelTime>0</hitCancelTime>
+		<isMagic>2</isMagic>
+		<magicCriticalRate>5</magicCriticalRate>
+		<magicLevel>1</magicLevel>
+	</skill>
+</list>

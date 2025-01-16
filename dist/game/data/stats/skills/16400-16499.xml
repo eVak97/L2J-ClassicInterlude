@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/skills.xsd">
+	<skill id="16400" toLevel="1" name="Ferin's Recharge">
+		<!-- Instantly recovers the target's MP with a maximum of 166 power depending on the target's Lv.. Also, for 10 seconds, recovers 12 MP per second. -->
+		<icon>icon.skill11760</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>867</effectPoint>
+		<hitTime>1500</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>2000</reuseDelay>
+	</skill>
+	<skill id="16401" toLevel="1" name="Dimensional Death Skin">
+		<!-- For 10 sec., received damage - 50%. -->
+		<icon>icon.skill0340</icon>
+		<operateType>A2</operateType>
+		<hitTime>2400</hitTime>
+		<isMagic>1</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16402" toLevel="1" name="Dimensional Horror">
+		<!-- Inflicts Fear on nearby enemies for 5 sec. -->
+		<icon>icon.skill1169</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2400</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16403" toLevel="1" name="Dimensional Judgment">
+		<!-- Sentence target to death. 150,000 damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>6</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16404" toLevel="1" name="Dimensional Wide Judgment">
+		<!-- Sentence enemies to the front to death. 150,000 damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<castRange>40</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>6</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16405" toLevel="1" name="Dimensional Mass Judgment">
+		<!-- Sentence all nearby enemies to death. 150,000 damage. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2000</hitTime>
+		<isMagic>6</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16406" toLevel="1" name="Dimensional Fear">
+		<!-- Inflicts Fear on target for 5 seconds. -->
+		<icon>icon.skill1169</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<effectPoint>-100</effectPoint>
+		<hitTime>2400</hitTime>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16407" toLevel="1" name="Dimensional Resurrection Block">
+		<!-- Stops target from resurrecting for 60 sec. -->
+		<icon>icon.skill_resurrection</icon>
+		<operateType>A2</operateType>
+		<castRange>600</castRange>
+		<coolTime>500</coolTime>
+		<effectPoint>-100</effectPoint>
+		<hitTime>1000</hitTime>
+		<isDebuff>true</isDebuff>
+		<isMagic>1</isMagic>
+		<reuseDelay>3000</reuseDelay>
+	</skill>
+	<skill id="16408" toLevel="3" name="Trap Fear">
+		<!-- Moving against your will due to Fear. -->
+		<icon>icon.skill1381</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16409" toLevel="3" name="Trap Hold">
+		<!-- Level 1: Immobilized. -->
+		<!-- Level 2: Unable to move momentarily. -->
+		<!-- Level 3: Unable to move momentarily. -->
+		<icon>icon.skill4047</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16410" toLevel="3" name="Trap Aerial Yoke">
+		<!-- Immobilized. -->
+		<icon>icon.skill11050</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16411" toLevel="3" name="Trap Stun">
+		<!-- Immobilized. -->
+		<icon>icon.skill0100</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16412" toLevel="3" name="Trap Petrify">
+		<!-- Immobilized. -->
+		<icon>icon.skill4111</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16413" toLevel="3" name="Trap Poison">
+		<!-- Poisoned and losing 1000 HP/second. -->
+		<icon>icon.skill4035</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16414" toLevel="1" name="Peace Zone Cure">
+		<!-- Recover 10% of Max HP and 30% of Max MP of self and everyone within 200 grids. Cooldown is 10 seconds. -->
+		<icon>icon.skill0000</icon>
+		<operateType>A1</operateType>
+		<reuseDelay>10000</reuseDelay>
+	</skill>
+	<skill id="16415" toLevel="4" name="Dimensional Dark Forces">
+		<!-- Level 1: P. Atk. - 10%, M. Atk. - 10%, P. Critical Rate - 30, M. Critical Rate - 30 -->
+		<!-- Level 2: P. Atk. - 15%, M. Atk. - 15%, P. Critical Rate - 40, M. Critical Rate - 40 -->
+		<!-- Level 3: P. Atk. - 20%, M. Atk. - 20%, P. Critical Rate - 50, M. Critical Rate - 50 -->
+		<!-- Level 4: P. Atk. - 25%, M. Atk. - 25%, P. Critical Rate - 60, M. Critical Rate - 60 -->
+		<icon>icon.skill1298</icon>
+		<operateType>A2</operateType>
+		<effectPoint>-100</effectPoint>
+		<isDebuff>true</isDebuff>
+	</skill>
+	<skill id="16416" toLevel="10" name="Bluff Resistance">
+		<!-- Level 1: Resistance to Bluff. -->
+		<!-- Level 2: Resistance to Bluff. -->
+		<!-- Level 3: Strong Bluff attack resistance. -->
+		<!-- Level 4: Strong Bluff attack resistance. -->
+		<!-- Level 5: Very strong Resistance to Bluff. -->
+		<!-- Level 6: Very strong Resistance to Bluff. -->
+		<!-- Level 7: Extremely strong Resistance to Bluff. -->
+		<!-- Level 8: Extremely strong Resistance to Bluff. -->
+		<!-- Level 9: Extremely strong Resistance to Bluff. -->
+		<!-- Level 10: Ultimate Resistance to Bluff. -->
+		<icon>icon.skill0358</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16417" toLevel="10" name="Wind Stun Resistance">
+		<!-- Level 1: Slightly strong Wind Stun attack resistance. -->
+		<!-- Level 2: Slightly strong Wind Stun attack resistance. -->
+		<!-- Level 3: Strong Wind Stun attack resistance. -->
+		<!-- Level 4: Strong Wind Stun attack resistance. -->
+		<!-- Level 5: Very strong Wind Stun attack resistance. -->
+		<!-- Level 6: Very strong Wind Stun attack resistance. -->
+		<!-- Level 7: Extremely strong Wind Stun attack resistance. -->
+		<!-- Level 8: Extremely strong Wind Stun attack resistance. -->
+		<!-- Level 9: Extremely strong Wind Stun attack resistance. -->
+		<!-- Level 10: Ultimately strong Wind Stun attack resistance. -->
+		<icon>icon.skill4011</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16418" toLevel="10" name="Seduction Resistance">
+		<!-- Level 1: Slightly strong Seduction attack resistance. -->
+		<!-- Level 2: Slightly strong Seduction attack resistance. -->
+		<!-- Level 3: Strong Seduction attack resistance. -->
+		<!-- Level 4: Strong Seduction attack resistance. -->
+		<!-- Level 5: Very strong Seduction attack resistance. -->
+		<!-- Level 6: Very strong Seduction attack resistance. -->
+		<!-- Level 7: Extremely strong Seduction attack resistance. -->
+		<!-- Level 8: Extremely strong Seduction attack resistance. -->
+		<!-- Level 9: Extremely strong Seduction attack resistance. -->
+		<!-- Level 10: Ultimately strong Seduction attack resistance. -->
+		<icon>icon.skill5934</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16425" toLevel="1" name="Appearance Stone: Santa Suit">
+		<!-- For 1 hr., changes the appearance of your armor into that of a Santa Suit. -->
+		<icon>BranchSys.icon.br_xmas_present_fun_i00</icon>
+		<operateType>A2</operateType>
+		<effectPoint>100</effectPoint>
+		<hitTime>100</hitTime>
+	</skill>
+	<skill id="16426" toLevel="1" name="Greater Abelius Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16427" toLevel="1" name="Greater Sapyros Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16428" toLevel="1" name="Greater Ashagen Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16429" toLevel="1" name="Greater Cranigg Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16430" toLevel="1" name="Greater Soltkreig Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16431" toLevel="1" name="Greater Naviarope Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16432" toLevel="1" name="Greater Leister Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16433" toLevel="1" name="Greater Lakcis Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16434" toLevel="1" name="Greater Sayha Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16435" toLevel="1" name="Greater Sayha Cloak (20-day)">
+		<!-- STR +1, CON +1, INT +1, MEN +1 -->
+		<icon>icon.vesper_cloack_i00</icon>
+		<operateType>P</operateType>
+	</skill>
+	<skill id="16437" toLevel="3" name="Master's Blessing - GM's Cheers">
+		<!-- Level 1: The GM is always with you. XP and SP gain +100% for 1 hour. Cannot be stacked with Dandy's Home Run Ball. -->
+		<!-- Level 2: The GM is always with you. XP and SP gain +100% for 4 hours. Cannot be stacked with Dandy's Home Run Ball. -->
+		<!-- Level 3: The GM is always with you. XP and SP gain +100% for 8 hours. Cannot be stacked with Dandy's Home Run Ball. -->
+		<icon>icon.skill0919</icon>
+		<operateType>A1</operateType>
+		<castRange>1200</castRange>
+		<isMagic>4</isMagic>
+	</skill>
+</list>
