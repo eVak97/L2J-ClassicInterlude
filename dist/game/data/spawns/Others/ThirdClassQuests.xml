@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/spawns.xsd">
+	<spawn name="Third Class Quests">			
+		<territories>		
+			<territory name="Blazing Swamp" minZ="-2170" maxZ="-1883">			
+				<node x="139747" y="-25871" />
+				<node x="140394" y="-24994" />
+				<node x="141352" y="-24481" />
+				<node x="141894" y="-24425" />
+				<node x="142221" y="-24672" />
+				<node x="142786" y="-25594" />
+				<node x="144015" y="-24856" />
+				<node x="144559" y="-24340" />	
+			</territory>
+		</territories>
+		<npc id="21650" count="5" respawnTime="30sec" respawnRandom="20sec" /> <!-- Swampland Watchman - Quest Monster -->
+		<npc id="21651" count="5" respawnTime="30sec" respawnRandom="20sec" /> <!-- Flame Drake - Quest Monster -->
+		<npc id="21652" count="5" respawnTime="30sec" respawnRandom="20sec" /> <!-- Fiery Ifrit - Quest Monster -->
+		<npc id="21653" count="5" respawnTime="30sec" respawnRandom="20sec" /> <!-- Ikedit - Quest Monster -->		
+	</spawn>
 	<spawn name="ThirdClassQuests">
 		<group>
 			<!-- NPCS -->
-			<npc id="31277" x="119796" y="77459" z="-2240" heading="37605" respawnTime="360sec" /> <!-- Felix -->
-			<npc id="34268" x="147674" y="29591" z="-2264" heading="26634" respawnTime="360sec" /> <!-- Rifken -->
-			<npc id="31622" x="148791" y="35414" z="-3072" heading="0" respawnTime="360sec" /> <!-- Keats -->
+			<npc id="31277" x="119796" y="77459" z="-2240" heading="37605" respawnTime="360sec" /> <!-- Felix -->			
 			<npc id="31608" x="145856" y="23511" z="-2112" heading="0" respawnTime="360sec" /> <!-- Belinda -->
+			<npc id="31622" x="148791" y="35414" z="-3072" heading="0" respawnTime="360sec" /> <!-- Keats -->
 			<npc id="31646" x="121992" y="29400" z="-3648" heading="49000" respawnTime="360sec" /> <!-- Tablet Of Vision -->
-			<npc id="31647" x="139424" y="8160" z="-4216" heading="50228" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="31647" x="139424" y="8160" z="-4216" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="31648" x="139568" y="10176" z="-4280" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="31649" x="140406" y="12433" z="-3954" heading="0" respawnTime="60sec" /> <!-- Tablet Of Vision -->
 			<npc id="31650" x="123953" y="65396" z="-3583" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="31651" x="65976" y="29864" z="-3744" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="31652" x="108568" y="-6520" z="-3040" heading="0" respawnTime="60sec" /> <!-- Tablet Of Vision -->
 			<npc id="31653" x="188293" y="16580" z="-3744" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="31654" x="-106573" y="217101" z="-3249" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
 			<npc id="31655" x="15093" y="42830" z="-3672" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
 			<npc id="31656" x="-23859" y="21325" z="-3712" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
 			<npc id="31657" x="-10107" y="-90150" z="-2264" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
-
+			<npc id="31658" x="114104" y="-197320" z="-2584" heading="0" respawnTime="360sec" /> <!-- Tablet Of Vision -->
+			<npc id="34268" x="147674" y="29591" z="-2264" heading="26634" respawnTime="360sec" /> <!-- Rifken -->
+			<npc id="34270" x="152460" y="-14696" z="-4407" heading="35429" respawnTime="360sec" /> <!-- Broome - Information Broker -->
+			
 			<!-- Ice Monster -->
 			<npc id="27316" x="159317" y="35635" z="-3312" heading="43738" respawnTime="60sec" />
 			<npc id="27316" x="159829" y="36590" z="-3360" heading="56416" respawnTime="60sec" />
@@ -73,65 +98,8 @@
 			<npc id="27321" x="160725" y="38341" z="-3696" heading="28087" respawnTime="60sec" />
 			<npc id="27321" x="160271" y="38458" z="-3672" heading="47525" respawnTime="60sec" />
 			<npc id="27321" x="161546" y="37790" z="-3712" heading="18664" respawnTime="60sec" />
-			<npc id="27321" x="161617" y="37701" z="-3704" heading="45614" respawnTime="60sec" />
-			
-			<!-- Swampland Watchman -->
-			<npc id="21650" x="145152" y="-22335" z="-3160" heading="50131" respawnTime="60sec" />
-			<npc id="21650" x="146534" y="-20459" z="-3432" heading="12108" respawnTime="60sec" />
-			<npc id="21650" x="146529" y="-20440" z="-3432" heading="20203" respawnTime="60sec" />
-			<npc id="21650" x="147060" y="-22500" z="-3088" heading="62606" respawnTime="60sec" />
-			<npc id="21650" x="146223" y="-22736" z="-3120" heading="14881" respawnTime="60sec" />
-			<npc id="21650" x="146192" y="-16167" z="-4000" heading="47275" respawnTime="60sec" />
-			<npc id="21650" x="145485" y="-15572" z="-4184" heading="24827" respawnTime="60sec" />
-			<npc id="21650" x="145889" y="-15572" z="-4176" heading="19868" respawnTime="60sec" />
-			<npc id="21650" x="146495" y="-15912" z="-4032" heading="13083" respawnTime="60sec" />
-			<npc id="21650" x="146314" y="-16022" z="-4000" heading="1856" respawnTime="60sec" />
-			
-			<!-- Flame Drake -->
-			<npc id="21651" x="144772" y="-21764" z="-3112" heading="44684" respawnTime="60sec" />
-			<npc id="21651" x="143625" y="-22485" z="-3152" heading="26583" respawnTime="60sec" />
-			<npc id="21651" x="144658" y="-21578" z="-3128" heading="14374" respawnTime="60sec" />
-			<npc id="21651" x="144768" y="-21039" z="-3160" heading="59093" respawnTime="60sec" />
-			<npc id="21651" x="144766" y="-21714" z="-3120" heading="12607" respawnTime="60sec" />
-			<npc id="21651" x="146395" y="-24695" z="-2928" heading="6638" respawnTime="60sec" />
-			<npc id="21651" x="147477" y="-22902" z="-3248" heading="65311" respawnTime="60sec" />
-			<npc id="21651" x="147355" y="-25300" z="-2984" heading="59758" respawnTime="60sec" />
-			<npc id="21651" x="147082" y="-25119" z="-3016" heading="1612" respawnTime="60sec" />
-			<npc id="21651" x="147480" y="-25269" z="-2968" heading="58086" respawnTime="60sec" />
-			<npc id="21651" x="146408" y="-24834" z="-2936" heading="15147" respawnTime="60sec" />
-			<npc id="21651" x="148436" y="-22961" z="-3432" heading="45135" respawnTime="60sec" />
-			<npc id="21651" x="148082" y="-23638" z="-3296" heading="24695" respawnTime="60sec" />
-			<npc id="21651" x="148314" y="-24123" z="-3152" heading="44168" respawnTime="60sec" />
-			<npc id="21651" x="147794" y="-21658" z="-3376" heading="14341" respawnTime="60sec" />
-			
-			<!-- Fiery Ifrit -->
-			<npc id="21652" x="145523" y="-22496" z="-3144" heading="5636" respawnTime="60sec" />
-			<npc id="21652" x="147051" y="-21476" z="-3088" heading="8434" respawnTime="60sec" />
-			<npc id="21652" x="147339" y="-21567" z="-3120" heading="27239" respawnTime="60sec" />
-			<npc id="21652" x="146604" y="-21982" z="-3096" heading="58907" respawnTime="60sec" />
-			<npc id="21652" x="146157" y="-22216" z="-3096" heading="48601" respawnTime="60sec" />
-			<npc id="21652" x="145825" y="-15630" z="-4152" heading="16452" respawnTime="60sec" />
-			<npc id="21652" x="145889" y="-15827" z="-4120" heading="29982" respawnTime="60sec" />
-			<npc id="21652" x="146433" y="-15831" z="-4056" heading="8403" respawnTime="60sec" />
-			<npc id="21652" x="146495" y="-15997" z="-4032" heading="46584" respawnTime="60sec" />
-			
-			<!-- Ikedit -->
-			<npc id="21653" x="145369" y="-21454" z="-3104" heading="15344" respawnTime="60sec" />
-			<npc id="21653" x="145181" y="-21709" z="-3112" heading="28076" respawnTime="60sec" />
-			<npc id="21653" x="142744" y="-21351" z="-3176" heading="28732" respawnTime="60sec" />
-			<npc id="21653" x="143331" y="-22315" z="-3168" heading="8907" respawnTime="60sec" />
-			<npc id="21653" x="143033" y="-22359" z="-3144" heading="13141" respawnTime="60sec" />
-			<npc id="21653" x="147328" y="-24591" z="-3048" heading="35324" respawnTime="60sec" />
-			<npc id="21653" x="147589" y="-24088" z="-3160" heading="41798" respawnTime="60sec" />
-			<npc id="21653" x="146298" y="-24788" z="-2896" heading="3234" respawnTime="60sec" />
-			<npc id="21653" x="146665" y="-25011" z="-2928" heading="9020" respawnTime="60sec" />
-			<npc id="21653" x="146614" y="-24926" z="-2936" heading="28884" respawnTime="60sec" />
-			<npc id="21653" x="147040" y="-25107" z="-3016" heading="38361" respawnTime="60sec" />
-			<npc id="21653" x="145661" y="-25221" z="-2536" heading="3870" respawnTime="60sec" />
-			<npc id="21653" x="149044" y="-22595" z="-3432" heading="47710" respawnTime="60sec" />
-			<npc id="21653" x="148088" y="-21470" z="-3432" heading="55484" respawnTime="60sec" />
-			<npc id="21653" x="148872" y="-21907" z="-3400" heading="53026" respawnTime="60sec" />
-			
+			<npc id="27321" x="161617" y="37701" z="-3704" heading="45614" respawnTime="60sec" />		
+					
 			<!-- Guardian of Forbidden Knowledge -->
 			<npc id="27214" x="138833" y="8745" z="-4288" heading="62181" respawnTime="60sec" />
 			<npc id="27214" x="139138" y="8890" z="-4264" heading="16736" respawnTime="60sec" />
@@ -155,6 +123,18 @@
 			<npc id="27215" x="139976" y="10312" z="-4289" heading="0" respawnTime="60sec" />
 			<npc id="27215" x="140152" y="10088" z="-4258" heading="0" respawnTime="60sec" />
 			<npc id="27215" x="139496" y="9688" z="-4293" heading="0" respawnTime="60sec" />
+			
+			<!-- Watcher of the Ancient Pledge -->
+			<npc id="27216" x="139870" y="12576" z="-3979" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="140518" y="13195" z="-3932" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="140055" y="14135" z="-3984" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="139144" y="13675" z="-3967" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="138896" y="12794" z="-4021" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="140793" y="11728" z="-4103" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="139682" y="12171" z="-4010" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="140711" y="12577" z="-3933" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="140671" y="13700" z="-3920" heading="33985" respawnTime="60sec" />
+			<npc id="27216" x="139854" y="13793" z="-3990" heading="33985" respawnTime="60sec" />
 		</group>
 	</spawn>
 </list>
