@@ -4,7 +4,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="288" /> <!-- Carnage Bow -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="31866" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
 			<attack physical="2848.82203115447" magical="1105.91356508692" random="5" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="505.60512" magical="493.3" evasion="-18" />
@@ -39,7 +39,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" /> <!-- Damascus Sword -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="23781" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
 			<attack physical="2848.82203115447" magical="1105.91356508692" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="505.60512" magical="493.3" evasion="-18" />
@@ -70,7 +70,7 @@
 			<height normal="29" />
 		</collision>
 	</npc>
-	<npc id="25302" level="80" type="RaidBoss" name="Ketra's Commander Tayr" title="Raid Boss">
+	<npc id="25302" level="84" type="RaidBoss" name="Ketra's Commander Tayr" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25303" count="3" respawnTime="360" weightPoint="1" /> <!-- Tayr's Aide -->
@@ -116,7 +116,7 @@
 			<height normal="0" />
 		</collision>
 	</npc>
-	<npc id="25303" level="80" type="Monster" name="Tayr's Aide" title="Raid Fighter">
+	<npc id="25303" level="83" type="Monster" name="Tayr's Aide" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4195" level="9" />
 			<skill name="Debuff_a" id="4200" level="9" />
@@ -124,7 +124,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="213" /> <!-- Branch of the Mother Tree -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="33170.6026756464" hpRegen="92.3387631310317" mp="1777.4" mpRegen="3" />
 			<attack physical="3854.12430279486" magical="1994.73682918201" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-15" />
@@ -157,14 +157,14 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="25304" level="80" type="Monster" name="Tayr's Royal Guard" title="Raid Fighter">
+	<npc id="25304" level="83" type="Monster" name="Tayr's Royal Guard" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4741" level="9" />
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="79" lhand="6919" /> <!-- Damascus Sword / Monster Only (Shield of Ketra Orc) -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="49508.3622024573" hpRegen="92.3387631310317" mp="1777.4" mpRegen="3" />
 			<attack physical="5781.33098746697" magical="4488.35423115713" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-15" shield="708" shieldRate="20" />
@@ -196,10 +196,11 @@
 			<height normal="29" />
 		</collision>
 	</npc>
-	<npc id="25305" level="80" type="RaidBoss" name="Ketra's Chief Brakki" title="Raid Boss">
+	<npc id="25305" level="87" type="RaidBoss" name="Ketra's Chief Brakki" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
 			<param name="doSummonNPC" value="1" />
+			<skill name="SelfRangeCancel_a" id="4177" level="10" /> <!-- BOSS Cancel Magic -->
 			<skill name="SelfBuff_a" id="4173" level="10" /> <!-- BOSS Might -->
 			<skill name="PhysicalSpecial_a" id="4726" level="10" /> <!-- Stun -->
 			<skill name="SelfRangePhysicalSpecial_a" id="4736" level="10" /> <!-- BOSS Spinning Slash -->
@@ -221,6 +222,7 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4173" level="10" /> <!-- BOSS Might -->
+			<skill id="4177" level="10" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -242,7 +244,7 @@
 			<height normal="0" />
 		</collision>
 	</npc>
-	<npc id="25306" level="80" type="RaidBoss" name="Fire Spirit Nastron" title="Raid Boss">
+	<npc id="25306" level="87" type="RaidBoss" name="Fire Spirit Nastron" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25307" count="1" respawnTime="360" weightPoint="1" />
@@ -294,13 +296,13 @@
 			<height normal="42" />
 		</collision>
 	</npc>
-	<npc id="25307" level="80" type="Monster" name="Family of Nastron" title="Raid Fighter">
+	<npc id="25307" level="86" type="Monster" name="Family of Nastron" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4741" level="10" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="35605.1288081334" hpRegen="92.3387631310317" mp="1881.8" mpRegen="3" />
 			<attack physical="5781.33098746697" magical="4488.35423115713" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-12" />
@@ -334,10 +336,10 @@
 			<height normal="20" />
 		</collision>
 	</npc>
-	<npc id="25308" level="80" type="Monster" name="Family of Nastron" title="Raid Fighter">
+	<npc id="25308" level="86" type="Monster" name="Family of Nastron" title="Raid Fighter">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="17802.5644040667" hpRegen="92.3387631310317" mp="1881.8" mpRegen="3" />
 			<attack physical="2890.66549373349" magical="1122.08855778928" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-12" />
@@ -428,7 +430,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" lhand="6918" /> <!-- Keshanberk / Monster Only (Shield of Silenos) -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="47562" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
 			<attack physical="5697.64406230895" magical="4423.65426034769" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="505.60512" magical="493.3" evasion="-18" shield="674" shieldRate="20" />
@@ -464,7 +466,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2504" /> <!-- Meteor Shower -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="23781" hpRegen="91.4930863014358" mp="1641" mpRegen="3" />
 			<attack physical="2848.82203115447" magical="1105.91356508692" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="505.60512" magical="493.3" evasion="-18" />
@@ -495,7 +497,7 @@
 			<height normal="38" />
 		</collision>
 	</npc>
-	<npc id="25312" level="80" type="RaidBoss" name="Varka's Commander Mos" title="Raid Boss">
+	<npc id="25312" level="84" type="RaidBoss" name="Varka's Commander Mos" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25313" count="2" respawnTime="360" weightPoint="1" /> <!-- Mos' Aide -->
@@ -510,7 +512,7 @@
 		<acquire exp="1083327457" sp="668726" raidPoints="2032" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
 			<vitals hp="0" hpRegen="99.9316106802954" mp="1812" mpRegen="3.12" />
-			<attack physical="1504.01905217385" magical="322.556104854345" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="1504.01905217385" magical="322.556104854345" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="1116.5457576" magical="544.6896" evasion="-14" />
 			<speed>
 				<walk ground="25" />
@@ -541,7 +543,7 @@
 			<height normal="0" />
 		</collision>
 	</npc>
-	<npc id="25313" level="80" type="Monster" name="Mos' Aide" title="Raid Fighter">
+	<npc id="25313" level="83" type="Monster" name="Mos' Aide" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4786" level="9" />
 			<skill name="SelfRangeBuff_a" id="4212" level="9" />
@@ -549,7 +551,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="6716" /> <!-- Monster Only (Silenos Shaman) -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="49508.3622024573" hpRegen="92.3387631310317" mp="1777.4" mpRegen="3" />
 			<attack physical="2890.66549373349" magical="1122.08855778928" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-15" />
@@ -582,11 +584,11 @@
 			<height normal="41.5" />
 		</collision>
 	</npc>
-	<npc id="25314" level="80" type="Monster" name="Mos' Escort" title="Raid Fighter">
+	<npc id="25314" level="83" type="Monster" name="Mos' Escort" title="Raid Fighter">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="142" /> <!-- Keshanberk -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="24754.1811012287" hpRegen="92.3387631310317" mp="1777.4" mpRegen="3" />
 			<attack physical="2890.66549373349" magical="1122.08855778928" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-15" />
@@ -617,10 +619,11 @@
 			<height normal="38" />
 		</collision>
 	</npc>
-	<npc id="25315" level="80" type="RaidBoss" name="Varka's Chief Horus" title="Raid Boss">
+	<npc id="25315" level="87" type="RaidBoss" name="Varka's Chief Horus" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
 			<param name="doSummonNPC" value="1" />
+			<skill name="SelfRangeCancel_a" id="4177" level="10" /> <!-- BOSS Cancel Magic -->
 			<skill name="SelfBuff_a" id="4175" level="10" /> <!-- BOSS Haste -->
 			<skill name="PhysicalSpecial_a" id="4721" level="10" /> <!-- BOSS Strike -->
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="10" /> <!-- Stun -->
@@ -631,7 +634,7 @@
 		<acquire exp="1083327457" sp="668726" raidPoints="2132" />
 		<stats str="60" int="76" dex="73" wit="70" con="57" men="80">
 			<vitals hp="0" hpRegen="264.824069962994" mp="1917" mpRegen="3.21" />
-			<attack physical="3099.18466694754" magical="1426.64874503057" random="10" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<attack physical="3099.18466694754" magical="1426.64874503057" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="1185.643995" magical="578.3992" evasion="-11" />
 			<speed>
 				<walk ground="25" />
@@ -644,6 +647,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="10" /> <!-- Stun -->
 			<skill id="4175" level="10" /> <!-- BOSS Haste -->
+			<skill id="4177" level="10" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -664,7 +668,7 @@
 			<height normal="0" />
 		</collision>
 	</npc>
-	<npc id="25316" level="80" type="RaidBoss" name="Water Spirit Ashutar" title="Raid Boss">
+	<npc id="25316" level="87" type="RaidBoss" name="Water Spirit Ashutar" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25317" count="1" respawnTime="360" weightPoint="1" />
@@ -716,13 +720,13 @@
 			<height normal="27" />
 		</collision>
 	</npc>
-	<npc id="25317" level="80" type="Monster" name="Family of Ashutar" title="Raid Fighter">
+	<npc id="25317" level="86" type="Monster" name="Family of Ashutar" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4726" level="10" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="35605.1288081334" hpRegen="92.3387631310317" mp="1881.8" mpRegen="3" />
 			<attack physical="5781.33098746697" magical="4488.35423115713" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-12" />
@@ -756,10 +760,10 @@
 			<height normal="20" grown="24" />
 		</collision>
 	</npc>
-	<npc id="25318" level="80" type="Monster" name="Family of Ashutar" title="Raid Fighter">
+	<npc id="25318" level="86" type="Monster" name="Family of Ashutar" title="Raid Fighter">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="17802.5644040667" hpRegen="92.3387631310317" mp="1881.8" mpRegen="3" />
 			<attack physical="2890.66549373349" magical="1122.08855778928" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-12" />
@@ -792,7 +796,7 @@
 			<height normal="20" grown="24" />
 		</collision>
 	</npc>
-	<npc id="25319" level="80" type="RaidBoss" name="Ember" title="Raid Boss">
+	<npc id="25319" level="85" type="RaidBoss" name="Ember" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25320" count="3" respawnTime="360" weightPoint="1" />
@@ -842,14 +846,14 @@
 			<height normal="73" />
 		</collision>
 	</npc>
-	<npc id="25320" level="80" type="Monster" name="Sentinel of Ember" title="Raid Fighter">
+	<npc id="25320" level="84" type="Monster" name="Sentinel of Ember" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4191" level="9" />
 			<skill name="Debuff_a" id="4199" level="9" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="46761.9861986775" hpRegen="139.474076658488" mp="1812.0" mpRegen="3.12" />
 			<attack physical="7413.2545534839" magical="7859.00328968377" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="558.2728788" magical="544.6896" evasion="-14" />
@@ -885,14 +889,14 @@
 			<height normal="45" />
 		</collision>
 	</npc>
-	<npc id="25321" level="80" type="Monster" name="Messenger of Ember" title="Raid Fighter">
+	<npc id="25321" level="84" type="Monster" name="Messenger of Ember" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4209" level="9" />
 			<skill name="SelfRangeBuff_a" id="4213" level="9" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="69794.0092517574" hpRegen="139.474076658488" mp="1812.0" mpRegen="3.12" />
 			<attack physical="5560.07991711085" magical="4420.88276406805" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="558.2728788" magical="544.6896" evasion="-14" />
@@ -981,7 +985,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="99" /> <!-- Apprentice's Spellbook -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="36887" hpRegen="79.6115910136094" mp="1188" mpRegen="2.7" />
 			<attack physical="2595.52117740397" magical="1246.88892158742" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="407.835495" magical="397.92" evasion="-18" />
@@ -1023,7 +1027,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="178" /> <!-- Bone Staff -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="55056" hpRegen="79.6115910136094" mp="1188" mpRegen="2.7" />
 			<attack physical="3893.37910058347" magical="2805.62281957004" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="407.835495" magical="397.92" evasion="-18" />
@@ -1113,7 +1117,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="58887" hpRegen="83.5603013365645" mp="1314" mpRegen="2.7" />
 			<attack physical="4493.83416522179" magical="3218.1584430212" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="436.725945" magical="426.1" evasion="-18" />
@@ -1149,7 +1153,7 @@
 		<race>DIVINE</race>
 		<sex>MALE</sex>
 		<equipment rhand="6718" /> <!-- Monster Only (Einhasad Shaman) -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="29443" hpRegen="83.5603013365645" mp="1314" mpRegen="2.7" />
 			<attack physical="2246.91708261089" magical="804.539610755299" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="436.725945" magical="426.1" evasion="-18" />
@@ -1238,7 +1242,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="40026" hpRegen="84.4129073248345" mp="1345" mpRegen="2.7" />
 			<attack physical="3092.30943628943" magical="1480.92251235857" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="443.873955" magical="433.08" evasion="-18" />
@@ -1281,7 +1285,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="40026" hpRegen="84.4129073248345" mp="1345" mpRegen="2.7" />
 			<attack physical="3092.30943628943" magical="1480.92251235857" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="443.873955" magical="433.08" evasion="-18" />
@@ -1324,7 +1328,7 @@
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="40026" hpRegen="84.4129073248345" mp="1345" mpRegen="2.7" />
 			<attack physical="3092.30943628943" magical="1480.92251235857" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="443.873955" magical="433.08" evasion="-18" />
@@ -1366,7 +1370,7 @@
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
 		<equipment rhand="234" /> <!-- Demon's Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="59741" hpRegen="84.4129073248345" mp="1345" mpRegen="2.7" />
 			<attack physical="4638.58011893711" magical="3332.22143749468" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="443.873955" magical="433.08" evasion="-18" />
@@ -1403,6 +1407,7 @@
 	<npc id="25333" level="28" type="RaidBoss" name="Anakazel" title="Invaders' Leader">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="2" />
 			<skill name="SelfBuff_a" id="4175" level="2" />
 			<skill name="PhysicalSpecial_a" id="4723" level="2" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="2" />
@@ -1426,6 +1431,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="2" /> <!-- Stun -->
 			<skill id="4175" level="2" /> <!-- BOSS Haste -->
+			<skill id="4177" level="2" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -1451,6 +1457,7 @@
 	<npc id="25334" level="38" type="RaidBoss" name="Anakazel" title="Invaders' Leader">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm03_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="3" />
 			<skill name="SelfBuff_a" id="4175" level="3" />
 			<skill name="PhysicalSpecial_a" id="4723" level="3" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="3" />
@@ -1474,6 +1481,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="3" /> <!-- Stun -->
 			<skill id="4175" level="3" /> <!-- BOSS Haste -->
+			<skill id="4177" level="3" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -1499,6 +1507,7 @@
 	<npc id="25335" level="48" type="RaidBoss" name="Anakazel" title="Invaders' Leader">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="4" />
 			<skill name="SelfBuff_a" id="4175" level="4" />
 			<skill name="PhysicalSpecial_a" id="4723" level="4" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="4" />
@@ -1522,6 +1531,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="4" /> <!-- Stun -->
 			<skill id="4175" level="4" /> <!-- BOSS Haste -->
+			<skill id="4177" level="4" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -1547,6 +1557,7 @@
 	<npc id="25336" level="58" type="RaidBoss" name="Anakazel" title="Invaders' Leader">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm02_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="5" />
 			<skill name="SelfBuff_a" id="4175" level="5" />
 			<skill name="PhysicalSpecial_a" id="4723" level="5" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="5" />
@@ -1570,6 +1581,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="5" /> <!-- Stun -->
 			<skill id="4175" level="5" /> <!-- BOSS Haste -->
+			<skill id="4177" level="5" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -1595,6 +1607,7 @@
 	<npc id="25337" level="68" type="RaidBoss" name="Anakazel" title="Invaders' Leader">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="6" />
 			<skill name="SelfBuff_a" id="4175" level="6" />
 			<skill name="PhysicalSpecial_a" id="4723" level="6" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="6" />
@@ -1618,6 +1631,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="6" /> <!-- Stun -->
 			<skill id="4175" level="6" /> <!-- BOSS Haste -->
+			<skill id="4177" level="6" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -1643,6 +1657,7 @@
 	<npc id="25338" level="78" type="RaidBoss" name="Anakazel" title="Invaders' Leader">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="8" />
 			<skill name="SelfBuff_a" id="4175" level="8" />
 			<skill name="PhysicalSpecial_a" id="4723" level="8" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="8" />
@@ -1666,6 +1681,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="8" /> <!-- Stun -->
 			<skill id="4175" level="8" /> <!-- BOSS Haste -->
+			<skill id="4177" level="8" /> <!-- BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
@@ -1688,7 +1704,7 @@
 			<height normal="90" grown="109" />
 		</collision>
 	</npc>
-	<npc id="25339" level="85" type="Monster" name="Alectia" title="Halisha's Shadow">
+	<npc id="25339" level="80" type="Monster" name="Halisha's Shadow" title="Ruler of Sepulcher">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25340" count="1" respawnTime="360" weightPoint="1" />
@@ -1736,20 +1752,15 @@
 			<radius normal="23" />
 			<height normal="60" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="7256" min="1" max="1" chance="100" /> <!-- Goblet of Alectia -->
-			</drop>
-		</dropLists>
 	</npc>
-	<npc id="25340" level="80" type="Monster" name="Alectia's Knight">
+	<npc id="25340" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="HealMagic_a" id="4788" level="9" />
 			<skill name="SelfRangeBuff_a" id="4212" level="9" />
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="1715.74219599948" magical="974.826217605108" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -1784,10 +1795,10 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="25341" level="80" type="Monster" name="Alectia's Knight">
+	<npc id="25341" level="80" type="Monster" name="Knight of Shadow">
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="1715.74219599948" magical="974.826217605108" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -1820,7 +1831,7 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="25342" level="80" type="Monster" name="Tishas" title="Halisha's Shadow">
+	<npc id="25342" level="80" type="Monster" name="Halisha's Shadow" title="Ruler of Sepulcher">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25343" count="1" respawnTime="360" weightPoint="1" />
@@ -1870,14 +1881,14 @@
 			<height normal="60" />
 		</collision>
 	</npc>
-	<npc id="25343" level="80" type="Monster" name="Tishas' Knight">
+	<npc id="25343" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="HealMagic_a" id="4788" level="9" />
 			<skill name="SelfRangeBuff_a" id="4212" level="9" />
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="1715.74219599948" magical="974.826217605108" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -1912,10 +1923,10 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="25344" level="80" type="Monster" name="Tishas' Knight">
+	<npc id="25344" level="80" type="Monster" name="Knight of Shadow">
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="1715.74219599948" magical="974.826217605108" random="5" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -1948,14 +1959,14 @@
 			<height normal="55" />
 		</collision>
 	</npc>
-	<npc id="25345" level="80" type="Monster" name="Tishas' Knight">
+	<npc id="25345" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="DDMagic_a" id="4191" level="9" />
 			<skill name="Debuff_a" id="4203" level="9" />
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="2287.59906992611" magical="1732.9485670366" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -1990,7 +2001,7 @@
 			<height normal="34" />
 		</collision>
 	</npc>
-	<npc id="25346" level="80" type="Monster" name="Mekara" title="Halisha's Shadow">
+	<npc id="25346" level="80" type="Monster" name="Halisha's Shadow" title="Ruler of Sepulcher">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25347" count="1" respawnTime="360" weightPoint="1" />
@@ -2039,14 +2050,14 @@
 			<height normal="60" />
 		</collision>
 	</npc>
-	<npc id="25347" level="80" type="Monster" name="Mekara's Knight">
+	<npc id="25347" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="DDMagic_a" id="4191" level="9" />
 			<skill name="Debuff_a" id="4199" level="9" />
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="2287.59906992611" magical="1732.9485670366" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -2081,14 +2092,14 @@
 			<height normal="34" />
 		</collision>
 	</npc>
-	<npc id="25348" level="80" type="Monster" name="Mekara's Knight">
+	<npc id="25348" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4743" level="9" />
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="78" /> <!-- Great Sword -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="3431.48439199896" magical="3899.30487042043" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -2124,7 +2135,7 @@
 			<height normal="40" grown="48" />
 		</collision>
 	</npc>
-	<npc id="25349" level="80" type="Monster" name="Morigul" title="Halisha's Shadow">
+	<npc id="25349" level="80" type="Monster" name="Halisha's Shadow" title="Ruler of Sepulcher">
 		<parameters>
 			<minions name="Privates">
 				<npc id="25350" count="1" respawnTime="360" weightPoint="1" />
@@ -2177,14 +2188,14 @@
 			<height normal="60" />
 		</collision>
 	</npc>
-	<npc id="25350" level="80" type="Monster" name="Morigul's Knight">
+	<npc id="25350" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="DDMagic_a" id="4191" level="9" />
 			<skill name="Debuff_a" id="4201" level="9" />
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="2287.59906992611" magical="1732.9485670366" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -2219,14 +2230,14 @@
 			<height normal="34" />
 		</collision>
 	</npc>
-	<npc id="25351" level="80" type="Monster" name="Morigul's Knight">
+	<npc id="25351" level="80" type="Monster" name="Knight of Shadow">
 		<parameters>
 			<skill name="HealMagic_a" id="4788" level="9" />
 			<skill name="SelfRangeBuff_a" id="4212" level="9" />
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="44350.854" hpRegen="71.614397311965" mp="2770.2" mpRegen="3" />
 			<attack physical="1715.74219599948" magical="974.826217605108" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="512.0625" magical="499.6" evasion="-18" />
@@ -2307,20 +2318,19 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="849" min="1" max="3" chance="17.25" /> <!-- Tiger's Eye -->
-				<item id="880" min="1" max="3" chance="17.085" /> <!-- Black Pearl Ring -->
-				<item id="912" min="1" max="1" chance="16.95" /> <!-- Near Forest Necklace -->
-				<item id="553" min="1" max="3" chance="6.08" /> <!-- Iron Boots -->
-				<item id="378" min="1" max="3" chance="6.06" /> <!-- Compound Scale Gaiters -->
-				<item id="349" min="1" max="3" chance="5.995" /> <!-- Compound Scale Mail -->
-				<item id="379" min="1" max="3" chance="5.92" /> <!-- Dwarven Scale Gaiters -->
-				<item id="350" min="1" max="3" chance="5.85" /> <!-- Dwarven Scale Mail -->
-				<item id="47" min="1" max="3" chance="5.72" /> <!-- Helmet -->
-				<item id="351" min="1" max="1" chance="5.705" /> <!-- Breastplate -->
-				<item id="63" min="1" max="3" chance="5.59" /> <!-- Gauntlets -->
+				<item id="912" min="1" max="1" chance="31.51" /> <!-- Near Forest Necklace -->
+				<item id="849" min="1" max="3" chance="30.09" /> <!-- Tiger's Eye -->
+				<item id="880" min="1" max="3" chance="28.63" /> <!-- Black Pearl Ring -->
+				<item id="378" min="1" max="3" chance="11.16" /> <!-- Compound Scale Gaiters -->
+				<item id="553" min="1" max="3" chance="11.03" /> <!-- Iron Boots -->
+				<item id="47" min="1" max="3" chance="11" /> <!-- Helmet -->
+				<item id="351" min="1" max="1" chance="10.75" /> <!-- Breastplate -->
+				<item id="350" min="1" max="3" chance="10.74" /> <!-- Dwarven Scale Mail -->
+				<item id="63" min="1" max="3" chance="10.48" /> <!-- Gauntlets -->
+				<item id="379" min="1" max="3" chance="10.22" /> <!-- Dwarven Scale Gaiters -->
+				<item id="349" min="1" max="3" chance="10.18" /> <!-- Compound Scale Mail -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="3" max="8" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -2330,7 +2340,7 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="28916" hpRegen="20.9291966395288" mp="22747" mpRegen="1.5" />
 			<attack physical="410.881184697441" magical="104.90220368531" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="172.50897" magical="168.32" evasion="-18" />
@@ -2416,23 +2426,22 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="850" min="1" max="3" chance="12.27" /> <!-- Elven Earring -->
-				<item id="881" min="1" max="3" chance="11.825" /> <!-- Elven Ring -->
-				<item id="913" min="1" max="1" chance="11.74" /> <!-- Elven Necklace -->
-				<item id="2378" min="1" max="3" chance="8.51" /> <!-- Brigandine Gaiters -->
-				<item id="2411" min="1" max="3" chance="8.395" /> <!-- Brigandine Helmet -->
-				<item id="2425" min="1" max="3" chance="8.245" /> <!-- Brigandine Boots -->
-				<item id="352" min="1" max="3" chance="8.19" /> <!-- Brigandine -->
+				<item id="913" min="1" max="1" chance="21.93" /> <!-- Elven Necklace -->
+				<item id="881" min="1" max="3" chance="21.28" /> <!-- Elven Ring -->
+				<item id="850" min="1" max="3" chance="20.66" /> <!-- Elven Earring -->
+				<item id="352" min="1" max="3" chance="15.26" /> <!-- Brigandine -->
+				<item id="2411" min="1" max="3" chance="15.15" /> <!-- Brigandine Helmet -->
+				<item id="2378" min="1" max="3" chance="15" /> <!-- Brigandine Gaiters -->
+				<item id="2425" min="1" max="3" chance="14.61" /> <!-- Brigandine Boots -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="4" max="11" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
 	<npc id="25355" level="34" type="Monster" name="Sirocco's Gargoyle" title="Raid Fighter">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30391" hpRegen="25.6128307622386" mp="23908" mpRegen="1.8" />
 			<attack physical="303.485602119585" magical="48.1624477605241" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="199.4229" magical="194.58" evasion="-18" />
@@ -2472,7 +2481,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30391" hpRegen="25.6128307622386" mp="23908" mpRegen="1.8" />
 			<attack physical="606.971204239169" magical="192.649791042096" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="199.4229" magical="194.58" evasion="-18" />
@@ -2555,31 +2564,28 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="1148" min="1" max="1" chance="9.064" /> <!-- Durable Leather Helmet -->
-				<item id="1105" min="1" max="1" chance="9.056" /> <!-- Stockings of Magic -->
-				<item id="27" min="1" max="1" chance="9.042" /> <!-- Durable Leather Shirt -->
-				<item id="33" min="1" max="1" chance="9.003" /> <!-- Durable Leather Gaiters -->
-				<item id="51" min="1" max="1" chance="9.002" /> <!-- Bracer -->
-				<item id="34" min="1" max="1" chance="9" /> <!-- Bronze Gaiters -->
-				<item id="1102" min="1" max="1" chance="8.965" /> <!-- Tunic of Magic -->
-				<item id="39" min="1" max="1" chance="8.955" /> <!-- Boots -->
-				<item id="625" min="1" max="1" chance="8.945" /> <!-- Bone Shield -->
-				<item id="26" min="1" max="1" chance="8.933" /> <!-- Bronze Breastplate -->
+				<item id="51" min="1" max="1" chance="9.064" /> <!-- Bracer -->
+				<item id="33" min="1" max="1" chance="9.053" /> <!-- Durable Leather Gaiters -->
+				<item id="1148" min="1" max="1" chance="9.047" /> <!-- Durable Leather Helmet -->
+				<item id="1102" min="1" max="1" chance="9.027" /> <!-- Tunic of Magic -->
+				<item id="39" min="1" max="1" chance="9.024" /> <!-- Boots -->
+				<item id="34" min="1" max="1" chance="9.019" /> <!-- Bronze Gaiters -->
+				<item id="26" min="1" max="1" chance="8.992" /> <!-- Bronze Breastplate -->
+				<item id="1105" min="1" max="1" chance="8.982" /> <!-- Stockings of Magic -->
+				<item id="625" min="1" max="1" chance="8.961" /> <!-- Bone Shield -->
+				<item id="27" min="1" max="1" chance="8.942" /> <!-- Durable Leather Shirt -->
+				<item id="219" min="1" max="1" chance="4.61" /> <!-- Sword Breaker -->
 				<item id="100" min="1" max="1" chance="4.6075" /> <!-- Voodoo Doll -->
-				<item id="219" min="1" max="1" chance="4.601" /> <!-- Sword Breaker -->
-				<item id="257" min="1" max="1" chance="4.595" /> <!-- Viper Fang -->
-				<item id="273" min="1" max="1" chance="4.577" /> <!-- Compound Bow -->
-				<item id="311" min="1" max="1" chance="4.572" /> <!-- Crucifix of Blessing -->
-				<item id="16" min="1" max="1" chance="4.5655" /> <!-- Great Spear -->
-				<item id="177" min="1" max="1" chance="4.563" /> <!-- Mage Staff -->
-				<item id="155" min="1" max="1" chance="4.556" /> <!-- Flanged Mace -->
-				<item id="5284" min="1" max="1" chance="4.555" /> <!-- Zweihander -->
-				<item id="68" min="1" max="1" chance="4.514" /> <!-- Falchion -->
-				<item id="87" min="1" max="1" chance="4.504" /> <!-- Iron Hammer -->
+				<item id="273" min="1" max="1" chance="4.5995" /> <!-- Compound Bow -->
+				<item id="257" min="1" max="1" chance="4.585" /> <!-- Viper Fang -->
+				<item id="68" min="1" max="1" chance="4.583" /> <!-- Falchion -->
+				<item id="177" min="1" max="1" chance="4.564" /> <!-- Mage Staff -->
+				<item id="155" min="1" max="1" chance="4.5415" /> <!-- Flanged Mace -->
+				<item id="311" min="1" max="1" chance="4.507" /> <!-- Crucifix of Blessing -->
+				<item id="87" min="1" max="1" chance="4.498" /> <!-- Iron Hammer -->
+				<item id="5284" min="1" max="1" chance="4.487" /> <!-- Zweihander -->
+				<item id="16" min="1" max="1" chance="4.4805" /> <!-- Great Spear -->
 				<item id="956" min="2" max="6" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="91526" min="1" max="1" chance="5.049" /> <!-- Weapon Varnish (D-grade) -->
-				<item id="91540" min="1" max="1" chance="4.99" /> <!-- Accessory Varnish (D-grade) -->
-				<item id="91533" min="1" max="1" chance="4.94" /> <!-- Armor Varnish (D-grade) -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -2590,7 +2596,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="216" /> <!-- Dirk -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="26439" hpRegen="16.5400323223535" mp="20799" mpRegen="1.2" />
 			<attack physical="195.300657715485" magical="38.1182001422702" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="130.305735" magical="127.14" evasion="-18" />
@@ -2630,7 +2636,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="26439" hpRegen="16.5400323223535" mp="20799" mpRegen="1.2" />
 			<attack physical="97.6503288577427" magical="9.52955003556756" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="130.305735" magical="127.14" evasion="-18" />
@@ -2714,7 +2720,7 @@
 		</parameters>
 		<race>BUG</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="6930.60936582996" hpRegen="18.4385313667577" mp="259.2" mpRegen="1.5" />
 			<attack physical="296.889275521805" magical="74.8747587642184" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="152.752995" magical="149.04" evasion="-18" />
@@ -2797,7 +2803,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2" /> <!-- Long Sword -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3123.59239397728" hpRegen="42.8942203568865" mp="218.52" mpRegen="1.5" />
 			<attack physical="115.593111188517" magical="14.544467728838" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="277.97082" magical="135.6" evasion="-18" />
@@ -2832,7 +2838,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="2507" /> <!-- Lizardspear -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="4185.61380792955" hpRegen="42.8942203568865" mp="218.52" mpRegen="1.5" />
 			<attack physical="115.593111188517" magical="14.544467728838" random="5" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="277.97082" magical="135.6" evasion="-18" />
@@ -2866,6 +2872,7 @@
 	<npc id="25365" level="26" type="RaidBoss" name="Patriarch Kuroboros" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="2" />
 			<skill name="SelfBuff_a" id="4174" level="2" />
 			<skill name="PhysicalSpecial_a" id="4723" level="2" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="2" />
@@ -2888,6 +2895,7 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4174" level="2" /> <!-- BOSS Shield -->
+			<skill id="4177" level="2" /> <!-- BOSS Cancel Magic -->
 			<skill id="4723" level="2" /> <!-- BOSS Strike -->
 			<skill id="4738" level="2" /> <!-- BOSS Spinning Slash -->
 			<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -2902,22 +2910,18 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="413" min="2" max="4" chance="8.064" /> <!-- Puma Skin Gaiters -->
-				<item id="465" min="2" max="4" chance="8.061" /> <!-- Cursed Stockings -->
-				<item id="432" min="2" max="4" chance="8.047" /> <!-- Cursed Tunic -->
-				<item id="391" min="2" max="4" chance="8.043" /> <!-- Puma Skin Shirt -->
-				<item id="45" min="2" max="8" chance="8.041" /> <!-- Bone Helmet -->
-				<item id="626" min="2" max="8" chance="7.999" /> <!-- Bronze Shield -->
-				<item id="376" min="2" max="4" chance="7.982" /> <!-- Iron Plate Gaiters -->
-				<item id="604" min="2" max="8" chance="7.953" /> <!-- Quality Leather Gloves -->
-				<item id="347" min="2" max="4" chance="7.95" /> <!-- Ring Breastplate -->
-				<item id="40" min="2" max="8" chance="7.942" /> <!-- Leather Boots -->
+				<item id="604" min="2" max="8" chance="8.033" /> <!-- Quality Leather Gloves -->
+				<item id="626" min="2" max="8" chance="8.02" /> <!-- Bronze Shield -->
+				<item id="391" min="2" max="4" chance="8.018" /> <!-- Puma Skin Shirt -->
+				<item id="45" min="2" max="8" chance="8.004" /> <!-- Bone Helmet -->
+				<item id="40" min="2" max="8" chance="7.981" /> <!-- Leather Boots -->
+				<item id="376" min="2" max="4" chance="7.96" /> <!-- Iron Plate Gaiters -->
+				<item id="465" min="2" max="4" chance="7.945" /> <!-- Cursed Stockings -->
+				<item id="413" min="2" max="4" chance="7.943" /> <!-- Puma Skin Gaiters -->
+				<item id="432" min="2" max="4" chance="7.941" /> <!-- Cursed Tunic -->
+				<item id="347" min="2" max="4" chance="7.938" /> <!-- Ring Breastplate -->
 				<item id="955" min="2" max="8" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="2" max="6" chance="100" /> <!-- Sealed Rune - Stage 1 -->
-				<item id="91526" min="1" max="1" chance="5.0315" /> <!-- Weapon Varnish (D-grade) -->
-				<item id="91533" min="1" max="1" chance="5.024" /> <!-- Armor Varnish (D-grade) -->
-				<item id="91540" min="1" max="1" chance="4.989" /> <!-- Accessory Varnish (D-grade) -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -2969,14 +2973,11 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="847" min="4" max="8" chance="32.99" /> <!-- Red Crescent -->
-				<item id="910" min="2" max="4" chance="32.77" /> <!-- Necklace of Devotion -->
-				<item id="890" min="4" max="8" chance="31.61" /> <!-- Ring of Devotion -->
+				<item id="890" min="4" max="8" chance="32.18" /> <!-- Ring of Devotion -->
+				<item id="910" min="2" max="4" chance="30.96" /> <!-- Necklace of Devotion -->
+				<item id="847" min="4" max="8" chance="30.57" /> <!-- Red Crescent -->
 				<item id="955" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="2" max="6" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="91540" min="1" max="1" chance="5.046" /> <!-- Accessory Varnish (D-grade) -->
-				<item id="91526" min="1" max="1" chance="5.033" /> <!-- Weapon Varnish (D-grade) -->
-				<item id="91533" min="1" max="1" chance="4.95" /> <!-- Armor Varnish (D-grade) -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -2987,7 +2988,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="1" lhand="102" /> <!-- Short Sword / Round Shield -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="26970" hpRegen="17.1576881427546" mp="21217" mpRegen="1.5" />
 			<attack physical="231.186222377034" magical="58.1778709153521" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="138.98541" magical="135.6" evasion="-18" shield="185" shieldRate="20" />
@@ -3027,7 +3028,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="179" /> <!-- Mace of Prayer -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="26970" hpRegen="17.1576881427546" mp="21217" mpRegen="1.5" />
 			<attack physical="115.593111188517" magical="14.544467728838" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="138.98541" magical="135.6" evasion="-18" />
@@ -3115,22 +3116,18 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="604" min="2" max="6" chance="8.045" /> <!-- Quality Leather Gloves -->
-				<item id="45" min="2" max="6" chance="8.014" /> <!-- Bone Helmet -->
-				<item id="40" min="2" max="6" chance="8.004" /> <!-- Leather Boots -->
-				<item id="347" min="1" max="3" chance="8.002" /> <!-- Ring Breastplate -->
-				<item id="465" min="1" max="3" chance="7.979" /> <!-- Cursed Stockings -->
-				<item id="432" min="1" max="3" chance="7.946" /> <!-- Cursed Tunic -->
-				<item id="413" min="1" max="3" chance="7.943" /> <!-- Puma Skin Gaiters -->
-				<item id="391" min="1" max="3" chance="7.941" /> <!-- Puma Skin Shirt -->
-				<item id="376" min="1" max="3" chance="7.941" /> <!-- Iron Plate Gaiters -->
-				<item id="626" min="2" max="6" chance="7.939" /> <!-- Bronze Shield -->
+				<item id="40" min="2" max="6" chance="8.067" /> <!-- Leather Boots -->
+				<item id="465" min="1" max="3" chance="8.061" /> <!-- Cursed Stockings -->
+				<item id="626" min="2" max="6" chance="8.034" /> <!-- Bronze Shield -->
+				<item id="432" min="1" max="3" chance="8.015" /> <!-- Cursed Tunic -->
+				<item id="376" min="1" max="3" chance="7.999" /> <!-- Iron Plate Gaiters -->
+				<item id="347" min="1" max="3" chance="7.981" /> <!-- Ring Breastplate -->
+				<item id="391" min="1" max="3" chance="7.98" /> <!-- Puma Skin Shirt -->
+				<item id="413" min="1" max="3" chance="7.966" /> <!-- Puma Skin Gaiters -->
+				<item id="604" min="2" max="6" chance="7.946" /> <!-- Quality Leather Gloves -->
+				<item id="45" min="2" max="6" chance="7.933" /> <!-- Bone Helmet -->
 				<item id="955" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="3" max="8" chance="100" /> <!-- Sealed Rune - Stage 1 -->
-				<item id="91526" min="1" max="1" chance="5.033" /> <!-- Weapon Varnish (D-grade) -->
-				<item id="91533" min="1" max="1" chance="5.016" /> <!-- Armor Varnish (D-grade) -->
-				<item id="91540" min="1" max="1" chance="4.931" /> <!-- Accessory Varnish (D-grade) -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -3141,7 +3138,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="27512" hpRegen="17.9607701717791" mp="21643" mpRegen="1.5" />
 			<attack physical="273.281811447597" magical="68.8120420631729" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="148.063785" magical="144.46" evasion="-18" />
@@ -3181,7 +3178,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="27512" hpRegen="17.9607701717791" mp="21643" mpRegen="1.5" />
 			<attack physical="136.640905723798" magical="17.2030105157932" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="148.063785" magical="144.46" evasion="-18" />
@@ -3219,6 +3216,7 @@
 	<npc id="25372" level="20" type="RaidBoss" name="Discarded Guardian" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="2" />
 			<skill name="SelfBuff_a" id="4173" level="2" />
 			<skill name="PhysicalSpecial_a" id="4733" level="2" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4172" level="2" />
@@ -3242,6 +3240,7 @@
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4172" level="2" /> <!-- Stun -->
 			<skill id="4173" level="2" /> <!-- BOSS Might -->
+			<skill id="4177" level="2" /> <!-- BOSS Cancel Magic -->
 			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
 			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -3318,7 +3317,7 @@
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="5895.54977206307" hpRegen="41.3500808058837" mp="192.0" mpRegen="1.2" />
 			<attack physical="97.6503288577427" magical="9.52955003556756" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="260.61147" magical="127.14" evasion="-18" />
@@ -3406,7 +3405,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="5747.15231548848" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
 			<attack physical="179.477904052609" magical="33.8323268495015" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="126.11457" magical="123.04" evasion="-18" />
@@ -3449,7 +3448,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="5747.15231548848" hpRegen="16.2943663177076" mp="183.28" mpRegen="1.2" />
 			<attack physical="89.7389520263043" magical="8.45808171237537" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="126.11457" magical="123.04" evasion="-18" />
@@ -3743,7 +3742,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="9983.70344337502" hpRegen="24.5170941308607" mp="372.96" mpRegen="1.8" />
 			<attack physical="562.230118784958" magical="179.112100596385" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="193.846425" magical="189.14" evasion="-18" />
@@ -3832,32 +3831,31 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="849" min="1" max="3" chance="17.67" /> <!-- Tiger's Eye -->
-				<item id="880" min="1" max="3" chance="17.14" /> <!-- Black Pearl Ring -->
-				<item id="912" min="1" max="1" chance="16.79" /> <!-- Near Forest Necklace -->
-				<item id="415" min="1" max="3" chance="2.642" /> <!-- Mithril Banded Gaiters -->
-				<item id="393" min="1" max="3" chance="2.6385" /> <!-- Mithril Banded Mail -->
-				<item id="47" min="1" max="3" chance="2.637" /> <!-- Helmet -->
-				<item id="349" min="1" max="3" chance="2.6365" /> <!-- Compound Scale Mail -->
-				<item id="2422" min="1" max="3" chance="2.6355" /> <!-- Reinforced Leather Boots -->
-				<item id="379" min="1" max="3" chance="2.625" /> <!-- Dwarven Scale Gaiters -->
-				<item id="350" min="1" max="3" chance="2.6125" /> <!-- Dwarven Scale Mail -->
-				<item id="2447" min="1" max="3" chance="2.611" /> <!-- Gloves of Knowledge -->
-				<item id="416" min="1" max="3" chance="2.609" /> <!-- Reinforced Leather Gaiters -->
-				<item id="378" min="1" max="3" chance="2.6085" /> <!-- Compound Scale Gaiters -->
-				<item id="469" min="1" max="3" chance="2.605" /> <!-- Stockings of Knowledge -->
-				<item id="351" min="1" max="3" chance="2.603" /> <!-- Breastplate -->
-				<item id="553" min="1" max="3" chance="2.602" /> <!-- Iron Boots -->
-				<item id="394" min="1" max="3" chance="2.6015" /> <!-- Reinforced Leather Shirt -->
-				<item id="436" min="1" max="3" chance="2.6005" /> <!-- Tunic of Knowledge -->
-				<item id="2446" min="1" max="3" chance="2.597" /> <!-- Reinforced Leather Gloves -->
-				<item id="59" min="1" max="3" chance="2.587" /> <!-- Mithril Gaiters -->
-				<item id="2423" min="1" max="3" chance="2.5865" /> <!-- Boots of Knowledge -->
-				<item id="58" min="1" max="3" chance="2.5845" /> <!-- Mithril Breastplate -->
-				<item id="63" min="1" max="3" chance="2.5825" /> <!-- Gauntlets -->
+				<item id="880" min="1" max="3" chance="33.13" /> <!-- Black Pearl Ring -->
+				<item id="912" min="1" max="1" chance="32.15" /> <!-- Near Forest Necklace -->
+				<item id="849" min="1" max="3" chance="31.84" /> <!-- Tiger's Eye -->
+				<item id="58" min="1" max="3" chance="4.811" /> <!-- Mithril Breastplate -->
+				<item id="393" min="1" max="3" chance="4.808" /> <!-- Mithril Banded Mail -->
+				<item id="59" min="1" max="3" chance="4.797" /> <!-- Mithril Gaiters -->
+				<item id="2422" min="1" max="3" chance="4.79" /> <!-- Reinforced Leather Boots -->
+				<item id="469" min="1" max="3" chance="4.79" /> <!-- Stockings of Knowledge -->
+				<item id="2447" min="1" max="3" chance="4.776" /> <!-- Gloves of Knowledge -->
+				<item id="394" min="1" max="3" chance="4.776" /> <!-- Reinforced Leather Shirt -->
+				<item id="2423" min="1" max="3" chance="4.774" /> <!-- Boots of Knowledge -->
+				<item id="553" min="1" max="3" chance="4.773" /> <!-- Iron Boots -->
+				<item id="436" min="1" max="3" chance="4.772" /> <!-- Tunic of Knowledge -->
+				<item id="2446" min="1" max="3" chance="4.761" /> <!-- Reinforced Leather Gloves -->
+				<item id="63" min="1" max="3" chance="4.747" /> <!-- Gauntlets -->
+				<item id="351" min="1" max="3" chance="4.743" /> <!-- Breastplate -->
+				<item id="416" min="1" max="3" chance="4.714" /> <!-- Reinforced Leather Gaiters -->
+				<item id="379" min="1" max="3" chance="4.712" /> <!-- Dwarven Scale Gaiters -->
+				<item id="47" min="1" max="3" chance="4.705" /> <!-- Helmet -->
+				<item id="350" min="1" max="3" chance="4.7" /> <!-- Dwarven Scale Mail -->
+				<item id="378" min="1" max="3" chance="4.698" /> <!-- Compound Scale Gaiters -->
+				<item id="349" min="1" max="3" chance="4.692" /> <!-- Compound Scale Mail -->
+				<item id="415" min="1" max="3" chance="4.681" /> <!-- Mithril Banded Gaiters -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="4" max="12" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -3868,7 +3866,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="128" /> <!-- Knight's Sword -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30695" hpRegen="26.794392073316" mp="24147" mpRegen="1.8" />
 			<attack physical="654.782594587805" magical="206.879948405209" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="205.09422" magical="200.1" evasion="-18" />
@@ -3908,7 +3906,7 @@
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<equipment rhand="946" /> <!-- Skeleton Dagger -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30695" hpRegen="26.794392073316" mp="24147" mpRegen="1.8" />
 			<attack physical="327.391297293902" magical="51.7199871013021" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="205.09422" magical="200.1" evasion="-18" />
@@ -3991,21 +3989,20 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="881" min="1" max="1" chance="14.96" /> <!-- Elven Ring -->
-				<item id="913" min="1" max="1" chance="14.28" /> <!-- Elven Necklace -->
-				<item id="850" min="1" max="1" chance="14.24" /> <!-- Elven Earring -->
-				<item id="2377" min="1" max="3" chance="4.922" /> <!-- Mithril Scale Gaiters -->
-				<item id="606" min="1" max="3" chance="4.9215" /> <!-- Rip Gauntlets -->
-				<item id="417" min="1" max="3" chance="4.918" /> <!-- Manticore Skin Gaiters -->
-				<item id="2448" min="1" max="3" chance="4.911" /> <!-- Manticore Skin Gloves -->
-				<item id="437" min="1" max="3" chance="4.8995" /> <!-- Mithril Tunic -->
-				<item id="1124" min="1" max="3" chance="4.8775" /> <!-- Boots of Strength -->
-				<item id="2424" min="1" max="3" chance="4.8775" /> <!-- Manticore Skin Boots -->
-				<item id="470" min="1" max="3" chance="4.874" /> <!-- Mithril Stockings -->
-				<item id="395" min="1" max="3" chance="4.8575" /> <!-- Manticore Skin Shirt -->
+				<item id="913" min="1" max="1" chance="27.25" /> <!-- Elven Necklace -->
+				<item id="850" min="1" max="1" chance="27.2" /> <!-- Elven Earring -->
+				<item id="881" min="1" max="1" chance="25.62" /> <!-- Elven Ring -->
+				<item id="2448" min="1" max="3" chance="8.931" /> <!-- Manticore Skin Gloves -->
+				<item id="1124" min="1" max="3" chance="8.92" /> <!-- Boots of Strength -->
+				<item id="470" min="1" max="3" chance="8.918" /> <!-- Mithril Stockings -->
+				<item id="437" min="1" max="3" chance="8.918" /> <!-- Mithril Tunic -->
+				<item id="417" min="1" max="3" chance="8.88" /> <!-- Manticore Skin Gaiters -->
+				<item id="606" min="1" max="3" chance="8.858" /> <!-- Rip Gauntlets -->
+				<item id="2424" min="1" max="3" chance="8.832" /> <!-- Manticore Skin Boots -->
+				<item id="395" min="1" max="3" chance="8.827" /> <!-- Manticore Skin Shirt -->
+				<item id="2377" min="1" max="3" chance="8.824" /> <!-- Mithril Scale Gaiters -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="4" max="11" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -4013,7 +4010,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="279" /> <!-- Reinforced Longbow -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30391" hpRegen="25.6128307622386" mp="23908" mpRegen="1.8" />
 			<attack physical="303.485602119585" magical="48.1624477605241" random="5" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
 			<defence physical="199.4229" magical="194.58" evasion="-18" />
@@ -4048,7 +4045,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="128" /> <!-- Knight's Sword -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30391" hpRegen="25.6128307622386" mp="23908" mpRegen="1.8" />
 			<attack physical="303.485602119585" magical="48.1624477605241" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="199.4229" magical="194.58" evasion="-18" />
@@ -4082,6 +4079,7 @@
 	<npc id="25391" level="33" type="RaidBoss" name="Nurka's Messenger" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="3" />
 			<skill name="SelfBuff_a" id="4173" level="3" />
 			<skill name="PhysicalSpecial_a" id="4723" level="3" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="3" />
@@ -4104,6 +4102,7 @@
 		<status undying="false" />
 		<skillList>
 			<skill id="4173" level="3" /> <!-- BOSS Might -->
+			<skill id="4177" level="3" /> <!-- BOSS Cancel Magic -->
 			<skill id="4723" level="3" /> <!-- BOSS Strike -->
 			<skill id="4738" level="3" /> <!-- BOSS Spinning Slash -->
 			<skill id="4494" level="1" /> <!-- Raid Boss -->
@@ -4118,20 +4117,19 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="849" min="1" max="3" chance="24.46" /> <!-- Tiger's Eye -->
-				<item id="880" min="1" max="3" chance="22.71" /> <!-- Black Pearl Ring -->
-				<item id="912" min="1" max="1" chance="22.62" /> <!-- Near Forest Necklace -->
-				<item id="63" min="1" max="3" chance="10.069" /> <!-- Gauntlets -->
-				<item id="349" min="1" max="3" chance="10.062" /> <!-- Compound Scale Mail -->
-				<item id="350" min="1" max="3" chance="10.037" /> <!-- Dwarven Scale Mail -->
-				<item id="553" min="1" max="3" chance="10.034" /> <!-- Iron Boots -->
-				<item id="378" min="1" max="3" chance="10.007" /> <!-- Compound Scale Gaiters -->
-				<item id="47" min="1" max="3" chance="9.997" /> <!-- Helmet -->
-				<item id="379" min="1" max="3" chance="9.989" /> <!-- Dwarven Scale Gaiters -->
-				<item id="351" min="1" max="3" chance="9.968" /> <!-- Breastplate -->
+				<item id="912" min="1" max="1" chance="23.28" /> <!-- Near Forest Necklace -->
+				<item id="849" min="1" max="3" chance="22.76" /> <!-- Tiger's Eye -->
+				<item id="880" min="1" max="3" chance="22.31" /> <!-- Black Pearl Ring -->
+				<item id="379" min="1" max="3" chance="10.068" /> <!-- Dwarven Scale Gaiters -->
+				<item id="350" min="1" max="3" chance="10.051" /> <!-- Dwarven Scale Mail -->
+				<item id="378" min="1" max="3" chance="9.989" /> <!-- Compound Scale Gaiters -->
+				<item id="553" min="1" max="3" chance="9.978" /> <!-- Iron Boots -->
+				<item id="351" min="1" max="3" chance="9.971" /> <!-- Breastplate -->
+				<item id="63" min="1" max="3" chance="9.967" /> <!-- Gauntlets -->
+				<item id="47" min="1" max="3" chance="9.95" /> <!-- Helmet -->
+				<item id="349" min="1" max="3" chance="9.943" /> <!-- Compound Scale Mail -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="3" max="9" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -4182,14 +4180,13 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="238" min="1" max="1" chance="3.5545" /> <!-- Dagger of Mana -->
-				<item id="240" min="1" max="1" chance="3.5415" /> <!-- Conjurer's Knife -->
-				<item id="223" min="1" max="1" chance="3.54" /> <!-- Kukuri -->
-				<item id="260" min="1" max="1" chance="3.528" /> <!-- Triple-Edged Jamadhr -->
-				<item id="278" min="1" max="1" chance="3.504" /> <!-- Gastraphetes -->
+				<item id="240" min="1" max="1" chance="6.411" /> <!-- Conjurer's Knife -->
+				<item id="260" min="1" max="1" chance="6.403" /> <!-- Triple-Edged Jamadhr -->
+				<item id="278" min="1" max="1" chance="6.403" /> <!-- Gastraphetes -->
+				<item id="223" min="1" max="1" chance="6.39" /> <!-- Kukuri -->
+				<item id="238" min="1" max="1" chance="6.357" /> <!-- Dagger of Mana -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="3" max="9" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -4200,7 +4197,7 @@
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
 		<equipment rhand="223" /> <!-- Kukuri -->
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="29497" hpRegen="22.5711585980223" mp="23204" mpRegen="1.8" />
 			<attack physical="481.334007030119" magical="148.973617630946" random="5" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="182.982285" magical="178.54" evasion="-18" />
@@ -4235,6 +4232,7 @@
 	<npc id="25394" level="38" type="RaidBoss" name="Premo Prime" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
+			<skill name="SelfRangeCancel_a" id="4177" level="3" />
 			<skill name="SelfBuff_a" id="4176" level="3" />
 			<skill name="PhysicalSpecial_a" id="4728" level="3" />
 			<skill name="SelfRangePhysicalSpecial_a" id="4738" level="3" />
@@ -4258,6 +4256,7 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
 			<skill id="4176" level="3" /> <!-- BOSS Reflect Damage -->
+			<skill id="4177" level="3" /> <!-- BOSS Cancel Magic -->
 			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
 			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
 			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
@@ -4329,19 +4328,15 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="321" min="1" max="1" chance="5.049" /> <!-- Demon's Fangs -->
-				<item id="320" min="1" max="1" chance="5.038" /> <!-- Blue Crystal Skull -->
-				<item id="322" min="1" max="1" chance="5.033" /> <!-- Vajra Wand -->
-				<item id="190" min="1" max="1" chance="5.011" /> <!-- Atuba Mace -->
-				<item id="188" min="1" max="1" chance="5.005" /> <!-- Ghost Staff -->
-				<item id="225" min="1" max="1" chance="4.994" /> <!-- Mithril Dagger -->
-				<item id="189" min="1" max="1" chance="4.985" /> <!-- Staff of Life -->
+				<item id="322" min="1" max="1" chance="5.059" /> <!-- Vajra Wand -->
+				<item id="190" min="1" max="1" chance="5.041" /> <!-- Atuba Mace -->
+				<item id="225" min="1" max="1" chance="5.028" /> <!-- Mithril Dagger -->
+				<item id="321" min="1" max="1" chance="4.98" /> <!-- Demon's Fangs -->
+				<item id="188" min="1" max="1" chance="4.957" /> <!-- Ghost Staff -->
+				<item id="320" min="1" max="1" chance="4.952" /> <!-- Blue Crystal Skull -->
+				<item id="189" min="1" max="1" chance="4.931" /> <!-- Staff of Life -->
 				<item id="955" min="1" max="1" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="2" max="8" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="6" max="18" chance="100" /> <!-- Sealed Rune - Stage 1 -->
-				<item id="91526" min="1" max="1" chance="10.024" /> <!-- Weapon Varnish (D-grade) -->
-				<item id="91540" min="1" max="1" chance="9.941" /> <!-- Accessory Varnish (D-grade) -->
-				<item id="91533" min="1" max="1" chance="9.938" /> <!-- Armor Varnish (D-grade) -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -4352,7 +4347,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="33571" hpRegen="103.367606069297" mp="26409" mpRegen="2.1" />
 			<attack physical="624.124257296051" magical="130.530898435504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="520.30656" magical="253.82" evasion="-18" />
@@ -4391,7 +4386,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="33571" hpRegen="103.367606069297" mp="26409" mpRegen="2.1" />
 			<attack physical="624.124257296051" magical="130.530898435504" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="520.30656" magical="253.82" evasion="-18" />
@@ -4474,26 +4469,25 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="130" min="1" max="1" chance="1.101" /> <!-- Elven Sword -->
-				<item id="124" min="1" max="1" chance="1.091" /> <!-- Two-Handed Sword -->
-				<item id="241" min="1" max="1" chance="1.0805" /> <!-- Shilen Knife -->
-				<item id="628" min="1" max="1" chance="1.0795" /> <!-- Hoplon -->
-				<item id="127" min="1" max="1" chance="1.0795" /> <!-- Crimson Sword -->
-				<item id="317" min="1" max="1" chance="1.079" /> <!-- Tome of Blood -->
-				<item id="157" min="1" max="1" chance="1.0755" /> <!-- Spiked Club -->
-				<item id="316" min="1" max="1" chance="1.0655" /> <!-- Sage's Blood -->
-				<item id="260" min="1" max="1" chance="1.065" /> <!-- Triple-Edged Jamadhr -->
-				<item id="278" min="1" max="1" chance="1.0655" /> <!-- Gastraphetes -->
-				<item id="186" min="1" max="1" chance="1.059" /> <!-- Staff of Magic -->
-				<item id="293" min="1" max="1" chance="1.0575" /> <!-- War Hammer -->
-				<item id="238" min="1" max="1" chance="1.0575" /> <!-- Dagger of Mana -->
-				<item id="223" min="1" max="1" chance="1.047" /> <!-- Kukuri -->
-				<item id="296" min="1" max="1" chance="1.044" /> <!-- Dwarven Pike -->
-				<item id="240" min="1" max="1" chance="1.0365" /> <!-- Conjurer's Knife -->
-				<item id="239" min="1" max="1" chance="1.036" /> <!-- Mystic Knife -->
+				<item id="278" min="1" max="1" chance="2.021" /> <!-- Gastraphetes -->
+				<item id="316" min="1" max="1" chance="2.002" /> <!-- Sage's Blood -->
+				<item id="223" min="1" max="1" chance="2" /> <!-- Kukuri -->
+				<item id="296" min="1" max="1" chance="1.983" /> <!-- Dwarven Pike -->
+				<item id="241" min="1" max="1" chance="1.97" /> <!-- Shilen Knife -->
+				<item id="157" min="1" max="1" chance="1.965" /> <!-- Spiked Club -->
+				<item id="260" min="1" max="1" chance="1.947" /> <!-- Triple-Edged Jamadhr -->
+				<item id="130" min="1" max="1" chance="1.927" /> <!-- Elven Sword -->
+				<item id="293" min="1" max="1" chance="1.927" /> <!-- War Hammer -->
+				<item id="186" min="1" max="1" chance="1.926" /> <!-- Staff of Magic -->
+				<item id="628" min="1" max="1" chance="1.915" /> <!-- Hoplon -->
+				<item id="238" min="1" max="1" chance="1.911" /> <!-- Dagger of Mana -->
+				<item id="240" min="1" max="1" chance="1.907" /> <!-- Conjurer's Knife -->
+				<item id="317" min="1" max="1" chance="1.899" /> <!-- Tome of Blood -->
+				<item id="127" min="1" max="1" chance="1.886" /> <!-- Crimson Sword -->
+				<item id="124" min="1" max="1" chance="1.879" /> <!-- Two-handed Sword -->
+				<item id="239" min="1" max="1" chance="1.872" /> <!-- Mystic Knife -->
 				<item id="955" min="2" max="4" chance="100" /> <!-- Scroll: Enchant Weapon (D-grade) -->
 				<item id="956" min="5" max="15" chance="100" /> <!-- Scroll: Enchant Armor (D-grade) -->
-				<item id="70000" min="4" max="11" chance="100" /> <!-- Sealed Rune - Stage 1 -->
 			</drop>
 		</dropLists>
 	</npc>
@@ -4504,7 +4498,7 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="30391" hpRegen="25.6128307622386" mp="23908" mpRegen="1.8" />
 			<attack physical="404.637353306042" magical="85.6183833838837" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="199.4229" magical="194.58" evasion="-18" />
