@@ -72,12 +72,12 @@ public class Summon extends AbstractEffect
 	@Override
 	public void instant(Creature effector, Creature effected, Skill skill, Item item)
 	{
-		if (!effected.isPlayer())
+		if (!effector.isPlayer())
 		{
 			return;
 		}
 		
-		final Player player = effected.asPlayer();
+		final Player player = effector.asPlayer();
 		if (player.hasServitors())
 		{
 			player.getServitors().values().forEach(s -> s.unSummon(player));
