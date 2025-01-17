@@ -25,6 +25,19 @@
 		<node X="118194" Y="15790" />
 		<node X="114825" Y="19589" />
 	</zone>
+	<zone name="valakas_ground_zone" id="13010" type="NoRestartZone" shape="NPoly" minZ="-1800" maxZ="-472">
+		<node X="213943" Y="-118713" />
+		<node X="211024" Y="-117979" />
+		<node X="209362" Y="-116022" />
+		<node X="209003" Y="-113919" />
+		<node X="209874" Y="-111817" />
+		<node X="211646" Y="-111035" />
+		<node X="214068" Y="-110524" />
+		<node X="216217" Y="-112373" />
+		<node X="216696" Y="-114439" />
+		<node X="216571" Y="-115909" />
+		<node X="216348" Y="-117642" />
+	</zone>
 	<zone name="anakimNlilith" type="NoRestartZone" shape="NPoly" minZ="-5504" maxZ="-5104"> <!-- 25_17 -->
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="600" />
@@ -322,40 +335,10 @@
 		<node X="-253907" Y="221193" />
 	</zone>
 	
-	<!-- Heavenly rift zone -->
-	<zone name="heavenly_rift" type="NoRestartZone" shape="NPoly" minZ="12200" maxZ="10800">
-		<node X="112327" Y="15499" />
-		<node X="112670" Y="14800" />
-		<node X="113374" Y="14095" />
-		<node X="114092" Y="13760" />
-		<node X="113619" Y="12708" />
-		<node X="112856" Y="13048" />
-		<node X="111640" Y="14264" />
-		<node X="111280" Y="15044" />
-	</zone>
-	
 	<!-- High five zone -->
 	<zone name="olympiad_no_restart" type="NoRestartZone" shape="Cuboid" minZ="-8485" maxZ="1149">
 		<stat name="restartTime" val="0" />
 		<node X="-98296" Y="-262136" />
 		<node X="-65544" Y="-229384" />
-	</zone>
-	
-	<!-- Classic: The Kamael zone -->
-	<zone name="anakim" id="70052" type="NoRestartZone" shape="NPoly" minZ="-5000" maxZ="-5600">
-		<stat name="restartTime" val="1800" />
-		<stat name="restartAllowedTime" val="600" />
-		<node X="-5760" Y="19420" />
-		<node X="-7590" Y="19420" />
-		<node X="-7590" Y="17586" />
-		<node X="-5760" Y="17586" />
-	</zone>
-	<zone name="lilith" id="70053" type="NoRestartZone" shape="NPoly" minZ="-5400" maxZ="-5600">
-		<stat name="restartTime" val="1800" />
-		<stat name="restartAllowedTime" val="600" />
-		<node X="185996" Y="-10519" />
-		<node X="185969" Y="-8693" />
-		<node X="184148" Y="-8703" />
-		<node X="184149" Y="-10523" />
 	</zone>
 </list>
