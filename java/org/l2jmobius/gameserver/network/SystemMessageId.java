@@ -14768,82 +14768,82 @@ public class SystemMessageId
 	public static SystemMessageId THE_SECURITY_CARD_SERVICE_IS_TERMINATED_AND_THE_GAME_CAN_BE_ACCESSED_AFTER_REVOKING_THE_SECURITY_CARD_TO_PROTECT_YOUR_ACCOUNT_PLEASE_CLOSE_YOUR_SECURE_CARD_AND_APPLY_FOR_GOOGLE_AUTHENTICATOR;
 	
 	@ClientString(id = 7001, message = "")
-	public static SystemMessageId EMPTY_30;
+	public static SystemMessageId S1_HAS_INFLICTED_S3_S4_ATTRIBUTE_DAMGE_DAMAGE_TO_S2;
 	
 	@ClientString(id = 7002, message = "")
-	public static SystemMessageId EMPTY_31;
+	public static SystemMessageId S1_SKILL_CRITICAL_HAS_BEEN_ACTIVATED;
 	
 	@ClientString(id = 7003, message = "")
-	public static SystemMessageId EMPTY_32;
+	public static SystemMessageId CANNOT_DRAIN_DURING_BATTLE;
 	
 	@ClientString(id = 7004, message = "")
-	public static SystemMessageId EMPTY_33;
+	public static SystemMessageId YOU_HAVE_REACHED_THE_HIGHEST_LEVEL_AND_CANNOT_ABSORB_ANY_FURTHER;
 	
 	@ClientString(id = 7005, message = "")
-	public static SystemMessageId EMPTY_34;
+	public static SystemMessageId YOU_HAVE_ACQUIRED_S1_S_S2_SKILL_XP;
 	
 	@ClientString(id = 7006, message = "")
-	public static SystemMessageId EMPTY_35;
+	public static SystemMessageId S1_ATTACK_SPIRITS_HAVE_REACHED_LEVEL_S2;
 	
 	@ClientString(id = 7007, message = "")
-	public static SystemMessageId EMPTY_36;
+	public static SystemMessageId CANNOT_EVOLVE_ABSORB_EXTRACT_WHILE_USING_THE_PRIVATE_STORE_WORKSHOP;
 	
 	@ClientString(id = 7008, message = "")
-	public static SystemMessageId EMPTY_37;
+	public static SystemMessageId YOU_DO_NOT_HAVE_THE_MATERIALS_REQUIRED_TO_ABSORB;
 	
 	@ClientString(id = 7009, message = "")
-	public static SystemMessageId EMPTY_38;
+	public static SystemMessageId NO_SPIRITS_ARE_AVAILABLE;
 	
 	@ClientString(id = 7010, message = "")
-	public static SystemMessageId EMPTY_39;
+	public static SystemMessageId DRAIN_SUCCESSFUL;
 	
 	@ClientString(id = 7011, message = "")
-	public static SystemMessageId EMPTY_40;
+	public static SystemMessageId CANNOT_EVOLVE_DURING_BATTLE;
 	
 	@ClientString(id = 7012, message = "")
-	public static SystemMessageId EMPTY_41;
+	public static SystemMessageId SPIRIT_CANNOT_BE_EVOLVED;
 	
 	@ClientString(id = 7013, message = "")
-	public static SystemMessageId EMPTY_42;
+	public static SystemMessageId YOU_DO_NOT_HAVE_THE_MATERIALS_REQUIRED_TO_EVOLVE;
 	
 	@ClientString(id = 7014, message = "")
-	public static SystemMessageId EMPTY_43;
+	public static SystemMessageId S1_EVOLVED_TO_S2_STAR;
 	
 	@ClientString(id = 7015, message = "")
-	public static SystemMessageId EMPTY_44;
+	public static SystemMessageId CANNOT_RESET_SPIRIT_CHARACTERISTICS_DURING_BATTLE;
 	
 	@ClientString(id = 7016, message = "")
-	public static SystemMessageId EMPTY_45;
+	public static SystemMessageId RESET_THE_SELECTED_SPIRIT_S_CHARACTERISTICS_SUCCESSFULLY;
 	
 	@ClientString(id = 7017, message = "")
-	public static SystemMessageId EMPTY_46;
+	public static SystemMessageId CHARACTERISTICS_WERE_APPLIED_SUCCESSFULLY;
 	
 	@ClientString(id = 7018, message = "")
-	public static SystemMessageId EMPTY_47;
+	public static SystemMessageId EXTRACTED_S1_X_S2_SUCCESSFULLY;
 	
 	@ClientString(id = 7019, message = "")
-	public static SystemMessageId EMPTY_48;
+	public static SystemMessageId YOU_DO_NOT_HAVE_ENOUGH_SKILL_XP_TO_EXTRACT;
 	
 	@ClientString(id = 7020, message = "")
-	public static SystemMessageId EMPTY_49;
+	public static SystemMessageId INVENTORY_IS_FULL_CANNOT_EXTRACT;
 	
 	@ClientString(id = 7021, message = "")
-	public static SystemMessageId EMPTY_50;
+	public static SystemMessageId YOU_DO_NOT_HAVE_THE_MATERIALS_REQUIRED_TO_EXTRACT;
 	
 	@ClientString(id = 7022, message = "")
-	public static SystemMessageId EMPTY_51;
+	public static SystemMessageId S1_WILL_BE_YOUR_ATTRIBUTE_ATTACK_FROM_NOW_ON;
 	
 	@ClientString(id = 7023, message = "")
-	public static SystemMessageId EMPTY_52;
+	public static SystemMessageId C1_YOU_OBTAINED_S2_THROUGH_EQUIPMENT_UPGRADE;
 	
 	@ClientString(id = 7024, message = "")
-	public static SystemMessageId EMPTY_53;
+	public static SystemMessageId FAILED_BECAUSE_THE_TARGET_ITEM_DOES_NOT_EXIST;
 	
 	@ClientString(id = 7025, message = "")
-	public static SystemMessageId EMPTY_54;
+	public static SystemMessageId FAILED_THE_OPERATION;
 	
 	@ClientString(id = 7026, message = "")
-	public static SystemMessageId EMPTY_55;
+	public static SystemMessageId FAILED_BECAUSE_THERE_ARE_NOT_ENOUGH_INGREDIENTS;
 	
 	@ClientString(id = 7027, message = "")
 	public static SystemMessageId EMPTY_56;

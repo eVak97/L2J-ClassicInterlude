@@ -6167,35 +6167,35 @@ public class Player extends Playable
 			{
 				// A strider cannot be ridden when dead
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_CANNOT_BE_RIDDEN_WHEN_DEAD);
+				sendPacket(SystemMessageId.A_STRIDER_CANNOT_BE_RIDDEN_WHEN_DEAD);
 				return false;
 			}
 			else if (pet.isDead())
 			{
 				// A dead strider cannot be ridden.
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_DEAD_MOUNT_CANNOT_BE_RIDDEN);
+				sendPacket(SystemMessageId.A_DEAD_STRIDER_CANNOT_BE_RIDDEN);
 				return false;
 			}
 			else if (pet.isInCombat() || pet.isRooted())
 			{
 				// A strider in battle cannot be ridden
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_IN_BATTLE_CANNOT_BE_RIDDEN);
+				sendPacket(SystemMessageId.A_STRIDER_IN_BATTLE_CANNOT_BE_RIDDEN);
 				return false;
 			}
 			else if (isInCombat())
 			{
 				// A strider cannot be ridden while in battle
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_CANNOT_BE_RIDDEN_WHILE_IN_BATTLE);
+				sendPacket(SystemMessageId.A_STRIDER_CANNOT_BE_RIDDEN_WHILE_IN_BATTLE);
 				return false;
 			}
 			else if (_waitTypeSitting)
 			{
 				// A strider can be ridden only when standing
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_MOUNT_CAN_BE_RIDDEN_ONLY_WHEN_STANDING);
+				sendPacket(SystemMessageId.A_STRIDER_CAN_BE_RIDDEN_ONLY_WHEN_STANDING);
 				return false;
 			}
 			else if (isFishing())
@@ -6221,7 +6221,7 @@ public class Player extends Playable
 			else if (pet.isHungry())
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_HUNGRY_MOUNT_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
+				sendPacket(SystemMessageId.A_HUNGRY_STRIDER_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
 				return false;
 			}
 			else if (!Util.checkIfInRange(200, this, pet, true))
@@ -6250,7 +6250,7 @@ public class Player extends Playable
 			else if (isHungry())
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
-				sendPacket(SystemMessageId.A_HUNGRY_MOUNT_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
+				sendPacket(SystemMessageId.A_HUNGRY_STRIDER_CANNOT_BE_MOUNTED_OR_DISMOUNTED);
 				return false;
 			}
 			else
@@ -9526,7 +9526,7 @@ public class Player extends Playable
 		}
 		if (isDead() || isAlikeDead() || ((getCurrentHp() < (getMaxHp() / 2)) || (getCurrentMp() < (getMaxMp() / 2))))
 		{
-			_noDuelReason = SystemMessageId.C1_S_HP_OR_MP_IS_BELOW_50_AND_CANNOT_DUEL;
+			_noDuelReason = SystemMessageId.C1_CANNOT_DUEL_BECAUSE_C1_S_HP_OR_MP_IS_BELOW_50;
 			return false;
 		}
 		if (_isInDuel || _startingDuel)

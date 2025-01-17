@@ -83,7 +83,7 @@ public class RequestCancelPostAttachment extends ClientPacket
 		
 		if (player.hasItemRequest())
 		{
-			player.sendPacket(SystemMessageId.YOU_CAN_T_CANCEL_WHILE_ENCHANTING_AN_ITEM_OR_ATTRIBUTE);
+			player.sendPacket(SystemMessageId.YOU_CANNOT_CANCEL_DURING_AN_ITEM_ENHANCEMENT_OR_ATTRIBUTE_ENHANCEMENT);
 			return;
 		}
 		
