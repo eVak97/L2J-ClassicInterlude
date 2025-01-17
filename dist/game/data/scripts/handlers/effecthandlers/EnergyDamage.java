@@ -132,7 +132,8 @@ public class EnergyDamage extends AbstractEffect
 			final double pvpPveMod = Formulas.calculatePvpPveBonus(attacker, effected, skill, true);
 			
 			// Skill specific mods.
-			final double energyChargesBoost = 1 + (charge * 0.1); // 10% bonus damage for each charge used.
+			final double energyChargesBoost = (((attacker.getCharges() + skill.getChargeConsumeCount()) - 1) * 0.2) + 1;
+			
 			final double critMod = critical ? Formulas.calcCritDamage(attacker, effected, skill) : 1;
 			double ssmod = 1;
 			if (skill.useSoulShot())
