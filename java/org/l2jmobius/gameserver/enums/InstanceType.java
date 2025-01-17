@@ -68,6 +68,11 @@ public enum InstanceType
 	ControlTower(Npc),
 	FlameTower(Npc),
 	SiegeFlag(Npc),
+	// Seven Signs
+	SignsPriest(Npc),
+	DawnPriest(SignsPriest),
+	DuskPriest(SignsPriest),
+	DungeonGatekeeper(Npc),
 	// Fort Siege
 	FortCommander(Defender),
 	// Fort NPCs
