@@ -955,6 +955,11 @@ public class Config
 	public static int ANTHARAS_SPAWN_INTERVAL;
 	public static int ANTHARAS_SPAWN_RANDOM;
 	
+	// Valakas
+	public static int VALAKAS_WAIT_TIME;
+	public static int VALAKAS_SPAWN_INTERVAL;
+	public static int VALAKAS_SPAWN_RANDOM;
+	
 	// Baium
 	public static int BAIUM_SPAWN_INTERVAL;
 	public static int BAIUM_SPAWN_RANDOM;
@@ -974,6 +979,10 @@ public class Config
 	// Zaken
 	public static int ZAKEN_SPAWN_INTERVAL;
 	public static int ZAKEN_SPAWN_RANDOM;
+	
+	// Frintezza
+	public static int FRINTEZZA_SPAWN_INTERVAL;
+	public static int FRINTEZZA_SPAWN_RANDOM;
 	
 	// chatfilter
 	public static List<String> FILTER_LIST;
@@ -2567,6 +2576,9 @@ public class Config
 			ANTHARAS_WAIT_TIME = grandBossConfig.getInt("AntharasWaitTime", 30);
 			ANTHARAS_SPAWN_INTERVAL = grandBossConfig.getInt("IntervalOfAntharasSpawn", 264);
 			ANTHARAS_SPAWN_RANDOM = grandBossConfig.getInt("RandomOfAntharasSpawn", 72);
+			VALAKAS_WAIT_TIME = grandBossConfig.getInt("ValakasWaitTime", 30);
+			VALAKAS_SPAWN_INTERVAL = grandBossConfig.getInt("IntervalOfValakasSpawn", 264);
+			VALAKAS_SPAWN_RANDOM = grandBossConfig.getInt("RandomOfValakasSpawn", 72);
 			BAIUM_SPAWN_INTERVAL = grandBossConfig.getInt("IntervalOfBaiumSpawn", 168);
 			BAIUM_SPAWN_RANDOM = grandBossConfig.getInt("RandomOfBaiumSpawn", 48);
 			CORE_SPAWN_INTERVAL = grandBossConfig.getInt("IntervalOfCoreSpawn", 60);
@@ -2577,6 +2589,8 @@ public class Config
 			QUEEN_ANT_SPAWN_RANDOM = grandBossConfig.getInt("RandomOfQueenAntSpawn", 17);
 			ZAKEN_SPAWN_INTERVAL = grandBossConfig.getInt("IntervalOfZakenSpawn", 168);
 			ZAKEN_SPAWN_RANDOM = grandBossConfig.getInt("RandomOfZakenSpawn", 48);
+			FRINTEZZA_SPAWN_INTERVAL = grandBossConfig.getInt("IntervalOfFrintezzaSpawn", 48);
+			FRINTEZZA_SPAWN_RANDOM = grandBossConfig.getInt("RandomOfFrintezzaSpawn", 8);
 			
 			try
 			{
