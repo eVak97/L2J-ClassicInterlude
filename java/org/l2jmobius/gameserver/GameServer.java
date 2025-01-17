@@ -75,7 +75,6 @@ import org.l2jmobius.gameserver.data.xml.EnchantItemHPBonusData;
 import org.l2jmobius.gameserver.data.xml.EnchantItemOptionsData;
 import org.l2jmobius.gameserver.data.xml.EnchantSkillGroupsData;
 import org.l2jmobius.gameserver.data.xml.EnsoulData;
-import org.l2jmobius.gameserver.data.xml.EquipmentUpgradeData;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.data.xml.FakePlayerData;
 import org.l2jmobius.gameserver.data.xml.FenceData;
@@ -278,7 +277,6 @@ public class GameServer
 		EnchantItemHPBonusData.getInstance();
 		BuyListData.getInstance();
 		MultisellData.getInstance();
-		EquipmentUpgradeData.getInstance();
 		AgathionData.getInstance();
 		RecipeData.getInstance();
 		ArmorSetData.getInstance();

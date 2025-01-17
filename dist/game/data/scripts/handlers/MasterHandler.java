@@ -158,7 +158,6 @@ import handlers.bypasshandlers.SupportBlessing;
 import handlers.bypasshandlers.SupportMagic;
 import handlers.bypasshandlers.TerritoryStatus;
 import handlers.bypasshandlers.TutorialClose;
-import handlers.bypasshandlers.UpgradeEquipment;
 import handlers.bypasshandlers.VoiceCommand;
 import handlers.bypasshandlers.Wear;
 import handlers.chathandlers.ChatAlliance;
@@ -476,7 +475,6 @@ public class MasterHandler
 			SupportMagic.class,
 			TerritoryStatus.class,
 			TutorialClose.class,
-			UpgradeEquipment.class,
 			VoiceCommand.class,
 			Wear.class,
 		},

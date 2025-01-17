@@ -71,8 +71,6 @@ import org.l2jmobius.gameserver.network.clientpackets.elementalspirits.ExElement
 import org.l2jmobius.gameserver.network.clientpackets.elementalspirits.ExElementalSpiritSetTalent;
 import org.l2jmobius.gameserver.network.clientpackets.ensoul.RequestItemEnsoul;
 import org.l2jmobius.gameserver.network.clientpackets.ensoul.RequestTryEnSoulExtraction;
-import org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade.ExUpgradeSystemNormalRequest;
-import org.l2jmobius.gameserver.network.clientpackets.equipmentupgrade.RequestUpgradeSystemResult;
 import org.l2jmobius.gameserver.network.clientpackets.friend.RequestBlockDetailInfo;
 import org.l2jmobius.gameserver.network.clientpackets.friend.RequestBlockMemo;
 import org.l2jmobius.gameserver.network.clientpackets.friend.RequestFriendDetailInfo;
@@ -418,7 +416,6 @@ public enum ExClientPackets
 	EXREQUEST_MATCH_GROUP_WITHDRAW(0x132, null, ConnectionState.IN_GAME),
 	EXREQUEST_MATCH_GROUP_OUST(0x133, null, ConnectionState.IN_GAME),
 	EXREQUEST_MATCH_GROUP_CHANGE_MASTER(0x134, null, ConnectionState.IN_GAME),
-	REQUEST_UPGRADE_SYSTEM_RESULT(0x135, RequestUpgradeSystemResult::new, ConnectionState.IN_GAME),
 	EX_CARD_UPDOWN_PICK_NUMB(0x136, null, ConnectionState.IN_GAME),
 	EX_CARD_UPDOWN_GAME_REWARD_REQUEST(0x137, null, ConnectionState.IN_GAME),
 	EX_CARD_UPDOWN_GAME_RETRY(0x138, null, ConnectionState.IN_GAME),
@@ -463,7 +460,6 @@ public enum ExClientPackets
 	REQUEST_USER_BAN_INFO(0x15E, null, ConnectionState.IN_GAME),
 	EX_INTERACT_MODIFY(0x15F, ExInteractModify::new, ConnectionState.IN_GAME),
 	EX_TRY_ENCHANT_ARTIFACT(0x160, null, ConnectionState.IN_GAME),
-	EX_UPGRADE_SYSTEM_NORMAL_REQUEST(0x161, ExUpgradeSystemNormalRequest::new, ConnectionState.IN_GAME),
 	EX_PURCHASE_LIMIT_SHOP_ITEM_LIST(0x162, null, ConnectionState.IN_GAME),
 	EX_PURCHASE_LIMIT_SHOP_ITEM_BUY(0x163, null, ConnectionState.IN_GAME),
 	// 228
