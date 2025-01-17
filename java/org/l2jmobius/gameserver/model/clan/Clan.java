@@ -572,6 +572,19 @@ public class Clan implements IIdentifiable, INamable
 		return _members.values();
 	}
 	
+	public List<Integer> getOfflineMembersIds()
+	{
+		final List<Integer> list = new ArrayList<>();
+		for (ClanMember temp : _members.values())
+		{
+			if ((temp != null) && !temp.isOnline())
+			{
+				list.add(temp.getObjectId());
+			}
+		}
+		return list;
+	}
+	
 	public int getMembersCount()
 	{
 		return _members.size();

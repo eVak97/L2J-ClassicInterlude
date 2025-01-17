@@ -40,14 +40,14 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 	// Rewards
 	private static final int[] REWARDS = new int[]
 	{
-		4975, // Recipe: BlackOrc Neckalce
-		4973, // Recipe: BlackOrc Earring
-		4974, // Recipe: BlackOrc Ring
-		4939, // Recipe: Adam Neckalce
-		4937, // Recipe: Adam Earring
-		4938, // Recipe: Adam Ring
-		4936, // Recipe: Avadon Shield
-		4980, // Recipe: Doom Shield
+		5364, // Recipe: Sealed Dark Crystal Shield(60%)
+		5366, // Recipe: Sealed Shield of Nightmare(60%)
+		6329, // Recipe: Sealed Phoenix Necklace(70%)
+		6331, // Recipe: Sealed Phoenix Earring(70%)
+		6333, // Recipe: Sealed Phoenix Ring(70%)
+		6335, // Recipe: Sealed Majestic Necklace(70%)
+		6337, // Recipe: Sealed Majestic Earring(70%)
+		6339, // Recipe: Sealed Majestic Ring(70%)
 	};
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
@@ -64,7 +64,6 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 		addTalkId(OLTRAN);
 		addKillId(MOBS.keySet());
 		registerQuestItems(SNAKE_SCALE);
-		addCondMaxLevel(67, getNoQuestMsg(null));
 	}
 	
 	@Override
@@ -123,8 +122,12 @@ public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 			}
 			else
 			{
-				rewardItems(player, REWARDS[getRandom(REWARDS.length)], 1);
-				qs.exitQuest(true, true);
+				int integerPart = (int) getQuestItemsCount(player, SNAKE_SCALE) / SNAKE_SCALE_COUNT;
+				for (int x = 0; x < integerPart; x++)
+				{
+					takeItems(player, SNAKE_SCALE, SNAKE_SCALE_COUNT);
+					rewardItems(player, REWARDS[getRandom(REWARDS.length)], 1);
+				}
 				htmltext = "30862-07.html";
 			}
 		}

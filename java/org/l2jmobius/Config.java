@@ -687,6 +687,7 @@ public class Config
 	public static boolean AGGRO_DISTANCE_CHECK_INSTANCES;
 	public static boolean AGGRO_DISTANCE_CHECK_RESTORE_LIFE;
 	public static boolean GUARD_ATTACK_AGGRO_MOB;
+	public static double SOUL_CRYSTAL_CHANCE_MULTIPLIER;
 	public static double RAID_HP_REGEN_MULTIPLIER;
 	public static double RAID_MP_REGEN_MULTIPLIER;
 	public static double RAID_PDEFENCE_MULTIPLIER;
@@ -1845,6 +1846,7 @@ public class Config
 			ALT_ALLOW_AUGMENT_PVP_ITEMS = characterConfig.getBoolean("AltAllowAugmentPvPItems", false);
 			ALT_ALLOW_AUGMENT_TRADE = characterConfig.getBoolean("AltAllowAugmentTrade", false);
 			ALT_ALLOW_AUGMENT_DESTROY = characterConfig.getBoolean("AltAllowAugmentDestroy", true);
+			SOUL_CRYSTAL_CHANCE_MULTIPLIER = characterConfig.getDouble("SoulCrystalChanceMultiplier", 1);
 			ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE = characterConfig.getBoolean("AltKarmaPlayerCanBeKilledInPeaceZone", false);
 			ALT_GAME_KARMA_PLAYER_CAN_SHOP = characterConfig.getBoolean("AltKarmaPlayerCanShop", true);
 			ALT_GAME_KARMA_PLAYER_CAN_TELEPORT = characterConfig.getBoolean("AltKarmaPlayerCanTeleport", true);

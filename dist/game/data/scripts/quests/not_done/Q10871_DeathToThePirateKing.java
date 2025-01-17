@@ -32,6 +32,5 @@ public class Q10871_DeathToThePirateKing extends Quest
 		addStartNpc(START_NPC);
 		addTalkId(START_NPC);
 		addCondMinLevel(Config.PLAYER_MAXIMUM_LEVEL /* 70 */, getNoQuestMsg(null));
-		addCondCompletedQuest(Q10870_UnfinishedDevice.class.getSimpleName(), getNoQuestMsg(null));
 	}
 }
