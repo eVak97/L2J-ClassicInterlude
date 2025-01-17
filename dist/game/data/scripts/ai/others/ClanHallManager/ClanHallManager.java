@@ -62,7 +62,6 @@ public class ClanHallManager extends AbstractNpcAI
 		36721, 36723, 36725, 36727, // Gludio Outskirts
 		36729, 36731, 36733, 36735, // Dion Outskirts
 		36737, 36739, // Floran Village
-		33360, // Talking Island
 	};
 	// @formatter:on
 	// Misc
