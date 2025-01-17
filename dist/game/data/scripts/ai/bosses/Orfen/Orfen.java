@@ -320,7 +320,7 @@ public class Orfen extends AbstractNpcAI
 		final int npcId = npc.getId();
 		if (npcId == ORFEN)
 		{
-			if (!_isTeleported && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 4)))
+			if (!_isTeleported && ((npc.getCurrentHp() - damage) < (npc.getMaxHp() / 2)))
 			{
 				_isTeleported = true;
 				setSpawnPoint(npc, 0);
