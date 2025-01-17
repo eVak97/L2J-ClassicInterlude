@@ -196,6 +196,8 @@ public enum Stat
 	STAT_INT("INT", new BaseStatFinalizer()),
 	STAT_WIT("WIT", new BaseStatFinalizer()),
 	STAT_MEN("MEN", new BaseStatFinalizer()),
+	STAT_LUC("LUC", new BaseStatFinalizer()),
+	STAT_CHA("CHA", new BaseStatFinalizer()),
 	
 	// Special stats, share one slot in Calculator
 	

@@ -47,6 +47,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("AddTeleportBookmarkSlot", AddTeleportBookmarkSlot::new);
 		EffectHandler.getInstance().registerHandler("AgathionSlot", AgathionSlot::new);
 		EffectHandler.getInstance().registerHandler("AreaDamage", AreaDamage::new);
+		EffectHandler.getInstance().registerHandler("AirBind", AirBind::new);
 		EffectHandler.getInstance().registerHandler("ArtifactSlot", ArtifactSlot::new);
 		EffectHandler.getInstance().registerHandler("AttackAttribute", AttackAttribute::new);
 		EffectHandler.getInstance().registerHandler("AttackAttributeAdd", AttackAttributeAdd::new);
@@ -90,6 +91,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("ChangeHairColor", ChangeHairColor::new);
 		EffectHandler.getInstance().registerHandler("ChangeHairStyle", ChangeHairStyle::new);
 		EffectHandler.getInstance().registerHandler("CheapShot", CheapShot::new);
+		EffectHandler.getInstance().registerHandler("CheatDeath", CheatDeath::new);
 		EffectHandler.getInstance().registerHandler("ClassChange", ClassChange::new);
 		EffectHandler.getInstance().registerHandler("Compelling", Compelling::new);
 		EffectHandler.getInstance().registerHandler("Confuse", Confuse::new);
@@ -294,6 +296,7 @@ public class EffectMasterHandler
 		EffectHandler.getInstance().registerHandler("RearDamage", RearDamage::new);
 		EffectHandler.getInstance().registerHandler("RebalanceHP", RebalanceHP::new);
 		EffectHandler.getInstance().registerHandler("RebalanceHPSummon", RebalanceHPSummon::new);
+		EffectHandler.getInstance().registerHandler("Recovery", Recovery::new);
 		EffectHandler.getInstance().registerHandler("RecoverVitalityInPeaceZone", RecoverVitalityInPeaceZone::new);
 		EffectHandler.getInstance().registerHandler("ReduceCancel", ReduceCancel::new);
 		EffectHandler.getInstance().registerHandler("ReduceDamage", ReduceDamage::new);

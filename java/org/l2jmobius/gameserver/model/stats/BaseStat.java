@@ -36,7 +36,9 @@ public enum BaseStat
 	DEX(Stat.STAT_DEX),
 	WIT(Stat.STAT_WIT),
 	CON(Stat.STAT_CON),
-	MEN(Stat.STAT_MEN);
+	MEN(Stat.STAT_MEN),
+	CHA(Stat.STAT_CHA),
+	LUC(Stat.STAT_LUC);
 	
 	private static final BaseStat[] VALUES = BaseStat.values();
 	
