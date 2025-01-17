@@ -95,6 +95,7 @@ public class Party extends AbstractPlayerGroup
 	private Set<Integer> _changeDistributionTypeAnswers = null;
 	private int _itemLastLoot = 0;
 	private CommandChannel _commandChannel = null;
+	private DimensionalRift _dr;
 	private Future<?> _positionBroadcastTask = null;
 	protected PartyMemberPosition _positionPacket;
 	private boolean _disbanding = false;
@@ -1076,6 +1077,21 @@ public class Party extends AbstractPlayerGroup
 	public void setCommandChannel(CommandChannel channel)
 	{
 		_commandChannel = channel;
+	}
+	
+	public boolean isInDimensionalRift()
+	{
+		return _dr != null;
+	}
+	
+	public void setDimensionalRift(DimensionalRift dr)
+	{
+		_dr = dr;
+	}
+	
+	public DimensionalRift getDimensionalRift()
+	{
+		return _dr;
 	}
 	
 	/**

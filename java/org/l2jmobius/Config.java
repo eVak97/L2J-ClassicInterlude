@@ -610,6 +610,18 @@ public class Config
 	public static boolean ALT_ITEM_AUCTION_ENABLED;
 	public static int ALT_ITEM_AUCTION_EXPIRED_AFTER;
 	public static long ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID;
+	public static int RIFT_MIN_PARTY_SIZE;
+	public static int RIFT_SPAWN_DELAY;
+	public static int RIFT_MAX_JUMPS;
+	public static int RIFT_AUTO_JUMPS_TIME_MIN;
+	public static int RIFT_AUTO_JUMPS_TIME_MAX;
+	public static float RIFT_BOSS_ROOM_TIME_MUTIPLY;
+	public static int RIFT_ENTER_COST_RECRUIT;
+	public static int RIFT_ENTER_COST_SOLDIER;
+	public static int RIFT_ENTER_COST_OFFICER;
+	public static int RIFT_ENTER_COST_CAPTAIN;
+	public static int RIFT_ENTER_COST_COMMANDER;
+	public static int RIFT_ENTER_COST_HERO;
 	public static IllegalActionPunishmentType DEFAULT_PUNISH;
 	public static long DEFAULT_PUNISH_PARAM;
 	public static boolean ONLY_GM_ITEMS_FREE;
@@ -788,6 +800,36 @@ public class Config
 	public static int KARMA_RATE_DROP_ITEM;
 	public static int KARMA_RATE_DROP_EQUIP;
 	public static int KARMA_RATE_DROP_EQUIP_WEAPON;
+	
+	// --------------------------------------------------
+	// Seven Signs Settings
+	// --------------------------------------------------
+	public static boolean ALT_SEVENSIGNS_OPEN_CATACUMBS;
+	public static boolean ALT_SEVENSIGNS_OPEN_NECROPOLIS;
+	public static boolean ALT_GAME_CASTLE_DAWN;
+	public static boolean ALT_GAME_CASTLE_DUSK;
+	public static boolean ALT_GAME_REQUIRE_CLAN_CASTLE;
+	public static int ALT_FESTIVAL_MIN_PLAYER;
+	public static int ALT_MAXIMUM_PLAYER_CONTRIB;
+	public static long ALT_FESTIVAL_MANAGER_START;
+	public static long ALT_FESTIVAL_LENGTH;
+	public static long ALT_FESTIVAL_CYCLE_LENGTH;
+	public static long ALT_FESTIVAL_FIRST_SPAWN;
+	public static long ALT_FESTIVAL_FIRST_SWARM;
+	public static long ALT_FESTIVAL_SECOND_SPAWN;
+	public static long ALT_FESTIVAL_SECOND_SWARM;
+	public static long ALT_FESTIVAL_CHEST_SPAWN;
+	public static double ALT_SIEGE_DAWN_GATES_PDEF_MULT;
+	public static double ALT_SIEGE_DUSK_GATES_PDEF_MULT;
+	public static double ALT_SIEGE_DAWN_GATES_MDEF_MULT;
+	public static double ALT_SIEGE_DUSK_GATES_MDEF_MULT;
+	public static boolean ALT_STRICT_SEVENSIGNS;
+	public static boolean ALT_SEVENSIGNS_LAZY_UPDATE;
+	public static int SSQ_DAWN_TICKET_QUANTITY;
+	public static int SSQ_DAWN_TICKET_PRICE;
+	public static int SSQ_DAWN_TICKET_BUNDLE;
+	public static int SSQ_MANORS_AGREEMENT_ID;
+	public static int SSQ_JOIN_DAWN_ADENA_FEE;
 	
 	// --------------------------------------------------
 	// Server Settings
@@ -1551,6 +1593,33 @@ public class Config
 			FS_MAX_SUPPLY_LEVEL = featureConfig.getInt("FortressMaxSupplyLevel", 6);
 			FS_FEE_FOR_CASTLE = featureConfig.getInt("FortressFeeForCastle", 25000);
 			FS_MAX_OWN_TIME = featureConfig.getInt("FortressMaximumOwnTime", 168);
+			ALT_SEVENSIGNS_OPEN_CATACUMBS = featureConfig.getBoolean("AltOpenCatacumbs", false);
+			ALT_SEVENSIGNS_OPEN_NECROPOLIS = featureConfig.getBoolean("AltOpenNecropolis", false);
+			ALT_GAME_CASTLE_DAWN = featureConfig.getBoolean("AltCastleForDawn", true);
+			ALT_GAME_CASTLE_DUSK = featureConfig.getBoolean("AltCastleForDusk", true);
+			ALT_GAME_REQUIRE_CLAN_CASTLE = featureConfig.getBoolean("AltRequireClanCastle", false);
+			ALT_FESTIVAL_MIN_PLAYER = featureConfig.getInt("AltFestivalMinPlayer", 5);
+			ALT_MAXIMUM_PLAYER_CONTRIB = featureConfig.getInt("AltMaxPlayerContrib", 1000000);
+			ALT_FESTIVAL_MANAGER_START = featureConfig.getLong("AltFestivalManagerStart", 120000);
+			ALT_FESTIVAL_LENGTH = featureConfig.getLong("AltFestivalLength", 1080000);
+			ALT_FESTIVAL_CYCLE_LENGTH = featureConfig.getLong("AltFestivalCycleLength", 2280000);
+			ALT_FESTIVAL_FIRST_SPAWN = featureConfig.getLong("AltFestivalFirstSpawn", 120000);
+			ALT_FESTIVAL_FIRST_SWARM = featureConfig.getLong("AltFestivalFirstSwarm", 300000);
+			ALT_FESTIVAL_SECOND_SPAWN = featureConfig.getLong("AltFestivalSecondSpawn", 540000);
+			ALT_FESTIVAL_SECOND_SWARM = featureConfig.getLong("AltFestivalSecondSwarm", 720000);
+			ALT_FESTIVAL_CHEST_SPAWN = featureConfig.getLong("AltFestivalChestSpawn", 900000);
+			ALT_SIEGE_DAWN_GATES_PDEF_MULT = featureConfig.getDouble("AltDawnGatesPdefMult", 1.1);
+			ALT_SIEGE_DUSK_GATES_PDEF_MULT = featureConfig.getDouble("AltDuskGatesPdefMult", 0.8);
+			ALT_SIEGE_DAWN_GATES_MDEF_MULT = featureConfig.getDouble("AltDawnGatesMdefMult", 1.1);
+			ALT_SIEGE_DUSK_GATES_MDEF_MULT = featureConfig.getDouble("AltDuskGatesMdefMult", 0.8);
+			ALT_STRICT_SEVENSIGNS = featureConfig.getBoolean("StrictSevenSigns", true);
+			ALT_SEVENSIGNS_LAZY_UPDATE = featureConfig.getBoolean("AltSevenSignsLazyUpdate", true);
+			SSQ_DAWN_TICKET_QUANTITY = featureConfig.getInt("SevenSignsDawnTicketQuantity", 300);
+			SSQ_DAWN_TICKET_PRICE = featureConfig.getInt("SevenSignsDawnTicketPrice", 1000);
+			SSQ_DAWN_TICKET_BUNDLE = featureConfig.getInt("SevenSignsDawnTicketBundle", 10);
+			SSQ_MANORS_AGREEMENT_ID = featureConfig.getInt("SevenSignsManorsAgreementId", 6388);
+			SSQ_JOIN_DAWN_ADENA_FEE = featureConfig.getInt("SevenSignsJoinDawnFee", 50000);
+			
 			TAKE_FORT_POINTS = featureConfig.getInt("TakeFortPoints", 200);
 			LOOSE_FORT_POINTS = featureConfig.getInt("LooseFortPoints", 0);
 			TAKE_CASTLE_POINTS = featureConfig.getInt("TakeCastlePoints", 1500);
@@ -2122,6 +2191,18 @@ public class Config
 			ALT_ITEM_AUCTION_ENABLED = generalConfig.getBoolean("AltItemAuctionEnabled", true);
 			ALT_ITEM_AUCTION_EXPIRED_AFTER = generalConfig.getInt("AltItemAuctionExpiredAfter", 14);
 			ALT_ITEM_AUCTION_TIME_EXTENDS_ON_BID = generalConfig.getInt("AltItemAuctionTimeExtendsOnBid", 0) * 1000;
+			RIFT_MIN_PARTY_SIZE = generalConfig.getInt("RiftMinPartySize", 5);
+			RIFT_MAX_JUMPS = generalConfig.getInt("MaxRiftJumps", 4);
+			RIFT_SPAWN_DELAY = generalConfig.getInt("RiftSpawnDelay", 10000);
+			RIFT_AUTO_JUMPS_TIME_MIN = generalConfig.getInt("AutoJumpsDelayMin", 480);
+			RIFT_AUTO_JUMPS_TIME_MAX = generalConfig.getInt("AutoJumpsDelayMax", 600);
+			RIFT_BOSS_ROOM_TIME_MUTIPLY = generalConfig.getFloat("BossRoomTimeMultiply", 1.5f);
+			RIFT_ENTER_COST_RECRUIT = generalConfig.getInt("RecruitCost", 18);
+			RIFT_ENTER_COST_SOLDIER = generalConfig.getInt("SoldierCost", 21);
+			RIFT_ENTER_COST_OFFICER = generalConfig.getInt("OfficerCost", 24);
+			RIFT_ENTER_COST_CAPTAIN = generalConfig.getInt("CaptainCost", 27);
+			RIFT_ENTER_COST_COMMANDER = generalConfig.getInt("CommanderCost", 30);
+			RIFT_ENTER_COST_HERO = generalConfig.getInt("HeroCost", 33);
 			DEFAULT_PUNISH = IllegalActionPunishmentType.findByName(generalConfig.getString("DefaultPunish", "KICK"));
 			DEFAULT_PUNISH_PARAM = generalConfig.getLong("DefaultPunishParam", 0);
 			if (DEFAULT_PUNISH_PARAM == 0)

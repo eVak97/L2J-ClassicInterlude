@@ -53,6 +53,9 @@ public enum InstanceType
 	FriendlyNpc(Attackable),
 	// FlyMobs
 	FlyTerrainObject(Npc),
+	// Festival
+	FestivalGuide(Npc),
+	FestivalMonster(Monster),
 	// Vehicles
 	Vehicle(Creature),
 	Boat(Vehicle),

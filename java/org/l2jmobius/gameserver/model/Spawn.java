@@ -19,6 +19,8 @@ package org.l2jmobius.gameserver.model;
 import java.lang.reflect.Constructor;
 import java.util.Deque;
 import java.util.Objects;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +37,7 @@ import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.instancezone.Instance;
 import org.l2jmobius.gameserver.model.interfaces.IIdentifiable;
 import org.l2jmobius.gameserver.model.interfaces.INamable;
+import org.l2jmobius.gameserver.model.sevensigns.SevenSignsFestival;
 import org.l2jmobius.gameserver.model.spawns.NpcSpawnTemplate;
 import org.l2jmobius.gameserver.model.zone.type.WaterZone;
 import org.l2jmobius.gameserver.taskmanager.RespawnTaskManager;
@@ -75,6 +78,7 @@ public class Spawn extends Location implements IIdentifiable, INamable
 	private Constructor<? extends Npc> _constructor;
 	/** If True an Npc is respawned each time that another is killed */
 	private boolean _doRespawn = true;
+	private static Set<SevenSignsFestival> _spawnListeners = ConcurrentHashMap.newKeySet(1);
 	private final Deque<Npc> _spawnedNpcs = new ConcurrentLinkedDeque<>();
 	private boolean _randomWalk = false; // Is no random walk
 	private NpcSpawnTemplate _spawnTemplate;
@@ -495,6 +499,16 @@ public class Spawn extends Location implements IIdentifiable, INamable
 		}
 		
 		return npc;
+	}
+	
+	public static void addSpawnListener(SevenSignsFestival listener)
+	{
+		_spawnListeners.add(listener);
+	}
+	
+	public static void removeSpawnListener(SevenSignsFestival listener)
+	{
+		_spawnListeners.remove(listener);
 	}
 	
 	/**

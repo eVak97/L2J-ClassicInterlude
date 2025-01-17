@@ -119,6 +119,7 @@ import org.l2jmobius.gameserver.handler.ItemHandler;
 import org.l2jmobius.gameserver.instancemanager.AntiFeedManager;
 import org.l2jmobius.gameserver.instancemanager.CastleManager;
 import org.l2jmobius.gameserver.instancemanager.CursedWeaponsManager;
+import org.l2jmobius.gameserver.instancemanager.DimensionalRiftManager;
 import org.l2jmobius.gameserver.instancemanager.DuelManager;
 import org.l2jmobius.gameserver.instancemanager.FortManager;
 import org.l2jmobius.gameserver.instancemanager.FortSiegeManager;
@@ -397,8 +398,8 @@ public class Player extends Playable
 	private static final String DELETE_ITEM_REUSE_SAVE = "DELETE FROM character_item_reuse_save WHERE charId=?";
 	
 	// Character Character SQL String Definitions:
-	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,online,clan_privs,wantspeace,base_class,nobless,power_grade,vitality_points,createDate,lastAccess) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,vitality_points=?,language=?,faction=?,pccafe_points=? WHERE charId=?";
+	private static final String INSERT_CHARACTER = "INSERT INTO characters (account_name,charId,char_name,level,maxHp,curHp,maxCp,curCp,maxMp,curMp,face,hairStyle,hairColor,sex,exp,sp,reputation,fame,raidbossPoints,pvpkills,pkkills,clanid,race,classid,deletetime,cancraft,title,title_color,online,clan_privs,wantspeace,base_class,nobless,power_grade,vitality_points,createDate,lastAccess) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String UPDATE_CHARACTER = "UPDATE characters SET level=?,maxHp=?,curHp=?,maxCp=?,curCp=?,maxMp=?,curMp=?,face=?,hairStyle=?,hairColor=?,sex=?,heading=?,x=?,y=?,z=?,exp=?,expBeforeDeath=?,sp=?,reputation=?,fame=?,raidbossPoints=?,pvpkills=?,pkkills=?,clanid=?,race=?,classid=?,deletetime=?,title=?,title_color=?,online=?,clan_privs=?,wantspeace=?,base_class=?,onlinetime=?,nobless=?,power_grade=?,subpledge=?,lvl_joined_academy=?,apprentice=?,sponsor=?,clan_join_expiry_time=?,clan_create_expiry_time=?,char_name=?,bookmarkslot=?,vitality_points=?,language=?,faction=?,pccafe_points=? isin7sdungeon=? WHERE charId=?";
 	private static final String UPDATE_CHARACTER_ACCESS = "UPDATE characters SET accesslevel = ? WHERE charId = ?";
 	private static final String RESTORE_CHARACTER = "SELECT * FROM characters WHERE charId=?";
 	
@@ -520,6 +521,8 @@ public class Player extends Playable
 	private int _curWeightPenalty = 0;
 	
 	private int _lastCompassZone; // the last compass zone update send to the client
+	
+	private boolean _isIn7sDungeon = false;
 	
 	private final ContactList _contactList = new ContactList(this);
 	
@@ -1853,6 +1856,15 @@ public class Player extends Playable
 			}
 			_lastCompassZone = ExSetCompassZoneCode.PVPZONE;
 			sendPacket(new ExSetCompassZoneCode(ExSetCompassZoneCode.PVPZONE));
+		}
+		else if (_isIn7sDungeon)
+		{
+			if (_lastCompassZone == ExSetCompassZoneCode.SEVENSIGNSZONE)
+			{
+				return;
+			}
+			_lastCompassZone = ExSetCompassZoneCode.SEVENSIGNSZONE;
+			sendPacket(new ExSetCompassZoneCode(ExSetCompassZoneCode.SEVENSIGNSZONE));
 		}
 		else if (isInsideZone(ZoneId.PEACE))
 		{
@@ -5079,6 +5091,11 @@ public class Player extends Playable
 			getSkillChannelized().abortChannelization();
 		}
 		
+		if (isInParty() && _party.isInDimensionalRift())
+		{
+			_party.getDimensionalRift().getDeadMemberList().add(this);
+		}
+		
 		if (_agathionId != 0)
 		{
 			setAgathionId(0);
@@ -6553,6 +6570,11 @@ public class Player extends Playable
 		}
 	}
 	
+	public void setIn7sDungeon(boolean isIn7sDungeon)
+	{
+		_isIn7sDungeon = isIn7sDungeon;
+	}
+	
 	/**
 	 * Update the characters table of the database with online status and lastAccess of this Player (called when login and logout).
 	 */
@@ -6618,6 +6640,7 @@ public class Player extends Playable
 			statement.setInt(35, PlayerStat.MIN_VITALITY_POINTS);
 			statement.setDate(36, new Date(_createDate.getTimeInMillis()));
 			statement.setLong(37, System.currentTimeMillis());
+			statement.setInt(38, _isIn7sDungeon ? 1 : 0);
 			statement.executeUpdate();
 		}
 		catch (Exception e)
@@ -7298,7 +7321,8 @@ public class Player extends Playable
 			}
 			statement.setInt(47, factionId);
 			statement.setInt(48, _pcCafePoints);
-			statement.setInt(49, getObjectId());
+			statement.setInt(49, _isIn7sDungeon ? 1 : 0);
+			statement.setInt(50, getObjectId());
 			statement.execute();
 		}
 		catch (Exception e)
@@ -7545,6 +7569,11 @@ public class Player extends Playable
 	public boolean isOfflinePlay()
 	{
 		return _offlinePlay;
+	}
+	
+	public boolean isIn7sDungeon()
+	{
+		return _isIn7sDungeon;
 	}
 	
 	public void setEnteredWorld()
@@ -10372,6 +10401,11 @@ public class Player extends Playable
 			startFeed(_mountNpcId);
 		}
 		
+		if (isInParty() && _party.isInDimensionalRift() && !DimensionalRiftManager.getInstance().checkIfInPeaceZone(getX(), getY(), getZ()))
+		{
+			_party.getDimensionalRift().memberRessurected(this);
+		}
+		
 		// Notify instance
 		final Instance instance = getInstanceWorld();
 		if (instance != null)
@@ -12294,6 +12328,11 @@ public class Player extends Playable
 		else if (isDead())
 		{
 			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_WHILE_YOU_ARE_DEAD);
+			return false;
+		}
+		else if ((type == 1) && (_isIn7sDungeon || (isInParty() && _party.isInDimensionalRift())))
+		{
+			sendPacket(SystemMessageId.YOU_CANNOT_USE_MY_TELEPORTS_TO_REACH_THIS_AREA);
 			return false;
 		}
 		else if (isInWater())
