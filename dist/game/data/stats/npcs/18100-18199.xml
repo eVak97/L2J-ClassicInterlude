@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="18100" level="76" type="FestivalMonster" name="Offering of Forbidden Path">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="236" /> <!-- Soul Separator -->
+		<equipment rhand="236" /> 
 		<acquire exp="15470" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2719" hpRegen="8.5" mp="1540" mpRegen="3" />
@@ -23,19 +23,19 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Higher Resist Bow/Crossbow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -46,14 +46,14 @@
 		</collision>
 	</npc>
 	<npc id="18101" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Archer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="287" /> <!-- Bow of Peril -->
+		<equipment rhand="287" /> 
 		<acquire exp="14959" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="3010" hpRegen="8.772" mp="1777" mpRegen="3.0906" />
@@ -68,17 +68,17 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="9" /> <!-- Bows -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -89,7 +89,7 @@
 		</collision>
 	</npc>
 	<npc id="18102" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Warrior">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -97,7 +97,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- Damascus Sword -->
+		<equipment rhand="79" /> 
 		<acquire exp="13823" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2937" hpRegen="8.67" mp="1708" mpRegen="3.06" />
@@ -112,21 +112,21 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow/Crossbow Weapons -->
-			<skill id="4087" level="9" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="9" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -137,7 +137,7 @@
 		</collision>
 	</npc>
 	<npc id="18103" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Follower">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -148,7 +148,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="16533" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2937" hpRegen="8.67" mp="1708" mpRegen="3.06" />
@@ -163,21 +163,21 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="9" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Stun Attacks -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="9" /> 
+			<skill id="4160" level="9" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -188,7 +188,7 @@
 		</collision>
 	</npc>
 	<npc id="18104" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Berserker">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -197,7 +197,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="305" /> <!-- Tallum Glaive -->
+		<equipment rhand="305" /> 
 		<acquire exp="19642" sp="4" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="8.721" mp="1742" mpRegen="3.0702" />
@@ -212,21 +212,21 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow/Crossbow Weapons -->
-			<skill id="4244" level="9" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="9" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -237,7 +237,7 @@
 		</collision>
 	</npc>
 	<npc id="18105" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Zealot">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -248,7 +248,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="175" /> <!-- Art of Battle Axe -->
+		<equipment rhand="175" /> 
 		<acquire exp="15637" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
@@ -263,20 +263,20 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Stun Attacks -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="8" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -287,14 +287,14 @@
 		</collision>
 	</npc>
 	<npc id="18106" level="76" type="FestivalMonster" name="Offering of Forbidden Path, Sniper">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="289" /> <!-- Soul Bow -->
+		<equipment rhand="289" /> 
 		<acquire exp="12850" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2719" hpRegen="8.5" mp="1540" mpRegen="3" />
@@ -309,17 +309,17 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="9" /> <!-- Bows -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="9" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -330,7 +330,7 @@
 		</collision>
 	</npc>
 	<npc id="18107" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Disciple">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -338,7 +338,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="151" /> <!-- Sword of Miracles -->
+		<equipment rhand="151" /> 
 		<acquire exp="15637" sp="3" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
@@ -353,18 +353,18 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="8" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -375,7 +375,7 @@
 		</collision>
 	</npc>
 	<npc id="18108" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Saint">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -384,7 +384,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> <!-- Dark Legion's Edge -->
+		<equipment rhand="2500" /> 
 		<acquire exp="17707" sp="4" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="3044" hpRegen="8.823" mp="1812" mpRegen="3.111" />
@@ -399,20 +399,20 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow/Crossbow Weapons -->
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers/Rapier Weapon -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="9" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -423,7 +423,7 @@
 		</collision>
 	</npc>
 	<npc id="18109" level="30" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
@@ -444,16 +444,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -467,7 +467,7 @@
 		</collision>
 	</npc>
 	<npc id="18110" level="41" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
@@ -488,16 +488,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -511,7 +511,7 @@
 		</collision>
 	</npc>
 	<npc id="18111" level="52" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
@@ -532,16 +532,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -555,7 +555,7 @@
 		</collision>
 	</npc>
 	<npc id="18112" level="63" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
@@ -576,16 +576,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -599,7 +599,7 @@
 		</collision>
 	</npc>
 	<npc id="18113" level="72" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
@@ -620,16 +620,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -643,7 +643,7 @@
 		</collision>
 	</npc>
 	<npc id="18114" level="30" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
@@ -664,16 +664,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -687,7 +687,7 @@
 		</collision>
 	</npc>
 	<npc id="18115" level="41" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
@@ -708,16 +708,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -731,7 +731,7 @@
 		</collision>
 	</npc>
 	<npc id="18116" level="52" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
@@ -752,16 +752,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -775,7 +775,7 @@
 		</collision>
 	</npc>
 	<npc id="18117" level="63" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
@@ -796,16 +796,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -819,7 +819,7 @@
 		</collision>
 	</npc>
 	<npc id="18118" level="72" type="FestivalMonster" name="Treasures of the Festival">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
@@ -840,16 +840,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="200" aggroRange="450">
@@ -863,7 +863,7 @@
 		</collision>
 	</npc>
 	<npc id="18119" level="65" type="Monster" name="Corpse of Deadman">
-		<!-- Confirmed CT2.5 -->
+		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
@@ -882,7 +882,7 @@
 		</stats>
 		<status undying="false" targetable="false" randomWalk="false" randomAnimation="false" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<corpseTime>240</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -892,7 +892,7 @@
 		</collision>
 	</npc>
 	<npc id="18120" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -906,7 +906,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="11265.61824" hpRegen="8.5" mp="1412.762" mpRegen="3" />
@@ -921,14 +921,14 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill id="4341" level="1" /> <!-- Ultimate Buff, 3rd -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
-			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4340" level="1" /> 
+			<skill id="4341" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -943,7 +943,7 @@
 		</collision>
 	</npc>
 	<npc id="18121" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -957,7 +957,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -972,24 +972,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1004,7 +1004,7 @@
 		</collision>
 	</npc>
 	<npc id="18122" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1017,7 +1017,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1032,23 +1032,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1063,7 +1063,7 @@
 		</collision>
 	</npc>
 	<npc id="18123" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1077,7 +1077,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1092,24 +1092,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill id="4341" level="1" /> <!-- Ultimate Buff, 3rd -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4318" level="1" /> 
+			<skill id="4340" level="1" /> 
+			<skill id="4341" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1124,7 +1124,7 @@
 		</collision>
 	</npc>
 	<npc id="18124" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1138,7 +1138,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1153,24 +1153,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1185,7 +1185,7 @@
 		</collision>
 	</npc>
 	<npc id="18125" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1198,7 +1198,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1213,23 +1213,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1244,7 +1244,7 @@
 		</collision>
 	</npc>
 	<npc id="18126" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1258,7 +1258,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1273,24 +1273,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill id="4341" level="1" /> <!-- Ultimate Buff, 3rd -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4318" level="1" /> 
+			<skill id="4340" level="1" /> 
+			<skill id="4341" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1305,7 +1305,7 @@
 		</collision>
 	</npc>
 	<npc id="18127" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1319,7 +1319,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1334,24 +1334,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1366,7 +1366,7 @@
 		</collision>
 	</npc>
 	<npc id="18128" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1379,7 +1379,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1394,23 +1394,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1425,7 +1425,7 @@
 		</collision>
 	</npc>
 	<npc id="18129" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1439,7 +1439,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1454,24 +1454,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4340" level="1" /> <!-- Ultimate Buff, 2nd -->
-			<skill id="4341" level="1" /> <!-- Ultimate Buff, 3rd -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4318" level="1" /> 
+			<skill id="4340" level="1" /> 
+			<skill id="4341" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1486,7 +1486,7 @@
 		</collision>
 	</npc>
 	<npc id="18130" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1500,7 +1500,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1515,24 +1515,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1547,7 +1547,7 @@
 		</collision>
 	</npc>
 	<npc id="18131" level="78" type="Monster" name="Halisha's Officer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1560,7 +1560,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="134" lhand="6721" /> <!-- Sword of Nightmare / Monster Only (Shield of Imperial Warlord Zombie) -->
+		<equipment rhand="134" lhand="6721" /> 
 		<acquire exp="105451" sp="25" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -1575,23 +1575,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1606,7 +1606,7 @@
 		</collision>
 	</npc>
 	<npc id="18132" level="78" type="Monster" name="Imperial Healer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
@@ -1631,13 +1631,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4569" level="9" /> <!-- NPC AE Solar Flare - Magic -->
-			<skill id="4613" level="9" /> <!-- NPC Clan Heal -->
-			<skill id="4640" level="9" /> <!-- Sleep -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4071" level="5" /> <!-- Bow/ Crossbow Resistance -->
-			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
+			<skill id="4569" level="9" /> 
+			<skill id="4613" level="9" /> 
+			<skill id="4640" level="9" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4285" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1652,7 +1652,7 @@
 		</collision>
 	</npc>
 	<npc id="18133" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1676,9 +1676,9 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4582" level="9" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4412" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1693,7 +1693,7 @@
 		</collision>
 	</npc>
 	<npc id="18134" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1716,17 +1716,17 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4573" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1741,7 +1741,7 @@
 		</collision>
 	</npc>
 	<npc id="18135" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1765,17 +1765,17 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4032" level="9" /> <!-- NPC Strike -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
+			<skill id="4032" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4573" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1790,7 +1790,7 @@
 		</collision>
 	</npc>
 	<npc id="18136" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
@@ -1814,17 +1814,17 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4582" level="9" /> <!-- Poison -->
+			<skill id="4091" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4582" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1839,7 +1839,7 @@
 		</collision>
 	</npc>
 	<npc id="18137" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -1863,18 +1863,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
+			<skill id="4160" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4563" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1889,7 +1889,7 @@
 		</collision>
 	</npc>
 	<npc id="18138" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -1914,18 +1914,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill id="4609" level="4" /> <!-- NPC Clan Buff - Vampiric Rage -->
+			<skill id="4160" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4563" level="9" /> 
+			<skill id="4609" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1940,7 +1940,7 @@
 		</collision>
 	</npc>
 	<npc id="18139" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -1965,18 +1965,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill id="4587" level="9" /> <!-- Decrease P. Atk. -->
+			<skill id="4160" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4563" level="9" /> 
+			<skill id="4587" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -1991,7 +1991,7 @@
 		</collision>
 	</npc>
 	<npc id="18140" level="78" type="Monster" name="Imperial Mosaic">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2015,17 +2015,17 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4033" level="9" /> <!-- NPC Burn -->
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4033" level="9" /> 
+			<skill id="4160" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -2040,7 +2040,7 @@
 		</collision>
 	</npc>
 	<npc id="18141" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2066,12 +2066,12 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4568" level="9" /> <!-- NPC AE Solar Flare -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4576" level="3" /> <!-- NPC Clan Buff - Damage Shield -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
-			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+			<skill id="4568" level="9" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4576" level="3" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2086,7 +2086,7 @@
 		</collision>
 	</npc>
 	<npc id="18142" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2112,20 +2112,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4568" level="9" /> <!-- NPC AE Solar Flare -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4576" level="3" /> <!-- NPC Clan Buff - Damage Shield -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4568" level="9" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4576" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2140,7 +2140,7 @@
 		</collision>
 	</npc>
 	<npc id="18143" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2166,20 +2166,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4568" level="9" /> <!-- NPC AE Solar Flare -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4576" level="3" /> <!-- NPC Clan Buff - Damage Shield -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4568" level="9" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4576" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2194,7 +2194,7 @@
 		</collision>
 	</npc>
 	<npc id="18144" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2220,20 +2220,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4568" level="9" /> <!-- NPC AE Solar Flare -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4576" level="3" /> <!-- NPC Clan Buff - Damage Shield -->
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4568" level="9" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4576" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2248,7 +2248,7 @@
 		</collision>
 	</npc>
 	<npc id="18145" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2273,19 +2273,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4031" level="3" /> <!-- NPC Clan Aegis -->
-			<skill id="4155" level="9" /> <!-- NPC Twister - Magic -->
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4031" level="3" /> 
+			<skill id="4155" level="9" /> 
+			<skill id="4160" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2300,7 +2300,7 @@
 		</collision>
 	</npc>
 	<npc id="18146" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2324,18 +2324,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4032" level="9" /> <!-- NPC Strike -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
+			<skill id="4032" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4573" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2350,7 +2350,7 @@
 		</collision>
 	</npc>
 	<npc id="18147" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2374,18 +2374,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4155" level="9" /> <!-- NPC Twister - Magic -->
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
+			<skill id="4155" level="9" /> 
+			<skill id="4160" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2400,7 +2400,7 @@
 		</collision>
 	</npc>
 	<npc id="18148" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2424,18 +2424,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4074" level="2" /> <!-- NPC Haste -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4581" level="9" /> <!-- Hold -->
+			<skill id="4074" level="2" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4581" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2450,7 +2450,7 @@
 		</collision>
 	</npc>
 	<npc id="18149" level="78" type="Monster" name="Graveyard Beetle">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="65" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -2473,19 +2473,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Higher Resist Bow/Crossbow Weapons -->
-			<skill id="4614" level="9" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="12" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="5" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -2500,7 +2500,7 @@
 		</collision>
 	</npc>
 	<npc id="18150" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18158" />
@@ -2521,16 +2521,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2544,7 +2544,7 @@
 		</collision>
 	</npc>
 	<npc id="18151" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18159" />
@@ -2565,16 +2565,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2588,7 +2588,7 @@
 		</collision>
 	</npc>
 	<npc id="18152" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18160" />
@@ -2609,16 +2609,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2632,7 +2632,7 @@
 		</collision>
 	</npc>
 	<npc id="18153" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18161" />
@@ -2653,16 +2653,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2676,7 +2676,7 @@
 		</collision>
 	</npc>
 	<npc id="18154" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18162" />
@@ -2697,16 +2697,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2720,7 +2720,7 @@
 		</collision>
 	</npc>
 	<npc id="18155" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18163" />
@@ -2741,16 +2741,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2764,7 +2764,7 @@
 		</collision>
 	</npc>
 	<npc id="18156" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18164" />
@@ -2785,16 +2785,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2808,7 +2808,7 @@
 		</collision>
 	</npc>
 	<npc id="18157" level="78" type="Monster" name="Victim">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="KeyBox" value="31455" />
 			<param name="StrongNPC" value="18165" />
@@ -2829,16 +2829,16 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4697" level="9" /> <!-- NPC Monster Hate -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4697" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai clanHelpRange="600" aggroRange="300">
@@ -2852,7 +2852,7 @@
 		</collision>
 	</npc>
 	<npc id="18158" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -2876,20 +2876,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4621" level="9" /> <!-- NPC AE - 80% HP Drain -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="21" /> 
+			<skill id="4413" level="16" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4621" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -2904,7 +2904,7 @@
 		</collision>
 	</npc>
 	<npc id="18159" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -2928,20 +2928,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="21" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="16" /> 
+			<skill id="4413" level="21" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -2956,7 +2956,7 @@
 		</collision>
 	</npc>
 	<npc id="18160" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -2980,20 +2980,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4621" level="9" /> <!-- NPC AE - 80% HP Drain -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="21" /> 
+			<skill id="4413" level="16" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4621" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3008,7 +3008,7 @@
 		</collision>
 	</npc>
 	<npc id="18161" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -3032,20 +3032,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="21" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="16" /> 
+			<skill id="4413" level="21" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3060,7 +3060,7 @@
 		</collision>
 	</npc>
 	<npc id="18162" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -3084,20 +3084,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4621" level="9" /> <!-- NPC AE - 80% HP Drain -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="21" /> 
+			<skill id="4413" level="16" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4621" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3112,7 +3112,7 @@
 		</collision>
 	</npc>
 	<npc id="18163" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -3136,20 +3136,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="21" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="16" /> 
+			<skill id="4413" level="21" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3164,7 +3164,7 @@
 		</collision>
 	</npc>
 	<npc id="18164" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -3188,20 +3188,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4621" level="9" /> <!-- NPC AE - 80% HP Drain -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="21" /> 
+			<skill id="4413" level="16" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4621" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3216,7 +3216,7 @@
 		</collision>
 	</npc>
 	<npc id="18165" level="78" type="Monster" name="Halisha's Executioner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -3240,20 +3240,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4318" level="1" /> <!-- Ultimate Buff -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="21" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="6" /> <!-- Blunt Weapons -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4318" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="16" /> 
+			<skill id="4413" level="21" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="6" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3268,7 +3268,7 @@
 		</collision>
 	</npc>
 	<npc id="18166" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="74" />
 			<param name="MoveAroundSocial1" value="74" />
@@ -3279,7 +3279,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="75658" sp="18" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="11265.61824" hpRegen="8.5" mp="1412.762" mpRegen="3" />
@@ -3294,8 +3294,8 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4572" level="9" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3310,7 +3310,7 @@
 		</collision>
 	</npc>
 	<npc id="18167" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="74" />
 			<param name="MoveAroundSocial1" value="74" />
@@ -3320,7 +3320,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="75658" sp="18" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -3335,19 +3335,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4573" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3362,7 +3362,7 @@
 		</collision>
 	</npc>
 	<npc id="18168" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="74" />
 			<param name="MoveAroundSocial1" value="74" />
@@ -3373,7 +3373,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="75658" sp="18" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -3388,19 +3388,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4572" level="9" /> <!-- NPC Triple Sonic Slash -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4572" level="9" /> 
+			<skill id="4573" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3415,7 +3415,7 @@
 		</collision>
 	</npc>
 	<npc id="18169" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="74" />
 			<param name="MoveAroundSocial1" value="74" />
@@ -3426,7 +3426,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="75658" sp="18" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -3441,19 +3441,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4574" level="9" /> <!-- NPC Sonic Storm -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4091" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4574" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3468,7 +3468,7 @@
 		</collision>
 	</npc>
 	<npc id="18170" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -3492,20 +3492,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4561" level="9" /> <!-- NPC Fire Burn - Magic -->
-			<skill id="4603" level="9" /> <!-- Decrease P. Atk. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4561" level="9" /> 
+			<skill id="4603" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3520,7 +3520,7 @@
 		</collision>
 	</npc>
 	<npc id="18171" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -3545,20 +3545,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4561" level="9" /> <!-- NPC Fire Burn - Magic -->
-			<skill id="4603" level="9" /> <!-- Decrease P. Atk. -->
-			<skill id="4609" level="4" /> <!-- NPC Clan Buff - Vampiric Rage -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4561" level="9" /> 
+			<skill id="4603" level="9" /> 
+			<skill id="4609" level="4" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3573,7 +3573,7 @@
 		</collision>
 	</npc>
 	<npc id="18172" level="78" type="Monster" name="Imperial Guard">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -3597,19 +3597,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="7" /> <!-- Daggers -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4561" level="9" /> <!-- NPC Fire Burn - Magic -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="7" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4561" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3624,7 +3624,7 @@
 		</collision>
 	</npc>
 	<npc id="18173" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3650,12 +3650,12 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4565" level="9" /> <!-- NPC Eruption -->
-			<skill id="4601" level="3" /> <!-- NPC Clan Buff - Acumen Focus -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
-			<skill id="4287" level="5" /> <!-- Hold Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4565" level="9" /> 
+			<skill id="4601" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3670,7 +3670,7 @@
 		</collision>
 	</npc>
 	<npc id="18174" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3698,24 +3698,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3730,7 +3730,7 @@
 		</collision>
 	</npc>
 	<npc id="18175" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3757,23 +3757,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3788,7 +3788,7 @@
 		</collision>
 	</npc>
 	<npc id="18176" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3814,22 +3814,22 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4565" level="9" /> <!-- NPC Eruption -->
-			<skill id="4601" level="3" /> <!-- NPC Clan Buff - Acumen Focus -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4565" level="9" /> 
+			<skill id="4601" level="3" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3844,7 +3844,7 @@
 		</collision>
 	</npc>
 	<npc id="18177" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3872,24 +3872,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3904,7 +3904,7 @@
 		</collision>
 	</npc>
 	<npc id="18178" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3931,23 +3931,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -3962,7 +3962,7 @@
 		</collision>
 	</npc>
 	<npc id="18179" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -3988,22 +3988,22 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4565" level="9" /> <!-- NPC Eruption -->
-			<skill id="4601" level="3" /> <!-- NPC Clan Buff - Acumen Focus -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4565" level="9" /> 
+			<skill id="4601" level="3" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4018,7 +4018,7 @@
 		</collision>
 	</npc>
 	<npc id="18180" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -4046,24 +4046,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4078,7 +4078,7 @@
 		</collision>
 	</npc>
 	<npc id="18181" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -4105,23 +4105,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4136,7 +4136,7 @@
 		</collision>
 	</npc>
 	<npc id="18182" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -4162,22 +4162,22 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4565" level="9" /> <!-- NPC Eruption -->
-			<skill id="4601" level="3" /> <!-- NPC Clan Buff - Acumen Focus -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4565" level="9" /> 
+			<skill id="4601" level="3" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4192,7 +4192,7 @@
 		</collision>
 	</npc>
 	<npc id="18183" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -4220,24 +4220,24 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4287" level="5" /> <!-- Resist Hold Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4694" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4695" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4696" level="1" /> <!-- Ultimate Debuff -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4287" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4694" level="1" /> 
+			<skill id="4695" level="1" /> 
+			<skill id="4696" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4252,7 +4252,7 @@
 		</collision>
 	</npc>
 	<npc id="18184" level="78" type="Monster" name="Halisha's Foreman">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="108" />
 			<param name="MoveAroundSocial1" value="108" />
@@ -4279,23 +4279,23 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4073" level="9" /> <!-- Stun -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4438" level="4" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="4" /> <!-- Greater Resist Hold -->
-			<skill id="4589" level="9" /> <!-- Decrease Speed -->
-			<skill id="4618" level="1" /> <!-- NPC Cancel PC Target -->
-			<skill id="4657" level="9" /> <!-- Hold -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4073" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
+			<skill id="4589" level="9" /> 
+			<skill id="4618" level="1" /> 
+			<skill id="4657" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4310,7 +4310,7 @@
 		</collision>
 	</npc>
 	<npc id="18185" level="78" type="Monster" name="Evil Astrologer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="50" />
 			<param name="MoveAroundSocial1" value="50" />
@@ -4321,7 +4321,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="5129" lhand="5129" /> <!-- Doll Knife / Doll Knife -->
+		<equipment rhand="5129" lhand="5129" /> 
 		<acquire exp="101667" sp="24" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="11265.61824" hpRegen="8.5" mp="1412.762" mpRegen="3" />
@@ -4336,13 +4336,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4033" level="9" /> <!-- NPC Burn -->
-			<skill id="4036" level="9" /> <!-- Poison -->
-			<skill id="4613" level="9" /> <!-- NPC Clan Heal -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4071" level="5" /> <!-- Bow/ Crossbow Resistance -->
-			<skill id="4285" level="5" /> <!-- Sleep Resistance -->
+			<skill id="4033" level="9" /> 
+			<skill id="4036" level="9" /> 
+			<skill id="4613" level="9" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4285" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4357,7 +4357,7 @@
 		</collision>
 	</npc>
 	<npc id="18186" level="78" type="Monster" name="Evil Astrologer">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="50" />
 			<param name="MoveAroundSocial1" value="50" />
@@ -4369,7 +4369,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="5129" lhand="5129" /> <!-- Doll Knife / Doll Knife -->
+		<equipment rhand="5129" lhand="5129" /> 
 		<acquire exp="101667" sp="24" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4384,21 +4384,21 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4033" level="9" /> <!-- NPC Burn -->
-			<skill id="4071" level="5" /> <!-- Resist Bow/Crossbow Weapons -->
-			<skill id="4285" level="5" /> <!-- Resist Sleep Attacks -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4597" level="9" /> <!-- Bleed -->
-			<skill id="4613" level="9" /> <!-- NPC Clan Heal -->
-			<skill id="4657" level="9" /> <!-- Hold -->
+			<skill id="4033" level="9" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4285" level="5" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4597" level="9" /> 
+			<skill id="4613" level="9" /> 
+			<skill id="4657" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4413,7 +4413,7 @@
 		</collision>
 	</npc>
 	<npc id="18187" level="78" type="Monster" name="Dark Knight">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4423,7 +4423,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- Great Sword -->
+		<equipment rhand="78" /> 
 		<acquire exp="99253" sp="23" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="11265.61824" hpRegen="8.5" mp="1412.762" mpRegen="3" />
@@ -4438,9 +4438,9 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
+			<skill id="4582" level="9" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4412" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4455,7 +4455,7 @@
 		</collision>
 	</npc>
 	<npc id="18188" level="78" type="Monster" name="Dark Knight">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4464,7 +4464,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- Great Sword -->
+		<equipment rhand="78" /> 
 		<acquire exp="99253" sp="23" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4479,18 +4479,18 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4573" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4505,7 +4505,7 @@
 		</collision>
 	</npc>
 	<npc id="18189" level="78" type="Monster" name="Dark Knight">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4515,7 +4515,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- Great Sword -->
+		<equipment rhand="78" /> 
 		<acquire exp="99253" sp="23" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4530,19 +4530,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4032" level="9" /> <!-- NPC Strike -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4573" level="9" /> <!-- NPC Sonic Blaster -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4032" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4573" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4557,7 +4557,7 @@
 		</collision>
 	</npc>
 	<npc id="18190" level="78" type="Monster" name="Dark Knight">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4567,7 +4567,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- Great Sword -->
+		<equipment rhand="78" /> 
 		<acquire exp="99253" sp="23" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4582,19 +4582,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="17" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4582" level="9" /> <!-- Poison -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4091" level="1" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="17" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4582" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4609,7 +4609,7 @@
 		</collision>
 	</npc>
 	<npc id="18191" level="78" type="Monster" name="Witch of dust">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4619,7 +4619,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- Monster Only (Bensh) -->
+		<equipment rhand="3939" /> 
 		<acquire exp="73576" sp="17" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="11265.61824" hpRegen="8.5" mp="1412.762" mpRegen="3" />
@@ -4634,9 +4634,9 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4160" level="9" /> 
+			<skill id="4563" level="9" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4651,7 +4651,7 @@
 		</collision>
 	</npc>
 	<npc id="18192" level="78" type="Monster" name="Witch of dust">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4662,7 +4662,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- Monster Only (Bensh) -->
+		<equipment rhand="3939" /> 
 		<acquire exp="73576" sp="17" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4677,20 +4677,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill id="4609" level="4" /> <!-- NPC Clan Buff - Vampiric Rage -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4160" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4563" level="9" /> 
+			<skill id="4609" level="4" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4705,7 +4705,7 @@
 		</collision>
 	</npc>
 	<npc id="18193" level="78" type="Monster" name="Witch of dust">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4716,7 +4716,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- Monster Only (Bensh) -->
+		<equipment rhand="3939" /> 
 		<acquire exp="73576" sp="17" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4731,20 +4731,20 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
-			<skill id="4587" level="9" /> <!-- Decrease P. Atk. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4160" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4563" level="9" /> 
+			<skill id="4587" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4759,7 +4759,7 @@
 		</collision>
 	</npc>
 	<npc id="18194" level="78" type="Monster" name="Witch of dust">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -4769,7 +4769,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- Monster Only (Bensh) -->
+		<equipment rhand="3939" /> 
 		<acquire exp="73576" sp="17" />
 		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
 			<vitals hp="2975" hpRegen="52.326" mp="1742" mpRegen="3.0702" />
@@ -4784,19 +4784,19 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4033" level="9" /> <!-- NPC Burn -->
-			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="17" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Dark Attack Resistance -->
+			<skill id="4033" level="9" /> 
+			<skill id="4160" level="9" /> 
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="17" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4811,7 +4811,7 @@
 		</collision>
 	</npc>
 	<npc id="18195" level="78" type="Monster" name="Signet of Emperor">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="115" />
 			<param name="MoveAroundSocial1" value="115" />
@@ -4834,11 +4834,11 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4614" level="9" /> <!-- NPC Death Bomb -->
-			<skill id="4416" level="12" /> <!-- Bugs -->
-			<skill id="4444" level="2" /> <!-- Greater Bow/ Crossbow Resistance -->
-			<skill id="4438" level="4" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="4" /> <!-- Greater Hold Resistance -->
+			<skill id="4614" level="9" /> 
+			<skill id="4416" level="12" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4438" level="4" /> 
+			<skill id="4439" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4853,7 +4853,7 @@
 		</collision>
 	</npc>
 	<npc id="18196" level="78" type="Monster" name="Charm of Corner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="AreaName" value="conquerors_weakness" />
 			<param name="type" value="0" />
@@ -4875,18 +4875,18 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4436" level="5" /> <!-- Greater Resist Poison -->
-			<skill id="4437" level="5" /> <!-- Greater Resist Bleeding -->
-			<skill id="4628" level="1" /> <!-- Mysterious Aura -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="20" /> 
+			<skill id="4413" level="20" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4436" level="5" /> 
+			<skill id="4437" level="5" /> 
+			<skill id="4628" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4901,7 +4901,7 @@
 		</collision>
 	</npc>
 	<npc id="18197" level="78" type="Monster" name="Charm of Corner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="AreaName" value="conquerors_pddown" />
 			<param name="type" value="1" />
@@ -4923,18 +4923,18 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4436" level="5" /> <!-- Greater Resist Poison -->
-			<skill id="4437" level="5" /> <!-- Greater Resist Bleeding -->
-			<skill id="4628" level="1" /> <!-- Mysterious Aura -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="20" /> 
+			<skill id="4413" level="20" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4436" level="5" /> 
+			<skill id="4437" level="5" /> 
+			<skill id="4628" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4949,7 +4949,7 @@
 		</collision>
 	</npc>
 	<npc id="18198" level="78" type="Monster" name="Charm of Corner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="AreaName" value="conquerors_poison" />
 			<param name="type" value="2" />
@@ -4971,18 +4971,18 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4436" level="5" /> <!-- Greater Resist Poison -->
-			<skill id="4437" level="5" /> <!-- Greater Resist Bleeding -->
-			<skill id="4628" level="1" /> <!-- Mysterious Aura -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="20" /> 
+			<skill id="4413" level="20" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4436" level="5" /> 
+			<skill id="4437" level="5" /> 
+			<skill id="4628" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>
@@ -4997,7 +4997,7 @@
 		</collision>
 	</npc>
 	<npc id="18199" level="78" type="Monster" name="Charm of Corner">
-		<!-- Confirmed CT2.5 -->
+		
 		<parameters>
 			<param name="AreaName" value="conquerors_nonheal" />
 			<param name="type" value="3" />
@@ -5019,18 +5019,18 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="14" /> <!-- HP Increase (6x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="20" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4436" level="5" /> <!-- Greater Resist Poison -->
-			<skill id="4437" level="5" /> <!-- Greater Resist Bleeding -->
-			<skill id="4628" level="1" /> <!-- Mysterious Aura -->
+			<skill id="4408" level="14" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="20" /> 
+			<skill id="4413" level="20" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4436" level="5" /> 
+			<skill id="4437" level="5" /> 
+			<skill id="4628" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>6</sNpcPropHpRate>

@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="21800" level="77" type="Monster" name="Vassal Ghost">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
 			<param name="MoveAroundSocial1" value="120" />
 			<param name="MoveAroundSocial2" value="120" />
-			<skill name="DDMagicSlow" id="4567" level="8" /> <!-- NPC Eruption - Slow -->
+			<skill name="DDMagicSlow" id="4567" level="8" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
@@ -24,12 +24,12 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4274" level="1" /> <!-- Blunt Attack Weak Point -->
-			<skill id="4275" level="2" /> <!-- Sacred Attack Weak Point -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4408" level="10" /> <!-- HP Modifiers -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4567" level="8" /> <!-- NPC Eruption - Slow -->
+			<skill id="4274" level="1" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4567" level="8" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
@@ -41,27 +41,27 @@
 		</collision>
 		<dropLists>
 			<drop>
-				<item id="57" min="1853" max="3785" chance="70" /> <!-- Adena -->
-				<item id="212" min="1" max="1" chance="0.0004" /> <!-- Dasparion's Staff -->
-				<item id="2504" min="1" max="1" chance="0.0004" /> <!-- Meteor Shower -->
-				<item id="1344" min="10" max="30" chance="16.6667" /> <!-- Mithril Arrow -->
-				<item id="1867" min="1" max="3" chance="9.0909" /> <!-- Animal Skin -->
-				<item id="1872" min="1" max="1" chance="20" /> <!-- Animal Bone -->
-				<item id="1882" min="1" max="1" chance="2.8571" /> <!-- Leather -->
-				<item id="1894" min="1" max="1" chance="0.4405" /> <!-- Crafted Leather -->
-				<item id="4042" min="1" max="1" chance="1.7060" /> <!-- Enria -->
-				<item id="5272" min="1" max="1" chance="0.0114" /> <!-- Recipe: Greater Soulshot (S) Compressed Package(100%) -->
-				<item id="5532" min="1" max="1" chance="0.1147" /> <!-- Meteor Shower Head -->
-				<item id="5543" min="1" max="1" chance="0.1158" /> <!-- Dasparion's Staff Edge -->
-				<item id="8341" min="1" max="1" chance="0.0436" /> <!-- Spiritual Eye Piece -->
-				<item id="8346" min="1" max="1" chance="0.0374" /> <!-- Hammer Piece of Destroyer -->
-				<item id="8732" min="1" max="1" chance="0.1062" /> <!-- EtcItem" name="Life Stone: level 76 -->
-				<item id="8742" min="1" max="1" chance="0.0228" /> <!-- Mid-Grade Life Stone: level 76 -->
+				<item id="57" min="1853" max="3785" chance="70" /> 
+				<item id="212" min="1" max="1" chance="0.0004" /> 
+				<item id="2504" min="1" max="1" chance="0.0004" /> 
+				<item id="1344" min="10" max="30" chance="16.6667" /> 
+				<item id="1867" min="1" max="3" chance="9.0909" /> 
+				<item id="1872" min="1" max="1" chance="20" /> 
+				<item id="1882" min="1" max="1" chance="2.8571" /> 
+				<item id="1894" min="1" max="1" chance="0.4405" /> 
+				<item id="4042" min="1" max="1" chance="1.7060" /> 
+				<item id="5272" min="1" max="1" chance="0.0114" /> 
+				<item id="5532" min="1" max="1" chance="0.1147" /> 
+				<item id="5543" min="1" max="1" chance="0.1158" /> 
+				<item id="8341" min="1" max="1" chance="0.0436" /> 
+				<item id="8346" min="1" max="1" chance="0.0374" /> 
+				<item id="8732" min="1" max="1" chance="0.1062" /> 
+				<item id="8742" min="1" max="1" chance="0.0228" /> 
 			</drop>
 			<spoil>
-				<item id="4042" min="1" max="1" chance="7.6772" /> <!-- Enria -->
-				<item id="5167" min="1" max="1" chance="0.2047" /> <!-- Recipe: Blessed Spiritshot (S) Compressed Package (100%) -->
-				<item id="5529" min="1" max="1" chance="1.2637" /> <!-- Dragon Slayer Edge -->
+				<item id="4042" min="1" max="1" chance="7.6772" /> 
+				<item id="5167" min="1" max="1" chance="0.2047" /> 
+				<item id="5529" min="1" max="1" chance="1.2637" /> 
 			</spoil>
 		</dropLists>
 	</npc>
@@ -80,26 +80,26 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="107" max="191" chance="100" /> <!-- Adena -->
+					<item id="57" min="107" max="191" chance="100" /> 
 				</group>
 				<group chance="0.1506">
-					<item id="39" min="1" max="1" chance="50" /> <!-- Boots -->
-					<item id="51" min="1" max="1" chance="50" /> <!-- Bracer -->
+					<item id="39" min="1" max="1" chance="50" /> 
+					<item id="51" min="1" max="1" chance="50" /> 
 				</group>
 				<group chance="13.9517">
-					<item id="1930" min="1" max="1" chance="8.50362" /> <!-- Boot Lining -->
-					<item id="1864" min="1" max="1" chance="49.7452" /> <!-- Stem -->
-					<item id="1869" min="1" max="1" chance="24.8729" /> <!-- Iron Ore -->
-					<item id="1878" min="1" max="1" chance="9.94933" /> <!-- Braided Hemp -->
-					<item id="2151" min="1" max="1" chance="6.9289" /> <!-- Recipe: Necklace of Devotion -->
+					<item id="1930" min="1" max="1" chance="8.50362" /> 
+					<item id="1864" min="1" max="1" chance="49.7452" /> 
+					<item id="1869" min="1" max="1" chance="24.8729" /> 
+					<item id="1878" min="1" max="1" chance="9.94933" /> 
+					<item id="2151" min="1" max="1" chance="6.9289" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -123,25 +123,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="122" max="225" chance="100" /> <!-- Adena -->
+					<item id="57" min="122" max="225" chance="100" /> 
 				</group>
 				<group chance="0.214">
-					<item id="625" min="1" max="1" chance="58.785" /> <!-- Bone Shield -->
-					<item id="1148" min="1" max="1" chance="41.215" /> <!-- Hard Leather Helmet -->
+					<item id="625" min="1" max="1" chance="58.785" /> 
+					<item id="1148" min="1" max="1" chance="41.215" /> 
 				</group>
 				<group chance="10.7282">
-					<item id="1865" min="1" max="1" chance="37.805" /> <!-- Varnish -->
-					<item id="1870" min="1" max="1" chance="37.805" /> <!-- Coal -->
-					<item id="1879" min="1" max="1" chance="6.30115" /> <!-- Cokes -->
-					<item id="2176" min="1" max="1" chance="18.0888" /> <!-- Recipe: Leather Boots -->
+					<item id="1865" min="1" max="1" chance="37.805" /> 
+					<item id="1870" min="1" max="1" chance="37.805" /> 
+					<item id="1879" min="1" max="1" chance="6.30115" /> 
+					<item id="2176" min="1" max="1" chance="18.0888" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -165,28 +165,28 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="137" max="264" chance="100" /> <!-- Adena -->
+					<item id="57" min="137" max="264" chance="100" /> 
 				</group>
 				<group chance="0.0854">
-					<item id="40" min="1" max="1" chance="50" /> <!-- Leather Boots -->
-					<item id="604" min="1" max="1" chance="50" /> <!-- Crafted Leather Gloves -->
+					<item id="40" min="1" max="1" chance="50" /> 
+					<item id="604" min="1" max="1" chance="50" /> 
 				</group>
 				<group chance="8.168">
-					<item id="1934" min="1" max="1" chance="7.12659" /> <!-- Crafted Leather Gloves Lining -->
-					<item id="1931" min="1" max="1" chance="7.12659" /> <!-- Leather Boot Lining -->
-					<item id="2152" min="1" max="1" chance="7.67875" /> <!-- Recipe: Enchanted Necklace -->
-					<item id="1885" min="1" max="1" chance="3.63492" /> <!-- High Grade Suede -->
-					<item id="1871" min="1" max="1" chance="43.6129" /> <!-- Charcoal -->
-					<item id="1866" min="1" max="1" chance="29.0757" /> <!-- Suede -->
-					<item id="5220" min="1" max="1" chance="1.74461" /> <!-- Metal Hardener -->
+					<item id="1934" min="1" max="1" chance="7.12659" /> 
+					<item id="1931" min="1" max="1" chance="7.12659" /> 
+					<item id="2152" min="1" max="1" chance="7.67875" /> 
+					<item id="1885" min="1" max="1" chance="3.63492" /> 
+					<item id="1871" min="1" max="1" chance="43.6129" /> 
+					<item id="1866" min="1" max="1" chance="29.0757" /> 
+					<item id="5220" min="1" max="1" chance="1.74461" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -210,25 +210,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="154" max="308" chance="100" /> <!-- Adena -->
+					<item id="57" min="154" max="308" chance="100" /> 
 				</group>
 				<group chance="0.097">
-					<item id="46" min="1" max="1" chance="41.2371" /> <!-- Bronze Helmet -->
-					<item id="627" min="1" max="1" chance="58.7629" /> <!-- Aspis -->
+					<item id="46" min="1" max="1" chance="41.2371" /> 
+					<item id="627" min="1" max="1" chance="58.7629" /> 
 				</group>
 				<group chance="15.6557">
-					<item id="1867" min="1" max="1" chance="42.4778" /> <!-- Animal Skin -->
-					<item id="1872" min="1" max="1" chance="42.4778" /> <!-- Animal Bone -->
-					<item id="1882" min="1" max="1" chance="7.07985" /> <!-- Leather -->
-					<item id="2250" min="1" max="1" chance="7.96451" /> <!-- Recipe: Bone Arrow -->
+					<item id="1867" min="1" max="1" chance="42.4778" /> 
+					<item id="1872" min="1" max="1" chance="42.4778" /> 
+					<item id="1882" min="1" max="1" chance="7.07985" /> 
+					<item id="2250" min="1" max="1" chance="7.96451" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -252,31 +252,31 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="184" max="368" chance="100" /> <!-- Adena -->
+					<item id="57" min="184" max="368" chance="100" /> 
 				</group>
 				<group chance="0.0786">
-					<item id="2447" min="1" max="1" chance="16.6667" /> <!-- Gloves of Knowledge -->
-					<item id="2446" min="1" max="1" chance="16.6667" /> <!-- Reinforced Leather Gloves -->
-					<item id="2423" min="1" max="1" chance="16.6667" /> <!-- Boots of Knowledge -->
-					<item id="2422" min="1" max="1" chance="16.6667" /> <!-- Reinforced Leather Boots -->
-					<item id="553" min="1" max="1" chance="16.6667" /> <!-- Iron Boots -->
-					<item id="63" min="1" max="1" chance="16.6667" /> <!-- Gauntlets -->
+					<item id="2447" min="1" max="1" chance="16.6667" /> 
+					<item id="2446" min="1" max="1" chance="16.6667" /> 
+					<item id="2423" min="1" max="1" chance="16.6667" /> 
+					<item id="2422" min="1" max="1" chance="16.6667" /> 
+					<item id="553" min="1" max="1" chance="16.6667" /> 
+					<item id="63" min="1" max="1" chance="16.6667" /> 
 				</group>
 				<group chance="12.8763">
-					<item id="1940" min="1" max="1" chance="3.83418" /> <!-- Iron Boots Design -->
-					<item id="1889" min="1" max="1" chance="2.3982" /> <!-- Compound Braid -->
-					<item id="2154" min="1" max="1" chance="3.85126" /> <!-- Recipe: Elven Earring -->
-					<item id="1873" min="1" max="1" chance="14.3869" /> <!-- Silver Nugget -->
-					<item id="1868" min="1" max="1" chance="71.9321" /> <!-- Thread -->
-					<item id="5549" min="1" max="1" chance="3.59731" /> <!-- Metallic Thread -->
+					<item id="1940" min="1" max="1" chance="3.83418" /> 
+					<item id="1889" min="1" max="1" chance="2.3982" /> 
+					<item id="2154" min="1" max="1" chance="3.85126" /> 
+					<item id="1873" min="1" max="1" chance="14.3869" /> 
+					<item id="1868" min="1" max="1" chance="71.9321" /> 
+					<item id="5549" min="1" max="1" chance="3.59731" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -300,26 +300,26 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="216" max="433" chance="100" /> <!-- Adena -->
+					<item id="57" min="216" max="433" chance="100" /> 
 				</group>
 				<group chance="0.087">
-					<item id="47" min="1" max="1" chance="41.1494" /> <!-- Helmet -->
-					<item id="628" min="1" max="1" chance="58.8506" /> <!-- Hoplon -->
+					<item id="47" min="1" max="1" chance="41.1494" /> 
+					<item id="628" min="1" max="1" chance="58.8506" /> 
 				</group>
 				<group chance="17.8393">
-					<item id="1864" min="1" max="1" chance="61.0898" /> <!-- Stem -->
-					<item id="1869" min="1" max="1" chance="30.5449" /> <!-- Iron Ore -->
-					<item id="1880" min="1" max="1" chance="3.05449" /> <!-- Steel -->
-					<item id="2155" min="1" max="1" chance="4.90322" /> <!-- Recipe: Elven Ring -->
-					<item id="5550" min="1" max="1" chance="0.40753" /> <!-- Durable Metal Plate -->
+					<item id="1864" min="1" max="1" chance="61.0898" /> 
+					<item id="1869" min="1" max="1" chance="30.5449" /> 
+					<item id="1880" min="1" max="1" chance="3.05449" /> 
+					<item id="2155" min="1" max="1" chance="4.90322" /> 
+					<item id="5550" min="1" max="1" chance="0.40753" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -343,39 +343,39 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="253" max="504" chance="100" /> <!-- Adena -->
+					<item id="57" min="253" max="504" chance="100" /> 
 				</group>
 				<group chance="0.0416">
-					<item id="2448" min="1" max="1" chance="12.5" /> <!-- Manticore Skin Gloves -->
-					<item id="2449" min="1" max="1" chance="12.5" /> <!-- Brigandine Gauntlets -->
-					<item id="2450" min="1" max="1" chance="12.5" /> <!-- Elven Mithril Gloves -->
-					<item id="2426" min="1" max="1" chance="12.5" /> <!-- Elven Mithril Boots -->
-					<item id="2425" min="1" max="1" chance="12.5" /> <!-- Brigandine Boots -->
-					<item id="2424" min="1" max="1" chance="12.5" /> <!-- Manticore Skin Boots -->
-					<item id="606" min="1" max="1" chance="12.5" /> <!-- Rip Gauntlets -->
-					<item id="1124" min="1" max="1" chance="12.5" /> <!-- Boots of Power -->
+					<item id="2448" min="1" max="1" chance="12.5" /> 
+					<item id="2449" min="1" max="1" chance="12.5" /> 
+					<item id="2450" min="1" max="1" chance="12.5" /> 
+					<item id="2426" min="1" max="1" chance="12.5" /> 
+					<item id="2425" min="1" max="1" chance="12.5" /> 
+					<item id="2424" min="1" max="1" chance="12.5" /> 
+					<item id="606" min="1" max="1" chance="12.5" /> 
+					<item id="1124" min="1" max="1" chance="12.5" /> 
 				</group>
 				<group chance="18.6998">
-					<item id="2923" min="1" max="1" chance="1.39681" /> <!-- Manticore Skin Boot Lining -->
-					<item id="2924" min="1" max="1" chance="1.39681" /> <!-- Brigandine Boots Design -->
-					<item id="2925" min="1" max="1" chance="1.39681" /> <!-- Elven Mithril Boots Design -->
-					<item id="2926" min="1" max="1" chance="1.39681" /> <!-- Manticore Skin Gloves Lining -->
-					<item id="2927" min="1" max="1" chance="1.39681" /> <!-- Brigandine Gauntlets Pattern -->
-					<item id="2928" min="1" max="1" chance="1.39681" /> <!-- Elven Mithril Gloves Design -->
-					<item id="1946" min="1" max="1" chance="1.39681" /> <!-- Rip Gauntlets Pattern -->
-					<item id="1948" min="1" max="1" chance="1.39681" /> <!-- Boots of Power Pattern -->
-					<item id="1874" min="1" max="1" chance="2.75564" /> <!-- Oriharukon Ore -->
-					<item id="1865" min="1" max="1" chance="41.3272" /> <!-- Varnish -->
-					<item id="2157" min="1" max="1" chance="3.41554" /> <!-- Recipe: Omen Beast's Eye Earring -->
-					<item id="1870" min="1" max="1" chance="41.3272" /> <!-- Coal -->
+					<item id="2923" min="1" max="1" chance="1.39681" /> 
+					<item id="2924" min="1" max="1" chance="1.39681" /> 
+					<item id="2925" min="1" max="1" chance="1.39681" /> 
+					<item id="2926" min="1" max="1" chance="1.39681" /> 
+					<item id="2927" min="1" max="1" chance="1.39681" /> 
+					<item id="2928" min="1" max="1" chance="1.39681" /> 
+					<item id="1946" min="1" max="1" chance="1.39681" /> 
+					<item id="1948" min="1" max="1" chance="1.39681" /> 
+					<item id="1874" min="1" max="1" chance="2.75564" /> 
+					<item id="1865" min="1" max="1" chance="41.3272" /> 
+					<item id="2157" min="1" max="1" chance="3.41554" /> 
+					<item id="1870" min="1" max="1" chance="41.3272" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -399,29 +399,29 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="282" max="570" chance="100" /> <!-- Adena -->
+					<item id="57" min="282" max="570" chance="100" /> 
 				</group>
 				<group chance="0.0305">
-					<item id="2494" min="1" max="1" chance="37.0492" /> <!-- Plate Shield -->
-					<item id="2412" min="1" max="1" chance="25.9016" /> <!-- Plate Helmet -->
-					<item id="630" min="1" max="1" chance="37.0492" /> <!-- Square Shield -->
+					<item id="2494" min="1" max="1" chance="37.0492" /> 
+					<item id="2412" min="1" max="1" chance="25.9016" /> 
+					<item id="630" min="1" max="1" chance="37.0492" /> 
 				</group>
 				<group chance="17.1211">
-					<item id="2930" min="1" max="1" chance="2.71945" /> <!-- Plate Helmet Design -->
-					<item id="1956" min="1" max="1" chance="3.82919" /> <!-- Square Shield Fragment -->
-					<item id="2934" min="1" max="1" chance="3.82919" /> <!-- Plate Shield Fragment -->
-					<item id="1877" min="1" max="1" chance="2.0244" /> <!-- Adamantite Nugget -->
-					<item id="2160" min="1" max="1" chance="3.26498" /> <!-- Recipe: Moonstone Earring -->
-					<item id="1871" min="1" max="1" chance="50.5996" /> <!-- Charcoal -->
-					<item id="1866" min="1" max="1" chance="33.7332" /> <!-- Suede -->
+					<item id="2930" min="1" max="1" chance="2.71945" /> 
+					<item id="1956" min="1" max="1" chance="3.82919" /> 
+					<item id="2934" min="1" max="1" chance="3.82919" /> 
+					<item id="1877" min="1" max="1" chance="2.0244" /> 
+					<item id="2160" min="1" max="1" chance="3.26498" /> 
+					<item id="1871" min="1" max="1" chance="50.5996" /> 
+					<item id="1866" min="1" max="1" chance="33.7332" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -445,44 +445,44 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="320" max="650" chance="100" /> <!-- Adena -->
+					<item id="57" min="320" max="650" chance="100" /> 
 				</group>
 				<group chance="0.0306">
-					<item id="2453" min="1" max="1" chance="11.1111" /> <!-- Chain Gloves -->
-					<item id="2454" min="1" max="1" chance="11.1111" /> <!-- Karmian Gloves -->
-					<item id="2452" min="1" max="1" chance="11.1111" /> <!-- Reinforced Mithril Gloves -->
-					<item id="2433" min="1" max="1" chance="11.1111" /> <!-- Boots of Seal -->
-					<item id="2432" min="1" max="1" chance="11.1111" /> <!-- Dwarven Chain Boots -->
-					<item id="2431" min="1" max="1" chance="11.1111" /> <!-- Plated Leather Boots -->
-					<item id="2430" min="1" max="1" chance="11.1111" /> <!-- Karmian Boots -->
-					<item id="2429" min="1" max="1" chance="11.1111" /> <!-- Chain Boots -->
-					<item id="62" min="1" max="1" chance="11.1111" /> <!-- Mithril Boots -->
+					<item id="2453" min="1" max="1" chance="11.1111" /> 
+					<item id="2454" min="1" max="1" chance="11.1111" /> 
+					<item id="2452" min="1" max="1" chance="11.1111" /> 
+					<item id="2433" min="1" max="1" chance="11.1111" /> 
+					<item id="2432" min="1" max="1" chance="11.1111" /> 
+					<item id="2431" min="1" max="1" chance="11.1111" /> 
+					<item id="2430" min="1" max="1" chance="11.1111" /> 
+					<item id="2429" min="1" max="1" chance="11.1111" /> 
+					<item id="62" min="1" max="1" chance="11.1111" /> 
 				</group>
 				<group chance="20.1388">
-					<item id="2937" min="1" max="1" chance="0.92955" /> <!-- Chain Boots Part -->
-					<item id="2938" min="1" max="1" chance="0.92955" /> <!-- Karmian Boots Fabric -->
-					<item id="2939" min="1" max="1" chance="0.92955" /> <!-- Plate Leather Boot Lining -->
-					<item id="2940" min="1" max="1" chance="0.92955" /> <!-- Dwarven Chain Boots Part -->
-					<item id="2941" min="1" max="1" chance="0.92955" /> <!-- Boots of Seal Pattern -->
-					<item id="2942" min="1" max="1" chance="0.92955" /> <!-- Reinforced Mithril Gloves Design -->
-					<item id="2943" min="1" max="1" chance="0.92955" /> <!-- Chain Gloves Design -->
-					<item id="2944" min="1" max="1" chance="0.92955" /> <!-- Karmian Gloves Fabric -->
-					<item id="1958" min="1" max="1" chance="0.92955" /> <!-- Mithril Boots Design -->
-					<item id="4041" min="1" max="1" chance="0.27013" /> <!-- Mold Hardener -->
-					<item id="1867" min="1" max="1" chance="41.356" /> <!-- Animal Skin -->
-					<item id="1872" min="1" max="1" chance="41.356" /> <!-- Animal Bone -->
-					<item id="1875" min="1" max="1" chance="2.06815" /> <!-- Stone of Purity -->
-					<item id="1881" min="1" max="1" chance="4.1358" /> <!-- Coarse Bone Powder -->
-					<item id="2163" min="1" max="1" chance="1.58301" /> <!-- Recipe: Earring of Protection -->
-					<item id="8723" min="1" max="1" chance="0.865" /> <!-- Life Stone: level 46 -->
+					<item id="2937" min="1" max="1" chance="0.92955" /> 
+					<item id="2938" min="1" max="1" chance="0.92955" /> 
+					<item id="2939" min="1" max="1" chance="0.92955" /> 
+					<item id="2940" min="1" max="1" chance="0.92955" /> 
+					<item id="2941" min="1" max="1" chance="0.92955" /> 
+					<item id="2942" min="1" max="1" chance="0.92955" /> 
+					<item id="2943" min="1" max="1" chance="0.92955" /> 
+					<item id="2944" min="1" max="1" chance="0.92955" /> 
+					<item id="1958" min="1" max="1" chance="0.92955" /> 
+					<item id="4041" min="1" max="1" chance="0.27013" /> 
+					<item id="1867" min="1" max="1" chance="41.356" /> 
+					<item id="1872" min="1" max="1" chance="41.356" /> 
+					<item id="1875" min="1" max="1" chance="2.06815" /> 
+					<item id="1881" min="1" max="1" chance="4.1358" /> 
+					<item id="2163" min="1" max="1" chance="1.58301" /> 
+					<item id="8723" min="1" max="1" chance="0.865" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -506,33 +506,33 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="364" max="740" chance="100" /> <!-- Adena -->
+					<item id="57" min="364" max="740" chance="100" /> 
 				</group>
 				<group chance="0.0221">
-					<item id="2496" min="1" max="1" chance="38.914" /> <!-- Dwarven Chain Shield -->
-					<item id="632" min="1" max="1" chance="35.7466" /> <!-- Knight's Shield -->
-					<item id="500" min="1" max="1" chance="25.3394" /> <!-- Great Helmet -->
+					<item id="2496" min="1" max="1" chance="38.914" /> 
+					<item id="632" min="1" max="1" chance="35.7466" /> 
+					<item id="500" min="1" max="1" chance="25.3394" /> 
 				</group>
 				<group chance="21.3755">
-					<item id="2947" min="1" max="1" chance="2.22685" /> <!-- Dwarven Chain Shield Fragment -->
-					<item id="1972" min="1" max="1" chance="2.49444" /> <!-- Knight's Shield Fragment -->
-					<item id="1971" min="1" max="1" chance="1.90873" /> <!-- Great Helmet Material -->
-					<item id="4042" min="1" max="1" chance="0.51975" /> <!-- Enria -->
-					<item id="1876" min="1" max="1" chance="6.23518" /> <!-- Mithril Ore -->
-					<item id="2166" min="1" max="1" chance="1.05729" /> <!-- Recipe: Earrings of Binding (100%) -->
-					<item id="1868" min="1" max="1" chance="62.3518" /> <!-- Thread -->
-					<item id="1873" min="1" max="1" chance="12.4704" /> <!-- Silver Nugget -->
-					<item id="1895" min="1" max="1" chance="8.90739" /> <!-- Metallic Fiber -->
-					<item id="8724" min="1" max="1" chance="1.21822" /> <!-- Life Stone: level 49 -->
-					<item id="8734" min="1" max="1" chance="0.61004" /> <!-- Mid-Grade Life Stone: level 49 -->
+					<item id="2947" min="1" max="1" chance="2.22685" /> 
+					<item id="1972" min="1" max="1" chance="2.49444" /> 
+					<item id="1971" min="1" max="1" chance="1.90873" /> 
+					<item id="4042" min="1" max="1" chance="0.51975" /> 
+					<item id="1876" min="1" max="1" chance="6.23518" /> 
+					<item id="2166" min="1" max="1" chance="1.05729" /> 
+					<item id="1868" min="1" max="1" chance="62.3518" /> 
+					<item id="1873" min="1" max="1" chance="12.4704" /> 
+					<item id="1895" min="1" max="1" chance="8.90739" /> 
+					<item id="8724" min="1" max="1" chance="1.21822" /> 
+					<item id="8734" min="1" max="1" chance="0.61004" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -556,30 +556,30 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="413" max="839" chance="100" /> <!-- Adena -->
+					<item id="57" min="413" max="839" chance="100" /> 
 				</group>
 				<group chance="0.0174">
-					<item id="64" min="1" max="1" chance="50" /> <!-- Composite Boots -->
-					<item id="608" min="1" max="1" chance="50" /> <!-- Mithril Gauntlets -->
+					<item id="64" min="1" max="1" chance="50" /> 
+					<item id="608" min="1" max="1" chance="50" /> 
 				</group>
 				<group chance="30.0371">
-					<item id="2956" min="1" max="1" chance="2.07077" /> <!-- Composite Boots Part -->
-					<item id="1981" min="1" max="1" chance="2.07077" /> <!-- Mithril Gauntlets Design -->
-					<item id="4039" min="1" max="1" chance="0.78237" /> <!-- Mold Glue -->
-					<item id="2169" min="1" max="1" chance="0.41549" /> <!-- Recipe: Necklace of Binding -->
-					<item id="1884" min="1" max="1" chance="14.4408" /> <!-- Cord -->
-					<item id="1878" min="1" max="1" chance="9.38673" /> <!-- Braided Hemp -->
-					<item id="1869" min="1" max="1" chance="23.4663" /> <!-- Iron Ore -->
-					<item id="1864" min="1" max="1" chance="46.9323" /> <!-- Stem -->
-					<item id="8725" min="1" max="1" chance="0.43446" /> <!-- Life Stone: level 52 -->
+					<item id="2956" min="1" max="1" chance="2.07077" /> 
+					<item id="1981" min="1" max="1" chance="2.07077" /> 
+					<item id="4039" min="1" max="1" chance="0.78237" /> 
+					<item id="2169" min="1" max="1" chance="0.41549" /> 
+					<item id="1884" min="1" max="1" chance="14.4408" /> 
+					<item id="1878" min="1" max="1" chance="9.38673" /> 
+					<item id="1869" min="1" max="1" chance="23.4663" /> 
+					<item id="1864" min="1" max="1" chance="46.9323" /> 
+					<item id="8725" min="1" max="1" chance="0.43446" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -603,30 +603,30 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="464" max="945" chance="100" /> <!-- Adena -->
+					<item id="57" min="464" max="945" chance="100" /> 
 				</group>
 				<group chance="0.0097">
-					<item id="2497" min="1" max="1" chance="58.7629" /> <!-- Full Plate Shield -->
-					<item id="2414" min="1" max="1" chance="41.2371" /> <!-- Full Plate Helmet -->
+					<item id="2497" min="1" max="1" chance="58.7629" /> 
+					<item id="2414" min="1" max="1" chance="41.2371" /> 
 				</group>
 				<group chance="17.4353">
-					<item id="2966" min="1" max="1" chance="3.33633" /> <!-- Full Plate Shield Fragment -->
-					<item id="2959" min="1" max="1" chance="2.10894" /> <!-- Full Plate Helmet Design -->
-					<item id="1879" min="1" max="1" chance="6.77476" /> <!-- Cokes -->
-					<item id="1875" min="1" max="1" chance="2.71002" /> <!-- Stone of Purity -->
-					<item id="1870" min="1" max="1" chance="40.6457" /> <!-- Coal -->
-					<item id="1865" min="1" max="1" chance="40.6457" /> <!-- Varnish -->
-					<item id="4040" min="1" max="1" chance="0.81329" /> <!-- Mold Lubricant -->
-					<item id="4126" min="1" max="1" chance="0.67105" /> <!-- Recipe: Adamantite Earrings -->
-					<item id="8726" min="1" max="1" chance="2.2942" /> <!-- Life Stone: level 55 -->
+					<item id="2966" min="1" max="1" chance="3.33633" /> 
+					<item id="2959" min="1" max="1" chance="2.10894" /> 
+					<item id="1879" min="1" max="1" chance="6.77476" /> 
+					<item id="1875" min="1" max="1" chance="2.71002" /> 
+					<item id="1870" min="1" max="1" chance="40.6457" /> 
+					<item id="1865" min="1" max="1" chance="40.6457" /> 
+					<item id="4040" min="1" max="1" chance="0.81329" /> 
+					<item id="4126" min="1" max="1" chance="0.67105" /> 
+					<item id="8726" min="1" max="1" chance="2.2942" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -650,35 +650,35 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="519" max="1060" chance="100" /> <!-- Adena -->
+					<item id="57" min="519" max="1060" chance="100" /> 
 				</group>
 				<group chance="0.0076">
-					<item id="2464" min="1" max="1" chance="25" /> <!-- Avadon Gloves -->
-					<item id="612" min="1" max="1" chance="25" /> <!-- Zubei's Gauntlets -->
-					<item id="600" min="1" max="1" chance="25" /> <!-- Avadon Boots -->
-					<item id="554" min="1" max="1" chance="25" /> <!-- Zubei's Boots -->
+					<item id="2464" min="1" max="1" chance="25" /> 
+					<item id="612" min="1" max="1" chance="25" /> 
+					<item id="600" min="1" max="1" chance="25" /> 
+					<item id="554" min="1" max="1" chance="25" /> 
 				</group>
 				<group chance="12.6526">
-					<item id="4073" min="1" max="1" chance="1.95928" /> <!-- Avadon Gloves Part -->
-					<item id="4098" min="1" max="1" chance="1.95928" /> <!-- Avadon Boots Design -->
-					<item id="4100" min="1" max="1" chance="1.95928" /> <!-- Zubei's Gauntlets Part -->
-					<item id="4097" min="1" max="1" chance="1.95928" /> <!-- Zubei's Boots Design -->
-					<item id="5220" min="1" max="1" chance="2.00828" /> <!-- Metal Hardener -->
-					<item id="4129" min="1" max="1" chance="0.54376" /> <!-- Recipe: Earrings of Black Ore -->
-					<item id="4041" min="1" max="1" chance="0.43706" /> <!-- Mold Hardener -->
-					<item id="1885" min="1" max="1" chance="4.18412" /> <!-- High Grade Suede -->
-					<item id="1871" min="1" max="1" chance="50.2039" /> <!-- Charcoal -->
-					<item id="1866" min="1" max="1" chance="33.469" /> <!-- Suede -->
-					<item id="8727" min="1" max="1" chance="0.65836" /> <!-- Life Stone: level 58 -->
-					<item id="8737" min="1" max="1" chance="0.65836" /> <!-- Mid-Grade Life Stone: level 58 -->
+					<item id="4073" min="1" max="1" chance="1.95928" /> 
+					<item id="4098" min="1" max="1" chance="1.95928" /> 
+					<item id="4100" min="1" max="1" chance="1.95928" /> 
+					<item id="4097" min="1" max="1" chance="1.95928" /> 
+					<item id="5220" min="1" max="1" chance="2.00828" /> 
+					<item id="4129" min="1" max="1" chance="0.54376" /> 
+					<item id="4041" min="1" max="1" chance="0.43706" /> 
+					<item id="1885" min="1" max="1" chance="4.18412" /> 
+					<item id="1871" min="1" max="1" chance="50.2039" /> 
+					<item id="1866" min="1" max="1" chance="33.469" /> 
+					<item id="8727" min="1" max="1" chance="0.65836" /> 
+					<item id="8737" min="1" max="1" chance="0.65836" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -702,34 +702,34 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="580" max="1179" chance="100" /> <!-- Adena -->
+					<item id="57" min="580" max="1179" chance="100" /> 
 				</group>
 				<group chance="0.0068">
-					<item id="2415" min="1" max="1" chance="20.5882" /> <!-- Avadon Circlet -->
-					<item id="673" min="1" max="1" chance="29.4118" /> <!-- Avadon Shield -->
-					<item id="503" min="1" max="1" chance="20.5882" /> <!-- Zubei's Helmet -->
-					<item id="633" min="1" max="1" chance="29.4118" /> <!-- Zubei's Shield -->
+					<item id="2415" min="1" max="1" chance="20.5882" /> 
+					<item id="673" min="1" max="1" chance="29.4118" /> 
+					<item id="503" min="1" max="1" chance="20.5882" /> 
+					<item id="633" min="1" max="1" chance="29.4118" /> 
 				</group>
 				<group chance="13.7963">
-					<item id="4439" min="1" max="1" chance="2.65433" /> <!-- Avadon Shield Fragment -->
-					<item id="4102" min="1" max="1" chance="1.72872" /> <!-- Zubei's Helmet Design -->
-					<item id="4101" min="1" max="1" chance="2.23103" /> <!-- Zubei's Shield Fragment -->
-					<item id="4072" min="1" max="1" chance="1.72872" /> <!-- Avadon Circlet Pattern -->
-					<item id="4130" min="1" max="1" chance="0.62481" /> <!-- Recipe: Ring of Black Ore -->
-					<item id="1882" min="1" max="1" chance="7.47229" /> <!-- Leather -->
-					<item id="1867" min="1" max="1" chance="32.9472" /> <!-- Animal Skin -->
-					<item id="4042" min="1" max="1" chance="0.20803" /> <!-- Enria -->
-					<item id="1872" min="1" max="1" chance="48.3224" /> <!-- Animal Bone -->
-					<item id="1894" min="1" max="1" chance="1.24961" /> <!-- Crafted Leather -->
-					<item id="8728" min="1" max="1" chance="0.83283" /> <!-- Life Stone: level 61 -->
+					<item id="4439" min="1" max="1" chance="2.65433" /> 
+					<item id="4102" min="1" max="1" chance="1.72872" /> 
+					<item id="4101" min="1" max="1" chance="2.23103" /> 
+					<item id="4072" min="1" max="1" chance="1.72872" /> 
+					<item id="4130" min="1" max="1" chance="0.62481" /> 
+					<item id="1882" min="1" max="1" chance="7.47229" /> 
+					<item id="1867" min="1" max="1" chance="32.9472" /> 
+					<item id="4042" min="1" max="1" chance="0.20803" /> 
+					<item id="1872" min="1" max="1" chance="48.3224" /> 
+					<item id="1894" min="1" max="1" chance="1.24961" /> 
+					<item id="8728" min="1" max="1" chance="0.83283" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -753,34 +753,34 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="646" max="1308" chance="100" /> <!-- Adena -->
+					<item id="57" min="646" max="1308" chance="100" /> 
 				</group>
 				<group chance="0.006">
-					<item id="2487" min="1" max="1" chance="25" /> <!-- Blue Wolf Gloves -->
-					<item id="2475" min="1" max="1" chance="25" /> <!-- Doom Gloves -->
-					<item id="2439" min="1" max="1" chance="25" /> <!-- Blue Wolf Boots -->
-					<item id="601" min="1" max="1" chance="25" /> <!-- Boots of Doom -->
+					<item id="2487" min="1" max="1" chance="25" /> 
+					<item id="2475" min="1" max="1" chance="25" /> 
+					<item id="2439" min="1" max="1" chance="25" /> 
+					<item id="601" min="1" max="1" chance="25" /> 
 				</group>
 				<group chance="15.0659">
-					<item id="4090" min="1" max="1" chance="1.75695" /> <!-- Blue Wolf Boots Design -->
-					<item id="4096" min="1" max="1" chance="1.75695" /> <!-- Blue Wolf Gloves Fabric -->
-					<item id="4099" min="1" max="1" chance="1.75695" /> <!-- Doom Boots Part -->
-					<item id="4091" min="1" max="1" chance="1.75695" /> <!-- Doom Gloves Part -->
-					<item id="5230" min="1" max="1" chance="0.06969" /> <!-- Recipe: Mithril Arrow (100%) -->
-					<item id="5549" min="1" max="1" chance="4.33827" /> <!-- Metallic Thread -->
-					<item id="4044" min="1" max="1" chance="1.18081" /> <!-- Thons -->
-					<item id="1889" min="1" max="1" chance="2.7539" /> <!-- Compound Braid -->
-					<item id="1873" min="1" max="1" chance="17.4673" /> <!-- Silver Nugget -->
-					<item id="1868" min="1" max="1" chance="66.3751" /> <!-- Thread -->
-					<item id="8739" min="1" max="1" chance="0.78721" /> <!-- Mid-Grade Life Stone: level 64 -->
+					<item id="4090" min="1" max="1" chance="1.75695" /> 
+					<item id="4096" min="1" max="1" chance="1.75695" /> 
+					<item id="4099" min="1" max="1" chance="1.75695" /> 
+					<item id="4091" min="1" max="1" chance="1.75695" /> 
+					<item id="5230" min="1" max="1" chance="0.06969" /> 
+					<item id="5549" min="1" max="1" chance="4.33827" /> 
+					<item id="4044" min="1" max="1" chance="1.18081" /> 
+					<item id="1889" min="1" max="1" chance="2.7539" /> 
+					<item id="1873" min="1" max="1" chance="17.4673" /> 
+					<item id="1868" min="1" max="1" chance="66.3751" /> 
+					<item id="8739" min="1" max="1" chance="0.78721" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -804,33 +804,33 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="714" max="1448" chance="100" /> <!-- Adena -->
+					<item id="57" min="714" max="1448" chance="100" /> 
 				</group>
 				<group chance="0.0051">
-					<item id="110" min="1" max="1" chance="41.1765" /> <!-- Doom Shield -->
-					<item id="2416" min="1" max="1" chance="29.4118" /> <!-- Blue Wolf Helmet -->
-					<item id="2417" min="1" max="1" chance="29.4118" /> <!-- Doom Helmet -->
+					<item id="110" min="1" max="1" chance="41.1765" /> 
+					<item id="2416" min="1" max="1" chance="29.4118" /> 
+					<item id="2417" min="1" max="1" chance="29.4118" /> 
 				</group>
 				<group chance="19.2614">
-					<item id="4089" min="1" max="1" chance="1.70704" /> <!-- Doom Helmet Pattern -->
-					<item id="4088" min="1" max="1" chance="1.70704" /> <!-- Blue Wolf Helmet Design -->
-					<item id="4077" min="1" max="1" chance="2.03152" /> <!-- Doom Shield Fragment -->
-					<item id="5550" min="1" max="1" chance="0.60224" /> <!-- Durable Metal Plate -->
-					<item id="5434" min="1" max="1" chance="0.01713" /> <!-- Recipe: Dragon Slayer(60%) -->
-					<item id="4043" min="1" max="1" chance="0.40859" /> <!-- Asofe -->
-					<item id="1880" min="1" max="1" chance="14.8333" /> <!-- Steel -->
-					<item id="1869" min="1" max="1" chance="25.9586" /> <!-- Iron Ore -->
-					<item id="1864" min="1" max="1" chance="51.9173" /> <!-- Stem -->
-					<item id="8729" min="1" max="1" chance="0.40859" /> <!-- Life Stone: level 64 -->
-					<item id="8739" min="1" max="1" chance="0.40859" /> <!-- Mid-Grade Life Stone: level 64 -->
+					<item id="4089" min="1" max="1" chance="1.70704" /> 
+					<item id="4088" min="1" max="1" chance="1.70704" /> 
+					<item id="4077" min="1" max="1" chance="2.03152" /> 
+					<item id="5550" min="1" max="1" chance="0.60224" /> 
+					<item id="5434" min="1" max="1" chance="0.01713" /> 
+					<item id="4043" min="1" max="1" chance="0.40859" /> 
+					<item id="1880" min="1" max="1" chance="14.8333" /> 
+					<item id="1869" min="1" max="1" chance="25.9586" /> 
+					<item id="1864" min="1" max="1" chance="51.9173" /> 
+					<item id="8729" min="1" max="1" chance="0.40859" /> 
+					<item id="8739" min="1" max="1" chance="0.40859" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -854,35 +854,35 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="786" max="1596" chance="100" /> <!-- Adena -->
+					<item id="57" min="786" max="1596" chance="100" /> 
 				</group>
 				<group chance="0.0052">
-					<item id="5296" min="1" max="1" chance="25" /> <!-- Sealed Tallum Boots -->
-					<item id="5295" min="1" max="1" chance="25" /> <!-- Sealed Tallum Gloves -->
-					<item id="5291" min="1" max="1" chance="25" /> <!-- Sealed Dark Crystal Boots -->
-					<item id="5290" min="1" max="1" chance="25" /> <!-- Sealed Dark Crystal Gloves -->
+					<item id="5296" min="1" max="1" chance="25" /> 
+					<item id="5295" min="1" max="1" chance="25" /> 
+					<item id="5291" min="1" max="1" chance="25" /> 
+					<item id="5290" min="1" max="1" chance="25" /> 
 				</group>
 				<group chance="13.6809">
-					<item id="5509" min="1" max="1" chance="1.23238" /> <!-- Sealed Tallum Gloves Design -->
-					<item id="5508" min="1" max="1" chance="1.23238" /> <!-- Sealed Dark Crystal Gloves Design -->
-					<item id="5497" min="1" max="1" chance="1.23238" /> <!-- Sealed Tallum Boots Lining -->
-					<item id="5496" min="1" max="1" chance="1.23238" /> <!-- Sealed Dark Crystal Boots Lining -->
-					<item id="4043" min="1" max="1" chance="0.74849" /> <!-- Asofe -->
-					<item id="5440" min="1" max="1" chance="0.02631" /> <!-- Recipe: Elysian(60%) -->
-					<item id="4039" min="1" max="1" chance="1.49478" /> <!-- Mold Glue -->
-					<item id="1874" min="1" max="1" chance="2.99542" /> <!-- Oriharukon Ore -->
-					<item id="1870" min="1" max="1" chance="45.6841" /> <!-- Coal -->
-					<item id="1865" min="1" max="1" chance="42.9972" /> <!-- Varnish -->
-					<item id="8730" min="1" max="1" chance="0.5621" /> <!-- Life Stone: level 67 -->
-					<item id="8740" min="1" max="1" chance="0.5621" /> <!-- Mid-Grade Life Stone: level 67 -->
+					<item id="5509" min="1" max="1" chance="1.23238" /> 
+					<item id="5508" min="1" max="1" chance="1.23238" /> 
+					<item id="5497" min="1" max="1" chance="1.23238" /> 
+					<item id="5496" min="1" max="1" chance="1.23238" /> 
+					<item id="4043" min="1" max="1" chance="0.74849" /> 
+					<item id="5440" min="1" max="1" chance="0.02631" /> 
+					<item id="4039" min="1" max="1" chance="1.49478" /> 
+					<item id="1874" min="1" max="1" chance="2.99542" /> 
+					<item id="1870" min="1" max="1" chance="45.6841" /> 
+					<item id="1865" min="1" max="1" chance="42.9972" /> 
+					<item id="8730" min="1" max="1" chance="0.5621" /> 
+					<item id="8740" min="1" max="1" chance="0.5621" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -906,32 +906,32 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="860" max="1756" chance="100" /> <!-- Adena -->
+					<item id="57" min="860" max="1756" chance="100" /> 
 				</group>
 				<group chance="0.0044">
-					<item id="5294" min="1" max="1" chance="29.5454" /> <!-- Sealed Tallum Helmet -->
-					<item id="5292" min="1" max="1" chance="40.9091" /> <!-- Sealed Dark Crystal Shield -->
-					<item id="5289" min="1" max="1" chance="29.5454" /> <!-- Sealed Dark Crystal Helmet -->
+					<item id="5294" min="1" max="1" chance="29.5454" /> 
+					<item id="5292" min="1" max="1" chance="40.9091" /> 
+					<item id="5289" min="1" max="1" chance="29.5454" /> 
 				</group>
 				<group chance="13.7273">
-					<item id="5526" min="1" max="1" chance="1.18523" /> <!-- Sealed Tallum Helm Design -->
-					<item id="5525" min="1" max="1" chance="1.18523" /> <!-- Sealed Dark Crystal Helmet Design -->
-					<item id="5494" min="1" max="1" chance="1.60993" /> <!-- Sealed Dark Crystal Shield Fragment -->
-					<item id="4041" min="1" max="1" chance="0.30887" /> <!-- Mold Hardener -->
-					<item id="4040" min="1" max="1" chance="0.61775" /> <!-- Mold Lubricant -->
-					<item id="1877" min="1" max="1" chance="3.71668" /> <!-- Adamantite Nugget -->
-					<item id="1871" min="1" max="1" chance="45.5297" /> <!-- Charcoal -->
-					<item id="1866" min="1" max="1" chance="45.5297" /> <!-- Suede -->
-					<item id="6901" min="1" max="1" chance="0.07722" /> <!-- Recipe: Shining Arrow (100%) -->
-					<item id="8730" min="1" max="1" chance="0.23967" /> <!-- Life Stone: level 67 -->
+					<item id="5526" min="1" max="1" chance="1.18523" /> 
+					<item id="5525" min="1" max="1" chance="1.18523" /> 
+					<item id="5494" min="1" max="1" chance="1.60993" /> 
+					<item id="4041" min="1" max="1" chance="0.30887" /> 
+					<item id="4040" min="1" max="1" chance="0.61775" /> 
+					<item id="1877" min="1" max="1" chance="3.71668" /> 
+					<item id="1871" min="1" max="1" chance="45.5297" /> 
+					<item id="1866" min="1" max="1" chance="45.5297" /> 
+					<item id="6901" min="1" max="1" chance="0.07722" /> 
+					<item id="8730" min="1" max="1" chance="0.23967" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -955,34 +955,34 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="941" max="1920" chance="100" /> <!-- Adena -->
+					<item id="57" min="941" max="1920" chance="100" /> 
 				</group>
 				<group chance="0.006">
-					<item id="5296" min="1" max="1" chance="25" /> <!-- Sealed Tallum Boots -->
-					<item id="5295" min="1" max="1" chance="25" /> <!-- Sealed Tallum Gloves -->
-					<item id="5291" min="1" max="1" chance="25" /> <!-- Sealed Dark Crystal Boots -->
-					<item id="5290" min="1" max="1" chance="25" /> <!-- Sealed Dark Crystal Gloves -->
+					<item id="5296" min="1" max="1" chance="25" /> 
+					<item id="5295" min="1" max="1" chance="25" /> 
+					<item id="5291" min="1" max="1" chance="25" /> 
+					<item id="5290" min="1" max="1" chance="25" /> 
 				</group>
 				<group chance="20.1818">
-					<item id="5509" min="1" max="1" chance="1.00288" /> <!-- Sealed Tallum Gloves Design -->
-					<item id="5508" min="1" max="1" chance="1.00288" /> <!-- Sealed Dark Crystal Gloves Design -->
-					<item id="5497" min="1" max="1" chance="1.00288" /> <!-- Sealed Tallum Boots Lining -->
-					<item id="5496" min="1" max="1" chance="1.00288" /> <!-- Sealed Dark Crystal Boots Lining -->
-					<item id="4041" min="1" max="1" chance="0.34338" /> <!-- Mold Hardener -->
-					<item id="1881" min="1" max="1" chance="7.39528" /> <!-- Coarse Bone Powder -->
-					<item id="1875" min="1" max="1" chance="1.37252" /> <!-- Stone of Purity -->
-					<item id="1872" min="1" max="1" chance="45.045" /> <!-- Animal Bone -->
-					<item id="1867" min="1" max="1" chance="41.2912" /> <!-- Animal Skin -->
-					<item id="1808" min="1" max="1" chance="0.02527" /> <!-- Recipe: Soulshot: S Grade -->
-					<item id="8731" min="1" max="1" chance="0.51581" /> <!-- Life Stone: level 70 -->
+					<item id="5509" min="1" max="1" chance="1.00288" /> 
+					<item id="5508" min="1" max="1" chance="1.00288" /> 
+					<item id="5497" min="1" max="1" chance="1.00288" /> 
+					<item id="5496" min="1" max="1" chance="1.00288" /> 
+					<item id="4041" min="1" max="1" chance="0.34338" /> 
+					<item id="1881" min="1" max="1" chance="7.39528" /> 
+					<item id="1875" min="1" max="1" chance="1.37252" /> 
+					<item id="1872" min="1" max="1" chance="45.045" /> 
+					<item id="1867" min="1" max="1" chance="41.2912" /> 
+					<item id="1808" min="1" max="1" chance="0.02527" /> 
+					<item id="8731" min="1" max="1" chance="0.51581" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1006,32 +1006,32 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="1025" max="2092" chance="100" /> <!-- Adena -->
+					<item id="57" min="1025" max="2092" chance="100" /> 
 				</group>
 				<group chance="0.0051">
-					<item id="5294" min="1" max="1" chance="29.4118" /> <!-- Sealed Tallum Helmet -->
-					<item id="5292" min="1" max="1" chance="41.1765" /> <!-- Sealed Dark Crystal Shield -->
-					<item id="5289" min="1" max="1" chance="29.4118" /> <!-- Sealed Dark Crystal Helmet -->
+					<item id="5294" min="1" max="1" chance="29.4118" /> 
+					<item id="5292" min="1" max="1" chance="41.1765" /> 
+					<item id="5289" min="1" max="1" chance="29.4118" /> 
 				</group>
 				<group chance="51.2389">
-					<item id="5525" min="1" max="1" chance="0.37842" /> <!-- Sealed Dark Crystal Helmet Design -->
-					<item id="5494" min="1" max="1" chance="0.51406" /> <!-- Sealed Dark Crystal Shield Fragment -->
-					<item id="5526" min="1" max="1" chance="0.37842" /> <!-- Sealed Tallum Helm Design -->
-					<item id="3036" min="1" max="1" chance="0.00937" /> <!-- Recipe: Spiritshot S -->
-					<item id="1895" min="1" max="1" chance="5.91406" /> <!-- Metallic Fiber -->
-					<item id="1876" min="1" max="1" chance="26.3755" /> <!-- Mithril Ore -->
-					<item id="1873" min="1" max="1" chance="7.50641" /> <!-- Silver Nugget -->
-					<item id="1868" min="1" max="1" chance="39.0328" /> <!-- Thread -->
-					<item id="1344" min="10" max="30" chance="19.5164" /> <!-- Mithril Arrow -->
-					<item id="4042" min="1" max="1" chance="0.37452" /> <!-- Enria -->
+					<item id="5525" min="1" max="1" chance="0.37842" /> 
+					<item id="5494" min="1" max="1" chance="0.51406" /> 
+					<item id="5526" min="1" max="1" chance="0.37842" /> 
+					<item id="3036" min="1" max="1" chance="0.00937" /> 
+					<item id="1895" min="1" max="1" chance="5.91406" /> 
+					<item id="1876" min="1" max="1" chance="26.3755" /> 
+					<item id="1873" min="1" max="1" chance="7.50641" /> 
+					<item id="1868" min="1" max="1" chance="39.0328" /> 
+					<item id="1344" min="10" max="30" chance="19.5164" /> 
+					<item id="4042" min="1" max="1" chance="0.37452" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1055,33 +1055,33 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="1110" max="2273" chance="100" /> <!-- Adena -->
+					<item id="57" min="1110" max="2273" chance="100" /> 
 				</group>
 				<group chance="0.0048">
-					<item id="5319" min="1" max="1" chance="25" /> <!-- Sealed Majestic Boots -->
-					<item id="5318" min="1" max="1" chance="25" /> <!-- Sealed Majestic Gauntlets -->
-					<item id="5314" min="1" max="1" chance="25" /> <!-- Sealed Boots of Nightmare -->
-					<item id="5313" min="1" max="1" chance="25" /> <!-- Sealed Gauntlets of Nightmare -->
+					<item id="5319" min="1" max="1" chance="25" /> 
+					<item id="5318" min="1" max="1" chance="25" /> 
+					<item id="5314" min="1" max="1" chance="25" /> 
+					<item id="5313" min="1" max="1" chance="25" /> 
 				</group>
 				<group chance="2.6372">
-					<item id="5515" min="1" max="1" chance="6.53724" /> <!-- Sealed Majestic Gauntlets Design -->
-					<item id="5514" min="1" max="1" chance="6.53724" /> <!-- Sealed Gauntlets of Nightmare Design -->
-					<item id="5503" min="1" max="1" chance="6.53724" /> <!-- Sealed Majestic Boots Lining -->
-					<item id="5502" min="1" max="1" chance="6.53724" /> <!-- Sealed Boots of Nightmare Lining -->
-					<item id="4044" min="1" max="1" chance="20.6469" /> <!-- Thons -->
-					<item id="4041" min="1" max="1" chance="5.38829" /> <!-- Mold Hardener -->
-					<item id="4039" min="1" max="1" chance="20.6469" /> <!-- Mold Glue -->
-					<item id="1894" min="1" max="1" chance="21.7314" /> <!-- Crafted Leather -->
-					<item id="959" min="1" max="1" chance="0.02654" /> <!-- Scroll: Enchant Weapon (Grade S) -->
-					<item id="8732" min="1" max="1" chance="5.41104" /> <!-- Life Stone: level 76 -->
+					<item id="5515" min="1" max="1" chance="6.53724" /> 
+					<item id="5514" min="1" max="1" chance="6.53724" /> 
+					<item id="5503" min="1" max="1" chance="6.53724" /> 
+					<item id="5502" min="1" max="1" chance="6.53724" /> 
+					<item id="4044" min="1" max="1" chance="20.6469" /> 
+					<item id="4041" min="1" max="1" chance="5.38829" /> 
+					<item id="4039" min="1" max="1" chance="20.6469" /> 
+					<item id="1894" min="1" max="1" chance="21.7314" /> 
+					<item id="959" min="1" max="1" chance="0.02654" /> 
+					<item id="8732" min="1" max="1" chance="5.41104" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1105,30 +1105,30 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="1200" max="2449" chance="100" /> <!-- Adena -->
+					<item id="57" min="1200" max="2449" chance="100" /> 
 				</group>
 				<group chance="0.004">
-					<item id="5317" min="1" max="1" chance="30" /> <!-- Sealed Majestic Circlet -->
-					<item id="5315" min="1" max="1" chance="40" /> <!-- Sealed Shield of Nightmare -->
-					<item id="5312" min="1" max="1" chance="30" /> <!-- Sealed Helm of Nightmare -->
+					<item id="5317" min="1" max="1" chance="30" /> 
+					<item id="5315" min="1" max="1" chance="40" /> 
+					<item id="5312" min="1" max="1" chance="30" /> 
 				</group>
 				<group chance="6.8489">
-					<item id="5527" min="1" max="1" chance="2.56392" /> <!-- Sealed Helm of Nightmare Design -->
-					<item id="5495" min="1" max="1" chance="3.256" /> <!-- Sealed Shield of Nightmare Fragment -->
-					<item id="5528" min="1" max="1" chance="2.56392" /> <!-- Sealed Majestic Circlet Design -->
-					<item id="4043" min="1" max="1" chance="8.57656" /> <!-- Asofe -->
-					<item id="4042" min="1" max="1" chance="4.28828" /> <!-- Enria -->
-					<item id="4040" min="1" max="1" chance="5.14535" /> <!-- Mold Lubricant -->
-					<item id="1895" min="1" max="1" chance="73.5023" /> <!-- Metallic Fiber -->
-					<item id="960" min="1" max="1" chance="0.10367" /> <!-- Scroll: Enchant Armor (Grade S) -->
+					<item id="5527" min="1" max="1" chance="2.56392" /> 
+					<item id="5495" min="1" max="1" chance="3.256" /> 
+					<item id="5528" min="1" max="1" chance="2.56392" /> 
+					<item id="4043" min="1" max="1" chance="8.57656" /> 
+					<item id="4042" min="1" max="1" chance="4.28828" /> 
+					<item id="4040" min="1" max="1" chance="5.14535" /> 
+					<item id="1895" min="1" max="1" chance="73.5023" /> 
+					<item id="960" min="1" max="1" chance="0.10367" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1138,7 +1138,7 @@
 		</collision>
 	</npc>
 	<npc id="21824" level="65" type="FeedableBeast" name="Alpine Kookaburra">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="72" />
 			<param name="MoveAroundSocial1" value="30" />
@@ -1164,13 +1164,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Modifiers -->
-			<skill id="4410" level="14" /> <!-- P. Atk. Modifiers -->
-			<skill id="4411" level="14" /> <!-- M. Atk. Modifiers -->
-			<skill id="4412" level="8" /> <!-- P. Def. Modifiers -->
-			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="8" /> 
+			<skill id="4413" level="8" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
@@ -1186,7 +1186,7 @@
 		</collision>
 	</npc>
 	<npc id="21825" level="65" type="FeedableBeast" name="Alpine Kookaburra">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="72" />
 			<param name="MoveAroundSocial1" value="30" />
@@ -1212,13 +1212,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Modifiers -->
-			<skill id="4410" level="14" /> <!-- P. Atk. Modifiers -->
-			<skill id="4411" level="14" /> <!-- M. Atk. Modifiers -->
-			<skill id="4412" level="8" /> <!-- P. Def. Modifiers -->
-			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="8" /> 
+			<skill id="4413" level="8" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
@@ -1234,7 +1234,7 @@
 		</collision>
 	</npc>
 	<npc id="21826" level="67" type="FeedableBeast" name="Alpine Buffalo">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
 			<param name="MoveAroundSocial1" value="30" />
@@ -1260,13 +1260,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Modifiers -->
-			<skill id="4410" level="14" /> <!-- P. Atk. Modifiers -->
-			<skill id="4411" level="14" /> <!-- M. Atk. Modifiers -->
-			<skill id="4412" level="8" /> <!-- P. Def. Modifiers -->
-			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="8" /> 
+			<skill id="4413" level="8" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
@@ -1282,7 +1282,7 @@
 		</collision>
 	</npc>
 	<npc id="21827" level="67" type="FeedableBeast" name="Alpine Buffalo">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
 			<param name="MoveAroundSocial1" value="30" />
@@ -1308,13 +1308,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Modifiers -->
-			<skill id="4410" level="14" /> <!-- P. Atk. Modifiers -->
-			<skill id="4411" level="14" /> <!-- M. Atk. Modifiers -->
-			<skill id="4412" level="8" /> <!-- P. Def. Modifiers -->
-			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="8" /> 
+			<skill id="4413" level="8" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
@@ -1330,7 +1330,7 @@
 		</collision>
 	</npc>
 	<npc id="21828" level="69" type="FeedableBeast" name="Alpine Cougar">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="30" />
@@ -1356,13 +1356,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Modifiers -->
-			<skill id="4410" level="14" /> <!-- P. Atk. Modifiers -->
-			<skill id="4411" level="14" /> <!-- M. Atk. Modifiers -->
-			<skill id="4412" level="8" /> <!-- P. Def. Modifiers -->
-			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="8" /> 
+			<skill id="4413" level="8" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
@@ -1378,7 +1378,7 @@
 		</collision>
 	</npc>
 	<npc id="21829" level="69" type="FeedableBeast" name="Alpine Cougar">
-		<!-- Interlude - C6 -->
+		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="30" />
@@ -1404,13 +1404,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4408" level="12" /> <!-- HP Modifiers -->
-			<skill id="4410" level="14" /> <!-- P. Atk. Modifiers -->
-			<skill id="4411" level="14" /> <!-- M. Atk. Modifiers -->
-			<skill id="4412" level="8" /> <!-- P. Def. Modifiers -->
-			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="14" /> 
+			<skill id="4411" level="14" /> 
+			<skill id="4412" level="8" /> 
+			<skill id="4413" level="8" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<shots shotChance="30" spiritChance="30" />
 		<exCrtEffect>false</exCrtEffect>
