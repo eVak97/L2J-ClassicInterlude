@@ -11,7 +11,7 @@ Things ALREADY DONE to match Interlude files:
 -Castles & clanhalls
 -Map regions
 -Zones
-
+-Npc drops
 
 Things TO DO:
 
