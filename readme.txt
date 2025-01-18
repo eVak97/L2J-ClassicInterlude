@@ -12,6 +12,8 @@ Things ALREADY DONE to match Interlude files:
 -Map regions
 -Zones
 -Npc drops
+-Npc skills
+
 
 Things TO DO:
 
