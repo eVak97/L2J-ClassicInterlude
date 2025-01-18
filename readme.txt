@@ -13,6 +13,9 @@ Things ALREADY DONE to match Interlude files:
 -Zones
 -Npc drops
 -Npc skills
+-Char base stats
+-Stat bonus
+-experience curve
 
 
 Things TO DO:
@@ -20,4 +23,5 @@ Things TO DO:
 -Npc drops
 -Formulas
 -Have a look on multiple handlers
+-conquerable halls
 -More to come
