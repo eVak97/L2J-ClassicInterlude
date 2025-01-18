@@ -52,17 +52,32 @@
 				<ignoreNpcId>20287</ignoreNpcId> 
 			</clanList>
 		</ai>
-		<dropLists>
-			<drop>
-				<item id="2397" min="1" max="1" chance="0.03" /> 
-				<item id="2402" min="1" max="1" chance="0.03" /> 
-				<item id="2406" min="1" max="1" chance="0.03" /> 
-				<item id="4070" min="1" max="1" chance="3.744" /> 
-				<item id="4069" min="1" max="1" chance="2.429" /> 
-				<item id="4071" min="1" max="1" chance="1.809" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="765" max="1528" chance="100" /> 
+				</group>
+				<group chance="0.0039">
+					<item id="2406" min="1" max="1" chance="20.5128" /> 
+					<item id="2402" min="1" max="1" chance="48.718" /> 
+					<item id="2397" min="1" max="1" chance="30.7692" /> 
+				</group>
+				<group chance="48.5648">
+					<item id="4071" min="1" max="1" chance="0.33255" /> 
+					<item id="4070" min="1" max="1" chance="0.65727" /> 
+					<item id="4069" min="1" max="1" chance="0.43282" /> 
+					<item id="1889" min="1" max="1" chance="1.11912" /> 
+					<item id="1885" min="1" max="1" chance="1.46032" /> 
+					<item id="1878" min="1" max="1" chance="7.62631" /> 
+					<item id="1866" min="1" max="1" chance="12.8694" /> 
+					<item id="1864" min="1" max="1" chance="34.3185" /> 
+					<item id="1419" min="1" max="1" chance="41.1821" /> 
+					<item id="4197" min="1" max="1" chance="0.00165" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+			<spoil>
+				<item id="1806" min="1" max="1" chance="1.0868" /> 
+			</spoil>
+		</dropLists><collision>
 			<radius normal="14" />
 			<height normal="40" />
 		</collision>
@@ -182,7 +197,30 @@
 			<radius normal="9.5" />
 			<height normal="10" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="100">
+					<item id="57" min="32" max="48" chance="70" /> 
+				</group>
+				<group chance="100">
+					<item id="17" min="30" max="90" chance="2.1739" /> 
+				</group>
+				<group chance="100">
+					<item id="1868" min="1" max="1" chance="2.7522" /> 
+				</group>
+				<group chance="100">
+					<item id="1786" min="1" max="1" chance="0.9174" /> 
+				</group>
+				<group chance="100">
+					<item id="1873" min="1" max="1" chance="0.6423" /> 
+				</group>
+				<group chance="100">
+					<item id="462" min="1" max="1" chance="6.1224" /> 
+				</group>
+				<group chance="100">
+					<item id="426" min="1" max="1" chance="3.6585" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18004" level="49" type="Monster" name="Susceptor Prime">
 		
 		<race>CONSTRUCT</race>
@@ -605,7 +643,12 @@
 			<radius normal="10" grown="12" />
 			<height normal="23" grown="27.6" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="148" max="293" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18013" level="29" type="FestivalMonster" name="Offering of the Branded, Follower">
 		
 		<parameters>
@@ -656,7 +699,12 @@
 			<radius normal="9" />
 			<height normal="22" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="148" max="293" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18014" level="37" type="FestivalMonster" name="Offering of the Branded, Berserker">
 		
 		<parameters>
@@ -705,7 +753,12 @@
 			<radius normal="10" />
 			<height normal="23" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="228" max="455" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18015" level="34" type="FestivalMonster" name="Offering of the Branded, Zealot">
 		
 		<parameters>
@@ -754,7 +807,12 @@
 			<radius normal="12" />
 			<height normal="26.4" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="194" max="387" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18016" level="32" type="FestivalMonster" name="Offering of the Branded, Sniper">
 		
 		<parameters>
@@ -842,7 +900,12 @@
 			<radius normal="9" />
 			<height normal="21.5" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="194" max="387" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18018" level="39" type="FestivalMonster" name="Offering of the Branded, Saint">
 		
 		<parameters>
@@ -890,7 +953,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="253" max="504" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18019" level="45" type="FestivalMonster" name="Apostate's Offering, Elder">
 		
 		<parameters>
@@ -1077,7 +1145,12 @@
 			<radius normal="10" />
 			<height normal="20" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="265" max="529" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18023" level="40" type="FestivalMonster" name="Apostate's Offering, Follower">
 		
 		<parameters>
@@ -1128,7 +1201,12 @@
 			<radius normal="11" />
 			<height normal="16" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="265" max="529" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18024" level="48" type="FestivalMonster" name="Apostate's Offering, Berserker">
 		
 		<parameters>
@@ -1176,7 +1254,12 @@
 			<radius normal="11" />
 			<height normal="32" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="381" max="761" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18025" level="45" type="FestivalMonster" name="Apostate's Offering, Zealot">
 		
 		<parameters>
@@ -1226,7 +1309,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="335" max="669" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18026" level="43" type="FestivalMonster" name="Apostate's Offering, Sniper">
 		
 		<parameters>
@@ -1314,7 +1402,12 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="335" max="669" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18028" level="50" type="FestivalMonster" name="Apostate's Offering, Saint">
 		
 		<parameters>
@@ -1362,7 +1455,12 @@
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="414" max="829" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18029" level="56" type="FestivalMonster" name="Witch's Offering, Elder">
 		
 		<parameters>
@@ -1549,7 +1647,12 @@
 			<radius normal="10" />
 			<height normal="20" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="431" max="863" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18033" level="51" type="FestivalMonster" name="Witch's Offering, Follower">
 		
 		<parameters>
@@ -1600,7 +1703,12 @@
 			<radius normal="11" />
 			<height normal="16" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="431" max="863" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18034" level="59" type="FestivalMonster" name="Witch's Offering, Berserker">
 		
 		<parameters>
@@ -1649,7 +1757,12 @@
 			<radius normal="12" />
 			<height normal="30" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="585" max="1171" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18035" level="56" type="FestivalMonster" name="Witch's Offering, Zealot">
 		
 		<parameters>
@@ -1699,7 +1812,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="525" max="1049" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18036" level="54" type="FestivalMonster" name="Witch's Offering, Sniper">
 		
 		<parameters>
@@ -1787,7 +1905,12 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="525" max="1049" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18038" level="61" type="FestivalMonster" name="Witch's Offering, Saint">
 		
 		<parameters>
@@ -1835,7 +1958,12 @@
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="629" max="1257" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18039" level="67" type="FestivalMonster" name="Dark Omen Offering Elder">
 		
 		<parameters>
@@ -2022,7 +2150,12 @@
 			<radius normal="10" />
 			<height normal="20" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="651" max="1302" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18043" level="62" type="FestivalMonster" name="Dark Omen Offering Follower">
 		
 		<parameters>
@@ -2073,7 +2206,12 @@
 			<radius normal="11" />
 			<height normal="16" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="651" max="1302" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18044" level="70" type="FestivalMonster" name="Dark Omen Offering Berserker">
 		
 		<parameters>
@@ -2122,7 +2260,12 @@
 			<radius normal="12" />
 			<height normal="30" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="848" max="1697" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18045" level="67" type="FestivalMonster" name="Dark Omen Offering Zealot">
 		
 		<parameters>
@@ -2172,7 +2315,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="770" max="1541" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18046" level="65" type="FestivalMonster" name="Dark Omen Offering Sniper">
 		
 		<parameters>
@@ -2260,7 +2408,12 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="770" max="1541" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18048" level="72" type="FestivalMonster" name="Dark Omen Offering Saint">
 		
 		<parameters>
@@ -2308,7 +2461,12 @@
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18049" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Elder">
 		
 		<parameters>
@@ -2495,7 +2653,12 @@
 			<radius normal="12" grown="14" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18053" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Follower">
 		
 		<parameters>
@@ -2546,7 +2709,12 @@
 			<radius normal="10" />
 			<height normal="23" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18054" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Berserker">
 		
 		<parameters>
@@ -2595,7 +2763,12 @@
 			<radius normal="13" grown="22" />
 			<height normal="35" grown="42.2" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18055" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Zealot">
 		
 		<parameters>
@@ -2645,7 +2818,12 @@
 			<radius normal="14" />
 			<height normal="34.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18056" level="76" type="FestivalMonster" name="Offering of Forbidden Path, Sniper">
 		
 		<parameters>
@@ -2733,7 +2911,12 @@
 			<radius normal="12" />
 			<height normal="24" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18058" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Saint">
 		
 		<parameters>
@@ -2781,7 +2964,12 @@
 			<radius normal="14" />
 			<height normal="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18059" level="34" type="FestivalMonster" name="Offering of the Branded, Elder">
 		
 		<parameters>
@@ -2968,7 +3156,12 @@
 			<radius normal="10" grown="12" />
 			<height normal="23" grown="27.6" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="148" max="293" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18063" level="29" type="FestivalMonster" name="Offering of the Branded, Follower">
 		
 		<parameters>
@@ -3019,7 +3212,12 @@
 			<radius normal="9" />
 			<height normal="22" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="148" max="293" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18064" level="37" type="FestivalMonster" name="Offering of the Branded, Berserker">
 		
 		<parameters>
@@ -3068,7 +3266,12 @@
 			<radius normal="10" />
 			<height normal="23" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="228" max="455" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18065" level="34" type="FestivalMonster" name="Offering of the Branded, Zealot">
 		
 		<parameters>
@@ -3118,7 +3321,12 @@
 			<radius normal="12" />
 			<height normal="26.4" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="194" max="387" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18066" level="32" type="FestivalMonster" name="Offering of the Branded, Sniper">
 		
 		<parameters>
@@ -3206,7 +3414,12 @@
 			<radius normal="9" />
 			<height normal="21.5" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="194" max="387" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18068" level="39" type="FestivalMonster" name="Offering of the Branded, Saint">
 		
 		<parameters>
@@ -3254,7 +3467,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="253" max="504" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18069" level="45" type="FestivalMonster" name="Apostate's Offering, Elder">
 		
 		<parameters>
@@ -3441,7 +3659,12 @@
 			<radius normal="10" />
 			<height normal="20" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="265" max="529" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18073" level="40" type="FestivalMonster" name="Apostate's Offering, Follower">
 		
 		<parameters>
@@ -3492,7 +3715,12 @@
 			<radius normal="11" />
 			<height normal="16" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="265" max="529" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18074" level="48" type="FestivalMonster" name="Apostate's Offering, Berserker">
 		
 		<parameters>
@@ -3541,7 +3769,12 @@
 			<radius normal="11" />
 			<height normal="32" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="381" max="761" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18075" level="45" type="FestivalMonster" name="Apostate's Offering, Zealot">
 		
 		<parameters>
@@ -3591,7 +3824,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="335" max="669" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18076" level="43" type="FestivalMonster" name="Apostate's Offering, Sniper">
 		
 		<parameters>
@@ -3679,7 +3917,12 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="335" max="669" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18078" level="50" type="FestivalMonster" name="Apostate's Offering, Saint">
 		
 		<parameters>
@@ -3727,7 +3970,12 @@
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="414" max="829" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18079" level="56" type="FestivalMonster" name="Witch's Offering, Elder">
 		
 		<parameters>
@@ -3914,7 +4162,12 @@
 			<radius normal="10" />
 			<height normal="20" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="431" max="863" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18083" level="51" type="FestivalMonster" name="Witch's Offering, Follower">
 		
 		<parameters>
@@ -3965,7 +4218,12 @@
 			<radius normal="11" />
 			<height normal="16" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="431" max="863" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18084" level="59" type="FestivalMonster" name="Witch's Offering, Berserker">
 		
 		<parameters>
@@ -4014,7 +4272,12 @@
 			<radius normal="12" />
 			<height normal="30" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="585" max="1171" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18085" level="56" type="FestivalMonster" name="Witch's Offering, Zealot">
 		
 		<parameters>
@@ -4064,7 +4327,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="525" max="1049" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18086" level="54" type="FestivalMonster" name="Witch's Offering, Sniper">
 		
 		<parameters>
@@ -4152,7 +4420,12 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="525" max="1049" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18088" level="61" type="FestivalMonster" name="Witch's Offering, Saint">
 		
 		<parameters>
@@ -4200,7 +4473,12 @@
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="629" max="1257" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18089" level="67" type="FestivalMonster" name="Dark Omen Offering Elder">
 		
 		<parameters>
@@ -4387,7 +4665,12 @@
 			<radius normal="10" />
 			<height normal="20" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="651" max="1302" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18093" level="62" type="FestivalMonster" name="Dark Omen Offering Follower">
 		
 		<parameters>
@@ -4438,7 +4721,12 @@
 			<radius normal="11" />
 			<height normal="16" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="651" max="1302" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18094" level="70" type="FestivalMonster" name="Dark Omen Offering Berserker">
 		
 		<parameters>
@@ -4487,7 +4775,12 @@
 			<radius normal="12" />
 			<height normal="30" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="848" max="1697" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18095" level="67" type="FestivalMonster" name="Dark Omen Offering Zealot">
 		
 		<parameters>
@@ -4537,7 +4830,12 @@
 			<radius normal="10" />
 			<height normal="25.3" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="770" max="1541" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18096" level="65" type="FestivalMonster" name="Dark Omen Offering Sniper">
 		
 		<parameters>
@@ -4625,7 +4923,12 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="770" max="1541" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18098" level="72" type="FestivalMonster" name="Dark Omen Offering Saint">
 		
 		<parameters>
@@ -4673,7 +4976,12 @@
 			<radius normal="14" grown="17" />
 			<height normal="28.8" grown="34.9" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="902" max="1804" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="18099" level="78" type="FestivalMonster" name="Offering of Forbidden Path, Elder">
 		
 		<parameters>

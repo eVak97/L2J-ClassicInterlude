@@ -78,19 +78,27 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<dropLists>
-			<drop>
-				<item id="1660" min="1" max="1" chance="9.049" /> 
-				<item id="395" min="1" max="1" chance="3.853" /> 
-				<item id="417" min="1" max="1" chance="1.871" /> 
-				<item id="224" min="1" max="1" chance="1.279" /> 
-				<item id="4554" min="1" max="1" chance="13.41" /> 
-				<item id="4555" min="1" max="1" chance="12.9" /> 
-				<item id="4553" min="1" max="1" chance="12.58" /> 
-				<item id="6575" min="1" max="1" chance="0.75" /> 
+		<dropLists><drop>
+				<group chance="60.65">
+					<item id="395" min="1" max="1" chance="32.8894" /> 
+					<item id="417" min="4" max="12" chance="6.5657" /> 
+					<item id="1942" min="53" max="157" chance="13.7404" /> 
+					<item id="1943" min="24" max="72" chance="46.8045" /> 
+				</group>
+				<group chance="61.6941">
+					<item id="224" min="1" max="1" chance="7.7671" /> 
+					<item id="1660" min="1" max="1" chance="7.7671" /> 
+					<item id="2038" min="4" max="12" chance="55.0864" /> 
+					<item id="2044" min="8" max="22" chance="29.3794" /> 
+				</group>
+				<group chance="75.9788">
+					<item id="4553" min="1" max="3" chance="43.9024" /> 
+					<item id="4554" min="2" max="4" chance="29.2683" /> 
+					<item id="4555" min="2" max="6" chance="21.9512" /> 
+					<item id="6575" min="1" max="1" chance="4.8781" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+		</dropLists><collision>
 			<radius normal="11" />
 			<height normal="23.6" />
 		</collision>
@@ -216,26 +224,42 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<dropLists>
-			<drop>
-				<item id="2454" min="1" max="1" chance="43.28" /> 
-				<item id="62" min="1" max="1" chance="22.96" /> 
-				<item id="2429" min="1" max="1" chance="14.7" /> 
-				<item id="2430" min="1" max="1" chance="11.12" /> 
-				<item id="2431" min="1" max="1" chance="8.868" /> 
-				<item id="2432" min="1" max="1" chance="7.279" /> 
-				<item id="2433" min="1" max="1" chance="6.331" /> 
-				<item id="2452" min="1" max="1" chance="5.496" /> 
-				<item id="2453" min="1" max="1" chance="4.855" /> 
-				<item id="298" min="1" max="1" chance="2.482" /> 
-				<item id="302" min="1" max="1" chance="2.448" /> 
-				<item id="96" min="1" max="1" chance="2.406" /> 
-				<item id="952" min="1" max="3" chance="39.26" /> 
-				<item id="951" min="1" max="1" chance="10.48" /> 
-				<item id="6573" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="77.6035">
+					<item id="62" min="11" max="33" chance="0.6042" /> 
+					<item id="2429" min="12" max="34" chance="0.5779" /> 
+					<item id="2430" min="12" max="36" chance="0.5538" /> 
+					<item id="2431" min="13" max="37" chance="0.5317" /> 
+					<item id="2432" min="13" max="39" chance="0.5112" /> 
+					<item id="2433" min="1" max="1" chance="13.2923" /> 
+					<item id="2452" min="1" max="1" chance="13.2923" /> 
+					<item id="2453" min="1" max="1" chance="13.2923" /> 
+					<item id="2454" min="1" max="1" chance="13.2923" /> 
+					<item id="1958" min="220" max="660" chance="1.3184" /> 
+					<item id="2937" min="378" max="1134" chance="0.7673" /> 
+					<item id="2938" min="26" max="78" chance="11.1554" /> 
+					<item id="2939" min="35" max="105" chance="8.2869" /> 
+					<item id="2940" min="45" max="135" chance="6.4454" /> 
+					<item id="2941" min="56" max="168" chance="5.1793" /> 
+					<item id="2942" min="68" max="204" chance="4.2653" /> 
+					<item id="2943" min="81" max="243" chance="3.5808" /> 
+					<item id="2944" min="95" max="285" chance="3.0532" /> 
+				</group>
+				<group chance="79.3555">
+					<item id="96" min="1" max="1" chance="3.2219" /> 
+					<item id="298" min="1" max="1" chance="3.2219" /> 
+					<item id="302" min="1" max="1" chance="3.2219" /> 
+					<item id="2062" min="5" max="15" chance="22.2742" /> 
+					<item id="2075" min="9" max="27" chance="12.3746" /> 
+					<item id="2076" min="2" max="6" chance="55.6855" /> 
+				</group>
+				<group chance="71.2939">
+					<item id="951" min="1" max="1" chance="74.5033" /> 
+					<item id="952" min="12" max="36" chance="22.7649" /> 
+					<item id="6573" min="1" max="1" chance="2.7318" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+		</dropLists><collision>
 			<radius normal="10" />
 			<height normal="28.1" />
 		</collision>
@@ -325,15 +349,22 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<dropLists>
-			<drop>
-				<item id="281" min="1" max="1" chance="8.87" /> 
-				<item id="397" min="1" max="1" chance="3.61" /> 
-				<item id="2387" min="1" max="1" chance="1.753" /> 
-				<item id="6574" min="1" max="1" chance="9.087" /> 
+		<dropLists><drop>
+				<group chance="66.2453">
+					<item id="397" min="1" max="1" chance="21.4917" /> 
+					<item id="2387" min="1" max="1" chance="34.3442" /> 
+					<item id="1961" min="53" max="157" chance="9.53" /> 
+					<item id="2935" min="24" max="72" chance="34.6341" /> 
+				</group>
+				<group chance="25.3902">
+					<item id="281" min="1" max="1" chance="27.7681" /> 
+					<item id="2074" min="12" max="36" chance="72.2319" /> 
+				</group>
+				<group chance="46.0338">
+					<item id="6574" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+		</dropLists><collision>
 			<radius normal="16" />
 			<height normal="33.2" />
 		</collision>
@@ -472,15 +503,33 @@
 			<radius normal="13" />
 			<height normal="20.8" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="3990" max="9317" chance="70" /> 
-				<item id="9550" min="1" max="1" chance="0.75" /> 
-				<item id="9551" min="1" max="1" chance="0.75" /> 
-				<item id="45929" min="1" max="3" chance="0.75" /> 
+		<dropLists><drop>
+				<group chance="62.1185">
+					<item id="2397" min="1" max="1" chance="5.6807" /> 
+					<item id="2402" min="1" max="1" chance="9.0869" /> 
+					<item id="2406" min="1" max="1" chance="3.4942" /> 
+					<item id="4069" min="9" max="27" chance="44.5318" /> 
+					<item id="4070" min="40" max="120" chance="15.2133" /> 
+					<item id="4071" min="14" max="42" chance="21.9931" /> 
+				</group>
+				<group chance="78.5373">
+					<item id="91" min="1" max="1" chance="0.9057" /> 
+					<item id="92" min="1" max="1" chance="0.9057" /> 
+					<item id="7892" min="1" max="1" chance="0.9057" /> 
+					<item id="7900" min="1" max="1" chance="0.9057" /> 
+					<item id="4105" min="6" max="18" chance="14.427" /> 
+					<item id="4106" min="2" max="6" chance="42.5708" /> 
+					<item id="8339" min="11" max="31" chance="8.244" /> 
+					<item id="8347" min="3" max="7" chance="31.1354" /> 
+				</group>
+				<group chance="90.2035">
+					<item id="4613" min="1" max="3" chance="23.5479" /> 
+					<item id="4614" min="2" max="4" chance="15.6986" /> 
+					<item id="4615" min="1" max="1" chance="47.0958" /> 
+					<item id="947" min="1" max="1" chance="13.6577" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25510" level="52" type="Monster" name="Varangka's Descendant" title="Raid Fighter">
 		
 		<parameters>
@@ -613,7 +662,33 @@
 			<radius normal="31" />
 			<height normal="51.8" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="48.829">
+					<item id="357" min="1" max="1" chance="3.9351" /> 
+					<item id="383" min="1" max="1" chance="6.295" /> 
+					<item id="2376" min="1" max="1" chance="3.9351" /> 
+					<item id="2379" min="1" max="1" chance="6.295" /> 
+					<item id="4056" min="16" max="48" chance="17.7615" /> 
+					<item id="4057" min="60" max="180" chance="7.3199" /> 
+					<item id="4064" min="23" max="67" chance="12.6304" /> 
+					<item id="4065" min="11" max="31" chance="41.828" /> 
+				</group>
+				<group chance="73.0967">
+					<item id="78" min="1" max="1" chance="1.256" /> 
+					<item id="142" min="1" max="1" chance="1.256" /> 
+					<item id="148" min="1" max="1" chance="1.256" /> 
+					<item id="4104" min="5" max="15" chance="24.0087" /> 
+					<item id="4107" min="9" max="27" chance="13.1315" /> 
+					<item id="4108" min="2" max="6" chance="59.0918" /> 
+				</group>
+				<group chance="50.3223">
+					<item id="4604" min="2" max="6" chance="32.9154" /> 
+					<item id="4605" min="3" max="7" chance="26.3323" /> 
+					<item id="4606" min="3" max="9" chance="21.9436" /> 
+					<item id="952" min="21" max="63" chance="18.8087" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25514" level="80" type="RaidBoss" name="Queen Shyeed" title="Raid Boss">
 		
 		<parameters>
@@ -661,14 +736,30 @@
 			<radius normal="45" />
 			<height normal="50.8" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="960" min="1" max="1" chance="9.963" /> 
-				<item id="959" min="1" max="1" chance="0.75" /> 
-				<item id="6577" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="15.9422">
+					<item id="6678" min="1" max="1" chance="36.7703" /> 
+					<item id="6683" min="1" max="1" chance="30.0467" /> 
+					<item id="6679" min="1" max="1" chance="33.183" /> 
+				</group>
+				<group chance="98.2399">
+					<item id="6714" min="16" max="45" chance="15.1025" /> 
+					<item id="6710" min="14" max="30" chance="18.8399" /> 
+					<item id="6706" min="9" max="18" chance="4.02739" /> 
+					<item id="6705" min="3" max="6" chance="43.0773" /> 
+					<item id="6697" min="3" max="7" chance="18.9529" /> 
+				</group>
+				<group chance="98.0976">
+					<item id="6689" min="16" max="48" chance="4.66393" /> 
+					<item id="6690" min="11" max="31" chance="7.25716" /> 
+					<item id="6691" min="3" max="9" chance="35.7026" /> 
+					<item id="6693" min="6" max="18" chance="8.20652" /> 
+					<item id="8732" min="1" max="1" chance="23.7257" /> 
+					<item id="8742" min="1" max="1" chance="11.4499" /> 
+					<item id="8752" min="2" max="4" chance="8.99421" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25515" level="79" type="Monster" name="Spiked Stakato" title="Raid Fighter">
 		
 		<parameters>
@@ -818,17 +909,13 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<dropLists>
-			<drop>
-				<item id="6683" min="1" max="1" chance="8.853" /> 
-				<item id="6678" min="1" max="1" chance="6.392" /> 
-				<item id="6679" min="1" max="1" chance="2.975" /> 
-				<item id="6367" min="1" max="1" chance="0.75" /> 
-				<item id="6570" min="1" max="1" chance="3.24" /> 
-				<item id="6578" min="1" max="1" chance="1.326" /> 
+		<dropLists><drop>
+				<group chance="50">
+					<item id="8169" min="1" max="2" chance="50" /> 
+					<item id="8176" min="4" max="8" chance="50" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+		</dropLists><collision>
 			<radius normal="35" />
 			<height normal="46.3765" />
 		</collision>
@@ -876,24 +963,28 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<dropLists>
-			<drop>
-				<item id="5316" min="1" max="1" chance="2.589" /> 
-				<item id="5311" min="1" max="1" chance="2.564" /> 
-				<item id="81" min="1" max="1" chance="1.137" /> 
-				<item id="2500" min="1" max="1" chance="1.093" /> 
-				<item id="151" min="1" max="1" chance="1.083" /> 
-				<item id="5529" min="2" max="6" chance="37" /> 
-				<item id="5546" min="3" max="9" chance="29.56" /> 
-				<item id="5545" min="3" max="9" chance="25.43" /> 
-				<item id="5523" min="12" max="36" chance="17.11" /> 
-				<item id="960" min="1" max="1" chance="9.88" /> 
-				<item id="5522" min="36" max="108" chance="5.519" /> 
-				<item id="959" min="1" max="1" chance="1.076" /> 
-				<item id="6577" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="4.7397">
+					<item id="6725" min="1" max="1" chance="66.6667" /> 
+					<item id="6726" min="1" max="1" chance="33.3333" /> 
+				</group>
+				<group chance="69.8994">
+					<item id="6700" min="25" max="37" chance="23.8693" /> 
+					<item id="6699" min="43" max="108" chance="15.21" /> 
+					<item id="6698" min="11" max="27" chance="60.9207" /> 
+				</group>
+				<group chance="86.398">
+					<item id="6689" min="2" max="6" chance="37.3751" /> 
+					<item id="6697" min="3" max="6" chance="13.3377" /> 
+					<item id="6690" min="2" max="4" chance="49.2873" /> 
+				</group>
+				<group chance="75.1553">
+					<item id="8731" min="1" max="1" chance="68.2207" /> 
+					<item id="8751" min="1" max="1" chance="20.3197" /> 
+					<item id="8761" min="1" max="1" chance="11.4596" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+		</dropLists><collision>
 			<radius normal="38" />
 			<height normal="45" />
 		</collision>
@@ -1018,18 +1109,27 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" clanHelpRange="300" />
-		<dropLists>
-			<drop>
-				<item id="6725" min="1" max="1" chance="7.448" /> 
-				<item id="6724" min="1" max="1" chance="4.907" /> 
-				<item id="6726" min="1" max="1" chance="3.693" /> 
-				<item id="6365" min="1" max="1" chance="0.3" /> 
-				<item id="6366" min="1" max="1" chance="0.3" /> 
-				<item id="6369" min="1" max="1" chance="0.3" /> 
-				<item id="6579" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="49.4563">
+					<item id="6724" min="1" max="1" chance="5.9961" /> 
+					<item id="6725" min="1" max="1" chance="8.9942" /> 
+					<item id="6726" min="1" max="1" chance="4.4961" /> 
+					<item id="6698" min="81" max="243" chance="11.8869" /> 
+					<item id="6699" min="40" max="120" chance="26.71" /> 
+					<item id="6700" min="14" max="42" chance="41.9167" /> 
+				</group>
+				<group chance="68.7123">
+					<item id="6365" min="1" max="1" chance="0.3713" /> 
+					<item id="6366" min="1" max="1" chance="0.3713" /> 
+					<item id="6369" min="1" max="1" chance="0.3713" /> 
+					<item id="6579" min="1" max="1" chance="0.3713" /> 
+					<item id="6689" min="2" max="6" chance="42.0931" /> 
+					<item id="6690" min="11" max="31" chance="8.1873" /> 
+					<item id="6693" min="6" max="18" chance="14.5597" /> 
+					<item id="6697" min="3" max="7" chance="33.6747" /> 
+				</group>
 			</drop>
-		</dropLists>
-		<collision>
+		</dropLists><collision>
 			<radius normal="30" />
 			<height normal="42.5105" />
 		</collision>

@@ -293,27 +293,32 @@
 			<radius normal="35" grown="42" />
 			<height normal="17" grown="21" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="415" min="1" max="1" chance="0.075" /> 
-				<item id="416" min="1" max="1" chance="0.075" /> 
-				<item id="393" min="1" max="1" chance="0.03" /> 
-				<item id="394" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="337" max="786" chance="70" /> 
-				<item id="1868" min="1" max="1" chance="23.28" /> 
-				<item id="1866" min="1" max="1" chance="7.925" /> 
-				<item id="1884" min="1" max="1" chance="7.336" /> 
-				<item id="1939" min="1" max="1" chance="2.591" /> 
-				<item id="1938" min="1" max="1" chance="1.978" /> 
-				<item id="2271" min="1" max="1" chance="0.075" /> 
-				<item id="2272" min="1" max="1" chance="0.075" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="374" max="746" chance="100" /> 
+				</group>
+				<group chance="0.0538">
+					<item id="393" min="1" max="1" chance="19.3309" /> 
+					<item id="394" min="1" max="1" chance="19.3309" /> 
+					<item id="415" min="1" max="1" chance="30.6691" /> 
+					<item id="416" min="1" max="1" chance="30.6691" /> 
+				</group>
+				<group chance="34.2899">
+					<item id="1939" min="1" max="1" chance="2.00992" /> 
+					<item id="1938" min="1" max="1" chance="1.53835" /> 
+					<item id="2156" min="1" max="1" chance="2.08312" /> 
+					<item id="1882" min="1" max="1" chance="9.11347" /> 
+					<item id="1872" min="1" max="1" chance="36.4539" /> 
+					<item id="1867" min="1" max="1" chance="48.605" /> 
+					<item id="2272" min="1" max="1" chance="0.19627" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1832" min="1" max="5" chance="75.45" /> 
-				<item id="848" min="1" max="1" chance="0.75" /> 
+				<item id="848" min="1" max="1" chance="0.4157" /> 
+				<item id="1832" min="1" max="3" chance="49.1857" /> 
+				<item id="1901" min="1" max="1" chance="12.2285" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20746" level="33" type="Monster" name="Young Gigantiops">
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
@@ -427,20 +432,30 @@
 			<radius normal="10" />
 			<height normal="36" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="627" min="1" max="1" chance="3.04" /> 
-				<item id="46" min="1" max="1" chance="2.167" /> 
-				<item id="57" min="2054" max="4807" chance="70" /> 
-				<item id="1873" min="1" max="3" chance="34.37" /> 
-				<item id="2203" min="1" max="3" chance="13.48" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="411" max="824" chance="100" /> 
+				</group>
+				<group chance="0.259">
+					<item id="46" min="1" max="1" chance="41.1969" /> 
+					<item id="627" min="1" max="1" chance="58.8031" /> 
+				</group>
+				<group chance="22.4422">
+					<item id="2274" min="1" max="1" chance="0.2424" /> 
+					<item id="2183" min="1" max="1" chance="2.23285" /> 
+					<item id="1881" min="1" max="1" chance="4.52496" /> 
+					<item id="1875" min="1" max="1" chance="2.2627" /> 
+					<item id="1872" min="1" max="1" chance="45.2473" /> 
+					<item id="1867" min="1" max="1" chance="45.2473" /> 
+					<item id="2282" min="1" max="1" chance="0.2424" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2203" min="1" max="5" chance="90.71" /> 
-				<item id="2024" min="1" max="1" chance="17.86" /> 
+				<item id="1900" min="1" max="1" chance="10.6736" /> 
+				<item id="2024" min="1" max="1" chance="1.3897" /> 
+				<item id="2203" min="1" max="1" chance="21.2542" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20748" level="29" type="Monster" name="Roxide's Follower">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
@@ -555,21 +570,27 @@
 			<radius normal="14" />
 			<height normal="36" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="627" min="1" max="1" chance="3.155" /> 
-				<item id="46" min="1" max="1" chance="2.167" /> 
-				<item id="57" min="2054" max="4807" chance="70" /> 
-				<item id="1876" min="1" max="1" chance="17.46" /> 
-				<item id="1869" min="4" max="12" chance="10.98" /> 
-				<item id="1865" min="7" max="21" chance="6.075" /> 
-				<item id="2250" min="3" max="9" chance="3.754" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="411" max="824" chance="100" /> 
+				</group>
+				<group chance="0.259">
+					<item id="46" min="1" max="1" chance="41.1969" /> 
+					<item id="627" min="1" max="1" chance="58.8031" /> 
+				</group>
+				<group chance="24.1462">
+					<item id="1866" min="1" max="1" chance="36.7975" /> 
+					<item id="1871" min="1" max="1" chance="55.1963" /> 
+					<item id="1877" min="1" max="1" chance="2.20821" /> 
+					<item id="2184" min="1" max="1" chance="5.79801" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2025" min="1" max="1" chance="34.45" /> 
+				<item id="1871" min="1" max="3" chance="48.7784" /> 
+				<item id="2025" min="1" max="1" chance="1.3512" /> 
+				<item id="2153" min="1" max="1" chance="15.1721" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20750" level="29" type="Monster" name="Fire Archer">
 		<parameters>
 			<param name="MoveAroundSocial" value="157" />
@@ -692,39 +713,43 @@
 			<radius normal="14" />
 			<height normal="14.5" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="1716" max="3517" chance="70" /> 
-				<item id="62" min="1" max="1" chance="0.05" /> 
-				<item id="2432" min="1" max="1" chance="0.03" /> 
-				<item id="2429" min="1" max="1" chance="0.03" /> 
-				<item id="2430" min="1" max="1" chance="0.03" /> 
-				<item id="2431" min="1" max="1" chance="0.03" /> 
-				<item id="2433" min="1" max="1" chance="0.03" /> 
-				<item id="2453" min="1" max="1" chance="0.03" /> 
-				<item id="2452" min="1" max="1" chance="0.03" /> 
-				<item id="2454" min="1" max="1" chance="0.03" /> 
-				<item id="1958" min="1" max="1" chance="1.037" /> 
-				<item id="2937" min="1" max="1" chance="1.0291" /> 
-				<item id="2938" min="1" max="1" chance="1.0289" /> 
-				<item id="2939" min="1" max="1" chance="1.0289" /> 
-				<item id="2940" min="1" max="1" chance="1.0289" /> 
-				<item id="2941" min="1" max="1" chance="1.0289" /> 
-				<item id="2942" min="1" max="1" chance="1.0289" /> 
-				<item id="2943" min="1" max="1" chance="1.0289" /> 
-				<item id="2944" min="1" max="1" chance="1.0289" /> 
-				<item id="2216" min="1" max="1" chance="1.08" /> 
-				<item id="1894" min="1" max="1" chance="0.918" /> 
-				<item id="2321" min="1" max="1" chance="0.0911" /> 
-				<item id="2225" min="1" max="1" chance="0.568" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="887" max="1817" chance="100" /> 
+				</group>
+				<group chance="0.0837">
+					<item id="2453" min="1" max="1" chance="11.1111" /> 
+					<item id="2454" min="1" max="1" chance="11.1111" /> 
+					<item id="2452" min="1" max="1" chance="11.1111" /> 
+					<item id="2433" min="1" max="1" chance="11.1111" /> 
+					<item id="2432" min="1" max="1" chance="11.1111" /> 
+					<item id="62" min="1" max="1" chance="11.1111" /> 
+					<item id="2429" min="1" max="1" chance="11.1111" /> 
+					<item id="2430" min="1" max="1" chance="11.1111" /> 
+					<item id="2431" min="1" max="1" chance="11.1111" /> 
+				</group>
+				<group chance="6.9486">
+					<item id="2937" min="1" max="1" chance="7.50223" /> 
+					<item id="2938" min="1" max="1" chance="7.50223" /> 
+					<item id="2939" min="1" max="1" chance="7.50223" /> 
+					<item id="2940" min="1" max="1" chance="7.50223" /> 
+					<item id="2941" min="1" max="1" chance="7.50223" /> 
+					<item id="2942" min="1" max="1" chance="7.50223" /> 
+					<item id="2943" min="1" max="1" chance="7.50223" /> 
+					<item id="1958" min="1" max="1" chance="7.50223" /> 
+					<item id="2944" min="1" max="1" chance="7.50223" /> 
+					<item id="2321" min="1" max="1" chance="1.30962" /> 
+					<item id="2216" min="1" max="1" chance="15.3096" /> 
+					<item id="1894" min="1" max="1" chance="7.69651" /> 
+					<item id="2225" min="1" max="1" chance="8.16423" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2161" min="1" max="1" chance="42.3261" /> 
-				<item id="1949" min="1" max="1" chance="48.6561" /> 
-				<item id="1894" min="1" max="1" chance="15.2968" /> 
+				<item id="1894" min="1" max="1" chance="7.7496" /> 
+				<item id="1949" min="1" max="1" chance="24.65" /> 
+				<item id="2161" min="1" max="1" chance="21.4431" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20752" level="42" type="Monster" name="Snipe's Subordinate">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -861,46 +886,44 @@
 			<radius normal="15" />
 			<height normal="45" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="75" min="1" max="1" chance="0.03" /> 
-				<item id="76" min="1" max="1" chance="0.03" /> 
-				<item id="77" min="1" max="1" chance="0.03" /> 
-				<item id="84" min="1" max="1" chance="0.03" /> 
-				<item id="134" min="1" max="1" chance="0.03" /> 
-				<item id="145" min="1" max="1" chance="0.03" /> 
-				<item id="231" min="1" max="1" chance="0.03" /> 
-				<item id="233" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="10719" max="25088" chance="70" /> 
-				<item id="1865" min="7" max="21" chance="9.623" /> 
-				<item id="2167" min="1" max="1" chance="7.377" /> 
-				<item id="1882" min="3" max="9" chance="5.345" /> 
-				<item id="1876" min="3" max="9" chance="4.184" /> 
-				<item id="1872" min="32" max="96" chance="3.068" /> 
-				<item id="1890" min="1" max="1" chance="2.183" /> 
-				<item id="2106" min="1" max="1" chance="1.991" /> 
-				<item id="2091" min="1" max="1" chance="1.938" /> 
-				<item id="2095" min="1" max="1" chance="1.931" /> 
-				<item id="2107" min="1" max="1" chance="1.926" /> 
-				<item id="2096" min="1" max="1" chance="1.916" /> 
-				<item id="2089" min="1" max="1" chance="1.908" /> 
-				<item id="2090" min="1" max="1" chance="1.904" /> 
-				<item id="952" min="1" max="1" chance="1.904" /> 
-				<item id="2092" min="1" max="1" chance="1.86" /> 
-				<item id="2232" min="1" max="1" chance="0.75" /> 
-				<item id="4555" min="1" max="1" chance="0.75" /> 
-				<item id="4556" min="1" max="1" chance="0.75" /> 
-				<item id="4561" min="1" max="1" chance="0.75" /> 
-				<item id="4562" min="1" max="1" chance="0.75" /> 
-				<item id="951" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="1131" max="2298" chance="100" /> 
+				</group>
+				<group chance="0.003">
+					<item id="76" min="1" max="1" chance="16.6667" /> 
+					<item id="77" min="1" max="1" chance="16.6667" /> 
+					<item id="84" min="1" max="1" chance="16.6667" /> 
+					<item id="134" min="1" max="1" chance="16.6667" /> 
+					<item id="145" min="1" max="1" chance="16.6667" /> 
+					<item id="75" min="1" max="1" chance="16.6667" /> 
+				</group>
+				<group chance="39.0781">
+					<item id="2096" min="1" max="1" chance="0.13486" /> 
+					<item id="2095" min="1" max="1" chance="0.13486" /> 
+					<item id="2092" min="1" max="1" chance="0.13486" /> 
+					<item id="2091" min="1" max="1" chance="0.13486" /> 
+					<item id="2090" min="1" max="1" chance="0.13486" /> 
+					<item id="2089" min="1" max="1" chance="0.13486" /> 
+					<item id="4044" min="1" max="1" chance="1.28589" /> 
+					<item id="4609" min="1" max="1" chance="0.32218" /> 
+					<item id="5549" min="1" max="1" chance="1.93868" /> 
+					<item id="3019" min="1" max="1" chance="0.87875" /> 
+					<item id="2355" min="1" max="1" chance="0.05374" /> 
+					<item id="1342" min="10" max="30" chance="51.1796" /> 
+					<item id="1889" min="1" max="1" chance="1.28589" /> 
+					<item id="1873" min="1" max="1" chance="9.13913" /> 
+					<item id="1868" min="1" max="3" chance="31.9872" /> 
+					<item id="8725" min="1" max="1" chance="0.96576" /> 
+					<item id="8735" min="1" max="1" chance="0.15405" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1874" min="1" max="7" chance="88.63" /> 
-				<item id="1875" min="1" max="7" chance="88.59" /> 
-				<item id="1978" min="1" max="7" chance="81.65" /> 
+				<item id="1874" min="1" max="1" chance="18.6818" /> 
+				<item id="1875" min="1" max="1" chance="18.6818" /> 
+				<item id="4601" min="1" max="1" chance="0.6227" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20754" level="48" type="Monster" name="Dark Knight">
 		<parameters>
 			<param name="MoveAroundSocial" value="74" />
@@ -1031,25 +1054,30 @@
 			<radius normal="14" grown="16" />
 			<height normal="27" grown="32" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="222" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="253" max="592" chance="70" /> 
-				<item id="1868" min="1" max="1" chance="11.11" /> 
-				<item id="1867" min="1" max="1" chance="7.438" /> 
-				<item id="1865" min="1" max="1" chance="5.596" /> 
-				<item id="1866" min="1" max="1" chance="3.753" /> 
-				<item id="4469" min="1" max="1" chance="0.03" /> 
-				<item id="4470" min="1" max="1" chance="0.03" /> 
-				<item id="4477" min="1" max="1" chance="0.03" /> 
-				<item id="4478" min="1" max="1" chance="0.03" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="281" max="562" chance="100" /> 
+				</group>
+				<group chance="0.0113">
+					<item id="222" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="20.1808">
+					<item id="1882" min="1" max="1" chance="5.00971" /> 
+					<item id="1881" min="1" max="1" chance="3.00583" /> 
+					<item id="1880" min="1" max="1" chance="2.25462" /> 
+					<item id="1877" min="1" max="1" chance="0.90185" /> 
+					<item id="1876" min="1" max="1" chance="4.50874" /> 
+					<item id="1829" min="1" max="1" chance="9.01699" /> 
+					<item id="1341" min="10" max="30" chance="75.1412" /> 
+					<item id="2274" min="1" max="1" chance="0.16104" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1900" min="1" max="1" chance="16.88" /> 
-				<item id="2184" min="1" max="1" chance="16.15" /> 
+				<item id="1061" min="1" max="1" chance="40.3626" /> 
+				<item id="1900" min="1" max="1" chance="7.2865" /> 
+				<item id="2184" min="1" max="1" chance="6.9956" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20756" level="28" type="Monster" name="Talakin Archer">
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
@@ -1223,26 +1251,35 @@
 			<radius normal="11" grown="13" />
 			<height normal="27" grown="34" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="853" min="1" max="1" chance="0.75" /> 
-				<item id="884" min="1" max="1" chance="0.75" /> 
-				<item id="916" min="1" max="1" chance="0.3" /> 
-				<item id="57" min="5778" max="13500" chance="70" /> 
-				<item id="1872" min="12" max="36" chance="13.93" /> 
-				<item id="2226" min="1" max="1" chance="10.83" /> 
-				<item id="1877" min="1" max="1" chance="10.43" /> 
-				<item id="1913" min="2" max="6" chance="7.699" /> 
-				<item id="1912" min="5" max="15" chance="5.403" /> 
-				<item id="1911" min="9" max="27" chance="2.092" /> 
-				<item id="2337" min="1" max="1" chance="0.75" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="691" max="1410" chance="100" /> 
+				</group>
+				<group chance="0.0424">
+					<item id="853" min="1" max="1" chance="30.6604" /> 
+					<item id="884" min="1" max="1" chance="46.2264" /> 
+					<item id="916" min="1" max="1" chance="23.1132" /> 
+				</group>
+				<group chance="30.4744">
+					<item id="1913" min="1" max="1" chance="2.53098" /> 
+					<item id="1912" min="1" max="1" chance="4.48508" /> 
+					<item id="1911" min="1" max="1" chance="3.09571" /> 
+					<item id="4041" min="1" max="1" chance="0.44759" /> 
+					<item id="1881" min="1" max="1" chance="4.15365" /> 
+					<item id="1875" min="1" max="1" chance="1.90783" /> 
+					<item id="1872" min="1" max="1" chance="41.018" /> 
+					<item id="1867" min="1" max="1" chance="41.018" /> 
+					<item id="952" min="1" max="1" chance="0.44759" /> 
+					<item id="8724" min="1" max="1" chance="0.55981" /> 
+					<item id="8734" min="1" max="1" chance="0.22379" /> 
+					<item id="8744" min="1" max="1" chance="0.1119" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2946" min="1" max="5" chance="77.71" /> 
-				<item id="2167" min="1" max="5" chance="68.75" /> 
+				<item id="2167" min="1" max="1" chance="8.7619" /> 
+				<item id="2946" min="1" max="1" chance="9.5994" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20759" level="48" type="Monster" name="Dragon Bearer Warrior">
 		<parameters>
 			<param name="MoveAroundSocial" value="167" />
@@ -1431,33 +1468,37 @@
 			<radius normal="21" />
 			<height normal="64" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="358" min="1" max="1" chance="0.03" /> 
-				<item id="2380" min="1" max="1" chance="0.03" /> 
-				<item id="79" min="1" max="1" chance="0.003" /> 
-				<item id="287" min="1" max="1" chance="0.003" /> 
-				<item id="57" min="3102" max="7244" chance="70" /> 
-				<item id="1895" min="1" max="1" chance="15.53" /> 
-				<item id="1864" min="4" max="12" chance="13.26" /> 
-				<item id="4080" min="1" max="1" chance="4.91" /> 
-				<item id="1878" min="2" max="6" chance="4.299" /> 
-				<item id="4078" min="1" max="1" chance="3.52" /> 
-				<item id="1865" min="9" max="27" chance="2.982" /> 
-				<item id="4044" min="1" max="1" chance="1.776" /> 
-				<item id="4121" min="1" max="1" chance="1.078" /> 
-				<item id="4114" min="1" max="1" chance="1.07" /> 
-				<item id="4041" min="1" max="1" chance="0.3" /> 
-				<item id="948" min="1" max="1" chance="0.3" /> 
-				<item id="4966" min="1" max="1" chance="0.075" /> 
-				<item id="4968" min="1" max="1" chance="0.075" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="2738" max="5559" chance="100" /> 
+				</group>
+				<group chance="0.0049">
+					<item id="5293" min="1" max="1" chance="20.4082" /> 
+					<item id="5288" min="1" max="1" chance="48.9796" /> 
+					<item id="5287" min="1" max="1" chance="30.6122" /> 
+				</group>
+				<group chance="33.629">
+					<item id="5524" min="1" max="1" chance="0.97862" /> 
+					<item id="5521" min="1" max="1" chance="0.45199" /> 
+					<item id="5520" min="1" max="1" chance="0.64022" /> 
+					<item id="4989" min="1" max="1" chance="0.28606" /> 
+					<item id="5549" min="1" max="1" chance="6.91546" /> 
+					<item id="1868" min="1" max="3" chance="59.4725" /> 
+					<item id="1873" min="1" max="1" chance="24.7801" /> 
+					<item id="1889" min="1" max="1" chance="4.13007" /> 
+					<item id="5338" min="1" max="1" chance="0.05709" /> 
+					<item id="4044" min="1" max="1" chance="1.42972" /> 
+					<item id="4403" min="1" max="1" chance="0.11448" /> 
+					<item id="8730" min="1" max="1" chance="0.68661" /> 
+					<item id="8740" min="1" max="1" chance="0.05709" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="4960" min="1" max="1" chance="42.86" /> 
-				<item id="4941" min="1" max="1" chance="17.39" /> 
+				<item id="1807" min="1" max="1" chance="0.9041" /> 
+				<item id="1874" min="1" max="1" chance="45.2069" /> 
+				<item id="1875" min="1" max="1" chance="45.2069" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20762" level="68" type="Monster" name="Pytan Knight">
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
@@ -1579,28 +1620,29 @@
 			<radius normal="20" />
 			<height normal="40" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="129" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="407" max="953" chance="70" /> 
-				<item id="1864" min="1" max="1" chance="15.94" /> 
-				<item id="1865" min="1" max="1" chance="7.906" /> 
-				<item id="1866" min="1" max="1" chance="5.361" /> 
-				<item id="1878" min="1" max="1" chance="3.209" /> 
-				<item id="5231" min="1" max="1" chance="0.75" /> 
-				<item id="2201" min="1" max="1" chance="0.75" /> 
-				<item id="2034" min="1" max="1" chance="0.75" /> 
-				<item id="8343" min="1" max="1" chance="0.75" /> 
-				<item id="2040" min="1" max="1" chance="0.075" /> 
-				<item id="2032" min="1" max="1" chance="0.075" /> 
-				<item id="2296" min="1" max="1" chance="0.03" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="530" max="1058" chance="100" /> 
+				</group>
+				<group chance="0.0047">
+					<item id="129" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="40.4067">
+					<item id="2034" min="1" max="1" chance="0.85456" /> 
+					<item id="1867" min="1" max="1" chance="49.4967" /> 
+					<item id="1872" min="1" max="1" chance="41.2474" /> 
+					<item id="1875" min="1" max="1" chance="2.63273" /> 
+					<item id="1881" min="1" max="1" chance="2.40282" /> 
+					<item id="2146" min="1" max="1" chance="1.44728" /> 
+					<item id="2196" min="1" max="1" chance="1.91849" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1873" min="1" max="3" chance="50.24" /> 
-				<item id="1941" min="1" max="1" chance="9.812" /> 
+				<item id="1873" min="1" max="1" chance="50.5674" /> 
+				<item id="1902" min="1" max="1" chance="12.8084" /> 
+				<item id="1941" min="1" max="1" chance="5.0276" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20764" level="39" type="Monster" name="Wizard of the Plains">
 		
 		<parameters>
@@ -1843,25 +1885,32 @@
 			<radius normal="12" grown="14.5" />
 			<height normal="24" grown="28.8" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="281" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="476" max="1111" chance="70" /> 
-				<item id="1870" min="1" max="1" chance="12.11" /> 
-				<item id="1871" min="1" max="1" chance="11.9" /> 
-				<item id="2508" min="1" max="1" chance="9.923" /> 
-				<item id="1872" min="1" max="3" chance="7.925" /> 
-				<item id="1879" min="1" max="1" chance="1.936" /> 
-				<item id="2074" min="1" max="1" chance="0.75" /> 
-				<item id="2217" min="1" max="1" chance="0.75" /> 
-				<item id="2220" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="632" max="1284" chance="100" /> 
+				</group>
+				<group chance="0.0033">
+					<item id="281" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="17.7308">
+					<item id="2074" min="1" max="1" chance="1.47935" /> 
+					<item id="1865" min="1" max="1" chance="43.3838" /> 
+					<item id="4040" min="1" max="1" chance="0.42412" /> 
+					<item id="2322" min="1" max="1" chance="0.18217" /> 
+					<item id="2321" min="1" max="1" chance="0.18217" /> 
+					<item id="2225" min="1" max="1" chance="1.69874" /> 
+					<item id="1879" min="1" max="1" chance="8.54558" /> 
+					<item id="1875" min="1" max="1" chance="1.69874" /> 
+					<item id="1870" min="1" max="1" chance="40.2853" /> 
+					<item id="8723" min="1" max="1" chance="2.12004" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2220" min="1" max="1" chance="7.026" /> 
-				<item id="2076" min="1" max="1" chance="2.667" /> 
+				<item id="1879" min="1" max="1" chance="26.1151" /> 
+				<item id="2076" min="1" max="1" chance="1.2289" /> 
+				<item id="2220" min="1" max="1" chance="3.2441" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20768" level="44" type="Monster" name="Timak Orc Troop Shaman">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -2129,27 +2178,34 @@
 			<radius normal="50" />
 			<height normal="44" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="5318" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="6547" max="15290" chance="70" /> 
-				<item id="1874" min="1" max="1" chance="18.19" /> 
-				<item id="1877" min="1" max="1" chance="11.7" /> 
-				<item id="1876" min="3" max="9" chance="9.628" /> 
-				<item id="5502" min="1" max="1" chance="4.547" /> 
-				<item id="5503" min="1" max="1" chance="4.543" /> 
-				<item id="5515" min="1" max="1" chance="4.521" /> 
-				<item id="5514" min="1" max="1" chance="4.508" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="1774" max="3587" chance="100" /> 
+				</group>
+				<group chance="0.0012">
+					<item id="171" min="1" max="1" chance="33.3333" /> 
+					<item id="175" min="1" max="1" chance="33.3333" /> 
+					<item id="210" min="1" max="1" chance="33.3333" /> 
+				</group>
+				<group chance="7.3937">
+					<item id="4118" min="1" max="1" chance="1.20779" /> 
+					<item id="4117" min="1" max="1" chance="1.27541" /> 
+					<item id="4116" min="1" max="1" chance="1.27541" /> 
+					<item id="5276" min="1" max="1" chance="0.38952" /> 
+					<item id="4953" min="1" max="1" chance="2.50484" /> 
+					<item id="4043" min="1" max="1" chance="12.5228" /> 
+					<item id="4042" min="1" max="1" chance="4.8609" /> 
+					<item id="4040" min="1" max="1" chance="5.83334" /> 
+					<item id="1895" min="1" max="1" chance="67.6251" /> 
+					<item id="8729" min="1" max="1" chance="2.50484" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1865" min="1" max="39" chance="91.975" /> 
-				<item id="5382" min="1" max="1" chance="5.355" /> 
-				<item id="5380" min="1" max="1" chance="5.307" /> 
-				<item id="5404" min="1" max="1" chance="5.3" /> 
-				<item id="5406" min="1" max="1" chance="5.26" /> 
+				<item id="948" min="1" max="1" chance="1.095" /> 
+				<item id="1875" min="1" max="1" chance="29.1994" /> 
+				<item id="4042" min="1" max="1" chance="7.2999" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20772" level="76" type="Monster" name="Barif's Pet">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -2266,32 +2322,37 @@
 			<radius normal="10" />
 			<height normal="33.5" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="229" min="1" max="1" chance="0.003" /> 
-				<item id="243" min="1" max="1" chance="0.003" /> 
-				<item id="2392" min="1" max="1" chance="0.003" /> 
-				<item id="57" min="802" max="1871" chance="70" /> 
-				<item id="1869" min="1" max="1" chance="24.37" /> 
-				<item id="1873" min="1" max="1" chance="9.393" /> 
-				<item id="1880" min="1" max="1" chance="2.394" /> 
-				<item id="1874" min="1" max="1" chance="1.578" /> 
-				<item id="4083" min="1" max="1" chance="0.75" /> 
-				<item id="4039" min="1" max="1" chance="0.75" /> 
-				<item id="4042" min="1" max="1" chance="0.3" /> 
-				<item id="4109" min="1" max="1" chance="0.3" /> 
-				<item id="4110" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="1457" max="2974" chance="100" /> 
+				</group>
+				<group chance="0.009">
+					<item id="6325" min="1" max="1" chance="45.5556" /> 
+					<item id="6324" min="1" max="1" chance="31.1111" /> 
+					<item id="6323" min="1" max="1" chance="23.3333" /> 
+				</group>
+				<group chance="37.8255">
+					<item id="6345" min="1" max="1" chance="1.80249" /> 
+					<item id="6343" min="1" max="1" chance="1.00752" /> 
+					<item id="6341" min="1" max="1" chance="1.30335" /> 
+					<item id="5549" min="1" max="1" chance="4.06736" /> 
+					<item id="730" min="1" max="1" chance="0.01718" /> 
+					<item id="1868" min="1" max="1" chance="66.093" /> 
+					<item id="1873" min="1" max="1" chance="20.3363" /> 
+					<item id="1889" min="1" max="1" chance="4.33385" /> 
+					<item id="4044" min="1" max="1" chance="0.61202" /> 
+					<item id="4157" min="1" max="1" chance="0.07508" /> 
+					<item id="8730" min="1" max="1" chance="0.22498" /> 
+					<item id="8740" min="1" max="1" chance="0.12108" /> 
+					<item id="8750" min="1" max="1" chance="0.00582" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1867" min="1" max="5" chance="85.89" /> 
-				<item id="1872" min="1" max="5" chance="85.59" /> 
-				<item id="1882" min="1" max="1" chance="43.14" /> 
-				<item id="1881" min="1" max="1" chance="25.32" /> 
-				<item id="4043" min="1" max="1" chance="6.274" /> 
-				<item id="4040" min="1" max="1" chance="3.865" /> 
+				<item id="1807" min="1" max="1" chance="0.4827" /> 
+				<item id="5478" min="1" max="1" chance="3.0441" /> 
+				<item id="5479" min="1" max="1" chance="2.142" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20774" level="70" type="Monster" name="Conjurer Bat">
 		
 		<parameters>
@@ -2395,22 +2456,53 @@
 			<radius normal="17" />
 			<height normal="35" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="15" min="1" max="1" chance="0.075" /> 
-				<item id="57" min="40" max="94" chance="70" /> 
-				<item id="1868" min="1" max="1" chance="9.457" /> 
-				<item id="1867" min="1" max="1" chance="6.299" /> 
-				<item id="1866" min="1" max="1" chance="3.133" /> 
-				<item id="1800" min="1" max="1" chance="1.457" /> 
-				<item id="2011" min="1" max="1" chance="0.75" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="119" max="191" chance="100" /> 
+				</group>
+				<group chance="0.0106">
+					<item id="15" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="12.6389">
+					<item id="2011" min="1" max="1" chance="1.29995" /> 
+					<item id="1868" min="1" max="1" chance="75.9227" /> 
+					<item id="1873" min="1" max="1" chance="15.1849" /> 
+					<item id="2144" min="1" max="1" chance="7.59243" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="40" /> 
+					<item id="8604" min="1" max="1" chance="52" /> 
+					<item id="8605" min="1" max="1" chance="8" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1897" min="1" max="1" chance="9.116" /> 
-				<item id="2253" min="1" max="1" chance="1.645" /> 
+				<item id="1800" min="1" max="1" chance="7.6617" /> 
+				<item id="1897" min="1" max="1" chance="5.801" /> 
+				<item id="2253" min="1" max="1" chance="0.9985" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20776" level="20" type="Monster" name="Dark Succubus">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
@@ -2449,25 +2541,59 @@
 			<radius normal="10" />
 			<height normal="36" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="1104" min="1" max="1" chance="0.75" /> 
-				<item id="1101" min="1" max="1" chance="0.3" /> 
-				<item id="57" min="79" max="186" chance="70" /> 
-				<item id="1864" min="1" max="1" chance="6.284" /> 
-				<item id="1868" min="1" max="1" chance="6.24" /> 
-				<item id="1867" min="1" max="1" chance="4.193" /> 
-				<item id="1869" min="1" max="1" chance="3.182" /> 
-				<item id="1871" min="1" max="1" chance="3.055" /> 
-				<item id="1866" min="1" max="1" chance="2.056" /> 
-				<item id="2150" min="1" max="1" chance="1.391" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="137" max="239" chance="100" /> 
+				</group>
+				<group chance="0.2249">
+					<item id="1101" min="1" max="1" chance="38.506" /> 
+					<item id="1104" min="1" max="1" chance="61.494" /> 
+				</group>
+				<group chance="16.8903">
+					<item id="2140" min="1" max="1" chance="2.31079" /> 
+					<item id="1872" min="1" max="1" chance="15.4023" /> 
+					<item id="1871" min="1" max="1" chance="11.5516" /> 
+					<item id="1870" min="1" max="1" chance="11.5516" /> 
+					<item id="1869" min="1" max="1" chance="11.5516" /> 
+					<item id="1867" min="1" max="1" chance="15.4023" /> 
+					<item id="1831" min="1" max="1" chance="30.8047" /> 
+					<item id="735" min="1" max="1" chance="0.96268" /> 
+					<item id="5158" min="1" max="1" chance="0.4624" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="40" /> 
+					<item id="8604" min="1" max="1" chance="52" /> 
+					<item id="8605" min="1" max="1" chance="8" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1865" min="1" max="1" chance="44.53" /> 
-				<item id="1869" min="1" max="1" chance="43.78" /> 
+				<item id="1865" min="1" max="2" chance="29.7237" /> 
+				<item id="1866" min="1" max="1" chance="19.8158" /> 
+				<item id="1897" min="1" max="1" chance="7.0771" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20777" level="14" type="Monster" name="Hunter Bear">
 		<parameters>
 			<param name="MoveAroundSocial" value="100" />
@@ -2506,25 +2632,54 @@
 			<radius normal="21" />
 			<height normal="40" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="37" min="1" max="1" chance="2.272" /> 
-				<item id="49" min="1" max="1" chance="2.188" /> 
-				<item id="57" min="41" max="98" chance="70" /> 
-				<item id="1921" min="1" max="3" chance="9.481" /> 
-				<item id="1868" min="1" max="1" chance="6.595" /> 
-				<item id="1864" min="1" max="1" chance="6.519" /> 
-				<item id="1867" min="1" max="1" chance="4.367" /> 
-				<item id="1869" min="1" max="1" chance="3.291" /> 
-				<item id="1871" min="1" max="1" chance="3.217" /> 
-				<item id="1792" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="114" max="168" chance="100" /> 
+				</group>
+				<group chance="0.6626">
+					<item id="37" min="1" max="1" chance="50" /> 
+					<item id="49" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="13.6884">
+					<item id="1921" min="1" max="1" chance="20.6869" /> 
+					<item id="1794" min="1" max="1" chance="2.3582" /> 
+					<item id="1868" min="1" max="1" chance="64.1287" /> 
+					<item id="1873" min="1" max="1" chance="12.8262" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="40" /> 
+					<item id="8604" min="1" max="1" chance="52" /> 
+					<item id="8605" min="1" max="1" chance="8" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1831" min="1" max="3" chance="53.13" /> 
-				<item id="1896" min="1" max="1" chance="16.2" /> 
+				<item id="1792" min="1" max="1" chance="1.6388" /> 
+				<item id="1831" min="1" max="1" chance="59.4351" /> 
+				<item id="1896" min="1" max="1" chance="9.4441" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20778" level="39" type="Monster" name="Ragna Orc Prefect">
 		<parameters>
 			<param name="MoveAroundSocial" value="70" />
@@ -2572,26 +2727,33 @@
 			<radius normal="10" grown="12" />
 			<height normal="23" grown="27.6" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="352" min="1" max="1" chance="0.03" /> 
-				<item id="2377" min="1" max="1" chance="0.03" /> 
-				<item id="2378" min="1" max="1" chance="0.03" /> 
-				<item id="57" min="202" max="474" chance="70" /> 
-				<item id="1873" min="1" max="1" chance="3.493" /> 
-				<item id="1876" min="1" max="1" chance="1.714" /> 
-				<item id="2918" min="1" max="1" chance="1.036" /> 
-				<item id="2919" min="1" max="1" chance="0.987" /> 
-				<item id="1941" min="1" max="1" chance="0.75" /> 
-				<item id="2159" min="1" max="1" chance="0.75" /> 
-				<item id="5220" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="343" max="684" chance="100" /> 
+				</group>
+				<group chance="0.0197">
+					<item id="2378" min="1" max="1" chance="38.0711" /> 
+					<item id="2377" min="1" max="1" chance="38.0711" /> 
+					<item id="352" min="1" max="1" chance="23.8579" /> 
+				</group>
+				<group chance="13.8367">
+					<item id="2918" min="1" max="1" chance="2.99855" /> 
+					<item id="2919" min="1" max="1" chance="2.99855" /> 
+					<item id="1941" min="1" max="1" chance="2.0106" /> 
+					<item id="1877" min="1" max="1" chance="2.02216" /> 
+					<item id="2288" min="1" max="1" chance="0.28114" /> 
+					<item id="2289" min="1" max="1" chance="0.28114" /> 
+					<item id="1871" min="1" max="1" chance="50.5438" /> 
+					<item id="1866" min="1" max="1" chance="33.6959" /> 
+					<item id="2202" min="1" max="1" chance="5.16814" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1903" min="1" max="1" chance="21.41" /> 
-				<item id="2290" min="1" max="1" chance="0.75" /> 
+				<item id="1902" min="1" max="1" chance="8.2244" /> 
+				<item id="1903" min="1" max="1" chance="13.5404" /> 
+				<item id="2290" min="1" max="1" chance="0.451" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20779" level="39" type="Monster" name="Ragna Orc Priest">
 		<parameters>
 			<param name="MoveAroundSocial" value="70" />
@@ -2637,23 +2799,29 @@
 			<radius normal="9" />
 			<height normal="22" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="318" min="1" max="1" chance="0.0075" /> 
-				<item id="57" min="202" max="474" chance="70" /> 
-				<item id="1341" min="10" max="30" chance="22.58" /> 
-				<item id="1873" min="1" max="1" chance="2.851" /> 
-				<item id="1876" min="1" max="1" chance="1.433" /> 
-				<item id="2194" min="1" max="1" chance="0.75" /> 
-				<item id="2042" min="1" max="1" chance="0.3" /> 
-				<item id="5220" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="307" max="611" chance="100" /> 
+				</group>
+				<group chance="0.0027">
+					<item id="318" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="13.1324">
+					<item id="2042" min="1" max="1" chance="1.31888" /> 
+					<item id="1866" min="1" max="1" chance="38.0387" /> 
+					<item id="1871" min="1" max="1" chance="57.0581" /> 
+					<item id="1877" min="1" max="1" chance="2.2829" /> 
+					<item id="2286" min="1" max="1" chance="0.31754" /> 
+					<item id="2290" min="1" max="1" chance="0.31754" /> 
+					<item id="8723" min="1" max="1" chance="0.66629" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2158" min="1" max="1" chance="15.22" /> 
-				<item id="1904" min="1" max="1" chance="11.18" /> 
+				<item id="1866" min="1" max="1" chance="48.3184" /> 
+				<item id="1904" min="1" max="1" chance="6.7641" /> 
+				<item id="2158" min="1" max="1" chance="8.97" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20780" level="35" type="Monster" name="Bloody Axe's Escort">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -2695,23 +2863,55 @@
 			<radius normal="14" grown="16" />
 			<height normal="27" grown="32" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="157" min="1" max="1" chance="0.0075" /> 
-				<item id="186" min="1" max="1" chance="0.0075" /> 
-				<item id="57" min="161" max="374" chance="70" /> 
-				<item id="1868" min="1" max="1" chance="13.79" /> 
-				<item id="1867" min="1" max="1" chance="9.31" /> 
-				<item id="1866" min="1" max="1" chance="4.639" /> 
-				<item id="2188" min="1" max="1" chance="0.75" /> 
-				<item id="2027" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="251" max="501" chance="100" /> 
+				</group>
+				<group chance="0.0044">
+					<item id="157" min="1" max="1" chance="50" /> 
+					<item id="186" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="16.9104">
+					<item id="2027" min="1" max="1" chance="0.81607" /> 
+					<item id="1866" min="1" max="1" chance="36.9595" /> 
+					<item id="1871" min="1" max="1" chance="59.1352" /> 
+					<item id="1877" min="1" max="1" chance="1.40446" /> 
+					<item id="2186" min="1" max="1" chance="1.68476" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1901" min="1" max="1" chance="12.89" /> 
-				<item id="2980" min="1" max="1" chance="12.58" /> 
+				<item id="1877" min="1" max="1" chance="2.3762" /> 
+				<item id="1901" min="1" max="1" chance="8.2051" /> 
+				<item id="2980" min="1" max="1" chance="7.9524" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20781" level="35" type="Monster" name="Delu Lizardman Shaman">
 		<parameters>
 			<param name="MoveAroundSocial" value="75" />
@@ -2765,22 +2965,58 @@
 			<radius normal="10" />
 			<height normal="29" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="436" min="1" max="1" chance="0.075" /> 
-				<item id="469" min="1" max="1" chance="0.075" /> 
-				<item id="57" min="162" max="378" chance="70" /> 
-				<item id="1864" min="1" max="1" chance="14.48" /> 
-				<item id="1866" min="1" max="1" chance="4.668" /> 
-				<item id="1878" min="1" max="1" chance="2.821" /> 
-				<item id="2189" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="248" max="496" chance="100" /> 
+				</group>
+				<group chance="0.0535">
+					<item id="436" min="1" max="1" chance="38.5047" /> 
+					<item id="469" min="1" max="1" chance="61.4953" /> 
+				</group>
+				<group chance="4.3174">
+					<item id="5550" min="1" max="1" chance="0.79214" /> 
+					<item id="5549" min="1" max="1" chance="7.93302" /> 
+					<item id="2273" min="1" max="1" chance="0.64854" /> 
+					<item id="2187" min="1" max="1" chance="4.0441" /> 
+					<item id="1885" min="1" max="1" chance="7.54621" /> 
+					<item id="1879" min="1" max="1" chance="15.0924" /> 
+					<item id="1875" min="1" max="1" chance="6.03836" /> 
+					<item id="6667" min="1" max="1" chance="57.9052" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2192" min="1" max="1" chance="12.23" /> 
-				<item id="1938" min="1" max="1" chance="6.574" /> 
+				<item id="1901" min="1" max="1" chance="8.1246" /> 
+				<item id="1938" min="1" max="1" chance="3.9544" /> 
+				<item id="2192" min="1" max="1" chance="7.5029" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20782" level="17" type="Monster" name="Ol Mahum Novice">
 		<parameters>
 			<param name="MoveAroundSocial" value="130" />
@@ -2819,21 +3055,53 @@
 			<radius normal="13.5" />
 			<height normal="25" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="256" min="1" max="1" chance="0.3" /> 
-				<item id="57" min="40" max="94" chance="70" /> 
-				<item id="1868" min="1" max="1" chance="9.455" /> 
-				<item id="1867" min="1" max="1" chance="6.292" /> 
-				<item id="1866" min="1" max="1" chance="3.166" /> 
-				<item id="1801" min="1" max="1" chance="2.383" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="122" max="197" chance="100" /> 
+				</group>
+				<group chance="0.0218">
+					<item id="256" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="11.7744">
+					<item id="1867" min="1" max="1" chance="41.9792" /> 
+					<item id="1872" min="1" max="1" chance="41.9792" /> 
+					<item id="2150" min="1" max="1" chance="14.7821" /> 
+					<item id="5268" min="1" max="1" chance="1.25951" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="40" /> 
+					<item id="8604" min="1" max="1" chance="52" /> 
+					<item id="8605" min="1" max="1" chance="8" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1801" min="1" max="1" chance="20.27" /> 
-				<item id="1924" min="1" max="1" chance="11.92" /> 
+				<item id="1800" min="1" max="1" chance="7.8931" /> 
+				<item id="1801" min="1" max="1" chance="12.6448" /> 
+				<item id="1924" min="1" max="1" chance="8.0968" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20783" level="35" type="Monster" name="Dread Wolf">
 		<parameters>
 			<param name="MoveAroundSocial" value="60" />
@@ -2885,27 +3153,58 @@
 			<radius normal="13" />
 			<height normal="11" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="137" max="273" chance="70" /> 
-				<item id="316" min="1" max="1" chance="0.003" /> 
-				<item id="317" min="1" max="1" chance="0.003" /> 
-				<item id="2030" min="1" max="1" chance="0.075" /> 
-				<item id="1874" min="1" max="1" chance="1.212" /> 
-				<item id="1878" min="1" max="1" chance="0.86" /> 
-				<item id="1884" min="1" max="1" chance="1.325" /> 
-				<item id="1889" min="1" max="1" chance="0.143" /> 
-				<item id="5220" min="1" max="1" chance="0.08" /> 
-				<item id="2153" min="1" max="1" chance="0.335" /> 
-				<item id="2977" min="1" max="1" chance="0.288" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="114" max="228" chance="100" /> 
+				</group>
+				<group chance="0.002">
+					<item id="316" min="1" max="1" chance="50" /> 
+					<item id="317" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="4.0664">
+					<item id="2030" min="1" max="1" chance="1.37714" /> 
+					<item id="2977" min="1" max="1" chance="5.8553" /> 
+					<item id="2153" min="1" max="1" chance="14.637" /> 
+					<item id="1889" min="1" max="1" chance="3.36416" /> 
+					<item id="1884" min="1" max="1" chance="46.3998" /> 
+					<item id="1878" min="1" max="1" chance="20.4923" /> 
+					<item id="1874" min="1" max="1" chance="5.8553" /> 
+					<item id="5220" min="1" max="1" chance="2.01898" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2203" min="1" max="1" chance="7.0587" /> 
-				<item id="1935" min="1" max="1" chance="1.81" /> 
-				<item id="1900" min="1" max="1" chance="3.5448" /> 
+				<item id="1900" min="1" max="1" chance="2.954" /> 
+				<item id="1935" min="1" max="1" chance="1.5084" /> 
+				<item id="2203" min="1" max="1" chance="5.8822" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20784" level="36" type="Monster" name="Tasaba Lizardman">
 		<parameters>
 			<param name="MoveAroundSocial" value="139" />
@@ -2959,29 +3258,60 @@
 			<radius normal="10" grown="12" />
 			<height normal="22" grown="27" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="154" max="309" chance="70" /> 
-				<item id="83" min="1" max="1" chance="0.075" /> 
-				<item id="144" min="1" max="1" chance="0.075" /> 
-				<item id="124" min="1" max="1" chance="0.03" /> 
-				<item id="2026" min="1" max="1" chance="0.3" /> 
-				<item id="127" min="1" max="1" chance="0.03" /> 
-				<item id="130" min="1" max="1" chance="0.03" /> 
-				<item id="1875" min="1" max="1" chance="0.21" /> 
-				<item id="1879" min="1" max="1" chance="0.539" /> 
-				<item id="1885" min="1" max="1" chance="0.269" /> 
-				<item id="5550" min="1" max="1" chance="0.05" /> 
-				<item id="5549" min="1" max="1" chance="0.323" /> 
-				<item id="2250" min="1" max="1" chance="0.808" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="129" max="258" chance="100" /> 
+				</group>
+				<group chance="0.0034">
+					<item id="83" min="1" max="1" chance="23.5294" /> 
+					<item id="124" min="1" max="1" chance="17.6471" /> 
+					<item id="127" min="1" max="1" chance="17.6471" /> 
+					<item id="130" min="1" max="1" chance="17.6471" /> 
+					<item id="144" min="1" max="1" chance="23.5294" /> 
+				</group>
+				<group chance="2.4268">
+					<item id="2026" min="1" max="1" chance="1.34333" /> 
+					<item id="5549" min="1" max="1" chance="15.848" /> 
+					<item id="2250" min="1" max="1" chance="44.3094" /> 
+					<item id="1885" min="1" max="1" chance="5.65354" /> 
+					<item id="1879" min="1" max="1" chance="20.3972" /> 
+					<item id="1875" min="1" max="1" chance="11.3194" /> 
+					<item id="5550" min="1" max="1" chance="1.12906" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2021" min="1" max="1" chance="0.4623" /> 
-				<item id="2184" min="1" max="1" chance="3.8461" /> 
-				<item id="2153" min="1" max="1" chance="5.6945" /> 
+				<item id="2021" min="1" max="1" chance="0.3853" /> 
+				<item id="2153" min="1" max="1" chance="4.7454" /> 
+				<item id="2184" min="1" max="1" chance="3.2051" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20785" level="37" type="Monster" name="Tasaba Lizardman Shaman">
 		<parameters>
 			<param name="MoveAroundSocial" value="75" />
@@ -3036,41 +3366,73 @@
 			<radius normal="10" />
 			<height normal="29" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="149" max="298" chance="70" /> 
-				<item id="1124" min="1" max="1" chance="0.005" /> 
-				<item id="1948" min="1" max="1" chance="0.15" /> 
-				<item id="2424" min="1" max="1" chance="0.005" /> 
-				<item id="2923" min="1" max="1" chance="0.15" /> 
-				<item id="2425" min="1" max="1" chance="0.005" /> 
-				<item id="2924" min="1" max="1" chance="0.15" /> 
-				<item id="2426" min="1" max="1" chance="0.005" /> 
-				<item id="2925" min="1" max="1" chance="0.15" /> 
-				<item id="606" min="1" max="1" chance="0.005" /> 
-				<item id="1946" min="1" max="1" chance="0.15" /> 
-				<item id="2448" min="1" max="1" chance="0.005" /> 
-				<item id="2926" min="1" max="1" chance="0.15" /> 
-				<item id="2449" min="1" max="1" chance="0.005" /> 
-				<item id="2927" min="1" max="1" chance="0.15" /> 
-				<item id="2450" min="1" max="1" chance="0.005" /> 
-				<item id="2928" min="1" max="1" chance="0.15" /> 
-				<item id="1875" min="1" max="1" chance="0.4146" /> 
-				<item id="1879" min="1" max="1" chance="0.35365" /> 
-				<item id="1885" min="1" max="1" chance="0.17683" /> 
-				<item id="5550" min="1" max="1" chance="0.02829" /> 
-				<item id="5549" min="1" max="1" chance="0.21219" /> 
-				<item id="2185" min="1" max="1" chance="0.4177" /> 
-				<item id="2982" min="1" max="1" chance="0.27065" /> 
-				<item id="1341" min="10" max="30" chance="7.07304" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="124" max="248" chance="100" /> 
+				</group>
+				<group chance="0.0208">
+					<item id="2448" min="1" max="1" chance="12.5" /> 
+					<item id="2449" min="1" max="1" chance="12.5" /> 
+					<item id="2450" min="1" max="1" chance="12.5" /> 
+					<item id="2426" min="1" max="1" chance="12.5" /> 
+					<item id="2425" min="1" max="1" chance="12.5" /> 
+					<item id="2424" min="1" max="1" chance="12.5" /> 
+					<item id="606" min="1" max="1" chance="12.5" /> 
+					<item id="1124" min="1" max="1" chance="12.5" /> 
+				</group>
+				<group chance="10.6396">
+					<item id="2923" min="1" max="1" chance="1.20775" /> 
+					<item id="2924" min="1" max="1" chance="1.20775" /> 
+					<item id="2925" min="1" max="1" chance="1.20775" /> 
+					<item id="2926" min="1" max="1" chance="1.20775" /> 
+					<item id="2927" min="1" max="1" chance="1.20775" /> 
+					<item id="2928" min="1" max="1" chance="1.20775" /> 
+					<item id="1948" min="1" max="1" chance="1.20775" /> 
+					<item id="1946" min="1" max="1" chance="1.20775" /> 
+					<item id="5550" min="1" max="1" chance="0.18516" /> 
+					<item id="5549" min="1" max="1" chance="2.21625" /> 
+					<item id="2982" min="1" max="1" chance="3.70033" /> 
+					<item id="1341" min="10" max="30" chance="62.6593" /> 
+					<item id="1875" min="1" max="1" chance="1.4775" /> 
+					<item id="1879" min="1" max="1" chance="2.58938" /> 
+					<item id="1885" min="1" max="1" chance="1.10812" /> 
+					<item id="2185" min="1" max="1" chance="3.70033" /> 
+					<item id="6667" min="1" max="1" chance="12.7016" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2022" min="1" max="1" chance="0.55" /> 
-				<item id="1933" min="1" max="1" chance="4.154" /> 
-				<item id="1875" min="1" max="1" chance="2.3539" /> 
+				<item id="1875" min="1" max="1" chance="1.9616" /> 
+				<item id="1933" min="1" max="1" chance="3.4617" /> 
+				<item id="2022" min="1" max="1" chance="0.4583" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20786" level="39" type="Monster" name="Lienrik">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3124,29 +3486,60 @@
 			<radius normal="12" />
 			<height normal="50" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="166" max="330" chance="70" /> 
-				<item id="395" min="1" max="1" chance="0.006" /> 
-				<item id="1942" min="1" max="1" chance="0.267" /> 
-				<item id="417" min="1" max="1" chance="0.009" /> 
-				<item id="1943" min="1" max="1" chance="0.416" /> 
-				<item id="1875" min="1" max="1" chance="0.17" /> 
-				<item id="1879" min="1" max="1" chance="0.433" /> 
-				<item id="1885" min="1" max="1" chance="0.216" /> 
-				<item id="5550" min="1" max="1" chance="0.03" /> 
-				<item id="5549" min="1" max="1" chance="0.26" /> 
-				<item id="2278" min="1" max="1" chance="0.02" /> 
-				<item id="2286" min="1" max="1" chance="0.018" /> 
-				<item id="2977" min="1" max="1" chance="0.348" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="138" max="275" chance="100" /> 
+				</group>
+				<group chance="0.0099">
+					<item id="417" min="1" max="1" chance="61.6162" /> 
+					<item id="395" min="1" max="1" chance="38.3838" /> 
+				</group>
+				<group chance="1.8818">
+					<item id="1943" min="1" max="1" chance="17.7915" /> 
+					<item id="1942" min="1" max="1" chance="11.4252" /> 
+					<item id="1875" min="1" max="1" chance="7.46626" /> 
+					<item id="5549" min="1" max="1" chance="16.7127" /> 
+					<item id="2977" min="1" max="1" chance="15.6765" /> 
+					<item id="2286" min="1" max="1" chance="0.62706" /> 
+					<item id="2278" min="1" max="1" chance="0.80242" /> 
+					<item id="1885" min="1" max="1" chance="9.33681" /> 
+					<item id="1879" min="1" max="1" chance="18.6683" /> 
+					<item id="5550" min="1" max="1" chance="1.49325" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2026" min="1" max="1" chance="0.4711" /> 
-				<item id="2155" min="1" max="1" chance="6.2822" /> 
-				<item id="5550" min="1" max="1" chance="0.5218" /> 
+				<item id="2026" min="1" max="1" chance="0.3925" /> 
+				<item id="2155" min="1" max="1" chance="5.2351" /> 
+				<item id="5550" min="1" max="1" chance="0.4349" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20787" level="40" type="Monster" name="Lienrik Lad">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3200,31 +3593,63 @@
 			<radius normal="12" />
 			<height normal="50" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="199" max="397" chance="70" /> 
-				<item id="850" min="1" max="1" chance="0.012" /> 
-				<item id="1902" min="1" max="1" chance="0.436" /> 
-				<item id="913" min="1" max="1" chance="0.01" /> 
-				<item id="1904" min="1" max="1" chance="0.402" /> 
-				<item id="881" min="1" max="1" chance="0.018" /> 
-				<item id="1903" min="1" max="1" chance="0.72" /> 
-				<item id="1875" min="1" max="1" chance="0.18" /> 
-				<item id="1879" min="1" max="1" chance="0.464" /> 
-				<item id="1885" min="1" max="1" chance="0.232" /> 
-				<item id="5550" min="1" max="1" chance="0.037" /> 
-				<item id="5549" min="1" max="1" chance="0.28" /> 
-				<item id="2188" min="1" max="1" chance="0.198" /> 
-				<item id="5473" min="1" max="1" chance="0.2" /> 
-				<item id="1341" min="10" max="30" chance="9.296" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="166" max="331" chance="100" /> 
+				</group>
+				<group chance="0.0238">
+					<item id="913" min="1" max="1" chance="23.1092" /> 
+					<item id="881" min="1" max="1" chance="46.2185" /> 
+					<item id="850" min="1" max="1" chance="30.6723" /> 
+				</group>
+				<group chance="14.3995">
+					<item id="1903" min="1" max="1" chance="3.94736" /> 
+					<item id="1904" min="1" max="1" chance="2.2091" /> 
+					<item id="1902" min="1" max="1" chance="2.398" /> 
+					<item id="5549" min="1" max="1" chance="1.77159" /> 
+					<item id="2188" min="1" max="1" chance="2.06674" /> 
+					<item id="5473" min="1" max="1" chance="1.12226" /> 
+					<item id="1885" min="1" max="1" chance="2.36189" /> 
+					<item id="1879" min="1" max="1" chance="4.08486" /> 
+					<item id="1875" min="1" max="1" chance="0.82642" /> 
+					<item id="1832" min="1" max="1" chance="21.0445" /> 
+					<item id="1341" min="10" max="30" chance="57.8721" /> 
+					<item id="5550" min="1" max="1" chance="0.29515" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1870" min="1" max="1" chance="47.6736" /> 
-				<item id="2029" min="1" max="1" chance="0.5687" /> 
-				<item id="5549" min="1" max="1" chance="4.7674" /> 
+				<item id="1870" min="1" max="1" chance="39.547" /> 
+				<item id="2029" min="1" max="1" chance="0.4717" /> 
+				<item id="5549" min="1" max="1" chance="3.9547" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20788" level="35" type="Monster" name="Rakul">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3279,26 +3704,56 @@
 			<radius normal="30" />
 			<height normal="39" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="355" max="708" chance="70" /> 
-				<item id="260" min="1" max="1" chance="0.012" /> 
-				<item id="1874" min="1" max="1" chance="0.374" /> 
-				<item id="1878" min="1" max="1" chance="2.247" /> 
-				<item id="1884" min="1" max="1" chance="3.456" /> 
-				<item id="1889" min="1" max="1" chance="0.374" /> 
-				<item id="5220" min="1" max="1" chance="0.224" /> 
-				<item id="2189" min="1" max="1" chance="0.25" /> 
-				<item id="2293" min="1" max="1" chance="0.03" /> 
-				<item id="2275" min="1" max="1" chance="0.03" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="296" max="590" chance="100" /> 
+				</group>
+				<group chance="0.0077">
+					<item id="260" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="8.1242">
+					<item id="2293" min="1" max="1" chance="0.3188" /> 
+					<item id="2275" min="1" max="1" chance="0.40989" /> 
+					<item id="2189" min="1" max="1" chance="2.55656" /> 
+					<item id="1889" min="1" max="1" chance="3.81822" /> 
+					<item id="1884" min="1" max="1" chance="35.2392" /> 
+					<item id="1878" min="1" max="1" chance="22.9056" /> 
+					<item id="1874" min="1" max="1" chance="3.81822" /> 
+					<item id="5220" min="1" max="1" chance="30.9335" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2186" min="1" max="1" chance="2.8093" /> 
-				<item id="1901" min="1" max="1" chance="11.602" /> 
-				<item id="1901" min="1" max="1" chance="11.602" /> 
+				<item id="1901" min="1" max="2" chance="9.6683" /> 
+				<item id="2186" min="1" max="1" chance="2.3411" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20789" level="36" type="Monster" name="Crokian">
 		<parameters>
 			<param name="MoveAroundSocial" value="115" />
@@ -3352,31 +3807,62 @@
 			<radius normal="18" />
 			<height normal="29" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="333" max="668" chance="70" /> 
-				<item id="393" min="1" max="1" chance="0.011" /> 
-				<item id="1938" min="1" max="1" chance="0.471" /> 
-				<item id="394" min="1" max="1" chance="0.011" /> 
-				<item id="415" min="1" max="1" chance="0.0254" /> 
-				<item id="1939" min="1" max="1" chance="0.803" /> 
-				<item id="416" min="1" max="1" chance="0.0252" /> 
-				<item id="1874" min="1" max="1" chance="0.35" /> 
-				<item id="1889" min="1" max="1" chance="0.35" /> 
-				<item id="1878" min="1" max="1" chance="2.11" /> 
-				<item id="1884" min="1" max="1" chance="3.25" /> 
-				<item id="5220" min="1" max="1" chance="0.211" /> 
-				<item id="2275" min="1" max="1" chance="0.037" /> 
-				<item id="1661" min="1" max="1" chance="1.055" /> 
-				<item id="1341" min="10" max="30" chance="17.6" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="278" max="557" chance="100" /> 
+				</group>
+				<group chance="0.04">
+					<item id="393" min="1" max="1" chance="19.25" /> 
+					<item id="394" min="1" max="1" chance="19.25" /> 
+					<item id="415" min="1" max="1" chance="30.75" /> 
+					<item id="416" min="1" max="1" chance="30.75" /> 
+				</group>
+				<group chance="25.6632">
+					<item id="1939" min="1" max="1" chance="1.99858" /> 
+					<item id="1938" min="1" max="1" chance="1.52943" /> 
+					<item id="2275" min="1" max="1" chance="0.12196" /> 
+					<item id="1889" min="1" max="1" chance="1.11327" /> 
+					<item id="1884" min="1" max="1" chance="11.1331" /> 
+					<item id="1878" min="1" max="1" chance="10.5314" /> 
+					<item id="1874" min="1" max="1" chance="1.94832" /> 
+					<item id="1661" min="1" max="1" chance="5.56673" /> 
+					<item id="1341" min="10" max="30" chance="64.944" /> 
+					<item id="5220" min="1" max="1" chance="1.11327" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2030" min="1" max="1" chance="0.9246" /> 
-				<item id="2188" min="1" max="1" chance="5.6469" /> 
-				<item id="2154" min="1" max="1" chance="8.4644" /> 
+				<item id="2030" min="1" max="1" chance="0.7705" /> 
+				<item id="2154" min="1" max="1" chance="7.0536" /> 
+				<item id="2188" min="1" max="1" chance="4.7058" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20790" level="37" type="Monster" name="Dailaon">
 		<parameters>
 			<param name="MoveAroundSocial" value="70" />
@@ -3431,29 +3917,62 @@
 			<radius normal="20" />
 			<height normal="28" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="428" max="853" chance="70" /> 
-				<item id="2038" min="1" max="1" chance="0.137" /> 
-				<item id="1660" min="1" max="1" chance="0.003" /> 
-				<item id="2044" min="1" max="1" chance="0.137" /> 
-				<item id="1874" min="1" max="1" chance="0.35" /> 
-				<item id="1889" min="1" max="1" chance="0.35" /> 
-				<item id="1878" min="1" max="1" chance="2.1" /> 
-				<item id="1884" min="1" max="1" chance="3.22" /> 
-				<item id="5220" min="1" max="1" chance="0.21" /> 
-				<item id="2147" min="1" max="1" chance="0.375" /> 
-				<item id="2984" min="1" max="1" chance="0.534" /> 
-				<item id="2289" min="1" max="1" chance="0.03" /> 
-				<item id="1341" min="10" max="30" chance="17.5" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="356" max="711" chance="100" /> 
+				</group>
+				<group chance="0.0032">
+					<item id="224" min="1" max="1" chance="50" /> 
+					<item id="1660" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="27.9012">
+					<item id="2044" min="1" max="1" chance="0.41289" /> 
+					<item id="2038" min="1" max="1" chance="0.41289" /> 
+					<item id="5220" min="1" max="1" chance="0.62972" /> 
+					<item id="2984" min="1" max="1" chance="2.52391" /> 
+					<item id="2289" min="1" max="1" chance="0.12042" /> 
+					<item id="2147" min="1" max="1" chance="1.68272" /> 
+					<item id="1889" min="1" max="1" chance="1.68272" /> 
+					<item id="1884" min="1" max="1" chance="11.5615" /> 
+					<item id="1878" min="1" max="1" chance="7.31438" /> 
+					<item id="1874" min="1" max="1" chance="1.56517" /> 
+					<item id="1341" min="10" max="30" chance="59.7347" /> 
+					<item id="6667" min="1" max="1" chance="12.359" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> 
+					<item id="8601" min="1" max="1" chance="38" /> 
+					<item id="8602" min="1" max="1" chance="7" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="23" /> 
+					<item id="8604" min="1" max="1" chance="66" /> 
+					<item id="8605" min="1" max="1" chance="11" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2039" min="1" max="1" chance="1.0243" /> 
-				<item id="1868" min="1" max="5" chance="67.4568" /> 
-				<item id="1902" min="1" max="1" chance="10.2518" /> 
+				<item id="1868" min="1" max="5" chance="84.321" /> 
+				<item id="1902" min="1" max="1" chance="8.5432" /> 
+				<item id="2039" min="1" max="1" chance="0.8536" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20791" level="38" type="Monster" name="Crokian Warrior">
 		<parameters>
 			<param name="MoveAroundSocial" value="115" />
@@ -3508,30 +4027,61 @@
 			<radius normal="18" />
 			<height normal="29" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="735" max="1467" chance="70" /> 
-				<item id="352" min="1" max="1" chance="0.013" /> 
-				<item id="1941" min="1" max="1" chance="0.612" /> 
-				<item id="2377" min="1" max="1" chance="0.021" /> 
-				<item id="2918" min="1" max="1" chance="0.9125" /> 
-				<item id="2378" min="1" max="1" chance="0.021" /> 
-				<item id="2919" min="1" max="1" chance="0.915" /> 
-				<item id="1876" min="1" max="1" chance="2.575" /> 
-				<item id="1880" min="1" max="1" chance="1.287" /> 
-				<item id="1877" min="1" max="1" chance="0.514" /> 
-				<item id="1881" min="1" max="1" chance="1.716" /> 
-				<item id="1882" min="1" max="1" chance="2.862" /> 
-				<item id="2198" min="1" max="1" chance="0.269" /> 
-				<item id="3020" min="1" max="1" chance="0.75" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="613" max="1223" chance="100" /> 
+				</group>
+				<group chance="0.0352">
+					<item id="2378" min="1" max="1" chance="38.0682" /> 
+					<item id="2377" min="1" max="1" chance="38.0682" /> 
+					<item id="352" min="1" max="1" chance="23.8636" /> 
+				</group>
+				<group chance="11.4455">
+					<item id="2919" min="1" max="1" chance="6.46979" /> 
+					<item id="2918" min="1" max="1" chance="6.46979" /> 
+					<item id="1941" min="1" max="1" chance="4.33708" /> 
+					<item id="1882" min="1" max="1" chance="26.4759" /> 
+					<item id="1881" min="1" max="1" chance="14.092" /> 
+					<item id="2198" min="1" max="1" chance="3.68616" /> 
+					<item id="1880" min="1" max="1" chance="8.56581" /> 
+					<item id="1877" min="1" max="1" chance="3.68616" /> 
+					<item id="1876" min="1" max="1" chance="25.6974" /> 
+					<item id="3020" min="1" max="1" chance="0.51985" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="20" /> 
+					<item id="8601" min="1" max="1" chance="45" /> 
+					<item id="8602" min="1" max="1" chance="35" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="12" /> 
+					<item id="8604" min="1" max="1" chance="56" /> 
+					<item id="8605" min="1" max="1" chance="32" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2196" min="1" max="1" chance="7.1256" /> 
-				<item id="2041" min="1" max="1" chance="1.9395" /> 
-				<item id="1825" min="1" max="1" chance="12.419" /> 
+				<item id="1825" min="1" max="1" chance="10.3491" /> 
+				<item id="2041" min="1" max="1" chance="1.6162" /> 
+				<item id="2196" min="1" max="1" chance="5.938" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20792" level="39" type="Monster" name="Farhite">
 		<parameters>
 			<param name="MoveAroundSocial" value="70" />
@@ -3590,33 +4140,71 @@
 			<radius normal="16" />
 			<height normal="31" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="684" max="1363" chance="70" /> 
-				<item id="88" min="1" max="1" chance="0.002" /> 
-				<item id="90" min="1" max="1" chance="0.002" /> 
-				<item id="169" min="1" max="1" chance="0.002" /> 
-				<item id="172" min="1" max="1" chance="0.002" /> 
-				<item id="2031" min="1" max="1" chance="0.1" /> 
-				<item id="2032" min="1" max="1" chance="0.1" /> 
-				<item id="2035" min="1" max="1" chance="0.1" /> 
-				<item id="2036" min="1" max="1" chance="0.1" /> 
-				<item id="2037" min="1" max="1" chance="0.1" /> 
-				<item id="1876" min="1" max="1" chance="2.409" /> 
-				<item id="1880" min="1" max="1" chance="1.204" /> 
-				<item id="1877" min="1" max="1" chance="0.48" /> 
-				<item id="1881" min="1" max="1" chance="1.606" /> 
-				<item id="1882" min="1" max="1" chance="2.675" /> 
-				<item id="2198" min="1" max="1" chance="0.25" /> 
-				<item id="3020" min="1" max="1" chance="0.06" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="570" max="1136" chance="100" /> 
+				</group>
+				<group chance="0.005">
+					<item id="172" min="1" max="1" chance="20" /> 
+					<item id="169" min="1" max="1" chance="20" /> 
+					<item id="158" min="1" max="1" chance="20" /> 
+					<item id="90" min="1" max="1" chance="20" /> 
+					<item id="88" min="1" max="1" chance="20" /> 
+				</group>
+				<group chance="9.0461">
+					<item id="2032" min="1" max="1" chance="0.71191" /> 
+					<item id="2035" min="1" max="1" chance="0.78045" /> 
+					<item id="2036" min="1" max="1" chance="0.78045" /> 
+					<item id="2037" min="1" max="1" chance="0.78045" /> 
+					<item id="2031" min="1" max="1" chance="0.78045" /> 
+					<item id="2198" min="1" max="1" chance="2.84211" /> 
+					<item id="1882" min="1" max="1" chance="27.6362" /> 
+					<item id="1881" min="1" max="1" chance="22.109" /> 
+					<item id="1880" min="1" max="1" chance="13.481" /> 
+					<item id="1877" min="1" max="1" chance="3.55402" /> 
+					<item id="1876" min="1" max="1" chance="25.1235" /> 
+					<item id="3020" min="1" max="1" chance="1.4205" /> 
+				</group>
+				<group chance="100">
+					<item id="7641" min="1" max="1" chance="6.5331" /> 
+				</group>
+				<group chance="100">
+					<item id="7642" min="1" max="1" chance="6.5331" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="20" /> 
+					<item id="8601" min="1" max="1" chance="45" /> 
+					<item id="8602" min="1" max="1" chance="35" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="12" /> 
+					<item id="8604" min="1" max="1" chance="56" /> 
+					<item id="8605" min="1" max="1" chance="32" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2035" min="1" max="1" chance="1.6376" /> 
-				<item id="2202" min="1" max="1" chance="16.5409" /> 
-				<item id="1903" min="1" max="1" chance="26.9842" /> 
+				<item id="1903" min="1" max="1" chance="22.4868" /> 
+				<item id="2035" min="1" max="1" chance="1.3647" /> 
+				<item id="2202" min="1" max="1" chance="13.7841" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20793" level="43" type="Monster" name="Nos">
 		<parameters>
 			<param name="MoveAroundSocial" value="70" />
@@ -3669,36 +4257,60 @@
 			<radius normal="26" />
 			<height normal="42" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="89" min="1" max="1" chance="0.003" /> 
-				<item id="160" min="1" max="1" chance="0.003" /> 
-				<item id="161" min="1" max="1" chance="0.003" /> 
-				<item id="173" min="1" max="1" chance="0.003" /> 
-				<item id="191" min="1" max="1" chance="0.003" /> 
-				<item id="192" min="1" max="1" chance="0.003" /> 
-				<item id="193" min="1" max="1" chance="0.003" /> 
-				<item id="194" min="1" max="1" chance="0.003" /> 
-				<item id="57" min="376" max="880" chance="70" /> 
-				<item id="1865" min="1" max="1" chance="16.84" /> 
-				<item id="1866" min="1" max="1" chance="10.63" /> 
-				<item id="1878" min="1" max="1" chance="6.588" /> 
-				<item id="1864" min="3" max="9" chance="5.559" /> 
-				<item id="2068" min="1" max="1" chance="0.075" /> 
-				<item id="2067" min="1" max="1" chance="0.075" /> 
-				<item id="2066" min="1" max="1" chance="0.075" /> 
-				<item id="2065" min="1" max="1" chance="0.075" /> 
-				<item id="2064" min="1" max="1" chance="0.075" /> 
-				<item id="2063" min="1" max="1" chance="0.075" /> 
-				<item id="2061" min="1" max="1" chance="0.075" /> 
-				<item id="2069" min="1" max="1" chance="0.075" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="617" max="1231" chance="100" /> 
+				</group>
+				<group chance="0.0056">
+					<item id="93" min="1" max="1" chance="50" /> 
+					<item id="294" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="41.923">
+					<item id="2041" min="1" max="1" chance="0.50593" /> 
+					<item id="2033" min="1" max="1" chance="0.50593" /> 
+					<item id="2147" min="1" max="1" chance="1.43692" /> 
+					<item id="1882" min="1" max="1" chance="5.67946" /> 
+					<item id="1881" min="1" max="1" chance="3.40768" /> 
+					<item id="1880" min="1" max="1" chance="2.1685" /> 
+					<item id="1877" min="1" max="1" chance="0.96176" /> 
+					<item id="1876" min="1" max="1" chance="5.07526" /> 
+					<item id="1341" min="10" max="30" chance="79.5108" /> 
+					<item id="2205" min="1" max="1" chance="0.7478" /> 
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="20" /> 
+					<item id="8601" min="1" max="1" chance="45" /> 
+					<item id="8602" min="1" max="1" chance="35" /> 
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="12" /> 
+					<item id="8604" min="1" max="1" chance="56" /> 
+					<item id="8605" min="1" max="1" chance="32" /> 
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> 
+					<item id="8608" min="1" max="1" chance="33" /> 
+					<item id="8610" min="1" max="1" chance="33" /> 
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> 
+					<item id="8609" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> 
+					<item id="8613" min="1" max="1" chance="33" /> 
+					<item id="8614" min="1" max="1" chance="34" /> 
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="1953" min="1" max="1" chance="8.564" /> 
-				<item id="2062" min="1" max="1" chance="2.128" /> 
+				<item id="1877" min="1" max="2" chance="5.8846" /> 
+				<item id="1881" min="1" max="2" chance="19.6153" /> 
+				<item id="2037" min="1" max="1" chance="1.4892" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20794" level="41" type="Monster" name="Blade Stakato">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -3754,25 +4366,30 @@
 			<radius normal="15" />
 			<height normal="36" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="678" max="1356" chance="70" /> 
-				<item id="225" min="1" max="1" chance="0.006" /> 
-				<item id="1866" min="1" max="1" chance="8.03" /> 
-				<item id="1871" min="1" max="1" chance="12.06" /> 
-				<item id="5220" min="1" max="1" chance="0.482" /> 
-				<item id="1885" min="1" max="1" chance="1" /> 
-				<item id="2206" min="1" max="1" chance="0.316" /> 
-				<item id="4556" min="1" max="1" chance="0.048" /> 
-				<item id="5274" min="1" max="1" chance="0.04" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="565" max="1130" chance="100" /> 
+				</group>
+				<group chance="0.0039">
+					<item id="225" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="18.8307">
+					<item id="2052" min="1" max="1" chance="1.58836" /> 
+					<item id="1866" min="1" max="1" chance="37.9322" /> 
+					<item id="1871" min="1" max="1" chance="53.1048" /> 
+					<item id="1885" min="1" max="1" chance="1.86982" /> 
+					<item id="2206" min="1" max="1" chance="1.38072" /> 
+					<item id="4556" min="1" max="1" chance="0.20976" /> 
+					<item id="5220" min="1" max="1" chance="3.73964" /> 
+					<item id="5274" min="1" max="1" chance="0.17471" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2991" min="1" max="1" chance="13.2768" /> 
-				<item id="1952" min="1" max="1" chance="5.3584" /> 
-				<item id="1866" min="1" max="3" chance="55.7627" /> 
+				<item id="1866" min="1" max="3" chance="91.5655" /> 
+				<item id="1952" min="1" max="1" chance="4.3994" /> 
+				<item id="2991" min="1" max="1" chance="10.9007" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20795" level="42" type="Monster" name="Blade Stakato Worker">
 		<parameters>
 			<param name="MoveAroundSocial" value="70" />
@@ -3828,30 +4445,34 @@
 			<radius normal="13" />
 			<height normal="40" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="636" max="1285" chance="70" /> 
-				<item id="851" min="1" max="1" chance="0.03" /> 
-				<item id="1905" min="1" max="1" chance="1.312" /> 
-				<item id="914" min="1" max="1" chance="0.021" /> 
-				<item id="1907" min="1" max="1" chance="0.938" /> 
-				<item id="882" min="1" max="1" chance="0.043" /> 
-				<item id="1906" min="1" max="1" chance="1.854" /> 
-				<item id="1867" min="1" max="1" chance="15.132" /> 
-				<item id="1872" min="1" max="1" chance="15.132" /> 
-				<item id="1882" min="1" max="1" chance="2.523" /> 
-				<item id="1894" min="1" max="1" chance="0.397" /> 
-				<item id="2304" min="1" max="1" chance="0.05" /> 
-				<item id="736" min="1" max="1" chance="5.678" /> 
-				<item id="2303" min="1" max="1" chance="0.05" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="530" max="1071" chance="100" /> 
+				</group>
+				<group chance="0.0583">
+					<item id="851" min="1" max="1" chance="30.8748" /> 
+					<item id="882" min="1" max="1" chance="46.1407" /> 
+					<item id="914" min="1" max="1" chance="22.9846" /> 
+				</group>
+				<group chance="47.7894">
+					<item id="1907" min="1" max="1" chance="1.57943" /> 
+					<item id="1906" min="1" max="1" chance="3.12078" /> 
+					<item id="1905" min="1" max="1" chance="2.20844" /> 
+					<item id="2303" min="1" max="1" chance="0.08496" /> 
+					<item id="1894" min="1" max="1" chance="2.86654" /> 
+					<item id="1882" min="1" max="1" chance="2.86654" /> 
+					<item id="1872" min="1" max="1" chance="34.8753" /> 
+					<item id="1867" min="1" max="1" chance="34.8753" /> 
+					<item id="736" min="1" max="1" chance="17.4376" /> 
+					<item id="2304" min="1" max="1" chance="0.08517" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2161" min="1" max="1" chance="15.3276" /> 
-				<item id="2047" min="1" max="1" chance="1.3879" /> 
-				<item id="4469" min="1" max="1" chance="0.9021" /> 
+				<item id="2047" min="1" max="1" chance="1.1397" /> 
+				<item id="2161" min="1" max="1" chance="12.5863" /> 
+				<item id="4469" min="1" max="1" chance="0.7408" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20796" level="43" type="Monster" name="Blade Stakato Warrior">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
@@ -3908,28 +4529,33 @@
 			<radius normal="15" />
 			<height normal="38" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="671" max="1364" chance="70" /> 
-				<item id="396" min="1" max="1" chance="0.023" /> 
-				<item id="1952" min="1" max="1" chance="1.376" /> 
-				<item id="1868" min="1" max="1" chance="17.361" /> 
-				<item id="1873" min="1" max="1" chance="3.456" /> 
-				<item id="5549" min="1" max="1" chance="0.866" /> 
-				<item id="1889" min="1" max="1" chance="0.577" /> 
-				<item id="2998" min="1" max="1" chance="0.648" /> 
-				<item id="737" min="1" max="1" chance="0.866" /> 
-				<item id="4557" min="1" max="1" chance="0.03" /> 
-				<item id="3033" min="1" max="1" chance="0.03" /> 
-				<item id="3954" min="1" max="1" chance="0.03" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="560" max="1136" chance="100" /> 
+				</group>
+				<group chance="0.0163">
+					<item id="396" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="26.2336">
+					<item id="1952" min="1" max="1" chance="4.25104" /> 
+					<item id="737" min="1" max="1" chance="3.28624" /> 
+					<item id="5549" min="1" max="1" chance="1.87774" /> 
+					<item id="4557" min="1" max="1" chance="0.10635" /> 
+					<item id="3954" min="1" max="1" chance="0.08882" /> 
+					<item id="3033" min="1" max="1" chance="0.08882" /> 
+					<item id="2998" min="1" max="1" chance="0.47077" /> 
+					<item id="1889" min="1" max="1" chance="1.87774" /> 
+					<item id="1873" min="1" max="1" chance="14.1182" /> 
+					<item id="1868" min="1" max="1" chance="63.5319" /> 
+					<item id="6668" min="1" max="1" chance="10.3024" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2199" min="1" max="1" chance="7.1642" /> 
-				<item id="2930" min="1" max="1" chance="13.6873" /> 
-				<item id="1905" min="1" max="1" chance="16.5167" /> 
+				<item id="1905" min="1" max="1" chance="13.489" /> 
+				<item id="2199" min="1" max="1" chance="5.8509" /> 
+				<item id="2930" min="1" max="1" chance="11.1783" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20797" level="44" type="Monster" name="Blade Stakato Drone">
 		<parameters>
 			<param name="MoveAroundSocial" value="62" />
@@ -3997,28 +4623,34 @@
 			<radius normal="15" />
 			<height normal="39" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="1015" max="2079" chance="70" /> 
-				<item id="397" min="1" max="1" chance="0.021" /> 
-				<item id="1961" min="1" max="1" chance="1" /> 
-				<item id="2387" min="1" max="1" chance="0.03" /> 
-				<item id="2935" min="1" max="1" chance="1.65" /> 
-				<item id="1869" min="1" max="1" chance="11.167" /> 
-				<item id="1864" min="1" max="1" chance="22.42" /> 
-				<item id="1880" min="1" max="1" chance="1.119" /> 
-				<item id="5550" min="1" max="1" chance="0.147" /> 
-				<item id="2220" min="1" max="1" chance="0.23" /> 
-				<item id="2225" min="1" max="1" chance="0.24" /> 
-				<item id="2321" min="1" max="1" chance="0.03" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="846" max="1733" chance="100" /> 
+				</group>
+				<group chance="0.0343">
+					<item id="397" min="1" max="1" chance="38.484" /> 
+					<item id="2387" min="1" max="1" chance="61.516" /> 
+				</group>
+				<group chance="37.7985">
+					<item id="2935" min="1" max="1" chance="3.50067" /> 
+					<item id="1961" min="1" max="1" chance="2.10723" /> 
+					<item id="5550" min="1" max="1" chance="1.83711" /> 
+					<item id="2321" min="1" max="1" chance="0.13149" /> 
+					<item id="2225" min="1" max="1" chance="0.45928" /> 
+					<item id="2220" min="1" max="1" chance="1.37783" /> 
+					<item id="1880" min="1" max="1" chance="3.22632" /> 
+					<item id="1869" min="1" max="1" chance="33.0701" /> 
+					<item id="1864" min="1" max="1" chance="52.9121" /> 
+					<item id="8723" min="1" max="1" chance="0.91855" /> 
+					<item id="8733" min="1" max="1" chance="0.45928" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="4440" min="1" max="1" chance="0.8981" /> 
-				<item id="1908" min="1" max="1" chance="24.4093" /> 
-				<item id="2163" min="1" max="1" chance="13.1511" /> 
+				<item id="1908" min="1" max="1" chance="19.9462" /> 
+				<item id="2163" min="1" max="1" chance="10.7465" /> 
+				<item id="4440" min="1" max="1" chance="0.7339" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20798" level="45" type="Monster" name="Water Giant">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -4074,28 +4706,42 @@
 			<radius normal="13" />
 			<height normal="44" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="826" max="1677" chance="70" /> 
-				<item id="71" min="1" max="1" chance="0.003" /> 
-				<item id="2059" min="1" max="1" chance="0.2" /> 
-				<item id="72" min="1" max="1" chance="0.03" /> 
-				<item id="2060" min="1" max="1" chance="0.25" /> 
-				<item id="1869" min="1" max="1" chance="9" /> 
-				<item id="1864" min="1" max="1" chance="17.98" /> 
-				<item id="1880" min="1" max="1" chance="0.9" /> 
-				<item id="5550" min="1" max="1" chance="0.118" /> 
-				<item id="2220" min="1" max="1" chance="0.18" /> 
-				<item id="2225" min="1" max="1" chance="0.194" /> 
-				<item id="2321" min="1" max="1" chance="0.029" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="688" max="1398" chance="100" /> 
+				</group>
+				<group chance="0.0036">
+					<item id="72" min="1" max="1" chance="50" /> 
+					<item id="71" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="27.1608">
+					<item id="2060" min="1" max="1" chance="0.58908" /> 
+					<item id="2059" min="1" max="1" chance="0.55116" /> 
+					<item id="1864" min="1" max="1" chance="61.3631" /> 
+					<item id="5550" min="1" max="1" chance="1.36373" /> 
+					<item id="2225" min="1" max="1" chance="0.22753" /> 
+					<item id="2220" min="1" max="1" chance="0.45507" /> 
+					<item id="1880" min="1" max="1" chance="3.17406" /> 
+					<item id="1869" min="1" max="1" chance="30.6813" /> 
+					<item id="8723" min="1" max="1" chance="1.13988" /> 
+					<item id="8733" min="1" max="1" chance="0.45507" /> 
+				</group>
+				<group chance="100">
+					<item id="4913" min="1" max="1" chance="4.1865" /> 
+				</group>
+				<group chance="100">
+					<item id="4914" min="1" max="1" chance="4.1865" /> 
+				</group>
+				<group chance="100">
+					<item id="4926" min="1" max="1" chance="4.1865" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="4042" min="1" max="1" chance="3.4793" /> 
-				<item id="4043" min="1" max="1" chance="6.9587" /> 
-				<item id="1908" min="1" max="1" chance="19.769" /> 
+				<item id="1908" min="1" max="1" chance="16.1471" /> 
+				<item id="4042" min="1" max="1" chance="2.8419" /> 
+				<item id="4043" min="1" max="1" chance="5.6838" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="20799" level="46" type="Monster" name="Queen Undine Lad">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -4151,26 +4797,33 @@
 			<radius normal="12" />
 			<height normal="27" />
 		</collision>
-		<dropLists> 
-			<drop>
-				<item id="57" min="828" max="1693" chance="70" /> 
-				<item id="354" min="1" max="1" chance="0.012" /> 
-				<item id="1959" min="1" max="1" chance="0.65" /> 
-				<item id="381" min="1" max="1" chance="0.019" /> 
-				<item id="1960" min="1" max="1" chance="1.319" /> 
-				<item id="1871" min="1" max="1" chance="9.108" /> 
-				<item id="1866" min="1" max="1" chance="6.07" /> 
-				<item id="1877" min="1" max="1" chance="2.2106" /> 
-				<item id="4041" min="1" max="1" chance="0.364" /> 
-				<item id="4040" min="1" max="1" chance="0.181" /> 
-				<item id="2230" min="1" max="1" chance="0.176" /> 
-				<item id="2326" min="1" max="1" chance="0.03" /> 
+		<dropLists><drop>
+				<group chance="70">
+					<item id="57" min="690" max="1411" chance="100" /> 
+				</group>
+				<group chance="0.021">
+					<item id="381" min="1" max="1" chance="61.4286" /> 
+					<item id="354" min="1" max="1" chance="38.5714" /> 
+				</group>
+				<group chance="19.5704">
+					<item id="1960" min="1" max="1" chance="5.68001" /> 
+					<item id="1959" min="1" max="1" chance="2.79248" /> 
+					<item id="1866" min="1" max="1" chance="36.4985" /> 
+					<item id="4041" min="1" max="1" chance="0.33571" /> 
+					<item id="4040" min="1" max="1" chance="1.34131" /> 
+					<item id="2326" min="1" max="1" chance="0.20643" /> 
+					<item id="2230" min="1" max="1" chance="1.34131" /> 
+					<item id="1877" min="1" max="1" chance="3.36171" /> 
+					<item id="1871" min="1" max="1" chance="46.4523" /> 
+					<item id="8723" min="1" max="1" chance="1.00611" /> 
+					<item id="8733" min="1" max="1" chance="0.67142" /> 
+					<item id="8743" min="1" max="1" chance="0.31272" /> 
+				</group>
 			</drop>
 			<spoil>
-				<item id="2317" min="1" max="1" chance="0.7323" /> 
-				<item id="2065" min="1" max="1" chance="1.6244" /> 
-				<item id="2164" min="1" max="1" chance="16.1662" /> 
+				<item id="2065" min="1" max="1" chance="1.327" /> 
+				<item id="2164" min="1" max="1" chance="13.2064" /> 
+				<item id="2317" min="1" max="1" chance="0.5982" /> 
 			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 </list>

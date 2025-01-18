@@ -113,20 +113,32 @@
 			<radius normal="42" />
 			<height normal="94" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="262" min="1" max="1" chance="5.474" /> 
-				<item id="159" min="1" max="1" chance="5.469" /> 
-				<item id="187" min="1" max="1" chance="5.456" /> 
-				<item id="297" min="1" max="1" chance="5.421" /> 
-				<item id="70" min="1" max="1" chance="5.414" /> 
-				<item id="2499" min="1" max="1" chance="5.391" /> 
-				<item id="280" min="1" max="1" chance="5.37" /> 
-				<item id="956" min="2" max="8" chance="100" /> 
-				<item id="955" min="1" max="1" chance="31.01" /> 
+		<dropLists><drop>
+				<group chance="3.2166">
+					<item id="326" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="33.9211">
+					<item id="854" min="1" max="1" chance="30.7151" /> 
+					<item id="885" min="1" max="1" chance="46.229" /> 
+					<item id="917" min="1" max="1" chance="23.0559" /> 
+				</group>
+				<group chance="45.8565">
+					<item id="1916" min="20" max="60" chance="35.6519" /> 
+					<item id="1914" min="81" max="243" chance="11.6219" /> 
+					<item id="1915" min="28" max="84" chance="52.7262" /> 
+				</group>
+				<group chance="89.872">
+					<item id="2110" min="3" max="9" chance="72.2922" /> 
+					<item id="4607" min="1" max="3" chance="27.7079" /> 
+				</group>
+				<group chance="92.8983">
+					<item id="4608" min="2" max="4" chance="17.8702" /> 
+					<item id="4609" min="1" max="1" chance="53.6103" /> 
+					<item id="6573" min="1" max="1" chance="1.60832" /> 
+					<item id="8176" min="1" max="1" chance="26.9111" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25103" level="55" type="RaidBoss" name="Wizard Isirr" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -177,25 +189,35 @@
 			<radius normal="30" grown="36" />
 			<height normal="63" grown="76" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="285" min="1" max="1" chance="3.568" /> 
-				<item id="131" min="1" max="1" chance="3.564" /> 
-				<item id="2502" min="1" max="1" chance="3.53" /> 
-				<item id="325" min="1" max="1" chance="3.525" /> 
-				<item id="242" min="1" max="1" chance="3.489" /> 
-				<item id="282" min="1" max="1" chance="3.487" /> 
-				<item id="73" min="1" max="1" chance="3.469" /> 
-				<item id="74" min="1" max="1" chance="3.461" /> 
-				<item id="94" min="1" max="1" chance="3.459" /> 
-				<item id="195" min="1" max="1" chance="3.447" /> 
-				<item id="227" min="1" max="1" chance="3.439" /> 
-				<item id="133" min="1" max="1" chance="3.431" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="29.5" /> 
+		<dropLists><drop>
+				<group chance="1.7826">
+					<item id="91" min="1" max="1" chance="50" /> 
+					<item id="92" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="19.874">
+					<item id="2464" min="1" max="1" chance="25" /> 
+					<item id="612" min="1" max="1" chance="25" /> 
+					<item id="600" min="1" max="1" chance="25" /> 
+					<item id="554" min="1" max="1" chance="25" /> 
+				</group>
+				<group chance="86.5574">
+					<item id="4097" min="60" max="180" chance="6.46011" /> 
+					<item id="4100" min="16" max="48" chance="24.2251" /> 
+					<item id="4073" min="23" max="67" chance="17.2269" /> 
+					<item id="4098" min="116" max="346" chance="3.35592" /> 
+					<item id="4106" min="8" max="22" chance="16.7678" /> 
+					<item id="4105" min="4" max="12" chance="31.9641" /> 
+				</group>
+				<group chance="76.0457">
+					<item id="948" min="1" max="3" chance="82.4176" /> 
+					<item id="6572" min="1" max="1" chance="17.5825" /> 
+				</group>
+				<group chance="50">
+					<item id="8165" min="1" max="3" chance="50" /> 
+					<item id="8176" min="1" max="3" chance="50" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25104" level="54" type="Monster" name="Isirr's Escort" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4722" level="5" />
@@ -317,53 +339,33 @@
 			<radius normal="28" />
 			<height normal="85" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="2459" min="1" max="1" chance="4.133" /> 
-				<item id="1149" min="1" max="3" chance="4.119" /> 
-				<item id="608" min="1" max="3" chance="4.084" /> 
-				<item id="2460" min="1" max="1" chance="4.072" /> 
-				<item id="441" min="1" max="1" chance="4.061" /> 
-				<item id="472" min="1" max="1" chance="4.059" /> 
-				<item id="400" min="1" max="1" chance="4.047" /> 
-				<item id="1127" min="1" max="3" chance="4.047" /> 
-				<item id="64" min="1" max="3" chance="4.041" /> 
-				<item id="420" min="1" max="1" chance="4.034" /> 
-				<item id="2436" min="1" max="3" chance="4.032" /> 
-				<item id="517" min="1" max="3" chance="4.03" /> 
-				<item id="2435" min="1" max="3" chance="4.029" /> 
-				<item id="103" min="1" max="3" chance="4.018" /> 
-				<item id="60" min="1" max="1" chance="4.017" /> 
-				<item id="107" min="1" max="3" chance="4.014" /> 
-				<item id="283" min="1" max="1" chance="1.802" /> 
-				<item id="265" min="1" max="1" chance="1.775" /> 
-				<item id="303" min="1" max="1" chance="1.773" /> 
-				<item id="203" min="1" max="1" chance="1.759" /> 
-				<item id="134" min="1" max="1" chance="1.758" /> 
-				<item id="197" min="1" max="1" chance="1.749" /> 
-				<item id="196" min="1" max="1" chance="1.748" /> 
-				<item id="231" min="1" max="1" chance="1.745" /> 
-				<item id="200" min="1" max="1" chance="1.734" /> 
-				<item id="75" min="1" max="1" chance="1.73" /> 
-				<item id="201" min="1" max="1" chance="1.717" /> 
-				<item id="132" min="1" max="1" chance="1.708" /> 
-				<item id="198" min="1" max="1" chance="1.704" /> 
-				<item id="199" min="1" max="1" chance="1.693" /> 
-				<item id="77" min="1" max="1" chance="1.674" /> 
-				<item id="162" min="1" max="1" chance="1.671" /> 
-				<item id="84" min="1" max="1" chance="1.667" /> 
-				<item id="76" min="1" max="1" chance="1.667" /> 
-				<item id="202" min="1" max="1" chance="1.65" /> 
-				<item id="301" min="1" max="1" chance="1.647" /> 
-				<item id="174" min="1" max="1" chance="1.647" /> 
-				<item id="233" min="1" max="1" chance="1.645" /> 
-				<item id="95" min="1" max="1" chance="1.638" /> 
-				<item id="145" min="1" max="1" chance="1.637" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="29.48" /> 
+		<dropLists><drop>
+				<group chance="1.4534">
+					<item id="212" min="1" max="1" chance="50" /> 
+					<item id="2504" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="15.2848">
+					<item id="5296" min="1" max="1" chance="25" /> 
+					<item id="5295" min="1" max="1" chance="25" /> 
+					<item id="5291" min="1" max="1" chance="25" /> 
+					<item id="5290" min="1" max="1" chance="25" /> 
+				</group>
+				<group chance="85.1539">
+					<item id="5508" min="60" max="180" chance="5.0855" /> 
+					<item id="5497" min="23" max="67" chance="13.5611" /> 
+					<item id="5496" min="11" max="31" chance="29.0594" /> 
+					<item id="5509" min="16" max="48" chance="19.0702" /> 
+					<item id="5543" min="4" max="12" chance="33.2238" /> 
+				</group>
+				<group chance="76.987">
+					<item id="5532" min="8" max="22" chance="19.416" /> 
+					<item id="6570" min="1" max="1" chance="12.4392" /> 
+					<item id="6571" min="1" max="1" chance="3.19872" /> 
+					<item id="8159" min="4" max="4" chance="32.473" /> 
+					<item id="8176" min="1" max="1" chance="32.473" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25107" level="59" type="Monster" name="Lidia's Archer" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4761" level="5" />
@@ -488,7 +490,33 @@
 			<radius normal="20" />
 			<height normal="75" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="2.0139">
+					<item id="305" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="3.5196">
+					<item id="5311" min="1" max="1" chance="50" /> 
+					<item id="5316" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="90.2189">
+					<item id="5522" min="4" max="12" chance="42.7602" /> 
+					<item id="5523" min="8" max="22" chance="22.8054" /> 
+					<item id="5541" min="12" max="36" chance="34.4344" /> 
+				</group>
+				<group chance="77.4113">
+					<item id="6570" min="1" max="1" chance="25.2928" /> 
+					<item id="6578" min="1" max="1" chance="10.1171" /> 
+					<item id="8160" min="1" max="3" chance="32.295" /> 
+					<item id="8176" min="4" max="9" chance="32.295" /> 
+				</group>
+				<group chance="25">
+					<item id="8619" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="100">
+					<item id="8619" min="1" max="1" chance="75" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25110" level="73" type="Monster" name="Cloe's Servitor" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4194" level="7" />
@@ -616,18 +644,28 @@
 			<radius normal="20" />
 			<height normal="53" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="157" min="1" max="1" chance="6.213" /> 
-				<item id="296" min="1" max="1" chance="6.179" /> 
-				<item id="293" min="1" max="1" chance="6.169" /> 
-				<item id="130" min="1" max="1" chance="6.131" /> 
-				<item id="186" min="1" max="1" chance="6.118" /> 
-				<item id="127" min="1" max="1" chance="6.095" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
+		<dropLists><drop>
+				<group chance="5.9242">
+					<item id="93" min="1" max="1" chance="50" /> 
+					<item id="294" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="37.1672">
+					<item id="850" min="1" max="1" chance="53.0928" /> 
+					<item id="881" min="6" max="16" chance="7.23622" /> 
+					<item id="913" min="1" max="1" chance="39.671" /> 
+				</group>
+				<group chance="72.3814">
+					<item id="1904" min="140" max="420" chance="4.24363" /> 
+					<item id="1902" min="81" max="243" chance="7.96254" /> 
+					<item id="1903" min="40" max="120" chance="26.5465" /> 
+					<item id="2033" min="4" max="12" chance="39.944" /> 
+					<item id="2041" min="8" max="22" chance="21.3034" /> 
+				</group>
+				<group chance="74.6613">
+					<item id="956" min="12" max="36" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25113" level="29" type="Monster" name="Meana's Maid" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4192" level="2" />
@@ -754,7 +792,43 @@
 			<radius normal="42" />
 			<height normal="45" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="7.3117">
+					<item id="263" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="41.3493">
+					<item id="62" min="12" max="34" chance="1.03508" /> 
+					<item id="2454" min="1" max="1" chance="23.8057" /> 
+					<item id="2453" min="1" max="1" chance="23.8057" /> 
+					<item id="2452" min="1" max="1" chance="23.8057" /> 
+					<item id="2429" min="12" max="36" chance="0.99204" /> 
+					<item id="2430" min="13" max="37" chance="0.95237" /> 
+					<item id="2431" min="13" max="39" chance="0.91586" /> 
+					<item id="2432" min="14" max="40" chance="0.88176" /> 
+					<item id="2433" min="1" max="1" chance="23.8057" /> 
+				</group>
+				<group chance="90.2841">
+					<item id="2937" min="378" max="1134" chance="0.81676" /> 
+					<item id="2938" min="572" max="1716" chance="0.53974" /> 
+					<item id="2939" min="35" max="105" chance="8.82027" /> 
+					<item id="2940" min="45" max="135" chance="6.86012" /> 
+					<item id="2941" min="56" max="168" chance="5.51271" /> 
+					<item id="2942" min="68" max="204" chance="4.53989" /> 
+					<item id="2943" min="81" max="243" chance="3.81119" /> 
+					<item id="2944" min="95" max="285" chance="3.24952" /> 
+					<item id="1958" min="220" max="660" chance="1.40324" /> 
+					<item id="2073" min="12" max="36" chance="29.8642" /> 
+					<item id="952" min="21" max="63" chance="9.54" /> 
+					<item id="4594" min="2" max="6" chance="25.0424" /> 
+				</group>
+				<group chance="83.1603">
+					<item id="4595" min="3" max="7" chance="21.75" /> 
+					<item id="4596" min="3" max="9" chance="18.1251" /> 
+					<item id="8167" min="6" max="8" chance="30.0624" /> 
+					<item id="8176" min="1" max="2" chance="30.0624" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25116" level="39" type="Monster" name="Icarus Sample 2" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4755" level="3" />
@@ -870,20 +944,37 @@
 			<radius normal="20" />
 			<height normal="58" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="93" min="1" max="1" chance="3.63" /> 
-				<item id="172" min="1" max="1" chance="3.605" /> 
-				<item id="169" min="1" max="1" chance="3.597" /> 
-				<item id="90" min="1" max="1" chance="3.592" /> 
-				<item id="158" min="1" max="1" chance="3.56" /> 
-				<item id="88" min="1" max="1" chance="3.543" /> 
-				<item id="129" min="1" max="1" chance="3.526" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="5.4745">
+					<item id="159" min="1" max="1" chance="20" /> 
+					<item id="190" min="1" max="1" chance="20" /> 
+					<item id="189" min="1" max="1" chance="20" /> 
+					<item id="188" min="1" max="1" chance="20" /> 
+					<item id="187" min="1" max="1" chance="20" /> 
+				</group>
+				<group chance="21.8613">
+					<item id="353" min="1" max="1" chance="38.4254" /> 
+					<item id="380" min="1" max="1" chance="61.5746" /> 
+				</group>
+				<group chance="92.4506">
+					<item id="1950" min="8" max="22" chance="38.4365" /> 
+					<item id="1951" min="24" max="72" chance="18.681" /> 
+					<item id="2058" min="3" max="9" chance="14.6883" /> 
+					<item id="2051" min="12" max="36" chance="3.89365" /> 
+					<item id="2050" min="7" max="21" chance="6.6747" /> 
+					<item id="2049" min="3" max="7" chance="17.6259" /> 
+				</group>
+				<group chance="64.7198">
+					<item id="2048" min="2" max="6" chance="31.4726" /> 
+					<item id="4591" min="1" max="3" chance="41.1165" /> 
+					<item id="4592" min="2" max="4" chance="27.4109" /> 
+				</group>
+				<group chance="54.2854">
+					<item id="4593" min="1" max="1" chance="98.0391" /> 
+					<item id="6573" min="1" max="1" chance="1.96093" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25119" level="50" type="RaidBoss" name="Fairy Queen's Messenger Berun" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -929,52 +1020,37 @@
 			<radius normal="42" />
 			<height normal="73" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="883" min="1" max="3" chance="31.18" /> 
-				<item id="915" min="1" max="3" chance="30.87" /> 
-				<item id="852" min="1" max="3" chance="30.55" /> 
-				<item id="2495" min="1" max="3" chance="5.42" /> 
-				<item id="354" min="1" max="3" chance="5.32" /> 
-				<item id="397" min="1" max="3" chance="5.317" /> 
-				<item id="2429" min="1" max="3" chance="5.313" /> 
-				<item id="2453" min="1" max="3" chance="5.312" /> 
-				<item id="2452" min="1" max="3" chance="5.303" /> 
-				<item id="2387" min="1" max="3" chance="5.299" /> 
-				<item id="2431" min="1" max="3" chance="5.281" /> 
-				<item id="2413" min="1" max="3" chance="5.268" /> 
-				<item id="471" min="1" max="3" chance="5.266" /> 
-				<item id="631" min="1" max="3" chance="5.258" /> 
-				<item id="439" min="1" max="3" chance="5.258" /> 
-				<item id="381" min="1" max="3" chance="5.252" /> 
-				<item id="2432" min="1" max="3" chance="5.247" /> 
-				<item id="62" min="1" max="3" chance="5.245" /> 
-				<item id="2430" min="1" max="3" chance="5.217" /> 
-				<item id="2454" min="1" max="3" chance="5.212" /> 
-				<item id="2433" min="1" max="3" chance="5.212" /> 
-				<item id="302" min="1" max="1" chance="0.75" /> 
-				<item id="193" min="1" max="1" chance="0.75" /> 
-				<item id="192" min="1" max="1" chance="0.75" /> 
-				<item id="191" min="1" max="1" chance="0.75" /> 
-				<item id="173" min="1" max="1" chance="0.75" /> 
-				<item id="161" min="1" max="1" chance="0.75" /> 
-				<item id="194" min="1" max="1" chance="0.75" /> 
-				<item id="226" min="1" max="1" chance="0.75" /> 
-				<item id="71" min="1" max="1" chance="0.75" /> 
-				<item id="96" min="1" max="1" chance="0.75" /> 
-				<item id="298" min="1" max="1" chance="0.75" /> 
-				<item id="281" min="1" max="1" chance="0.75" /> 
-				<item id="263" min="1" max="1" chance="0.75" /> 
-				<item id="232" min="1" max="1" chance="0.75" /> 
-				<item id="230" min="1" max="1" chance="0.75" /> 
-				<item id="89" min="1" max="1" chance="0.75" /> 
-				<item id="72" min="1" max="1" chance="0.75" /> 
-				<item id="160" min="1" max="1" chance="0.75" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="29.81" /> 
+		<dropLists><drop>
+				<group chance="3.6345">
+					<item id="78" min="1" max="1" chance="33.3333" /> 
+					<item id="148" min="1" max="1" chance="33.3333" /> 
+					<item id="142" min="1" max="1" chance="33.3333" /> 
+				</group>
+				<group chance="13.1446">
+					<item id="2379" min="1" max="1" chance="30.7693" /> 
+					<item id="2376" min="1" max="1" chance="19.2307" /> 
+					<item id="383" min="1" max="1" chance="30.7693" /> 
+					<item id="357" min="1" max="1" chance="19.2307" /> 
+				</group>
+				<group chance="93.6222">
+					<item id="4064" min="23" max="67" chance="11.294" /> 
+					<item id="4057" min="60" max="180" chance="6.54546" /> 
+					<item id="4056" min="16" max="48" chance="15.8822" /> 
+					<item id="4065" min="11" max="31" chance="37.4023" /> 
+					<item id="4107" min="9" max="27" chance="17.5767" /> 
+					<item id="4108" min="14" max="42" chance="11.2992" /> 
+				</group>
+				<group chance="79.3097">
+					<item id="4104" min="5" max="15" chance="37.9352" /> 
+					<item id="4607" min="5" max="15" chance="14.3227" /> 
+					<item id="4608" min="2" max="4" chance="47.7421" /> 
+				</group>
+				<group chance="31.8059">
+					<item id="4609" min="2" max="6" chance="89.2856" /> 
+					<item id="6573" min="1" max="1" chance="10.7144" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25120" level="49" type="Monster" name="Berun's Servant" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4191" level="4" /> 
@@ -1102,25 +1178,31 @@
 			<radius normal="22.5" />
 			<height normal="54" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="242" min="1" max="1" chance="4.2085" /> 
-				<item id="227" min="1" max="1" chance="4.17" /> 
-				<item id="94" min="1" max="1" chance="4.1665" /> 
-				<item id="133" min="1" max="1" chance="4.1585" /> 
-				<item id="282" min="1" max="1" chance="4.1555" /> 
-				<item id="131" min="1" max="1" chance="4.1525" /> 
-				<item id="285" min="1" max="1" chance="4.1475" /> 
-				<item id="73" min="1" max="1" chance="4.1365" /> 
-				<item id="2502" min="1" max="1" chance="4.138" /> 
-				<item id="195" min="1" max="1" chance="4.125" /> 
-				<item id="325" min="1" max="1" chance="4.1185" /> 
-				<item id="74" min="1" max="1" chance="4.1045" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="31.47" /> 
+		<dropLists><drop>
+				<group chance="1.1875">
+					<item id="268" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2.9378">
+					<item id="2391" min="1" max="1" chance="50" /> 
+					<item id="2392" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="56.1484">
+					<item id="4082" min="4" max="12" chance="65.2173" /> 
+					<item id="4083" min="8" max="22" chance="34.7826" /> 
+				</group>
+				<group chance="99.7421">
+					<item id="4120" min="3" max="9" chance="56.7927" /> 
+					<item id="948" min="1" max="3" chance="31.5886" /> 
+					<item id="4616" min="2" max="4" chance="11.6188" /> 
+				</group>
+				<group chance="93.4581">
+					<item id="4617" min="2" max="6" chance="9.3" /> 
+					<item id="4618" min="1" max="1" chance="37.2001" /> 
+					<item id="8165" min="2" max="2" chance="26.75" /> 
+					<item id="8176" min="1" max="3" chance="26.75" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25123" level="55" type="Monster" name="Leo's Servant" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4727" level="5" />
@@ -1233,24 +1315,23 @@
 			<radius normal="72" />
 			<height normal="87" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="918" min="1" max="1" chance="31.31" /> 
-				<item id="856" min="1" max="1" chance="31.12" /> 
-				<item id="887" min="1" max="3" chance="29.93" /> 
-				<item id="78" min="1" max="1" chance="2.561" /> 
-				<item id="229" min="1" max="1" chance="2.558" /> 
-				<item id="267" min="1" max="1" chance="2.53" /> 
-				<item id="300" min="1" max="1" chance="2.527" /> 
-				<item id="284" min="1" max="1" chance="2.524" /> 
-				<item id="142" min="1" max="1" chance="2.491" /> 
-				<item id="243" min="1" max="1" chance="2.47" /> 
-				<item id="91" min="1" max="1" chance="2.435" /> 
-				<item id="947" min="1" max="1" chance="50.93" /> 
-				<item id="948" min="1" max="1" chance="49.42" /> 
+		<dropLists><drop>
+				<group chance="24.5452">
+					<item id="5304" min="1" max="1" chance="30.4679" /> 
+					<item id="5308" min="1" max="1" chance="20.8118" /> 
+					<item id="5305" min="1" max="1" chance="48.7203" /> 
+				</group>
+				<group chance="97.8248">
+					<item id="5489" min="280" max="840" chance="3.1261" /> 
+					<item id="5486" min="20" max="60" chance="19.6207" /> 
+					<item id="5485" min="81" max="243" chance="6.88476" /> 
+					<item id="6569" min="1" max="1" chance="2.06328" /> 
+					<item id="6570" min="1" max="1" chance="17.1934" /> 
+					<item id="8166" min="2" max="2" chance="25.5559" /> 
+					<item id="8176" min="7" max="7" chance="25.5559" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25126" level="79" type="RaidBoss" name="Longhorn Golkonda" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
@@ -1299,7 +1380,35 @@
 			<radius normal="42" />
 			<height normal="94" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="1.2032">
+					<item id="6365" min="1" max="1" chance="25" /> 
+					<item id="6366" min="1" max="1" chance="25" /> 
+					<item id="6369" min="1" max="1" chance="25" /> 
+					<item id="6579" min="1" max="1" chance="25" /> 
+				</group>
+				<group chance="8.0685">
+					<item id="6687" min="1" max="1" chance="22.5829" /> 
+					<item id="6683" min="1" max="1" chance="22.5829" /> 
+					<item id="6679" min="1" max="1" chance="22.5829" /> 
+					<item id="6678" min="1" max="1" chance="32.2514" /> 
+				</group>
+				<group chance="94.5922">
+					<item id="6714" min="16" max="48" chance="26.2176" /> 
+					<item id="6710" min="116" max="346" chance="3.63191" /> 
+					<item id="6706" min="60" max="180" chance="6.99138" /> 
+					<item id="6705" min="23" max="67" chance="16.028" /> 
+					<item id="6697" min="3" max="7" chance="32.9044" /> 
+					<item id="6693" min="6" max="18" chance="14.2267" /> 
+				</group>
+				<group chance="68.4487">
+					<item id="6690" min="11" max="31" chance="11.0557" /> 
+					<item id="6689" min="16" max="48" chance="7.10518" /> 
+					<item id="6578" min="1" max="1" chance="12.3531" /> 
+					<item id="3936" min="1" max="3" chance="69.4861" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25127" level="24" type="RaidBoss" name="Langk Matriarch Rashkos" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm02_A" />
@@ -1340,23 +1449,21 @@
 			<radius normal="19" />
 			<height normal="57" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="432" min="1" max="3" chance="8.069" /> 
-				<item id="604" min="2" max="6" chance="8.067" /> 
-				<item id="465" min="1" max="3" chance="8.017" /> 
-				<item id="626" min="2" max="6" chance="8.011" /> 
-				<item id="376" min="1" max="3" chance="8.009" /> 
-				<item id="391" min="1" max="3" chance="8.001" /> 
-				<item id="347" min="1" max="3" chance="7.987" /> 
-				<item id="40" min="2" max="6" chance="7.984" /> 
-				<item id="413" min="1" max="3" chance="7.966" /> 
-				<item id="45" min="2" max="6" chance="7.939" /> 
-				<item id="955" min="1" max="1" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="20.2414">
+					<item id="222" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="44.4861">
+					<item id="46" min="2" max="4" chance="65.1163" /> 
+					<item id="627" min="4" max="12" chance="34.8837" /> 
+				</group>
+				<group chance="87.6191">
+					<item id="955" min="1" max="1" chance="64.2856" /> 
+					<item id="6575" min="1" max="1" chance="3.57148" /> 
+					<item id="6576" min="1" max="1" chance="32.1429" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25128" level="33" type="RaidBoss" name="Vuku Grand Priest Gharmash" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -1403,19 +1510,22 @@
 			<radius normal="22" />
 			<height normal="35" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="296" min="1" max="1" chance="5.02" /> 
-				<item id="130" min="1" max="1" chance="4.998" /> 
-				<item id="186" min="1" max="1" chance="4.987" /> 
-				<item id="293" min="1" max="1" chance="4.961" /> 
-				<item id="127" min="1" max="1" chance="4.959" /> 
-				<item id="157" min="1" max="1" chance="4.946" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="33.2127">
+					<item id="851" min="7" max="19" chance="8.0132" /> 
+					<item id="882" min="6" max="16" chance="14.1816" /> 
+					<item id="914" min="1" max="1" chance="77.8052" /> 
+				</group>
+				<group chance="87.6285">
+					<item id="1905" min="81" max="243" chance="14.3432" /> 
+					<item id="1906" min="480" max="1440" chance="3.42023" /> 
+					<item id="1907" min="140" max="420" chance="5.9346" /> 
+					<item id="951" min="1" max="1" chance="33.7785" /> 
+					<item id="952" min="3" max="9" chance="41.2849" /> 
+					<item id="6573" min="1" max="1" chance="1.23864" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25129" level="32" type="Monster" name="Vuku Shaman" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4194" level="3" />
@@ -1541,52 +1651,35 @@
 			<radius normal="30" />
 			<height normal="57" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="915" min="1" max="3" chance="31.3" /> 
-				<item id="852" min="1" max="3" chance="31.04" /> 
-				<item id="883" min="1" max="3" chance="29.98" /> 
-				<item id="2495" min="1" max="3" chance="5.368" /> 
-				<item id="2452" min="1" max="3" chance="5.331" /> 
-				<item id="397" min="1" max="3" chance="5.328" /> 
-				<item id="354" min="1" max="3" chance="5.326" /> 
-				<item id="381" min="1" max="3" chance="5.319" /> 
-				<item id="62" min="1" max="3" chance="5.317" /> 
-				<item id="2454" min="1" max="3" chance="5.317" /> 
-				<item id="2432" min="1" max="3" chance="5.317" /> 
-				<item id="631" min="1" max="3" chance="5.312" /> 
-				<item id="471" min="1" max="3" chance="5.302" /> 
-				<item id="439" min="1" max="3" chance="5.247" /> 
-				<item id="2433" min="1" max="3" chance="5.24" /> 
-				<item id="2430" min="1" max="3" chance="5.239" /> 
-				<item id="2429" min="1" max="3" chance="5.237" /> 
-				<item id="2453" min="1" max="3" chance="5.229" /> 
-				<item id="2413" min="1" max="3" chance="5.223" /> 
-				<item id="2431" min="1" max="3" chance="5.212" /> 
-				<item id="2387" min="1" max="3" chance="5.205" /> 
-				<item id="230" min="1" max="1" chance="0.75" /> 
-				<item id="192" min="1" max="1" chance="0.75" /> 
-				<item id="71" min="1" max="1" chance="0.75" /> 
-				<item id="191" min="1" max="1" chance="0.75" /> 
-				<item id="72" min="1" max="1" chance="0.75" /> 
-				<item id="89" min="1" max="1" chance="0.75" /> 
-				<item id="96" min="1" max="1" chance="0.75" /> 
-				<item id="232" min="1" max="1" chance="0.75" /> 
-				<item id="263" min="1" max="1" chance="0.75" /> 
-				<item id="281" min="1" max="1" chance="0.75" /> 
-				<item id="298" min="1" max="1" chance="0.75" /> 
-				<item id="302" min="1" max="1" chance="0.75" /> 
-				<item id="161" min="1" max="1" chance="0.75" /> 
-				<item id="226" min="1" max="1" chance="0.75" /> 
-				<item id="160" min="1" max="1" chance="0.75" /> 
-				<item id="194" min="1" max="1" chance="0.75" /> 
-				<item id="193" min="1" max="1" chance="0.75" /> 
-				<item id="173" min="1" max="1" chance="0.75" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="30.78" /> 
+		<dropLists><drop>
+				<group chance="1.8966">
+					<item id="91" min="1" max="1" chance="50" /> 
+					<item id="92" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="7.7092">
+					<item id="2397" min="1" max="1" chance="30.4182" /> 
+					<item id="2402" min="1" max="1" chance="48.769" /> 
+					<item id="2406" min="1" max="1" chance="20.8128" /> 
+				</group>
+				<group chance="88.8541">
+					<item id="4069" min="9" max="27" chance="26.9627" /> 
+					<item id="4070" min="40" max="120" chance="9.21128" /> 
+					<item id="4071" min="14" max="42" chance="13.3162" /> 
+					<item id="4106" min="8" max="22" chance="17.3795" /> 
+					<item id="4105" min="4" max="12" chance="33.1303" /> 
+				</group>
+				<group chance="79.4575">
+					<item id="4610" min="1" max="3" chance="37.3002" /> 
+					<item id="4611" min="2" max="4" chance="24.8668" /> 
+					<item id="4612" min="2" max="6" chance="18.6501" /> 
+					<item id="6574" min="1" max="1" chance="19.183" /> 
+				</group>
+				<group chance="50">
+					<item id="8159" min="2" max="3" chance="50" /> 
+					<item id="8176" min="2" max="2" chance="50" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25132" level="49" type="Monster" name="Gato's Sniper" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4761" level="4" />
@@ -1705,20 +1798,33 @@
 			<radius normal="37.5" />
 			<height normal="30" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="1125" min="1" max="3" chance="18.22" /> 
-				<item id="438" min="1" max="3" chance="17.49" /> 
-				<item id="2451" min="1" max="3" chance="17.28" /> 
-				<item id="630" min="1" max="3" chance="17.24" /> 
-				<item id="882" min="1" max="1" chance="13.79" /> 
-				<item id="914" min="1" max="1" chance="13.31" /> 
-				<item id="851" min="1" max="1" chance="13.08" /> 
-				<item id="955" min="2" max="6" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="5.2857">
+					<item id="281" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="54.6799">
+					<item id="631" min="1" max="1" chance="36.9864" /> 
+					<item id="2413" min="1" max="1" chance="26.0273" /> 
+					<item id="2495" min="1" max="1" chance="36.9864" /> 
+				</group>
+				<group chance="95.26">
+					<item id="2945" min="81" max="243" chance="7.04241" /> 
+					<item id="1964" min="40" max="120" chance="14.2609" /> 
+					<item id="2936" min="140" max="420" chance="3.70071" /> 
+					<item id="2074" min="3" max="9" chance="74.996" /> 
+				</group>
+				<group chance="97.1329">
+					<item id="4597" min="1" max="3" chance="33.6535" /> 
+					<item id="4598" min="2" max="4" chance="22.4356" /> 
+					<item id="4599" min="2" max="6" chance="16.8267" /> 
+					<item id="6573" min="1" max="1" chance="1.3462" /> 
+					<item id="8164" min="3" max="6" chance="25.7379" /> 
+				</group>
+				<group chance="25">
+					<item id="8176" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25135" level="39" type="Monster" name="Talkin's Priest" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4781" level="4" />
@@ -1842,25 +1948,34 @@
 			<radius normal="28" />
 			<height normal="85" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="325" min="1" max="1" chance="3.554" /> 
-				<item id="94" min="1" max="1" chance="3.551" /> 
-				<item id="242" min="1" max="1" chance="3.523" /> 
-				<item id="227" min="1" max="1" chance="3.521" /> 
-				<item id="131" min="1" max="1" chance="3.521" /> 
-				<item id="73" min="1" max="1" chance="3.491" /> 
-				<item id="282" min="1" max="1" chance="3.488" /> 
-				<item id="2502" min="1" max="1" chance="3.486" /> 
-				<item id="133" min="1" max="1" chance="3.48" /> 
-				<item id="195" min="1" max="1" chance="3.476" /> 
-				<item id="285" min="1" max="1" chance="3.474" /> 
-				<item id="74" min="1" max="1" chance="3.441" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="29.84" /> 
+		<dropLists><drop>
+				<group chance="2.3271">
+					<item id="267" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="21.0086">
+					<item id="503" min="1" max="1" chance="20.5973" /> 
+					<item id="633" min="1" max="1" chance="29.4027" /> 
+					<item id="673" min="1" max="1" chance="29.4027" /> 
+					<item id="2415" min="1" max="1" chance="20.5973" /> 
+				</group>
+				<group chance="78.4046">
+					<item id="4102" min="16" max="48" chance="30.1324" /> 
+					<item id="4072" min="23" max="67" chance="21.4274" /> 
+					<item id="4101" min="116" max="346" chance="5.38782" /> 
+					<item id="4439" min="60" max="180" chance="12.3384" /> 
+					<item id="4111" min="12" max="36" chance="30.7139" /> 
+				</group>
+				<group chance="83.7007">
+					<item id="4613" min="1" max="3" chance="26.968" /> 
+					<item id="4614" min="2" max="4" chance="17.9787" /> 
+					<item id="4615" min="1" max="1" chance="53.936" /> 
+					<item id="6571" min="1" max="1" chance="1.11731" /> 
+				</group>
+				<group chance="25">
+					<item id="8159" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25138" level="54" type="Monster" name="Soul Drinker" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4191" level="5" />
@@ -1990,19 +2105,32 @@
 			<radius normal="20" grown="25" />
 			<height normal="35" grown="41.5" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="28325" max="66123" chance="70" /> 
-				<item id="730" min="1" max="1" chance="3.031" /> 
-				<item id="729" min="1" max="1" chance="0.3" /> 
+		<dropLists><drop>
+				<group chance="2.0469">
+					<item id="98" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="20.6945">
+					<item id="6325" min="1" max="1" chance="46.1794" /> 
+					<item id="6323" min="1" max="1" chance="23.1163" /> 
+					<item id="6324" min="1" max="1" chance="30.7043" /> 
+				</group>
+				<group chance="85.1035">
+					<item id="6345" min="40" max="120" chance="23.3856" /> 
+					<item id="6343" min="14" max="42" chance="37.3437" /> 
+					<item id="6341" min="81" max="243" chance="8.34948" /> 
+					<item id="5542" min="12" max="36" chance="30.9212" /> 
+				</group>
+				<group chance="77.5085">
+					<item id="730" min="1" max="1" chance="87.007" /> 
+					<item id="729" min="1" max="1" chance="11.6009" /> 
+					<item id="6569" min="1" max="1" chance="1.39211" /> 
+				</group>
+				<group chance="50">
+					<item id="8169" min="1" max="3" chance="50" /> 
+					<item id="8176" min="4" max="8" chance="50" /> 
+				</group>
 			</drop>
-			<spoil>
-				<item id="1875" min="1" max="19" chance="85.18" /> 
-				<item id="5426" min="1" max="1" chance="40" /> 
-				<item id="5428" min="1" max="1" chance="39.09" /> 
-			</spoil>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25141" level="64" type="Monster" name="Hekaton Cottus" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4720" level="6" />
@@ -2145,7 +2273,24 @@
 			<radius normal="13.5" grown="16" />
 			<height normal="36.5" grown="42.5" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="1.203">
+					<item id="6371" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="2.2493">
+					<item id="6680" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="71.4094">
+					<item id="6707" min="12" max="36" chance="56.5731" /> 
+					<item id="6695" min="12" max="36" chance="36.3224" /> 
+					<item id="959" min="1" max="1" chance="7.10453" /> 
+				</group>
+				<group chance="51.5786">
+					<item id="960" min="1" max="1" chance="98.3606" /> 
+					<item id="6577" min="1" max="1" chance="1.63944" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25144" level="78" type="Monster" name="Shuriel's Oracle" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4210" level="7" />
@@ -2268,33 +2413,24 @@
 			<radius normal="25" />
 			<height normal="72" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="1102" min="1" max="1" chance="9.052" /> 
-				<item id="1105" min="1" max="1" chance="9.049" /> 
-				<item id="39" min="1" max="1" chance="9.027" /> 
-				<item id="51" min="1" max="1" chance="9.022" /> 
-				<item id="33" min="1" max="1" chance="9.02" /> 
-				<item id="26" min="1" max="1" chance="8.984" /> 
-				<item id="34" min="1" max="1" chance="8.946" /> 
-				<item id="27" min="1" max="1" chance="8.945" /> 
-				<item id="625" min="1" max="1" chance="8.944" /> 
-				<item id="1148" min="1" max="1" chance="8.939" /> 
-				<item id="155" min="1" max="1" chance="4.607" /> 
-				<item id="177" min="1" max="1" chance="4.5995" /> 
-				<item id="68" min="1" max="1" chance="4.594" /> 
-				<item id="100" min="1" max="1" chance="4.58" /> 
-				<item id="219" min="1" max="1" chance="4.579" /> 
-				<item id="311" min="1" max="1" chance="4.572" /> 
-				<item id="87" min="1" max="1" chance="4.558" /> 
-				<item id="16" min="1" max="1" chance="4.538" /> 
-				<item id="257" min="1" max="1" chance="4.5255" /> 
-				<item id="273" min="1" max="1" chance="4.509" /> 
-				<item id="5284" min="1" max="1" chance="4.498" /> 
-				<item id="956" min="2" max="6" chance="100" /> 
+		<dropLists><drop>
+				<group chance="10.63">
+					<item id="275" min="1" max="1" chance="50" /> 
+					<item id="276" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="48.8787">
+					<item id="848" min="3" max="9" chance="13.6988" /> 
+					<item id="879" min="3" max="7" chance="24.6576" /> 
+					<item id="911" min="1" max="1" chance="61.6436" /> 
+				</group>
+				<group chance="83.1797">
+					<item id="1900" min="84" max="252" chance="6.69959" /> 
+					<item id="2024" min="3" max="9" chance="48.8482" /> 
+					<item id="6575" min="1" max="1" chance="4.44532" /> 
+					<item id="6576" min="1" max="1" chance="40.0069" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25147" level="20" type="Monster" name="Assassin of Bifrons" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4778" level="2" />
@@ -2416,20 +2552,24 @@
 			<radius normal="30" />
 			<height normal="21.25" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="123" min="1" max="1" chance="5.73" /> 
-				<item id="314" min="1" max="1" chance="5.689" /> 
-				<item id="313" min="1" max="1" chance="5.683" /> 
-				<item id="274" min="1" max="1" chance="5.678" /> 
-				<item id="220" min="1" max="1" chance="5.65" /> 
-				<item id="291" min="1" max="1" chance="5.63" /> 
-				<item id="168" min="1" max="1" chance="5.612" /> 
-				<item id="258" min="1" max="1" chance="5.61" /> 
-				<item id="178" min="1" max="1" chance="5.6" /> 
+		<dropLists><drop>
+				<group chance="16.394">
+					<item id="83" min="1" max="1" chance="23.6892" /> 
+					<item id="124" min="1" max="1" chance="17.5406" /> 
+					<item id="127" min="1" max="1" chance="17.5406" /> 
+					<item id="130" min="1" max="1" chance="17.5406" /> 
+					<item id="144" min="1" max="1" chance="23.6892" /> 
+				</group>
+				<group chance="65.7962">
+					<item id="436" min="1" max="1" chance="55.6075" /> 
+					<item id="469" min="1" max="3" chance="44.3925" /> 
+				</group>
+				<group chance="81.9578">
+					<item id="2026" min="3" max="9" chance="34.0291" /> 
+					<item id="6576" min="1" max="3" chance="65.9709" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25150" level="24" type="Monster" name="Evil Spirit Archer" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4756" level="2" />
@@ -2559,22 +2699,27 @@
 			<radius normal="28" />
 			<height normal="75" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="913" min="1" max="1" chance="29.49" /> 
-				<item id="881" min="1" max="3" chance="28.84" /> 
-				<item id="850" min="1" max="3" chance="28.38" /> 
-				<item id="2426" min="1" max="3" chance="13.86" /> 
-				<item id="2493" min="1" max="3" chance="13.81" /> 
-				<item id="2401" min="1" max="3" chance="13.17" /> 
-				<item id="2396" min="1" max="3" chance="13.05" /> 
-				<item id="2450" min="1" max="3" chance="13.05" /> 
-				<item id="629" min="1" max="3" chance="12.66" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="5.4742">
+					<item id="262" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="15.3123">
+					<item id="438" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="43.8353">
+					<item id="1953" min="12" max="36" chance="100" /> 
+				</group>
+				<group chance="94.5055">
+					<item id="2053" min="3" max="9" chance="71.8424" /> 
+					<item id="4594" min="1" max="3" chance="28.1576" /> 
+				</group>
+				<group chance="40.1693">
+					<item id="4595" min="2" max="4" chance="44.1641" /> 
+					<item id="4596" min="2" max="6" chance="33.1231" /> 
+					<item id="6574" min="1" max="1" chance="22.7129" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25153" level="34" type="Monster" name="Claws of Shadar" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4731" level="3" />
@@ -2695,21 +2840,31 @@
 			<radius normal="24" />
 			<height normal="52" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="396" min="1" max="3" chance="15.49" /> 
-				<item id="497" min="1" max="3" chance="15.4" /> 
-				<item id="61" min="1" max="3" chance="15.31" /> 
-				<item id="607" min="1" max="3" chance="14.74" /> 
-				<item id="2427" min="1" max="3" chance="14.35" /> 
-				<item id="851" min="1" max="1" chance="13.54" /> 
-				<item id="914" min="1" max="1" chance="13.34" /> 
-				<item id="882" min="1" max="1" chance="12.81" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="8.1318">
+					<item id="226" min="1" max="1" chance="50" /> 
+					<item id="232" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="42.569">
+					<item id="2387" min="1" max="1" chance="61.526" /> 
+					<item id="397" min="1" max="1" chance="38.474" /> 
+				</group>
+				<group chance="84.6069">
+					<item id="2935" min="192" max="576" chance="5.07866" /> 
+					<item id="1961" min="53" max="157" chance="11.1796" /> 
+					<item id="2072" min="8" max="22" chance="29.1276" /> 
+					<item id="2070" min="4" max="12" chance="54.6141" /> 
+				</group>
+				<group chance="93.0115">
+					<item id="4600" min="3" max="9" chance="36.0459" /> 
+					<item id="6574" min="1" max="1" chance="37.0757" /> 
+					<item id="8158" min="4" max="4" chance="26.8784" /> 
+				</group>
+				<group chance="25">
+					<item id="8176" min="1" max="2" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25156" level="39" type="Monster" name="Fanatic Wizard" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4194" level="3" />
@@ -2829,34 +2984,35 @@
 			<radius normal="45" />
 			<height normal="126" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="852" min="1" max="3" chance="31.77" /> 
-				<item id="883" min="1" max="3" chance="30.36" /> 
-				<item id="915" min="1" max="1" chance="30.22" /> 
-				<item id="2495" min="1" max="3" chance="5.397" /> 
-				<item id="2430" min="1" max="3" chance="5.336" /> 
-				<item id="2452" min="1" max="3" chance="5.333" /> 
-				<item id="2453" min="1" max="3" chance="5.329" /> 
-				<item id="354" min="1" max="3" chance="5.307" /> 
-				<item id="2429" min="1" max="3" chance="5.306" /> 
-				<item id="2387" min="1" max="3" chance="5.303" /> 
-				<item id="2454" min="1" max="3" chance="5.29" /> 
-				<item id="2432" min="1" max="3" chance="5.283" /> 
-				<item id="381" min="1" max="3" chance="5.281" /> 
-				<item id="2413" min="1" max="3" chance="5.27" /> 
-				<item id="2433" min="1" max="3" chance="5.255" /> 
-				<item id="2431" min="1" max="3" chance="5.246" /> 
-				<item id="439" min="1" max="3" chance="5.243" /> 
-				<item id="397" min="1" max="3" chance="5.234" /> 
-				<item id="62" min="1" max="3" chance="5.223" /> 
-				<item id="631" min="1" max="3" chance="5.221" /> 
-				<item id="471" min="1" max="3" chance="5.209" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="28.73" /> 
+		<dropLists><drop>
+				<group chance="3.1418">
+					<item id="135" min="1" max="1" chance="50" /> 
+					<item id="5286" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="16.2081">
+					<item id="400" min="1" max="1" chance="32.0068" /> 
+					<item id="401" min="1" max="1" chance="16.8194" /> 
+					<item id="420" min="1" max="1" chance="51.1738" /> 
+				</group>
+				<group chance="89.1366">
+					<item id="1985" min="28" max="84" chance="14.7827" /> 
+					<item id="1984" min="9" max="27" chance="28.5901" /> 
+					<item id="1987" min="20" max="60" chance="9.15673" /> 
+					<item id="5530" min="4" max="12" chance="30.9726" /> 
+					<item id="2115" min="8" max="22" chance="16.4979" /> 
+				</group>
+				<group chance="92.9602">
+					<item id="6574" min="1" max="1" chance="19.1829" /> 
+					<item id="4612" min="2" max="6" chance="18.6501" /> 
+					<item id="4611" min="2" max="4" chance="24.8668" /> 
+					<item id="4610" min="1" max="3" chance="37.3002" /> 
+				</group>
+				<group chance="50">
+					<item id="8167" min="1" max="1" chance="50" /> 
+					<item id="8176" min="1" max="1" chance="50" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25159" level="54" type="RaidBoss" name="Paniel the Unicorn" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -2901,52 +3057,29 @@
 			<radius normal="14" />
 			<height normal="30" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="883" min="1" max="3" chance="30.79" /> 
-				<item id="915" min="1" max="3" chance="29.05" /> 
-				<item id="852" min="1" max="3" chance="28.59" /> 
-				<item id="2495" min="1" max="3" chance="5.372" /> 
-				<item id="631" min="1" max="3" chance="5.333" /> 
-				<item id="2453" min="1" max="3" chance="5.33" /> 
-				<item id="471" min="1" max="3" chance="5.33" /> 
-				<item id="2431" min="1" max="3" chance="5.304" /> 
-				<item id="2454" min="1" max="3" chance="5.304" /> 
-				<item id="397" min="1" max="3" chance="5.301" /> 
-				<item id="354" min="1" max="3" chance="5.3" /> 
-				<item id="439" min="1" max="3" chance="5.297" /> 
-				<item id="2433" min="1" max="3" chance="5.297" /> 
-				<item id="2413" min="1" max="3" chance="5.293" /> 
-				<item id="2387" min="1" max="3" chance="5.28" /> 
-				<item id="2430" min="1" max="3" chance="5.263" /> 
-				<item id="2452" min="1" max="3" chance="5.253" /> 
-				<item id="62" min="1" max="3" chance="5.245" /> 
-				<item id="2429" min="1" max="3" chance="5.224" /> 
-				<item id="2432" min="1" max="3" chance="5.211" /> 
-				<item id="381" min="1" max="3" chance="5.203" /> 
-				<item id="96" min="1" max="1" chance="1.159" /> 
-				<item id="230" min="1" max="1" chance="1.131" /> 
-				<item id="71" min="1" max="1" chance="1.128" /> 
-				<item id="194" min="1" max="1" chance="1.125" /> 
-				<item id="160" min="1" max="1" chance="1.115" /> 
-				<item id="302" min="1" max="1" chance="1.112" /> 
-				<item id="173" min="1" max="1" chance="1.107" /> 
-				<item id="263" min="1" max="1" chance="1.086" /> 
-				<item id="193" min="1" max="1" chance="1.084" /> 
-				<item id="192" min="1" max="1" chance="1.081" /> 
-				<item id="72" min="1" max="1" chance="1.077" /> 
-				<item id="232" min="1" max="1" chance="1.076" /> 
-				<item id="226" min="1" max="1" chance="1.067" /> 
-				<item id="161" min="1" max="1" chance="1.06" /> 
-				<item id="298" min="1" max="1" chance="1.06" /> 
-				<item id="191" min="1" max="1" chance="1.06" /> 
-				<item id="281" min="1" max="1" chance="1.052" /> 
-				<item id="89" min="1" max="1" chance="1.05" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="28.77" /> 
+		<dropLists><drop>
+				<group chance="20.944">
+					<item id="357" min="1" max="1" chance="19.2308" /> 
+					<item id="2379" min="1" max="1" chance="30.7692" /> 
+					<item id="2376" min="1" max="1" chance="19.2308" /> 
+					<item id="383" min="1" max="1" chance="30.7692" /> 
+				</group>
+				<group chance="92.8246">
+					<item id="4065" min="116" max="346" chance="5.46461" /> 
+					<item id="4064" min="23" max="67" chance="18.1503" /> 
+					<item id="4057" min="60" max="180" chance="10.5189" /> 
+					<item id="4056" min="16" max="48" chance="25.5238" /> 
+					<item id="4619" min="1" max="3" chance="24.2054" /> 
+					<item id="4620" min="2" max="4" chance="16.137" /> 
+				</group>
+				<group chance="95.868">
+					<item id="4621" min="1" max="1" chance="46.8739" /> 
+					<item id="6571" min="1" max="1" chance="0.97102" /> 
+					<item id="8171" min="2" max="2" chance="26.0775" /> 
+					<item id="8176" min="3" max="3" chance="26.0775" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25160" level="53" type="Monster" name="Rapini the Unicorn" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4781" level="5" /> 
@@ -3067,7 +3200,31 @@
 			<radius normal="50" />
 			<height normal="91" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="2.1834">
+					<item id="287" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="18.028">
+					<item id="110" min="1" max="1" chance="41.724" /> 
+					<item id="2417" min="1" max="1" chance="29.138" /> 
+					<item id="2416" min="1" max="1" chance="29.138" /> 
+				</group>
+				<group chance="86.4891">
+					<item id="4089" min="140" max="420" chance="4.95982" /> 
+					<item id="4088" min="81" max="243" chance="8.57218" /> 
+					<item id="4077" min="40" max="120" chance="20.6618" /> 
+					<item id="4121" min="12" max="36" chance="30.0052" /> 
+					<item id="948" min="6" max="18" chance="11.1637" /> 
+					<item id="4622" min="2" max="4" chance="24.6373" /> 
+				</group>
+				<group chance="78.7667">
+					<item id="4623" min="2" max="6" chance="20.2897" /> 
+					<item id="4624" min="3" max="7" chance="16.2317" /> 
+					<item id="8168" min="4" max="8" chance="31.7393" /> 
+					<item id="8176" min="5" max="6" chance="31.7393" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25163" level="70" type="RaidBoss" name="Roaring Skylancer" title="Raid Boss">
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm01_A" />
@@ -3106,56 +3263,38 @@
 			<radius normal="44" />
 			<height normal="51.5" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="856" min="1" max="1" chance="27.75" /> 
-				<item id="918" min="1" max="1" chance="26.47" /> 
-				<item id="887" min="1" max="1" chance="25.77" /> 
-				<item id="357" min="1" max="1" chance="3.876" /> 
-				<item id="383" min="1" max="1" chance="3.873" /> 
-				<item id="2404" min="1" max="1" chance="3.872" /> 
-				<item id="2415" min="1" max="1" chance="3.863" /> 
-				<item id="600" min="1" max="1" chance="3.86" /> 
-				<item id="633" min="1" max="1" chance="3.853" /> 
-				<item id="2399" min="1" max="1" chance="3.837" /> 
-				<item id="2379" min="1" max="1" chance="3.831" /> 
-				<item id="110" min="1" max="1" chance="3.829" /> 
-				<item id="2397" min="1" max="1" chance="3.815" /> 
-				<item id="554" min="1" max="1" chance="3.814" /> 
-				<item id="2402" min="1" max="1" chance="3.814" /> 
-				<item id="2390" min="1" max="1" chance="3.801" /> 
-				<item id="673" min="1" max="1" chance="3.797" /> 
-				<item id="503" min="1" max="1" chance="3.789" /> 
-				<item id="2376" min="1" max="1" chance="3.784" /> 
-				<item id="612" min="1" max="1" chance="3.78" /> 
-				<item id="2384" min="1" max="1" chance="3.769" /> 
-				<item id="2406" min="1" max="1" chance="3.767" /> 
-				<item id="2464" min="1" max="1" chance="3.763" /> 
-				<item id="2388" min="1" max="1" chance="3.756" /> 
-				<item id="300" min="1" max="1" chance="1.3995" /> 
-				<item id="148" min="1" max="1" chance="1.369" /> 
-				<item id="268" min="1" max="1" chance="1.357" /> 
-				<item id="97" min="1" max="1" chance="1.342" /> 
-				<item id="284" min="1" max="1" chance="1.339" /> 
-				<item id="210" min="1" max="1" chance="1.328" /> 
-				<item id="264" min="1" max="1" chance="1.327" /> 
-				<item id="229" min="1" max="1" chance="1.318" /> 
-				<item id="287" min="1" max="1" chance="1.304" /> 
-				<item id="142" min="1" max="1" chance="1.302" /> 
-				<item id="171" min="1" max="1" chance="1.297" /> 
-				<item id="92" min="1" max="1" chance="1.297" /> 
-				<item id="267" min="1" max="1" chance="1.295" /> 
-				<item id="91" min="1" max="1" chance="1.293" /> 
-				<item id="234" min="1" max="1" chance="1.29" /> 
-				<item id="78" min="1" max="1" chance="1.282" /> 
-				<item id="79" min="1" max="1" chance="1.274" /> 
-				<item id="175" min="1" max="1" chance="1.264" /> 
-				<item id="243" min="1" max="1" chance="1.255" /> 
-				<item id="948" min="1" max="1" chance="81.49" /> 
-				<item id="947" min="1" max="1" chance="20.85" /> 
+		<dropLists><drop>
+				<group chance="1.8723">
+					<item id="81" min="1" max="1" chance="33.3333" /> 
+					<item id="2500" min="1" max="1" chance="33.3333" /> 
+					<item id="151" min="1" max="1" chance="33.3333" /> 
+				</group>
+				<group chance="4.3594">
+					<item id="5320" min="1" max="1" chance="50" /> 
+					<item id="5323" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="97.8376">
+					<item id="5481" min="8" max="22" chance="25.7578" /> 
+					<item id="5480" min="4" max="12" chance="48.2959" /> 
+					<item id="5546" min="5" max="15" chance="25.9463" /> 
+				</group>
+				<group chance="94.8706">
+					<item id="5545" min="14" max="42" chance="8.70017" /> 
+					<item id="5529" min="9" max="27" chance="13.5337" /> 
+					<item id="960" min="1" max="1" chance="46.0427" /> 
+					<item id="959" min="1" max="1" chance="4.60427" /> 
+					<item id="6577" min="1" max="1" chance="0.76747" /> 
+					<item id="8163" min="1" max="3" chance="26.3517" /> 
+				</group>
+				<group chance="50">
+					<item id="8176" min="3" max="9" chance="50" /> 
+					<item id="8619" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="100">
+					<item id="8619" min="1" max="1" chance="75" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25166" level="25" type="RaidBoss" name="Ikuntai" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -3204,7 +3343,23 @@
 			<radius normal="15" />
 			<height normal="39" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="15.9414">
+					<item id="157" min="1" max="1" chance="50" /> 
+					<item id="186" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="29.1904">
+					<item id="849" min="4" max="10" chance="29.3322" /> 
+					<item id="880" min="3" max="9" chance="51.4111" /> 
+					<item id="912" min="4" max="12" chance="19.2567" /> 
+				</group>
+				<group chance="68.1933">
+					<item id="1901" min="60" max="180" chance="32.5239" /> 
+					<item id="2027" min="12" max="36" chance="30.8473" /> 
+					<item id="6387" min="60" max="180" chance="36.6288" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25167" level="24" type="Monster" name="Ikuntai's Servitor" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4780" level="2" />
@@ -3323,21 +3478,39 @@
 			<radius normal="24" />
 			<height normal="52" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="849" min="1" max="3" chance="32.76" /> 
-				<item id="880" min="1" max="3" chance="31.55" /> 
-				<item id="912" min="1" max="1" chance="30.2" /> 
-				<item id="47" min="1" max="3" chance="19.84" /> 
-				<item id="2423" min="1" max="3" chance="19.01" /> 
-				<item id="436" min="1" max="3" chance="18.98" /> 
-				<item id="469" min="1" max="3" chance="18.53" /> 
-				<item id="2447" min="1" max="3" chance="18.27" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="8.2146">
+					<item id="129" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="41.289">
+					<item id="2450" min="1" max="1" chance="31.0729" /> 
+					<item id="2449" min="1" max="1" chance="31.0729" /> 
+					<item id="2448" min="1" max="1" chance="31.0729" /> 
+					<item id="2426" min="13" max="37" chance="1.24319" /> 
+					<item id="2425" min="12" max="36" chance="1.29478" /> 
+					<item id="2424" min="12" max="34" chance="1.35097" /> 
+					<item id="1124" min="11" max="33" chance="1.41248" /> 
+					<item id="606" min="11" max="31" chance="1.47981" /> 
+				</group>
+				<group chance="99.2211">
+					<item id="2925" min="42" max="126" chance="7.76952" /> 
+					<item id="2924" min="33" max="97" chance="10.0406" /> 
+					<item id="2923" min="480" max="1440" chance="0.6799" /> 
+					<item id="2927" min="64" max="192" chance="5.09881" /> 
+					<item id="2928" min="77" max="229" chance="4.26573" /> 
+					<item id="1948" min="314" max="940" chance="1.04101" /> 
+					<item id="1946" min="180" max="540" chance="1.81292" /> 
+					<item id="2926" min="53" max="157" chance="6.21561" /> 
+					<item id="2034" min="12" max="36" chance="25.5135" /> 
+					<item id="4553" min="1" max="3" chance="37.5624" /> 
+				</group>
+				<group chance="47.6227">
+					<item id="4554" min="2" max="4" chance="52.1739" /> 
+					<item id="4555" min="2" max="6" chance="39.1303" /> 
+					<item id="6575" min="1" max="1" chance="8.69585" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25170" level="38" type="RaidBoss" name="Lizardmen Captain Hellion" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -3384,36 +3557,28 @@
 			<radius normal="30" grown="36" />
 			<height normal="63" grown="76" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="912" min="1" max="1" chance="26.36" /> 
-				<item id="880" min="1" max="3" chance="26.09" /> 
-				<item id="849" min="1" max="3" chance="25.62" /> 
-				<item id="379" min="1" max="3" chance="4.82" /> 
-				<item id="59" min="1" max="3" chance="4.815" /> 
-				<item id="378" min="1" max="3" chance="4.81" /> 
-				<item id="2423" min="1" max="3" chance="4.799" /> 
-				<item id="351" min="1" max="3" chance="4.781" /> 
-				<item id="553" min="1" max="3" chance="4.78" /> 
-				<item id="349" min="1" max="3" chance="4.762" /> 
-				<item id="350" min="1" max="3" chance="4.758" /> 
-				<item id="415" min="1" max="3" chance="4.757" /> 
-				<item id="393" min="1" max="3" chance="4.754" /> 
-				<item id="63" min="1" max="3" chance="4.725" /> 
-				<item id="469" min="1" max="3" chance="4.722" /> 
-				<item id="2446" min="1" max="3" chance="4.72" /> 
-				<item id="416" min="1" max="3" chance="4.714" /> 
-				<item id="47" min="1" max="3" chance="4.712" /> 
-				<item id="394" min="1" max="3" chance="4.711" /> 
-				<item id="2422" min="1" max="3" chance="4.698" /> 
-				<item id="58" min="1" max="3" chance="4.698" /> 
-				<item id="436" min="1" max="3" chance="4.695" /> 
-				<item id="2447" min="1" max="3" chance="4.692" /> 
-				<item id="955" min="2" max="4" chance="100" /> 
-				<item id="956" min="5" max="15" chance="100" /> 
+		<dropLists><drop>
+				<group chance="3.9984">
+					<item id="232" min="1" max="1" chance="50" /> 
+					<item id="226" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="41.3626">
+					<item id="631" min="1" max="1" chance="36.9863" /> 
+					<item id="2495" min="1" max="1" chance="36.9863" /> 
+					<item id="2413" min="1" max="1" chance="26.0274" /> 
+				</group>
+				<group chance="52.8547">
+					<item id="2945" min="81" max="243" chance="9.60123" /> 
+					<item id="2936" min="140" max="420" chance="5.04553" /> 
+					<item id="1964" min="40" max="120" chance="19.4426" /> 
+					<item id="2072" min="8" max="22" chance="22.9255" /> 
+					<item id="2070" min="4" max="12" chance="42.9852" /> 
+				</group>
+				<group chance="53.9503">
+					<item id="951" min="1" max="3" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25171" level="37" type="Monster" name="Hellion's Archers" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4757" level="3" />
@@ -3533,21 +3698,23 @@
 			<radius normal="72" />
 			<height normal="87" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="882" min="1" max="3" chance="31.29" /> 
-				<item id="914" min="1" max="1" chance="31.07" /> 
-				<item id="851" min="1" max="3" chance="30.71" /> 
-				<item id="607" min="2" max="4" chance="18.62" /> 
-				<item id="61" min="2" max="4" chance="18.59" /> 
-				<item id="497" min="2" max="4" chance="18.42" /> 
-				<item id="2427" min="2" max="4" chance="18.39" /> 
-				<item id="396" min="2" max="4" chance="17.12" /> 
-				<item id="955" min="1" max="1" chance="100" /> 
-				<item id="956" min="2" max="8" chance="100" /> 
+		<dropLists><drop>
+				<group chance="9.9317">
+					<item id="64" min="5" max="13" chance="52.6315" /> 
+					<item id="608" min="5" max="15" chance="47.3685" /> 
+				</group>
+				<group chance="95.0668">
+					<item id="1981" min="53" max="157" chance="33.9607" /> 
+					<item id="2956" min="192" max="576" chance="9.2861" /> 
+					<item id="4610" min="1" max="3" chance="26.1938" /> 
+					<item id="4611" min="2" max="4" chance="17.4626" /> 
+					<item id="4612" min="2" max="6" chance="13.0969" /> 
+				</group>
+				<group chance="12.8065">
+					<item id="6574" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25174" level="44" type="Monster" name="Karuta's Follower" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4781" level="4" />
@@ -3673,31 +3840,35 @@
 			<radius normal="12" />
 			<height normal="30.7" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="853" min="2" max="6" chance="32.41" /> 
-				<item id="884" min="2" max="6" chance="31.99" /> 
-				<item id="916" min="1" max="3" chance="31.88" /> 
-				<item id="382" min="1" max="3" chance="5.395" /> 
-				<item id="1126" min="2" max="4" chance="5.399" /> 
-				<item id="355" min="1" max="3" chance="5.377" /> 
-				<item id="500" min="2" max="4" chance="5.376" /> 
-				<item id="399" min="1" max="3" chance="5.375" /> 
-				<item id="2434" min="2" max="4" chance="5.363" /> 
-				<item id="398" min="1" max="3" chance="5.356" /> 
-				<item id="2458" min="2" max="4" chance="5.336" /> 
-				<item id="418" min="1" max="3" chance="5.334" /> 
-				<item id="632" min="2" max="4" chance="5.326" /> 
-				<item id="419" min="1" max="3" chance="5.311" /> 
-				<item id="2457" min="2" max="4" chance="5.297" /> 
-				<item id="2456" min="2" max="4" chance="5.29" /> 
-				<item id="498" min="2" max="4" chance="5.283" /> 
-				<item id="440" min="1" max="3" chance="5.262" /> 
-				<item id="952" min="1" max="1" chance="100" /> 
-				<item id="951" min="1" max="1" chance="30.96" /> 
+		<dropLists><drop>
+				<group chance="1.7825">
+					<item id="284" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="7.2456">
+					<item id="2384" min="1" max="1" chance="30.4185" /> 
+					<item id="2388" min="1" max="1" chance="48.7689" /> 
+					<item id="2390" min="1" max="1" chance="20.8126" /> 
+				</group>
+				<group chance="41.3297">
+					<item id="4066" min="9" max="27" chance="54.4809" /> 
+					<item id="4067" min="40" max="120" chance="18.6123" /> 
+					<item id="4068" min="14" max="42" chance="26.9068" /> 
+				</group>
+				<group chance="90.2874">
+					<item id="4112" min="3" max="9" chance="80.8504" /> 
+					<item id="4616" min="1" max="3" chance="19.1496" /> 
+				</group>
+				<group chance="75.8437">
+					<item id="4617" min="1" max="1" chance="45.5927" /> 
+					<item id="4618" min="1" max="1" chance="45.5927" /> 
+					<item id="6572" min="1" max="1" chance="8.81458" /> 
+				</group>
+				<group chance="50">
+					<item id="8159" min="1" max="3" chance="50" /> 
+					<item id="8176" min="1" max="2" chance="50" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25177" level="54" type="Monster" name="Guardian Knight of Black Lily" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4727" level="5" />
@@ -3821,7 +3992,33 @@
 			<radius normal="30" />
 			<height normal="66" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="1.5862">
+					<item id="234" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="3.9242">
+					<item id="2391" min="1" max="1" chance="50" /> 
+					<item id="2392" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="75.0015">
+					<item id="4083" min="8" max="22" chance="34.7826" /> 
+					<item id="4082" min="4" max="12" chance="65.2174" /> 
+				</group>
+				<group chance="75.7907">
+					<item id="4119" min="3" max="9" chance="100" /> 
+				</group>
+				<group chance="75.3544">
+					<item id="948" min="1" max="3" chance="74.468" /> 
+					<item id="947" min="1" max="1" chance="23.8298" /> 
+					<item id="6571" min="1" max="1" chance="1.70222" /> 
+				</group>
+				<group chance="75">
+					<item id="8168" min="1" max="3" chance="33.3333" /> 
+					<item id="8169" min="1" max="1" chance="33.3333" /> 
+					<item id="8176" min="1" max="3" chance="33.3333" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25180" level="59" type="Monster" name="Karum's Guard" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4193" level="5" />
@@ -3948,7 +4145,31 @@
 			<radius normal="50" />
 			<height normal="180" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="1.471">
+					<item id="80" min="1" max="1" chance="50" /> 
+					<item id="150" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="15.4708">
+					<item id="5296" min="1" max="1" chance="25" /> 
+					<item id="5295" min="1" max="1" chance="25" /> 
+					<item id="5291" min="1" max="1" chance="25" /> 
+					<item id="5290" min="1" max="1" chance="25" /> 
+				</group>
+				<group chance="72.8173">
+					<item id="5496" min="11" max="31" chance="34.3953" /> 
+					<item id="5497" min="23" max="67" chance="16.0511" /> 
+					<item id="5509" min="16" max="48" chance="22.572" /> 
+					<item id="5508" min="60" max="180" chance="6.01931" /> 
+					<item id="5547" min="8" max="22" chance="20.9623" /> 
+				</group>
+				<group chance="48.006">
+					<item id="5548" min="4" max="12" chance="59.618" /> 
+					<item id="729" min="1" max="1" chance="20.191" /> 
+					<item id="6570" min="1" max="1" chance="20.191" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25183" level="58" type="Monster" name="Kuri's Wife" title="Raid Fighter">
 		<parameters>
 			<skill name="HealMagic_a" id="4786" level="5" />
@@ -4074,7 +4295,29 @@
 			<radius normal="20" grown="24" />
 			<height normal="40" grown="48" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="5.4742">
+					<item id="280" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="34.0764">
+					<item id="851" min="1" max="1" chance="53.1054" /> 
+					<item id="882" min="6" max="16" chance="7.22964" /> 
+					<item id="914" min="1" max="1" chance="39.665" /> 
+				</group>
+				<group chance="97.9886">
+					<item id="1906" min="40" max="120" chance="19.1977" /> 
+					<item id="1905" min="81" max="243" chance="6.70915" /> 
+					<item id="1907" min="140" max="420" chance="2.77594" /> 
+					<item id="2054" min="3" max="9" chance="71.3172" /> 
+				</group>
+				<group chance="86.6856">
+					<item id="951" min="1" max="1" chance="33.4884" /> 
+					<item id="4597" min="1" max="3" chance="30.6977" /> 
+					<item id="4598" min="2" max="4" chance="20.4651" /> 
+					<item id="4599" min="2" max="6" chance="15.3488" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25186" level="34" type="Monster" name="Hellena's Sniper" title="Raid Fighter">
 		<parameters>
 			<skill name="LongRangePhysicalSpecial_a" id="4761" level="3" />
@@ -4196,7 +4439,37 @@
 			<radius normal="12" />
 			<height normal="50" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="4.63">
+					<item id="88" min="1" max="1" chance="20" /> 
+					<item id="90" min="1" max="1" chance="20" /> 
+					<item id="158" min="1" max="1" chance="20" /> 
+					<item id="169" min="1" max="1" chance="20" /> 
+					<item id="172" min="1" max="1" chance="20" /> 
+				</group>
+				<group chance="49.6071">
+					<item id="2493" min="1" max="1" chance="37.037" /> 
+					<item id="2411" min="1" max="1" chance="25.9259" /> 
+					<item id="629" min="1" max="1" chance="37.037" /> 
+				</group>
+				<group chance="81.6985">
+					<item id="2929" min="60" max="180" chance="10.578" /> 
+					<item id="2922" min="27" max="81" chance="6.28739" /> 
+					<item id="1947" min="280" max="840" chance="2.26675" /> 
+					<item id="2037" min="3" max="7" chance="16.0625" /> 
+					<item id="2036" min="2" max="6" chance="20.0783" /> 
+					<item id="2035" min="2" max="4" chance="26.7711" /> 
+					<item id="2032" min="3" max="9" chance="12.2192" /> 
+					<item id="2031" min="7" max="21" chance="5.7367" /> 
+				</group>
+				<group chance="98.0301">
+					<item id="4556" min="1" max="3" chance="21.4286" /> 
+					<item id="4557" min="2" max="4" chance="14.2857" /> 
+					<item id="4558" min="1" max="1" chance="42.857" /> 
+					<item id="6576" min="1" max="1" chance="21.4286" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25189" level="34" type="RaidBoss" name="Cronos' Servitor Mumu" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -4242,7 +4515,22 @@
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="4.2149">
+					<item id="280" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="11.7898">
+					<item id="438" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="87.5572">
+					<item id="1953" min="12" max="36" chance="38.5474" /> 
+					<item id="2054" min="3" max="9" chance="61.4526" /> 
+				</group>
+				<group chance="27.3183">
+					<item id="952" min="12" max="36" chance="100" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25190" level="33" type="Monster" name="Mumu's Wizard" title="Raid Fighter">
 		<parameters>
 			<skill name="DDMagic_a" id="4194" level="3" />
@@ -4371,20 +4659,26 @@
 			<radius normal="16" />
 			<height normal="31" />
 		</collision>
-		<dropLists>
-			<drop>
-				<item id="914" min="1" max="1" chance="32.65" /> 
-				<item id="882" min="1" max="3" chance="32.27" /> 
-				<item id="851" min="1" max="3" chance="30.37" /> 
-				<item id="1125" min="1" max="3" chance="24.125" /> 
-				<item id="438" min="1" max="3" chance="23.875" /> 
-				<item id="2451" min="1" max="3" chance="23.035" /> 
-				<item id="630" min="1" max="3" chance="23.015" /> 
-				<item id="955" min="1" max="1" chance="100" /> 
-				<item id="956" min="2" max="8" chance="100" /> 
+		<dropLists><drop>
+				<group chance="4.7599">
+					<item id="325" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="12.8813">
+					<item id="440" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="62.4272">
+					<item id="1970" min="12" max="36" chance="67.8704" /> 
+					<item id="2088" min="12" max="36" chance="32.1296" /> 
+				</group>
+				<group chance="75.5949">
+					<item id="6574" min="1" max="1" chance="66.929" /> 
+					<item id="8164" min="4" max="4" chance="33.071" /> 
+				</group>
+				<group chance="25">
+					<item id="8176" min="1" max="1" chance="100" /> 
+				</group>
 			</drop>
-		</dropLists>
-	</npc>
+		</dropLists></npc>
 	<npc id="25193" level="42" type="Monster" name="Panathen's Knight" title="Raid Fighter">
 		<parameters>
 			<skill name="PhysicalSpecial_a" id="4721" level="4" />
@@ -4505,7 +4799,33 @@
 			<radius normal="55" />
 			<height normal="80.5" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="1.2482">
+					<item id="164" min="1" max="1" chance="50" /> 
+					<item id="213" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="3.2716">
+					<item id="5311" min="1" max="1" chance="50" /> 
+					<item id="5316" min="1" max="1" chance="50" /> 
+				</group>
+				<group chance="84.3436">
+					<item id="5522" min="6" max="18" chance="42.5177" /> 
+					<item id="5523" min="11" max="31" chance="24.2959" /> 
+					<item id="5544" min="23" max="67" chance="9.12316" /> 
+					<item id="5533" min="16" max="48" chance="12.8421" /> 
+					<item id="6569" min="1" max="1" chance="2.58953" /> 
+					<item id="6578" min="1" max="1" chance="8.6316" /> 
+				</group>
+				<group chance="75">
+					<item id="8163" min="1" max="3" chance="33.3333" /> 
+					<item id="8176" min="3" max="8" chance="33.3333" /> 
+					<item id="8619" min="1" max="1" chance="33.3333" /> 
+				</group>
+				<group chance="100">
+					<item id="8619" min="1" max="1" chance="75" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 	<npc id="25199" level="72" type="RaidBoss" name="Water Dragon Priest Sheshark" title="Raid Boss">
 		<parameters>
 			<minions name="Privates">
@@ -4554,5 +4874,31 @@
 			<radius normal="10" />
 			<height normal="29" />
 		</collision>
-	</npc>
+	<dropLists><drop>
+				<group chance="0.5365">
+					<item id="270" min="1" max="1" chance="100" /> 
+				</group>
+				<group chance="24.141">
+					<item id="6326" min="1" max="1" chance="23.0769" /> 
+					<item id="6327" min="1" max="1" chance="30.7692" /> 
+					<item id="6328" min="1" max="1" chance="46.1538" /> 
+				</group>
+				<group chance="77.7457">
+					<item id="6344" min="240" max="720" chance="4.2675" /> 
+					<item id="6346" min="308" max="924" chance="7.38523" /> 
+					<item id="6342" min="90" max="270" chance="17.5849" /> 
+					<item id="5538" min="5" max="13" chance="42.5862" /> 
+					<item id="6570" min="1" max="1" chance="20.1259" /> 
+					<item id="6578" min="1" max="1" chance="8.05035" /> 
+				</group>
+				<group chance="75">
+					<item id="8166" min="1" max="3" chance="33.3333" /> 
+					<item id="8176" min="3" max="9" chance="33.3333" /> 
+					<item id="8619" min="1" max="1" chance="33.3333" /> 
+				</group>
+				<group chance="100">
+					<item id="8619" min="1" max="1" chance="75" /> 
+				</group>
+			</drop>
+		</dropLists></npc>
 </list>
