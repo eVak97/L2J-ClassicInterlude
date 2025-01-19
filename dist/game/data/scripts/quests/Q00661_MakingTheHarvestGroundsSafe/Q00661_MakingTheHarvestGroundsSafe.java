@@ -66,10 +66,10 @@ public class Q00661_MakingTheHarvestGroundsSafe extends Quest
 			}
 			case "30210-04.htm":
 			{
-				final long item1 = getQuestItemsCount(player, STING_OF_GIANT_POISON_BEE);
-				final long item2 = getQuestItemsCount(player, CLOUDY_GEM);
-				final long item3 = getQuestItemsCount(player, TALON_OF_YOUNG_ARANEID);
-				long sum = 0;
+				final int item1 = (int) getQuestItemsCount(player, STING_OF_GIANT_POISON_BEE);
+				final int item2 = (int) getQuestItemsCount(player, CLOUDY_GEM);
+				final int item3 = (int) getQuestItemsCount(player, TALON_OF_YOUNG_ARANEID);
+				int sum = 0;
 				sum = (item1 * 57) + (item2 * 56) + (item3 * 60);
 				if ((item1 + item2 + item3) >= 10)
 				{
