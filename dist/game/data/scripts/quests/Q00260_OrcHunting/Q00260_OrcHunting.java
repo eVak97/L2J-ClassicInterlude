@@ -16,9 +16,8 @@
  */
 package quests.Q00260_OrcHunting;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.Config;
+import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -26,122 +25,168 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-/**
- * Orc Hunting (260)
- * @author xban1x
- */
 public class Q00260_OrcHunting extends Quest
 {
 	// NPC
 	private static final int RAYEN = 30221;
+	// Monsters
+	private static final int KABOO_ORC = 20468;
+	private static final int KABOO_ORC_ARCHER = 20469;
+	private static final int KABOO_ORC_GRUNT = 20470;
+	private static final int KABOO_ORC_FIGHTER = 20471;
+	private static final int KABOO_ORC_FIGHTER_LEADER = 20472;
+	private static final int KABOO_ORC_FIGHTER_LIEUTENANT = 20473;
 	// Items
 	private static final int ORC_AMULET = 1114;
 	private static final int ORC_NECKLACE = 1115;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(20468, ORC_AMULET); // Kaboo Orc
-		MONSTERS.put(20469, ORC_AMULET); // Kaboo Orc Archer
-		MONSTERS.put(20470, ORC_AMULET); // Kaboo Orc Grunt
-		MONSTERS.put(20471, ORC_NECKLACE); // Kaboo Orc Fighter
-		MONSTERS.put(20472, ORC_NECKLACE); // Kaboo Orc Fighter Leader
-		MONSTERS.put(20473, ORC_NECKLACE); // Kaboo Orc Fighter Lieutenant
-	}
-	// Misc
-	private static final int MIN_LEVEL = 6;
+	// Newbie Items
+	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
+	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
 	
 	public Q00260_OrcHunting()
 	{
 		super(260);
+		registerQuestItems(ORC_AMULET, ORC_NECKLACE);
 		addStartNpc(RAYEN);
 		addTalkId(RAYEN);
-		addKillId(MONSTERS.keySet());
-		registerQuestItems(ORC_AMULET, ORC_NECKLACE);
-		addCondMaxLevel(16, getNoQuestMsg(null));
+		addKillId(KABOO_ORC, KABOO_ORC_ARCHER, KABOO_ORC_GRUNT, KABOO_ORC_FIGHTER, KABOO_ORC_FIGHTER_LEADER, KABOO_ORC_FIGHTER_LIEUTENANT);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30221-03.htm"))
 		{
-			case "30221-04.htm":
-			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30221-07.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30221-08.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30221-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && (getRandom(10) > 4))
-		{
-			giveItems(killer, MONSTERS.get(npc.getId()), 1);
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30221-03.htm" : "30221-02.html" : "30221-01.html";
+				if (player.getRace() != Race.ELF)
+				{
+					htmltext = "30221-00.htm";
+				}
+				else if (player.getLevel() < 6)
+				{
+					htmltext = "30221-01.htm";
+				}
+				else
+				{
+					htmltext = "30221-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
+				final long amulet = getQuestItemsCount(player, ORC_AMULET);
+				final long necklace = getQuestItemsCount(player, ORC_NECKLACE);
+				
+				if ((amulet == 0) && (necklace == 0))
 				{
-					if (!player.isSimulatingTalking())
-					{
-						final long amulets = getQuestItemsCount(player, ORC_AMULET);
-						final long necklaces = getQuestItemsCount(player, ORC_NECKLACE);
-						giveAdena(player, ((amulets * 4) + (necklaces * 10) + ((amulets + necklaces) >= 10 ? 1000 : 0)), true);
-						takeItems(player, -1, getRegisteredItemIds());
-						Q00281_HeadForTheHills.giveNewbieReward(player);
-					}
-					htmltext = "30221-06.html";
+					htmltext = "30221-04.htm";
 				}
 				else
 				{
-					htmltext = "30221-05.html";
+					htmltext = "30221-05.htm";
+					
+					long reward = (amulet * 5) + (necklace * 15);
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulet + necklace) >= 10))
+					{
+						reward += 1000;
+					}
+					
+					takeItems(player, ORC_AMULET, -1);
+					takeItems(player, ORC_NECKLACE, -1);
+					giveAdena(player, reward, true);
+					
+					final PlayerVariables vars = player.getVariables();
+					// Give newbie reward if player is eligible.
+					if ((player.getLevel() < 25) && (st.getInt("Reward") == 0))
+					{
+						if (!vars.getBoolean("NEWBIE_SHOTS", false))
+						{
+							st.showQuestionMark(26);
+							st.set("Reward", "1");
+							
+							if (player.isMageClass())
+							{
+								st.playTutorialVoice("tutorial_voice_027");
+								giveItems(player, SPIRITSHOT_FOR_BEGINNERS, 3000);
+							}
+							else
+							{
+								st.playTutorialVoice("tutorial_voice_026");
+								giveItems(player, SOULSHOT_FOR_BEGINNERS, 6000);
+							}
+						}
+					}
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return super.onKill(npc, player, isPet);
+		}
+		
+		switch (npc.getId())
+		{
+			case KABOO_ORC:
+			case KABOO_ORC_GRUNT:
+			case KABOO_ORC_ARCHER:
+			{
+				if (Rnd.get(10) < 5)
+				{
+					giveItems(player, ORC_AMULET, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case KABOO_ORC_FIGHTER:
+			case KABOO_ORC_FIGHTER_LEADER:
+			case KABOO_ORC_FIGHTER_LIEUTENANT:
+			{
+				if (Rnd.get(10) < 5)
+				{
+					giveItems(player, ORC_NECKLACE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+		}
+		
+		return super.onKill(npc, player, isPet);
 	}
 }

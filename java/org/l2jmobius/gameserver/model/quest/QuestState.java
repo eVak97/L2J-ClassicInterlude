@@ -30,7 +30,9 @@ import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
 import org.l2jmobius.gameserver.model.events.impl.creature.player.OnPlayerQuestComplete;
 import org.l2jmobius.gameserver.network.serverpackets.ExShowQuestMark;
+import org.l2jmobius.gameserver.network.serverpackets.PlaySound;
 import org.l2jmobius.gameserver.network.serverpackets.QuestList;
+import org.l2jmobius.gameserver.network.serverpackets.TutorialShowQuestionMark;
 
 /**
  * Quest state class.
@@ -858,5 +860,16 @@ public class QuestState
 	public void setSimulated(boolean simulated)
 	{
 		_simulated = simulated;
+	}
+	
+	public void showQuestionMark(int number)
+	{
+		_player.sendPacket(new TutorialShowQuestionMark(number, number));
+	}
+	
+	// TODO: make tutorial voices the same as quest sounds
+	public void playTutorialVoice(String voice)
+	{
+		_player.sendPacket(new PlaySound(2, voice, 0, 0, _player.getX(), _player.getY(), _player.getZ()));
 	}
 }

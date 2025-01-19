@@ -24,60 +24,52 @@ import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.util.Util;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
+import quests.Q00101_SwordOfSolidarity.Q00101_SwordOfSolidarity;
 
-/**
- * Jumble, Tumble, Diamond Fuss (108)
- * @author Janiko
- */
 public class Q00108_JumbleTumbleDiamondFuss extends Quest
 {
 	// NPCs
-	private static final int COLLECTOR_GOUPH = 30523;
-	private static final int TRADER_REEP = 30516;
-	private static final int CARRIER_TOROCCO = 30555;
-	private static final int MINER_MARON = 30529;
-	private static final int BLACKSMITH_BRUNON = 30526;
-	private static final int WAREHOUSE_KEEPER_MURDOC = 30521;
-	private static final int WAREHOUSE_KEEPER_AIRY = 30522;
+	private static final int GOUPH = 30523;
+	private static final int REEP = 30516;
+	private static final int MURDOC = 30521;
+	private static final int AIRY = 30522;
+	private static final int BRUNON = 30526;
+	private static final int MARON = 30529;
+	private static final int TOROCCO = 30555;
 	// Monsters
 	private static final int GOBLIN_BRIGAND_LEADER = 20323;
 	private static final int GOBLIN_BRIGAND_LIEUTENANT = 20324;
 	private static final int BLADE_BAT = 20480;
 	// Items
-	private static final int GOUPHS_CONTRACT = 1559;
-	private static final int REEPS_CONTRACT = 1560;
+	private static final int GOUPH_CONTRACT = 1559;
+	private static final int REEP_CONTRACT = 1560;
 	private static final int ELVEN_WINE = 1561;
-	private static final int BRUNONS_DICE = 1562;
-	private static final int BRUNONS_CONTRACT = 1563;
+	private static final int BRUNON_DICE = 1562;
+	private static final int BRUNON_CONTRACT = 1563;
 	private static final int AQUAMARINE = 1564;
 	private static final int CHRYSOBERYL = 1565;
 	private static final int GEM_BOX = 1566;
 	private static final int COAL_PIECE = 1567;
-	private static final int BRUNONS_LETTER = 1568;
+	private static final int BRUNON_LETTER = 1568;
 	private static final int BERRY_TART = 1569;
 	private static final int BAT_DIAGRAM = 1570;
 	private static final int STAR_DIAMOND = 1571;
 	// Rewards
-	private static final ItemHolder[] REWARDS =
-	{
-		new ItemHolder(1060, 100), // Lesser Healing Potion
-		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
-		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
-		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
-		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
-		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
-	};
 	private static final int SILVERSMITH_HAMMER = 1511;
+	private static final int ECHO_BATTLE = 4412;
+	private static final int ECHO_LOVE = 4413;
+	private static final int ECHO_SOLITUDE = 4414;
+	private static final int ECHO_FEAST = 4415;
+	private static final int ECHO_CELEBRATION = 4416;
+	private static final int LESSER_HEALING_POTION = 1060;
 	// Misc
-	private static final int MIN_LEVEL = 10;
 	private static final int MAX_GEM_COUNT = 10;
 	private static final Map<Integer, Double> GOBLIN_DROP_CHANCES = new HashMap<>();
 	static
@@ -89,415 +81,262 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 	public Q00108_JumbleTumbleDiamondFuss()
 	{
 		super(108);
-		addStartNpc(COLLECTOR_GOUPH);
-		addTalkId(COLLECTOR_GOUPH, TRADER_REEP, CARRIER_TOROCCO, MINER_MARON, BLACKSMITH_BRUNON, WAREHOUSE_KEEPER_MURDOC, WAREHOUSE_KEEPER_AIRY);
+		registerQuestItems(GOUPH_CONTRACT, REEP_CONTRACT, ELVEN_WINE, BRUNON_DICE, BRUNON_CONTRACT, AQUAMARINE, CHRYSOBERYL, GEM_BOX, COAL_PIECE, BRUNON_LETTER, BERRY_TART, BAT_DIAGRAM, STAR_DIAMOND);
+		addStartNpc(GOUPH);
+		addTalkId(GOUPH, REEP, MURDOC, AIRY, BRUNON, MARON, TOROCCO);
 		addKillId(GOBLIN_BRIGAND_LEADER, GOBLIN_BRIGAND_LIEUTENANT, BLADE_BAT);
-		registerQuestItems(GOUPHS_CONTRACT, REEPS_CONTRACT, ELVEN_WINE, BRUNONS_DICE, BRUNONS_CONTRACT, AQUAMARINE, CHRYSOBERYL, GEM_BOX, COAL_PIECE, BRUNONS_LETTER, BERRY_TART, BAT_DIAGRAM, STAR_DIAMOND);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final QuestState st = player.getQuestState(getName());
+		final String htmltext = event;
+		if (st == null)
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
-			case "30523-04.htm":
+			case "30523-03.htm":
 			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					giveItems(player, GOUPHS_CONTRACT, 1);
-					htmltext = event;
-				}
+				st.startQuest();
+				giveItems(player, GOUPH_CONTRACT, 1);
 				break;
 			}
-			case "30555-02.html":
+			case "30555-02.htm":
 			{
-				if (qs.isCond(2) && hasQuestItems(player, REEPS_CONTRACT))
-				{
-					takeItems(player, REEPS_CONTRACT, -1);
-					giveItems(player, ELVEN_WINE, 1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
+				takeItems(player, REEP_CONTRACT, 1);
+				giveItems(player, ELVEN_WINE, 1);
 				break;
 			}
-			case "30526-02.html":
+			case "30526-02.htm":
 			{
-				if (qs.isCond(4) && hasQuestItems(player, BRUNONS_DICE))
-				{
-					takeItems(player, BRUNONS_DICE, -1);
-					giveItems(player, BRUNONS_CONTRACT, 1);
-					qs.setCond(5, true);
-					htmltext = event;
-				}
+				st.setCond(5, true);
+				takeItems(player, BRUNON_DICE, 1);
+				giveItems(player, BRUNON_CONTRACT, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player talker)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (npc.getId())
+		switch (st.getState())
 		{
-			case COLLECTOR_GOUPH:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				if (player.getRace() != Race.DWARF)
 				{
-					case State.CREATED:
+					htmltext = "30523-00.htm";
+				}
+				else if (player.getLevel() < 10)
+				{
+					htmltext = "30523-01.htm";
+				}
+				else
+				{
+					htmltext = "30523-02.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case GOUPH:
 					{
-						if (talker.getRace() != Race.DWARF)
+						if (cond == 1)
 						{
-							htmltext = "30523-01.htm";
+							htmltext = "30523-04.htm";
 						}
-						else if (talker.getLevel() < MIN_LEVEL)
+						else if ((cond > 1) && (cond < 7))
 						{
-							htmltext = "30523-02.htm";
+							htmltext = "30523-05.htm";
 						}
-						else
+						else if (cond == 7)
 						{
-							htmltext = "30523-03.htm";
+							htmltext = "30523-06.htm";
+							st.setCond(8, true);
+							takeItems(player, GEM_BOX, 1);
+							giveItems(player, COAL_PIECE, 1);
 						}
-						break;
-					}
-					case State.STARTED:
-					{
-						switch (qs.getCond())
+						else if ((cond > 7) && (cond < 12))
 						{
-							case 1:
+							htmltext = "30523-07.htm";
+						}
+						else if (cond == 12)
+						{
+							htmltext = "30523-08.htm";
+							takeItems(player, STAR_DIAMOND, -1);
+							giveItems(player, SILVERSMITH_HAMMER, 1);
+							giveItems(player, LESSER_HEALING_POTION, 100);
+							
+							final PlayerVariables vars = player.getVariables();
+							// Give newbie reward if player is eligible
+							if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
 							{
-								if (hasQuestItems(talker, GOUPHS_CONTRACT))
-								{
-									htmltext = "30523-05.html";
-								}
-								break;
+								st.showQuestionMark(26);
+								Q00101_SwordOfSolidarity.giveNewbieReward(player); // All these newbie quest share same soulshots/spiritshots rewards.
 							}
-							case 2:
-							case 3:
-							case 4:
-							case 5:
-							case 6:
-							{
-								if (hasAtLeastOneQuestItem(talker, REEPS_CONTRACT, ELVEN_WINE, BRUNONS_DICE, BRUNONS_CONTRACT))
-								{
-									htmltext = "30523-06.html";
-								}
-								break;
-							}
-							case 7:
-							{
-								if (hasQuestItems(talker, GEM_BOX))
-								{
-									takeItems(talker, GEM_BOX, -1);
-									giveItems(talker, COAL_PIECE, 1);
-									qs.setCond(8, true);
-									htmltext = "30523-07.html";
-								}
-								break;
-							}
-							case 8:
-							case 9:
-							case 10:
-							case 11:
-							{
-								if (hasAtLeastOneQuestItem(talker, COAL_PIECE, BRUNONS_LETTER, BERRY_TART, BAT_DIAGRAM))
-								{
-									htmltext = "30523-08.html";
-								}
-								break;
-							}
-							case 12:
-							{
-								if (hasQuestItems(talker, STAR_DIAMOND))
-								{
-									if (!talker.isSimulatingTalking())
-									{
-										Q00281_HeadForTheHills.giveNewbieReward(talker);
-										addExpAndSp(talker, 34565, 2962);
-										giveAdena(talker, 14666, true);
-										for (ItemHolder reward : REWARDS)
-										{
-											giveItems(talker, reward);
-										}
-										giveItems(talker, SILVERSMITH_HAMMER, 1);
-										qs.exitQuest(false, true);
-										talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
-									}
-									htmltext = "30523-09.html";
-								}
-								break;
-							}
+							
+							giveItems(player, ECHO_BATTLE, 10);
+							giveItems(player, ECHO_LOVE, 10);
+							giveItems(player, ECHO_SOLITUDE, 10);
+							giveItems(player, ECHO_FEAST, 10);
+							giveItems(player, ECHO_CELEBRATION, 10);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
 						break;
 					}
-					case State.COMPLETED:
+					case REEP:
 					{
-						htmltext = getAlreadyCompletedMsg(talker);
-						break;
-					}
-				}
-				break;
-			}
-			case TRADER_REEP:
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
-						if (hasQuestItems(talker, GOUPHS_CONTRACT))
+						if (cond == 1)
 						{
-							takeItems(talker, GOUPHS_CONTRACT, -1);
-							giveItems(talker, REEPS_CONTRACT, 1);
-							qs.setCond(2, true);
-							htmltext = "30516-01.html";
+							htmltext = "30516-01.htm";
+							st.setCond(2, true);
+							takeItems(player, GOUPH_CONTRACT, 1);
+							giveItems(player, REEP_CONTRACT, 1);
+						}
+						else if (cond > 1)
+						{
+							htmltext = "30516-02.htm";
 						}
 						break;
 					}
-					case 2:
+					case TOROCCO:
 					{
-						if (hasQuestItems(talker, REEPS_CONTRACT))
+						if (cond == 2)
 						{
-							htmltext = "30516-02.html";
+							htmltext = "30555-01.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30555-03.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30555-04.htm";
+						}
+						else if (cond > 7)
+						{
+							htmltext = "30555-05.htm";
 						}
 						break;
 					}
-					default:
+					case MARON:
 					{
-						if (qs.getCond() > 2)
+						if (cond == 3)
 						{
-							htmltext = "30516-02.html";
+							htmltext = "30529-01.htm";
+							st.setCond(4, true);
+							takeItems(player, ELVEN_WINE, 1);
+							giveItems(player, BRUNON_DICE, 1);
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30529-02.htm";
+						}
+						else if (cond > 4)
+						{
+							htmltext = "30529-03.htm";
 						}
 						break;
 					}
-				}
-				break;
-			}
-			case CARRIER_TOROCCO:
-			{
-				switch (qs.getCond())
-				{
-					case 2:
+					case BRUNON:
 					{
-						if (hasQuestItems(talker, REEPS_CONTRACT))
+						if (cond == 4)
 						{
-							htmltext = "30555-01.html";
+							htmltext = "30526-01.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30526-03.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30526-04.htm";
+							st.setCond(7, true);
+							takeItems(player, BRUNON_CONTRACT, 1);
+							takeItems(player, AQUAMARINE, -1);
+							takeItems(player, CHRYSOBERYL, -1);
+							giveItems(player, GEM_BOX, 1);
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30526-05.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30526-06.htm";
+							st.setCond(9, true);
+							takeItems(player, COAL_PIECE, 1);
+							giveItems(player, BRUNON_LETTER, 1);
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30526-07.htm";
+						}
+						else if (cond > 9)
+						{
+							htmltext = "30526-08.htm";
 						}
 						break;
 					}
-					case 3:
+					case MURDOC:
 					{
-						if (hasQuestItems(talker, ELVEN_WINE))
+						if (cond == 9)
 						{
-							htmltext = "30555-03.html";
+							htmltext = "30521-01.htm";
+							st.setCond(10, true);
+							takeItems(player, BRUNON_LETTER, 1);
+							giveItems(player, BERRY_TART, 1);
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30521-02.htm";
+						}
+						else if (cond > 10)
+						{
+							htmltext = "30521-03.htm";
 						}
 						break;
 					}
-					case 7:
+					case AIRY:
 					{
-						if (hasQuestItems(talker, GEM_BOX))
+						if (cond == 10)
 						{
-							htmltext = "30555-04.html";
+							htmltext = "30522-01.htm";
+							st.setCond(11, true);
+							takeItems(player, BERRY_TART, 1);
+							giveItems(player, BAT_DIAGRAM, 1);
 						}
-						break;
-					}
-					default:
-					{
-						if (qs.isStarted())
+						else if (cond == 11)
 						{
-							htmltext = "30555-05.html";
+							htmltext = getRandomBoolean() ? "30522-02.htm" : "30522-04.htm";
 						}
-						break;
-					}
-				}
-				break;
-			}
-			case MINER_MARON:
-			{
-				switch (qs.getCond())
-				{
-					case 3:
-					{
-						if (hasQuestItems(talker, ELVEN_WINE))
+						else if (cond == 12)
 						{
-							takeItems(talker, ELVEN_WINE, -1);
-							giveItems(talker, BRUNONS_DICE, 1);
-							qs.setCond(4, true);
-							htmltext = "30529-01.html";
-						}
-						break;
-					}
-					case 4:
-					{
-						if (hasQuestItems(talker, BRUNONS_DICE))
-						{
-							htmltext = "30529-02.html";
-						}
-						break;
-					}
-					default:
-					{
-						if (qs.getCond() > 4)
-						{
-							htmltext = "30529-03.html";
+							htmltext = "30522-03.htm";
 						}
 						break;
 					}
 				}
 				break;
 			}
-			case BLACKSMITH_BRUNON:
+			case State.COMPLETED:
 			{
-				switch (qs.getCond())
-				{
-					case 4:
-					{
-						if (hasQuestItems(talker, BRUNONS_DICE))
-						{
-							htmltext = "30526-01.html";
-						}
-						break;
-					}
-					case 5:
-					{
-						if (hasQuestItems(talker, BRUNONS_CONTRACT))
-						{
-							htmltext = "30526-03.html";
-						}
-						break;
-					}
-					case 6:
-					{
-						if (hasQuestItems(talker, BRUNONS_CONTRACT) && (getQuestItemsCount(talker, AQUAMARINE) >= MAX_GEM_COUNT) && (getQuestItemsCount(talker, CHRYSOBERYL) >= MAX_GEM_COUNT))
-						{
-							takeItems(talker, -1, BRUNONS_CONTRACT, AQUAMARINE, CHRYSOBERYL);
-							giveItems(talker, GEM_BOX, 1);
-							qs.setCond(7, true);
-							htmltext = "30526-04.html";
-						}
-						break;
-					}
-					case 7:
-					{
-						if (hasQuestItems(talker, GEM_BOX))
-						{
-							htmltext = "30526-05.html";
-						}
-						break;
-					}
-					case 8:
-					{
-						if (hasQuestItems(talker, COAL_PIECE))
-						{
-							takeItems(talker, COAL_PIECE, -1);
-							giveItems(talker, BRUNONS_LETTER, 1);
-							qs.setCond(9, true);
-							htmltext = "30526-06.html";
-						}
-						break;
-					}
-					case 9:
-					{
-						if (hasQuestItems(talker, BRUNONS_LETTER))
-						{
-							htmltext = "30526-07.html";
-						}
-						break;
-					}
-					case 10:
-					case 11:
-					case 12:
-					{
-						if (hasAtLeastOneQuestItem(talker, BERRY_TART, BAT_DIAGRAM, STAR_DIAMOND))
-						{
-							htmltext = "30526-08.html";
-						}
-						break;
-					}
-				}
-				break;
-			}
-			case WAREHOUSE_KEEPER_MURDOC:
-			{
-				switch (qs.getCond())
-				{
-					case 9:
-					{
-						if (hasQuestItems(talker, BRUNONS_LETTER))
-						{
-							takeItems(talker, BRUNONS_LETTER, -1);
-							giveItems(talker, BERRY_TART, 1);
-							qs.setCond(10, true);
-							htmltext = "30521-01.html";
-						}
-						break;
-					}
-					case 10:
-					{
-						if (hasQuestItems(talker, BERRY_TART))
-						{
-							htmltext = "30521-02.html";
-						}
-						break;
-					}
-					case 11:
-					case 12:
-					{
-						htmltext = "30521-03.html";
-						break;
-					}
-				}
-				break;
-			}
-			case WAREHOUSE_KEEPER_AIRY:
-			{
-				switch (qs.getCond())
-				{
-					case 10:
-					{
-						if (hasQuestItems(talker, BERRY_TART))
-						{
-							takeItems(talker, BERRY_TART, -1);
-							giveItems(talker, BAT_DIAGRAM, 1);
-							qs.setCond(11, true);
-							htmltext = "30522-01.html";
-						}
-						break;
-					}
-					case 11:
-					{
-						if (hasQuestItems(talker, BAT_DIAGRAM))
-						{
-							htmltext = "30522-02.html";
-						}
-						break;
-					}
-					case 12:
-					{
-						if (hasQuestItems(talker, STAR_DIAMOND))
-						{
-							htmltext = "30522-03.html";
-						}
-						break;
-					}
-					default:
-					{
-						if (qs.isStarted())
-						{
-							htmltext = "30522-04.html";
-						}
-						break;
-					}
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
@@ -515,7 +354,7 @@ public class Q00108_JumbleTumbleDiamondFuss extends Quest
 				case GOBLIN_BRIGAND_LEADER:
 				case GOBLIN_BRIGAND_LIEUTENANT:
 				{
-					if (qs.isCond(5) && hasQuestItems(killer, BRUNONS_CONTRACT))
+					if (qs.isCond(5) && hasQuestItems(killer, BRUNON_CONTRACT))
 					{
 						final double dropChance = GOBLIN_DROP_CHANCES.get(npc.getId());
 						boolean playSound = false;

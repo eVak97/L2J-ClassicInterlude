@@ -21,80 +21,176 @@ import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.util.Util;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
+import quests.Q00101_SwordOfSolidarity.Q00101_SwordOfSolidarity;
 
-/**
- * Forgotten Truth (106)
- * @author Janiko
- */
 public class Q00106_ForgottenTruth extends Quest
 {
 	// NPCs
 	private static final int THIFIELL = 30358;
-	private static final int KARTA = 30133;
-	// Monster
-	private static final int TUMRAN_ORC_BRIGAND = 27070;
+	private static final int KARTIA = 30133;
 	// Items
-	private static final int ONYX_TALISMAN1 = 984;
-	private static final int ONYX_TALISMAN2 = 985;
+	private static final int ONYX_TALISMAN_1 = 984;
+	private static final int ONYX_TALISMAN_2 = 985;
 	private static final int ANCIENT_SCROLL = 986;
 	private static final int ANCIENT_CLAY_TABLET = 987;
-	private static final int KARTAS_TRANSLATION = 988;
-	// Misc
-	private static final int MIN_LEVEL = 10;
+	private static final int KARTIA_TRANSLATION = 988;
 	// Rewards
+	private static final int SPIRITSHOT_NO_GRADE = 2509;
+	private static final int SOULSHOT_NO_GRADE = 1835;
 	private static final int ELDRITCH_DAGGER = 989;
-	private static final int ELDRITCH_STAFF = 2373;
-	private static final ItemHolder[] REWARDS =
-	{
-		new ItemHolder(1060, 100), // Lesser Healing Potion
-		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
-		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
-		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
-		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
-		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
-	};
+	private static final int ECHO_BATTLE = 4412;
+	private static final int ECHO_LOVE = 4413;
+	private static final int ECHO_SOLITUDE = 4414;
+	private static final int ECHO_FEAST = 4415;
+	private static final int ECHO_CELEBRATION = 4416;
+	private static final int LESSER_HEALING_POTION = 1060;
 	
 	public Q00106_ForgottenTruth()
 	{
 		super(106);
+		registerQuestItems(ONYX_TALISMAN_1, ONYX_TALISMAN_2, ANCIENT_SCROLL, ANCIENT_CLAY_TABLET, KARTIA_TRANSLATION);
 		addStartNpc(THIFIELL);
-		addTalkId(THIFIELL, KARTA);
-		addKillId(TUMRAN_ORC_BRIGAND);
-		registerQuestItems(KARTAS_TRANSLATION, ONYX_TALISMAN1, ONYX_TALISMAN2, ANCIENT_SCROLL, ANCIENT_CLAY_TABLET);
+		addTalkId(THIFIELL, KARTIA);
+		addKillId(27070); // Tumran Orc Brigand
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final QuestState st = player.getQuestState(getName());
+		final String htmltext = event;
+		if (st == null)
 		{
 			return htmltext;
 		}
-		switch (event)
+		
+		if (event.equals("30358-05.htm"))
 		{
-			case "30358-04.htm":
+			st.startQuest();
+			giveItems(player, ONYX_TALISMAN_1, 1);
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				htmltext = event;
+				if (player.getRace() != Race.DARK_ELF)
+				{
+					htmltext = "30358-00.htm";
+				}
+				else if (player.getLevel() < 10)
+				{
+					htmltext = "30358-02.htm";
+				}
+				else
+				{
+					htmltext = "30358-03.htm";
+				}
 				break;
 			}
-			case "30358-05.htm":
+			case State.STARTED:
 			{
-				if (qs.isCreated())
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					qs.startQuest();
-					giveItems(player, ONYX_TALISMAN1, 1);
-					htmltext = event;
+					case THIFIELL:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30358-06.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30358-06.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30358-06.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30358-07.htm";
+							takeItems(player, KARTIA_TRANSLATION, 1);
+							giveItems(player, ELDRITCH_DAGGER, 1);
+							giveItems(player, LESSER_HEALING_POTION, 100);
+							
+							if (player.isMageClass())
+							{
+								giveItems(player, SPIRITSHOT_NO_GRADE, 500);
+							}
+							else
+							{
+								giveItems(player, SOULSHOT_NO_GRADE, 1000);
+							}
+							
+							final PlayerVariables vars = player.getVariables();
+							// Give newbie reward if player is eligible
+							if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
+							{
+								st.showQuestionMark(26);
+								Q00101_SwordOfSolidarity.giveNewbieReward(player); // All these newbie quest share same soulshots/spiritshots rewards.
+							}
+							
+							giveItems(player, ECHO_BATTLE, 10);
+							giveItems(player, ECHO_LOVE, 10);
+							giveItems(player, ECHO_SOLITUDE, 10);
+							giveItems(player, ECHO_FEAST, 10);
+							giveItems(player, ECHO_CELEBRATION, 10);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
+						}
+						break;
+					}
+					case KARTIA:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30133-01.htm";
+							st.setCond(2, true);
+							takeItems(player, ONYX_TALISMAN_1, 1);
+							giveItems(player, ONYX_TALISMAN_2, 1);
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30133-02.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30133-03.htm";
+							st.setCond(4, true);
+							takeItems(player, ONYX_TALISMAN_2, 1);
+							takeItems(player, ANCIENT_SCROLL, 1);
+							takeItems(player, ANCIENT_CLAY_TABLET, 1);
+							giveItems(player, KARTIA_TRANSLATION, 1);
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30133-04.htm";
+						}
+						break;
+					}
 				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
@@ -105,7 +201,7 @@ public class Q00106_ForgottenTruth extends Quest
 	public String onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(2) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true) && (getRandom(100) < 20) && hasQuestItems(killer, ONYX_TALISMAN2))
+		if ((qs != null) && qs.isCond(2) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true) && (getRandom(100) < 20) && hasQuestItems(killer, ONYX_TALISMAN_2))
 		{
 			if (!hasQuestItems(killer, ANCIENT_SCROLL))
 			{
@@ -119,114 +215,5 @@ public class Q00106_ForgottenTruth extends Quest
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
-		
-		switch (npc.getId())
-		{
-			case THIFIELL:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						if (talker.getRace() == Race.DARK_ELF)
-						{
-							htmltext = talker.getLevel() >= MIN_LEVEL ? "30358-03.htm" : "30358-02.htm";
-						}
-						else
-						{
-							htmltext = "30358-01.htm";
-						}
-						break;
-					}
-					case State.STARTED:
-					{
-						if (hasAtLeastOneQuestItem(talker, ONYX_TALISMAN1, ONYX_TALISMAN2) && !hasQuestItems(talker, KARTAS_TRANSLATION))
-						{
-							htmltext = "30358-06.html";
-						}
-						else if (qs.isCond(4) && hasQuestItems(talker, KARTAS_TRANSLATION))
-						{
-							if (!talker.isSimulatingTalking())
-							{
-								Q00281_HeadForTheHills.giveNewbieReward(talker);
-								talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
-								giveAdena(talker, 10266, true);
-								addExpAndSp(talker, 24195, 2074);
-								giveItems(talker, qs.getPlayer().isMageClass() ? ELDRITCH_STAFF : ELDRITCH_DAGGER, 1);
-								for (ItemHolder reward : REWARDS)
-								{
-									giveItems(talker, reward);
-								}
-								qs.exitQuest(false, true);
-							}
-							htmltext = "30358-07.html";
-						}
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(talker);
-						break;
-					}
-				}
-				break;
-			}
-			case KARTA:
-			{
-				if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						{
-							if (hasQuestItems(talker, ONYX_TALISMAN1))
-							{
-								qs.setCond(2, true);
-								takeItems(talker, ONYX_TALISMAN1, -1);
-								giveItems(talker, ONYX_TALISMAN2, 1);
-								htmltext = "30133-01.html";
-							}
-							break;
-						}
-						case 2:
-						{
-							if (hasQuestItems(talker, ONYX_TALISMAN2))
-							{
-								htmltext = "30133-02.html";
-							}
-							break;
-						}
-						case 3:
-						{
-							if (hasQuestItems(talker, ANCIENT_SCROLL, ANCIENT_CLAY_TABLET))
-							{
-								qs.setCond(4, true);
-								takeItems(talker, -1, ANCIENT_SCROLL, ANCIENT_CLAY_TABLET, ONYX_TALISMAN2);
-								giveItems(talker, KARTAS_TRANSLATION, 1);
-								htmltext = "30133-03.html";
-							}
-							break;
-						}
-						case 4:
-						{
-							if (hasQuestItems(talker, KARTAS_TRANSLATION))
-							{
-								htmltext = "30133-04.html";
-							}
-							break;
-						}
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

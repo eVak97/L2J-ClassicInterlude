@@ -545,6 +545,7 @@ public class Config
 	public static boolean ALLOW_WEAR;
 	public static int WEAR_DELAY;
 	public static int WEAR_PRICE;
+	public static boolean ALT_VILLAGES_REPEATABLE_QUEST_REWARD;
 	public static int INSTANCE_FINISH_TIME;
 	public static boolean RESTORE_PLAYER_INSTANCE;
 	public static int EJECT_DEAD_PLAYER_TIME;
@@ -2159,6 +2160,7 @@ public class Config
 			ALLOW_WEAR = generalConfig.getBoolean("AllowWear", true);
 			WEAR_DELAY = generalConfig.getInt("WearDelay", 5);
 			WEAR_PRICE = generalConfig.getInt("WearPrice", 10);
+			ALT_VILLAGES_REPEATABLE_QUEST_REWARD = generalConfig.getBoolean("AltVillagesRepQuestReward", false);
 			INSTANCE_FINISH_TIME = generalConfig.getInt("DefaultFinishTime", 5);
 			RESTORE_PLAYER_INSTANCE = generalConfig.getBoolean("RestorePlayerInstance", false);
 			EJECT_DEAD_PLAYER_TIME = generalConfig.getInt("EjectDeadPlayerTime", 1);

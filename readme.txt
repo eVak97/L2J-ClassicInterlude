@@ -20,7 +20,6 @@ Things ALREADY DONE to match Interlude files:
 
 Things TO DO:
 
--Npc drops
 -Formulas
 -Have a look on multiple handlers
 -conquerable halls

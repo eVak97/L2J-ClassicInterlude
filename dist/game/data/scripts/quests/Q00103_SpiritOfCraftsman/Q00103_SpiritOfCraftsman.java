@@ -20,219 +20,212 @@ import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 import org.l2jmobius.gameserver.util.Util;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
+import quests.Q00101_SwordOfSolidarity.Q00101_SwordOfSolidarity;
 
-/**
- * Spirit of Craftsman (103)
- * @author Janiko
- */
 public class Q00103_SpiritOfCraftsman extends Quest
 {
 	// NPCs
-	private static final int BLACKSMITH_KAROYD = 30307;
-	private static final int CECON = 30132;
+	private static final int KARROD = 30307;
+	private static final int CECKTINON = 30132;
 	private static final int HARNE = 30144;
 	// Items
-	private static final int KAROYDS_LETTER = 968;
-	private static final int CECKTINONS_VOUCHER1 = 969;
-	private static final int CECKTINONS_VOUCHER2 = 970;
+	private static final int KARROD_LETTER = 968;
+	private static final int CECKTINON_VOUCHER_1 = 969;
+	private static final int CECKTINON_VOUCHER_2 = 970;
 	private static final int SOUL_CATCHER = 971;
-	private static final int PRESERVE_OIL = 972;
+	private static final int PRESERVING_OIL = 972;
 	private static final int ZOMBIE_HEAD = 973;
-	private static final int STEELBENDERS_HEAD = 974;
+	private static final int STEELBENDER_HEAD = 974;
 	private static final int BONE_FRAGMENT = 1107;
-	// Monsters
-	private static final int MARSH_ZOMBIE = 20015;
-	private static final int DOOM_SOLDIER = 20455;
-	private static final int SKELETON_HUNTER = 20517;
-	private static final int SKELETON_HUNTER_ARCHER = 20518;
 	// Rewards
+	private static final int SPIRITSHOT_NO_GRADE = 2509;
+	private static final int SOULSHOT_NO_GRADE = 1835;
 	private static final int BLOODSABER = 975;
-	private static final ItemHolder[] REWARDS =
-	{
-		new ItemHolder(1060, 100), // Lesser Healing Potion
-		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
-		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
-		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
-		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
-		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
-	};
-	// Misc
-	private static final int MIN_LEVEL = 10;
+	private static final int LESSER_HEALING_POT = 1060;
+	private static final int ECHO_BATTLE = 4412;
+	private static final int ECHO_LOVE = 4413;
+	private static final int ECHO_SOLITUDE = 4414;
+	private static final int ECHO_FEAST = 4415;
+	private static final int ECHO_CELEBRATION = 4416;
 	
 	public Q00103_SpiritOfCraftsman()
 	{
 		super(103);
-		addStartNpc(BLACKSMITH_KAROYD);
-		addTalkId(BLACKSMITH_KAROYD, CECON, HARNE);
-		addKillId(MARSH_ZOMBIE, DOOM_SOLDIER, SKELETON_HUNTER, SKELETON_HUNTER_ARCHER);
-		registerQuestItems(KAROYDS_LETTER, CECKTINONS_VOUCHER1, CECKTINONS_VOUCHER2, SOUL_CATCHER, PRESERVE_OIL, ZOMBIE_HEAD, STEELBENDERS_HEAD, BONE_FRAGMENT);
+		registerQuestItems(KARROD_LETTER, CECKTINON_VOUCHER_1, CECKTINON_VOUCHER_2, BONE_FRAGMENT, SOUL_CATCHER, PRESERVING_OIL, ZOMBIE_HEAD, STEELBENDER_HEAD);
+		addStartNpc(KARROD);
+		addTalkId(KARROD, CECKTINON, HARNE);
+		addKillId(20015, 20020, 20455, 20517, 20518);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
-		switch (event)
+		
+		if (event.equals("30307-05.htm"))
 		{
-			case "30307-04.htm":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30307-05.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					giveItems(player, KAROYDS_LETTER, 1);
-					htmltext = event;
-				}
-				break;
-			}
+			st.startQuest();
+			giveItems(player, KARROD_LETTER, 1);
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player talker)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
-		switch (npc.getId())
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case BLACKSMITH_KAROYD:
+			case State.CREATED:
 			{
-				if (qs.isCreated())
+				if (player.getRace() != Race.DARK_ELF)
 				{
-					if (talker.getRace() != Race.DARK_ELF)
-					{
-						htmltext = "30307-01.htm";
-					}
-					else if (talker.getLevel() < MIN_LEVEL)
-					{
-						htmltext = "30307-02.htm";
-					}
-					else
-					{
-						htmltext = "30307-03.htm";
-					}
+					htmltext = "30307-00.htm";
 				}
-				else if (qs.isStarted())
+				else if (player.getLevel() < 11)
 				{
-					if (hasAtLeastOneQuestItem(talker, KAROYDS_LETTER, CECKTINONS_VOUCHER1, CECKTINONS_VOUCHER2))
+					htmltext = "30307-02.htm";
+				}
+				else
+				{
+					htmltext = "30307-03.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case KARROD:
 					{
-						htmltext = "30307-06.html";
-					}
-					else if (hasQuestItems(talker, STEELBENDERS_HEAD))
-					{
-						if (!talker.isSimulatingTalking())
+						if (cond < 8)
 						{
-							Q00281_HeadForTheHills.giveNewbieReward(talker);
-							addExpAndSp(talker, 46663, 3999);
-							giveAdena(talker, 19799, true);
-							for (ItemHolder reward : REWARDS)
+							htmltext = "30307-06.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30307-07.htm";
+							takeItems(player, STEELBENDER_HEAD, 1);
+							giveItems(player, BLOODSABER, 1);
+							rewardItems(player, LESSER_HEALING_POT, 100);
+							
+							if (player.isMageClass())
 							{
-								rewardItems(talker, reward);
+								giveItems(player, SPIRITSHOT_NO_GRADE, 500);
 							}
-							rewardItems(talker, BLOODSABER, 1);
-							qs.exitQuest(false, true);
-							talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
+							else
+							{
+								giveItems(player, SOULSHOT_NO_GRADE, 1000);
+							}
+							
+							final PlayerVariables vars = player.getVariables();
+							// Give newbie reward if player is eligible
+							if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
+							{
+								st.showQuestionMark(26);
+								Q00101_SwordOfSolidarity.giveNewbieReward(player); // All these newbie quest share same soulshots/spiritshots rewards.
+							}
+							
+							giveItems(player, ECHO_BATTLE, 10);
+							giveItems(player, ECHO_LOVE, 10);
+							giveItems(player, ECHO_SOLITUDE, 10);
+							giveItems(player, ECHO_FEAST, 10);
+							giveItems(player, ECHO_CELEBRATION, 10);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
-						htmltext = "30307-07.html";
+						break;
 					}
-				}
-				else if (qs.isCompleted())
-				{
-					htmltext = getAlreadyCompletedMsg(talker);
+					case CECKTINON:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30132-01.htm";
+							st.setCond(2, true);
+							takeItems(player, KARROD_LETTER, 1);
+							giveItems(player, CECKTINON_VOUCHER_1, 1);
+						}
+						else if ((cond > 1) && (cond < 5))
+						{
+							htmltext = "30132-02.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30132-03.htm";
+							st.setCond(6, true);
+							takeItems(player, SOUL_CATCHER, 1);
+							giveItems(player, PRESERVING_OIL, 1);
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30132-04.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30132-05.htm";
+							st.setCond(8, true);
+							takeItems(player, ZOMBIE_HEAD, 1);
+							giveItems(player, STEELBENDER_HEAD, 1);
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30132-06.htm";
+						}
+						break;
+					}
+					case HARNE:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30144-01.htm";
+							st.setCond(3, true);
+							takeItems(player, CECKTINON_VOUCHER_1, 1);
+							giveItems(player, CECKTINON_VOUCHER_2, 1);
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30144-02.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30144-03.htm";
+							st.setCond(5, true);
+							takeItems(player, CECKTINON_VOUCHER_2, 1);
+							takeItems(player, BONE_FRAGMENT, 10);
+							giveItems(player, SOUL_CATCHER, 1);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30144-04.htm";
+						}
+						break;
+					}
 				}
 				break;
 			}
-			case CECON:
+			case State.COMPLETED:
 			{
-				if (qs.isStarted())
-				{
-					if (hasQuestItems(talker, KAROYDS_LETTER))
-					{
-						qs.setCond(2, true);
-						takeItems(talker, KAROYDS_LETTER, 1);
-						giveItems(talker, CECKTINONS_VOUCHER1, 1);
-						htmltext = "30132-01.html";
-					}
-					else if (hasAtLeastOneQuestItem(talker, CECKTINONS_VOUCHER1, CECKTINONS_VOUCHER2))
-					{
-						htmltext = "30132-02.html";
-					}
-					else if (hasQuestItems(talker, SOUL_CATCHER))
-					{
-						qs.setCond(6, true);
-						takeItems(talker, SOUL_CATCHER, 1);
-						giveItems(talker, PRESERVE_OIL, 1);
-						htmltext = "30132-03.html";
-					}
-					else if (hasQuestItems(talker, PRESERVE_OIL) && !hasQuestItems(talker, ZOMBIE_HEAD, STEELBENDERS_HEAD))
-					{
-						htmltext = "30132-04.html";
-					}
-					else if (hasQuestItems(talker, ZOMBIE_HEAD))
-					{
-						qs.setCond(8, true);
-						takeItems(talker, ZOMBIE_HEAD, 1);
-						giveItems(talker, STEELBENDERS_HEAD, 1);
-						htmltext = "30132-05.html";
-					}
-					else if (hasQuestItems(talker, STEELBENDERS_HEAD))
-					{
-						htmltext = "30132-06.html";
-					}
-				}
-				break;
-			}
-			case HARNE:
-			{
-				if (qs.isStarted())
-				{
-					if (hasQuestItems(talker, CECKTINONS_VOUCHER1))
-					{
-						qs.setCond(3, true);
-						takeItems(talker, CECKTINONS_VOUCHER1, 1);
-						giveItems(talker, CECKTINONS_VOUCHER2, 1);
-						htmltext = "30144-01.html";
-					}
-					else if (hasQuestItems(talker, CECKTINONS_VOUCHER2))
-					{
-						if (getQuestItemsCount(talker, BONE_FRAGMENT) >= 10)
-						{
-							qs.setCond(5, true);
-							takeItems(talker, CECKTINONS_VOUCHER2, 1);
-							takeItems(talker, BONE_FRAGMENT, 10);
-							giveItems(talker, SOUL_CATCHER, 1);
-							htmltext = "30144-03.html";
-						}
-						else
-						{
-							htmltext = "30144-02.html";
-						}
-					}
-					else if (hasQuestItems(talker, SOUL_CATCHER))
-					{
-						htmltext = "30144-04.html";
-					}
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -247,21 +240,22 @@ public class Q00103_SpiritOfCraftsman extends Quest
 		
 		switch (npc.getId())
 		{
-			case MARSH_ZOMBIE:
+			case 20015:
+			case 20020:
 			{
-				if (hasQuestItems(killer, PRESERVE_OIL) && (getRandom(10) < 5) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
+				if (hasQuestItems(killer, PRESERVING_OIL) && (getRandom(10) < 5) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
 				{
 					giveItems(killer, ZOMBIE_HEAD, 1);
-					takeItems(killer, PRESERVE_OIL, -1);
+					takeItems(killer, PRESERVING_OIL, -1);
 					qs.setCond(7, true);
 				}
 				break;
 			}
-			case DOOM_SOLDIER:
-			case SKELETON_HUNTER:
-			case SKELETON_HUNTER_ARCHER:
+			case 20517:
+			case 20518:
+			case 20455:
 			{
-				if (hasQuestItems(killer, CECKTINONS_VOUCHER2) && giveItemRandomly(qs.getPlayer(), npc, BONE_FRAGMENT, 1, 10, 1, true))
+				if (hasQuestItems(killer, CECKTINON_VOUCHER_2) && giveItemRandomly(qs.getPlayer(), npc, BONE_FRAGMENT, 1, 10, 1, true))
 				{
 					qs.setCond(4, true);
 				}

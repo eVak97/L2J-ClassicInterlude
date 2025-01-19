@@ -16,9 +16,8 @@
  */
 package quests.Q00265_BondsOfSlavery;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.Config;
+import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -26,116 +25,135 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-/**
- * Bonds of Slavery (265)
- * @author xban1x
- */
 public class Q00265_BondsOfSlavery extends Quest
 {
 	// Item
-	private static final int IMP_SHACKLES = 1368;
-	// NPC
-	private static final int KRISTIN = 30357;
-	// Misc
-	private static final int MIN_LEVEL = 6;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(20004, 5); // Imp
-		MONSTERS.put(20005, 6); // Imp Elder
-	}
+	private static final int SHACKLE = 1368;
+	// Newbie Items
+	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
+	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
 	
 	public Q00265_BondsOfSlavery()
 	{
 		super(265);
-		addStartNpc(KRISTIN);
-		addTalkId(KRISTIN);
-		addKillId(MONSTERS.keySet());
-		registerQuestItems(IMP_SHACKLES);
-		addCondMaxLevel(11, getNoQuestMsg(null));
+		registerQuestItems(SHACKLE);
+		addStartNpc(30357); // Kristin
+		addTalkId(30357);
+		addKillId(20004, 20005);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30357-03.htm"))
 		{
-			case "30357-04.htm":
-			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30357-07.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30357-08.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30357-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && (getRandom(10) < MONSTERS.get(npc.getId())))
-		{
-			giveItems(killer, IMP_SHACKLES, 1);
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30357-03.htm" : "30357-02.html" : "30357-01.html";
+				if (player.getRace() != Race.DARK_ELF)
+				{
+					htmltext = "30357-00.htm";
+				}
+				else if (player.getLevel() < 6)
+				{
+					htmltext = "30357-01.htm";
+				}
+				else
+				{
+					htmltext = "30357-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasQuestItems(player, IMP_SHACKLES))
+				final long shackles = getQuestItemsCount(player, SHACKLE);
+				if (shackles == 0)
 				{
-					if (!player.isSimulatingTalking())
-					{
-						final long shackles = getQuestItemsCount(player, IMP_SHACKLES);
-						giveAdena(player, (shackles * 5) + (shackles >= 10 ? 500 : 0), true);
-						takeItems(player, IMP_SHACKLES, -1);
-						Q00281_HeadForTheHills.giveNewbieReward(player);
-					}
-					htmltext = "30357-06.html";
+					htmltext = "30357-04.htm";
 				}
 				else
 				{
-					htmltext = "30357-05.html";
+					htmltext = "30357-05.htm";
+					
+					long reward = 12 * shackles;
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (shackles >= 10))
+					{
+						reward += 500;
+					}
+					
+					takeItems(player, SHACKLE, -1);
+					giveAdena(player, reward, true);
+					
+					final PlayerVariables vars = player.getVariables();
+					// Give newbie reward if player is eligible.
+					if ((player.getLevel() < 25) && (st.getInt("Reward") == 0))
+					{
+						if (!vars.getBoolean("NEWBIE_SHOTS", false))
+						{
+							st.showQuestionMark(26);
+							st.set("Reward", "1");
+							
+							if (player.isMageClass())
+							{
+								st.playTutorialVoice("tutorial_voice_027");
+								giveItems(player, SPIRITSHOT_FOR_BEGINNERS, 3000);
+							}
+							else
+							{
+								st.playTutorialVoice("tutorial_voice_026");
+								giveItems(player, SOULSHOT_FOR_BEGINNERS, 6000);
+							}
+						}
+					}
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return super.onKill(npc, player, isPet);
+		}
+		
+		if (Rnd.get(10) < (npc.getId() == 20004 ? 5 : 6))
+		{
+			giveItems(player, SHACKLE, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return super.onKill(npc, player, isPet);
 	}
 }

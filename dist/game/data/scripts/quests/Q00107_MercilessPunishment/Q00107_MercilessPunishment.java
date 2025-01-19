@@ -16,270 +16,213 @@
  */
 package quests.Q00107_MercilessPunishment;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-/**
- * Merciless Punishment (107)
- * @author Janiko
- */
 public class Q00107_MercilessPunishment extends Quest
 {
-	// Npc
-	private static final int URUTU_CHIEF_HATOS = 30568;
-	private static final int CENTURION_PARUGON = 30580;
+	// NPCs
+	private static final int HATOS = 30568;
+	private static final int PARUGON = 30580;
 	// Items
-	private static final int HATOSS_ORDER_1 = 1553;
-	private static final int HATOSS_ORDER_2 = 1554;
-	private static final int HATOSS_ORDER_3 = 1555;
-	private static final int LETTER_TO_DARK_ELF = 1556;
+	private static final int HATOS_ORDER_1 = 1553;
+	private static final int HATOS_ORDER_2 = 1554;
+	private static final int HATOS_ORDER_3 = 1555;
 	private static final int LETTER_TO_HUMAN = 1557;
+	private static final int LETTER_TO_DARKELF = 1556;
 	private static final int LETTER_TO_ELF = 1558;
-	// Monster
-	private static final int BARANKA_MESSENGER = 27041;
 	// Rewards
-	private static final int BUTCHER = 1510;
-	private static final ItemHolder[] REWARDS =
-	{
-		new ItemHolder(1060, 100), // Lesser Healing Potion
-		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
-		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
-		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
-		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
-		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
-	};
-	// Misc
-	private static final int MIN_LEVEL = 10;
+	private static final int BUTCHER_SWORD = 1510;
+	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
+	private static final int ECHO_BATTLE = 4412;
+	private static final int ECHO_LOVE = 4413;
+	private static final int ECHO_SOLITUDE = 4414;
+	private static final int ECHO_FEAST = 4415;
+	private static final int ECHO_CELEBRATION = 4416;
+	private static final int LESSER_HEALING_POTION = 1060;
 	
 	public Q00107_MercilessPunishment()
 	{
 		super(107);
-		addStartNpc(URUTU_CHIEF_HATOS);
-		addTalkId(URUTU_CHIEF_HATOS, CENTURION_PARUGON);
-		addKillId(BARANKA_MESSENGER);
-		registerQuestItems(HATOSS_ORDER_1, HATOSS_ORDER_2, HATOSS_ORDER_3, LETTER_TO_DARK_ELF, LETTER_TO_HUMAN, LETTER_TO_ELF);
+		registerQuestItems(HATOS_ORDER_1, HATOS_ORDER_2, HATOS_ORDER_3, LETTER_TO_HUMAN, LETTER_TO_DARKELF, LETTER_TO_ELF);
+		addStartNpc(HATOS);
+		addTalkId(HATOS, PARUGON);
+		addKillId(27041); // Baranka's Messenger
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final QuestState st = player.getQuestState(getName());
+		final String htmltext = event;
+		if (st == null)
 		{
 			return htmltext;
 		}
+		
 		switch (event)
 		{
-			case "30568-04.htm":
+			case "30568-03.htm":
 			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					giveItems(player, HATOSS_ORDER_1, 1);
-					htmltext = event;
-				}
+				st.startQuest();
+				giveItems(player, HATOS_ORDER_1, 1);
 				break;
 			}
-			case "30568-07.html":
+			case "30568-06.htm":
 			{
-				giveAdena(player, 200, true);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_GIVEUP);
-				qs.exitQuest(true, true);
-				htmltext = event;
+				st.exitQuest(true, true);
 				break;
 			}
-			case "30568-08.html":
+			case "30568-07.htm":
 			{
-				if (qs.isCond(3) && hasQuestItems(player, HATOSS_ORDER_1))
-				{
-					qs.setCond(4);
-					takeItems(player, HATOSS_ORDER_1, -1);
-					giveItems(player, HATOSS_ORDER_2, 1);
-					htmltext = event;
-				}
+				st.setCond(4, true);
+				takeItems(player, HATOS_ORDER_1, 1);
+				giveItems(player, HATOS_ORDER_2, 1);
 				break;
 			}
-			case "30568-10.html":
+			case "30568-09.htm":
 			{
-				if (qs.isCond(5) && hasQuestItems(player, HATOSS_ORDER_2))
-				{
-					qs.setCond(6);
-					takeItems(player, HATOSS_ORDER_2, -1);
-					giveItems(player, HATOSS_ORDER_3, 1);
-					htmltext = event;
-				}
+				st.setCond(6, true);
+				takeItems(player, HATOS_ORDER_2, 1);
+				giveItems(player, HATOS_ORDER_3, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player talker)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
-		switch (npc.getId())
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case URUTU_CHIEF_HATOS:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				if (player.getRace() != Race.ORC)
 				{
-					case State.CREATED:
+					htmltext = "30568-00.htm";
+				}
+				else if (player.getLevel() < 12)
+				{
+					htmltext = "30568-01.htm";
+				}
+				else
+				{
+					htmltext = "30568-02.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case HATOS:
 					{
-						if (talker.getRace() != Race.ORC)
+						if ((cond == 1) || (cond == 2))
 						{
-							htmltext = "30568-01.htm";
+							htmltext = "30568-04.htm";
 						}
-						else if (talker.getLevel() < MIN_LEVEL)
+						else if (cond == 3)
 						{
-							htmltext = "30568-02.htm";
+							htmltext = "30568-05.htm";
 						}
-						else
+						else if ((cond == 4) || (cond == 6))
 						{
-							htmltext = "30568-03.htm";
+							htmltext = "30568-09.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30568-08.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30568-10.htm";
+							takeItems(player, HATOS_ORDER_3, -1);
+							takeItems(player, LETTER_TO_DARKELF, -1);
+							takeItems(player, LETTER_TO_HUMAN, -1);
+							takeItems(player, LETTER_TO_ELF, -1);
+							
+							giveItems(player, BUTCHER_SWORD, 1);
+							giveItems(player, LESSER_HEALING_POTION, 100);
+							
+							final PlayerVariables vars = player.getVariables();
+							// Give newbie reward if player is eligible
+							if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
+							{
+								st.showQuestionMark(26);
+								st.playTutorialVoice("tutorial_voice_026");
+								giveItems(player, SOULSHOT_FOR_BEGINNERS, 7000);
+							}
+							
+							giveItems(player, ECHO_BATTLE, 10);
+							giveItems(player, ECHO_LOVE, 10);
+							giveItems(player, ECHO_SOLITUDE, 10);
+							giveItems(player, ECHO_FEAST, 10);
+							giveItems(player, ECHO_CELEBRATION, 10);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
 						break;
 					}
-					case State.STARTED:
+					case PARUGON:
 					{
-						switch (qs.getCond())
+						htmltext = "30580-01.htm";
+						if (cond == 1)
 						{
-							case 1:
-							case 2:
-							{
-								if (hasQuestItems(talker, HATOSS_ORDER_1))
-								{
-									htmltext = "30568-05.html";
-								}
-								break;
-							}
-							case 3:
-							{
-								if (hasQuestItems(talker, HATOSS_ORDER_1, LETTER_TO_HUMAN))
-								{
-									htmltext = "30568-06.html";
-								}
-								break;
-							}
-							case 4:
-							{
-								if (hasQuestItems(talker, HATOSS_ORDER_2, LETTER_TO_HUMAN))
-								{
-									htmltext = "30568-08.html";
-								}
-								break;
-							}
-							case 5:
-							{
-								if (hasQuestItems(talker, HATOSS_ORDER_2, LETTER_TO_HUMAN, LETTER_TO_DARK_ELF))
-								{
-									htmltext = "30568-09.html";
-								}
-								break;
-							}
-							case 6:
-							{
-								if (hasQuestItems(talker, HATOSS_ORDER_3, LETTER_TO_HUMAN, LETTER_TO_DARK_ELF))
-								{
-									htmltext = "30568-10.html";
-								}
-								break;
-							}
-							case 7:
-							{
-								if (hasQuestItems(talker, HATOSS_ORDER_3, LETTER_TO_HUMAN, LETTER_TO_DARK_ELF, LETTER_TO_ELF))
-								{
-									if (!talker.isSimulatingTalking())
-									{
-										Q00281_HeadForTheHills.giveNewbieReward(talker);
-										addExpAndSp(talker, 34565, 2962);
-										giveAdena(talker, 14666, true);
-										for (ItemHolder reward : REWARDS)
-										{
-											giveItems(talker, reward);
-										}
-										giveItems(talker, BUTCHER, 1);
-										qs.exitQuest(false, true);
-										talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
-									}
-									htmltext = "30568-11.html";
-								}
-								break;
-							}
+							st.setCond(2, true);
 						}
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(talker);
 						break;
 					}
 				}
 				break;
 			}
-			case CENTURION_PARUGON:
+			case State.COMPLETED:
 			{
-				if (qs.isStarted() && qs.isCond(1) && hasQuestItems(talker, HATOSS_ORDER_1))
-				{
-					qs.setCond(2, true);
-					htmltext = "30580-01.html";
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
 		{
-			switch (qs.getCond())
-			{
-				case 2:
-				{
-					if (hasQuestItems(killer, HATOSS_ORDER_1))
-					{
-						giveItems(killer, LETTER_TO_HUMAN, 1);
-						qs.setCond(3, true);
-					}
-					break;
-				}
-				case 4:
-				{
-					if (hasQuestItems(killer, HATOSS_ORDER_2))
-					{
-						giveItems(killer, LETTER_TO_DARK_ELF, 1);
-						qs.setCond(5, true);
-					}
-					break;
-				}
-				case 6:
-				{
-					if (hasQuestItems(killer, HATOSS_ORDER_3))
-					{
-						giveItems(killer, LETTER_TO_ELF, 1);
-						qs.setCond(7, true);
-					}
-					break;
-				}
-			}
+			return super.onKill(npc, player, isPet);
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		final int cond = st.getCond();
+		if (cond == 2)
+		{
+			st.setCond(3, true);
+			giveItems(player, LETTER_TO_HUMAN, 1);
+		}
+		else if (cond == 4)
+		{
+			st.setCond(5, true);
+			giveItems(player, LETTER_TO_DARKELF, 1);
+		}
+		else if (cond == 6)
+		{
+			st.setCond(7, true);
+			giveItems(player, LETTER_TO_ELF, 1);
+		}
+		
+		return super.onKill(npc, player, isPet);
 	}
 }

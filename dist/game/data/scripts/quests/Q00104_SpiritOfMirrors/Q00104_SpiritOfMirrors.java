@@ -16,25 +16,19 @@
  */
 package quests.Q00104_SpiritOfMirrors;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
+import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
+import quests.Q00101_SwordOfSolidarity.Q00101_SwordOfSolidarity;
 
-/**
- * Spirit of Mirrors (104)
- * @author xban1x
- */
 public class Q00104_SpiritOfMirrors extends Quest
 {
 	// NPCs
@@ -43,140 +37,212 @@ public class Q00104_SpiritOfMirrors extends Quest
 	private static final int JOHNSTONE = 30043;
 	private static final int KENYOS = 30045;
 	// Items
-	private static final int GALLINTS_OAK_WAND = 748;
-	private static final int SPIRITBOUND_WAND1 = 1135;
-	private static final int SPIRITBOUND_WAND2 = 1136;
-	private static final int SPIRITBOUND_WAND3 = 1137;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(27003, SPIRITBOUND_WAND1); // Spirit Of Mirrors
-		MONSTERS.put(27004, SPIRITBOUND_WAND2); // Spirit Of Mirrors
-		MONSTERS.put(27005, SPIRITBOUND_WAND3); // Spirit Of Mirrors
-	}
+	private static final int GALLINS_OAK_WAND = 748;
+	private static final int WAND_SPIRITBOUND_1 = 1135;
+	private static final int WAND_SPIRITBOUND_2 = 1136;
+	private static final int WAND_SPIRITBOUND_3 = 1137;
 	// Rewards
-	private static final ItemHolder[] REWARDS =
-	{
-		new ItemHolder(1060, 100), // Lesser Healing Potion
-		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
-		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
-		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
-		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
-		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
-		new ItemHolder(747, 1), // Wand of Adept
-	};
-	// Misc
-	private static final int MIN_LEVEL = 10;
+	private static final int SPIRITSHOT_NO_GRADE = 2509;
+	private static final int SOULSHOT_NO_GRADE = 1835;
+	private static final int WAND_OF_ADEPT = 747;
+	private static final int LESSER_HEALING_POT = 1060;
+	private static final int ECHO_BATTLE = 4412;
+	private static final int ECHO_LOVE = 4413;
+	private static final int ECHO_SOLITUDE = 4414;
+	private static final int ECHO_FEAST = 4415;
+	private static final int ECHO_CELEBRATION = 4416;
 	
 	public Q00104_SpiritOfMirrors()
 	{
 		super(104);
+		registerQuestItems(GALLINS_OAK_WAND, WAND_SPIRITBOUND_1, WAND_SPIRITBOUND_2, WAND_SPIRITBOUND_3);
 		addStartNpc(GALLINT);
-		addTalkId(ARNOLD, GALLINT, JOHNSTONE, KENYOS);
-		addKillId(MONSTERS.keySet());
-		registerQuestItems(GALLINTS_OAK_WAND, SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3);
+		addTalkId(GALLINT, ARNOLD, JOHNSTONE, KENYOS);
+		
+		addKillId(27003, 27004, 27005);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30017-04.htm"))
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			giveItems(player, GALLINTS_OAK_WAND, 3);
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && (qs.isCond(1) || qs.isCond(2)) && (getItemEquipped(killer, Inventory.PAPERDOLL_RHAND) == GALLINTS_OAK_WAND) && !hasQuestItems(killer, MONSTERS.get(npc.getId())))
+		
+		if (event.equals("30017-03.htm"))
 		{
-			takeItems(killer, GALLINTS_OAK_WAND, 1);
-			giveItems(killer, MONSTERS.get(npc.getId()), 1);
-			if (hasQuestItems(killer, SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3))
-			{
-				qs.setCond(3, true);
-			}
-			else
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
+			st.startQuest();
+			giveItems(player, GALLINS_OAK_WAND, 1);
+			giveItems(player, GALLINS_OAK_WAND, 1);
+			giveItems(player, GALLINS_OAK_WAND, 1);
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case GALLINT:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				if (player.getRace() != Race.HUMAN)
 				{
-					case State.CREATED:
+					htmltext = "30017-00.htm";
+				}
+				else if (player.getLevel() < 10)
+				{
+					htmltext = "30017-01.htm";
+				}
+				else
+				{
+					htmltext = "30017-02.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case GALLINT:
 					{
-						htmltext = (player.getRace() == Race.HUMAN) ? (player.getLevel() >= MIN_LEVEL) ? "30017-03.htm" : "30017-02.htm" : "30017-01.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						if (qs.isCond(3) && hasQuestItems(player, SPIRITBOUND_WAND1, SPIRITBOUND_WAND2, SPIRITBOUND_WAND3))
+						if ((cond == 1) || (cond == 2))
 						{
-							if (!player.isSimulatingTalking())
+							htmltext = "30017-04.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30017-05.htm";
+							
+							takeItems(player, WAND_SPIRITBOUND_1, -1);
+							takeItems(player, WAND_SPIRITBOUND_2, -1);
+							takeItems(player, WAND_SPIRITBOUND_3, -1);
+							
+							giveItems(player, WAND_OF_ADEPT, 1);
+							rewardItems(player, LESSER_HEALING_POT, 100);
+							
+							if (player.isMageClass())
 							{
-								Q00281_HeadForTheHills.giveNewbieReward(player);
-								for (ItemHolder reward : REWARDS)
-								{
-									giveItems(player, reward);
-								}
-								addExpAndSp(player, 39750, 3407);
-								giveAdena(player, 16866, true);
-								qs.exitQuest(false, true);
+								giveItems(player, SPIRITSHOT_NO_GRADE, 500);
 							}
-							htmltext = "30017-06.html";
-						}
-						else
-						{
-							htmltext = "30017-05.html";
+							else
+							{
+								giveItems(player, SOULSHOT_NO_GRADE, 1000);
+							}
+							
+							final PlayerVariables vars = player.getVariables();
+							// Give newbie reward if player is eligible
+							if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
+							{
+								st.showQuestionMark(26);
+								Q00101_SwordOfSolidarity.giveNewbieReward(player); // All these newbie quest share same soulshots/spiritshots rewards.
+							}
+							
+							giveItems(player, ECHO_BATTLE, 10);
+							giveItems(player, ECHO_LOVE, 10);
+							giveItems(player, ECHO_SOLITUDE, 10);
+							giveItems(player, ECHO_FEAST, 10);
+							giveItems(player, ECHO_CELEBRATION, 10);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
 						break;
 					}
-					case State.COMPLETED:
+					case KENYOS:
+					case JOHNSTONE:
+					case ARNOLD:
 					{
-						htmltext = getAlreadyCompletedMsg(player);
+						htmltext = npc.getId() + "-01.htm";
+						if (cond == 1)
+						{
+							st.setCond(2, true);
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case ARNOLD:
-			case JOHNSTONE:
-			case KENYOS:
+			case State.COMPLETED:
 			{
-				if (qs.isCond(1))
-				{
-					if (!qs.isSet(npc.getName()))
-					{
-						qs.set(npc.getName(), "1");
-					}
-					if (qs.isSet("Arnold") && qs.isSet("Johnstone") && qs.isSet("Kenyos"))
-					{
-						qs.setCond(2, true);
-					}
-				}
-				htmltext = npc.getId() + "-01.html";
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return super.onKill(npc, player, isPet);
+		}
+		
+		if (player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND) == GALLINS_OAK_WAND)
+		{
+			switch (npc.getId())
+			{
+				case 27003:
+					if (!hasQuestItems(player, WAND_SPIRITBOUND_1))
+					{
+						takeItems(player, GALLINS_OAK_WAND, 1);
+						giveItems(player, WAND_SPIRITBOUND_1, 1);
+						if (hasQuestItems(player, WAND_SPIRITBOUND_2, WAND_SPIRITBOUND_3))
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+					}
+					break;
+				
+				case 27004:
+					if (!hasQuestItems(player, WAND_SPIRITBOUND_2))
+					{
+						takeItems(player, GALLINS_OAK_WAND, 1);
+						giveItems(player, WAND_SPIRITBOUND_2, 1);
+						if (hasQuestItems(player, WAND_SPIRITBOUND_1, WAND_SPIRITBOUND_3))
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+					}
+					break;
+				
+				case 27005:
+					if (!hasQuestItems(player, WAND_SPIRITBOUND_3))
+					{
+						takeItems(player, GALLINS_OAK_WAND, 1);
+						giveItems(player, WAND_SPIRITBOUND_3, 1);
+						if (hasQuestItems(player, WAND_SPIRITBOUND_1, WAND_SPIRITBOUND_2))
+						{
+							st.setCond(3, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+					}
+					break;
+			}
+		}
+		
+		return super.onKill(npc, player, isPet);
 	}
 }

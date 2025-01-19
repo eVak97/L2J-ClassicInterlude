@@ -16,9 +16,7 @@
  */
 package quests.Q00273_InvadersOfTheHolyLand;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -26,124 +24,149 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-/**
- * Invaders of the Holy Land (273)
- * @author xban1x
- */
 public class Q00273_InvadersOfTheHolyLand extends Quest
 {
-	// NPC
-	private static final int VARKEES = 30566;
 	// Items
 	private static final int BLACK_SOULSTONE = 1475;
 	private static final int RED_SOULSTONE = 1476;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(20311, 90); // Rakeclaw Imp
-		MONSTERS.put(20312, 87); // Rakeclaw Imp Hunter
-		MONSTERS.put(20313, 77); // Rakeclaw Imp Chieftain
-	}
-	// Misc
-	private static final int MIN_LEVEL = 6;
+	// Reward
+	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
 	
 	public Q00273_InvadersOfTheHolyLand()
 	{
 		super(273);
-		addStartNpc(VARKEES);
-		addTalkId(VARKEES);
-		addKillId(MONSTERS.keySet());
 		registerQuestItems(BLACK_SOULSTONE, RED_SOULSTONE);
-		addCondMaxLevel(14, getNoQuestMsg(null));
+		addStartNpc(30566); // Varkees
+		addTalkId(30566);
+		addKillId(20311, 20312, 20313);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
-			{
-				case "30566-04.htm":
-				{
-					qs.startQuest();
-					htmltext = event;
-					break;
-				}
-				case "30566-08.html":
-				{
-					qs.exitQuest(true, true);
-					htmltext = event;
-					break;
-				}
-				case "30566-09.html":
-				{
-					htmltext = event;
-					break;
-				}
-			}
+			return htmltext;
 		}
+		
+		if (event.equals("30566-03.htm"))
+		{
+			st.startQuest();
+		}
+		else if (event.equals("30566-07.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if (qs != null)
-		{
-			if (getRandom(100) <= MONSTERS.get(npc.getId()))
-			{
-				giveItems(killer, BLACK_SOULSTONE, 1);
-			}
-			else
-			{
-				giveItems(killer, RED_SOULSTONE, 1);
-			}
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = null;
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		String htmltext = getNoQuestMsg(player);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LEVEL) ? "30566-03.htm" : "30566-02.htm" : "30566-01.htm";
+				if (player.getRace() != Race.ORC)
+				{
+					htmltext = "30566-00.htm";
+				}
+				else if (player.getLevel() < 6)
+				{
+					htmltext = "30566-01.htm";
+				}
+				else
+				{
+					htmltext = "30566-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasAtLeastOneQuestItem(player, BLACK_SOULSTONE, RED_SOULSTONE))
+				final long red = getQuestItemsCount(player, RED_SOULSTONE);
+				final long black = getQuestItemsCount(player, BLACK_SOULSTONE);
+				if ((red + black) == 0)
 				{
-					final long black = getQuestItemsCount(player, BLACK_SOULSTONE);
-					final long red = getQuestItemsCount(player, RED_SOULSTONE);
-					if (!player.isSimulatingTalking())
-					{
-						giveAdena(player, (red * 5) + (black * 3) + (((red + black) >= 10) ? 1000 : 0), true);
-						takeItems(player, -1, BLACK_SOULSTONE, RED_SOULSTONE);
-						Q00281_HeadForTheHills.giveNewbieReward(player);
-					}
-					htmltext = (red > 0) ? "30566-07.html" : "30566-06.html";
+					htmltext = "30566-04.htm";
 				}
 				else
 				{
-					htmltext = "30566-05.html";
+					if (red == 0)
+					{
+						htmltext = "30566-05.htm";
+					}
+					else
+					{
+						htmltext = "30566-06.htm";
+					}
+					
+					long reward = (black * 5) + (red * 50);
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD)
+					{
+						reward += ((black >= 10) ? ((red >= 1) ? 1800 : 1500) : 0);
+					}
+					
+					takeItems(player, BLACK_SOULSTONE, -1);
+					takeItems(player, RED_SOULSTONE, -1);
+					giveAdena(player, reward, true);
+					
+					final PlayerVariables vars = player.getVariables();
+					// Give newbie reward if player is eligible.
+					if ((player.getLevel() < 25) && (st.getInt("Reward") == 0))
+					{
+						if (!vars.getBoolean("NEWBIE_SHOTS", false))
+						{
+							giveItems(player, SOULSHOT_FOR_BEGINNERS, 6000);
+							st.playTutorialVoice("tutorial_voice_026");
+							st.set("Reward", "1");
+						}
+					}
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return super.onKill(npc, player, isPet);
+		}
+		
+		final int npcId = npc.getId();
+		int probability = 77;
+		if (npcId == 20311)
+		{
+			probability = 90;
+		}
+		else if (npcId == 20312)
+		{
+			probability = 87;
+		}
+		
+		if (getRandom(100) <= probability)
+		{
+			giveItems(player, BLACK_SOULSTONE, 1);
+		}
+		else
+		{
+			giveItems(player, RED_SOULSTONE, 1);
+		}
+		playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		
+		return super.onKill(npc, player, isPet);
 	}
 }

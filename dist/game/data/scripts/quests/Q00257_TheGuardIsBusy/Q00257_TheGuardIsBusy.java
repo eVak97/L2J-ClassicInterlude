@@ -16,168 +16,190 @@
  */
 package quests.Q00257_TheGuardIsBusy;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import org.l2jmobius.Config;
+import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.enums.QuestSound;
+import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.model.variables.PlayerVariables;
 
-import quests.Q00281_HeadForTheHills.Q00281_HeadForTheHills;
-
-/**
- * The Guard is Busy (257)
- * @author xban1x
- */
 public class Q00257_TheGuardIsBusy extends Quest
 {
-	public static class MobDrop extends ItemHolder
-	{
-		private final int _chance;
-		private final int _random;
-		
-		public MobDrop(int random, int chance, int id, long count)
-		{
-			super(id, count);
-			_random = random;
-			_chance = chance;
-		}
-		
-		public boolean getDrop()
-		{
-			return (getRandom(_random) < _chance);
-		}
-	}
-	
-	// NPC
-	private static final int GILBERT = 30039;
-	// Misc
-	private static final int MIN_LEVEL = 6;
-	// Monsters
-	private static final Map<Integer, List<MobDrop>> MONSTERS = new HashMap<>();
 	// Items
-	private static final int GLUDIO_LORDS_MARK = 1084;
+	private static final int GLUDIO_LORD_MARK = 1084;
 	private static final int ORC_AMULET = 752;
 	private static final int ORC_NECKLACE = 1085;
 	private static final int WEREWOLF_FANG = 1086;
-	static
-	{
-		MONSTERS.put(20006, Arrays.asList(new MobDrop(10, 2, ORC_AMULET, 2), new MobDrop(10, 10, ORC_AMULET, 1))); // Orc Archer
-		MONSTERS.put(20093, Arrays.asList(new MobDrop(100, 85, ORC_NECKLACE, 1))); // Orc Fighter
-		MONSTERS.put(20096, Arrays.asList(new MobDrop(100, 95, ORC_NECKLACE, 1))); // Orc Fighter Sub Leader
-		MONSTERS.put(20098, Arrays.asList(new MobDrop(100, 100, ORC_NECKLACE, 1))); // Orc Fighter Leader
-		MONSTERS.put(20130, Arrays.asList(new MobDrop(10, 7, ORC_AMULET, 1))); // Orc
-		MONSTERS.put(20131, Arrays.asList(new MobDrop(10, 9, ORC_AMULET, 1))); // Orc Grunt
-		MONSTERS.put(20132, Arrays.asList(new MobDrop(10, 7, WEREWOLF_FANG, 1))); // Werewolf
-		MONSTERS.put(20342, Arrays.asList(new MobDrop(0, 1, WEREWOLF_FANG, 1))); // Werewolf Chieftain
-		MONSTERS.put(20343, Arrays.asList(new MobDrop(100, 85, WEREWOLF_FANG, 1))); // Werewolf Hunter
-	}
+	// Newbie Items
+	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
+	private static final int SOULSHOT_FOR_BEGINNERS = 5789;
 	
 	public Q00257_TheGuardIsBusy()
 	{
 		super(257);
-		addStartNpc(GILBERT);
-		addTalkId(GILBERT);
-		addKillId(MONSTERS.keySet());
-		registerQuestItems(ORC_AMULET, GLUDIO_LORDS_MARK, ORC_NECKLACE, WEREWOLF_FANG);
-		addCondMaxLevel(16, getNoQuestMsg(null));
+		registerQuestItems(ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG, GLUDIO_LORD_MARK);
+		addStartNpc(30039); // Gilbert
+		addTalkId(30039);
+		addKillId(20006, 20093, 20096, 20098, 20130, 20131, 20132, 20342, 20343);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30039-03.htm"))
 		{
-			case "30039-03.htm":
-			{
-				qs.startQuest();
-				giveItems(player, GLUDIO_LORDS_MARK, 1);
-				htmltext = event;
-				break;
-			}
-			case "30039-05.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30039-06.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
+			giveItems(player, GLUDIO_LORD_MARK, 1);
 		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if (qs == null)
+		else if (event.equals("30039-05.htm"))
 		{
-			return super.onKill(npc, killer, isSummon);
+			takeItems(player, GLUDIO_LORD_MARK, 1);
+			st.exitQuest(true, true);
 		}
 		
-		for (MobDrop drop : MONSTERS.get(npc.getId()))
-		{
-			if (drop.getDrop())
-			{
-				giveItems(killer, drop);
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				break;
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30039-02.htm" : "30039-01.html";
+				htmltext = (player.getLevel() < 6) ? "30039-01.htm" : "30039-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasAtLeastOneQuestItem(player, ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG))
+				final long amulets = getQuestItemsCount(player, ORC_AMULET);
+				final long necklaces = getQuestItemsCount(player, ORC_NECKLACE);
+				final long fangs = getQuestItemsCount(player, WEREWOLF_FANG);
+				
+				if ((amulets + necklaces + fangs) == 0)
 				{
-					if (!player.isSimulatingTalking())
-					{
-						final long amulets = getQuestItemsCount(player, ORC_AMULET);
-						final long necklace = getQuestItemsCount(player, ORC_NECKLACE);
-						final long fang = getQuestItemsCount(player, WEREWOLF_FANG);
-						giveAdena(player, ((amulets * 5) + (necklace * 8) + (fang * 10) + (((amulets + necklace + fang) >= 10) ? 1000 : 0)), true);
-						takeItems(player, -1, ORC_AMULET, ORC_NECKLACE, WEREWOLF_FANG);
-						Q00281_HeadForTheHills.giveNewbieReward(player);
-					}
-					htmltext = "30039-07.html";
+					htmltext = "30039-04.htm";
 				}
 				else
 				{
-					htmltext = "30039-04.html";
+					htmltext = "30039-07.htm";
+					
+					long reward = (5 * amulets) + (10 * fangs) + (15 * necklaces);
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulets + necklaces + fangs) >= 10))
+					{
+						reward += 1000;
+					}
+					
+					takeItems(player, ORC_AMULET, -1);
+					takeItems(player, ORC_NECKLACE, -1);
+					takeItems(player, WEREWOLF_FANG, -1);
+					giveAdena(player, reward, true);
+					
+					final PlayerVariables vars = player.getVariables();
+					// Give newbie reward if player is eligible.
+					if ((player.getLevel() < 25) && (st.getInt("Reward") == 0))
+					{
+						if (!vars.getBoolean("NEWBIE_SHOTS", false))
+						{
+							st.showQuestionMark(26);
+							st.set("Reward", "1");
+							
+							if (player.isMageClass() && (player.getRace() != Race.ORC))
+							{
+								st.playTutorialVoice("tutorial_voice_027");
+								giveItems(player, SPIRITSHOT_FOR_BEGINNERS, 3000);
+							}
+							else
+							{
+								st.playTutorialVoice("tutorial_voice_026");
+								giveItems(player, SOULSHOT_FOR_BEGINNERS, 6000);
+							}
+						}
+					}
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return super.onKill(npc, player, isPet);
+		}
+		
+		switch (npc.getId())
+		{
+			case 20006:
+			case 20130:
+			case 20131:
+			{
+				if (Rnd.get(10) < 5)
+				{
+					giveItems(player, ORC_AMULET, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20093:
+			case 20096:
+			case 20098:
+			{
+				if (Rnd.get(10) < 5)
+				{
+					giveItems(player, ORC_NECKLACE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20342:
+			{
+				if (Rnd.get(10) < 2)
+				{
+					giveItems(player, WEREWOLF_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20343:
+			{
+				if (Rnd.get(10) < 4)
+				{
+					giveItems(player, WEREWOLF_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20132:
+			{
+				if (Rnd.get(10) < 5)
+				{
+					giveItems(player, WEREWOLF_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+		}
+		
+		return super.onKill(npc, player, isPet);
 	}
 }
