@@ -150,7 +150,7 @@ public class Formulas
 	{
 		// Bonus Spirit shot
 		final double shotsBonus = bss ? (4 * attacker.getStat().getValue(Stat.SHOTS_BONUS)) : sps ? (2 * attacker.getStat().getValue(Stat.SHOTS_BONUS)) : 1;
-		final double critMod = mcrit ? calcCritDamage(attacker, target, skill) : 1; // TODO not really a proper way... find how it works then implement. // damage += attacker.getStat().getValue(Stats.MAGIC_CRIT_DMG_ADD, 0);
+		final double critMod = mcrit ? 4 : 1;
 		
 		// Trait, elements
 		final double generalTraitMod = calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
@@ -160,7 +160,7 @@ public class Formulas
 		final double pvpPveMod = calculatePvpPveBonus(attacker, target, skill, mcrit);
 		
 		// MDAM Formula.
-		double damage = ((77 * (power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0)) * Math.sqrt(mAtk)) / mDef) * shotsBonus;
+		double damage = ((91 * (power + attacker.getStat().getValue(Stat.SKILL_POWER_ADD, 0)) * Math.sqrt(mAtk)) / mDef) * shotsBonus;
 		
 		// Failure calculation
 		if (Config.ALT_GAME_MAGICFAILURES && !calcMagicSuccess(attacker, target, skill))
@@ -343,7 +343,7 @@ public class Formulas
 		{
 			if (skill.isMagic())
 			{
-				// Magic critical damage.
+				// Magical skill critical damage.
 				criticalDamage = attacker.getStat().getValue(Stat.MAGIC_CRITICAL_DAMAGE, 1);
 				defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_MAGIC_CRITICAL_DAMAGE, 1);
 				if (attacker.isPlayable())
@@ -353,6 +353,7 @@ public class Formulas
 			}
 			else
 			{
+				// Physical skill critical damage.
 				criticalDamage = attacker.getStat().getValue(Stat.PHYSICAL_SKILL_CRITICAL_DAMAGE, 1);
 				defenceCriticalDamage = target.getStat().getValue(Stat.DEFENCE_PHYSICAL_SKILL_CRITICAL_DAMAGE, 1);
 				if (attacker.isPlayable())
@@ -754,7 +755,6 @@ public class Formulas
 		if (attacker.isAttackable() || target.isAttackable())
 		{
 			lvlModifier = Math.pow(1.3, target.getLevel() - (Config.CALCULATE_MAGIC_SUCCESS_BY_SKILL_MAGIC_LEVEL && (skill.getMagicLevel() > 0) ? skill.getMagicLevel() : attacker.getLevel()));
-			
 			if ((attacker.asPlayer() != null) && !target.isRaid() && !target.isRaidMinion() && (target.getLevel() >= Config.MIN_NPC_LEVEL_MAGIC_PENALTY) && ((target.getLevel() - attacker.asPlayer().getLevel()) >= 3))
 			{
 				final int levelDiff = target.getLevel() - attacker.asPlayer().getLevel() - 2;
@@ -793,7 +793,7 @@ public class Formulas
 		// general magic resist
 		final double resModifier = target.getStat().getMul(Stat.MAGIC_SUCCESS_RES, 1);
 		final int rate = 100 - Math.round((float) (mAccModifier * lvlModifier * targetModifier * resModifier));
-		
+		attacker.sendMessage("Success rate");
 		return (Rnd.get(100) < rate);
 	}
 	
@@ -1052,7 +1052,7 @@ public class Formulas
 		final double blowRateDefenseMod = target.getStat().getValue(Stat.BLOW_RATE_DEFENCE, 1);
 		
 		final double rate = criticalPosition * critHeightBonus * weaponCritical * chanceBoostMod * blowRateMod * blowRateDefenseMod;
-		
+		creature.sendMessage("blow chance" + rate);
 		// Blow rate change is limited (%).
 		return Rnd.get(100) < Math.min(rate, Config.BLOW_RATE_CHANCE_LIMIT);
 	}
@@ -1126,7 +1126,7 @@ public class Formulas
 	
 	public static boolean calcCancelSuccess(BuffInfo info, int cancelMagicLvl, int rate, Skill skill, Creature target)
 	{
-		final int chance = (int) (rate + ((cancelMagicLvl - info.getSkill().getMagicLevel()) * 2) + ((info.getAbnormalTime() / 120) * target.getStat().getValue(Stat.RESIST_DISPEL_BUFF, 1)));
+		final int chance = (int) (rate * (info.getSkill().getMagicLevel() > 0 ? 1 + ((cancelMagicLvl - info.getSkill().getMagicLevel()) / 100.) : 1));
 		return Rnd.get(100) < CommonUtil.constrain(chance, 25, 75); // TODO: i_dispel_by_slot_probability min = 40, max = 95.
 	}
 	
@@ -1179,10 +1179,7 @@ public class Formulas
 		{
 			return calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true) > 0;
 		}
-		
-		// Outdated formula: return Rnd.get(100) < ((((((skill.getMagicLevel() + baseChance) - target.getLevel()) + 30) - target.getINT()) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
-		// TODO: Find more retail-like formula
-		return Rnd.get(100) < (((((skill.getMagicLevel() + baseChance) - target.getLevel()) - getAbnormalResist(skill.getBasicProperty(), target)) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
+		return Rnd.get(100) < ((((((skill.getMagicLevel() + baseChance) - target.getLevel()) + 30) - target.getINT()) * calcAttributeBonus(attacker, target, skill)) * calcGeneralTraitBonus(attacker, target, skill.getTraitType(), false));
 	}
 	
 	/**
@@ -1211,11 +1208,9 @@ public class Formulas
 	public static int calculateKarmaGain(int pkCount, boolean isSummon)
 	{
 		int result = 43200;
-		
 		if (isSummon)
 		{
 			result = (int) ((((pkCount * 0.375) + 1) * 60) * 4) - 150;
-			
 			if (result > 10800)
 			{
 				return 10800;
