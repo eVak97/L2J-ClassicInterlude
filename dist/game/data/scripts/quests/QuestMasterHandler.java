@@ -345,6 +345,7 @@ import quests.Q00640_TheZeroHour.Q00640_TheZeroHour;
 import quests.Q00641_AttackSailren.Q00641_AttackSailren;
 import quests.Q00642_APowerfulPrimevalCreature.Q00642_APowerfulPrimevalCreature;
 import quests.Q00643_RiseAndFallOfTheElrokiTribe.Q00643_RiseAndFallOfTheElrokiTribe;
+import quests.Q00660_AidingTheFloranVillage.Q00660_AidingTheFloranVillage;
 import quests.Q00661_MakingTheHarvestGroundsSafe.Q00661_MakingTheHarvestGroundsSafe;
 // import quests.Q00644_GraveRobberAnnihilation.Q00644_GraveRobberAnnihilation;
 // import quests.Q00645_GhostsOfBatur.Q00645_GhostsOfBatur;
@@ -713,7 +714,7 @@ public class QuestMasterHandler
 		// Q00654_JourneyToASettlement.class,
 		// Q00655_AGrandPlanForTamingWildBeasts.class,
 		// Q00659_IdRatherBeCollectingFairyBreath.class,
-		// Q00660_AidingTheFloranVillage.class,
+		Q00660_AidingTheFloranVillage.class, // Added, need html work and test.
 		Q00661_MakingTheHarvestGroundsSafe.class, // Added, need html work and test.
 		Q00662_AGameOfCards.class,
 		Q00663_SeductiveWhispers.class, // Added, need html work and test.
