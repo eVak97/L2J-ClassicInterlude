@@ -288,6 +288,7 @@ import quests.Q00415_PathOfTheOrcMonk.Q00415_PathOfTheOrcMonk;
 import quests.Q00416_PathOfTheOrcShaman.Q00416_PathOfTheOrcShaman;
 import quests.Q00417_PathOfTheScavenger.Q00417_PathOfTheScavenger;
 import quests.Q00418_PathOfTheArtisan.Q00418_PathOfTheArtisan;
+import quests.Q00419_GetAPet.Q00419_GetAPet;
 // import quests.Q00419_GetAPet.Q00419_GetAPet;
 import quests.Q00420_LittleWing.Q00420_LittleWing;
 import quests.Q00421_LittleWingsBigAdventure.Q00421_LittleWingsBigAdventure;
@@ -641,7 +642,7 @@ public class QuestMasterHandler
 		Q00416_PathOfTheOrcShaman.class,
 		Q00417_PathOfTheScavenger.class,
 		Q00418_PathOfTheArtisan.class,
-		// Q00419_GetAPet.class,
+		Q00419_GetAPet.class,
 		Q00420_LittleWing.class,
 		Q00421_LittleWingsBigAdventure.class,
 		// Q00422_RepentYourSins.class,
