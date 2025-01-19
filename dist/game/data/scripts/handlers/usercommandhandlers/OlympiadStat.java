@@ -49,14 +49,13 @@ public class OlympiadStat implements IUserCommandHandler
 			return false;
 		}
 		
-		final int nobleObjId = player.getObjectId();
-		final WorldObject target = player.getTarget();
-		if ((target == null) || !target.isPlayer() || !target.asPlayer().isNoble())
+		if (!player.isNoble())
 		{
 			player.sendPacket(SystemMessageId.THIS_COMMAND_CAN_ONLY_BE_USED_BY_A_NOBLESSE);
 			return false;
 		}
-		
+
+		final int nobleObjId = player.getObjectId();		
 		final SystemMessage sm = new SystemMessage(SystemMessageId.FOR_THE_CURRENT_OLYMPIAD_YOU_HAVE_PARTICIPATED_IN_S1_MATCH_ES_AND_HAD_S2_WIN_S_AND_S3_DEFEAT_S_YOU_CURRENTLY_HAVE_S4_OLYMPIAD_POINT_S);
 		sm.addInt(Olympiad.getInstance().getCompetitionDone(nobleObjId));
 		sm.addInt(Olympiad.getInstance().getCompetitionWon(nobleObjId));
