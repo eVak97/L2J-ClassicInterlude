@@ -102,8 +102,8 @@ public class Q00260_OrcHunting extends Quest
 			}
 			case State.STARTED:
 			{
-				final long amulet = getQuestItemsCount(player, ORC_AMULET);
-				final long necklace = getQuestItemsCount(player, ORC_NECKLACE);
+				final int amulet = (int) getQuestItemsCount(player, ORC_AMULET);
+				final int necklace = (int) getQuestItemsCount(player, ORC_NECKLACE);
 				
 				if ((amulet == 0) && (necklace == 0))
 				{
@@ -113,7 +113,7 @@ public class Q00260_OrcHunting extends Quest
 				{
 					htmltext = "30221-05.htm";
 					
-					long reward = (amulet * 5) + (necklace * 15);
+					int reward = (amulet * 5) + (necklace * 15);
 					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulet + necklace) >= 10))
 					{
 						reward += 1000;

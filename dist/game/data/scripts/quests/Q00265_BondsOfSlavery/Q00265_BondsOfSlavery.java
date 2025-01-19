@@ -92,7 +92,7 @@ public class Q00265_BondsOfSlavery extends Quest
 			}
 			case State.STARTED:
 			{
-				final long shackles = getQuestItemsCount(player, SHACKLE);
+				final int shackles = (int) getQuestItemsCount(player, SHACKLE);
 				if (shackles == 0)
 				{
 					htmltext = "30357-04.htm";
@@ -101,7 +101,7 @@ public class Q00265_BondsOfSlavery extends Quest
 				{
 					htmltext = "30357-05.htm";
 					
-					long reward = 12 * shackles;
+					int reward = 12 * shackles;
 					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (shackles >= 10))
 					{
 						reward += 500;

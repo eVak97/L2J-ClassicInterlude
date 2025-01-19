@@ -91,8 +91,8 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 			}
 			case State.STARTED:
 			{
-				final long red = getQuestItemsCount(player, RED_SOULSTONE);
-				final long black = getQuestItemsCount(player, BLACK_SOULSTONE);
+				final int red = (int) getQuestItemsCount(player, RED_SOULSTONE);
+				final int black = (int) getQuestItemsCount(player, BLACK_SOULSTONE);
 				if ((red + black) == 0)
 				{
 					htmltext = "30566-04.htm";
@@ -108,7 +108,7 @@ public class Q00273_InvadersOfTheHolyLand extends Quest
 						htmltext = "30566-06.htm";
 					}
 					
-					long reward = (black * 5) + (red * 50);
+					int reward = (black * 5) + (red * 50);
 					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD)
 					{
 						reward += ((black >= 10) ? ((red >= 1) ? 1800 : 1500) : 0);

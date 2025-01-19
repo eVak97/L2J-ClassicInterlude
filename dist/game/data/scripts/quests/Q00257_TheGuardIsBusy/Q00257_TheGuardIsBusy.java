@@ -86,9 +86,9 @@ public class Q00257_TheGuardIsBusy extends Quest
 			}
 			case State.STARTED:
 			{
-				final long amulets = getQuestItemsCount(player, ORC_AMULET);
-				final long necklaces = getQuestItemsCount(player, ORC_NECKLACE);
-				final long fangs = getQuestItemsCount(player, WEREWOLF_FANG);
+				final int amulets = (int) getQuestItemsCount(player, ORC_AMULET);
+				final int necklaces = (int) getQuestItemsCount(player, ORC_NECKLACE);
+				final int fangs = (int) getQuestItemsCount(player, WEREWOLF_FANG);
 				
 				if ((amulets + necklaces + fangs) == 0)
 				{
@@ -98,7 +98,7 @@ public class Q00257_TheGuardIsBusy extends Quest
 				{
 					htmltext = "30039-07.htm";
 					
-					long reward = (5 * amulets) + (10 * fangs) + (15 * necklaces);
+					int reward = (5 * amulets) + (10 * fangs) + (15 * necklaces);
 					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulets + necklaces + fangs) >= 10))
 					{
 						reward += 1000;

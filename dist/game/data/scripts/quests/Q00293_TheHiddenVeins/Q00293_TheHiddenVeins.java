@@ -119,8 +119,8 @@ public class Q00293_TheHiddenVeins extends Quest
 				{
 					case FILAUR:
 					{
-						final long chrysoliteOres = getQuestItemsCount(player, CHRYSOLITE_ORE);
-						final long hiddenVeinMaps = getQuestItemsCount(player, HIDDEN_VEIN_MAP);
+						final int chrysoliteOres = (int) getQuestItemsCount(player, CHRYSOLITE_ORE);
+						final int hiddenVeinMaps = (int) getQuestItemsCount(player, HIDDEN_VEIN_MAP);
 						if ((chrysoliteOres + hiddenVeinMaps) == 0)
 						{
 							htmltext = "30535-04.htm";
@@ -143,7 +143,7 @@ public class Q00293_TheHiddenVeins extends Quest
 								htmltext = "30535-05.htm";
 							}
 							
-							long reward = (chrysoliteOres * 10) + (hiddenVeinMaps * 1000);
+							int reward = (chrysoliteOres * 10) + (hiddenVeinMaps * 1000);
 							if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (chrysoliteOres >= 10))
 							{
 								reward += 2000;
