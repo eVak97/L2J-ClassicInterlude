@@ -219,32 +219,52 @@ import quests.Q00326_VanquishRemnants.Q00326_VanquishRemnants;
 import quests.Q00327_RecoverTheFarmland.Q00327_RecoverTheFarmland;
 import quests.Q00328_SenseForBusiness.Q00328_SenseForBusiness;
 import quests.Q00329_CuriosityOfADwarf.Q00329_CuriosityOfADwarf;
+import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 // import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
+import quests.Q00334_TheWishingPotion.Q00334_TheWishingPotion;
+import quests.Q00335_TheSongOfTheHunter.Q00335_TheSongOfTheHunter;
 // import quests.Q00334_TheWishingPotion.Q00334_TheWishingPotion;
 // import quests.Q00335_TheSongOfTheHunter.Q00335_TheSongOfTheHunter;
 import quests.Q00336_CoinsOfMagic.Q00336_CoinsOfMagic;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
+import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
+import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
+import quests.Q00341_HuntingForWildBeasts.Q00341_HuntingForWildBeasts;
+import quests.Q00343_UnderTheShadowOfTheIvoryTower.Q00343_UnderTheShadowOfTheIvoryTower;
 // import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
 // import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
 // import quests.Q00341_HuntingForWildBeasts.Q00341_HuntingForWildBeasts;
 // import quests.Q00343_UnderTheShadowOfTheIvoryTower.Q00343_UnderTheShadowOfTheIvoryTower;
 import quests.Q00344_1000YearsTheEndOfLamentation.Q00344_1000YearsTheEndOfLamentation;
+import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
+import quests.Q00347_GoGetTheCalculator.Q00347_GoGetTheCalculator;
 // import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 // import quests.Q00347_GoGetTheCalculator.Q00347_GoGetTheCalculator;
 import quests.Q00348_AnArrogantSearch.Q00348_AnArrogantSearch;
 import quests.Q00350_EnhanceYourWeapon.Q00350_EnhanceYourWeapon;
+import quests.Q00351_BlackSwan.Q00351_BlackSwan;
+import quests.Q00352_HelpRoodRaiseANewPet.Q00352_HelpRoodRaiseANewPet;
+import quests.Q00353_PowerOfDarkness.Q00353_PowerOfDarkness;
 // import quests.Q00351_BlackSwan.Q00351_BlackSwan;
 // import quests.Q00352_HelpRoodRaiseANewPet.Q00352_HelpRoodRaiseANewPet;
 // import quests.Q00353_PowerOfDarkness.Q00353_PowerOfDarkness;
 import quests.Q00354_ConquestOfAlligatorIsland.Q00354_ConquestOfAlligatorIsland;
 import quests.Q00355_FamilyHonor.Q00355_FamilyHonor;
 import quests.Q00356_DigUpTheSeaOfSpores.Q00356_DigUpTheSeaOfSpores;
+import quests.Q00357_WarehouseKeepersAmbition.Q00357_WarehouseKeepersAmbition;
 // import quests.Q00357_WarehouseKeepersAmbition.Q00357_WarehouseKeepersAmbition;
 import quests.Q00358_IllegitimateChildOfTheGoddess.Q00358_IllegitimateChildOfTheGoddess;
 import quests.Q00359_ForASleeplessDeadman.Q00359_ForASleeplessDeadman;
 import quests.Q00360_PlunderTheirSupplies.Q00360_PlunderTheirSupplies;
+import quests.Q00362_BardsMandolin.Q00362_BardsMandolin;
+import quests.Q00363_SorrowfulSoundOfFlute.Q00363_SorrowfulSoundOfFlute;
+import quests.Q00364_JovialAccordion.Q00364_JovialAccordion;
+import quests.Q00365_DevilsLegacy.Q00365_DevilsLegacy;
+import quests.Q00366_SilverHairedShaman.Q00366_SilverHairedShaman;
+import quests.Q00367_ElectrifyingRecharge.Q00367_ElectrifyingRecharge;
+import quests.Q00368_TrespassingIntoTheHolyGround.Q00368_TrespassingIntoTheHolyGround;
 // import quests.Q00362_BardsMandolin.Q00362_BardsMandolin;
 // import quests.Q00363_SorrowfulSoundOfFlute.Q00363_SorrowfulSoundOfFlute;
 // import quests.Q00364_JovialAccordion.Q00364_JovialAccordion;
@@ -254,6 +274,7 @@ import quests.Q00360_PlunderTheirSupplies.Q00360_PlunderTheirSupplies;
 // import quests.Q00368_TrespassingIntoTheHolyGround.Q00368_TrespassingIntoTheHolyGround;
 import quests.Q00369_CollectorOfJewels.Q00369_CollectorOfJewels;
 import quests.Q00370_AnElderSowsSeeds.Q00370_AnElderSowsSeeds;
+import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
 // import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
 import quests.Q00372_LegacyOfInsolence.Q00372_LegacyOfInsolence;
 import quests.Q00373_SupplierOfReagents.Q00373_SupplierOfReagents;
@@ -603,42 +624,42 @@ public class QuestMasterHandler
 		Q00327_RecoverTheFarmland.class,
 		Q00328_SenseForBusiness.class,
 		Q00329_CuriosityOfADwarf.class,
-		// Q00330_AdeptOfTaste.class,
+		Q00330_AdeptOfTaste.class, // Added, need html work and test.
 		Q00331_ArrowOfVengeance.class,
 		Q00333_HuntOfTheBlackLion.class,
-		// Q00334_TheWishingPotion.class,
-		// Q00335_TheSongOfTheHunter.class,
+		Q00334_TheWishingPotion.class, // Added, need html work and test.
+		Q00335_TheSongOfTheHunter.class, // Added, need html work and test.
 		Q00336_CoinsOfMagic.class,
 		Q00337_AudienceWithTheLandDragon.class,
-		// Q00338_AlligatorHunter.class,
-		// Q00340_SubjugationOfLizardmen.class,
-		// Q00341_HuntingForWildBeasts.class,
-		// Q00343_UnderTheShadowOfTheIvoryTower.class,
+		Q00338_AlligatorHunter.class, // Added, need html work and test.
+		Q00340_SubjugationOfLizardmen.class, // Added, need html work and test.
+		Q00341_HuntingForWildBeasts.class, // Added, need html work and test.
+		Q00343_UnderTheShadowOfTheIvoryTower.class, // Added, need html work and test.
 		Q00344_1000YearsTheEndOfLamentation.class,
-		// Q00345_MethodToRaiseTheDead.class,
-		// Q00347_GoGetTheCalculator.class,
+		Q00345_MethodToRaiseTheDead.class, // Added, need html work and test.
+		Q00347_GoGetTheCalculator.class, // Added, need html work and test.
 		Q00348_AnArrogantSearch.class,
 		Q00350_EnhanceYourWeapon.class,
-		// Q00351_BlackSwan.class,
-		// Q00352_HelpRoodRaiseANewPet.class,
-		// Q00353_PowerOfDarkness.class,
+		Q00351_BlackSwan.class, // Added, need html work and test.
+		Q00352_HelpRoodRaiseANewPet.class, // Added, need html work and test.
+		Q00353_PowerOfDarkness.class, // Added, need html work and test.
 		Q00354_ConquestOfAlligatorIsland.class,
 		Q00355_FamilyHonor.class,
 		Q00356_DigUpTheSeaOfSpores.class,
-		// Q00357_WarehouseKeepersAmbition.class,
+		Q00357_WarehouseKeepersAmbition.class, // Added, need html work and test.
 		Q00358_IllegitimateChildOfTheGoddess.class,
 		Q00359_ForASleeplessDeadman.class,
 		Q00360_PlunderTheirSupplies.class,
-		// Q00362_BardsMandolin.class,
-		// Q00363_SorrowfulSoundOfFlute.class,
-		// Q00364_JovialAccordion.class,
-		// Q00365_DevilsLegacy.class,
-		// Q00366_SilverHairedShaman.class,
-		// Q00367_ElectrifyingRecharge.class,
-		// Q00368_TrespassingIntoTheHolyGround.class,
+		Q00362_BardsMandolin.class, // Added, need html work and test.
+		Q00363_SorrowfulSoundOfFlute.class, // Added, need html work and test.
+		Q00364_JovialAccordion.class, // Added, need html work and test.
+		Q00365_DevilsLegacy.class, // Added, need html work and test.
+		Q00366_SilverHairedShaman.class, // Added, need html work and test.
+		Q00367_ElectrifyingRecharge.class, // Added, need html work and test.
+		Q00368_TrespassingIntoTheHolyGround.class, // Added, need html work and test.
 		Q00369_CollectorOfJewels.class,
 		Q00370_AnElderSowsSeeds.class,
-		// Q00371_ShrieksOfGhosts.class,
+		Q00371_ShrieksOfGhosts.class, // Added, need html work and test.
 		Q00372_LegacyOfInsolence.class,
 		Q00373_SupplierOfReagents.class,
 		Q00374_WhisperOfDreamsPart1.class,
