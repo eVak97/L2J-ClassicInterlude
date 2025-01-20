@@ -292,6 +292,8 @@ import quests.Q00419_GetAPet.Q00419_GetAPet;
 // import quests.Q00419_GetAPet.Q00419_GetAPet;
 import quests.Q00420_LittleWing.Q00420_LittleWing;
 import quests.Q00421_LittleWingsBigAdventure.Q00421_LittleWingsBigAdventure;
+import quests.Q00422_RepentYourSins.Q00422_RepentYourSins;
+import quests.Q00426_QuestForFishingShot.Q00426_QuestForFishingShot;
 // import quests.Q00422_RepentYourSins.Q00422_RepentYourSins;
 // import quests.Q00426_QuestForFishingShot.Q00426_QuestForFishingShot;
 import quests.Q00431_WeddingMarch.Q00431_WeddingMarch;
@@ -667,8 +669,8 @@ public class QuestMasterHandler
 		Q00419_GetAPet.class,
 		Q00420_LittleWing.class,
 		Q00421_LittleWingsBigAdventure.class,
-		// Q00422_RepentYourSins.class,
-		// Q00426_QuestForFishingShot.class,
+		Q00422_RepentYourSins.class, // Added, need html work and test.
+		Q00426_QuestForFishingShot.class, // Added, need html work and test.
 		Q00431_WeddingMarch.class,
 		Q00432_BirthdayPartySong.class,
 		Q00501_ProofOfClanAlliance.class,
