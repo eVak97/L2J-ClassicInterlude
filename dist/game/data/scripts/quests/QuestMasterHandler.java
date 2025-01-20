@@ -300,6 +300,13 @@ import quests.Q00501_ProofOfClanAlliance.Q00501_ProofOfClanAlliance;
 import quests.Q00503_PursuitOfClanAmbition.Q00503_PursuitOfClanAmbition;
 // import quests.Q00504_CompetitionForTheBanditStronghold.Q00504_CompetitionForTheBanditStronghold;
 import quests.Q00505_BloodOffering.Q00505_BloodOffering;
+import quests.Q00508_AClansReputation.Q00508_AClansReputation;
+import quests.Q00509_AClansFame.Q00509_AClansFame;
+import quests.Q00510_AClansPrestige.Q00510_AClansPrestige;
+import quests.Q00601_WatchingEyes.Q00601_WatchingEyes;
+import quests.Q00602_ShadowOfLight.Q00602_ShadowOfLight;
+import quests.Q00603_DaimonTheWhiteEyedPart1.Q00603_DaimonTheWhiteEyedPart1;
+import quests.Q00604_DaimonTheWhiteEyedPart2.Q00604_DaimonTheWhiteEyedPart2;
 // import quests.Q00508_AClansReputation.Q00508_AClansReputation;
 // import quests.Q00509_AClansFame.Q00509_AClansFame;
 // import quests.Q00510_AClansPrestige.Q00510_AClansPrestige;
@@ -668,13 +675,13 @@ public class QuestMasterHandler
 		Q00503_PursuitOfClanAmbition.class,
 		// Q00504_CompetitionForTheBanditStronghold.class,
 		Q00505_BloodOffering.class,
-		// Q00508_AClansReputation.class,
-		// Q00509_AClansFame.class,
-		// Q00510_AClansPrestige.class,
-		// Q00601_WatchingEyes.class,
-		// Q00602_ShadowOfLight.class,
-		// Q00603_DaimonTheWhiteEyedPart1.class,
-		// Q00604_DaimonTheWhiteEyedPart2.class,
+		Q00508_AClansReputation.class, // Added, need html work and test.
+		Q00509_AClansFame.class, // Added, need html work and test.
+		Q00510_AClansPrestige.class, // Added, need html work and test.
+		Q00601_WatchingEyes.class, // Added, need html work and test.
+		Q00602_ShadowOfLight.class, // Added, need html work and test.
+		Q00603_DaimonTheWhiteEyedPart1.class, // Added, need html work and test.
+		Q00604_DaimonTheWhiteEyedPart2.class, // Added, need html work and test.
 		Q00605_AllianceWithKetraOrcs.class,
 		Q00606_BattleAgainstVarkaSilenos.class,
 		Q00607_ProveYourCourageKetra.class,
