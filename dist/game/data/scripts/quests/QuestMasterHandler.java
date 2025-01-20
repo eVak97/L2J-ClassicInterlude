@@ -331,6 +331,10 @@ import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
 // import quests.Q00626_ADarkTwilight.Q00626_ADarkTwilight;
 // import quests.Q00627_HeartInSearchOfPower.Q00627_HeartInSearchOfPower;
 import quests.Q00628_HuntGoldenRam.Q00628_HuntGoldenRam;
+import quests.Q00629_CleanUpTheSwampOfScreams.Q00629_CleanUpTheSwampOfScreams;
+import quests.Q00631_DeliciousTopChoiceMeat.Q00631_DeliciousTopChoiceMeat;
+import quests.Q00632_NecromancersRequest.Q00632_NecromancersRequest;
+import quests.Q00633_InTheForgottenVillage.Q00633_InTheForgottenVillage;
 // import quests.Q00629_CleanUpTheSwampOfScreams.Q00629_CleanUpTheSwampOfScreams;
 // import quests.Q00631_DeliciousTopChoiceMeat.Q00631_DeliciousTopChoiceMeat;
 // import quests.Q00632_NecromancersRequest.Q00632_NecromancersRequest;
@@ -690,22 +694,22 @@ public class QuestMasterHandler
 		// Q00626_ADarkTwilight.class,
 		// Q00627_HeartInSearchOfPower.class,
 		Q00628_HuntGoldenRam.class,
-		// Q00629_CleanUpTheSwampOfScreams.class,
-		// Q00631_DeliciousTopChoiceMeat.class,
-		// Q00632_NecromancersRequest.class,
-		// Q00633_InTheForgottenVillage.class,
+		Q00629_CleanUpTheSwampOfScreams.class, // Added, need html work and test.
+		Q00631_DeliciousTopChoiceMeat.class, // Added, need html work and test.
+		Q00632_NecromancersRequest.class, // Added, need html work and test.
+		Q00633_InTheForgottenVillage.class, // Added, need html work and test.
 		Q00634_InSearchOfFragmentsOfDimension.class,
 		Q00635_IntoTheDimensionalRift.class,
 		Q00636_TruthBeyond.class,
-		Q00637_ThroughOnceMore.class,
+		Q00637_ThroughOnceMore.class, // Added, need html work and test.
 		Q00638_SeekersOfTheHolyGrail.class,
 		Q00639_GuardiansOfTheHolyGrail.class,
 		Q00640_TheZeroHour.class,
 		Q00641_AttackSailren.class,
 		Q00642_APowerfulPrimevalCreature.class,
 		Q00643_RiseAndFallOfTheElrokiTribe.class,
-		Q00644_GraveRobberAnnihilation.class,
-		Q00645_GhostsOfBatur.class,
+		Q00644_GraveRobberAnnihilation.class, // Added, need html work and test.
+		Q00645_GhostsOfBatur.class, // Added, need html work and test.
 		// Q00646_SignsOfRevolt.class,
 		// Q00647_InfluxOfMachines.class,
 		// Q00648_AnIceMerchantsDream.class,
