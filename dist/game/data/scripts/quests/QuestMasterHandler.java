@@ -19,6 +19,16 @@ package quests;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import quests.Q00001_LettersOfLove.Q00001_LettersOfLove;
+import quests.Q00002_WhatWomenWant.Q00002_WhatWomenWant;
+import quests.Q00003_WillTheSealBeBroken.Q00003_WillTheSealBeBroken;
+import quests.Q00004_LongLiveThePaagrioLord.Q00004_LongLiveThePaagrioLord;
+import quests.Q00005_MinersFavor.Q00005_MinersFavor;
+import quests.Q00006_StepIntoTheFuture.Q00006_StepIntoTheFuture;
+import quests.Q00007_ATripBegins.Q00007_ATripBegins;
+import quests.Q00008_AnAdventureBegins.Q00008_AnAdventureBegins;
+import quests.Q00009_IntoTheCityOfHumans.Q00009_IntoTheCityOfHumans;
+import quests.Q00010_IntoTheWorld.Q00010_IntoTheWorld;
 // import quests.Q00001_LettersOfLove.Q00001_LettersOfLove;
 // import quests.Q00002_WhatWomenWant.Q00002_WhatWomenWant;
 // import quests.Q00003_WillTheSealBeBroken.Q00003_WillTheSealBeBroken;
@@ -448,16 +458,16 @@ public class QuestMasterHandler
 	
 	private static final Class<?>[] QUESTS =
 	{
-		// Q00001_LettersOfLove.class,
-		// Q00002_WhatWomenWant.class,
-		// Q00003_WillTheSealBeBroken.class,
-		// Q00004_LongLiveThePaagrioLord.class,
-		// Q00005_MinersFavor.class,
-		// Q00006_StepIntoTheFuture.class,
-		// Q00007_ATripBegins.class,
-		// Q00008_AnAdventureBegins.class,
-		// Q00009_IntoTheCityOfHumans.class,
-		// Q00010_IntoTheWorld.class,
+		Q00001_LettersOfLove.class, // Added, need html work and test.
+		Q00002_WhatWomenWant.class, // Added, need html work and test.
+		Q00003_WillTheSealBeBroken.class, // Added, need html work and test.
+		Q00004_LongLiveThePaagrioLord.class, // Added, need html work and test.
+		Q00005_MinersFavor.class, // Added, need html work and test.
+		Q00006_StepIntoTheFuture.class, // Added, need html work and test.
+		Q00007_ATripBegins.class, // Added, need html work and test.
+		Q00008_AnAdventureBegins.class, // Added, need html work and test.
+		Q00009_IntoTheCityOfHumans.class, // Added, need html work and test.
+		Q00010_IntoTheWorld.class, // Added, need html work and test.
 		Q00011_SecretMeetingWithKetraOrcs.class,
 		Q00012_SecretMeetingWithVarkaSilenos.class,
 		Q00013_ParcelDelivery.class,
