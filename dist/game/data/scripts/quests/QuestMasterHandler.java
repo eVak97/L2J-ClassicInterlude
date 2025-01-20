@@ -323,6 +323,7 @@ import quests.Q00617_GatherTheFlames.Q00617_GatherTheFlames;
 import quests.Q00618_IntoTheFlame.Q00618_IntoTheFlame;
 import quests.Q00619_RelicsOfTheOldEmpire.Q00619_RelicsOfTheOldEmpire;
 import quests.Q00620_FourGoblets.Q00620_FourGoblets;
+import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 // import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 import quests.Q00622_SpecialtyLiquorDelivery.Q00622_SpecialtyLiquorDelivery;
 import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
@@ -690,7 +691,7 @@ public class QuestMasterHandler
 		Q00618_IntoTheFlame.class,
 		Q00619_RelicsOfTheOldEmpire.class,
 		Q00620_FourGoblets.class,
-		// Q00621_EggDelivery.class,
+		Q00621_EggDelivery.class, // Added, need html work and test.
 		Q00622_SpecialtyLiquorDelivery.class,
 		Q00623_TheFinestFood.class,
 		Q00624_TheFinestIngredientsPart1.class, // Added, need html work and test.
