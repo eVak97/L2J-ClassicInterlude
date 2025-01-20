@@ -338,6 +338,7 @@ import quests.Q00628_HuntGoldenRam.Q00628_HuntGoldenRam;
 import quests.Q00634_InSearchOfFragmentsOfDimension.Q00634_InSearchOfFragmentsOfDimension;
 import quests.Q00635_IntoTheDimensionalRift.Q00635_IntoTheDimensionalRift;
 import quests.Q00636_TruthBeyond.Q00636_TruthBeyond;
+import quests.Q00637_ThroughOnceMore.Q00637_ThroughOnceMore;
 // import quests.Q00637_ThroughOnceMore.Q00637_ThroughOnceMore;
 import quests.Q00638_SeekersOfTheHolyGrail.Q00638_SeekersOfTheHolyGrail;
 import quests.Q00639_GuardiansOfTheHolyGrail.Q00639_GuardiansOfTheHolyGrail;
@@ -696,7 +697,7 @@ public class QuestMasterHandler
 		Q00634_InSearchOfFragmentsOfDimension.class,
 		Q00635_IntoTheDimensionalRift.class,
 		Q00636_TruthBeyond.class,
-		// Q00637_ThroughOnceMore.class,
+		Q00637_ThroughOnceMore.class,
 		Q00638_SeekersOfTheHolyGrail.class,
 		Q00639_GuardiansOfTheHolyGrail.class,
 		Q00640_TheZeroHour.class,
