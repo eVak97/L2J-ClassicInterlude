@@ -261,6 +261,9 @@ import quests.Q00374_WhisperOfDreamsPart1.Q00374_WhisperOfDreamsPart1;
 import quests.Q00375_WhisperOfDreamsPart2.Q00375_WhisperOfDreamsPart2;
 import quests.Q00376_ExplorationOfTheGiantsCavePart1.Q00376_ExplorationOfTheGiantsCavePart1;
 import quests.Q00377_ExplorationOfTheGiantsCavePart2.Q00377_ExplorationOfTheGiantsCavePart2;
+import quests.Q00378_GrandFeast.Q00378_GrandFeast;
+import quests.Q00379_FantasyWine.Q00379_FantasyWine;
+import quests.Q00380_BringOutTheFlavorOfIngredients.Q00380_BringOutTheFlavorOfIngredients;
 // import quests.Q00378_GrandFeast.Q00378_GrandFeast;
 // import quests.Q00379_FantasyWine.Q00379_FantasyWine;
 // import quests.Q00380_BringOutTheFlavorOfIngredients.Q00380_BringOutTheFlavorOfIngredients;
@@ -639,14 +642,14 @@ public class QuestMasterHandler
 		Q00375_WhisperOfDreamsPart2.class,
 		Q00376_ExplorationOfTheGiantsCavePart1.class,
 		Q00377_ExplorationOfTheGiantsCavePart2.class,
-		// Q00378_GrandFeast.class,
-		// Q00379_FantasyWine.class,
-		// Q00380_BringOutTheFlavorOfIngredients.class,
+		Q00378_GrandFeast.class, // Added, need html work and test.
+		Q00379_FantasyWine.class, // Added, need html work and test.
+		Q00380_BringOutTheFlavorOfIngredients.class, // Added, need html work and test.
 		Q00381_LetsBecomeARoyalMember.class,
 		Q00382_KailsMagicCoin.class,
-		// Q00383_TreasureHunt.class,
-		// Q00384_WarehouseKeepersPastime.class,
-		// Q00385_YokeOfThePast.class,
+		// Q00383_TreasureHunt.class, // Added, need html work and test.
+		// Q00384_WarehouseKeepersPastime.class, // Added, need html work and test.
+		// Q00385_YokeOfThePast.class, // Added, need html work and test.
 		Q00386_StolenDignity.class,
 		Q00401_PathOfTheWarrior.class,
 		Q00402_PathOfTheHumanKnight.class,
