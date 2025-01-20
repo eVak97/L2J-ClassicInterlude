@@ -93,7 +93,7 @@ public class Config
 	
 	public static final String FORTSIEGE_CONFIG_FILE = "./config/FortSiege.ini";
 	public static final String SIEGE_CONFIG_FILE = "./config/Siege.ini";
-	
+	private static final String CH_SIEGE_CONFIG_FILE = "./config/ConquerableHallSiege.ini";
 	private static final String ATTENDANCE_CONFIG_FILE = "./config/AttendanceRewards.ini";
 	private static final String ATTRIBUTE_SYSTEM_FILE = "./config/AttributeSystem.ini";
 	private static final String CHARACTER_CONFIG_FILE = "./config/Character.ini";
@@ -987,6 +987,14 @@ public class Config
 	
 	// chatfilter
 	public static List<String> FILTER_LIST;
+	
+	// Conquerable Halls Settings
+	public static int CHS_CLAN_MINLEVEL;
+	public static int CHS_MAX_ATTACKERS;
+	public static int CHS_MAX_FLAGS_PER_CLAN;
+	public static boolean CHS_ENABLE_FAME;
+	public static int CHS_FAME_AMOUNT;
+	public static int CHS_FAME_FREQUENCY;
 	
 	// --------------------------------------------------
 	// GeoEngine
@@ -2057,6 +2065,14 @@ public class Config
 			// Load GameAssistant config file (if exists)
 			final PropertiesParser gameAssistantConfig = new PropertiesParser(GAME_ASSISTANT_CONFIG_FILE);
 			GAME_ASSISTANT_ENABLED = gameAssistantConfig.getBoolean("GameAssistantEnabled", false);
+			
+			final PropertiesParser clanHallSiegeConfig = new PropertiesParser(CH_SIEGE_CONFIG_FILE);
+			CHS_MAX_ATTACKERS = clanHallSiegeConfig.getInt("MaxAttackers", 500);
+			CHS_CLAN_MINLEVEL = clanHallSiegeConfig.getInt("MinClanLevel", 4);
+			CHS_MAX_FLAGS_PER_CLAN = clanHallSiegeConfig.getInt("MaxFlagsPerClan", 1);
+			CHS_ENABLE_FAME = clanHallSiegeConfig.getBoolean("EnableFame", false);
+			CHS_FAME_AMOUNT = clanHallSiegeConfig.getInt("FameAmount", 0);
+			CHS_FAME_FREQUENCY = clanHallSiegeConfig.getInt("FameFrequency", 0);
 			
 			// Load General config file (if exists)
 			final PropertiesParser generalConfig = new PropertiesParser(GENERAL_CONFIG_FILE);
