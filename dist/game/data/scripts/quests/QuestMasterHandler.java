@@ -196,6 +196,7 @@ import quests.Q00274_SkirmishWithTheWerewolves.Q00274_SkirmishWithTheWerewolves;
 import quests.Q00275_DarkWingedSpies.Q00275_DarkWingedSpies;
 import quests.Q00276_TotemOfTheHestui.Q00276_TotemOfTheHestui;
 import quests.Q00277_GatekeepersOffering.Q00277_GatekeepersOffering;
+import quests.Q00291_RevengeOfTheRedbonnet.Q00291_RevengeOfTheRedbonnet;
 // import quests.Q00291_RevengeOfTheRedbonnet.Q00291_RevengeOfTheRedbonnet;
 import quests.Q00292_BrigandsSweep.Q00292_BrigandsSweep;
 import quests.Q00293_TheHiddenVeins.Q00293_TheHiddenVeins;
@@ -203,6 +204,8 @@ import quests.Q00294_CovertBusiness.Q00294_CovertBusiness;
 import quests.Q00295_DreamingOfTheSkies.Q00295_DreamingOfTheSkies;
 import quests.Q00296_TarantulasSpiderSilk.Q00296_TarantulasSpiderSilk;
 import quests.Q00297_GatekeepersFavor.Q00297_GatekeepersFavor;
+import quests.Q00298_LizardmensConspiracy.Q00298_LizardmensConspiracy;
+import quests.Q00299_GatherIngredientsForPie.Q00299_GatherIngredientsForPie;
 // import quests.Q00298_LizardmensConspiracy.Q00298_LizardmensConspiracy;
 // import quests.Q00299_GatherIngredientsForPie.Q00299_GatherIngredientsForPie;
 import quests.Q00300_HuntingLetoLizardman.Q00300_HuntingLetoLizardman;
@@ -601,15 +604,15 @@ public class QuestMasterHandler
 		Q00275_DarkWingedSpies.class,
 		Q00276_TotemOfTheHestui.class,
 		Q00277_GatekeepersOffering.class,
-		// Q00291_RevengeOfTheRedbonnet.class,
+		Q00291_RevengeOfTheRedbonnet.class, // Added, need html work and test.
 		Q00292_BrigandsSweep.class,
 		Q00293_TheHiddenVeins.class, // Redone, need update html and test.
 		Q00294_CovertBusiness.class,
 		Q00295_DreamingOfTheSkies.class,
 		Q00296_TarantulasSpiderSilk.class,
 		Q00297_GatekeepersFavor.class,
-		// Q00298_LizardmensConspiracy.class,
-		// Q00299_GatherIngredientsForPie.class,
+		Q00298_LizardmensConspiracy.class, // Added, need html work and test.
+		Q00299_GatherIngredientsForPie.class, // Added, need html work and test.
 		Q00300_HuntingLetoLizardman.class,
 		Q00303_CollectArrowheads.class,
 		Q00306_CrystalOfFireAndIce.class,
