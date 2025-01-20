@@ -16,938 +16,945 @@
  */
 package quests.Q00221_TestimonyOfProsperity;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.CategoryType;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Testimony Of Prosperity (221)
- * @author ivantotov
- */
 public class Q00221_TestimonyOfProsperity extends Quest
 {
 	// NPCs
-	private static final int WAREHOUSE_KEEPER_WILFORD = 30005;
-	private static final int WAREHOUSE_KEEPER_PARMAN = 30104;
+	private static final int WILFORD = 30005;
+	private static final int PARMAN = 30104;
 	private static final int LILITH = 30368;
-	private static final int GUARD_BRIGHT = 30466;
-	private static final int TRADER_SHARI = 30517;
-	private static final int TRADER_MION = 30519;
-	private static final int IRON_GATES_LOCKIRIN = 30531;
-	private static final int GOLDEN_WHEELS_SPIRON = 30532;
-	private static final int SILVER_SCALES_BALANKI = 30533;
-	private static final int BRONZE_KEYS_KEEF = 30534;
-	private static final int GRAY_PILLAR_MEMBER_FILAUR = 30535;
-	private static final int BLACK_ANVILS_ARIN = 30536;
+	private static final int BRIGHT = 30466;
+	private static final int SHARI = 30517;
+	private static final int MION = 30519;
+	private static final int LOCKIRIN = 30531;
+	private static final int SPIRON = 30532;
+	private static final int BALANKI = 30533;
+	private static final int KEEF = 30534;
+	private static final int FILAUR = 30535;
+	private static final int ARIN = 30536;
 	private static final int MARYSE_REDBONNET = 30553;
-	private static final int MINER_BOLTER = 30554;
-	private static final int CARRIER_TOROCCO = 30555;
-	private static final int MASTER_TOMA = 30556;
+	private static final int BOLTER = 30554;
+	private static final int TOROCCO = 30555;
+	private static final int TOMA = 30556;
 	private static final int PIOTUR = 30597;
 	private static final int EMILY = 30620;
-	private static final int MAESTRO_NIKOLA = 30621;
+	private static final int NIKOLA = 30621;
 	private static final int BOX_OF_TITAN = 30622;
-	// Items
-	private static final int ADENA = 57;
-	private static final int ANIMAL_SKIN = 1867;
-	private static final int RECIPE_TITAN_KEY = 3023;
-	private static final int KEY_OF_TITAN = 3030;
-	private static final int RING_OF_TESTIMONY_1ST = 3239;
-	private static final int RING_OF_TESTIMONY_2ND = 3240;
-	private static final int OLD_ACCOUNT_BOOK = 3241;
-	private static final int BLESSED_SEED = 3242;
-	private static final int EMILYS_RECIPE = 3243;
-	private static final int LILITHS_ELVEN_WAFER = 3244;
-	private static final int MAPHR_TABLET_FRAGMENT = 3245;
-	private static final int COLLECTION_LICENSE = 3246;
-	private static final int LOCKIRINS_1ST_NOTICE = 3247;
-	private static final int LOCKIRINS_2ND_NOTICE = 3248;
-	private static final int LOCKIRINS_3RD_NOTICE = 3249;
-	private static final int LOCKIRINS_4TH_NOTICE = 3250;
-	private static final int LOCKIRINS_5TH_NOTICE = 3251;
-	private static final int CONTRIBUTION_OF_SHARI = 3252;
-	private static final int CONTRIBUTION_OF_MION = 3253;
-	private static final int CONTRIBUTION_OF_MARYSE = 3254;
-	private static final int MARYSES_REQUEST = 3255;
-	private static final int CONTRIBUTION_OF_TOMA = 3256;
-	private static final int RECEIPT_OF_BOLTER = 3257;
-	private static final int RECEIPT_OF_CONTRIBUTION_1ST = 3258;
-	private static final int RECEIPT_OF_CONTRIBUTION_2ND = 3259;
-	private static final int RECEIPT_OF_CONTRIBUTION_3RD = 3260;
-	private static final int RECEIPT_OF_CONTRIBUTION_4TH = 3261;
-	private static final int RECEIPT_OF_CONTRIBUTION_5TH = 3262;
-	private static final int PROCURATION_OF_TOROCCO = 3263;
-	private static final int BRIGHTS_LIST = 3264;
-	private static final int MANDRAGORA_PETAL = 3265;
-	private static final int CRIMSON_MOSS = 3266;
-	private static final int MANDRAGORA_BOUGUET = 3267;
-	private static final int PARMANS_INSTRUCTIONS = 3268;
-	private static final int PARMANS_LETTER = 3269;
-	private static final int CLAY_DOUGH = 3270;
-	private static final int PATTERN_OF_KEYHOLE = 3271;
-	private static final int NIKOLAS_LIST = 3272;
-	private static final int STAKATO_SHELL = 3273;
-	private static final int TOAD_LORD_SAC = 3274;
-	private static final int MARSH_SPIDER_THORN = 3275;
-	private static final int CRYSTAL_BROOCH = 3428;
-	// Reward
-	private static final int MARK_OF_PROSPERITY = 3238;
-	// Monster
-	private static final int MANDRAGORA_SPROUT1 = 20154;
+	// Monsters
+	private static final int MANDRAGORA_SPROUT_1 = 20223;
+	private static final int MANDRAGORA_SPROUT_2 = 20154;
 	private static final int MANDRAGORA_SAPLING = 20155;
 	private static final int MANDRAGORA_BLOSSOM = 20156;
 	private static final int MARSH_STAKATO = 20157;
-	private static final int MANDRAGORA_SPROUT2 = 20223;
 	private static final int GIANT_CRIMSON_ANT = 20228;
 	private static final int MARSH_STAKATO_WORKER = 20230;
 	private static final int TOAD_LORD = 20231;
 	private static final int MARSH_STAKATO_SOLDIER = 20232;
 	private static final int MARSH_SPIDER = 20233;
 	private static final int MARSH_STAKATO_DRONE = 20234;
-	// Misc
-	private static final int MIN_LEVEL = 37;
+	// Items
+	private static final int ADENA = 57;
+	private static final int ANIMAL_SKIN = 1867;
+	private static final int RECIPE_TITAN_KEY = 3023;
+	private static final int KEY_OF_TITAN = 3030;
+	private static final int RING_OF_TESTIMONY_1 = 3239;
+	private static final int RING_OF_TESTIMONY_2 = 3240;
+	private static final int OLD_ACCOUNT_BOOK = 3241;
+	private static final int BLESSED_SEED = 3242;
+	private static final int EMILY_RECIPE = 3243;
+	private static final int LILITH_ELVEN_WAFER = 3244;
+	private static final int MAPHR_TABLET_FRAGMENT = 3245;
+	private static final int COLLECTION_LICENSE = 3246;
+	private static final int LOCKIRIN_NOTICE_1 = 3247;
+	private static final int LOCKIRIN_NOTICE_2 = 3248;
+	private static final int LOCKIRIN_NOTICE_3 = 3249;
+	private static final int LOCKIRIN_NOTICE_4 = 3250;
+	private static final int LOCKIRIN_NOTICE_5 = 3251;
+	private static final int CONTRIBUTION_OF_SHARI = 3252;
+	private static final int CONTRIBUTION_OF_MION = 3253;
+	private static final int CONTRIBUTION_OF_MARYSE = 3254;
+	private static final int MARYSE_REQUEST = 3255;
+	private static final int CONTRIBUTION_OF_TOMA = 3256;
+	private static final int RECEIPT_OF_BOLTER = 3257;
+	private static final int RECEIPT_OF_CONTRIBUTION_1 = 3258;
+	private static final int RECEIPT_OF_CONTRIBUTION_2 = 3259;
+	private static final int RECEIPT_OF_CONTRIBUTION_3 = 3260;
+	private static final int RECEIPT_OF_CONTRIBUTION_4 = 3261;
+	private static final int RECEIPT_OF_CONTRIBUTION_5 = 3262;
+	private static final int PROCURATION_OF_TOROCCO = 3263;
+	private static final int BRIGHT_LIST = 3264;
+	private static final int MANDRAGORA_PETAL = 3265;
+	private static final int CRIMSON_MOSS = 3266;
+	private static final int MANDRAGORA_BOUQUET = 3267;
+	private static final int PARMAN_INSTRUCTIONS = 3268;
+	private static final int PARMAN_LETTER = 3269;
+	private static final int CLAY_DOUGH = 3270;
+	private static final int PATTERN_OF_KEYHOLE = 3271;
+	private static final int NIKOLAS_LIST = 3272;
+	private static final int STAKATO_SHELL = 3273;
+	private static final int TOAD_LORD_SAC = 3274;
+	private static final int SPIDER_THORN = 3275;
+	private static final int CRYSTAL_BROOCH = 3428;
+	// Rewards
+	private static final int MARK_OF_PROSPERITY = 3238;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00221_TestimonyOfProsperity()
 	{
 		super(221);
-		addStartNpc(WAREHOUSE_KEEPER_PARMAN);
-		addTalkId(WAREHOUSE_KEEPER_PARMAN, WAREHOUSE_KEEPER_WILFORD, LILITH, GUARD_BRIGHT, TRADER_SHARI, TRADER_MION, IRON_GATES_LOCKIRIN, GOLDEN_WHEELS_SPIRON, SILVER_SCALES_BALANKI, BRONZE_KEYS_KEEF, GRAY_PILLAR_MEMBER_FILAUR, BLACK_ANVILS_ARIN, MARYSE_REDBONNET, MINER_BOLTER, CARRIER_TOROCCO, MASTER_TOMA, PIOTUR, EMILY, MAESTRO_NIKOLA, BOX_OF_TITAN);
-		addKillId(MANDRAGORA_SPROUT1, MANDRAGORA_SAPLING, MANDRAGORA_BLOSSOM, MARSH_STAKATO, MANDRAGORA_SPROUT2, GIANT_CRIMSON_ANT, MARSH_STAKATO_WORKER, TOAD_LORD, MARSH_STAKATO_SOLDIER, MARSH_SPIDER, MARSH_STAKATO_DRONE);
-		registerQuestItems(RECIPE_TITAN_KEY, KEY_OF_TITAN, RING_OF_TESTIMONY_1ST, RING_OF_TESTIMONY_2ND, OLD_ACCOUNT_BOOK, BLESSED_SEED, EMILYS_RECIPE, LILITHS_ELVEN_WAFER, MAPHR_TABLET_FRAGMENT, COLLECTION_LICENSE, LOCKIRINS_1ST_NOTICE, LOCKIRINS_2ND_NOTICE, LOCKIRINS_3RD_NOTICE, LOCKIRINS_4TH_NOTICE, LOCKIRINS_5TH_NOTICE, CONTRIBUTION_OF_SHARI, CONTRIBUTION_OF_MION, CONTRIBUTION_OF_MARYSE, MARYSES_REQUEST, CONTRIBUTION_OF_TOMA, RECEIPT_OF_BOLTER, RECEIPT_OF_CONTRIBUTION_1ST, RECEIPT_OF_CONTRIBUTION_2ND, RECEIPT_OF_CONTRIBUTION_3RD, RECEIPT_OF_CONTRIBUTION_4TH, RECEIPT_OF_CONTRIBUTION_5TH, PROCURATION_OF_TOROCCO, BRIGHTS_LIST, MANDRAGORA_PETAL, CRIMSON_MOSS, MANDRAGORA_BOUGUET, PARMANS_INSTRUCTIONS, PARMANS_LETTER, CLAY_DOUGH, PATTERN_OF_KEYHOLE, NIKOLAS_LIST, STAKATO_SHELL, TOAD_LORD_SAC, MARSH_SPIDER_THORN, CRYSTAL_BROOCH);
+		registerQuestItems(RING_OF_TESTIMONY_1, RING_OF_TESTIMONY_2, OLD_ACCOUNT_BOOK, BLESSED_SEED, EMILY_RECIPE, LILITH_ELVEN_WAFER, MAPHR_TABLET_FRAGMENT, COLLECTION_LICENSE, LOCKIRIN_NOTICE_1, LOCKIRIN_NOTICE_2, LOCKIRIN_NOTICE_3, LOCKIRIN_NOTICE_4, LOCKIRIN_NOTICE_5, CONTRIBUTION_OF_SHARI, CONTRIBUTION_OF_MION, CONTRIBUTION_OF_MARYSE, MARYSE_REQUEST, CONTRIBUTION_OF_TOMA, RECEIPT_OF_BOLTER, RECEIPT_OF_CONTRIBUTION_1, RECEIPT_OF_CONTRIBUTION_2, RECEIPT_OF_CONTRIBUTION_3, RECEIPT_OF_CONTRIBUTION_4, RECEIPT_OF_CONTRIBUTION_5, PROCURATION_OF_TOROCCO, BRIGHT_LIST, MANDRAGORA_PETAL, CRIMSON_MOSS, MANDRAGORA_BOUQUET, PARMAN_INSTRUCTIONS, PARMAN_LETTER, CLAY_DOUGH, PATTERN_OF_KEYHOLE, NIKOLAS_LIST, STAKATO_SHELL, TOAD_LORD_SAC, SPIDER_THORN, CRYSTAL_BROOCH);
+		addStartNpc(PARMAN);
+		addTalkId(WILFORD, PARMAN, LILITH, BRIGHT, SHARI, MION, LOCKIRIN, SPIRON, BALANKI, KEEF, FILAUR, ARIN, MARYSE_REDBONNET, BOLTER, TOROCCO, TOMA, PIOTUR, EMILY, NIKOLA, BOX_OF_TITAN);
+		addKillId(MANDRAGORA_SPROUT_1, MANDRAGORA_SAPLING, MANDRAGORA_BLOSSOM, MARSH_STAKATO, MANDRAGORA_SPROUT_2, GIANT_CRIMSON_ANT, MARSH_STAKATO_WORKER, TOAD_LORD, MARSH_STAKATO_SOLDIER, MARSH_SPIDER, MARSH_STAKATO_DRONE);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30104-04.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, RING_OF_TESTIMONY_1, 1);
+				if (!player.getVariables().getBoolean("secondClassChange37", false))
 				{
-					qs.startQuest();
-					if (!hasQuestItems(player, RING_OF_TESTIMONY_1ST))
-					{
-						giveItems(player, RING_OF_TESTIMONY_1ST, 1);
-					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					htmltext = "30104-04e.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_37.get(player.getRace().ordinal()));
+					player.getVariables().set("secondClassChange37", true);
 				}
 				break;
 			}
-			case "30104-08.html":
+			case "30104-07.htm":
 			{
-				takeItems(player, RING_OF_TESTIMONY_1ST, 1);
-				giveItems(player, RING_OF_TESTIMONY_2ND, 1);
-				takeItems(player, OLD_ACCOUNT_BOOK, 1);
 				takeItems(player, BLESSED_SEED, 1);
-				takeItems(player, EMILYS_RECIPE, 1);
-				takeItems(player, LILITHS_ELVEN_WAFER, 1);
-				giveItems(player, PARMANS_LETTER, 1);
-				qs.setCond(4, true);
-				htmltext = event;
-				break;
-			}
-			case "30104-04a.html":
-			case "30104-04b.html":
-			case "30104-04c.html":
-			case "30104-04d.html":
-			case "30104-05.html":
-			case "30104-08a.html":
-			case "30104-08b.html":
-			case "30104-08c.html":
-			case "30005-02.html":
-			case "30005-03.html":
-			case "30368-02.html":
-			case "30466-02.html":
-			case "30531-02.html":
-			case "30620-02.html":
-			case "30621-02.html":
-			case "30621-03.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30005-04.html":
-			{
-				giveItems(player, CRYSTAL_BROOCH, 1);
-				htmltext = event;
-				break;
-			}
-			case "30368-03.html":
-			{
-				if (hasQuestItems(player, CRYSTAL_BROOCH))
+				takeItems(player, EMILY_RECIPE, 1);
+				takeItems(player, LILITH_ELVEN_WAFER, 1);
+				takeItems(player, OLD_ACCOUNT_BOOK, 1);
+				takeItems(player, RING_OF_TESTIMONY_1, 1);
+				if (player.getLevel() < 38)
 				{
-					giveItems(player, LILITHS_ELVEN_WAFER, 1);
-					takeItems(player, CRYSTAL_BROOCH, 1);
-					if (hasQuestItems(player, OLD_ACCOUNT_BOOK, BLESSED_SEED, EMILYS_RECIPE))
-					{
-						qs.setCond(2, true);
-					}
-					htmltext = event;
+					st.setCond(3, true);
+					giveItems(player, PARMAN_INSTRUCTIONS, 1);
+				}
+				else
+				{
+					htmltext = "30104-08.htm";
+					st.setCond(4, true);
+					giveItems(player, PARMAN_LETTER, 1);
+					giveItems(player, RING_OF_TESTIMONY_2, 1);
 				}
 				break;
 			}
-			case "30466-03.html":
+			case "30531-02.htm":
 			{
-				giveItems(player, BRIGHTS_LIST, 1);
-				htmltext = event;
+				if (hasQuestItems(player, COLLECTION_LICENSE))
+				{
+					htmltext = "30531-04.htm";
+				}
 				break;
 			}
-			case "30531-03.html":
+			case "30531-03.htm":
 			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				giveItems(player, COLLECTION_LICENSE, 1);
-				giveItems(player, LOCKIRINS_1ST_NOTICE, 1);
-				giveItems(player, LOCKIRINS_2ND_NOTICE, 1);
-				giveItems(player, LOCKIRINS_3RD_NOTICE, 1);
-				giveItems(player, LOCKIRINS_4TH_NOTICE, 1);
-				giveItems(player, LOCKIRINS_5TH_NOTICE, 1);
-				htmltext = event;
+				giveItems(player, LOCKIRIN_NOTICE_1, 1);
+				giveItems(player, LOCKIRIN_NOTICE_2, 1);
+				giveItems(player, LOCKIRIN_NOTICE_3, 1);
+				giveItems(player, LOCKIRIN_NOTICE_4, 1);
+				giveItems(player, LOCKIRIN_NOTICE_5, 1);
 				break;
 			}
-			case "30534-03a.html":
+			case "30534-03a.htm":
 			{
-				if (getQuestItemsCount(player, ADENA) < 5000)
+				if (getQuestItemsCount(player, ADENA) >= 5000)
 				{
-					htmltext = event;
-				}
-				else if (hasQuestItems(player, PROCURATION_OF_TOROCCO))
-				{
+					htmltext = "30534-03b.htm";
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					takeItems(player, ADENA, 5000);
-					giveItems(player, RECEIPT_OF_CONTRIBUTION_3RD, 1);
 					takeItems(player, PROCURATION_OF_TOROCCO, 1);
-					htmltext = "30534-03b.html";
+					giveItems(player, RECEIPT_OF_CONTRIBUTION_3, 1);
 				}
 				break;
 			}
-			case "30555-02.html":
+			case "30005-04.htm":
 			{
-				giveItems(player, PROCURATION_OF_TOROCCO, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, CRYSTAL_BROOCH, 1);
 				break;
 			}
-			case "30597-02.html":
+			case "30466-03.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, BRIGHT_LIST, 1);
+				break;
+			}
+			case "30555-02.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, PROCURATION_OF_TOROCCO, 1);
+				break;
+			}
+			case "30368-03.htm":
+			{
+				takeItems(player, CRYSTAL_BROOCH, 1);
+				giveItems(player, LILITH_ELVEN_WAFER, 1);
+				if (hasQuestItems(player, BLESSED_SEED, OLD_ACCOUNT_BOOK, EMILY_RECIPE))
+				{
+					st.setCond(2, true);
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case "30597-02.htm":
 			{
 				giveItems(player, BLESSED_SEED, 1);
-				if (hasQuestItems(player, OLD_ACCOUNT_BOOK, EMILYS_RECIPE, LILITHS_ELVEN_WAFER))
+				if (hasQuestItems(player, OLD_ACCOUNT_BOOK, EMILY_RECIPE, LILITH_ELVEN_WAFER))
 				{
-					qs.setCond(2, true);
+					st.setCond(2, true);
 				}
-				htmltext = event;
-				break;
-			}
-			case "30620-03.html":
-			{
-				if (hasQuestItems(player, MANDRAGORA_BOUGUET))
+				else
 				{
-					giveItems(player, EMILYS_RECIPE, 1);
-					takeItems(player, MANDRAGORA_BOUGUET, 1);
-					if (hasQuestItems(player, OLD_ACCOUNT_BOOK, BLESSED_SEED, LILITHS_ELVEN_WAFER))
-					{
-						qs.setCond(2, true);
-					}
-					htmltext = event;
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				break;
 			}
-			case "30621-04.html":
+			case "30620-03.htm":
 			{
+				takeItems(player, MANDRAGORA_BOUQUET, 1);
+				giveItems(player, EMILY_RECIPE, 1);
+				if (hasQuestItems(player, BLESSED_SEED, OLD_ACCOUNT_BOOK, LILITH_ELVEN_WAFER))
+				{
+					st.setCond(2, true);
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case "30621-04.htm":
+			{
+				st.setCond(5, true);
 				giveItems(player, CLAY_DOUGH, 1);
-				qs.setCond(5, true);
-				htmltext = event;
 				break;
 			}
-			case "30622-02.html":
+			case "30622-02.htm":
 			{
-				if (hasQuestItems(player, CLAY_DOUGH))
-				{
-					takeItems(player, CLAY_DOUGH, 1);
-					giveItems(player, PATTERN_OF_KEYHOLE, 1);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
+				st.setCond(6, true);
+				takeItems(player, CLAY_DOUGH, 1);
+				giveItems(player, PATTERN_OF_KEYHOLE, 1);
 				break;
 			}
-			case "30622-04.html":
+			case "30622-04.htm":
 			{
-				if (hasQuestItems(player, KEY_OF_TITAN))
-				{
-					takeItems(player, KEY_OF_TITAN, 1);
-					giveItems(player, MAPHR_TABLET_FRAGMENT, 1);
-					takeItems(player, NIKOLAS_LIST, 1);
-					takeItems(player, RECIPE_TITAN_KEY, 1);
-					takeItems(player, STAKATO_SHELL, -1);
-					takeItems(player, TOAD_LORD_SAC, -1);
-					takeItems(player, MARSH_SPIDER_THORN, -1);
-					qs.setCond(9, true);
-					htmltext = event;
-				}
+				st.setCond(9, true);
+				takeItems(player, KEY_OF_TITAN, 1);
+				takeItems(player, NIKOLAS_LIST, 1);
+				takeItems(player, RECIPE_TITAN_KEY, 1);
+				takeItems(player, STAKATO_SHELL, 20);
+				takeItems(player, SPIDER_THORN, 10);
+				takeItems(player, TOAD_LORD_SAC, 10);
+				giveItems(player, MAPHR_TABLET_FRAGMENT, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case MANDRAGORA_SPROUT1:
-				case MANDRAGORA_SAPLING:
-				case MANDRAGORA_BLOSSOM:
-				case MANDRAGORA_SPROUT2:
-				{
-					if (hasQuestItems(killer, RING_OF_TESTIMONY_1ST, BRIGHTS_LIST) && !hasQuestItems(killer, EMILYS_RECIPE) && (getQuestItemsCount(killer, MANDRAGORA_PETAL) < 20))
-					{
-						giveItems(killer, MANDRAGORA_PETAL, 1);
-						if (getQuestItemsCount(killer, MANDRAGORA_PETAL) == 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MARSH_STAKATO:
-				case MARSH_STAKATO_WORKER:
-				case MARSH_STAKATO_SOLDIER:
-				case MARSH_STAKATO_DRONE:
-				{
-					if (hasQuestItems(killer, RING_OF_TESTIMONY_2ND, NIKOLAS_LIST) && !hasAtLeastOneQuestItem(killer, CLAY_DOUGH, PATTERN_OF_KEYHOLE) && (getQuestItemsCount(killer, STAKATO_SHELL) < 20))
-					{
-						giveItems(killer, STAKATO_SHELL, 1);
-						if (getQuestItemsCount(killer, STAKATO_SHELL) == 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, TOAD_LORD_SAC) >= 10) && (getQuestItemsCount(killer, MARSH_SPIDER_THORN) >= 10))
-							{
-								qs.setCond(8);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case GIANT_CRIMSON_ANT:
-				{
-					if (hasQuestItems(killer, RING_OF_TESTIMONY_1ST, BRIGHTS_LIST) && !hasQuestItems(killer, EMILYS_RECIPE) && (getQuestItemsCount(killer, CRIMSON_MOSS) < 10))
-					{
-						giveItems(killer, CRIMSON_MOSS, 1);
-						if (getQuestItemsCount(killer, CRIMSON_MOSS) == 10)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case TOAD_LORD:
-				{
-					if (hasQuestItems(killer, RING_OF_TESTIMONY_2ND, NIKOLAS_LIST) && !hasAtLeastOneQuestItem(killer, CLAY_DOUGH, PATTERN_OF_KEYHOLE) && (getQuestItemsCount(killer, TOAD_LORD_SAC) < 10))
-					{
-						giveItems(killer, TOAD_LORD_SAC, 1);
-						if (getQuestItemsCount(killer, TOAD_LORD_SAC) == 10)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, STAKATO_SHELL) >= 20) && (getQuestItemsCount(killer, MARSH_SPIDER_THORN) >= 10))
-							{
-								qs.setCond(8);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MARSH_SPIDER:
-				{
-					if (hasQuestItems(killer, RING_OF_TESTIMONY_2ND, NIKOLAS_LIST) && !hasAtLeastOneQuestItem(killer, CLAY_DOUGH, PATTERN_OF_KEYHOLE) && (getQuestItemsCount(killer, MARSH_SPIDER_THORN) < 10))
-					{
-						giveItems(killer, MARSH_SPIDER_THORN, 1);
-						if (getQuestItemsCount(killer, MARSH_SPIDER_THORN) == 10)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, STAKATO_SHELL) >= 20) && (getQuestItemsCount(killer, TOAD_LORD_SAC) >= 10))
-							{
-								qs.setCond(8);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == WAREHOUSE_KEEPER_PARMAN)
+			case State.CREATED:
 			{
-				if ((player.getRace() == Race.DWARF) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.DWARF_2ND_GROUP))
+				if (player.getRace() != Race.DWARF)
 				{
-					htmltext = "30104-03.htm";
+					htmltext = "30104-01.htm";
 				}
-				else if ((player.getRace() == Race.DWARF) && (player.getLevel() >= MIN_LEVEL))
+				else if (player.getLevel() < 37)
 				{
-					htmltext = "30104-01a.html";
+					htmltext = "30104-02.htm";
 				}
-				else if ((player.getRace() == Race.DWARF))
+				else if (player.getClassId().level() != 1)
 				{
-					htmltext = "30104-02.html";
+					htmltext = "30104-01a.htm";
 				}
 				else
 				{
-					htmltext = "30104-01.html";
+					htmltext = "30104-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case WAREHOUSE_KEEPER_PARMAN:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
+					case PARMAN:
 					{
-						if (hasQuestItems(player, OLD_ACCOUNT_BOOK, BLESSED_SEED, EMILYS_RECIPE, LILITHS_ELVEN_WAFER))
+						if (cond == 1)
 						{
-							htmltext = "30104-06.html";
+							htmltext = "30104-05.htm";
 						}
-						else
+						else if (cond == 2)
 						{
-							htmltext = "30104-05.html";
+							htmltext = "30104-06.htm";
 						}
-					}
-					else if (hasQuestItems(player, PARMANS_INSTRUCTIONS))
-					{
-						takeItems(player, PARMANS_INSTRUCTIONS, 1);
-						giveItems(player, RING_OF_TESTIMONY_2ND, 1);
-						giveItems(player, PARMANS_LETTER, 1);
-						qs.setCond(4, true);
-						htmltext = "30104-10.html";
-					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
-					{
-						if (hasQuestItems(player, PARMANS_LETTER))
+						else if (cond == 3)
 						{
-							htmltext = "30104-11.html";
+							if (player.getLevel() < 38)
+							{
+								htmltext = "30104-09.htm";
+							}
+							else
+							{
+								htmltext = "30104-10.htm";
+								st.setCond(4, true);
+								takeItems(player, PARMAN_INSTRUCTIONS, 1);
+								giveItems(player, PARMAN_LETTER, 1);
+								giveItems(player, RING_OF_TESTIMONY_2, 1);
+							}
 						}
-						else if (hasAtLeastOneQuestItem(player, CLAY_DOUGH, PATTERN_OF_KEYHOLE, NIKOLAS_LIST))
+						else if ((cond > 3) && (cond < 7))
 						{
-							htmltext = "30104-12.html";
+							htmltext = "30104-11.htm";
 						}
-						else if (hasQuestItems(player, MAPHR_TABLET_FRAGMENT))
+						else if ((cond == 7) || (cond == 8))
 						{
-							giveAdena(player, 217682, true);
+							htmltext = "30104-12.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30104-13.htm";
+							takeItems(player, MAPHR_TABLET_FRAGMENT, 1);
+							takeItems(player, RING_OF_TESTIMONY_2, 1);
 							giveItems(player, MARK_OF_PROSPERITY, 1);
-							addExpAndSp(player, 1199958, 80080);
-							qs.exitQuest(false, true);
-							player.sendPacket(new SocialAction(player.getObjectId(), 3));
-							htmltext = "30104-13.html";
+							addExpAndSp(player, 12969, 1000);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
+						break;
 					}
-					break;
-				}
-				case WAREHOUSE_KEEPER_WILFORD:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
+					case LOCKIRIN:
 					{
-						if (!hasAtLeastOneQuestItem(player, LILITHS_ELVEN_WAFER, CRYSTAL_BROOCH))
+						if ((cond == 1) || (cond == 2))
 						{
-							htmltext = "30005-01.html";
-						}
-						else if (hasQuestItems(player, CRYSTAL_BROOCH) && !hasQuestItems(player, LILITHS_ELVEN_WAFER))
-						{
-							htmltext = "30005-05.html";
-						}
-						else if (hasQuestItems(player, LILITHS_ELVEN_WAFER))
-						{
-							htmltext = "30005-06.html";
-						}
-					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
-					{
-						htmltext = "30005-07.html";
-					}
-					break;
-				}
-				case LILITH:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
-					{
-						if (hasQuestItems(player, CRYSTAL_BROOCH) && !hasQuestItems(player, LILITHS_ELVEN_WAFER))
-						{
-							htmltext = "30368-01.html";
-						}
-						else
-						{
-							htmltext = "30368-04.html";
-						}
-					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
-					{
-						htmltext = "30368-05.html";
-					}
-					break;
-				}
-				case GUARD_BRIGHT:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
-					{
-						if (!hasAtLeastOneQuestItem(player, EMILYS_RECIPE, BRIGHTS_LIST, MANDRAGORA_BOUGUET))
-						{
-							htmltext = "30466-01.html";
-						}
-						else if (hasQuestItems(player, BRIGHTS_LIST) && !hasQuestItems(player, EMILYS_RECIPE))
-						{
-							if ((getQuestItemsCount(player, MANDRAGORA_PETAL) < 20) || (getQuestItemsCount(player, CRIMSON_MOSS) < 10))
+							if (hasQuestItems(player, COLLECTION_LICENSE))
 							{
-								htmltext = "30466-04.html";
-							}
-							else
-							{
-								takeItems(player, BRIGHTS_LIST, 1);
-								takeItems(player, MANDRAGORA_PETAL, -1);
-								takeItems(player, CRIMSON_MOSS, -1);
-								giveItems(player, MANDRAGORA_BOUGUET, 1);
-								htmltext = "30466-05.html";
-							}
-						}
-						else if (hasQuestItems(player, MANDRAGORA_BOUGUET) && !hasAtLeastOneQuestItem(player, EMILYS_RECIPE, BRIGHTS_LIST))
-						{
-							htmltext = "30466-06.html";
-						}
-						else if (hasQuestItems(player, EMILYS_RECIPE))
-						{
-							htmltext = "30466-07.html";
-						}
-					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
-					{
-						htmltext = "30466-08.html";
-					}
-					break;
-				}
-				case TRADER_SHARI:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_1ST, CONTRIBUTION_OF_SHARI, LOCKIRINS_1ST_NOTICE))
-						{
-							giveItems(player, CONTRIBUTION_OF_SHARI, 1);
-							htmltext = "30517-01.html";
-						}
-						else if (hasQuestItems(player, CONTRIBUTION_OF_SHARI) && !hasAtLeastOneQuestItem(player, LOCKIRINS_1ST_NOTICE, RECEIPT_OF_CONTRIBUTION_1ST))
-						{
-							htmltext = "30517-02.html";
-						}
-					}
-					break;
-				}
-				case TRADER_MION:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_2ND, CONTRIBUTION_OF_MION, LOCKIRINS_2ND_NOTICE))
-						{
-							giveItems(player, CONTRIBUTION_OF_MION, 1);
-							htmltext = "30519-01.html";
-						}
-						else if (hasQuestItems(player, CONTRIBUTION_OF_MION) && !hasAtLeastOneQuestItem(player, LOCKIRINS_2ND_NOTICE, RECEIPT_OF_CONTRIBUTION_2ND))
-						{
-							htmltext = "30519-02.html";
-						}
-					}
-					break;
-				}
-				case IRON_GATES_LOCKIRIN:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
-					{
-						if (!hasAtLeastOneQuestItem(player, COLLECTION_LICENSE, OLD_ACCOUNT_BOOK))
-						{
-							htmltext = "30531-01.html";
-						}
-						else if (hasQuestItems(player, COLLECTION_LICENSE))
-						{
-							if (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_1ST, RECEIPT_OF_CONTRIBUTION_2ND, RECEIPT_OF_CONTRIBUTION_3RD, RECEIPT_OF_CONTRIBUTION_4TH, RECEIPT_OF_CONTRIBUTION_5TH))
-							{
-								giveItems(player, OLD_ACCOUNT_BOOK, 1);
-								takeItems(player, COLLECTION_LICENSE, 1);
-								takeItems(player, RECEIPT_OF_CONTRIBUTION_1ST, 1);
-								takeItems(player, RECEIPT_OF_CONTRIBUTION_2ND, 1);
-								takeItems(player, RECEIPT_OF_CONTRIBUTION_3RD, 1);
-								takeItems(player, RECEIPT_OF_CONTRIBUTION_4TH, 1);
-								takeItems(player, RECEIPT_OF_CONTRIBUTION_5TH, 1);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-								if (hasQuestItems(player, BLESSED_SEED, EMILYS_RECIPE, LILITHS_ELVEN_WAFER))
+								if (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_1, RECEIPT_OF_CONTRIBUTION_2, RECEIPT_OF_CONTRIBUTION_3, RECEIPT_OF_CONTRIBUTION_4, RECEIPT_OF_CONTRIBUTION_5))
 								{
-									qs.setCond(2, true);
+									htmltext = "30531-05.htm";
+									takeItems(player, COLLECTION_LICENSE, 1);
+									takeItems(player, RECEIPT_OF_CONTRIBUTION_1, 1);
+									takeItems(player, RECEIPT_OF_CONTRIBUTION_2, 1);
+									takeItems(player, RECEIPT_OF_CONTRIBUTION_3, 1);
+									takeItems(player, RECEIPT_OF_CONTRIBUTION_4, 1);
+									takeItems(player, RECEIPT_OF_CONTRIBUTION_5, 1);
+									giveItems(player, OLD_ACCOUNT_BOOK, 1);
+									
+									if (hasQuestItems(player, BLESSED_SEED, EMILY_RECIPE, LILITH_ELVEN_WAFER))
+									{
+										st.setCond(2, true);
+									}
+									else
+									{
+										playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									}
 								}
-								htmltext = "30531-05.html";
+								else
+								{
+									htmltext = "30531-04.htm";
+								}
 							}
 							else
 							{
-								htmltext = "30531-04.html";
+								htmltext = (hasQuestItems(player, OLD_ACCOUNT_BOOK)) ? "30531-06.htm" : "30531-01.htm";
 							}
 						}
-						else if (hasQuestItems(player, OLD_ACCOUNT_BOOK) && !hasQuestItems(player, COLLECTION_LICENSE))
+						else if (cond >= 4)
 						{
-							htmltext = "30531-06.html";
+							htmltext = "30531-07.htm";
 						}
+						break;
 					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
+					case SPIRON:
 					{
-						htmltext = "30531-07.html";
-					}
-					break;
-				}
-				case GOLDEN_WHEELS_SPIRON:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (hasQuestItems(player, LOCKIRINS_1ST_NOTICE) && !hasAtLeastOneQuestItem(player, CONTRIBUTION_OF_SHARI, RECEIPT_OF_CONTRIBUTION_1ST))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							takeItems(player, LOCKIRINS_1ST_NOTICE, 1);
-							htmltext = "30532-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_1ST, CONTRIBUTION_OF_SHARI, LOCKIRINS_1ST_NOTICE))
-						{
-							htmltext = "30532-02.html";
-						}
-						else if (hasQuestItems(player, CONTRIBUTION_OF_SHARI) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_1ST, LOCKIRINS_1ST_NOTICE))
-						{
-							takeItems(player, CONTRIBUTION_OF_SHARI, 1);
-							giveItems(player, RECEIPT_OF_CONTRIBUTION_1ST, 1);
-							htmltext = "30532-03.html";
-						}
-						else if (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_1ST) && !hasAtLeastOneQuestItem(player, CONTRIBUTION_OF_SHARI, LOCKIRINS_1ST_NOTICE))
-						{
-							htmltext = "30532-04.html";
-						}
-					}
-					break;
-				}
-				case SILVER_SCALES_BALANKI:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (hasQuestItems(player, LOCKIRINS_2ND_NOTICE) && !hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_2ND) && ((getQuestItemsCount(player, CONTRIBUTION_OF_MION) + getQuestItemsCount(player, CONTRIBUTION_OF_MARYSE)) < 2))
-						{
-							takeItems(player, LOCKIRINS_2ND_NOTICE, 1);
-							htmltext = "30533-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, LOCKIRINS_2ND_NOTICE, RECEIPT_OF_CONTRIBUTION_2ND) && ((getQuestItemsCount(player, CONTRIBUTION_OF_MION) + getQuestItemsCount(player, CONTRIBUTION_OF_MARYSE)) < 2))
-						{
-							htmltext = "30533-02.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, LOCKIRINS_2ND_NOTICE, RECEIPT_OF_CONTRIBUTION_2ND) && hasQuestItems(player, CONTRIBUTION_OF_MION, CONTRIBUTION_OF_MARYSE))
-						{
-							takeItems(player, CONTRIBUTION_OF_MION, 1);
-							takeItems(player, CONTRIBUTION_OF_MARYSE, 1);
-							giveItems(player, RECEIPT_OF_CONTRIBUTION_2ND, 1);
-							htmltext = "30533-03.html";
-						}
-						else if (!hasQuestItems(player, LOCKIRINS_2ND_NOTICE) && hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_2ND) && !hasQuestItems(player, CONTRIBUTION_OF_MION, CONTRIBUTION_OF_MARYSE))
-						{
-							htmltext = "30533-04.html";
-						}
-					}
-					break;
-				}
-				case BRONZE_KEYS_KEEF:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (hasQuestItems(player, LOCKIRINS_3RD_NOTICE) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_3RD, PROCURATION_OF_TOROCCO))
-						{
-							takeItems(player, LOCKIRINS_3RD_NOTICE, 1);
-							htmltext = "30534-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_3RD, PROCURATION_OF_TOROCCO, LOCKIRINS_3RD_NOTICE))
-						{
-							htmltext = "30534-02.html";
-						}
-						else if (hasQuestItems(player, PROCURATION_OF_TOROCCO) && !hasAtLeastOneQuestItem(player, LOCKIRINS_3RD_NOTICE, RECEIPT_OF_CONTRIBUTION_3RD))
-						{
-							htmltext = "30534-03.html";
-						}
-						else if (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_3RD) && !hasAtLeastOneQuestItem(player, PROCURATION_OF_TOROCCO, LOCKIRINS_3RD_NOTICE))
-						{
-							htmltext = "30534-04.html";
-						}
-					}
-					break;
-				}
-				case GRAY_PILLAR_MEMBER_FILAUR:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (hasQuestItems(player, LOCKIRINS_4TH_NOTICE) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_4TH, RECEIPT_OF_BOLTER))
-						{
-							takeItems(player, LOCKIRINS_4TH_NOTICE, 1);
-							htmltext = "30535-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_4TH, RECEIPT_OF_BOLTER, LOCKIRINS_4TH_NOTICE))
-						{
-							htmltext = "30535-02.html";
-						}
-						else if (hasQuestItems(player, RECEIPT_OF_BOLTER) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_4TH, LOCKIRINS_4TH_NOTICE))
-						{
-							takeItems(player, RECEIPT_OF_BOLTER, 1);
-							giveItems(player, RECEIPT_OF_CONTRIBUTION_4TH, 1);
-							htmltext = "30535-03.html";
-						}
-						else if (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_4TH) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_BOLTER, LOCKIRINS_4TH_NOTICE))
-						{
-							htmltext = "30535-04.html";
-						}
-					}
-					break;
-				}
-				case BLACK_ANVILS_ARIN:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (hasQuestItems(player, LOCKIRINS_5TH_NOTICE) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_5TH, CONTRIBUTION_OF_TOMA))
-						{
-							takeItems(player, LOCKIRINS_5TH_NOTICE, 1);
-							htmltext = "30536-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_5TH, CONTRIBUTION_OF_TOMA, LOCKIRINS_5TH_NOTICE))
-						{
-							htmltext = "30536-02.html";
-						}
-						else if (hasQuestItems(player, CONTRIBUTION_OF_TOMA) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_5TH, LOCKIRINS_5TH_NOTICE))
-						{
-							takeItems(player, CONTRIBUTION_OF_TOMA, 1);
-							giveItems(player, RECEIPT_OF_CONTRIBUTION_5TH, 1);
-							htmltext = "30536-03.html";
-						}
-						else if (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_5TH) && !hasAtLeastOneQuestItem(player, CONTRIBUTION_OF_TOMA, LOCKIRINS_5TH_NOTICE))
-						{
-							htmltext = "30536-04.html";
-						}
-					}
-					break;
-				}
-				case MARYSE_REDBONNET:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
-					{
-						if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_2ND, CONTRIBUTION_OF_MARYSE, LOCKIRINS_2ND_NOTICE, MARYSES_REQUEST))
-						{
-							giveItems(player, MARYSES_REQUEST, 1);
-							htmltext = "30553-01.html";
-						}
-						else if (hasQuestItems(player, MARYSES_REQUEST) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_2ND, CONTRIBUTION_OF_MARYSE, LOCKIRINS_2ND_NOTICE))
-						{
-							if (getQuestItemsCount(player, ANIMAL_SKIN) < 10)
+							if (hasQuestItems(player, LOCKIRIN_NOTICE_1))
 							{
-								htmltext = "30553-02.html";
+								htmltext = "30532-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, LOCKIRIN_NOTICE_1, 1);
+							}
+							else if (hasQuestItems(player, CONTRIBUTION_OF_SHARI))
+							{
+								htmltext = "30532-03.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, CONTRIBUTION_OF_SHARI, 1);
+								giveItems(player, RECEIPT_OF_CONTRIBUTION_1, 1);
 							}
 							else
 							{
-								takeItems(player, ANIMAL_SKIN, 10);
-								giveItems(player, CONTRIBUTION_OF_MARYSE, 1);
-								takeItems(player, MARYSES_REQUEST, 1);
-								htmltext = "30553-03.html";
+								htmltext = (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_1)) ? "30532-04.htm" : "30532-02.htm";
 							}
 						}
-						else if (hasQuestItems(player, CONTRIBUTION_OF_MARYSE) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_2ND, LOCKIRINS_2ND_NOTICE, MARYSES_REQUEST))
-						{
-							htmltext = "30553-04.html";
-						}
+						break;
 					}
-					break;
-				}
-				case MINER_BOLTER:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
+					case BALANKI:
 					{
-						if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_4TH, RECEIPT_OF_BOLTER, LOCKIRINS_4TH_NOTICE))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							giveItems(player, RECEIPT_OF_BOLTER, 1);
-							htmltext = "30554-01.html";
+							if (hasQuestItems(player, LOCKIRIN_NOTICE_2))
+							{
+								htmltext = "30533-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, LOCKIRIN_NOTICE_2, 1);
+							}
+							else if (hasQuestItems(player, CONTRIBUTION_OF_MARYSE, CONTRIBUTION_OF_MION))
+							{
+								htmltext = "30533-03.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, CONTRIBUTION_OF_MARYSE, 1);
+								takeItems(player, CONTRIBUTION_OF_MION, 1);
+								giveItems(player, RECEIPT_OF_CONTRIBUTION_2, 1);
+							}
+							else
+							{
+								htmltext = (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_2)) ? "30533-04.htm" : "30533-02.htm";
+							}
 						}
-						else if (hasQuestItems(player, RECEIPT_OF_BOLTER) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_4TH, LOCKIRINS_4TH_NOTICE))
-						{
-							htmltext = "30554-02.html";
-						}
+						break;
 					}
-					break;
-				}
-				case CARRIER_TOROCCO:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
+					case KEEF:
 					{
-						if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_3RD, PROCURATION_OF_TOROCCO, LOCKIRINS_3RD_NOTICE))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							htmltext = "30555-01.html";
+							if (hasQuestItems(player, LOCKIRIN_NOTICE_3))
+							{
+								htmltext = "30534-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, LOCKIRIN_NOTICE_3, 1);
+							}
+							else if (hasQuestItems(player, PROCURATION_OF_TOROCCO))
+							{
+								htmltext = "30534-03.htm";
+							}
+							else
+							{
+								htmltext = (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_3)) ? "30534-04.htm" : "30534-02.htm";
+							}
 						}
-						else if (hasQuestItems(player, PROCURATION_OF_TOROCCO) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_3RD, LOCKIRINS_3RD_NOTICE))
-						{
-							htmltext = "30555-03.html";
-						}
+						break;
 					}
-					break;
-				}
-				case MASTER_TOMA:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST, COLLECTION_LICENSE))
+					case FILAUR:
 					{
-						if (!hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_5TH, CONTRIBUTION_OF_TOMA, LOCKIRINS_5TH_NOTICE))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							giveItems(player, CONTRIBUTION_OF_TOMA, 1);
-							htmltext = "30556-01.html";
+							if (hasQuestItems(player, LOCKIRIN_NOTICE_4))
+							{
+								htmltext = "30535-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, LOCKIRIN_NOTICE_4, 1);
+							}
+							else if (hasQuestItems(player, RECEIPT_OF_BOLTER))
+							{
+								htmltext = "30535-03.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, RECEIPT_OF_BOLTER, 1);
+								giveItems(player, RECEIPT_OF_CONTRIBUTION_4, 1);
+							}
+							else
+							{
+								htmltext = (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_4)) ? "30535-04.htm" : "30535-02.htm";
+							}
 						}
-						else if (hasQuestItems(player, CONTRIBUTION_OF_TOMA) && !hasAtLeastOneQuestItem(player, RECEIPT_OF_CONTRIBUTION_5TH, LOCKIRINS_5TH_NOTICE))
-						{
-							htmltext = "30556-02.html";
-						}
+						break;
 					}
-					break;
-				}
-				case PIOTUR:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
+					case ARIN:
 					{
-						if (!hasQuestItems(player, BLESSED_SEED))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							htmltext = "30597-01.html";
+							if (hasQuestItems(player, LOCKIRIN_NOTICE_5))
+							{
+								htmltext = "30536-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, LOCKIRIN_NOTICE_5, 1);
+							}
+							else if (hasQuestItems(player, CONTRIBUTION_OF_TOMA))
+							{
+								htmltext = "30536-03.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, CONTRIBUTION_OF_TOMA, 1);
+								giveItems(player, RECEIPT_OF_CONTRIBUTION_5, 1);
+							}
+							else
+							{
+								htmltext = (hasQuestItems(player, RECEIPT_OF_CONTRIBUTION_5)) ? "30536-04.htm" : "30536-02.htm";
+							}
 						}
-						else
-						{
-							htmltext = "30597-03.html";
-						}
+						break;
 					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
+					case SHARI:
 					{
-						htmltext = "30597-04.html";
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
+						{
+							if (hasQuestItems(player, CONTRIBUTION_OF_SHARI))
+							{
+								htmltext = "30517-02.htm";
+							}
+							else if (!hasAtLeastOneQuestItem(player, LOCKIRIN_NOTICE_1, RECEIPT_OF_CONTRIBUTION_1))
+							{
+								htmltext = "30517-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, CONTRIBUTION_OF_SHARI, 1);
+							}
+						}
+						break;
 					}
-					break;
-				}
-				case EMILY:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_1ST))
+					case MION:
 					{
-						if (hasQuestItems(player, MANDRAGORA_BOUGUET) && !hasAtLeastOneQuestItem(player, EMILYS_RECIPE, BRIGHTS_LIST))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							htmltext = "30620-01.html";
+							if (hasQuestItems(player, CONTRIBUTION_OF_MION))
+							{
+								htmltext = "30519-02.htm";
+							}
+							else if (!hasAtLeastOneQuestItem(player, LOCKIRIN_NOTICE_2, RECEIPT_OF_CONTRIBUTION_2))
+							{
+								htmltext = "30519-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, CONTRIBUTION_OF_MION, 1);
+							}
 						}
-						else if (hasQuestItems(player, EMILYS_RECIPE))
-						{
-							htmltext = "30620-04.html";
-						}
+						break;
 					}
-					else if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
+					case MARYSE_REDBONNET:
 					{
-						htmltext = "30620-05.html";
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
+						{
+							if (hasQuestItems(player, MARYSE_REQUEST))
+							{
+								if (getQuestItemsCount(player, ANIMAL_SKIN) < 100)
+								{
+									htmltext = "30553-02.htm";
+								}
+								else
+								{
+									htmltext = "30553-03.htm";
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									takeItems(player, ANIMAL_SKIN, 100);
+									takeItems(player, MARYSE_REQUEST, 1);
+									giveItems(player, CONTRIBUTION_OF_MARYSE, 1);
+								}
+							}
+							else if (hasQuestItems(player, CONTRIBUTION_OF_MARYSE))
+							{
+								htmltext = "30553-04.htm";
+							}
+							else if (!hasAtLeastOneQuestItem(player, LOCKIRIN_NOTICE_2, RECEIPT_OF_CONTRIBUTION_2))
+							{
+								htmltext = "30553-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, MARYSE_REQUEST, 1);
+							}
+						}
+						break;
 					}
-					break;
-				}
-				case MAESTRO_NIKOLA:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
+					case TOROCCO:
 					{
-						if (!hasAtLeastOneQuestItem(player, CLAY_DOUGH, PATTERN_OF_KEYHOLE, NIKOLAS_LIST, MAPHR_TABLET_FRAGMENT))
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							takeItems(player, PARMANS_LETTER, 1);
-							htmltext = "30621-01.html";
+							if (hasQuestItems(player, PROCURATION_OF_TOROCCO))
+							{
+								htmltext = "30555-03.htm";
+							}
+							else if (!hasAtLeastOneQuestItem(player, LOCKIRIN_NOTICE_3, RECEIPT_OF_CONTRIBUTION_3))
+							{
+								htmltext = "30555-01.htm";
+							}
 						}
-						else if (hasQuestItems(player, CLAY_DOUGH) && !hasAtLeastOneQuestItem(player, PATTERN_OF_KEYHOLE, NIKOLAS_LIST, MAPHR_TABLET_FRAGMENT))
+						break;
+					}
+					case BOLTER:
+					{
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							htmltext = "30621-05.html";
+							if (hasQuestItems(player, RECEIPT_OF_BOLTER))
+							{
+								htmltext = "30554-02.htm";
+							}
+							else if (!hasAtLeastOneQuestItem(player, LOCKIRIN_NOTICE_4, RECEIPT_OF_CONTRIBUTION_4))
+							{
+								htmltext = "30554-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, RECEIPT_OF_BOLTER, 1);
+							}
 						}
-						else if (hasQuestItems(player, PATTERN_OF_KEYHOLE) && !hasAtLeastOneQuestItem(player, CLAY_DOUGH, NIKOLAS_LIST, MAPHR_TABLET_FRAGMENT))
+						break;
+					}
+					case TOMA:
+					{
+						if ((cond == 1) && hasQuestItems(player, COLLECTION_LICENSE))
 						{
-							giveItems(player, RECIPE_TITAN_KEY, 1);
+							if (hasQuestItems(player, CONTRIBUTION_OF_TOMA))
+							{
+								htmltext = "30556-02.htm";
+							}
+							else if (!hasAtLeastOneQuestItem(player, LOCKIRIN_NOTICE_5, RECEIPT_OF_CONTRIBUTION_5))
+							{
+								htmltext = "30556-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, CONTRIBUTION_OF_TOMA, 1);
+							}
+						}
+						break;
+					}
+					case PIOTUR:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							htmltext = (hasQuestItems(player, BLESSED_SEED)) ? "30597-03.htm" : "30597-01.htm";
+						}
+						else if (cond >= 4)
+						{
+							htmltext = "30597-04.htm";
+						}
+						break;
+					}
+					case WILFORD:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							if (hasQuestItems(player, LILITH_ELVEN_WAFER))
+							{
+								htmltext = "30005-06.htm";
+							}
+							else
+							{
+								htmltext = (hasQuestItems(player, CRYSTAL_BROOCH)) ? "30005-05.htm" : "30005-01.htm";
+							}
+						}
+						else if (cond >= 4)
+						{
+							htmltext = "30005-07.htm";
+						}
+						break;
+					}
+					case LILITH:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							if (hasQuestItems(player, CRYSTAL_BROOCH))
+							{
+								htmltext = "30368-01.htm";
+							}
+							else if (hasQuestItems(player, LILITH_ELVEN_WAFER))
+							{
+								htmltext = "30368-04.htm";
+							}
+						}
+						else if (cond >= 4)
+						{
+							htmltext = "30368-05.htm";
+						}
+						break;
+					}
+					case BRIGHT:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							if (hasQuestItems(player, EMILY_RECIPE))
+							{
+								htmltext = "30466-07.htm";
+							}
+							else if (hasQuestItems(player, MANDRAGORA_BOUQUET))
+							{
+								htmltext = "30466-06.htm";
+							}
+							else if (hasQuestItems(player, BRIGHT_LIST))
+							{
+								if ((getQuestItemsCount(player, CRIMSON_MOSS) + getQuestItemsCount(player, MANDRAGORA_PETAL)) < 30)
+								{
+									htmltext = "30466-04.htm";
+								}
+								else
+								{
+									htmltext = "30466-05.htm";
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									takeItems(player, BRIGHT_LIST, 1);
+									takeItems(player, CRIMSON_MOSS, 10);
+									takeItems(player, MANDRAGORA_PETAL, 20);
+									giveItems(player, MANDRAGORA_BOUQUET, 1);
+								}
+							}
+							else
+							{
+								htmltext = "30466-01.htm";
+							}
+						}
+						else if (cond >= 4)
+						{
+							htmltext = "30466-08.htm";
+						}
+						break;
+					}
+					case EMILY:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							if (hasQuestItems(player, EMILY_RECIPE))
+							{
+								htmltext = "30620-04.htm";
+							}
+							else if (hasQuestItems(player, MANDRAGORA_BOUQUET))
+							{
+								htmltext = "30620-01.htm";
+							}
+						}
+						else if (cond >= 4)
+						{
+							htmltext = "30620-05.htm";
+						}
+						break;
+					}
+					case NIKOLA:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30621-01.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							takeItems(player, PARMAN_LETTER, 1);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30621-05.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30621-06.htm";
+							st.setCond(7, true);
 							takeItems(player, PATTERN_OF_KEYHOLE, 1);
 							giveItems(player, NIKOLAS_LIST, 1);
-							qs.setCond(7, true);
-							htmltext = "30621-06.html";
+							giveItems(player, RECIPE_TITAN_KEY, 1);
 						}
-						else if (hasQuestItems(player, NIKOLAS_LIST) && !hasAtLeastOneQuestItem(player, CLAY_DOUGH, PATTERN_OF_KEYHOLE, MAPHR_TABLET_FRAGMENT, KEY_OF_TITAN))
+						else if ((cond == 7) || (cond == 8))
 						{
-							htmltext = "30621-07.html";
+							htmltext = (hasQuestItems(player, KEY_OF_TITAN)) ? "30621-08.htm" : "30621-07.htm";
 						}
-						else if (hasQuestItems(player, NIKOLAS_LIST, KEY_OF_TITAN) && !hasAtLeastOneQuestItem(player, CLAY_DOUGH, PATTERN_OF_KEYHOLE, MAPHR_TABLET_FRAGMENT))
+						else if (cond == 9)
 						{
-							htmltext = "30621-08.html";
+							htmltext = "30621-09.htm";
 						}
-						else if (hasQuestItems(player, MAPHR_TABLET_FRAGMENT) && !hasAtLeastOneQuestItem(player, CLAY_DOUGH, PATTERN_OF_KEYHOLE, NIKOLAS_LIST))
-						{
-							htmltext = "30621-09.html";
-						}
+						break;
 					}
-					break;
-				}
-				case BOX_OF_TITAN:
-				{
-					if (hasQuestItems(player, RING_OF_TESTIMONY_2ND))
+					case BOX_OF_TITAN:
 					{
-						if (hasQuestItems(player, CLAY_DOUGH) && !hasQuestItems(player, PATTERN_OF_KEYHOLE))
+						if (cond == 5)
 						{
-							htmltext = "30622-01.html";
+							htmltext = "30622-01.htm";
 						}
-						else if (hasQuestItems(player, KEY_OF_TITAN) && !hasQuestItems(player, MAPHR_TABLET_FRAGMENT))
+						else if ((cond == 8) && hasQuestItems(player, KEY_OF_TITAN))
 						{
-							htmltext = "30622-03.html";
+							htmltext = "30622-03.htm";
 						}
-						else if (!hasAtLeastOneQuestItem(player, KEY_OF_TITAN, CLAY_DOUGH))
+						else
 						{
-							htmltext = "30622-05.html";
+							htmltext = "30622-05.htm";
 						}
+						break;
 					}
-					break;
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == WAREHOUSE_KEEPER_PARMAN)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case MANDRAGORA_SPROUT_1:
+			{
+				if (hasQuestItems(player, BRIGHT_LIST) && (getQuestItemsCount(player, MANDRAGORA_PETAL) < 20) && (getRandom(10) < 3))
+				{
+					giveItems(player, MANDRAGORA_PETAL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case MANDRAGORA_SPROUT_2:
+			{
+				if (hasQuestItems(player, BRIGHT_LIST) && (getQuestItemsCount(player, MANDRAGORA_PETAL) < 20) && (getRandom(10) < 6))
+				{
+					giveItems(player, MANDRAGORA_PETAL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case MANDRAGORA_SAPLING:
+			{
+				if (hasQuestItems(player, BRIGHT_LIST) && (getQuestItemsCount(player, MANDRAGORA_PETAL) < 20) && (getRandom(10) < 8))
+				{
+					giveItems(player, MANDRAGORA_PETAL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case MANDRAGORA_BLOSSOM:
+			{
+				if (hasQuestItems(player, BRIGHT_LIST) && (getQuestItemsCount(player, MANDRAGORA_PETAL) < 20))
+				{
+					giveItems(player, MANDRAGORA_PETAL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case GIANT_CRIMSON_ANT:
+			{
+				if (hasQuestItems(player, BRIGHT_LIST) && (getQuestItemsCount(player, CRIMSON_MOSS) < 10))
+				{
+					giveItems(player, CRIMSON_MOSS, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case MARSH_STAKATO:
+			{
+				if (st.isCond(7) && (getQuestItemsCount(player, STAKATO_SHELL) < 20) && (getRandom(10) < 2))
+				{
+					giveItems(player, STAKATO_SHELL, 1);
+					if ((getQuestItemsCount(player, STAKATO_SHELL) >= 20) && ((getQuestItemsCount(player, TOAD_LORD_SAC) + getQuestItemsCount(player, SPIDER_THORN)) == 20))
+					{
+						st.setCond(8, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_STAKATO_WORKER:
+			{
+				if (st.isCond(7) && (getQuestItemsCount(player, STAKATO_SHELL) < 20) && (getRandom(10) < 3))
+				{
+					giveItems(player, STAKATO_SHELL, 1);
+					if ((getQuestItemsCount(player, STAKATO_SHELL) >= 20) && ((getQuestItemsCount(player, TOAD_LORD_SAC) + getQuestItemsCount(player, SPIDER_THORN)) == 20))
+					{
+						st.setCond(8, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_STAKATO_SOLDIER:
+			{
+				if (st.isCond(7) && (getQuestItemsCount(player, STAKATO_SHELL) < 20) && (getRandom(10) < 5))
+				{
+					giveItems(player, STAKATO_SHELL, 1);
+					if ((getQuestItemsCount(player, STAKATO_SHELL) >= 20) && ((getQuestItemsCount(player, TOAD_LORD_SAC) + getQuestItemsCount(player, SPIDER_THORN)) == 20))
+					{
+						st.setCond(8, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_STAKATO_DRONE:
+			{
+				if (st.isCond(7) && (getQuestItemsCount(player, STAKATO_SHELL) < 20) && (getRandom(10) < 6))
+				{
+					giveItems(player, STAKATO_SHELL, 1);
+					if ((getQuestItemsCount(player, STAKATO_SHELL) >= 20) && ((getQuestItemsCount(player, TOAD_LORD_SAC) + getQuestItemsCount(player, SPIDER_THORN)) == 20))
+					{
+						st.setCond(8, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case TOAD_LORD:
+			{
+				if (st.isCond(7) && (getQuestItemsCount(player, TOAD_LORD_SAC) < 10) && (getRandom(10) < 2))
+				{
+					giveItems(player, TOAD_LORD_SAC, 1);
+					if ((getQuestItemsCount(player, TOAD_LORD_SAC) >= 10) && ((getQuestItemsCount(player, STAKATO_SHELL) + getQuestItemsCount(player, SPIDER_THORN)) == 30))
+					{
+						st.setCond(8, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_SPIDER:
+			{
+				if (st.isCond(7) && (getQuestItemsCount(player, SPIDER_THORN) < 10) && (getRandom(10) < 2))
+				{
+					giveItems(player, SPIDER_THORN, 1);
+					if ((getQuestItemsCount(player, SPIDER_THORN) >= 10) && ((getQuestItemsCount(player, STAKATO_SHELL) + getQuestItemsCount(player, TOAD_LORD_SAC)) == 30))
+					{
+						st.setCond(8, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

@@ -16,7 +16,6 @@
  */
 package quests.Q00688_DefeatTheElrokianRaiders;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -24,136 +23,117 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Defeat the Elrokian Raiders! (688)
- * @author Adry_85
- */
 public class Q00688_DefeatTheElrokianRaiders extends Quest
 {
-	// NPCs
-	private static final int ELROKI = 22214;
+	// NPC
 	private static final int DINN = 32105;
+	// Monster
+	private static final int ELROKI = 22214;
 	// Item
 	private static final int DINOSAUR_FANG_NECKLACE = 8785;
-	// Misc
-	private static final int MIN_LEVEL = 75;
-	private static final int DROP_RATE = 448;
 	
 	public Q00688_DefeatTheElrokianRaiders()
 	{
 		super(688);
+		registerQuestItems(DINOSAUR_FANG_NECKLACE);
 		addStartNpc(DINN);
 		addTalkId(DINN);
 		addKillId(ELROKI);
-		registerQuestItems(DINOSAUR_FANG_NECKLACE);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "32105-02.htm":
-			case "32105-10.html":
+			case "32105-03.htm":
 			{
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "32105-03.html":
+			case "32105-08.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "32105-06.html":
-			{
-				if (hasQuestItems(player, DINOSAUR_FANG_NECKLACE))
+				final int count = (int) getQuestItemsCount(player, DINOSAUR_FANG_NECKLACE);
+				if (count > 0)
 				{
-					giveAdena(player, 3000 * getQuestItemsCount(player, DINOSAUR_FANG_NECKLACE), true);
 					takeItems(player, DINOSAUR_FANG_NECKLACE, -1);
-					htmltext = event;
+					giveAdena(player, count * 3000, true);
 				}
+				st.exitQuest(true, true);
 				break;
 			}
-			case "donation":
+			case "32105-06.htm":
 			{
-				if (getQuestItemsCount(player, DINOSAUR_FANG_NECKLACE) < 100)
+				final int count = (int) getQuestItemsCount(player, DINOSAUR_FANG_NECKLACE);
+				takeItems(player, DINOSAUR_FANG_NECKLACE, -1);
+				giveAdena(player, count * 3000, true);
+				break;
+			}
+			case "32105-07.htm":
+			{
+				final int count = (int) getQuestItemsCount(player, DINOSAUR_FANG_NECKLACE);
+				if (count >= 100)
 				{
-					htmltext = "32105-07.html";
+					takeItems(player, DINOSAUR_FANG_NECKLACE, 100);
+					giveAdena(player, 450000, true);
 				}
 				else
 				{
-					if (getRandom(1000) < 500)
-					{
-						giveAdena(player, 450000, true);
-						htmltext = "32105-08.html";
-					}
-					else
-					{
-						giveAdena(player, 150000, true);
-						htmltext = "32105-09.html";
-					}
-					takeItems(player, DINOSAUR_FANG_NECKLACE, 100);
+					htmltext = "32105-04.htm";
 				}
 				break;
 			}
-			case "32105-11.html":
-			{
-				if (hasQuestItems(player, DINOSAUR_FANG_NECKLACE))
-				{
-					giveAdena(player, 3000 * getQuestItemsCount(player, DINOSAUR_FANG_NECKLACE), true);
-				}
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final Player partyMember = getRandomPartyMember(player, 1);
-		if (partyMember == null)
-		{
-			return super.onKill(npc, player, isSummon);
 		}
 		
-		final float chance = DROP_RATE * Config.RATE_QUEST_DROP;
-		if (getRandom(1000) < chance)
-		{
-			rewardItems(partyMember, DINOSAUR_FANG_NECKLACE, 1);
-			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, player, isSummon);
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32105-01.htm" : "32105-04.html";
+				htmltext = (player.getLevel() < 75) ? "32105-00.htm" : "32105-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				htmltext = hasQuestItems(player, DINOSAUR_FANG_NECKLACE) ? "32105-05.html" : "32105-12.html";
+				htmltext = (!hasQuestItems(player, DINOSAUR_FANG_NECKLACE)) ? "32105-04.htm" : "32105-05.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getRandomPartyMemberState(player, -1, 3, npc);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		final Player partyMember = st.getPlayer();
+		
+		if (getRandomBoolean())
+		{
+			giveItems(partyMember, DINOSAUR_FANG_NECKLACE, 1);
+			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

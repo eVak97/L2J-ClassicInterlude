@@ -220,41 +220,6 @@ public class Q00118_ToLeadAndBeLed extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MAILLE_LIZARDMAN:
-				case MAILLE_LIZARDMAN_SCOUT:
-				case MAILLE_LIZARDMAN_GUARD:
-				{
-					if (qs.isMemoState(1) && giveItemRandomly(killer, npc, BLOOD_OF_MAILLE_LIZARDMAN, 1, 10, 7, true))
-					{
-						qs.setCond(2);
-					}
-					break;
-				}
-				case KING_OF_THE_ARANEID:
-				{
-					if (qs.isMemoState(4) && (killer.getSponsor() > 0))
-					{
-						final Player c0 = World.getInstance().getPlayer(killer.getSponsor());
-						if ((c0 != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, c0, true) && giveItemRandomly(killer, npc, LEG_OF_KING_ARANEID, 1, 8, 7, true))
-						{
-							qs.setCond(8);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
 	public String onTalk(Npc npc, Player player)
 	{
 		final QuestState qs = getQuestState(player, true);
@@ -387,5 +352,40 @@ public class Q00118_ToLeadAndBeLed extends Quest
 			}
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player killer, boolean isSummon)
+	{
+		final QuestState qs = getQuestState(killer, false);
+		if ((qs != null) && qs.isStarted())
+		{
+			switch (npc.getId())
+			{
+				case MAILLE_LIZARDMAN:
+				case MAILLE_LIZARDMAN_SCOUT:
+				case MAILLE_LIZARDMAN_GUARD:
+				{
+					if (qs.isMemoState(1) && giveItemRandomly(killer, npc, BLOOD_OF_MAILLE_LIZARDMAN, 1, 10, 7, true))
+					{
+						qs.setCond(2);
+					}
+					break;
+				}
+				case KING_OF_THE_ARANEID:
+				{
+					if (qs.isMemoState(4) && (killer.getSponsor() > 0))
+					{
+						final Player c0 = World.getInstance().getPlayer(killer.getSponsor());
+						if ((c0 != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, c0, true) && giveItemRandomly(killer, npc, LEG_OF_KING_ARANEID, 1, 8, 7, true))
+						{
+							qs.setCond(8);
+						}
+					}
+					break;
+				}
+			}
+		}
+		return super.onKill(npc, killer, isSummon);
 	}
 }

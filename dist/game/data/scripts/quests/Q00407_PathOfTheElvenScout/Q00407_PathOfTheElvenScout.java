@@ -16,326 +16,244 @@
  */
 package quests.Q00407_PathOfTheElvenScout;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path of the Elven Scout (407)
- * @author ivantotov
- */
 public class Q00407_PathOfTheElvenScout extends Quest
 {
 	// NPCs
-	private static final int MASTER_REORIA = 30328;
-	private static final int GUARD_BABENCO = 30334;
-	private static final int GUARD_MORETTI = 30337;
+	private static final int REISA = 30328;
+	private static final int BABENCO = 30334;
+	private static final int MORETTI = 30337;
 	private static final int PRIAS = 30426;
 	// Items
-	private static final int REISAS_LETTER = 1207;
-	private static final int PRIASS_1ND_TORN_LETTER = 1208;
-	private static final int PRIASS_2ND_TORN_LETTER = 1209;
-	private static final int PRIASS_3ND_TORN_LETTER = 1210;
-	private static final int PRIASS_4ND_TORN_LETTER = 1211;
-	private static final int MORETTIES_HERB = 1212;
-	private static final int MORETTIS_LETTER = 1214;
-	private static final int PRIASS_LETTER = 1215;
+	private static final int REISA_LETTER = 1207;
+	private static final int PRIAS_TORN_LETTER_1 = 1208;
+	private static final int PRIAS_TORN_LETTER_2 = 1209;
+	private static final int PRIAS_TORN_LETTER_3 = 1210;
+	private static final int PRIAS_TORN_LETTER_4 = 1211;
+	private static final int MORETTI_HERB = 1212;
+	private static final int MORETTI_LETTER = 1214;
+	private static final int PRIAS_LETTER = 1215;
 	private static final int HONORARY_GUARD = 1216;
-	private static final int REISAS_RECOMMENDATION = 1217;
+	private static final int REISA_RECOMMENDATION = 1217;
 	private static final int RUSTED_KEY = 1293;
-	// Monster
-	private static final int OL_MAHUM_PATROL = 20053;
-	// Quest Monster
-	private static final int OL_MAHUM_SENTRY = 27031;
-	// Misc
-	private static final int MIN_LEVEL = 19;
 	
 	public Q00407_PathOfTheElvenScout()
 	{
 		super(407);
-		addStartNpc(MASTER_REORIA);
-		addTalkId(MASTER_REORIA, GUARD_BABENCO, GUARD_MORETTI, PRIAS);
-		addKillId(OL_MAHUM_PATROL, OL_MAHUM_SENTRY);
-		addAttackId(OL_MAHUM_PATROL, OL_MAHUM_SENTRY);
-		registerQuestItems(REISAS_LETTER, PRIASS_1ND_TORN_LETTER, PRIASS_2ND_TORN_LETTER, PRIASS_3ND_TORN_LETTER, PRIASS_4ND_TORN_LETTER, MORETTIES_HERB, MORETTIS_LETTER, PRIASS_LETTER, HONORARY_GUARD, RUSTED_KEY);
+		registerQuestItems(REISA_LETTER, PRIAS_TORN_LETTER_1, PRIAS_TORN_LETTER_2, PRIAS_TORN_LETTER_3, PRIAS_TORN_LETTER_4, MORETTI_HERB, MORETTI_LETTER, PRIAS_LETTER, HONORARY_GUARD, RUSTED_KEY);
+		addStartNpc(REISA);
+		addTalkId(REISA, MORETTI, BABENCO, PRIAS);
+		addKillId(20053, 27031);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("30328-05.htm"))
 		{
-			case "ACCEPT":
+			if (player.getClassId() != ClassId.ELVEN_FIGHTER)
 			{
-				if (player.getClassId() == ClassId.ELVEN_FIGHTER)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, REISAS_RECOMMENDATION))
-						{
-							htmltext = "30328-04.htm";
-						}
-						else
-						{
-							qs.startQuest();
-							qs.unset("variable");
-							giveItems(player, REISAS_LETTER, 1);
-							htmltext = "30328-05.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30328-03.htm";
-					}
-				}
-				else if (player.getClassId() == ClassId.ELVEN_SCOUT)
-				{
-					htmltext = "30328-02a.htm";
-				}
-				else
-				{
-					htmltext = "30328-02.htm";
-				}
-				break;
+				htmltext = (player.getClassId() == ClassId.ELVEN_SCOUT) ? "30328-02a.htm" : "30328-02.htm";
 			}
-			case "30337-02.html":
+			else if (player.getLevel() < 19)
 			{
-				htmltext = event;
-				break;
+				htmltext = "30328-03.htm";
 			}
-			case "30337-03.html":
+			else if (hasQuestItems(player, REISA_RECOMMENDATION))
 			{
-				if (hasQuestItems(player, REISAS_LETTER))
-				{
-					takeItems(player, REISAS_LETTER, -1);
-					qs.set("variable", 1);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
-				break;
+				htmltext = "30328-04.htm";
+			}
+			else
+			{
+				st.startQuest();
+				giveItems(player, REISA_LETTER, 1);
 			}
 		}
+		else if (event.equals("30337-03.htm"))
+		{
+			st.setCond(2, true);
+			takeItems(player, REISA_LETTER, -1);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			npc.setScriptValue(attacker.getObjectId());
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		if (npc.isScriptValue(killer.getObjectId()) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, false))
-		{
-			final QuestState qs = getQuestState(killer, false);
-			if (qs == null)
-			{
-				return null;
-			}
-			
-			if (npc.getId() == OL_MAHUM_SENTRY)
-			{
-				if (qs.isCond(5) && (getRandom(10) < 6) && hasQuestItems(qs.getPlayer(), MORETTIES_HERB, MORETTIS_LETTER) && !hasQuestItems(qs.getPlayer(), RUSTED_KEY))
-				{
-					giveItems(qs.getPlayer(), RUSTED_KEY, 1);
-					qs.setCond(6, true);
-				}
-			}
-			else if (qs.isCond(2))
-			{
-				final boolean has1stLetter = hasQuestItems(qs.getPlayer(), PRIASS_1ND_TORN_LETTER);
-				final boolean has2ndLetter = hasQuestItems(qs.getPlayer(), PRIASS_2ND_TORN_LETTER);
-				final boolean has3rdLetter = hasQuestItems(qs.getPlayer(), PRIASS_3ND_TORN_LETTER);
-				final boolean has4thLetter = hasQuestItems(qs.getPlayer(), PRIASS_4ND_TORN_LETTER);
-				if (!(has1stLetter && has2ndLetter && has3rdLetter && has4thLetter))
-				{
-					if (!has1stLetter)
-					{
-						giveLetterAndCheckState(PRIASS_1ND_TORN_LETTER, qs);
-					}
-					else if (!has2ndLetter)
-					{
-						giveLetterAndCheckState(PRIASS_2ND_TORN_LETTER, qs);
-					}
-					else if (!has3rdLetter)
-					{
-						giveLetterAndCheckState(PRIASS_3ND_TORN_LETTER, qs);
-					}
-					else if (!has4thLetter)
-					{
-						giveLetterAndCheckState(PRIASS_4ND_TORN_LETTER, qs);
-					}
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	private void giveLetterAndCheckState(int letterId, QuestState qs)
-	{
-		giveItems(qs.getPlayer(), letterId, 1);
-		if (getQuestItemsCount(qs.getPlayer(), PRIASS_1ND_TORN_LETTER, PRIASS_2ND_TORN_LETTER, PRIASS_3ND_TORN_LETTER, PRIASS_4ND_TORN_LETTER) >= 4)
-		{
-			qs.setCond(3, true);
-		}
-		else
-		{
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == MASTER_REORIA)
+			case State.CREATED:
 			{
 				htmltext = "30328-01.htm";
+				break;
 			}
-		}
-		if (qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_REORIA)
+			case State.STARTED:
 			{
-				return htmltext;
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case REISA:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30328-06.htm";
+						}
+						else if ((cond > 1) && (cond < 8))
+						{
+							htmltext = "30328-08.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30328-07.htm";
+							takeItems(player, HONORARY_GUARD, -1);
+							giveItems(player, REISA_RECOMMENDATION, 1);
+							addExpAndSp(player, 3200, 1000);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
+						}
+						break;
+					}
+					case MORETTI:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30337-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = (!hasQuestItems(player, PRIAS_TORN_LETTER_1)) ? "30337-04.htm" : "30337-05.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30337-06.htm";
+							st.setCond(4, true);
+							takeItems(player, PRIAS_TORN_LETTER_1, -1);
+							takeItems(player, PRIAS_TORN_LETTER_2, -1);
+							takeItems(player, PRIAS_TORN_LETTER_3, -1);
+							takeItems(player, PRIAS_TORN_LETTER_4, -1);
+							giveItems(player, MORETTI_HERB, 1);
+							giveItems(player, MORETTI_LETTER, 1);
+						}
+						else if ((cond > 3) && (cond < 7))
+						{
+							htmltext = "30337-09.htm";
+						}
+						else if ((cond == 7) && hasQuestItems(player, PRIAS_LETTER))
+						{
+							htmltext = "30337-07.htm";
+							st.setCond(8, true);
+							takeItems(player, PRIAS_LETTER, -1);
+							giveItems(player, HONORARY_GUARD, 1);
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30337-08.htm";
+						}
+						break;
+					}
+					case BABENCO:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30334-01.htm";
+						}
+						break;
+					}
+					case PRIAS:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30426-01.htm";
+							st.setCond(5, true);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30426-01.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30426-02.htm";
+							st.setCond(7, true);
+							takeItems(player, RUSTED_KEY, -1);
+							takeItems(player, MORETTI_HERB, -1);
+							takeItems(player, MORETTI_LETTER, -1);
+							giveItems(player, PRIAS_LETTER, 1);
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30426-04.htm";
+						}
+						break;
+					}
+				}
+				break;
 			}
 		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MASTER_REORIA:
-				{
-					if (hasQuestItems(player, REISAS_LETTER))
-					{
-						htmltext = "30328-06.html";
-					}
-					else if ((qs.getInt("variable") == 1) && !hasAtLeastOneQuestItem(player, REISAS_LETTER, HONORARY_GUARD))
-					{
-						htmltext = "30328-08.html";
-					}
-					else if (hasQuestItems(player, HONORARY_GUARD))
-					{
-						takeItems(player, HONORARY_GUARD, -1);
-						giveItems(player, REISAS_RECOMMENDATION, 1);
-						final int level = player.getLevel();
-						if (level >= 20)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else if (level == 19)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30328-07.html";
-					}
-					break;
-				}
-				case GUARD_BABENCO:
-				{
-					if (qs.getInt("variable") == 1)
-					{
-						htmltext = "30334-01.html";
-					}
-					break;
-				}
-				case GUARD_MORETTI:
-				{
-					final long letterCount = getQuestItemsCount(player, PRIASS_1ND_TORN_LETTER, PRIASS_2ND_TORN_LETTER, PRIASS_3ND_TORN_LETTER, PRIASS_4ND_TORN_LETTER);
-					if (hasQuestItems(player, REISAS_LETTER) && (letterCount == 0))
-					{
-						htmltext = "30337-01.html";
-					}
-					else if ((qs.getInt("variable") == 1) && !hasAtLeastOneQuestItem(player, MORETTIS_LETTER, PRIASS_LETTER, HONORARY_GUARD))
-					{
-						if (letterCount == 0)
-						{
-							htmltext = "30337-04.html";
-						}
-						else if (letterCount < 4)
-						{
-							htmltext = "30337-05.html";
-						}
-						else
-						{
-							takeItems(player, -1, PRIASS_1ND_TORN_LETTER, PRIASS_2ND_TORN_LETTER, PRIASS_3ND_TORN_LETTER, PRIASS_4ND_TORN_LETTER);
-							giveItems(player, MORETTIES_HERB, 1);
-							giveItems(player, MORETTIS_LETTER, 1);
-							qs.setCond(4, true);
-							htmltext = "30337-06.html";
-						}
-					}
-					else if (hasQuestItems(player, PRIASS_LETTER))
-					{
-						takeItems(player, PRIASS_LETTER, -1);
-						giveItems(player, HONORARY_GUARD, 1);
-						qs.setCond(8, true);
-						htmltext = "30337-07.html";
-					}
-					else if (hasQuestItems(player, MORETTIES_HERB, MORETTIS_LETTER))
-					{
-						htmltext = "30337-09.html";
-					}
-					else if (hasQuestItems(player, HONORARY_GUARD))
-					{
-						htmltext = "30337-08.html";
-					}
-					break;
-				}
-				case PRIAS:
-				{
-					if (hasQuestItems(player, MORETTIS_LETTER, MORETTIES_HERB))
-					{
-						if (!hasQuestItems(player, RUSTED_KEY))
-						{
-							qs.setCond(5, true);
-							htmltext = "30426-01.html";
-						}
-						else
-						{
-							takeItems(player, -1, RUSTED_KEY, MORETTIES_HERB, MORETTIS_LETTER);
-							giveItems(player, PRIASS_LETTER, 1);
-							qs.setCond(7, true);
-							htmltext = "30426-02.html";
-						}
-					}
-					else if (hasQuestItems(player, PRIASS_LETTER))
-					{
-						htmltext = "30426-04.html";
-					}
-					break;
-				}
-			}
-		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int cond = st.getCond();
+		if (npc.getId() == 20053)
+		{
+			if (cond == 2)
+			{
+				if (!hasQuestItems(player, PRIAS_TORN_LETTER_1))
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, PRIAS_TORN_LETTER_1, 1);
+				}
+				else if (!hasQuestItems(player, PRIAS_TORN_LETTER_2))
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, PRIAS_TORN_LETTER_2, 1);
+				}
+				else if (!hasQuestItems(player, PRIAS_TORN_LETTER_3))
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, PRIAS_TORN_LETTER_3, 1);
+				}
+				else if (!hasQuestItems(player, PRIAS_TORN_LETTER_4))
+				{
+					st.setCond(3, true);
+					giveItems(player, PRIAS_TORN_LETTER_4, 1);
+				}
+			}
+		}
+		else if (((cond == 4) || (cond == 5)) && (getRandom(10) < 6))
+		{
+			giveItems(player, RUSTED_KEY, 1);
+			st.setCond(6, true);
+		}
+		
+		return null;
 	}
 }

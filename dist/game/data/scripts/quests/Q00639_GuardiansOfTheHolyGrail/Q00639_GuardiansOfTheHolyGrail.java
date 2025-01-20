@@ -93,7 +93,7 @@ public class Q00639_GuardiansOfTheHolyGrail extends Quest
 			}
 			case "31350-08.htm":
 			{
-				final long count = getQuestItemsCount(player, SCRIPTURE);
+				final int count = (int) getQuestItemsCount(player, SCRIPTURE);
 				takeItems(player, SCRIPTURE, -1);
 				giveAdena(player, (1625 * count) + ((count >= 10) ? 33940 : 0), true);
 				htmltext = event;

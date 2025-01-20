@@ -19,16 +19,14 @@ package quests.Q00369_CollectorOfJewels;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Collector of Jewels (369)
- * @author Adry_85
- */
 public class Q00369_CollectorOfJewels extends Quest
 {
 	// NPC
@@ -36,9 +34,9 @@ public class Q00369_CollectorOfJewels extends Quest
 	// Items
 	private static final int FLARE_SHARD = 5882;
 	private static final int FREEZING_SHARD = 5883;
-	// Misc
-	private static final int MIN_LEVEL = 25;
-	// Mobs
+	// Reward
+	private static final int ADENA = 57;
+	// Droplist
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
 	static
 	{
@@ -53,61 +51,90 @@ public class Q00369_CollectorOfJewels extends Quest
 	public Q00369_CollectorOfJewels()
 	{
 		super(369);
+		registerQuestItems(FLARE_SHARD, FREEZING_SHARD);
 		addStartNpc(NELL);
 		addTalkId(NELL);
 		addKillId(MOBS_DROP_CHANCES.keySet());
-		registerQuestItems(FLARE_SHARD, FREEZING_SHARD);
-		addCondMaxLevel(37, getNoQuestMsg(null));
-	}
-	
-	@Override
-	public boolean checkPartyMember(Player member, Npc npc)
-	{
-		final QuestState qs = getQuestState(member, false);
-		return ((qs != null) && (qs.isMemoState(1) || qs.isMemoState(3)));
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "30376-02.htm":
+			case "30376-03.htm":
 			{
-				qs.startQuest();
-				qs.setMemoState(1);
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30376-05.html":
+			case "30376-07.htm":
 			{
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
-			case "30376-06.html":
+			case "30376-08.htm":
 			{
-				if (qs.isMemoState(2))
+				st.exitQuest(true, true);
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 25) ? "30376-01.htm" : "30376-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				final int flare = (int) getQuestItemsCount(player, FLARE_SHARD);
+				final int freezing = (int) getQuestItemsCount(player, FREEZING_SHARD);
+				if (cond == 1)
 				{
-					qs.setMemoState(3);
-					qs.setCond(3, true);
-					htmltext = event;
+					htmltext = "30376-04.htm";
+				}
+				else if ((cond == 2) && (flare >= 50) && (freezing >= 50))
+				{
+					htmltext = "30376-05.htm";
+					st.setCond(3, true);
+					takeItems(player, FLARE_SHARD, -1);
+					takeItems(player, FREEZING_SHARD, -1);
+					rewardItems(player, ADENA, 12500);
+				}
+				else if (cond == 3)
+				{
+					htmltext = "30376-09.htm";
+				}
+				else if ((cond == 4) && (flare >= 200) && (freezing >= 200))
+				{
+					htmltext = "30376-10.htm";
+					takeItems(player, FLARE_SHARD, -1);
+					takeItems(player, FREEZING_SHARD, -1);
+					rewardItems(player, ADENA, 63500);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
-			case "30376-07.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -121,68 +148,18 @@ public class Q00369_CollectorOfJewels extends Quest
 			if (luckyPlayer != null)
 			{
 				final QuestState qs = getQuestState(luckyPlayer, false);
-				final int itemCount = (qs.isMemoState(1) ? 50 : 200);
-				final int cond = (qs.isMemoState(1) ? 2 : 4);
-				if (giveItemRandomly(luckyPlayer, npc, item.getId(), item.getCount(), itemCount, 1, true) //
-					&& (getQuestItemsCount(luckyPlayer, FLARE_SHARD, FREEZING_SHARD) >= (itemCount * 2)))
+				if (qs != null)
 				{
-					qs.setCond(cond);
+					final int itemCount = (qs.isMemoState(1) ? 50 : 200);
+					final int cond = (qs.isMemoState(1) ? 2 : 4);
+					if (giveItemRandomly(luckyPlayer, npc, item.getId(), item.getCount(), itemCount, 1, true) //
+						&& (getQuestItemsCount(luckyPlayer, FLARE_SHARD, FREEZING_SHARD) >= (itemCount * 2)))
+					{
+						qs.setCond(cond);
+					}
 				}
 			}
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30376-01.htm" : "30376-03.html";
-		}
-		else if (qs.isStarted())
-		{
-			switch (qs.getMemoState())
-			{
-				case 1:
-				{
-					if (getQuestItemsCount(player, FLARE_SHARD, FREEZING_SHARD) >= 100)
-					{
-						giveAdena(player, 3000, true);
-						takeItems(player, -1, FLARE_SHARD, FREEZING_SHARD);
-						qs.setMemoState(2);
-						htmltext = "30376-04.html";
-					}
-					else
-					{
-						htmltext = "30376-08.html";
-					}
-					break;
-				}
-				case 2:
-				{
-					htmltext = "30376-09.html";
-					break;
-				}
-				case 3:
-				{
-					if (getQuestItemsCount(player, FLARE_SHARD, FREEZING_SHARD) >= 400)
-					{
-						giveAdena(player, 12000, true);
-						takeItems(player, -1, FLARE_SHARD, FREEZING_SHARD);
-						qs.exitQuest(true, true);
-						htmltext = "30376-10.html";
-					}
-					else
-					{
-						htmltext = "30376-11.html";
-					}
-					break;
-				}
-			}
-		}
-		return htmltext;
 	}
 }

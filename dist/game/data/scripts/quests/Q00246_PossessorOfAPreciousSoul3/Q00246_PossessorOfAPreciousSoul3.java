@@ -16,6 +16,7 @@
  */
 package quests.Q00246_PossessorOfAPreciousSoul3;
 
+import org.l2jmobius.Config;
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -23,7 +24,6 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.network.NpcStringId;
 
 public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 {
@@ -48,12 +48,18 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	public Q00246_PossessorOfAPreciousSoul3()
 	{
 		super(246);
-		// Corrected registering of quest items
-		registerQuestItems(WATERBINDER, EVERGREEN, RAIN_SONG, RELIC_BOX);
+		
+		_questItemIds = new int[]
+		{
+			WATERBINDER,
+			EVERGREEN,
+			RAIN_SONG,
+			RELIC_BOX
+		};
+		
 		addStartNpc(CARADINE);
 		addTalkId(CARADINE, OSSIAN, LADD);
 		addKillId(PILGRIM_OF_SPLENDOR, JUDGE_OF_SPLENDOR, BARAKIEL);
-		setQuestNameNpcStringId(NpcStringId.PATH_OF_THE_NOBLESSE_PRECIOUS_SOUL_3);
 	}
 	
 	@Override
@@ -135,7 +141,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 					if (!player.isSubClassActive() || (player.getLevel() < 65))
 					{
 						htmltext = "31740-02.htm";
-						st.exitQuest(true, false);
+						st.exitQuest(true, true);
 					}
 					else
 					{
@@ -235,6 +241,11 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 			{
 				for (Player member : player.getParty().getMembers())
 				{
+					if (member.calculateDistance3D(npc) > Config.ALT_PARTY_RANGE)
+					{
+						continue;
+					}
+					
 					pst = member.getQuestState(getName());
 					if ((pst != null) && pst.isCond(4) && !hasQuestItems(member, RAIN_SONG))
 					{
@@ -278,7 +289,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 					}
 					else
 					{
-						st.setCond(3);
+						st.setCond(3, true);
 					}
 				}
 			}

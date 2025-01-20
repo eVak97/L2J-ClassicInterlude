@@ -16,159 +16,134 @@
  */
 package quests.Q00276_TotemOfTheHestui;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-import quests.Q00261_CollectorsDream.Q00261_CollectorsDream;
-
-/**
- * Totem of the Hestui (276)
- * @author xban1x
- */
 public class Q00276_TotemOfTheHestui extends Quest
 {
-	// Npc
-	private static final int TANAPI = 30571;
 	// Items
 	private static final int KASHA_PARASITE = 1480;
 	private static final int KASHA_CRYSTAL = 1481;
-	// Monsters
-	private static final int KASHA_BEAR = 20479;
-	private static final int KASHA_BEAR_TOTEM = 27044;
 	// Rewards
-	private static final int[] REWARDS = new int[]
-	{
-		29,
-		1500,
-	};
-	// Misc
-	private static final List<ItemHolder> SPAWN_CHANCES = new ArrayList<>();
-	private static final int MIN_LEVEL = 15;
-	static
-	{
-		SPAWN_CHANCES.add(new ItemHolder(79, 100));
-		SPAWN_CHANCES.add(new ItemHolder(69, 20));
-		SPAWN_CHANCES.add(new ItemHolder(59, 15));
-		SPAWN_CHANCES.add(new ItemHolder(49, 10));
-		SPAWN_CHANCES.add(new ItemHolder(39, 2));
-	}
+	private static final int HESTUI_TOTEM = 1500;
+	private static final int LEATHER_PANTS = 29;
 	
 	public Q00276_TotemOfTheHestui()
 	{
 		super(276);
-		addStartNpc(TANAPI);
-		addTalkId(TANAPI);
-		addKillId(KASHA_BEAR, KASHA_BEAR_TOTEM);
 		registerQuestItems(KASHA_PARASITE, KASHA_CRYSTAL);
-		addCondMaxLevel(21, getNoQuestMsg(null));
+		addStartNpc(30571); // Tanapi
+		addTalkId(30571);
+		addKillId(20479, 27044);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30571-03.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, killer, npc, true))
+		
+		if (event.equals("30571-03.htm"))
 		{
-			switch (npc.getId())
-			{
-				case KASHA_BEAR:
-				{
-					final long chance1 = getQuestItemsCount(killer, KASHA_PARASITE);
-					final int chance2 = getRandom(100);
-					boolean chance3 = true;
-					for (ItemHolder spawnChance : SPAWN_CHANCES)
-					{
-						if ((chance1 >= spawnChance.getId()) && (chance2 <= spawnChance.getCount()))
-						{
-							addSpawn(KASHA_BEAR_TOTEM, npc);
-							takeItems(killer, KASHA_PARASITE, -1);
-							chance3 = false;
-							break;
-						}
-					}
-					if (chance3)
-					{
-						giveItemRandomly(killer, KASHA_PARASITE, 1, 0, 1, true);
-					}
-					break;
-				}
-				case KASHA_BEAR_TOTEM:
-				{
-					if (giveItemRandomly(killer, KASHA_CRYSTAL, 1, 1, 1, true))
-					{
-						qs.setCond(2);
-					}
-					break;
-				}
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LEVEL) ? "30571-02.htm" : "30571-01.htm" : "30571-00.htm";
+				if (player.getRace() != Race.ORC)
+				{
+					htmltext = "30571-00.htm";
+				}
+				else if (player.getLevel() < 15)
+				{
+					htmltext = "30571-01.htm";
+				}
+				else
+				{
+					htmltext = "30571-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						htmltext = "30571-04.html";
-						break;
-					}
-					case 2:
-					{
-						if (hasQuestItems(player, KASHA_CRYSTAL))
-						{
-							if (!player.isSimulatingTalking())
-							{
-								Q00261_CollectorsDream.giveNewbieReward(player);
-								for (int reward : REWARDS)
-								{
-									rewardItems(player, reward, 1);
-								}
-								qs.exitQuest(true, true);
-							}
-							htmltext = "30571-05.html";
-						}
-						break;
-					}
+					htmltext = "30571-04.htm";
+				}
+				else
+				{
+					htmltext = "30571-05.htm";
+					takeItems(player, KASHA_CRYSTAL, -1);
+					takeItems(player, KASHA_PARASITE, -1);
+					giveItems(player, HESTUI_TOTEM, 1);
+					giveItems(player, LEATHER_PANTS, 1);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (!hasQuestItems(player, KASHA_CRYSTAL))
+		{
+			switch (npc.getId())
+			{
+				case 20479:
+				{
+					final int count = (int) getQuestItemsCount(player, KASHA_PARASITE);
+					final int random = getRandom(100);
+					if ((count >= 79) || ((count >= 69) && (random <= 20)) || ((count >= 59) && (random <= 15)) || ((count >= 49) && (random <= 10)) || ((count >= 39) && (random < 2)))
+					{
+						addSpawn(27044, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0);
+						takeItems(player, KASHA_PARASITE, count);
+					}
+					else
+					{
+						giveItems(player, KASHA_PARASITE, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					break;
+				}
+				case 27044:
+				{
+					st.setCond(2, true);
+					giveItems(player, KASHA_CRYSTAL, 1);
+					break;
+				}
+			}
+		}
+		
+		return null;
 	}
 }

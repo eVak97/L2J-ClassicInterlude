@@ -22,82 +22,85 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Find Sir Windawood (155)
- * @author malyelfik
- */
 public class Q00155_FindSirWindawood extends Quest
 {
 	// NPCs
 	private static final int ABELLOS = 30042;
-	private static final int SIR_COLLIN_WINDAWOOD = 30311;
+	private static final int WINDAWOOD = 30311;
 	// Items
 	private static final int OFFICIAL_LETTER = 1019;
 	private static final int HASTE_POTION = 734;
-	// Misc
-	private static final int MIN_LEVEL = 3;
 	
 	public Q00155_FindSirWindawood()
 	{
 		super(155);
-		addStartNpc(ABELLOS);
-		addTalkId(ABELLOS, SIR_COLLIN_WINDAWOOD);
 		registerQuestItems(OFFICIAL_LETTER);
+		addStartNpc(ABELLOS);
+		addTalkId(WINDAWOOD, ABELLOS);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30042-03.htm"))
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			giveItems(player, OFFICIAL_LETTER, 1);
-			return event;
+			return htmltext;
 		}
-		return null;
+		
+		if (event.equals("30042-02.htm"))
+		{
+			st.startQuest();
+			giveItems(player, OFFICIAL_LETTER, 1);
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case ABELLOS:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				htmltext = (player.getLevel() < 3) ? "30042-01a.htm" : "30042-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
 				{
-					case State.CREATED:
+					case ABELLOS:
 					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30042-02.htm" : "30042-01.htm";
+						htmltext = "30042-03.htm";
 						break;
 					}
-					case State.STARTED:
+					case WINDAWOOD:
 					{
-						htmltext = "30042-04.html";
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
+						if (hasQuestItems(player, OFFICIAL_LETTER))
+						{
+							htmltext = "30311-01.htm";
+							takeItems(player, OFFICIAL_LETTER, 1);
+							rewardItems(player, HASTE_POTION, 1);
+							st.exitQuest(false, true);
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case SIR_COLLIN_WINDAWOOD:
+			case State.COMPLETED:
 			{
-				if (qs.isStarted() && hasQuestItems(player, OFFICIAL_LETTER))
-				{
-					giveItems(player, HASTE_POTION, 1);
-					qs.exitQuest(false, true);
-					htmltext = "30311-01.html";
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

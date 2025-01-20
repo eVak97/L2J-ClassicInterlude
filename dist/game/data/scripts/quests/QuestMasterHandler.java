@@ -29,16 +29,6 @@ import quests.Q00007_ATripBegins.Q00007_ATripBegins;
 import quests.Q00008_AnAdventureBegins.Q00008_AnAdventureBegins;
 import quests.Q00009_IntoTheCityOfHumans.Q00009_IntoTheCityOfHumans;
 import quests.Q00010_IntoTheWorld.Q00010_IntoTheWorld;
-// import quests.Q00001_LettersOfLove.Q00001_LettersOfLove;
-// import quests.Q00002_WhatWomenWant.Q00002_WhatWomenWant;
-// import quests.Q00003_WillTheSealBeBroken.Q00003_WillTheSealBeBroken;
-// import quests.Q00004_LongLiveThePaagrioLord.Q00004_LongLiveThePaagrioLord;
-// import quests.Q00005_MinersFavor.Q00005_MinersFavor;
-// import quests.Q00006_StepIntoTheFuture.Q00006_StepIntoTheFuture;
-// import quests.Q00007_ATripBegins.Q00007_ATripBegins;
-// import quests.Q00008_AnAdventureBegins.Q00008_AnAdventureBegins;
-// import quests.Q00009_IntoTheCityOfHumans.Q00009_IntoTheCityOfHumans;
-// import quests.Q00010_IntoTheWorld.Q00010_IntoTheWorld;
 import quests.Q00011_SecretMeetingWithKetraOrcs.Q00011_SecretMeetingWithKetraOrcs;
 import quests.Q00012_SecretMeetingWithVarkaSilenos.Q00012_SecretMeetingWithVarkaSilenos;
 import quests.Q00013_ParcelDelivery.Q00013_ParcelDelivery;
@@ -67,8 +57,6 @@ import quests.Q00036_MakeASewingKit.Q00036_MakeASewingKit;
 import quests.Q00037_MakeFormalWear.Q00037_MakeFormalWear;
 import quests.Q00038_DragonFangs.Q00038_DragonFangs;
 import quests.Q00039_RedEyedInvaders.Q00039_RedEyedInvaders;
-// import quests.Q00038_DragonFangs.Q00038_DragonFangs;
-// import quests.Q00039_RedEyedInvaders.Q00039_RedEyedInvaders;
 import quests.Q00042_HelpTheUncle.Q00042_HelpTheUncle;
 import quests.Q00043_HelpTheSister.Q00043_HelpTheSister;
 import quests.Q00044_HelpTheSon.Q00044_HelpTheSon;
@@ -77,11 +65,6 @@ import quests.Q00046_OnceMoreInTheArmsOfTheMotherTree.Q00046_OnceMoreInTheArmsOf
 import quests.Q00047_IntoTheDarkElvenForest.Q00047_IntoTheDarkElvenForest;
 import quests.Q00048_ToTheImmortalPlateau.Q00048_ToTheImmortalPlateau;
 import quests.Q00049_TheRoadHome.Q00049_TheRoadHome;
-// import quests.Q00045_ToTalkingIsland.Q00045_ToTalkingIsland;
-// import quests.Q00046_OnceMoreInTheArmsOfTheMotherTree.Q00046_OnceMoreInTheArmsOfTheMotherTree;
-// import quests.Q00047_IntoTheDarkElvenForest.Q00047_IntoTheDarkElvenForest;
-// import quests.Q00048_ToTheImmortalPlateau.Q00048_ToTheImmortalPlateau;
-// import quests.Q00049_TheRoadHome.Q00049_TheRoadHome;
 import quests.Q00050_LanoscosSpecialBait.Q00050_LanoscosSpecialBait;
 import quests.Q00051_OFullesSpecialBait.Q00051_OFullesSpecialBait;
 import quests.Q00052_WilliesSpecialBait.Q00052_WilliesSpecialBait;
@@ -143,6 +126,7 @@ import quests.Q00123_TheLeaderAndTheFollower.Q00123_TheLeaderAndTheFollower;
 import quests.Q00124_MeetingTheElroki.Q00124_MeetingTheElroki;
 import quests.Q00125_TheNameOfEvil1.Q00125_TheNameOfEvil1;
 import quests.Q00126_TheNameOfEvil2.Q00126_TheNameOfEvil2;
+import quests.Q00127_KamaelAWindowToTheFuture.Q00127_KamaelAWindowToTheFuture;
 // import quests.Q00127_KamaelAWindowToTheFuture.Q00127_KamaelAWindowToTheFuture;
 import quests.Q00151_CureForFever.Q00151_CureForFever;
 import quests.Q00152_ShardsOfGolem.Q00152_ShardsOfGolem;
@@ -468,46 +452,46 @@ public class QuestMasterHandler
 		Q00008_AnAdventureBegins.class, // Added, need html work and test.
 		Q00009_IntoTheCityOfHumans.class, // Added, need html work and test.
 		Q00010_IntoTheWorld.class, // Added, need html work and test.
-		Q00011_SecretMeetingWithKetraOrcs.class,
-		Q00012_SecretMeetingWithVarkaSilenos.class,
-		Q00013_ParcelDelivery.class,
-		Q00014_WhereaboutsOfTheArchaeologist.class,
-		Q00015_SweetWhispers.class,
-		Q00016_TheComingDarkness.class,
-		Q00017_LightAndDarkness.class,
-		Q00018_MeetingWithTheGoldenRam.class,
-		Q00019_GoToThePastureland.class,
-		Q00020_BringUpWithLove.class,
-		Q00021_HiddenTruth.class,
+		Q00011_SecretMeetingWithKetraOrcs.class, // Added, need html work and test.
+		Q00012_SecretMeetingWithVarkaSilenos.class, // Added, need html work and test.
+		Q00013_ParcelDelivery.class, // Added, need html work and test.
+		Q00014_WhereaboutsOfTheArchaeologist.class, // Added, need html work and test.
+		Q00015_SweetWhispers.class, // Added, need html work and test.
+		Q00016_TheComingDarkness.class, // Added, need html work and test.
+		Q00017_LightAndDarkness.class, // Added, need html work and test.
+		Q00018_MeetingWithTheGoldenRam.class, // Added, need html work and test.
+		Q00019_GoToThePastureland.class, // Added, need html work and test.
+		Q00020_BringUpWithLove.class, // Added, need html work and test.
+		Q00021_HiddenTruth.class, // Added, need html work and test. // Added, need html work and test.
 		Q00022_TragedyInVonHellmannForest.class,
-		Q00023_LidiasHeart.class,
-		Q00024_InhabitantsOfTheForestOfTheDead.class,
-		Q00025_HidingBehindTheTruth.class,
-		Q00027_ChestCaughtWithABaitOfWind.class,
-		Q00028_ChestCaughtWithABaitOfIcyAir.class,
-		Q00029_ChestCaughtWithABaitOfEarth.class,
-		Q00030_ChestCaughtWithABaitOfFire.class,
-		Q00031_SecretBuriedInTheSwamp.class,
-		Q00032_AnObviousLie.class,
-		Q00033_MakeAPairOfDressShoes.class,
-		Q00034_InSearchOfCloth.class,
-		Q00035_FindGlitteringJewelry.class,
-		Q00036_MakeASewingKit.class,
-		Q00037_MakeFormalWear.class,
+		Q00023_LidiasHeart.class, // Added, need html work and test.
+		Q00024_InhabitantsOfTheForestOfTheDead.class, // Added, need html work and test.
+		Q00025_HidingBehindTheTruth.class, // Added, need html work and test.
+		Q00027_ChestCaughtWithABaitOfWind.class, // Added, need html work and test.
+		Q00028_ChestCaughtWithABaitOfIcyAir.class, // Added, need html work and test.
+		Q00029_ChestCaughtWithABaitOfEarth.class, // Added, need html work and test.
+		Q00030_ChestCaughtWithABaitOfFire.class, // Added, need html work and test.
+		Q00031_SecretBuriedInTheSwamp.class, // Added, need html work and test.
+		Q00032_AnObviousLie.class, // Added, need html work and test.
+		Q00033_MakeAPairOfDressShoes.class, // Added, need html work and test.
+		Q00034_InSearchOfCloth.class, // Added, need html work and test.
+		Q00035_FindGlitteringJewelry.class, // Added, need html work and test.
+		Q00036_MakeASewingKit.class, // Added, need html work and test.
+		Q00037_MakeFormalWear.class, // Added, need html work and test.
 		Q00038_DragonFangs.class, // Added, need html work and test.
 		Q00039_RedEyedInvaders.class, // Added, need html work and test.
-		Q00042_HelpTheUncle.class,
-		Q00043_HelpTheSister.class,
-		Q00044_HelpTheSon.class,
+		Q00042_HelpTheUncle.class, // Added, need html work and test.
+		Q00043_HelpTheSister.class, // Added, need html work and test.
+		Q00044_HelpTheSon.class, // Added, need html work and test.
 		Q00045_ToTalkingIsland.class, // Added, need html work and test.
 		Q00046_OnceMoreInTheArmsOfTheMotherTree.class, // Added, need html work and test.
 		Q00047_IntoTheDarkElvenForest.class, // Added, need html work and test.
 		Q00048_ToTheImmortalPlateau.class, // Added, need html work and test.
 		Q00049_TheRoadHome.class, // Added, need html work and test.
-		Q00050_LanoscosSpecialBait.class,
-		Q00051_OFullesSpecialBait.class,
-		Q00052_WilliesSpecialBait.class,
-		Q00053_LinnaeusSpecialBait.class,
+		Q00050_LanoscosSpecialBait.class, // Added, need html work and test.
+		Q00051_OFullesSpecialBait.class, // Added, need html work and test.
+		Q00052_WilliesSpecialBait.class, // Added, need html work and test.
+		Q00053_LinnaeusSpecialBait.class, // Added, need html work and test.
 		Q00070_SagaOfThePhoenixKnight.class,
 		Q00071_SagaOfEvasTemplar.class,
 		Q00072_SagaOfTheSwordMuse.class,
@@ -547,32 +531,32 @@ public class QuestMasterHandler
 		Q00106_ForgottenTruth.class, // Redone, need update html and test.
 		Q00107_MercilessPunishment.class, // Redone, need update html and test.
 		Q00108_JumbleTumbleDiamondFuss.class, // Redone, need update html and test.
-		Q00109_InSearchOfTheNest.class,
-		Q00110_ToThePrimevalIsle.class,
-		Q00111_ElrokianHuntersProof.class,
-		Q00112_WalkOfFate.class,
-		Q00113_StatusOfTheBeaconTower.class,
-		Q00114_ResurrectionOfAnOldManager.class,
-		Q00115_TheOtherSideOfTruth.class,
-		Q00116_BeyondTheHillsOfWinter.class,
-		Q00117_TheOceanOfDistantStars.class,
-		Q00118_ToLeadAndBeLed.class,
-		Q00119_LastImperialPrince.class,
-		Q00120_PavelsLastResearch.class,
-		Q00121_PavelTheGiant.class,
-		Q00122_OminousNews.class,
-		Q00123_TheLeaderAndTheFollower.class,
-		Q00124_MeetingTheElroki.class,
-		Q00125_TheNameOfEvil1.class,
-		Q00126_TheNameOfEvil2.class,
-		// Q00127_KamaelAWindowToTheFuture.class,
-		Q00151_CureForFever.class,
-		Q00152_ShardsOfGolem.class,
-		Q00153_DeliverGoods.class,
-		Q00154_SacrificeToTheSea.class,
-		Q00155_FindSirWindawood.class,
-		Q00156_MillenniumLove.class,
-		Q00157_RecoverSmuggledGoods.class,
+		Q00109_InSearchOfTheNest.class, // Added, need html work and test.
+		Q00110_ToThePrimevalIsle.class, // Added, need html work and test.
+		Q00111_ElrokianHuntersProof.class, // Added, need html work and test.
+		Q00112_WalkOfFate.class, // Added, need html work and test.
+		Q00113_StatusOfTheBeaconTower.class, // Added, need html work and test.
+		Q00114_ResurrectionOfAnOldManager.class, // Added, need html work and test.
+		Q00115_TheOtherSideOfTruth.class, // Added, need html work and test.
+		Q00116_BeyondTheHillsOfWinter.class, // Added, need html work and test.
+		Q00117_TheOceanOfDistantStars.class, // Added, need html work and test.
+		Q00118_ToLeadAndBeLed.class, // Added, need html work and test.
+		Q00119_LastImperialPrince.class, // Added, need html work and test.
+		Q00120_PavelsLastResearch.class, // Added, need html work and test.
+		Q00121_PavelTheGiant.class, // Added, need html work and test.
+		Q00122_OminousNews.class, // Added, need html work and test.
+		Q00123_TheLeaderAndTheFollower.class, // Added, need html work and test.
+		Q00124_MeetingTheElroki.class, // Added, need html work and test.
+		Q00125_TheNameOfEvil1.class, // Added, need html work and test.
+		Q00126_TheNameOfEvil2.class, // Added, need html work and test.
+		Q00127_KamaelAWindowToTheFuture.class, // Added, need html work and test.
+		Q00151_CureForFever.class, // Added, need html work and test.
+		Q00152_ShardsOfGolem.class, // Added, need html work and test.
+		Q00153_DeliverGoods.class, // Added, need html work and test.
+		Q00154_SacrificeToTheSea.class, // Added, need html work and test.
+		Q00155_FindSirWindawood.class, // Added, need html work and test.
+		Q00156_MillenniumLove.class, // Added, need html work and test.
+		Q00157_RecoverSmuggledGoods.class, // Added, need html work and test.
 		Q00158_SeedOfEvil.class, // Added, need html work and test.
 		Q00159_ProtectTheWaterSource.class, // Added, need html work and test.
 		Q00160_NerupasRequest.class, // Added, need html work and test.
@@ -586,104 +570,104 @@ public class QuestMasterHandler
 		Q00168_DeliverSupplies.class, // Added, need html work and test.
 		Q00169_OffspringOfNightmares.class, // Added, need html work and test.
 		Q00170_DangerousSeduction.class, // Added, need html work and test.
-		Q00171_ActsOfEvil.class, // Added, need html work and test, check below if the quests are repetible
-		Q00211_TrialOfTheChallenger.class,
-		Q00212_TrialOfDuty.class,
-		Q00213_TrialOfTheSeeker.class,
-		Q00214_TrialOfTheScholar.class,
-		Q00215_TrialOfThePilgrim.class,
-		Q00216_TrialOfTheGuildsman.class,
-		Q00217_TestimonyOfTrust.class,
-		Q00218_TestimonyOfLife.class,
-		Q00219_TestimonyOfFate.class,
-		Q00220_TestimonyOfGlory.class,
-		Q00221_TestimonyOfProsperity.class,
-		Q00222_TestOfTheDuelist.class,
-		Q00223_TestOfTheChampion.class,
-		Q00224_TestOfSagittarius.class,
-		Q00225_TestOfTheSearcher.class,
-		Q00226_TestOfTheHealer.class,
-		Q00227_TestOfTheReformer.class,
-		Q00228_TestOfMagus.class,
-		Q00229_TestOfWitchcraft.class,
-		Q00230_TestOfTheSummoner.class,
-		Q00231_TestOfTheMaestro.class,
-		Q00232_TestOfTheLord.class,
-		Q00233_TestOfTheWarSpirit.class,
-		Q00234_FatesWhisper.class,
-		Q00235_MimirsElixir.class,
-		Q00241_PossessorOfAPreciousSoul1.class,
-		Q00242_PossessorOfAPreciousSoul2.class,
-		Q00246_PossessorOfAPreciousSoul3.class,
-		Q00247_PossessorOfAPreciousSoul4.class,
+		Q00171_ActsOfEvil.class, // Added, need html work and test.
+		Q00211_TrialOfTheChallenger.class, // Added, need html work and test.
+		Q00212_TrialOfDuty.class, // Added, need html work and test.
+		Q00213_TrialOfTheSeeker.class, // Added, need html work and test.
+		Q00214_TrialOfTheScholar.class, // Added, need html work and test.
+		Q00215_TrialOfThePilgrim.class, // Added, need html work and test.
+		Q00216_TrialOfTheGuildsman.class, // Added, need html work and test.
+		Q00217_TestimonyOfTrust.class, // Added, need html work and test.
+		Q00218_TestimonyOfLife.class, // Added, need html work and test.
+		Q00219_TestimonyOfFate.class, // Added, need html work and test.
+		Q00220_TestimonyOfGlory.class, // Added, need html work and test.
+		Q00221_TestimonyOfProsperity.class, // Added, need html work and test.
+		Q00222_TestOfTheDuelist.class, // Added, need html work and test.
+		Q00223_TestOfTheChampion.class, // Added, need html work and test.
+		Q00224_TestOfSagittarius.class, // Added, need html work and test.
+		Q00225_TestOfTheSearcher.class, // Added, need html work and test.
+		Q00226_TestOfTheHealer.class, // Added, need html work and test.
+		Q00227_TestOfTheReformer.class, // Added, need html work and test.
+		Q00228_TestOfMagus.class, // Added, need html work and test.
+		Q00229_TestOfWitchcraft.class, // Added, need html work and test.
+		Q00230_TestOfTheSummoner.class, // Added, need html work and test.
+		Q00231_TestOfTheMaestro.class, // Added, need html work and test.
+		Q00232_TestOfTheLord.class, // Added, need html work and test.
+		Q00233_TestOfTheWarSpirit.class, // Added, need html work and test.
+		Q00234_FatesWhisper.class, // Added, need html work and test.
+		Q00235_MimirsElixir.class, // Added, need html work and test.
+		Q00241_PossessorOfAPreciousSoul1.class, // Added, need html work and test.
+		Q00242_PossessorOfAPreciousSoul2.class, // Added, need html work and test.
+		Q00246_PossessorOfAPreciousSoul3.class, // Added, need html work and test.
+		Q00247_PossessorOfAPreciousSoul4.class, // Added, need html work and test.
 		Q00255_Tutorial.class,
 		Q00257_TheGuardIsBusy.class, // Redone, need update html and test.
-		Q00258_BringWolfPelts.class,
-		Q00259_RequestFromTheFarmOwner.class,
+		Q00258_BringWolfPelts.class, // Added, need html work and test.
+		Q00259_RequestFromTheFarmOwner.class, // Added, need html work and test.
 		Q00260_OrcHunting.class, // Redone, need update html and test.
-		Q00261_CollectorsDream.class,
-		Q00262_TradeWithTheIvoryTower.class,
-		Q00263_OrcSubjugation.class,
-		Q00264_KeenClaws.class,
+		Q00261_CollectorsDream.class, // Added, need html work and test.
+		Q00262_TradeWithTheIvoryTower.class, // Added, need html work and test.
+		Q00263_OrcSubjugation.class, // Added, need html work and test.
+		Q00264_KeenClaws.class, // Added, need html work and test.
 		Q00265_BondsOfSlavery.class, // Redone, need update html and test.
-		Q00266_PleasOfPixies.class,
-		Q00267_WrathOfVerdure.class,
-		Q00271_ProofOfValor.class,
-		Q00272_WrathOfAncestors.class,
+		Q00266_PleasOfPixies.class, // Added, need html work and test.
+		Q00267_WrathOfVerdure.class, // Added, need html work and test.
+		Q00271_ProofOfValor.class, // Added, need html work and test.
+		Q00272_WrathOfAncestors.class, // Added, need html work and test.
 		Q00273_InvadersOfTheHolyLand.class, // Redone, need update html and test.
-		Q00274_SkirmishWithTheWerewolves.class,
-		Q00275_DarkWingedSpies.class,
-		Q00276_TotemOfTheHestui.class,
-		Q00277_GatekeepersOffering.class,
+		Q00274_SkirmishWithTheWerewolves.class, // Added, need html work and test.
+		Q00275_DarkWingedSpies.class, // Added, need html work and test.
+		Q00276_TotemOfTheHestui.class, // Added, need html work and test.
+		Q00277_GatekeepersOffering.class, // Added, need html work and test.
 		Q00291_RevengeOfTheRedbonnet.class, // Added, need html work and test.
-		Q00292_BrigandsSweep.class,
+		Q00292_BrigandsSweep.class, // Added, need html work and test.
 		Q00293_TheHiddenVeins.class, // Redone, need update html and test.
-		Q00294_CovertBusiness.class,
-		Q00295_DreamingOfTheSkies.class,
-		Q00296_TarantulasSpiderSilk.class,
-		Q00297_GatekeepersFavor.class,
+		Q00294_CovertBusiness.class, // Added, need html work and test.
+		Q00295_DreamingOfTheSkies.class, // Added, need html work and test.
+		Q00296_TarantulasSpiderSilk.class, // Added, need html work and test.
+		Q00297_GatekeepersFavor.class, // Added, need html work and test.
 		Q00298_LizardmensConspiracy.class, // Added, need html work and test.
 		Q00299_GatherIngredientsForPie.class, // Added, need html work and test.
-		Q00300_HuntingLetoLizardman.class,
-		Q00303_CollectArrowheads.class,
-		Q00306_CrystalOfFireAndIce.class,
-		Q00313_CollectSpores.class,
-		Q00316_DestroyPlagueCarriers.class,
-		Q00317_CatchTheWind.class,
-		Q00319_ScentOfDeath.class,
-		Q00320_BonesTellTheFuture.class,
-		Q00324_SweetestVenom.class,
-		Q00325_GrimCollector.class,
-		Q00326_VanquishRemnants.class,
-		Q00327_RecoverTheFarmland.class,
-		Q00328_SenseForBusiness.class,
-		Q00329_CuriosityOfADwarf.class,
+		Q00300_HuntingLetoLizardman.class, // Added, need html work and test.
+		Q00303_CollectArrowheads.class, // Added, need html work and test.
+		Q00306_CrystalOfFireAndIce.class, // Added, need html work and test.
+		Q00313_CollectSpores.class, // Added, need html work and test.
+		Q00316_DestroyPlagueCarriers.class, // Added, need html work and test.
+		Q00317_CatchTheWind.class, // Added, need html work and test.
+		Q00319_ScentOfDeath.class, // Added, need html work and test.
+		Q00320_BonesTellTheFuture.class, // Added, need html work and test.
+		Q00324_SweetestVenom.class, // Added, need html work and test.
+		Q00325_GrimCollector.class, // Added, need html work and test.
+		Q00326_VanquishRemnants.class, // Added, need html work and test.
+		Q00327_RecoverTheFarmland.class, // Added, need html work and test.
+		Q00328_SenseForBusiness.class, // Added, need html work and test.
+		Q00329_CuriosityOfADwarf.class, // Added, need html work and test.
 		Q00330_AdeptOfTaste.class, // Added, need html work and test.
-		Q00331_ArrowOfVengeance.class,
-		Q00333_HuntOfTheBlackLion.class,
+		Q00331_ArrowOfVengeance.class, // Added, need html work and test.
+		Q00333_HuntOfTheBlackLion.class, // Added, need html work and test.
 		Q00334_TheWishingPotion.class, // Added, need html work and test.
 		Q00335_TheSongOfTheHunter.class, // Added, need html work and test.
-		Q00336_CoinsOfMagic.class,
-		Q00337_AudienceWithTheLandDragon.class,
+		Q00336_CoinsOfMagic.class, // Added, need html work and test.
+		Q00337_AudienceWithTheLandDragon.class, // Added, need html work and test.
 		Q00338_AlligatorHunter.class, // Added, need html work and test.
 		Q00340_SubjugationOfLizardmen.class, // Added, need html work and test.
 		Q00341_HuntingForWildBeasts.class, // Added, need html work and test.
 		Q00343_UnderTheShadowOfTheIvoryTower.class, // Added, need html work and test.
-		Q00344_1000YearsTheEndOfLamentation.class,
+		Q00344_1000YearsTheEndOfLamentation.class, // Added, need html work and test.
 		Q00345_MethodToRaiseTheDead.class, // Added, need html work and test.
 		Q00347_GoGetTheCalculator.class, // Added, need html work and test.
-		Q00348_AnArrogantSearch.class,
-		Q00350_EnhanceYourWeapon.class,
+		Q00348_AnArrogantSearch.class, // Added, need html work and test.
+		Q00350_EnhanceYourWeapon.class, // Added, need html work and test.
 		Q00351_BlackSwan.class, // Added, need html work and test.
 		Q00352_HelpRoodRaiseANewPet.class, // Added, need html work and test.
 		Q00353_PowerOfDarkness.class, // Added, need html work and test.
-		Q00354_ConquestOfAlligatorIsland.class,
-		Q00355_FamilyHonor.class,
-		Q00356_DigUpTheSeaOfSpores.class,
+		Q00354_ConquestOfAlligatorIsland.class, // Added, need html work and test.
+		Q00355_FamilyHonor.class, // Added, need html work and test.
+		Q00356_DigUpTheSeaOfSpores.class, // Added, need html work and test.
 		Q00357_WarehouseKeepersAmbition.class, // Added, need html work and test.
-		Q00358_IllegitimateChildOfTheGoddess.class,
-		Q00359_ForASleeplessDeadman.class,
-		Q00360_PlunderTheirSupplies.class,
+		Q00358_IllegitimateChildOfTheGoddess.class, // Added, need html work and test.
+		Q00359_ForASleeplessDeadman.class, // Added, need html work and test.
+		Q00360_PlunderTheirSupplies.class, // Added, need html work and test.
 		Q00362_BardsMandolin.class, // Added, need html work and test.
 		Q00363_SorrowfulSoundOfFlute.class, // Added, need html work and test.
 		Q00364_JovialAccordion.class, // Added, need html work and test.
@@ -691,53 +675,53 @@ public class QuestMasterHandler
 		Q00366_SilverHairedShaman.class, // Added, need html work and test.
 		Q00367_ElectrifyingRecharge.class, // Added, need html work and test.
 		Q00368_TrespassingIntoTheHolyGround.class, // Added, need html work and test.
-		Q00369_CollectorOfJewels.class,
-		Q00370_AnElderSowsSeeds.class,
+		Q00369_CollectorOfJewels.class, // Added, need html work and test.
+		Q00370_AnElderSowsSeeds.class, // Added, need html work and test.
 		Q00371_ShrieksOfGhosts.class, // Added, need html work and test.
-		Q00372_LegacyOfInsolence.class,
-		Q00373_SupplierOfReagents.class,
-		Q00374_WhisperOfDreamsPart1.class,
-		Q00375_WhisperOfDreamsPart2.class,
-		Q00376_ExplorationOfTheGiantsCavePart1.class,
-		Q00377_ExplorationOfTheGiantsCavePart2.class,
+		Q00372_LegacyOfInsolence.class, // Added, need html work and test.
+		Q00373_SupplierOfReagents.class, // Added, need html work and test.
+		Q00374_WhisperOfDreamsPart1.class, // Added, need html work and test.
+		Q00375_WhisperOfDreamsPart2.class, // Added, need html work and test.
+		Q00376_ExplorationOfTheGiantsCavePart1.class, // Added, need html work and test.
+		Q00377_ExplorationOfTheGiantsCavePart2.class, // Added, need html work and test.
 		Q00378_GrandFeast.class, // Added, need html work and test.
 		Q00379_FantasyWine.class, // Added, need html work and test.
 		Q00380_BringOutTheFlavorOfIngredients.class, // Added, need html work and test.
-		Q00381_LetsBecomeARoyalMember.class,
-		Q00382_KailsMagicCoin.class,
+		Q00381_LetsBecomeARoyalMember.class, // Added, need html work and test.
+		Q00382_KailsMagicCoin.class, // Added, need html work and test.
 		Q00383_TreasureHunt.class, // Added, need html work and test.
 		Q00384_WarehouseKeepersPastime.class, // Added, need html work and test.
 		Q00385_YokeOfThePast.class, // Added, need html work and test.
-		Q00386_StolenDignity.class,
-		Q00401_PathOfTheWarrior.class,
-		Q00402_PathOfTheHumanKnight.class,
-		Q00403_PathOfTheRogue.class,
-		Q00404_PathOfTheHumanWizard.class,
-		Q00405_PathOfTheCleric.class,
-		Q00406_PathOfTheElvenKnight.class,
-		Q00407_PathOfTheElvenScout.class,
-		Q00408_PathOfTheElvenWizard.class,
-		Q00409_PathOfTheElvenOracle.class,
-		Q00410_PathOfThePalusKnight.class,
-		Q00411_PathOfTheAssassin.class,
-		Q00412_PathOfTheDarkWizard.class,
-		Q00413_PathOfTheShillienOracle.class,
-		Q00414_PathOfTheOrcRaider.class,
-		Q00415_PathOfTheOrcMonk.class,
-		Q00416_PathOfTheOrcShaman.class,
-		Q00417_PathOfTheScavenger.class,
-		Q00418_PathOfTheArtisan.class,
-		Q00419_GetAPet.class,
-		Q00420_LittleWing.class,
-		Q00421_LittleWingsBigAdventure.class,
+		Q00386_StolenDignity.class, // Added, need html work and test.
+		Q00401_PathOfTheWarrior.class, // Added, need html work and test.
+		Q00402_PathOfTheHumanKnight.class, // Added, need html work and test.
+		Q00403_PathOfTheRogue.class, // Added, need html work and test.
+		Q00404_PathOfTheHumanWizard.class, // Added, need html work and test.
+		Q00405_PathOfTheCleric.class, // Added, need html work and test.
+		Q00406_PathOfTheElvenKnight.class, // Added, need html work and test.
+		Q00407_PathOfTheElvenScout.class, // Added, need html work and test.
+		Q00408_PathOfTheElvenWizard.class, // Added, need html work and test.
+		Q00409_PathOfTheElvenOracle.class, // Added, need html work and test.
+		Q00410_PathOfThePalusKnight.class, // Added, need html work and test.
+		Q00411_PathOfTheAssassin.class, // Added, need html work and test.
+		Q00412_PathOfTheDarkWizard.class, // Added, need html work and test.
+		Q00413_PathOfTheShillienOracle.class, // Added, need html work and test.
+		Q00414_PathOfTheOrcRaider.class, // Added, need html work and test.
+		Q00415_PathOfTheOrcMonk.class, // Added, need html work and test.
+		Q00416_PathOfTheOrcShaman.class, // Added, need html work and test.
+		Q00417_PathOfTheScavenger.class, // Added, need html work and test.
+		Q00418_PathOfTheArtisan.class, // Added, need html work and test.
+		Q00419_GetAPet.class, // Added, need html work and test.
+		Q00420_LittleWing.class, // Added, need html work and test.
+		Q00421_LittleWingsBigAdventure.class, // Added, need html work and test.
 		Q00422_RepentYourSins.class, // Added, need html work and test.
 		Q00426_QuestForFishingShot.class, // Added, need html work and test.
-		Q00431_WeddingMarch.class,
-		Q00432_BirthdayPartySong.class,
-		Q00501_ProofOfClanAlliance.class,
-		Q00503_PursuitOfClanAmbition.class,
+		Q00431_WeddingMarch.class, // Added, need html work and test.
+		Q00432_BirthdayPartySong.class, // Added, need html work and test.
+		Q00501_ProofOfClanAlliance.class, // Added, need html work and test.
+		Q00503_PursuitOfClanAmbition.class, // Added, need html work and test.
 		// Q00504_CompetitionForTheBanditStronghold.class,
-		Q00505_BloodOffering.class,
+		Q00505_BloodOffering.class, // Added, need html work and test.
 		Q00508_AClansReputation.class, // Added, need html work and test.
 		Q00509_AClansFame.class, // Added, need html work and test.
 		Q00510_AClansPrestige.class, // Added, need html work and test.
@@ -745,25 +729,25 @@ public class QuestMasterHandler
 		Q00602_ShadowOfLight.class, // Added, need html work and test.
 		Q00603_DaimonTheWhiteEyedPart1.class, // Added, need html work and test.
 		Q00604_DaimonTheWhiteEyedPart2.class, // Added, need html work and test.
-		Q00605_AllianceWithKetraOrcs.class,
-		Q00606_BattleAgainstVarkaSilenos.class,
-		Q00607_ProveYourCourageKetra.class,
-		Q00608_SlayTheEnemyCommanderKetra.class,
-		Q00609_MagicalPowerOfWaterPart1.class,
-		Q00610_MagicalPowerOfWaterPart2.class,
-		Q00611_AllianceWithVarkaSilenos.class,
-		Q00612_BattleAgainstKetraOrcs.class,
-		Q00613_ProveYourCourageVarka.class,
-		Q00614_SlayTheEnemyCommanderVarka.class,
-		Q00615_MagicalPowerOfFirePart1.class,
-		Q00616_MagicalPowerOfFirePart2.class,
-		Q00617_GatherTheFlames.class,
-		Q00618_IntoTheFlame.class,
-		Q00619_RelicsOfTheOldEmpire.class,
-		Q00620_FourGoblets.class,
+		Q00605_AllianceWithKetraOrcs.class, // Added, need html work and test.
+		Q00606_BattleAgainstVarkaSilenos.class, // Added, need html work and test.
+		Q00607_ProveYourCourageKetra.class, // Added, need html work and test.
+		Q00608_SlayTheEnemyCommanderKetra.class, // Added, need html work and test.
+		Q00609_MagicalPowerOfWaterPart1.class, // Added, need html work and test.
+		Q00610_MagicalPowerOfWaterPart2.class, // Added, need html work and test.
+		Q00611_AllianceWithVarkaSilenos.class, // Added, need html work and test.
+		Q00612_BattleAgainstKetraOrcs.class, // Added, need html work and test.
+		Q00613_ProveYourCourageVarka.class, // Added, need html work and test.
+		Q00614_SlayTheEnemyCommanderVarka.class, // Added, need html work and test.
+		Q00615_MagicalPowerOfFirePart1.class, // Added, need html work and test.
+		Q00616_MagicalPowerOfFirePart2.class, // Added, need html work and test.
+		Q00617_GatherTheFlames.class, // Added, need html work and test.
+		Q00618_IntoTheFlame.class, // Added, need html work and test.
+		Q00619_RelicsOfTheOldEmpire.class, // Added, need html work and test.
+		Q00620_FourGoblets.class, // Added, need html work and test.
 		Q00621_EggDelivery.class, // Added, need html work and test.
-		Q00622_SpecialtyLiquorDelivery.class,
-		Q00623_TheFinestFood.class,
+		Q00622_SpecialtyLiquorDelivery.class, // Added, need html work and test.
+		Q00623_TheFinestFood.class, // Added, need html work and test.
 		Q00624_TheFinestIngredientsPart1.class, // Added, need html work and test.
 		Q00625_TheFinestIngredientsPart2.class, // Added, need html work and test.
 		Q00626_ADarkTwilight.class, // Added, need html work and test.
@@ -773,16 +757,16 @@ public class QuestMasterHandler
 		Q00631_DeliciousTopChoiceMeat.class, // Added, need html work and test.
 		Q00632_NecromancersRequest.class, // Added, need html work and test.
 		Q00633_InTheForgottenVillage.class, // Added, need html work and test.
-		Q00634_InSearchOfFragmentsOfDimension.class,
-		Q00635_IntoTheDimensionalRift.class,
-		Q00636_TruthBeyond.class,
+		Q00634_InSearchOfFragmentsOfDimension.class, // Added, need html work and test.
+		Q00635_IntoTheDimensionalRift.class, // Added, need html work and test.
+		Q00636_TruthBeyond.class, // Added, need html work and test.
 		Q00637_ThroughOnceMore.class, // Added, need html work and test.
-		Q00638_SeekersOfTheHolyGrail.class,
-		Q00639_GuardiansOfTheHolyGrail.class,
-		Q00640_TheZeroHour.class,
-		Q00641_AttackSailren.class,
-		Q00642_APowerfulPrimevalCreature.class,
-		Q00643_RiseAndFallOfTheElrokiTribe.class,
+		Q00638_SeekersOfTheHolyGrail.class, // Added, need html work and test.
+		Q00639_GuardiansOfTheHolyGrail.class, // Added, need html work and test.
+		Q00640_TheZeroHour.class, // Added, need html work and test.
+		Q00641_AttackSailren.class, // Added, need html work and test.
+		Q00642_APowerfulPrimevalCreature.class, // Added, need html work and test.
+		Q00643_RiseAndFallOfTheElrokiTribe.class, // Added, need html work and test.
 		Q00644_GraveRobberAnnihilation.class, // Added, need html work and test.
 		Q00645_GhostsOfBatur.class, // Added, need html work and test.
 		// Q00646_SignsOfRevolt.class,
@@ -798,9 +782,9 @@ public class QuestMasterHandler
 		// Q00659_IdRatherBeCollectingFairyBreath.class,
 		Q00660_AidingTheFloranVillage.class, // Added, need html work and test.
 		Q00661_MakingTheHarvestGroundsSafe.class, // Added, need html work and test.
-		Q00662_AGameOfCards.class,
+		Q00662_AGameOfCards.class, // Added, need html work and test.
 		Q00663_SeductiveWhispers.class, // Added, need html work and test.
-		Q00688_DefeatTheElrokianRaiders.class,
+		Q00688_DefeatTheElrokianRaiders.class, // Added, need html work and test.
 		// Q00999_T0Tutorial.class
 	};
 	

@@ -16,148 +16,148 @@
  */
 package quests.Q00275_DarkWingedSpies;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.ai.CtrlIntention;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
-import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Dark Winged Spies (275)
- * @author xban1x
- */
 public class Q00275_DarkWingedSpies extends Quest
 {
-	// Npc
-	private static final int NERUGA_CHIEF_TANTUS = 30567;
-	// Items
-	private static final int DARKWING_BAT_FANG = 1478;
-	private static final int VARANGKAS_PARASITE = 1479;
 	// Monsters
 	private static final int DARKWING_BAT = 20316;
-	private static final int VARANGKAS_TRACKER = 27043;
-	// Misc
-	private static final int MIN_LEVEL = 11;
-	private static final int FANG_PRICE = 5;
-	private static final int MAX_BAT_FANG_COUNT = 70;
+	private static final int VARANGKA_TRACKER = 27043;
+	// Items
+	private static final int DARKWING_BAT_FANG = 1478;
+	private static final int VARANGKA_PARASITE = 1479;
 	
 	public Q00275_DarkWingedSpies()
 	{
 		super(275);
-		addStartNpc(NERUGA_CHIEF_TANTUS);
-		addTalkId(NERUGA_CHIEF_TANTUS);
-		addKillId(DARKWING_BAT, VARANGKAS_TRACKER);
-		addCreatureSeeId(VARANGKAS_TRACKER);
-		registerQuestItems(DARKWING_BAT_FANG, VARANGKAS_PARASITE);
-		addCondMaxLevel(15, getNoQuestMsg(null));
+		registerQuestItems(DARKWING_BAT_FANG, VARANGKA_PARASITE);
+		addStartNpc(30567); // Tantus
+		addTalkId(30567);
+		addKillId(DARKWING_BAT, VARANGKA_TRACKER);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30567-03.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			final long count = getQuestItemsCount(killer, DARKWING_BAT_FANG);
-			
-			switch (npc.getId())
-			{
-				case DARKWING_BAT:
-				{
-					if (giveItemRandomly(killer, DARKWING_BAT_FANG, 1, MAX_BAT_FANG_COUNT, 1, true))
-					{
-						qs.setCond(2);
-					}
-					else if ((count > 10) && (count < 66) && (getRandom(100) < 10))
-					{
-						addSpawn(VARANGKAS_TRACKER, killer);
-						giveItems(killer, VARANGKAS_PARASITE, 1);
-					}
-					break;
-				}
-				case VARANGKAS_TRACKER:
-				{
-					if ((count < 66) && hasQuestItems(killer, VARANGKAS_PARASITE))
-					{
-						if (giveItemRandomly(killer, DARKWING_BAT_FANG, 5, MAX_BAT_FANG_COUNT, 1, true))
-						{
-							qs.setCond(2);
-						}
-						takeItems(killer, VARANGKAS_PARASITE, -1);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onCreatureSee(Npc npc, Creature creature)
-	{
-		if (creature.isPlayer())
-		{
-			npc.setRunning();
-			npc.asAttackable().addDamageHate(creature, 0, 1);
-			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, creature);
-		}
-		return super.onCreatureSee(npc, creature);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
 		
-		switch (qs.getState())
+		if (event.equals("30567-03.htm"))
+		{
+			st.startQuest();
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (talker.getRace() == Race.ORC) ? (talker.getLevel() >= MIN_LEVEL) ? "30567-02.htm" : "30567-01.htm" : "30567-00.htm";
+				if (player.getRace() != Race.ORC)
+				{
+					htmltext = "30567-00.htm";
+				}
+				else if (player.getLevel() < 11)
+				{
+					htmltext = "30567-01.htm";
+				}
+				else
+				{
+					htmltext = "30567-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
+					htmltext = "30567-04.htm";
+				}
+				else
+				{
+					htmltext = "30567-05.htm";
+					takeItems(player, DARKWING_BAT_FANG, -1);
+					takeItems(player, VARANGKA_PARASITE, -1);
+					giveAdena(player, 4200, true);
+					st.exitQuest(true, true);
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case DARKWING_BAT:
+			{
+				giveItems(player, DARKWING_BAT_FANG, 1);
+				if (getQuestItemsCount(player, DARKWING_BAT_FANG) < 70)
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				else
+				{
+					st.setCond(2, true);
+				}
+				
+				if ((getRandom(100) < 10) && (getQuestItemsCount(player, DARKWING_BAT_FANG) > 10) && (getQuestItemsCount(player, DARKWING_BAT_FANG) < 66))
+				{
+					// Spawn of Varangka Tracker on the npc position.
+					addSpawn(VARANGKA_TRACKER, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), true, 0);
+					giveItems(player, VARANGKA_PARASITE, 1);
+				}
+				break;
+			}
+			case VARANGKA_TRACKER:
+			{
+				if (hasQuestItems(player, VARANGKA_PARASITE))
+				{
+					takeItems(player, VARANGKA_PARASITE, -1);
+					if (getQuestItemsCount(player, DARKWING_BAT_FANG) < 70)
 					{
-						htmltext = "30567-05.html";
-						break;
-					}
-					case 2:
-					{
-						final long count = getQuestItemsCount(talker, DARKWING_BAT_FANG);
-						if (count >= MAX_BAT_FANG_COUNT)
+						giveItems(player, DARKWING_BAT_FANG, 5);
+						if (getQuestItemsCount(player, DARKWING_BAT_FANG) < 70)
 						{
-							giveAdena(talker, count * FANG_PRICE, true);
-							qs.exitQuest(true, true);
-							htmltext = "30567-05.html";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
-						break;
+						else
+						{
+							st.setCond(2, true);
+						}
 					}
 				}
 				break;
 			}
 		}
-		return htmltext;
+		
+		return null;
 	}
 }

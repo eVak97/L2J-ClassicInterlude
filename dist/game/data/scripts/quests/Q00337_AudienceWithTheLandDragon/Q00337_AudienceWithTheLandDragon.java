@@ -41,7 +41,7 @@ public class Q00337_AudienceWithTheLandDragon extends Quest
 	private static final int GILMORE = 30754; // 3rd abyssal
 	private static final int THEODRIC = 30755;
 	// Monsters
-	private static final int BLOOD_QUEEN = 20142; // 1
+	private static final int BLOOD_QUEEN = 18001; // 1
 	private static final int SACRIFICE_OF_THE_SACRIFICED = 27171; // 1
 	private static final int HARIT_LIZARDMAN_SHAMAN = 20644; // 2
 	private static final int HARIT_LIZARDMAN_MATRIARCH = 20645; // 2

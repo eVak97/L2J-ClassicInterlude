@@ -16,393 +16,218 @@
  */
 package quests.Q00409_PathOfTheElvenOracle;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path of the Elven Oracle (409)
- * @author ivantotov
- */
 public class Q00409_PathOfTheElvenOracle extends Quest
 {
 	// NPCs
-	private static final int PRIEST_MANUEL = 30293;
+	private static final int MANUEL = 30293;
 	private static final int ALLANA = 30424;
 	private static final int PERRIN = 30428;
 	// Items
 	private static final int CRYSTAL_MEDALLION = 1231;
-	private static final int SWINDLERS_MONEY = 1232;
-	private static final int ALLANA_OF_DAIRY = 1233;
+	private static final int SWINDLER_MONEY = 1232;
+	private static final int ALLANA_DIARY = 1233;
 	private static final int LIZARD_CAPTAIN_ORDER = 1234;
-	private static final int HALF_OF_DAIRY = 1236;
-	private static final int TAMIL_NECKLACE = 1275;
-	// Reward
 	private static final int LEAF_OF_ORACLE = 1235;
-	// Misc
-	private static final int MIN_LEVEL = 19;
-	// Quest Monster
-	private static final int lIZARDMAN_WARRIOR = 27032;
-	private static final int LIZARDMAN_SCOUT = 27033;
-	private static final int LIZARDMAN_SOLDIER = 27034;
-	private static final int TAMIL = 27035;
+	private static final int HALF_OF_DIARY = 1236;
+	private static final int TAMIL_NECKLACE = 1275;
 	
 	public Q00409_PathOfTheElvenOracle()
 	{
 		super(409);
-		addStartNpc(PRIEST_MANUEL);
-		addTalkId(PRIEST_MANUEL, ALLANA, PERRIN);
-		addKillId(TAMIL, lIZARDMAN_WARRIOR, LIZARDMAN_SCOUT, LIZARDMAN_SOLDIER);
-		addAttackId(TAMIL, lIZARDMAN_WARRIOR, LIZARDMAN_SCOUT, LIZARDMAN_SOLDIER);
-		registerQuestItems(CRYSTAL_MEDALLION, SWINDLERS_MONEY, ALLANA_OF_DAIRY, LIZARD_CAPTAIN_ORDER, HALF_OF_DAIRY, TAMIL_NECKLACE);
+		registerQuestItems(CRYSTAL_MEDALLION, SWINDLER_MONEY, ALLANA_DIARY, LIZARD_CAPTAIN_ORDER, HALF_OF_DIARY, TAMIL_NECKLACE);
+		addStartNpc(MANUEL);
+		addTalkId(MANUEL, ALLANA, PERRIN);
+		addKillId(27032, 27033, 27034, 27035);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30293-05.htm":
 			{
-				if (player.getClassId() == ClassId.ELVEN_MAGE)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, LEAF_OF_ORACLE))
-						{
-							htmltext = "30293-04.htm";
-						}
-						else
-						{
-							qs.startQuest();
-							qs.setMemoState(1);
-							giveItems(player, CRYSTAL_MEDALLION, 1);
-							htmltext = "30293-05.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30293-03.htm";
-					}
-				}
-				else if (player.getClassId() == ClassId.ORACLE)
-				{
-					htmltext = "30293-02a.htm";
-				}
-				else
-				{
-					htmltext = "30293-02.htm";
-				}
+				st.startQuest();
+				giveItems(player, CRYSTAL_MEDALLION, 1);
 				break;
 			}
-			case "30424-08.html":
-			case "30424-09.html":
+			case "spawn_lizards":
 			{
-				htmltext = event;
-				break;
+				st.setCond(2, true);
+				addSpawn(27032, -92319, 154235, -3284, 2000, false, 0);
+				addSpawn(27033, -92361, 154190, -3284, 2000, false, 0);
+				addSpawn(27034, -92375, 154278, -3278, 2000, false, 0);
+				return null;
 			}
-			case "30424-07.html":
+			case "30428-06.htm":
 			{
-				if (qs.isMemoState(1))
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "replay_1":
-			{
-				qs.setMemoState(2);
-				addAttackPlayerDesire(addSpawn(lIZARDMAN_WARRIOR, npc, true, 0, false), player);
-				addAttackPlayerDesire(addSpawn(LIZARDMAN_SCOUT, npc, true, 0, false), player);
-				addAttackPlayerDesire(addSpawn(LIZARDMAN_SOLDIER, npc, true, 0, false), player);
-				break;
-			}
-			case "30428-02.html":
-			case "30428-03.html":
-			{
-				if (qs.isMemoState(2))
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "replay_2":
-			{
-				if (qs.isMemoState(2))
-				{
-					qs.setMemoState(3);
-					addAttackPlayerDesire(addSpawn(TAMIL, npc, true, 0, true), player);
-				}
+				addSpawn(27035, -93194, 147587, -2672, 2000, false, 0);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
-	{
-		if (getQuestState(attacker, false) != null)
-		{
-			switch (npc.getScriptValue())
-			{
-				case 0:
-				{
-					switch (npc.getId())
-					{
-						case lIZARDMAN_WARRIOR:
-						{
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THE_SACRED_FLAME_IS_OURS));
-							break;
-						}
-						case LIZARDMAN_SCOUT:
-						{
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THE_SACRED_FLAME_IS_OURS));
-							break;
-						}
-						case LIZARDMAN_SOLDIER:
-						{
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THE_SACRED_FLAME_IS_OURS));
-							break;
-						}
-						case TAMIL:
-						{
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.AS_YOU_WISH_MASTER));
-							break;
-						}
-					}
-					
-					npc.setScriptValue(1);
-					npc.getVariables().set("firstAttacker", attacker.getObjectId());
-					break;
-				}
-				case 1:
-				{
-					if (npc.getVariables().getInt("firstAttacker") != attacker.getObjectId())
-					{
-						npc.setScriptValue(2);
-					}
-					break;
-				}
-			}
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && npc.isScriptValue(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case lIZARDMAN_WARRIOR:
-				{
-					if (!hasQuestItems(killer, LIZARD_CAPTAIN_ORDER))
-					{
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.ARRGHH_WE_SHALL_NEVER_SURRENDER));
-						giveItems(killer, LIZARD_CAPTAIN_ORDER, 1);
-						qs.setCond(3, true);
-					}
-					break;
-				}
-				case LIZARDMAN_SCOUT:
-				case LIZARDMAN_SOLDIER:
-				{
-					if (!hasQuestItems(killer, LIZARD_CAPTAIN_ORDER))
-					{
-						giveItems(killer, LIZARD_CAPTAIN_ORDER, 1);
-						qs.setCond(3, true);
-					}
-					break;
-				}
-				case TAMIL:
-				{
-					if (!hasQuestItems(killer, TAMIL_NECKLACE))
-					{
-						giveItems(killer, TAMIL_NECKLACE, 1);
-						qs.setCond(5, true);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == PRIEST_MANUEL)
+			case State.CREATED:
 			{
-				if (!hasQuestItems(player, LEAF_OF_ORACLE))
+				if (player.getClassId() != ClassId.ELVEN_MAGE)
 				{
-					htmltext = "30293-01.htm";
+					htmltext = (player.getClassId() == ClassId.ORACLE) ? "30293-02a.htm" : "30293-02.htm";
 				}
-				else
+				else if (player.getLevel() < 19)
+				{
+					htmltext = "30293-03.htm";
+				}
+				else if (hasQuestItems(player, LEAF_OF_ORACLE))
 				{
 					htmltext = "30293-04.htm";
 				}
+				else
+				{
+					htmltext = "30293-01.htm";
+				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == PRIEST_MANUEL)
+			case State.STARTED:
 			{
-				return htmltext;
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case MANUEL:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30293-06.htm";
+						}
+						else if ((cond == 2) || (cond == 3))
+						{
+							htmltext = "30293-09.htm";
+						}
+						else if ((cond > 3) && (cond < 7))
+						{
+							htmltext = "30293-07.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30293-08.htm";
+							takeItems(player, ALLANA_DIARY, 1);
+							takeItems(player, CRYSTAL_MEDALLION, 1);
+							takeItems(player, LIZARD_CAPTAIN_ORDER, 1);
+							takeItems(player, SWINDLER_MONEY, 1);
+							giveItems(player, LEAF_OF_ORACLE, 1);
+							addExpAndSp(player, 3200, 1130);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
+						}
+						break;
+					}
+					case ALLANA:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30424-01.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30424-02.htm";
+							st.setCond(4, true);
+							giveItems(player, HALF_OF_DIARY, 1);
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30424-03.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30424-06.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30424-04.htm";
+							st.setCond(7, true);
+							takeItems(player, HALF_OF_DIARY, -1);
+							giveItems(player, ALLANA_DIARY, 1);
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30424-05.htm";
+						}
+						break;
+					}
+					case PERRIN:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30428-01.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30428-04.htm";
+							st.setCond(6, true);
+							takeItems(player, TAMIL_NECKLACE, -1);
+							giveItems(player, SWINDLER_MONEY, 1);
+						}
+						else if (cond > 5)
+						{
+							htmltext = "30428-05.htm";
+						}
+						break;
+					}
+				}
+				break;
 			}
 		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case PRIEST_MANUEL:
-				{
-					if (hasQuestItems(player, CRYSTAL_MEDALLION))
-					{
-						if (!hasAtLeastOneQuestItem(player, SWINDLERS_MONEY, ALLANA_OF_DAIRY, LIZARD_CAPTAIN_ORDER, HALF_OF_DAIRY))
-						{
-							if (qs.isMemoState(2))
-							{
-								qs.setMemoState(1);
-								qs.setCond(8);
-								htmltext = "30293-09.html";
-							}
-							else
-							{
-								qs.setMemoState(1);
-								htmltext = "30293-06.html";
-							}
-						}
-						else if (hasQuestItems(player, SWINDLERS_MONEY, ALLANA_OF_DAIRY, LIZARD_CAPTAIN_ORDER))
-						{
-							if (!hasQuestItems(player, HALF_OF_DAIRY))
-							{
-								giveItems(player, LEAF_OF_ORACLE, 1);
-								final int level = player.getLevel();
-								if (level >= 20)
-								{
-									addExpAndSp(player, 80314, 5087);
-								}
-								else if (level == 19)
-								{
-									addExpAndSp(player, 80314, 5087);
-								}
-								else
-								{
-									addExpAndSp(player, 80314, 5087);
-								}
-								qs.exitQuest(false, true);
-								player.sendPacket(new SocialAction(player.getObjectId(), 3));
-								htmltext = "30293-08.html";
-							}
-						}
-						else
-						{
-							htmltext = "30293-07.html";
-						}
-					}
-					break;
-				}
-				case ALLANA:
-				{
-					if (hasQuestItems(player, CRYSTAL_MEDALLION))
-					{
-						if (!hasAtLeastOneQuestItem(player, SWINDLERS_MONEY, ALLANA_OF_DAIRY, LIZARD_CAPTAIN_ORDER, HALF_OF_DAIRY))
-						{
-							if (qs.isMemoState(2))
-							{
-								htmltext = "30424-05.html";
-							}
-							else if (qs.isMemoState(1))
-							{
-								qs.setCond(2, true);
-								htmltext = "30424-01.html";
-							}
-						}
-						else if (!hasAtLeastOneQuestItem(player, SWINDLERS_MONEY, ALLANA_OF_DAIRY, HALF_OF_DAIRY) && hasQuestItems(player, LIZARD_CAPTAIN_ORDER))
-						{
-							qs.setMemoState(2);
-							giveItems(player, HALF_OF_DAIRY, 1);
-							qs.setCond(4, true);
-							htmltext = "30424-02.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, SWINDLERS_MONEY, ALLANA_OF_DAIRY) && hasQuestItems(player, LIZARD_CAPTAIN_ORDER, HALF_OF_DAIRY))
-						{
-							if ((qs.isMemoState(3)) && !hasQuestItems(player, TAMIL_NECKLACE))
-							{
-								qs.setMemoState(2);
-								qs.setCond(4, true);
-								htmltext = "30424-06.html";
-							}
-							else
-							{
-								htmltext = "30424-03.html";
-							}
-						}
-						else if (hasQuestItems(player, SWINDLERS_MONEY, LIZARD_CAPTAIN_ORDER, HALF_OF_DAIRY) && !hasQuestItems(player, ALLANA_OF_DAIRY))
-						{
-							giveItems(player, ALLANA_OF_DAIRY, 1);
-							takeItems(player, HALF_OF_DAIRY, 1);
-							qs.setCond(9, true);
-							htmltext = "30424-04.html";
-						}
-						else if (hasQuestItems(player, SWINDLERS_MONEY, LIZARD_CAPTAIN_ORDER, ALLANA_OF_DAIRY))
-						{
-							qs.setCond(7, true);
-							htmltext = "30424-05.html";
-						}
-					}
-					break;
-				}
-				case PERRIN:
-				{
-					if (hasQuestItems(player, CRYSTAL_MEDALLION, LIZARD_CAPTAIN_ORDER, HALF_OF_DAIRY))
-					{
-						if (hasQuestItems(player, TAMIL_NECKLACE))
-						{
-							giveItems(player, SWINDLERS_MONEY, 1);
-							takeItems(player, TAMIL_NECKLACE, 1);
-							qs.setCond(6, true);
-							htmltext = "30428-04.html";
-						}
-						else if (hasQuestItems(player, SWINDLERS_MONEY))
-						{
-							htmltext = "30428-05.html";
-						}
-						else if (qs.isMemoState(3))
-						{
-							htmltext = "30428-06.html";
-						}
-						else
-						{
-							htmltext = "30428-01.html";
-						}
-					}
-					break;
-				}
-			}
-		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (npc.getId() == 27035)
+		{
+			if (st.isCond(4))
+			{
+				st.setCond(5, true);
+				giveItems(player, TAMIL_NECKLACE, 1);
+			}
+		}
+		else if (st.isCond(2))
+		{
+			st.setCond(3, true);
+			giveItems(player, LIZARD_CAPTAIN_ORDER, 1);
+		}
+		
+		return null;
 	}
 }

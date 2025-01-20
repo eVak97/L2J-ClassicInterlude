@@ -144,7 +144,7 @@ public class Q00386_StolenDignity extends Quest
 				playSound(player, QuestSound.ITEMSOUND_QUEST_ACCEPT);
 				qs.setMemoState(336);
 				qs.startQuest();
-				// qs.showQuestionMark(336);
+				qs.showQuestionMark(336);
 				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				return "30843-05.htm";
 			}
@@ -165,7 +165,7 @@ public class Q00386_StolenDignity extends Quest
 				}
 				case 6:
 				{
-					qs.exitQuest(true, true);
+					qs.exitQuest(true, false);
 					return "30843-08.html";
 				}
 				case 9:
@@ -546,6 +546,9 @@ public class Q00386_StolenDignity extends Quest
 		}
 	}
 	
+	/**
+	 * @param qs
+	 */
 	private void createBingoBoard(QuestState qs)
 	{
 		//@formatter:off
@@ -556,6 +559,10 @@ public class Q00386_StolenDignity extends Quest
 		qs.set("selected", "? ? ? ? ? ? ? ? ?");
 	}
 	
+	/**
+	 * @param qs
+	 * @return
+	 */
 	private int getMatchedBingoLineCount(QuestState qs)
 	{
 		final String[] q = qs.get("selected").split(" ");
@@ -598,6 +605,10 @@ public class Q00386_StolenDignity extends Quest
 		return found;
 	}
 	
+	/**
+	 * @param qs
+	 * @param num
+	 */
 	private void selectBingoNumber(QuestState qs, int num)
 	{
 		final String[] numbers = qs.get("numbers").split(" ");
@@ -626,16 +637,30 @@ public class Q00386_StolenDignity extends Quest
 		qs.set("selected", result);
 	}
 	
+	/**
+	 * @param qs
+	 * @param num
+	 * @return
+	 */
 	private boolean isSelectedBingoNumber(QuestState qs, int num)
 	{
 		return qs.get("selected").contains(Integer.toString(num));
 	}
 	
+	/**
+	 * @param qs
+	 * @param num
+	 * @return
+	 */
 	private int getNumberFromBingoBoard(QuestState qs, int num)
 	{
 		return Integer.parseInt(qs.get("numbers").split(" ")[num]);
 	}
 	
+	/**
+	 * @param qs
+	 * @return
+	 */
 	private int getBingoSelectCount(QuestState qs)
 	{
 		return qs.get("selected").replaceAll("\\D", "").length();

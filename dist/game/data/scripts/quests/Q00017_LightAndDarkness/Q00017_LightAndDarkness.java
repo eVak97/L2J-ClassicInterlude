@@ -22,13 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-import quests.Q00015_SweetWhispers.Q00015_SweetWhispers;
-
-/**
- * Light And Darkness (17)<br>
- * Original jython script by disKret, Skeleton & DrLecter.
- * @author nonom
- */
 public class Q00017_LightAndDarkness extends Quest
 {
 	// NPCs
@@ -37,118 +30,190 @@ public class Q00017_LightAndDarkness extends Quest
 	private static final int SAINT_ALTAR_2 = 31509;
 	private static final int SAINT_ALTAR_3 = 31510;
 	private static final int SAINT_ALTAR_4 = 31511;
-	// Item
+	// Items
 	private static final int BLOOD_OF_SAINT = 7168;
 	
 	public Q00017_LightAndDarkness()
 	{
 		super(17);
+		registerQuestItems(BLOOD_OF_SAINT);
 		addStartNpc(HIERARCH);
 		addTalkId(HIERARCH, SAINT_ALTAR_1, SAINT_ALTAR_2, SAINT_ALTAR_3, SAINT_ALTAR_4);
-		registerQuestItems(BLOOD_OF_SAINT);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "31517-02.html":
+			case "31517-04.htm":
 			{
-				if (player.getLevel() >= 61)
+				st.startQuest();
+				giveItems(player, BLOOD_OF_SAINT, 4);
+				break;
+			}
+			case "31508-02.htm":
+			{
+				if (hasQuestItems(player, BLOOD_OF_SAINT))
 				{
-					qs.startQuest();
-					giveItems(player, BLOOD_OF_SAINT, 4);
+					st.setCond(2, true);
+					takeItems(player, BLOOD_OF_SAINT, 1);
 				}
 				else
 				{
-					htmltext = "31517-02a.html";
+					htmltext = "31508-03.htm";
 				}
 				break;
 			}
-			case "31508-02.html":
-			case "31509-02.html":
-			case "31510-02.html":
-			case "31511-02.html":
+			case "31509-02.htm":
 			{
-				final int cond = qs.getCond();
-				final int npcId = Integer.parseInt(event.replace("-02.html", ""));
-				if ((cond == (npcId - 31507)) && hasQuestItems(player, BLOOD_OF_SAINT))
+				if (hasQuestItems(player, BLOOD_OF_SAINT))
 				{
-					htmltext = npcId + "-01.html";
+					st.setCond(3, true);
 					takeItems(player, BLOOD_OF_SAINT, 1);
-					qs.setCond(cond + 1, true);
+				}
+				else
+				{
+					htmltext = "31509-03.htm";
+				}
+				break;
+			}
+			case "31510-02.htm":
+			{
+				if (hasQuestItems(player, BLOOD_OF_SAINT))
+				{
+					st.setCond(4, true);
+					takeItems(player, BLOOD_OF_SAINT, 1);
+				}
+				else
+				{
+					htmltext = "31510-03.htm";
+				}
+				break;
+			}
+			case "31511-02.htm":
+			{
+				if (hasQuestItems(player, BLOOD_OF_SAINT))
+				{
+					st.setCond(5, true);
+					takeItems(player, BLOOD_OF_SAINT, 1);
+				}
+				else
+				{
+					htmltext = "31511-03.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
 			case State.CREATED:
 			{
-				final QuestState qs2 = player.getQuestState(Q00015_SweetWhispers.class.getSimpleName());
-				htmltext = ((qs2 != null) && qs2.isCompleted()) ? "31517-00.htm" : "31517-06.html";
+				htmltext = (player.getLevel() < 61) ? "31517-03.htm" : "31517-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				final long blood = getQuestItemsCount(player, BLOOD_OF_SAINT);
-				final int npcId = npc.getId();
-				switch (npcId)
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
 					case HIERARCH:
 					{
-						if (qs.getCond() < 5)
+						if (cond == 5)
 						{
-							htmltext = (blood >= 5) ? "31517-05.html" : "31517-04.html";
+							htmltext = "31517-07.htm";
+							addExpAndSp(player, 105527, 0);
+							st.exitQuest(false, true);
 						}
 						else
 						{
-							addExpAndSp(player, 697040, 54887);
-							qs.exitQuest(false, true);
-							htmltext = "31517-03.html";
+							if (hasQuestItems(player, BLOOD_OF_SAINT))
+							{
+								htmltext = "31517-05.htm";
+							}
+							else
+							{
+								htmltext = "31517-06.htm";
+								st.exitQuest(true, true);
+							}
 						}
 						break;
 					}
 					case SAINT_ALTAR_1:
+					{
+						if (cond == 1)
+						{
+							htmltext = "31508-01.htm";
+						}
+						else if (cond > 1)
+						{
+							htmltext = "31508-04.htm";
+						}
+						break;
+					}
 					case SAINT_ALTAR_2:
+					{
+						if (cond == 2)
+						{
+							htmltext = "31509-01.htm";
+						}
+						else if (cond > 2)
+						{
+							htmltext = "31509-04.htm";
+						}
+						break;
+					}
 					case SAINT_ALTAR_3:
+					{
+						if (cond == 3)
+						{
+							htmltext = "31510-01.htm";
+						}
+						else if (cond > 3)
+						{
+							htmltext = "31510-04.htm";
+						}
+						break;
+					}
 					case SAINT_ALTAR_4:
 					{
-						if ((npcId - 31507) == qs.getCond())
+						if (cond == 4)
 						{
-							htmltext = npcId + ((blood > 0) ? "-00.html" : "-02.html");
+							htmltext = "31511-01.htm";
 						}
-						else if (qs.getCond() > (npcId - 31507))
+						else if (cond > 4)
 						{
-							htmltext = npcId + "-03.html";
+							htmltext = "31511-04.htm";
 						}
 						break;
 					}
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 }

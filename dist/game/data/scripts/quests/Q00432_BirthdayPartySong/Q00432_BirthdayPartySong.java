@@ -23,104 +23,99 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Birthday Party Song (432)<br>
- * Original Jython script by CubicVirtuoso.
- * @author malyelfik
- */
 public class Q00432_BirthdayPartySong extends Quest
 {
 	// NPC
 	private static final int OCTAVIA = 31043;
-	// Monster
-	private static final int GOLEM = 21103;
 	// Item
 	private static final int RED_CRYSTAL = 7541;
-	// Reward
-	private static final int ECHO_CRYSTAL = 7061;
 	
 	public Q00432_BirthdayPartySong()
 	{
 		super(432);
+		registerQuestItems(RED_CRYSTAL);
 		addStartNpc(OCTAVIA);
 		addTalkId(OCTAVIA);
-		addKillId(GOLEM);
-		registerQuestItems(RED_CRYSTAL);
+		addKillId(21103);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = event;
-		switch (event)
+		if (event.equals("31043-02.htm"))
 		{
-			case "31043-02.htm":
-			{
-				qs.startQuest();
-				break;
-			}
-			case "31043-05.html":
-			{
-				if (getQuestItemsCount(player, RED_CRYSTAL) < 50)
-				{
-					return "31043-06.html";
-				}
-				giveItems(player, ECHO_CRYSTAL, 25);
-				qs.exitQuest(true, true);
-				break;
-			}
-			default:
-			{
-				htmltext = null;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("31043-06.htm") && (getQuestItemsCount(player, RED_CRYSTAL) == 50))
+		{
+			htmltext = "31043-05.htm";
+			takeItems(player, RED_CRYSTAL, -1);
+			rewardItems(player, 7061, 25);
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(1) && getRandomBoolean())
-		{
-			giveItems(player, RED_CRYSTAL, 1);
-			if (getQuestItemsCount(player, RED_CRYSTAL) == 50)
-			{
-				qs.setCond(2, true);
-			}
-			else
-			{
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= 31) ? "31043-01.htm" : "31043-00.htm";
+				htmltext = (player.getLevel() < 31) ? "31043-00.htm" : "31043-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				htmltext = qs.isCond(1) ? "31043-03.html" : "31043-04.html";
+				htmltext = (getQuestItemsCount(player, RED_CRYSTAL) < 50) ? "31043-03.htm" : "31043-04.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState qs = getRandomPartyMemberState(player, 1, 3, npc);
+		if (qs == null)
+		{
+			return null;
+		}
+		final Player partyMember = qs.getPlayer();
+		
+		final QuestState st = getQuestState(partyMember, false);
+		if (st == null)
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
+		{
+			giveItems(partyMember, RED_CRYSTAL, 1);
+			if (getQuestItemsCount(partyMember, RED_CRYSTAL) < 50)
+			{
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

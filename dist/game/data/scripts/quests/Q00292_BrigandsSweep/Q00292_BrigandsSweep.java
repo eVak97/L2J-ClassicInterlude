@@ -16,9 +16,6 @@
  */
 package quests.Q00292_BrigandsSweep;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
@@ -27,202 +24,211 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Brigands Sweep (292)
- * @author xban1x
- */
 public class Q00292_BrigandsSweep extends Quest
 {
-	// NPC's
+	// NPCs
 	private static final int SPIRON = 30532;
 	private static final int BALANKI = 30533;
+	// Monsters
+	private static final int GOBLIN_BRIGAND = 20322;
+	private static final int GOBLIN_BRIGAND_LEADER = 20323;
+	private static final int GOBLIN_BRIGAND_LIEUTENANT = 20324;
+	private static final int GOBLIN_SNOOPER = 20327;
+	private static final int GOBLIN_LORD = 20528;
 	// Items
 	private static final int GOBLIN_NECKLACE = 1483;
 	private static final int GOBLIN_PENDANT = 1484;
 	private static final int GOBLIN_LORD_PENDANT = 1485;
 	private static final int SUSPICIOUS_MEMO = 1486;
 	private static final int SUSPICIOUS_CONTRACT = 1487;
-	// Monsters
-	private static final Map<Integer, Integer> MOB_ITEM_DROP = new HashMap<>();
-	static
-	{
-		MOB_ITEM_DROP.put(20322, GOBLIN_NECKLACE); // Goblin Brigand
-		MOB_ITEM_DROP.put(20323, GOBLIN_PENDANT); // Goblin Brigand Leader
-		MOB_ITEM_DROP.put(20324, GOBLIN_NECKLACE); // Goblin Brigand Lieutenant
-		MOB_ITEM_DROP.put(20327, GOBLIN_NECKLACE); // Goblin Snooper
-		MOB_ITEM_DROP.put(20528, GOBLIN_LORD_PENDANT); // Goblin Lord
-	}
-	// Misc
-	private static final int MIN_LEVEL = 5;
 	
 	public Q00292_BrigandsSweep()
 	{
 		super(292);
+		registerQuestItems(GOBLIN_NECKLACE, GOBLIN_PENDANT, GOBLIN_LORD_PENDANT, SUSPICIOUS_MEMO, SUSPICIOUS_CONTRACT);
 		addStartNpc(SPIRON);
 		addTalkId(SPIRON, BALANKI);
-		addKillId(MOB_ITEM_DROP.keySet());
-		registerQuestItems(GOBLIN_NECKLACE, GOBLIN_PENDANT, GOBLIN_LORD_PENDANT, SUSPICIOUS_MEMO, SUSPICIOUS_CONTRACT);
-		addCondMaxLevel(18, getNoQuestMsg(null));
+		addKillId(GOBLIN_BRIGAND, GOBLIN_BRIGAND_LEADER, GOBLIN_BRIGAND_LIEUTENANT, GOBLIN_SNOOPER, GOBLIN_LORD);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String html = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return html;
+			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30532-03.htm"))
 		{
-			case "30532-03.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					html = event;
-				}
-				break;
-			}
-			case "30532-06.html":
-			{
-				if (qs.isStarted())
-				{
-					qs.exitQuest(true, true);
-					html = event;
-				}
-				break;
-			}
-			case "30532-07.html":
-			{
-				if (qs.isStarted())
-				{
-					html = event;
-				}
-				break;
-			}
+			st.startQuest();
 		}
-		return html;
+		else if (event.equals("30532-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			final int chance = getRandom(10);
-			if (chance > 5)
+			case State.CREATED:
 			{
-				giveItemRandomly(killer, npc, MOB_ITEM_DROP.get(npc.getId()), 1, 0, 1, true);
-			}
-			else if (qs.isCond(1) && (chance > 4) && !hasQuestItems(killer, SUSPICIOUS_CONTRACT))
-			{
-				final long memos = getQuestItemsCount(killer, SUSPICIOUS_MEMO);
-				if (memos < 3)
+				if (player.getRace() != Race.DWARF)
 				{
-					if (giveItemRandomly(killer, npc, SUSPICIOUS_MEMO, 1, 3, 1, false))
-					{
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						giveItems(killer, SUSPICIOUS_CONTRACT, 1);
-						takeItems(killer, SUSPICIOUS_MEMO, -1);
-						qs.setCond(2, true);
-					}
-					else
-					{
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
+					htmltext = "30532-00.htm";
 				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String html = getNoQuestMsg(talker);
-		switch (npc.getId())
-		{
-			case SPIRON:
-			{
-				switch (qs.getState())
+				else if (player.getLevel() < 5)
 				{
-					case State.CREATED:
+					htmltext = "30532-01.htm";
+				}
+				else
+				{
+					htmltext = "30532-02.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case SPIRON:
 					{
-						html = (talker.getRace() == Race.DWARF) ? (talker.getLevel() >= MIN_LEVEL) ? "30532-02.htm" : "30532-01.htm" : "30532-00.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						if (!hasAtLeastOneQuestItem(talker, getRegisteredItemIds()))
+						final int goblinNecklaces = (int) getQuestItemsCount(player, GOBLIN_NECKLACE);
+						final int goblinPendants = (int) getQuestItemsCount(player, GOBLIN_PENDANT);
+						final int goblinLordPendants = (int) getQuestItemsCount(player, GOBLIN_LORD_PENDANT);
+						final int suspiciousMemos = (int) getQuestItemsCount(player, SUSPICIOUS_MEMO);
+						final int countAll = goblinNecklaces + goblinPendants + goblinLordPendants;
+						final boolean hasContract = hasQuestItems(player, SUSPICIOUS_CONTRACT);
+						if (countAll == 0)
 						{
-							html = "30532-04.html";
+							htmltext = "30532-04.htm";
 						}
 						else
 						{
-							final long necklaces = getQuestItemsCount(talker, GOBLIN_NECKLACE);
-							final long pendants = getQuestItemsCount(talker, GOBLIN_PENDANT);
-							final long lordPendants = getQuestItemsCount(talker, GOBLIN_LORD_PENDANT);
-							final long sum = necklaces + pendants + lordPendants;
-							if (sum > 0)
+							if (hasContract)
 							{
-								giveAdena(talker, (necklaces * 6) + (pendants * 8) + (lordPendants * 10) + (sum >= 10 ? 1000 : 0), true);
-								takeItems(talker, -1, GOBLIN_NECKLACE, GOBLIN_PENDANT, GOBLIN_LORD_PENDANT);
+								htmltext = "30532-10.htm";
 							}
-							if ((sum > 0) && !hasAtLeastOneQuestItem(talker, SUSPICIOUS_MEMO, SUSPICIOUS_CONTRACT))
+							else if (suspiciousMemos > 0)
 							{
-								html = "30532-05.html";
-							}
-							else
-							{
-								final long memos = getQuestItemsCount(talker, SUSPICIOUS_MEMO);
-								if ((memos == 0) && hasQuestItems(talker, SUSPICIOUS_CONTRACT))
+								if (suspiciousMemos > 1)
 								{
-									giveAdena(talker, 100, true);
-									takeItems(talker, -1, SUSPICIOUS_CONTRACT); // Retail like, reward is given in 2 pieces if both conditions are meet.
-									html = "30532-10.html";
+									htmltext = "30532-09.htm";
 								}
 								else
 								{
-									if (memos == 1)
-									{
-										html = "30532-08.html";
-									}
-									else if (memos >= 2)
-									{
-										html = "30532-09.html";
-									}
+									htmltext = "30532-08.htm";
 								}
 							}
+							else
+							{
+								htmltext = "30532-05.htm";
+							}
+							
+							takeItems(player, GOBLIN_NECKLACE, -1);
+							takeItems(player, GOBLIN_PENDANT, -1);
+							takeItems(player, GOBLIN_LORD_PENDANT, -1);
+							if (hasContract)
+							{
+								st.setCond(1);
+								takeItems(player, SUSPICIOUS_CONTRACT, -1);
+							}
+							
+							int reward = (12 * goblinNecklaces) + (36 * goblinPendants) + (33 * goblinLordPendants) + ((hasContract) ? 1120 : 0);
+							if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (countAll >= 10))
+							{
+								reward += 1000;
+							}
+							
+							giveAdena(player, reward, true);
 						}
+						break;
 					}
-				}
-				break;
-			}
-			case BALANKI:
-			{
-				if (qs.isStarted())
-				{
-					if (hasQuestItems(talker, SUSPICIOUS_CONTRACT))
+					case BALANKI:
 					{
-						giveAdena(talker, 620, true);
-						takeItems(talker, 1487, -1);
-						html = "30533-02.html";
-					}
-					else
-					{
-						html = "30533-01.html";
+						if (!hasQuestItems(player, SUSPICIOUS_CONTRACT))
+						{
+							htmltext = "30533-01.htm";
+						}
+						else
+						{
+							htmltext = "30533-02.htm";
+							st.setCond(1);
+							takeItems(player, SUSPICIOUS_CONTRACT, -1);
+							giveAdena(player, 1500, true);
+						}
+						break;
 					}
 				}
 				break;
 			}
 		}
-		return html;
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int chance = getRandom(10);
+		if (chance > 5)
+		{
+			switch (npc.getId())
+			{
+				case GOBLIN_BRIGAND:
+				case GOBLIN_SNOOPER:
+				case GOBLIN_BRIGAND_LIEUTENANT:
+				{
+					giveItems(player, GOBLIN_NECKLACE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					break;
+				}
+				case GOBLIN_BRIGAND_LEADER:
+				{
+					giveItems(player, GOBLIN_PENDANT, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					break;
+				}
+				case GOBLIN_LORD:
+				{
+					giveItems(player, GOBLIN_LORD_PENDANT, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					break;
+				}
+			}
+		}
+		else if ((chance > 4) && st.isCond(1))
+		{
+			giveItems(player, SUSPICIOUS_MEMO, 1);
+			if (getQuestItemsCount(player, SUSPICIOUS_MEMO) < 3)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				takeItems(player, SUSPICIOUS_MEMO, -1);
+				giveItems(player, SUSPICIOUS_CONTRACT, 1);
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

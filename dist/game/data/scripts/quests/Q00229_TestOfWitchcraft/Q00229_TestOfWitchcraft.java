@@ -16,73 +16,32 @@
  */
 package quests.Q00229_TestOfWitchcraft;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
-import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Test Of Witchcraft (229)
- * @author ivantotov
- */
 public class Q00229_TestOfWitchcraft extends Quest
 {
 	// NPCs
-	private static final int GROCER_LARA = 30063;
-	private static final int TRADER_ALEXANDRIA = 30098;
-	private static final int MAGISTER_IKER = 30110;
-	private static final int PRIEST_VADIN = 30188;
-	private static final int TRADER_NESTLE = 30314;
+	private static final int LARA = 30063;
+	private static final int ALEXANDRIA = 30098;
+	private static final int IKER = 30110;
+	private static final int VADIN = 30188;
+	private static final int NESTLE = 30314;
 	private static final int SIR_KLAUS_VASPER = 30417;
 	private static final int LEOPOLD = 30435;
-	private static final int MAGISTER_KAIRA = 30476;
-	private static final int SHADOW_ORIM = 30630;
-	private static final int WARDEN_RODERIK = 30631;
-	private static final int WARDEN_ENDRIGO = 30632;
-	private static final int FISHER_EVERT = 30633;
-	// Items
-	private static final int SWORD_OF_BINDING = 3029;
-	private static final int ORIMS_DIAGRAM = 3308;
-	private static final int ALEXANDRIAS_BOOK = 3309;
-	private static final int IKERS_LIST = 3310;
-	private static final int DIRE_WYRM_FANG = 3311;
-	private static final int LETO_LIZARDMAN_CHARM = 3312;
-	private static final int ENCHANTED_STONE_GOLEM_HEARTSTONE = 3313;
-	private static final int LARAS_MEMO = 3314;
-	private static final int NESTLES_MEMO = 3315;
-	private static final int LEOPOLDS_JOURNAL = 3316;
-	private static final int AKLANTOTH_1ST_GEM = 3317;
-	private static final int AKLANTOTH_2ND_GEM = 3318;
-	private static final int AKLANTOTH_3RD_GEM = 3319;
-	private static final int AKLANTOTH_4TH_GEM = 3320;
-	private static final int AKLANTOTH_5TH_GEM = 3321;
-	private static final int AKLANTOTH_6TH_GEM = 3322;
-	private static final int BRIMSTONE_1ST = 3323;
-	private static final int ORIMS_INSTRUCTIONS = 3324;
-	private static final int ORIMS_1ST_LETTER = 3325;
-	private static final int ORIMS_2ND_LETTER = 3326;
-	private static final int SIR_VASPERS_LETTER = 3327;
-	private static final int VADINS_CRUCIFIX = 3328;
-	private static final int TAMLIN_ORC_AMULET = 3329;
-	private static final int VADINS_SANCTIONS = 3330;
-	private static final int IKERS_AMULET = 3331;
-	private static final int SOULTRAP_CRYSTAL = 3332;
-	private static final int PURGATORY_KEY = 3333;
-	private static final int ZERUEL_BIND_CRYSTAL = 3334;
-	private static final int BRIMSTONE_2ND = 3335;
-	// Reward
-	private static final int MARK_OF_WITCHCRAFT = 3307;
-	// Monster
+	private static final int KAIRA = 30476;
+	private static final int ORIM = 30630;
+	private static final int RODERIK = 30631;
+	private static final int ENDRIGO = 30632;
+	private static final int EVERT = 30633;
+	// Monsters
 	private static final int DIRE_WYRM = 20557;
 	private static final int ENCHANTED_STONE_GOLEM = 20565;
 	private static final int LETO_LIZARDMAN = 20577;
@@ -93,721 +52,741 @@ public class Q00229_TestOfWitchcraft extends Quest
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
 	private static final int TAMLIN_ORC = 20601;
 	private static final int TAMLIN_ORC_ARCHER = 20602;
-	// Quest Monster
 	private static final int NAMELESS_REVENANT = 27099;
 	private static final int SKELETAL_MERCENARY = 27100;
 	private static final int DREVANUL_PRINCE_ZERUEL = 27101;
+	// Items
+	private static final int ORIM_DIAGRAM = 3308;
+	private static final int ALEXANDRIA_BOOK = 3309;
+	private static final int IKER_LIST = 3310;
+	private static final int DIRE_WYRM_FANG = 3311;
+	private static final int LETO_LIZARDMAN_CHARM = 3312;
+	private static final int EN_GOLEM_HEARTSTONE = 3313;
+	private static final int LARA_MEMO = 3314;
+	private static final int NESTLE_MEMO = 3315;
+	private static final int LEOPOLD_JOURNAL = 3316;
+	private static final int AKLANTOTH_GEM_1 = 3317;
+	private static final int AKLANTOTH_GEM_2 = 3318;
+	private static final int AKLANTOTH_GEM_3 = 3319;
+	private static final int AKLANTOTH_GEM_4 = 3320;
+	private static final int AKLANTOTH_GEM_5 = 3321;
+	private static final int AKLANTOTH_GEM_6 = 3322;
+	private static final int BRIMSTONE_1 = 3323;
+	private static final int ORIM_INSTRUCTIONS = 3324;
+	private static final int ORIM_LETTER_1 = 3325;
+	private static final int ORIM_LETTER_2 = 3326;
+	private static final int SIR_VASPER_LETTER = 3327;
+	private static final int VADIN_CRUCIFIX = 3328;
+	private static final int TAMLIN_ORC_AMULET = 3329;
+	private static final int VADIN_SANCTIONS = 3330;
+	private static final int IKER_AMULET = 3331;
+	private static final int SOULTRAP_CRYSTAL = 3332;
+	private static final int PURGATORY_KEY = 3333;
+	private static final int ZERUEL_BIND_CRYSTAL = 3334;
+	private static final int BRIMSTONE_2 = 3335;
+	private static final int SWORD_OF_BINDING = 3029;
+	// Rewards
+	private static final int MARK_OF_WITCHCRAFT = 3307;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	// Misc
-	private static final int MIN_LEVEL = 39;
-	// Locations
-	private static final Location DREVANUL_PRINCE_ZERUEL_SPAWN = new Location(13395, 169807, -3708);
+	private static boolean _drevanulPrinceZeruel = false;
+	private static boolean _swordOfBinding = false;
 	
 	public Q00229_TestOfWitchcraft()
 	{
 		super(229);
-		{
-			addStartNpc(SHADOW_ORIM);
-			addTalkId(SHADOW_ORIM, GROCER_LARA, TRADER_ALEXANDRIA, MAGISTER_IKER, PRIEST_VADIN, TRADER_NESTLE, SIR_KLAUS_VASPER, LEOPOLD, MAGISTER_KAIRA, WARDEN_RODERIK, WARDEN_ENDRIGO, FISHER_EVERT);
-			addKillId(DIRE_WYRM, ENCHANTED_STONE_GOLEM, LETO_LIZARDMAN, LETO_LIZARDMAN_ARCHER, LETO_LIZARDMAN_SOLDIER, LETO_LIZARDMAN_WARRIOR, LETO_LIZARDMAN_SHAMAN, LETO_LIZARDMAN_OVERLORD, TAMLIN_ORC, TAMLIN_ORC_ARCHER, NAMELESS_REVENANT, SKELETAL_MERCENARY, DREVANUL_PRINCE_ZERUEL);
-			addAttackId(NAMELESS_REVENANT, SKELETAL_MERCENARY, DREVANUL_PRINCE_ZERUEL);
-			registerQuestItems(SWORD_OF_BINDING, ORIMS_DIAGRAM, ALEXANDRIAS_BOOK, IKERS_LIST, DIRE_WYRM_FANG, LETO_LIZARDMAN_CHARM, ENCHANTED_STONE_GOLEM_HEARTSTONE, LARAS_MEMO, NESTLES_MEMO, LEOPOLDS_JOURNAL, AKLANTOTH_1ST_GEM, AKLANTOTH_2ND_GEM, AKLANTOTH_3RD_GEM, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM, BRIMSTONE_1ST, ORIMS_INSTRUCTIONS, ORIMS_1ST_LETTER, ORIMS_2ND_LETTER, SIR_VASPERS_LETTER, VADINS_CRUCIFIX, TAMLIN_ORC_AMULET, VADINS_SANCTIONS, IKERS_AMULET, SOULTRAP_CRYSTAL, PURGATORY_KEY, ZERUEL_BIND_CRYSTAL, BRIMSTONE_2ND);
-		}
+		registerQuestItems(ORIM_DIAGRAM, ALEXANDRIA_BOOK, IKER_LIST, DIRE_WYRM_FANG, LETO_LIZARDMAN_CHARM, EN_GOLEM_HEARTSTONE, LARA_MEMO, NESTLE_MEMO, LEOPOLD_JOURNAL, AKLANTOTH_GEM_1, AKLANTOTH_GEM_2, AKLANTOTH_GEM_3, AKLANTOTH_GEM_4, AKLANTOTH_GEM_5, AKLANTOTH_GEM_6, BRIMSTONE_1, ORIM_INSTRUCTIONS, ORIM_LETTER_1, ORIM_LETTER_2, SIR_VASPER_LETTER, VADIN_CRUCIFIX, TAMLIN_ORC_AMULET, VADIN_SANCTIONS, IKER_AMULET, SOULTRAP_CRYSTAL, PURGATORY_KEY, ZERUEL_BIND_CRYSTAL, BRIMSTONE_2, SWORD_OF_BINDING);
+		addStartNpc(ORIM);
+		addTalkId(LARA, ALEXANDRIA, IKER, VADIN, NESTLE, SIR_KLAUS_VASPER, LEOPOLD, KAIRA, ORIM, RODERIK, ENDRIGO, EVERT);
+		addAttackId(NAMELESS_REVENANT, SKELETAL_MERCENARY, DREVANUL_PRINCE_ZERUEL);
+		addKillId(DIRE_WYRM, ENCHANTED_STONE_GOLEM, LETO_LIZARDMAN, LETO_LIZARDMAN_ARCHER, LETO_LIZARDMAN_SOLDIER, LETO_LIZARDMAN_WARRIOR, LETO_LIZARDMAN_SHAMAN, LETO_LIZARDMAN_OVERLORD, TAMLIN_ORC, TAMLIN_ORC_ARCHER, NAMELESS_REVENANT, SKELETAL_MERCENARY, DREVANUL_PRINCE_ZERUEL);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30630-08.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, ORIM_DIAGRAM, 1);
+				if (!player.getVariables().getBoolean("secondClassChange39", false))
 				{
-					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					giveItems(player, ORIMS_DIAGRAM, 1);
+					htmltext = "30630-08a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_39.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange39", true);
 				}
-				break;
-			}
-			case "30630-04.htm":
-			case "30630-06.htm":
-			case "30630-07.htm":
-			case "30630-12.htm":
-			case "30630-13.htm":
-			case "30630-20.htm":
-			case "30630-21.htm":
-			case "30098-02.htm":
-			case "30110-02.htm":
-			case "30417-02.htm":
-			{
-				htmltext = event;
 				break;
 			}
 			case "30630-14.htm":
 			{
-				if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-				{
-					takeItems(player, ALEXANDRIAS_BOOK, 1);
-					takeItems(player, AKLANTOTH_1ST_GEM, 1);
-					takeItems(player, AKLANTOTH_2ND_GEM, 1);
-					takeItems(player, AKLANTOTH_3RD_GEM, 1);
-					takeItems(player, AKLANTOTH_4TH_GEM, 1);
-					takeItems(player, AKLANTOTH_5TH_GEM, 1);
-					takeItems(player, AKLANTOTH_6TH_GEM, 1);
-					giveItems(player, BRIMSTONE_1ST, 1);
-					qs.setCond(4, true);
-					addSpawn(DREVANUL_PRINCE_ZERUEL, npc, true, 0, false);
-					htmltext = event;
-				}
+				st.setCond(4, true);
+				st.unset("gem456");
+				takeItems(player, AKLANTOTH_GEM_1, 1);
+				takeItems(player, AKLANTOTH_GEM_2, 1);
+				takeItems(player, AKLANTOTH_GEM_3, 1);
+				takeItems(player, AKLANTOTH_GEM_4, 1);
+				takeItems(player, AKLANTOTH_GEM_5, 1);
+				takeItems(player, AKLANTOTH_GEM_6, 1);
+				takeItems(player, ALEXANDRIA_BOOK, 1);
+				giveItems(player, BRIMSTONE_1, 1);
+				addSpawn(DREVANUL_PRINCE_ZERUEL, 70381, 109638, -3726, 0, false, 120000);
 				break;
 			}
 			case "30630-16.htm":
 			{
-				if (hasQuestItems(player, BRIMSTONE_1ST))
-				{
-					takeItems(player, BRIMSTONE_1ST, 1);
-					giveItems(player, ORIMS_INSTRUCTIONS, 1);
-					giveItems(player, ORIMS_1ST_LETTER, 1);
-					giveItems(player, ORIMS_2ND_LETTER, 1);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
+				st.setCond(6, true);
+				takeItems(player, BRIMSTONE_1, 1);
+				giveItems(player, ORIM_INSTRUCTIONS, 1);
+				giveItems(player, ORIM_LETTER_1, 1);
+				giveItems(player, ORIM_LETTER_2, 1);
 				break;
 			}
 			case "30630-22.htm":
 			{
-				if (hasQuestItems(player, ZERUEL_BIND_CRYSTAL))
-				{
-					giveAdena(player, 372154, true);
-					giveItems(player, MARK_OF_WITCHCRAFT, 1);
-					addExpAndSp(player, 2058244, 141240);
-					qs.exitQuest(false, true);
-					player.sendPacket(new SocialAction(player.getObjectId(), 3));
-					htmltext = event;
-				}
-				break;
-			}
-			case "30063-02.htm":
-			{
-				giveItems(player, LARAS_MEMO, 1);
-				htmltext = event;
+				takeItems(player, IKER_AMULET, 1);
+				takeItems(player, ORIM_INSTRUCTIONS, 1);
+				takeItems(player, PURGATORY_KEY, 1);
+				takeItems(player, SWORD_OF_BINDING, 1);
+				takeItems(player, ZERUEL_BIND_CRYSTAL, 1);
+				giveItems(player, MARK_OF_WITCHCRAFT, 1);
+				addExpAndSp(player, 139796, 40000);
+				player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+				st.exitQuest(false, true);
 				break;
 			}
 			case "30098-03.htm":
 			{
-				if (hasQuestItems(player, ORIMS_DIAGRAM))
-				{
-					takeItems(player, ORIMS_DIAGRAM, 1);
-					giveItems(player, ALEXANDRIAS_BOOK, 1);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
+				st.setCond(2, true);
+				st.set("gem456", "1");
+				takeItems(player, ORIM_DIAGRAM, 1);
+				giveItems(player, ALEXANDRIA_BOOK, 1);
 				break;
 			}
 			case "30110-03.htm":
 			{
-				giveItems(player, IKERS_LIST, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, IKER_LIST, 1);
 				break;
 			}
 			case "30110-08.htm":
 			{
-				takeItems(player, ORIMS_2ND_LETTER, 1);
-				giveItems(player, IKERS_AMULET, 1);
+				takeItems(player, ORIM_LETTER_2, 1);
+				giveItems(player, IKER_AMULET, 1);
 				giveItems(player, SOULTRAP_CRYSTAL, 1);
 				if (hasQuestItems(player, SWORD_OF_BINDING))
 				{
-					qs.setCond(7, true);
+					st.setCond(7, true);
 				}
-				htmltext = event;
-				break;
-			}
-			case "30314-02.htm":
-			{
-				giveItems(player, NESTLES_MEMO, 1);
-				htmltext = event;
-				break;
-			}
-			case "30417-03.htm":
-			{
-				if (hasQuestItems(player, ORIMS_1ST_LETTER))
+				else
 				{
-					takeItems(player, ORIMS_1ST_LETTER, 1);
-					giveItems(player, SIR_VASPERS_LETTER, 1);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30435-02.htm":
-			{
-				if (hasQuestItems(player, NESTLES_MEMO))
-				{
-					takeItems(player, NESTLES_MEMO, 1);
-					giveItems(player, LEOPOLDS_JOURNAL, 1);
-					htmltext = event;
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				break;
 			}
 			case "30476-02.htm":
 			{
-				giveItems(player, AKLANTOTH_2ND_GEM, 1);
-				if (hasQuestItems(player, AKLANTOTH_1ST_GEM, AKLANTOTH_3RD_GEM, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
+				giveItems(player, AKLANTOTH_GEM_2, 1);
+				if (hasQuestItems(player, AKLANTOTH_GEM_1, AKLANTOTH_GEM_3) && (st.getInt("gem456") == 6))
 				{
-					qs.setCond(3, true);
+					st.setCond(3, true);
 				}
-				htmltext = event;
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case "30063-02.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, LARA_MEMO, 1);
+				break;
+			}
+			case "30314-02.htm":
+			{
+				st.set("gem456", "2");
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, NESTLE_MEMO, 1);
+				break;
+			}
+			case "30435-02.htm":
+			{
+				st.set("gem456", "3");
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, NESTLE_MEMO, 1);
+				giveItems(player, LEOPOLD_JOURNAL, 1);
+				break;
+			}
+			case "30417-03.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, ORIM_LETTER_1, 1);
+				giveItems(player, SIR_VASPER_LETTER, 1);
 				break;
 			}
 			case "30633-02.htm":
 			{
-				giveItems(player, BRIMSTONE_2ND, 1);
-				qs.setCond(9, true);
-				if (npc.getSummonedNpcCount() < 1)
+				st.setCond(9, true);
+				giveItems(player, BRIMSTONE_2, 1);
+				if (!_drevanulPrinceZeruel)
 				{
-					addSpawn(npc, DREVANUL_PRINCE_ZERUEL, DREVANUL_PRINCE_ZERUEL_SPAWN, false, 0);
+					addSpawn(DREVANUL_PRINCE_ZERUEL, 13395, 169807, -3708, 0, false, 299000);
+					_drevanulPrinceZeruel = true;
+					
+					// Resets Drevanul Prince Zeruel
+					startQuestTimer("zeruel_cleanup", 300000, null, player, false);
 				}
-				htmltext = event;
 				break;
 			}
+			case "zeruel_despawn":
+			{
+				npc.abortAttack();
+				npc.decayMe();
+				return null;
+			}
+			case "zeruel_cleanup":
+			{
+				_drevanulPrinceZeruel = false;
+				return null;
+			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case NAMELESS_REVENANT:
-				{
-					if (npc.isScriptValue(0) && hasQuestItems(attacker, ALEXANDRIAS_BOOK, LARAS_MEMO) && !hasQuestItems(attacker, AKLANTOTH_3RD_GEM))
-					{
-						npc.setScriptValue(1);
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.I_ABSOLUTELY_CANNOT_GIVE_IT_TO_YOU_IT_IS_MY_PRECIOUS_JEWEL));
-					}
-					break;
-				}
-				case SKELETAL_MERCENARY:
-				{
-					if (npc.isScriptValue(0) && hasQuestItems(attacker, LEOPOLDS_JOURNAL) && !hasQuestItems(attacker, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-					{
-						npc.setScriptValue(1);
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.I_ABSOLUTELY_CANNOT_GIVE_IT_TO_YOU_IT_IS_MY_PRECIOUS_JEWEL));
-					}
-					break;
-				}
-				case DREVANUL_PRINCE_ZERUEL:
-				{
-					if (hasQuestItems(attacker, BRIMSTONE_1ST))
-					{
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.I_LL_TAKE_YOUR_LIVES_LATER));
-						npc.deleteMe();
-						qs.setCond(5, true);
-					}
-					else if (hasQuestItems(attacker, ORIMS_INSTRUCTIONS, BRIMSTONE_2ND, SWORD_OF_BINDING, SOULTRAP_CRYSTAL))
-					{
-						if (npc.isScriptValue(0) && checkWeapon(attacker))
-						{
-							npc.setScriptValue(1);
-							npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.THAT_SWORD_IS_REALLY));
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case DIRE_WYRM:
-				{
-					if (hasQuestItems(killer, ALEXANDRIAS_BOOK, IKERS_LIST) && (getQuestItemsCount(killer, DIRE_WYRM_FANG) < 20))
-					{
-						giveItems(killer, DIRE_WYRM_FANG, 1);
-						if (getQuestItemsCount(killer, DIRE_WYRM_FANG) >= 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case ENCHANTED_STONE_GOLEM:
-				{
-					if (hasQuestItems(killer, ALEXANDRIAS_BOOK, IKERS_LIST) && (getQuestItemsCount(killer, ENCHANTED_STONE_GOLEM_HEARTSTONE) < 20))
-					{
-						giveItems(killer, ENCHANTED_STONE_GOLEM_HEARTSTONE, 1);
-						if (getQuestItemsCount(killer, ENCHANTED_STONE_GOLEM_HEARTSTONE) >= 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case LETO_LIZARDMAN:
-				case LETO_LIZARDMAN_ARCHER:
-				case LETO_LIZARDMAN_SOLDIER:
-				case LETO_LIZARDMAN_WARRIOR:
-				case LETO_LIZARDMAN_SHAMAN:
-				case LETO_LIZARDMAN_OVERLORD:
-				{
-					if (hasQuestItems(killer, ALEXANDRIAS_BOOK, IKERS_LIST) && (getQuestItemsCount(killer, LETO_LIZARDMAN_CHARM) < 20))
-					{
-						giveItems(killer, LETO_LIZARDMAN_CHARM, 1);
-						if (getQuestItemsCount(killer, LETO_LIZARDMAN_CHARM) >= 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case TAMLIN_ORC:
-				case TAMLIN_ORC_ARCHER:
-				{
-					if (hasQuestItems(killer, VADINS_CRUCIFIX) && (getRandom(100) < 50) && (getQuestItemsCount(killer, TAMLIN_ORC_AMULET) < 20))
-					{
-						giveItems(killer, TAMLIN_ORC_AMULET, 1);
-						if (getQuestItemsCount(killer, TAMLIN_ORC_AMULET) >= 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case NAMELESS_REVENANT:
-				{
-					if (hasQuestItems(killer, ALEXANDRIAS_BOOK, LARAS_MEMO) && !hasQuestItems(killer, AKLANTOTH_3RD_GEM))
-					{
-						takeItems(killer, LARAS_MEMO, 1);
-						giveItems(killer, AKLANTOTH_3RD_GEM, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						if (hasQuestItems(killer, AKLANTOTH_1ST_GEM, AKLANTOTH_2ND_GEM, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-						{
-							qs.setCond(3);
-						}
-					}
-					break;
-				}
-				case SKELETAL_MERCENARY:
-				{
-					if (hasQuestItems(killer, LEOPOLDS_JOURNAL) && !hasQuestItems(killer, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-					{
-						if (!hasQuestItems(killer, AKLANTOTH_4TH_GEM))
-						{
-							giveItems(killer, AKLANTOTH_4TH_GEM, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else if (!hasQuestItems(killer, AKLANTOTH_5TH_GEM))
-						{
-							giveItems(killer, AKLANTOTH_5TH_GEM, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-						else if (!hasQuestItems(killer, AKLANTOTH_6TH_GEM))
-						{
-							takeItems(killer, LEOPOLDS_JOURNAL, 1);
-							giveItems(killer, AKLANTOTH_6TH_GEM, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-							if (hasQuestItems(killer, AKLANTOTH_1ST_GEM, AKLANTOTH_2ND_GEM, AKLANTOTH_3RD_GEM))
-							{
-								qs.setCond(3);
-							}
-						}
-					}
-					break;
-				}
-				case DREVANUL_PRINCE_ZERUEL:
-				{
-					if (hasQuestItems(killer, ORIMS_INSTRUCTIONS, BRIMSTONE_2ND, SWORD_OF_BINDING, SOULTRAP_CRYSTAL) && (npc.getKillingBlowWeapon() == SWORD_OF_BINDING))
-					{
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.NO_I_HAVEN_T_COMPLETELY_FINISHED_THE_COMMAND_FOR_DESTRUCTION_AND_SLAUGHTER_YET));
-						takeItems(killer, SOULTRAP_CRYSTAL, 1);
-						giveItems(killer, PURGATORY_KEY, 1);
-						giveItems(killer, ZERUEL_BIND_CRYSTAL, 1);
-						takeItems(killer, BRIMSTONE_2ND, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						qs.setCond(10);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == SHADOW_ORIM)
+			case State.CREATED:
 			{
-				if ((player.getClassId() == ClassId.WIZARD) || (player.getClassId() == ClassId.KNIGHT) || (player.getClassId() == ClassId.PALUS_KNIGHT))
+				if ((player.getClassId() != ClassId.KNIGHT) && (player.getClassId() != ClassId.WIZARD) && (player.getClassId() != ClassId.PALUS_KNIGHT))
 				{
-					if (player.getLevel() >= MIN_LEVEL)
+					htmltext = "30630-01.htm";
+				}
+				else if (player.getLevel() < 39)
+				{
+					htmltext = "30630-02.htm";
+				}
+				else
+				{
+					htmltext = (player.getClassId() == ClassId.WIZARD) ? "30630-03.htm" : "30630-05.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				final int gem456 = st.getInt("gem456");
+				switch (npc.getId())
+				{
+					case ORIM:
 					{
-						if (player.getClassId() == ClassId.WIZARD)
+						if (cond == 1)
 						{
-							htmltext = "30630-03.htm";
+							htmltext = "30630-09.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30630-10.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30630-11.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30630-14.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30630-15.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30630-17.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30630-18.htm";
+							st.setCond(8, true);
+						}
+						else if ((cond == 8) || (cond == 9))
+						{
+							htmltext = "30630-18.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30630-19.htm";
+						}
+						break;
+					}
+					case ALEXANDRIA:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30098-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30098-04.htm";
 						}
 						else
 						{
-							htmltext = "30630-05.htm";
+							htmltext = "30098-05.htm";
+						}
+						break;
+					}
+					case KAIRA:
+					{
+						if (hasQuestItems(player, AKLANTOTH_GEM_2))
+						{
+							htmltext = "30476-03.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30476-01.htm";
+						}
+						else if (cond > 3)
+						{
+							htmltext = "30476-04.htm";
+						}
+						break;
+					}
+					case IKER:
+					{
+						if (hasQuestItems(player, AKLANTOTH_GEM_1))
+						{
+							htmltext = "30110-06.htm";
+						}
+						else if (hasQuestItems(player, IKER_LIST))
+						{
+							if ((getQuestItemsCount(player, DIRE_WYRM_FANG) + getQuestItemsCount(player, LETO_LIZARDMAN_CHARM) + getQuestItemsCount(player, EN_GOLEM_HEARTSTONE)) < 60)
+							{
+								htmltext = "30110-04.htm";
+							}
+							else
+							{
+								htmltext = "30110-05.htm";
+								takeItems(player, IKER_LIST, 1);
+								takeItems(player, DIRE_WYRM_FANG, -1);
+								takeItems(player, EN_GOLEM_HEARTSTONE, -1);
+								takeItems(player, LETO_LIZARDMAN_CHARM, -1);
+								giveItems(player, AKLANTOTH_GEM_1, 1);
+								
+								if (hasQuestItems(player, AKLANTOTH_GEM_2, AKLANTOTH_GEM_3) && (gem456 == 6))
+								{
+									st.setCond(3, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30110-01.htm";
+						}
+						else if ((cond == 6) && !hasQuestItems(player, SOULTRAP_CRYSTAL))
+						{
+							htmltext = "30110-07.htm";
+						}
+						else if ((cond >= 6) && (cond < 10))
+						{
+							htmltext = "30110-09.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30110-10.htm";
+						}
+						break;
+					}
+					case LARA:
+					{
+						if (hasQuestItems(player, AKLANTOTH_GEM_3))
+						{
+							htmltext = "30063-04.htm";
+						}
+						else if (hasQuestItems(player, LARA_MEMO))
+						{
+							htmltext = "30063-03.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30063-01.htm";
+						}
+						else if (cond > 2)
+						{
+							htmltext = "30063-05.htm";
+						}
+						break;
+					}
+					case RODERIK:
+					case ENDRIGO:
+					{
+						if (hasAtLeastOneQuestItem(player, LARA_MEMO, AKLANTOTH_GEM_3))
+						{
+							htmltext = npc.getId() + "-01.htm";
+						}
+						break;
+					}
+					case NESTLE:
+					{
+						if (gem456 == 1)
+						{
+							htmltext = "30314-01.htm";
+						}
+						else if (gem456 == 2)
+						{
+							htmltext = "30314-03.htm";
+						}
+						else if (gem456 > 2)
+						{
+							htmltext = "30314-04.htm";
+						}
+						break;
+					}
+					case LEOPOLD:
+					{
+						if (gem456 == 2)
+						{
+							htmltext = "30435-01.htm";
+						}
+						else if ((gem456 > 2) && (gem456 < 6))
+						{
+							htmltext = "30435-03.htm";
+						}
+						else if (gem456 == 6)
+						{
+							htmltext = "30435-04.htm";
+						}
+						else if (cond > 3)
+						{
+							htmltext = "30435-05.htm";
+						}
+						break;
+					}
+					case SIR_KLAUS_VASPER:
+					{
+						if (hasAtLeastOneQuestItem(player, SIR_VASPER_LETTER, VADIN_CRUCIFIX))
+						{
+							htmltext = "30417-04.htm";
+						}
+						else if (hasQuestItems(player, VADIN_SANCTIONS))
+						{
+							htmltext = "30417-05.htm";
+							takeItems(player, VADIN_SANCTIONS, 1);
+							giveItems(player, SWORD_OF_BINDING, 1);
+							
+							if (hasQuestItems(player, SOULTRAP_CRYSTAL))
+							{
+								st.setCond(7, true);
+							}
+							else
+							{
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							}
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30417-01.htm";
+						}
+						else if (cond > 6)
+						{
+							htmltext = "30417-06.htm";
+						}
+						break;
+					}
+					case VADIN:
+					{
+						if (hasQuestItems(player, SIR_VASPER_LETTER))
+						{
+							htmltext = "30188-01.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							takeItems(player, SIR_VASPER_LETTER, 1);
+							giveItems(player, VADIN_CRUCIFIX, 1);
+						}
+						else if (hasQuestItems(player, VADIN_CRUCIFIX))
+						{
+							if (getQuestItemsCount(player, TAMLIN_ORC_AMULET) < 20)
+							{
+								htmltext = "30188-02.htm";
+							}
+							else
+							{
+								htmltext = "30188-03.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, TAMLIN_ORC_AMULET, -1);
+								takeItems(player, VADIN_CRUCIFIX, -1);
+								giveItems(player, VADIN_SANCTIONS, 1);
+							}
+						}
+						else if (hasQuestItems(player, VADIN_SANCTIONS))
+						{
+							htmltext = "30188-04.htm";
+						}
+						else if (cond > 6)
+						{
+							htmltext = "30188-05.htm";
+						}
+						break;
+					}
+					case EVERT:
+					{
+						if ((cond == 7) || (cond == 8))
+						{
+							htmltext = "30633-01.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30633-02.htm";
+							
+							if (!_drevanulPrinceZeruel)
+							{
+								addSpawn(DREVANUL_PRINCE_ZERUEL, 13395, 169807, -3708, 0, false, 299000);
+								_drevanulPrinceZeruel = true;
+								
+								// Resets Drevanul Prince Zeruel
+								startQuestTimer("zeruel_cleanup", 300000, null, player, false);
+							}
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30633-03.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet)
+	{
+		final QuestState st = getQuestState(attacker, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case NAMELESS_REVENANT:
+			{
+				if (hasQuestItems(attacker, LARA_MEMO) && !npc.isScriptValue(1))
+				{
+					npc.setScriptValue(1);
+					npc.broadcastSay(ChatType.GENERAL, "I absolutely cannot give it to you! It is my precious jewel!");
+				}
+				break;
+			}
+			case SKELETAL_MERCENARY:
+			{
+				if ((st.getInt("gem456") > 2) && (st.getInt("gem456") < 6) && !npc.isScriptValue(1))
+				{
+					npc.setScriptValue(1);
+					npc.broadcastSay(ChatType.GENERAL, "I absolutely cannot give it to you! It is my precious jewel!");
+				}
+				break;
+			}
+			case DREVANUL_PRINCE_ZERUEL:
+			{
+				if (st.isCond(4) && !npc.isScriptValue(1))
+				{
+					st.setCond(5, true);
+					
+					npc.setScriptValue(1);
+					npc.broadcastSay(ChatType.GENERAL, "I'll take your lives later!!");
+					
+					startQuestTimer("zeruel_despawn", 1000, npc, attacker, false);
+				}
+				else if (st.isCond(9) && _drevanulPrinceZeruel)
+				{
+					if (attacker.getInventory().getPaperdollItemId(7) == SWORD_OF_BINDING)
+					{
+						_swordOfBinding = true;
+						
+						if (!npc.isScriptValue(1))
+						{
+							npc.setScriptValue(1);
+							npc.broadcastSay(ChatType.GENERAL, "That sword is really...!");
 						}
 					}
 					else
 					{
-						htmltext = "30630-02.htm";
+						_swordOfBinding = false;
 					}
 				}
-				else
-				{
-					htmltext = "30630-01.htm";
-				}
+				break;
 			}
 		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case SHADOW_ORIM:
-				{
-					if (hasQuestItems(player, ORIMS_DIAGRAM))
-					{
-						htmltext = "30630-09.htm";
-					}
-					else if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						if (hasQuestItems(player, AKLANTOTH_1ST_GEM, AKLANTOTH_2ND_GEM, AKLANTOTH_3RD_GEM, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-						{
-							htmltext = "30630-11.htm";
-						}
-						else
-						{
-							htmltext = "30630-10.htm";
-						}
-					}
-					else if (hasQuestItems(player, BRIMSTONE_1ST))
-					{
-						htmltext = "30630-15.htm";
-					}
-					else if (hasQuestItems(player, ORIMS_INSTRUCTIONS) && !hasAtLeastOneQuestItem(player, SWORD_OF_BINDING, SOULTRAP_CRYSTAL))
-					{
-						htmltext = "30630-17.htm";
-					}
-					if (hasQuestItems(player, SWORD_OF_BINDING, SOULTRAP_CRYSTAL))
-					{
-						qs.setCond(8, true);
-						htmltext = "30630-18.htm";
-					}
-					else if (hasQuestItems(player, SWORD_OF_BINDING, ZERUEL_BIND_CRYSTAL))
-					{
-						htmltext = "30630-19.htm";
-					}
-					break;
-				}
-				case GROCER_LARA:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						if (!hasAtLeastOneQuestItem(player, LARAS_MEMO, AKLANTOTH_3RD_GEM))
-						{
-							htmltext = "30063-01.htm";
-						}
-						else if (!hasQuestItems(player, AKLANTOTH_3RD_GEM) && hasQuestItems(player, LARAS_MEMO))
-						{
-							htmltext = "30063-03.htm";
-						}
-						else if (!hasQuestItems(player, LARAS_MEMO) && hasQuestItems(player, AKLANTOTH_3RD_GEM))
-						{
-							htmltext = "30063-04.htm";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, BRIMSTONE_1ST, ORIMS_INSTRUCTIONS))
-					{
-						htmltext = "30063-05.htm";
-					}
-					break;
-				}
-				case TRADER_ALEXANDRIA:
-				{
-					if (hasQuestItems(player, ORIMS_DIAGRAM))
-					{
-						htmltext = "30098-01.htm";
-					}
-					else if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						htmltext = "30098-04.htm";
-					}
-					else if (hasQuestItems(player, ORIMS_INSTRUCTIONS, BRIMSTONE_1ST))
-					{
-						htmltext = "30098-05.htm";
-					}
-					break;
-				}
-				case MAGISTER_IKER:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						if (!hasAtLeastOneQuestItem(player, IKERS_LIST, AKLANTOTH_1ST_GEM))
-						{
-							htmltext = "30110-01.htm";
-						}
-						else if (hasQuestItems(player, IKERS_LIST))
-						{
-							if ((getQuestItemsCount(player, DIRE_WYRM_FANG) >= 20) && (getQuestItemsCount(player, LETO_LIZARDMAN_CHARM) >= 20) && (getQuestItemsCount(player, ENCHANTED_STONE_GOLEM_HEARTSTONE) >= 20))
-							{
-								takeItems(player, IKERS_LIST, 1);
-								takeItems(player, DIRE_WYRM_FANG, -1);
-								takeItems(player, LETO_LIZARDMAN_CHARM, -1);
-								takeItems(player, ENCHANTED_STONE_GOLEM_HEARTSTONE, -1);
-								giveItems(player, AKLANTOTH_1ST_GEM, 1);
-								if (hasQuestItems(player, AKLANTOTH_2ND_GEM, AKLANTOTH_3RD_GEM, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-								{
-									qs.setCond(3, true);
-								}
-								htmltext = "30110-05.htm";
-							}
-							else
-							{
-								htmltext = "30110-04.htm";
-							}
-						}
-						else if (!hasQuestItems(player, IKERS_LIST) && hasQuestItems(player, AKLANTOTH_1ST_GEM))
-						{
-							htmltext = "30110-06.htm";
-						}
-					}
-					else if (hasQuestItems(player, ORIMS_INSTRUCTIONS))
-					{
-						if (!hasAtLeastOneQuestItem(player, SOULTRAP_CRYSTAL, ZERUEL_BIND_CRYSTAL))
-						{
-							htmltext = "30110-07.htm";
-						}
-						else if (!hasQuestItems(player, ZERUEL_BIND_CRYSTAL) && hasQuestItems(player, SOULTRAP_CRYSTAL))
-						{
-							htmltext = "30110-09.htm";
-						}
-						else if (!hasQuestItems(player, SOULTRAP_CRYSTAL) && hasQuestItems(player, ZERUEL_BIND_CRYSTAL))
-						{
-							htmltext = "30110-10.htm";
-						}
-					}
-					break;
-				}
-				case PRIEST_VADIN:
-				{
-					if (hasQuestItems(player, ORIMS_INSTRUCTIONS, SIR_VASPERS_LETTER))
-					{
-						takeItems(player, SIR_VASPERS_LETTER, 1);
-						giveItems(player, VADINS_CRUCIFIX, 1);
-						htmltext = "30188-01.htm";
-					}
-					else if (hasQuestItems(player, VADINS_CRUCIFIX))
-					{
-						if (getQuestItemsCount(player, TAMLIN_ORC_AMULET) < 20)
-						{
-							htmltext = "30188-02.htm";
-						}
-						else
-						{
-							takeItems(player, VADINS_CRUCIFIX, 1);
-							takeItems(player, TAMLIN_ORC_AMULET, -1);
-							giveItems(player, VADINS_SANCTIONS, 1);
-							htmltext = "30188-03.htm";
-						}
-					}
-					else if (hasQuestItems(player, ORIMS_INSTRUCTIONS))
-					{
-						if (hasQuestItems(player, VADINS_SANCTIONS))
-						{
-							htmltext = "30188-04.htm";
-						}
-						else if (hasQuestItems(player, SWORD_OF_BINDING))
-						{
-							htmltext = "30188-05.htm";
-						}
-					}
-					break;
-				}
-				case TRADER_NESTLE:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						if (!hasAtLeastOneQuestItem(player, LEOPOLDS_JOURNAL, NESTLES_MEMO, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-						{
-							htmltext = "30314-01.htm";
-						}
-						else if (hasQuestItems(player, NESTLES_MEMO) && !hasQuestItems(player, LEOPOLDS_JOURNAL))
-						{
-							htmltext = "30314-03.htm";
-						}
-						else if (!hasQuestItems(player, NESTLES_MEMO) && hasAtLeastOneQuestItem(player, LEOPOLDS_JOURNAL, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-						{
-							htmltext = "30314-04.htm";
-						}
-					}
-					break;
-				}
-				case SIR_KLAUS_VASPER:
-				{
-					if (hasQuestItems(player, ORIMS_INSTRUCTIONS))
-					{
-						if (hasQuestItems(player, ORIMS_1ST_LETTER))
-						{
-							htmltext = "30417-01.htm";
-						}
-						else if (hasQuestItems(player, SIR_VASPERS_LETTER))
-						{
-							htmltext = "30417-04.htm";
-						}
-						else if (hasQuestItems(player, VADINS_SANCTIONS))
-						{
-							giveItems(player, SWORD_OF_BINDING, 1);
-							takeItems(player, VADINS_SANCTIONS, 1);
-							if (hasQuestItems(player, SOULTRAP_CRYSTAL))
-							{
-								qs.setCond(7, true);
-							}
-							htmltext = "30417-05.htm";
-						}
-						else if (hasQuestItems(player, SWORD_OF_BINDING))
-						{
-							htmltext = "30417-06.htm";
-						}
-					}
-					break;
-				}
-				case LEOPOLD:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						if (hasQuestItems(player, NESTLES_MEMO) && !hasQuestItems(player, LEOPOLDS_JOURNAL))
-						{
-							htmltext = "30435-01.htm";
-						}
-						else if (hasQuestItems(player, LEOPOLDS_JOURNAL) && !hasQuestItems(player, NESTLES_MEMO))
-						{
-							htmltext = "30435-03.htm";
-						}
-						else if (hasQuestItems(player, AKLANTOTH_4TH_GEM, AKLANTOTH_5TH_GEM, AKLANTOTH_6TH_GEM))
-						{
-							htmltext = "30435-04.htm";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, BRIMSTONE_1ST, ORIMS_INSTRUCTIONS))
-					{
-						htmltext = "30435-05.htm";
-					}
-					break;
-				}
-				case MAGISTER_KAIRA:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK))
-					{
-						if (!hasQuestItems(player, AKLANTOTH_2ND_GEM))
-						{
-							htmltext = "30476-01.htm";
-						}
-						else
-						{
-							htmltext = "30476-03.htm";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, BRIMSTONE_1ST, ORIMS_INSTRUCTIONS))
-					{
-						htmltext = "30476-04.htm";
-					}
-					break;
-				}
-				case WARDEN_RODERIK:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK) && hasAtLeastOneQuestItem(player, LARAS_MEMO, AKLANTOTH_3RD_GEM))
-					{
-						htmltext = "30631-01.htm";
-					}
-					break;
-				}
-				case WARDEN_ENDRIGO:
-				{
-					if (hasQuestItems(player, ALEXANDRIAS_BOOK) && hasAtLeastOneQuestItem(player, LARAS_MEMO, AKLANTOTH_3RD_GEM))
-					{
-						htmltext = "30632-01.htm";
-					}
-					break;
-				}
-				case FISHER_EVERT:
-				{
-					if (hasQuestItems(player, ORIMS_INSTRUCTIONS))
-					{
-						if (hasQuestItems(player, SOULTRAP_CRYSTAL, SWORD_OF_BINDING) && !hasQuestItems(player, BRIMSTONE_2ND))
-						{
-							htmltext = "30633-01.htm";
-						}
-						else if (hasQuestItems(player, SOULTRAP_CRYSTAL, BRIMSTONE_2ND) && !hasQuestItems(player, ZERUEL_BIND_CRYSTAL))
-						{
-							if (npc.getSummonedNpcCount() < 1)
-							{
-								addSpawn(npc, DREVANUL_PRINCE_ZERUEL, DREVANUL_PRINCE_ZERUEL_SPAWN, false, 0);
-							}
-							htmltext = "30633-02.htm";
-						}
-						else if (hasQuestItems(player, ZERUEL_BIND_CRYSTAL) && !hasAtLeastOneQuestItem(player, SOULTRAP_CRYSTAL, BRIMSTONE_2ND))
-						{
-							htmltext = "30633-03.htm";
-						}
-					}
-					break;
-				}
-			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == SHADOW_ORIM)
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-			}
-		}
-		return htmltext;
+		
+		return null;
 	}
 	
-	private boolean checkWeapon(Player player)
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final Item weapon = player.getActiveWeaponInstance();
-		return ((weapon != null) && (weapon.getId() == SWORD_OF_BINDING));
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case DIRE_WYRM:
+			{
+				if (hasQuestItems(player, IKER_LIST) && (getQuestItemsCount(player, DIRE_WYRM_FANG) < 20))
+				{
+					giveItems(player, DIRE_WYRM_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case ENCHANTED_STONE_GOLEM:
+			{
+				if (hasQuestItems(player, IKER_LIST) && (getQuestItemsCount(player, EN_GOLEM_HEARTSTONE) < 20))
+				{
+					giveItems(player, EN_GOLEM_HEARTSTONE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case LETO_LIZARDMAN:
+			case LETO_LIZARDMAN_ARCHER:
+			{
+				if (hasQuestItems(player, IKER_LIST) && (getRandom(10) < 5) && (getQuestItemsCount(player, LETO_LIZARDMAN_CHARM) < 20))
+				{
+					giveItems(player, LETO_LIZARDMAN_CHARM, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case LETO_LIZARDMAN_SOLDIER:
+			case LETO_LIZARDMAN_WARRIOR:
+			{
+				if (hasQuestItems(player, IKER_LIST) && (getRandom(10) < 6) && (getQuestItemsCount(player, LETO_LIZARDMAN_CHARM) < 20))
+				{
+					giveItems(player, LETO_LIZARDMAN_CHARM, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case LETO_LIZARDMAN_SHAMAN:
+			case LETO_LIZARDMAN_OVERLORD:
+			{
+				if (hasQuestItems(player, IKER_LIST) && (getRandom(10) < 7) && (getQuestItemsCount(player, LETO_LIZARDMAN_CHARM) < 20))
+				{
+					giveItems(player, LETO_LIZARDMAN_CHARM, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case NAMELESS_REVENANT:
+			{
+				if (hasQuestItems(player, LARA_MEMO))
+				{
+					takeItems(player, LARA_MEMO, 1);
+					giveItems(player, AKLANTOTH_GEM_3, 1);
+					
+					if (hasQuestItems(player, AKLANTOTH_GEM_1, AKLANTOTH_GEM_2) && (st.getInt("gem456") == 6))
+					{
+						st.setCond(3, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case SKELETAL_MERCENARY:
+			{
+				final int gem456 = st.getInt("gem456");
+				if (gem456 == 3)
+				{
+					st.set("gem456", "4");
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, AKLANTOTH_GEM_4, 1);
+				}
+				else if (gem456 == 4)
+				{
+					st.set("gem456", "5");
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, AKLANTOTH_GEM_5, 1);
+				}
+				else if (gem456 == 5)
+				{
+					st.set("gem456", "6");
+					takeItems(player, LEOPOLD_JOURNAL, 1);
+					giveItems(player, AKLANTOTH_GEM_6, 1);
+					
+					if (hasQuestItems(player, AKLANTOTH_GEM_1, AKLANTOTH_GEM_2, AKLANTOTH_GEM_3))
+					{
+						st.setCond(3, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case TAMLIN_ORC:
+			case TAMLIN_ORC_ARCHER:
+			{
+				if (hasQuestItems(player, VADIN_CRUCIFIX) && (getRandom(10) < 5) && (getQuestItemsCount(player, TAMLIN_ORC_AMULET) < 20))
+				{
+					giveItems(player, TAMLIN_ORC_AMULET, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case DREVANUL_PRINCE_ZERUEL:
+			{
+				if (st.isCond(9) && _drevanulPrinceZeruel)
+				{
+					if (_swordOfBinding)
+					{
+						st.setCond(10);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						takeItems(player, BRIMSTONE_2, 1);
+						takeItems(player, SOULTRAP_CRYSTAL, 1);
+						giveItems(player, PURGATORY_KEY, 1);
+						giveItems(player, ZERUEL_BIND_CRYSTAL, 1);
+						npc.broadcastSay(ChatType.GENERAL, "No! I haven't completely finished the command for destruction and slaughter yet!!!");
+					}
+					cancelQuestTimer("zeruel_cleanup", null, player);
+					_drevanulPrinceZeruel = false;
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

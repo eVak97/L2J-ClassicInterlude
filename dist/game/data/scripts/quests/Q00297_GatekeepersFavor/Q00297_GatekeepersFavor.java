@@ -23,96 +23,95 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Gatekeeper's Favor (297)
- * @author malyelfik
- */
 public class Q00297_GatekeepersFavor extends Quest
 {
-	// NPC
-	private static final int WIRPHY = 30540;
-	// Monster
-	private static final int WHINSTONE_GOLEM = 20521;
-	// Items
+	// Item
 	private static final int STARSTONE = 1573;
-	private static final int GATEKEEPER_TOKEN = 736;
-	// Misc
-	private static final int MIN_LEVEL = 15;
-	private static final int MAX_LEVEL = 21;
-	private static final int STARSTONE_COUT = 20;
+	// Reward
+	private static final int GATEKEEPER_TOKEN = 1659;
 	
 	public Q00297_GatekeepersFavor()
 	{
 		super(297);
-		addStartNpc(WIRPHY);
-		addTalkId(WIRPHY);
-		addKillId(WHINSTONE_GOLEM);
 		registerQuestItems(STARSTONE);
-		addCondMaxLevel(MAX_LEVEL, "30540-01.htm");
+		addStartNpc(30540); // Wirphy
+		addTalkId(30540);
+		addKillId(20521); // Whinstone Golem
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30540-03.htm"))
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			if (player.getLevel() < MIN_LEVEL)
-			{
-				return "30540-01.htm";
-			}
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && (getQuestItemsCount(killer, STARSTONE) < STARSTONE_COUT))
+		
+		if (event.equals("30540-03.htm"))
 		{
-			giveItems(killer, STARSTONE, 1);
-			if (getQuestItemsCount(killer, STARSTONE) >= STARSTONE_COUT)
-			{
-				qs.setCond(2, true);
-			}
-			else
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = "30540-02.htm";
+				htmltext = (player.getLevel() < 15) ? "30540-01.htm" : "30540-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (qs.isCond(1))
+				if (st.isCond(1))
 				{
-					htmltext = "30540-04.html";
+					htmltext = "30540-04.htm";
 				}
-				else if (qs.isCond(2) && (getQuestItemsCount(player, STARSTONE) >= STARSTONE_COUT))
+				else
 				{
-					giveItems(player, GATEKEEPER_TOKEN, 2);
-					qs.exitQuest(true, true);
-					htmltext = "30540-05.html";
+					htmltext = "30540-05.htm";
+					takeItems(player, STARSTONE, -1);
+					rewardItems(player, GATEKEEPER_TOKEN, 2);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
+		{
+			giveItems(player, STARSTONE, 1);
+			if (getQuestItemsCount(player, STARSTONE) < 20)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

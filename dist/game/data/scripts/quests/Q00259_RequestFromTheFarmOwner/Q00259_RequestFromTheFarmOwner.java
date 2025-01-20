@@ -16,165 +16,162 @@
  */
 package quests.Q00259_RequestFromTheFarmOwner;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Request from the Farm Owner (259)
- * @author xban1x
- */
 public class Q00259_RequestFromTheFarmOwner extends Quest
 {
-	// Npcs
+	// NPCs
 	private static final int EDMOND = 30497;
 	private static final int MARIUS = 30405;
 	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
-		20103, // Giant Spider
-		20106, // Talon Spider
-		20108, // Blade Spider
-	};
+	private static final int GIANT_SPIDER = 20103;
+	private static final int TALON_SPIDER = 20106;
+	private static final int BLADE_SPIDER = 20108;
 	// Items
-	private static final int SPIDER_SKIN = 1495;
-	// Misc
-	private static final int MIN_LEVEL = 15;
-	private static final int SKIN_COUNT = 10;
-	private static final int SKIN_REWARD = 25;
-	private static final int SKIN_BONUS = 250;
-	private static final Map<String, ItemHolder> CONSUMABLES = new HashMap<>();
-	static
-	{
-		CONSUMABLES.put("30405-04.html", new ItemHolder(1061, 2)); // Greater Healing Potion
-		CONSUMABLES.put("30405-05.html", new ItemHolder(17, 250)); // Wooden Arrow
-		CONSUMABLES.put("30405-05a.html", new ItemHolder(1835, 60)); // Soulshot: No Grade
-		CONSUMABLES.put("30405-05c.html", new ItemHolder(2509, 30)); // Spiritshot: No Grade
-	}
+	private static final int GIANT_SPIDER_SKIN = 1495;
+	// Rewards
+	private static final int ADENA = 57;
+	private static final int HEALING_POTION = 1061;
+	private static final int WOODEN_ARROW = 17;
 	
 	public Q00259_RequestFromTheFarmOwner()
 	{
 		super(259);
+		registerQuestItems(GIANT_SPIDER_SKIN);
 		addStartNpc(EDMOND);
 		addTalkId(EDMOND, MARIUS);
-		addKillId(MONSTERS);
-		registerQuestItems(SPIDER_SKIN);
-		addCondMaxLevel(21, getNoQuestMsg(null));
+		addKillId(GIANT_SPIDER, TALON_SPIDER, BLADE_SPIDER);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "30405-03.html":
-			case "30405-05b.html":
-			case "30405-05d.html":
-			case "30497-07.html":
+			case "30497-03.htm":
 			{
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30405-04.html":
-			case "30405-05.html":
-			case "30405-05a.html":
-			case "30405-05c.html":
+			case "30497-06.htm":
 			{
-				if (getQuestItemsCount(player, SPIDER_SKIN) >= SKIN_COUNT)
+				st.exitQuest(true, true);
+				break;
+			}
+			case "30405-04.htm":
+			{
+				if (getQuestItemsCount(player, GIANT_SPIDER_SKIN) >= 10)
 				{
-					giveItems(player, CONSUMABLES.get(event));
-					takeItems(player, SPIDER_SKIN, SKIN_COUNT);
-					htmltext = event;
+					takeItems(player, GIANT_SPIDER_SKIN, 10);
+					rewardItems(player, HEALING_POTION, 1);
+				}
+				else
+				{
+					htmltext = "<html><body>Incorrect item count</body></html>";
 				}
 				break;
 			}
-			case "30405-06.html":
+			case "30405-05.htm":
 			{
-				htmltext = (getQuestItemsCount(player, SPIDER_SKIN) >= SKIN_COUNT) ? event : "30405-07.html";
+				if (getQuestItemsCount(player, GIANT_SPIDER_SKIN) >= 10)
+				{
+					takeItems(player, GIANT_SPIDER_SKIN, 10);
+					rewardItems(player, WOODEN_ARROW, 50);
+				}
+				else
+				{
+					htmltext = "<html><body>Incorrect item count</body></html>";
+				}
 				break;
 			}
-			case "30497-03.html":
+			case "30405-07.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30497-06.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
+				if (getQuestItemsCount(player, GIANT_SPIDER_SKIN) >= 10)
+				{
+					htmltext = "30405-06.htm";
+				}
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if (qs != null)
-		{
-			giveItems(killer, SPIDER_SKIN, 1);
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case EDMOND:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				htmltext = (player.getLevel() < 15) ? "30497-01.htm" : "30497-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int count = (int) getQuestItemsCount(player, GIANT_SPIDER_SKIN);
+				switch (npc.getId())
 				{
-					case State.CREATED:
+					case EDMOND:
 					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30497-02.htm" : "30497-01.html";
-						break;
-					}
-					case State.STARTED:
-					{
-						if (hasQuestItems(player, SPIDER_SKIN))
+						if (count == 0)
 						{
-							final long skins = getQuestItemsCount(player, SPIDER_SKIN);
-							giveAdena(player, (skins * SKIN_REWARD) + ((skins >= 10) ? SKIN_BONUS : 0), true);
-							takeItems(player, SPIDER_SKIN, -1);
-							htmltext = "30497-05.html";
+							htmltext = "30497-04.htm";
 						}
 						else
 						{
-							htmltext = "30497-04.html";
+							htmltext = "30497-05.htm";
+							takeItems(player, GIANT_SPIDER_SKIN, -1);
+							int reward = count * 25;
+							if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
+							{
+								reward += 250;
+							}
+							rewardItems(player, ADENA, reward);
 						}
+						break;
+					}
+					case MARIUS:
+					{
+						htmltext = (count < 10) ? "30405-01.htm" : "30405-02.htm";
 						break;
 					}
 				}
 				break;
 			}
-			case MARIUS:
-			{
-				htmltext = (getQuestItemsCount(player, SPIDER_SKIN) >= SKIN_COUNT) ? "30405-02.html" : "30405-01.html";
-				break;
-			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		giveItems(player, GIANT_SPIDER_SKIN, 1);
+		playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		
+		return null;
 	}
 }

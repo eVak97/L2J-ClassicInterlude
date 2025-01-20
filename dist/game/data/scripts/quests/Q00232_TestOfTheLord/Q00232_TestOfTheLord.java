@@ -16,40 +16,32 @@
  */
 package quests.Q00232_TestOfTheLord;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
-import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Test Of The Lord (232)
- * @author ivantotov
- */
 public class Q00232_TestOfTheLord extends Quest
 {
 	// NPCs
-	private static final int SEER_SOMAK = 30510;
-	private static final int SEER_MANAKIA = 30515;
-	private static final int TRADER_JAKAL = 30558;
-	private static final int BLACKSMITH_SUMARI = 30564;
-	private static final int FLAME_LORD_KAKAI = 30565;
-	private static final int ATUBA_CHIEF_VARKEES = 30566;
-	private static final int NERUGA_CHIEF_TANTUS = 30567;
-	private static final int URUTU_CHIEF_HATOS = 30568;
-	private static final int DUDA_MARA_CHIEF_TAKUNA = 30641;
-	private static final int GANDI_CHIEF_CHIANTA = 30642;
+	private static final int SOMAK = 30510;
+	private static final int MANAKIA = 30515;
+	private static final int JAKAL = 30558;
+	private static final int SUMARI = 30564;
+	private static final int KAKAI = 30565;
+	private static final int VARKEES = 30566;
+	private static final int TANTUS = 30567;
+	private static final int HATOS = 30568;
+	private static final int TAKUNA = 30641;
+	private static final int CHIANTA = 30642;
 	private static final int FIRST_ORC = 30643;
 	private static final int ANCESTOR_MARTANKUS = 30649;
 	// Items
-	private static final int ADENA = 57;
-	private static final int BONE_ARROW = 1341;
 	private static final int ORDEAL_NECKLACE = 3391;
 	private static final int VARKEES_CHARM = 3392;
 	private static final int TANTUS_CHARM = 3393;
@@ -69,622 +61,630 @@ public class Q00232_TestOfTheLord extends Quest
 	private static final int MARSH_SPIDER_FEELER = 3407;
 	private static final int MARSH_SPIDER_FEET = 3408;
 	private static final int HANDIWORK_SPIDER_BROOCH = 3409;
-	private static final int ENCHANTED_MONSTER_CORNEA = 3410;
-	private static final int MONSTER_EYE_WOODCARVING = 3411;
+	private static final int MONSTEREYE_CORNEA = 3410;
+	private static final int MONSTEREYE_WOODCARVING = 3411;
 	private static final int BEAR_FANG_NECKLACE = 3412;
 	private static final int MARTANKUS_CHARM = 3413;
 	private static final int RAGNA_ORC_HEAD = 3414;
 	private static final int RAGNA_CHIEF_NOTICE = 3415;
+	private static final int BONE_ARROW = 1341;
 	private static final int IMMORTAL_FLAME = 3416;
-	// Reward
-	private static final int MARK_OF_LORD = 3390;
-	// Monster
-	private static final int MARSH_SPIDER = 20233;
-	private static final int BREKA_ORC_SHAMAN = 20269;
-	private static final int BREKA_ORC_OVERLORD = 20270;
-	private static final int ENCHANTED_MONSTEREYE = 20564;
-	private static final int TIMAK_ORC = 20583;
-	private static final int TIMAK_ORC_ARCHER = 20584;
-	private static final int TIMAK_ORC_SOLDIER = 20585;
-	private static final int TIMAK_ORC_WARRIOR = 20586;
-	private static final int TIMAK_ORC_SHAMAN = 20587;
-	private static final int TIMAK_ORC_OVERLORD = 20588;
-	private static final int RAGNA_ORC_OVERLORD = 20778;
-	private static final int RAGNA_ORC_SEER = 20779;
+	// Rewards
+	private static final int MARK_LORD = 3390;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	// Misc
-	private static final int MIN_LEVEL = 39;
-	// Locations
-	private static final Location FIRST_ORC_SPAWN = new Location(21036, -107690, -3038);
+	private static Npc _firstOrc; // Used to avoid to spawn multiple instances.
 	
 	public Q00232_TestOfTheLord()
 	{
 		super(232);
-		addStartNpc(FLAME_LORD_KAKAI);
-		addTalkId(FLAME_LORD_KAKAI, SEER_SOMAK, SEER_MANAKIA, TRADER_JAKAL, BLACKSMITH_SUMARI, ATUBA_CHIEF_VARKEES, NERUGA_CHIEF_TANTUS, URUTU_CHIEF_HATOS, DUDA_MARA_CHIEF_TAKUNA, GANDI_CHIEF_CHIANTA, FIRST_ORC, ANCESTOR_MARTANKUS);
-		addKillId(MARSH_SPIDER, BREKA_ORC_SHAMAN, BREKA_ORC_OVERLORD, ENCHANTED_MONSTEREYE, TIMAK_ORC, TIMAK_ORC_ARCHER, TIMAK_ORC_SOLDIER, TIMAK_ORC_SOLDIER, TIMAK_ORC_WARRIOR, TIMAK_ORC_SHAMAN, TIMAK_ORC_OVERLORD, RAGNA_ORC_OVERLORD, RAGNA_ORC_SEER);
-		registerQuestItems(ORDEAL_NECKLACE, VARKEES_CHARM, TANTUS_CHARM, HATOS_CHARM, TAKUNA_CHARM, CHIANTA_CHARM, MANAKIAS_ORDERS, BREKA_ORC_FANG, MANAKIAS_AMULET, HUGE_ORC_FANG, SUMARIS_LETTER, URUTU_BLADE, TIMAK_ORC_SKULL, SWORD_INTO_SKULL, NERUGA_AXE_BLADE, AXE_OF_CEREMONY, MARSH_SPIDER_FEELER, MARSH_SPIDER_FEET, HANDIWORK_SPIDER_BROOCH, ENCHANTED_MONSTER_CORNEA, MONSTER_EYE_WOODCARVING, BEAR_FANG_NECKLACE, MARTANKUS_CHARM, RAGNA_ORC_HEAD, RAGNA_CHIEF_NOTICE, IMMORTAL_FLAME);
+		registerQuestItems(VARKEES_CHARM, TANTUS_CHARM, HATOS_CHARM, TAKUNA_CHARM, CHIANTA_CHARM, MANAKIAS_ORDERS, BREKA_ORC_FANG, MANAKIAS_AMULET, HUGE_ORC_FANG, SUMARIS_LETTER, URUTU_BLADE, TIMAK_ORC_SKULL, SWORD_INTO_SKULL, NERUGA_AXE_BLADE, AXE_OF_CEREMONY, MARSH_SPIDER_FEELER, MARSH_SPIDER_FEET, HANDIWORK_SPIDER_BROOCH, MONSTEREYE_CORNEA, MONSTEREYE_WOODCARVING, BEAR_FANG_NECKLACE, MARTANKUS_CHARM, RAGNA_ORC_HEAD, RAGNA_ORC_HEAD, IMMORTAL_FLAME);
+		addStartNpc(KAKAI);
+		addTalkId(KAKAI, CHIANTA, HATOS, SOMAK, SUMARI, TAKUNA, TANTUS, JAKAL, VARKEES, MANAKIA, ANCESTOR_MARTANKUS, FIRST_ORC);
+		addKillId(20233, 20269, 20270, 20564, 20583, 20584, 20585, 20586, 20587, 20588, 20778, 20779);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30565-05.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, ORDEAL_NECKLACE, 1);
+				if (!player.getVariables().getBoolean("secondClassChange39", false))
 				{
-					qs.startQuest();
-					giveItems(player, ORDEAL_NECKLACE, 1);
+					htmltext = "30565-05b.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_39.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange39", true);
 				}
 				break;
 			}
-			case "30565-05a.html":
-			case "30558-03a.html":
-			case "30643-02.html":
-			case "30643-03.html":
-			case "30649-02.html":
-			case "30649-03.html":
+			case "30565-08.htm":
 			{
-				htmltext = event;
+				st.setCond(3, true);
+				takeItems(player, SWORD_INTO_SKULL, 1);
+				takeItems(player, AXE_OF_CEREMONY, 1);
+				takeItems(player, MONSTEREYE_WOODCARVING, 1);
+				takeItems(player, HANDIWORK_SPIDER_BROOCH, 1);
+				takeItems(player, ORDEAL_NECKLACE, 1);
+				takeItems(player, HUGE_ORC_FANG, 1);
+				giveItems(player, BEAR_FANG_NECKLACE, 1);
 				break;
 			}
-			case "30565-08.html":
-			{
-				if (hasQuestItems(player, HUGE_ORC_FANG))
-				{
-					takeItems(player, ORDEAL_NECKLACE, 1);
-					takeItems(player, HUGE_ORC_FANG, 1);
-					takeItems(player, SWORD_INTO_SKULL, 1);
-					takeItems(player, AXE_OF_CEREMONY, 1);
-					takeItems(player, HANDIWORK_SPIDER_BROOCH, 1);
-					takeItems(player, MONSTER_EYE_WOODCARVING, 1);
-					giveItems(player, BEAR_FANG_NECKLACE, 1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30558-02.html":
-			{
-				if (getQuestItemsCount(player, ADENA) >= 1000)
-				{
-					takeItems(player, ADENA, 1000);
-					giveItems(player, NERUGA_AXE_BLADE, 1);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30566-02.html":
+			case "30566-02.htm":
 			{
 				giveItems(player, VARKEES_CHARM, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
-			case "30567-02.html":
+			case "30567-02.htm":
 			{
 				giveItems(player, TANTUS_CHARM, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
-			case "30568-02.html":
+			case "30558-02.htm":
+			{
+				takeItems(player, 57, 1000);
+				giveItems(player, NERUGA_AXE_BLADE, 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				break;
+			}
+			case "30568-02.htm":
 			{
 				giveItems(player, HATOS_CHARM, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
-			case "30641-02.html":
+			case "30641-02.htm":
 			{
 				giveItems(player, TAKUNA_CHARM, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
-			case "30642-02.html":
+			case "30642-02.htm":
 			{
 				giveItems(player, CHIANTA_CHARM, 1);
-				htmltext = event;
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				break;
 			}
-			case "30649-04.html":
+			case "30643-02.htm":
 			{
-				if (hasQuestItems(player, BEAR_FANG_NECKLACE))
+				st.setCond(7, true);
+				startQuestTimer("f_orc_despawn", 10000, null, player, false);
+				break;
+			}
+			case "30649-04.htm":
+			{
+				st.setCond(4, true);
+				takeItems(player, BEAR_FANG_NECKLACE, 1);
+				giveItems(player, MARTANKUS_CHARM, 1);
+				break;
+			}
+			case "30649-07.htm":
+			{
+				if (_firstOrc == null)
 				{
-					takeItems(player, BEAR_FANG_NECKLACE, 1);
-					giveItems(player, MARTANKUS_CHARM, 1);
-					qs.setCond(4, true);
-					htmltext = event;
+					_firstOrc = addSpawn(FIRST_ORC, 21036, -107690, -3038, 200000, false, 0);
 				}
 				break;
 			}
-			case "30649-07.html":
+			case "f_orc_despawn":
 			{
-				if (npc.getSummonedNpcCount() < 1)
+				if (_firstOrc != null)
 				{
-					addSpawn(npc, FIRST_ORC, FIRST_ORC_SPAWN, false, 10000);
+					_firstOrc.deleteMe();
+					_firstOrc = null;
 				}
-				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case MARSH_SPIDER:
-				{
-					if (hasQuestItems(killer, ORDEAL_NECKLACE, TAKUNA_CHARM) && !hasQuestItems(killer, HANDIWORK_SPIDER_BROOCH))
-					{
-						if (getQuestItemsCount(killer, MARSH_SPIDER_FEELER) < 10)
-						{
-							giveItems(killer, MARSH_SPIDER_FEELER, 2);
-							if (getQuestItemsCount(killer, MARSH_SPIDER_FEELER) >= 10)
-							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-							}
-						}
-						else if (getQuestItemsCount(killer, MARSH_SPIDER_FEET) < 10)
-						{
-							giveItems(killer, MARSH_SPIDER_FEET, 2);
-							if (getQuestItemsCount(killer, MARSH_SPIDER_FEET) >= 10)
-							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							}
-							else
-							{
-								playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-							}
-						}
-					}
-					break;
-				}
-				case BREKA_ORC_SHAMAN:
-				case BREKA_ORC_OVERLORD:
-				{
-					if (hasQuestItems(killer, ORDEAL_NECKLACE, VARKEES_CHARM, MANAKIAS_ORDERS) && !hasAtLeastOneQuestItem(killer, HUGE_ORC_FANG, MANAKIAS_AMULET) && (getQuestItemsCount(killer, BREKA_ORC_FANG) < 20))
-					{
-						giveItems(killer, BREKA_ORC_FANG, 2);
-						if (getQuestItemsCount(killer, BREKA_ORC_FANG) >= 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case ENCHANTED_MONSTEREYE:
-				{
-					if (hasQuestItems(killer, ORDEAL_NECKLACE, CHIANTA_CHARM) && !hasQuestItems(killer, MONSTER_EYE_WOODCARVING) && (getQuestItemsCount(killer, ENCHANTED_MONSTER_CORNEA) < 20))
-					{
-						giveItems(killer, ENCHANTED_MONSTER_CORNEA, 1);
-						if (getQuestItemsCount(killer, ENCHANTED_MONSTER_CORNEA) >= 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case TIMAK_ORC:
-				case TIMAK_ORC_ARCHER:
-				case TIMAK_ORC_SOLDIER:
-				case TIMAK_ORC_WARRIOR:
-				case TIMAK_ORC_SHAMAN:
-				case TIMAK_ORC_OVERLORD:
-				{
-					if (hasQuestItems(killer, ORDEAL_NECKLACE, HATOS_CHARM) && !hasQuestItems(killer, SWORD_INTO_SKULL) && (getQuestItemsCount(killer, TIMAK_ORC_SKULL) < 10))
-					{
-						giveItems(killer, TIMAK_ORC_SKULL, 1);
-						if (getQuestItemsCount(killer, TIMAK_ORC_SKULL) >= 10)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case RAGNA_ORC_OVERLORD:
-				case RAGNA_ORC_SEER:
-				{
-					if (hasQuestItems(killer, MARTANKUS_CHARM))
-					{
-						if (!hasQuestItems(killer, RAGNA_CHIEF_NOTICE))
-						{
-							giveItems(killer, RAGNA_CHIEF_NOTICE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, RAGNA_ORC_HEAD))
-						{
-							giveItems(killer, RAGNA_ORC_HEAD, 1);
-							qs.setCond(5, true);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == FLAME_LORD_KAKAI)
+			case State.CREATED:
 			{
 				if (player.getRace() != Race.ORC)
 				{
-					htmltext = "30565-01.html";
+					htmltext = "30565-01.htm";
 				}
 				else if (player.getClassId() != ClassId.ORC_SHAMAN)
 				{
-					htmltext = "30565-02.html";
+					htmltext = "30565-02.htm";
 				}
-				else if (player.getLevel() < MIN_LEVEL)
+				else if (player.getLevel() < 39)
 				{
-					htmltext = "30565-03.html";
+					htmltext = "30565-03.htm";
 				}
 				else
 				{
 					htmltext = "30565-04.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case FLAME_LORD_KAKAI:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE))
+					case VARKEES:
 					{
-						if (hasQuestItems(player, HUGE_ORC_FANG, SWORD_INTO_SKULL, AXE_OF_CEREMONY, MONSTER_EYE_WOODCARVING, HANDIWORK_SPIDER_BROOCH))
+						if (hasQuestItems(player, HUGE_ORC_FANG))
 						{
-							htmltext = "30565-07.html";
+							htmltext = "30566-05.htm";
 						}
-						else
+						else if (hasQuestItems(player, VARKEES_CHARM))
 						{
-							htmltext = "30565-06.html";
-						}
-					}
-					else if (hasQuestItems(player, BEAR_FANG_NECKLACE))
-					{
-						htmltext = "30565-09.html";
-					}
-					else if (hasQuestItems(player, MARTANKUS_CHARM))
-					{
-						htmltext = "30565-10.html";
-					}
-					else if (hasQuestItems(player, IMMORTAL_FLAME))
-					{
-						giveAdena(player, 161806, true);
-						giveItems(player, MARK_OF_LORD, 1);
-						addExpAndSp(player, 894888, 61408);
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30565-11.html";
-					}
-					break;
-				}
-				case SEER_SOMAK:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE, HATOS_CHARM, SUMARIS_LETTER) && !hasAtLeastOneQuestItem(player, SWORD_INTO_SKULL, URUTU_BLADE))
-					{
-						takeItems(player, SUMARIS_LETTER, 1);
-						giveItems(player, URUTU_BLADE, 1);
-						htmltext = "30510-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HATOS_CHARM, URUTU_BLADE) && !hasAtLeastOneQuestItem(player, SWORD_INTO_SKULL, SUMARIS_LETTER))
-					{
-						htmltext = "30510-02.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, SWORD_INTO_SKULL) && !hasAtLeastOneQuestItem(player, HATOS_CHARM, URUTU_BLADE, SUMARIS_LETTER))
-					{
-						htmltext = "30510-03.html";
-					}
-					break;
-				}
-				case SEER_MANAKIA:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE, VARKEES_CHARM) && !hasAtLeastOneQuestItem(player, HUGE_ORC_FANG, MANAKIAS_AMULET, MANAKIAS_ORDERS))
-					{
-						giveItems(player, MANAKIAS_ORDERS, 1);
-						htmltext = "30515-01.html";
-					}
-					else if (hasQuestItems(player, VARKEES_CHARM, ORDEAL_NECKLACE, MANAKIAS_ORDERS) && !hasAtLeastOneQuestItem(player, HUGE_ORC_FANG, MANAKIAS_AMULET))
-					{
-						if (getQuestItemsCount(player, BREKA_ORC_FANG) < 20)
-						{
-							htmltext = "30515-02.html";
-						}
-						else
-						{
-							takeItems(player, MANAKIAS_ORDERS, 1);
-							takeItems(player, BREKA_ORC_FANG, -1);
-							giveItems(player, MANAKIAS_AMULET, 1);
-							htmltext = "30515-03.html";
-						}
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, VARKEES_CHARM, MANAKIAS_AMULET) && !hasAtLeastOneQuestItem(player, HUGE_ORC_FANG, MANAKIAS_ORDERS))
-					{
-						htmltext = "30515-04.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HUGE_ORC_FANG) && !hasAtLeastOneQuestItem(player, VARKEES_CHARM, MANAKIAS_AMULET, MANAKIAS_ORDERS))
-					{
-						htmltext = "30515-05.html";
-					}
-					break;
-				}
-				case TRADER_JAKAL:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE, TANTUS_CHARM) && !hasAtLeastOneQuestItem(player, AXE_OF_CEREMONY, NERUGA_AXE_BLADE))
-					{
-						if (getQuestItemsCount(player, ADENA) >= 1000)
-						{
-							htmltext = "30558-01.html";
-						}
-						else
-						{
-							htmltext = "30558-03.html";
-						}
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, TANTUS_CHARM, NERUGA_AXE_BLADE) && !hasQuestItems(player, AXE_OF_CEREMONY))
-					{
-						htmltext = "30558-04.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, AXE_OF_CEREMONY) && !hasQuestItems(player, TANTUS_CHARM))
-					{
-						htmltext = "30558-05.html";
-					}
-					break;
-				}
-				case BLACKSMITH_SUMARI:
-				{
-					if (hasQuestItems(player, HATOS_CHARM, ORDEAL_NECKLACE) && !hasAtLeastOneQuestItem(player, SWORD_INTO_SKULL, URUTU_BLADE, SUMARIS_LETTER))
-					{
-						giveItems(player, SUMARIS_LETTER, 1);
-						htmltext = "30564-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HATOS_CHARM, SUMARIS_LETTER) && !hasAtLeastOneQuestItem(player, SWORD_INTO_SKULL, URUTU_BLADE))
-					{
-						htmltext = "30564-02.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HATOS_CHARM, URUTU_BLADE) && !hasAtLeastOneQuestItem(player, SUMARIS_LETTER, SWORD_INTO_SKULL))
-					{
-						htmltext = "30564-03.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, SWORD_INTO_SKULL) && !hasAtLeastOneQuestItem(player, HATOS_CHARM, URUTU_BLADE, SUMARIS_LETTER))
-					{
-						htmltext = "30564-04.html";
-					}
-					break;
-				}
-				case ATUBA_CHIEF_VARKEES:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE) && !hasAtLeastOneQuestItem(player, HUGE_ORC_FANG, VARKEES_CHARM))
-					{
-						htmltext = "30566-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, VARKEES_CHARM) && !hasAtLeastOneQuestItem(player, HUGE_ORC_FANG, MANAKIAS_AMULET))
-					{
-						htmltext = "30566-03.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, VARKEES_CHARM, MANAKIAS_AMULET) && !hasQuestItems(player, HUGE_ORC_FANG))
-					{
-						takeItems(player, VARKEES_CHARM, 1);
-						takeItems(player, MANAKIAS_AMULET, 1);
-						giveItems(player, HUGE_ORC_FANG, 1);
-						if (hasQuestItems(player, AXE_OF_CEREMONY, SWORD_INTO_SKULL, HANDIWORK_SPIDER_BROOCH, MONSTER_EYE_WOODCARVING))
-						{
-							qs.setCond(2, true);
-						}
-						htmltext = "30566-04.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HUGE_ORC_FANG) && !hasQuestItems(player, VARKEES_CHARM))
-					{
-						htmltext = "30566-05.html";
-					}
-					break;
-				}
-				case NERUGA_CHIEF_TANTUS:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE) && !hasAtLeastOneQuestItem(player, AXE_OF_CEREMONY, TANTUS_CHARM))
-					{
-						htmltext = "30567-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, TANTUS_CHARM) && !hasQuestItems(player, AXE_OF_CEREMONY))
-					{
-						if (!hasQuestItems(player, NERUGA_AXE_BLADE) || (getQuestItemsCount(player, BONE_ARROW) < 1000))
-						{
-							htmltext = "30567-03.html";
-						}
-						else
-						{
-							takeItems(player, BONE_ARROW, 1000);
-							takeItems(player, TANTUS_CHARM, 1);
-							takeItems(player, NERUGA_AXE_BLADE, 1);
-							giveItems(player, AXE_OF_CEREMONY, 1);
-							if (hasQuestItems(player, HUGE_ORC_FANG, SWORD_INTO_SKULL, HANDIWORK_SPIDER_BROOCH, MONSTER_EYE_WOODCARVING))
+							if (hasQuestItems(player, MANAKIAS_AMULET))
 							{
-								qs.setCond(2, true);
+								htmltext = "30566-04.htm";
+								takeItems(player, VARKEES_CHARM, -1);
+								takeItems(player, MANAKIAS_AMULET, -1);
+								giveItems(player, HUGE_ORC_FANG, 1);
+								
+								if (hasQuestItems(player, SWORD_INTO_SKULL, AXE_OF_CEREMONY, MONSTEREYE_WOODCARVING, HANDIWORK_SPIDER_BROOCH, ORDEAL_NECKLACE))
+								{
+									st.setCond(2, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
 							}
-							htmltext = "30567-04.html";
-						}
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, AXE_OF_CEREMONY) && !hasQuestItems(player, TANTUS_CHARM))
-					{
-						htmltext = "30567-05.html";
-					}
-					break;
-				}
-				case URUTU_CHIEF_HATOS:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE) && !hasAtLeastOneQuestItem(player, SWORD_INTO_SKULL, HATOS_CHARM))
-					{
-						htmltext = "30568-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HATOS_CHARM) && !hasQuestItems(player, SWORD_INTO_SKULL))
-					{
-						if (hasQuestItems(player, URUTU_BLADE) && (getQuestItemsCount(player, TIMAK_ORC_SKULL) >= 10))
-						{
-							takeItems(player, HATOS_CHARM, 1);
-							takeItems(player, URUTU_BLADE, 1);
-							takeItems(player, TIMAK_ORC_SKULL, -1);
-							giveItems(player, SWORD_INTO_SKULL, 1);
-							if (hasQuestItems(player, HUGE_ORC_FANG, AXE_OF_CEREMONY, HANDIWORK_SPIDER_BROOCH, MONSTER_EYE_WOODCARVING))
+							else
 							{
-								qs.setCond(2, true);
+								htmltext = "30566-03.htm";
 							}
-							htmltext = "30568-04.html";
 						}
 						else
 						{
-							htmltext = "30568-03.html";
+							htmltext = "30566-01.htm";
 						}
+						break;
 					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, SWORD_INTO_SKULL) && !hasQuestItems(player, HATOS_CHARM))
+					case MANAKIA:
 					{
-						htmltext = "30568-05.html";
-					}
-					break;
-				}
-				case DUDA_MARA_CHIEF_TAKUNA:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE) && !hasAtLeastOneQuestItem(player, HANDIWORK_SPIDER_BROOCH, TAKUNA_CHARM))
-					{
-						htmltext = "30641-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, TAKUNA_CHARM) && !hasQuestItems(player, HANDIWORK_SPIDER_BROOCH))
-					{
-						if ((getQuestItemsCount(player, MARSH_SPIDER_FEELER) >= 10) && (getQuestItemsCount(player, MARSH_SPIDER_FEET) >= 10))
+						if (hasQuestItems(player, HUGE_ORC_FANG))
 						{
-							takeItems(player, TAKUNA_CHARM, 1);
-							takeItems(player, MARSH_SPIDER_FEELER, -1);
-							takeItems(player, MARSH_SPIDER_FEET, -1);
-							giveItems(player, HANDIWORK_SPIDER_BROOCH, 1);
-							if (hasQuestItems(player, HUGE_ORC_FANG, AXE_OF_CEREMONY, SWORD_INTO_SKULL, MONSTER_EYE_WOODCARVING))
+							htmltext = "30515-05.htm";
+						}
+						else if (hasQuestItems(player, MANAKIAS_AMULET))
+						{
+							htmltext = "30515-04.htm";
+						}
+						else if (hasQuestItems(player, MANAKIAS_ORDERS))
+						{
+							if (getQuestItemsCount(player, BREKA_ORC_FANG) >= 20)
 							{
-								qs.setCond(2, true);
+								htmltext = "30515-03.htm";
+								takeItems(player, MANAKIAS_ORDERS, -1);
+								takeItems(player, BREKA_ORC_FANG, -1);
+								giveItems(player, MANAKIAS_AMULET, 1);
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							}
-							htmltext = "30641-04.html";
+							else
+							{
+								htmltext = "30515-02.htm";
+							}
 						}
 						else
 						{
-							htmltext = "30641-03.html";
+							htmltext = "30515-01.htm";
+							giveItems(player, MANAKIAS_ORDERS, 1);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 						}
+						break;
 					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, HANDIWORK_SPIDER_BROOCH) && !hasQuestItems(player, TAKUNA_CHARM))
+					case TANTUS:
 					{
-						htmltext = "30641-05.html";
-					}
-					break;
-				}
-				case GANDI_CHIEF_CHIANTA:
-				{
-					if (hasQuestItems(player, ORDEAL_NECKLACE) && !hasAtLeastOneQuestItem(player, MONSTER_EYE_WOODCARVING, CHIANTA_CHARM))
-					{
-						htmltext = "30642-01.html";
-					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, CHIANTA_CHARM) && !hasQuestItems(player, MONSTER_EYE_WOODCARVING))
-					{
-						if (getQuestItemsCount(player, ENCHANTED_MONSTER_CORNEA) < 20)
+						if (hasQuestItems(player, AXE_OF_CEREMONY))
 						{
-							htmltext = "30642-03.html";
+							htmltext = "30567-05.htm";
+						}
+						else if (hasQuestItems(player, TANTUS_CHARM))
+						{
+							if (getQuestItemsCount(player, BONE_ARROW) >= 1000)
+							{
+								htmltext = "30567-04.htm";
+								takeItems(player, BONE_ARROW, 1000);
+								takeItems(player, NERUGA_AXE_BLADE, 1);
+								takeItems(player, TANTUS_CHARM, 1);
+								giveItems(player, AXE_OF_CEREMONY, 1);
+								
+								if (hasQuestItems(player, SWORD_INTO_SKULL, MONSTEREYE_WOODCARVING, HANDIWORK_SPIDER_BROOCH, ORDEAL_NECKLACE, HUGE_ORC_FANG))
+								{
+									st.setCond(2, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else
+							{
+								htmltext = "30567-03.htm";
+							}
 						}
 						else
 						{
-							takeItems(player, CHIANTA_CHARM, 1);
-							takeItems(player, ENCHANTED_MONSTER_CORNEA, -1);
-							giveItems(player, MONSTER_EYE_WOODCARVING, 1);
-							if (hasQuestItems(player, HUGE_ORC_FANG, AXE_OF_CEREMONY, SWORD_INTO_SKULL, HANDIWORK_SPIDER_BROOCH))
-							{
-								qs.setCond(2, true);
-							}
-							htmltext = "30642-04.html";
+							htmltext = "30567-01.htm";
 						}
+						break;
 					}
-					else if (hasQuestItems(player, ORDEAL_NECKLACE, MONSTER_EYE_WOODCARVING) && !hasQuestItems(player, CHIANTA_CHARM))
+					case JAKAL:
 					{
-						htmltext = "30642-05.html";
-					}
-					break;
-				}
-				case FIRST_ORC:
-				{
-					if (hasAtLeastOneQuestItem(player, MARTANKUS_CHARM, IMMORTAL_FLAME))
-					{
-						qs.setCond(7, true);
-						htmltext = "30643-01.html";
-					}
-					break;
-				}
-				case ANCESTOR_MARTANKUS:
-				{
-					if (hasQuestItems(player, BEAR_FANG_NECKLACE))
-					{
-						htmltext = "30649-01.html";
-					}
-					else if (hasQuestItems(player, MARTANKUS_CHARM) && !hasAtLeastOneQuestItem(player, RAGNA_CHIEF_NOTICE, RAGNA_ORC_HEAD))
-					{
-						htmltext = "30649-05.html";
-					}
-					else if (hasQuestItems(player, MARTANKUS_CHARM, RAGNA_CHIEF_NOTICE, RAGNA_ORC_HEAD))
-					{
-						takeItems(player, MARTANKUS_CHARM, 1);
-						takeItems(player, RAGNA_ORC_HEAD, 1);
-						takeItems(player, RAGNA_CHIEF_NOTICE, 1);
-						giveItems(player, IMMORTAL_FLAME, 1);
-						qs.setCond(6, true);
-						htmltext = "30649-06.html";
-					}
-					else if (hasQuestItems(player, IMMORTAL_FLAME))
-					{
-						if (npc.getSummonedNpcCount() < 1)
+						if (hasQuestItems(player, AXE_OF_CEREMONY))
 						{
-							addSpawn(npc, FIRST_ORC, FIRST_ORC_SPAWN, false, 10000);
+							htmltext = "30558-05.htm";
 						}
-						htmltext = "30649-08.html";
+						else if (hasQuestItems(player, NERUGA_AXE_BLADE))
+						{
+							htmltext = "30558-04.htm";
+						}
+						else if (hasQuestItems(player, TANTUS_CHARM))
+						{
+							if (getQuestItemsCount(player, 57) >= 1000)
+							{
+								htmltext = "30558-01.htm";
+							}
+							else
+							{
+								htmltext = "30558-03.htm";
+							}
+						}
+						break;
 					}
-					break;
+					case HATOS:
+					{
+						if (hasQuestItems(player, SWORD_INTO_SKULL))
+						{
+							htmltext = "30568-05.htm";
+						}
+						else if (hasQuestItems(player, HATOS_CHARM))
+						{
+							if (hasQuestItems(player, URUTU_BLADE) && (getQuestItemsCount(player, TIMAK_ORC_SKULL) >= 10))
+							{
+								htmltext = "30568-04.htm";
+								takeItems(player, HATOS_CHARM, 1);
+								takeItems(player, URUTU_BLADE, 1);
+								takeItems(player, TIMAK_ORC_SKULL, -1);
+								giveItems(player, SWORD_INTO_SKULL, 1);
+								
+								if (hasQuestItems(player, AXE_OF_CEREMONY, MONSTEREYE_WOODCARVING, HANDIWORK_SPIDER_BROOCH, ORDEAL_NECKLACE, HUGE_ORC_FANG))
+								{
+									st.setCond(2, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else
+							{
+								htmltext = "30568-03.htm";
+							}
+						}
+						else
+						{
+							htmltext = "30568-01.htm";
+						}
+						break;
+					}
+					case SUMARI:
+					{
+						if (hasQuestItems(player, URUTU_BLADE))
+						{
+							htmltext = "30564-03.htm";
+						}
+						else if (hasQuestItems(player, SUMARIS_LETTER))
+						{
+							htmltext = "30564-02.htm";
+						}
+						else if (hasQuestItems(player, HATOS_CHARM))
+						{
+							htmltext = "30564-01.htm";
+							giveItems(player, SUMARIS_LETTER, 1);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+						break;
+					}
+					case SOMAK:
+					{
+						if (hasQuestItems(player, SWORD_INTO_SKULL))
+						{
+							htmltext = "30510-03.htm";
+						}
+						else if (hasQuestItems(player, URUTU_BLADE))
+						{
+							htmltext = "30510-02.htm";
+						}
+						else if (hasQuestItems(player, SUMARIS_LETTER))
+						{
+							htmltext = "30510-01.htm";
+							takeItems(player, SUMARIS_LETTER, 1);
+							giveItems(player, URUTU_BLADE, 1);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+						break;
+					}
+					case TAKUNA:
+					{
+						if (hasQuestItems(player, HANDIWORK_SPIDER_BROOCH))
+						{
+							htmltext = "30641-05.htm";
+						}
+						else if (hasQuestItems(player, TAKUNA_CHARM))
+						{
+							if ((getQuestItemsCount(player, MARSH_SPIDER_FEELER) >= 10) && (getQuestItemsCount(player, MARSH_SPIDER_FEET) >= 10))
+							{
+								htmltext = "30641-04.htm";
+								takeItems(player, MARSH_SPIDER_FEELER, -1);
+								takeItems(player, MARSH_SPIDER_FEET, -1);
+								takeItems(player, TAKUNA_CHARM, 1);
+								giveItems(player, HANDIWORK_SPIDER_BROOCH, 1);
+								
+								if (hasQuestItems(player, SWORD_INTO_SKULL, AXE_OF_CEREMONY, MONSTEREYE_WOODCARVING, ORDEAL_NECKLACE, HUGE_ORC_FANG))
+								{
+									st.setCond(2, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else
+							{
+								htmltext = "30641-03.htm";
+							}
+						}
+						else
+						{
+							htmltext = "30641-01.htm";
+						}
+						break;
+					}
+					case CHIANTA:
+					{
+						if (hasQuestItems(player, MONSTEREYE_WOODCARVING))
+						{
+							htmltext = "30642-05.htm";
+						}
+						else if (hasQuestItems(player, CHIANTA_CHARM))
+						{
+							if (getQuestItemsCount(player, MONSTEREYE_CORNEA) >= 20)
+							{
+								htmltext = "30642-04.htm";
+								takeItems(player, MONSTEREYE_CORNEA, -1);
+								takeItems(player, CHIANTA_CHARM, 1);
+								giveItems(player, MONSTEREYE_WOODCARVING, 1);
+								
+								if (hasQuestItems(player, SWORD_INTO_SKULL, AXE_OF_CEREMONY, HANDIWORK_SPIDER_BROOCH, ORDEAL_NECKLACE, HUGE_ORC_FANG))
+								{
+									st.setCond(2, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else
+							{
+								htmltext = "30642-03.htm";
+							}
+						}
+						else
+						{
+							htmltext = "30642-01.htm";
+						}
+						break;
+					}
+					case KAKAI:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30565-06.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30565-07.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30565-09.htm";
+						}
+						else if ((cond > 3) && (cond < 7))
+						{
+							htmltext = "30565-10.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30565-11.htm";
+							
+							takeItems(player, IMMORTAL_FLAME, 1);
+							giveItems(player, MARK_LORD, 1);
+							addExpAndSp(player, 92955, 16250);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
+						}
+						break;
+					}
+					case ANCESTOR_MARTANKUS:
+					{
+						if (cond == 3)
+						{
+							htmltext = "30649-01.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30649-05.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30649-06.htm";
+							st.setCond(6, true);
+							
+							takeItems(player, MARTANKUS_CHARM, 1);
+							takeItems(player, RAGNA_ORC_HEAD, 1);
+							takeItems(player, RAGNA_CHIEF_NOTICE, 1);
+							giveItems(player, IMMORTAL_FLAME, 1);
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30649-07.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30649-08.htm";
+						}
+						break;
+					}
+					case FIRST_ORC:
+					{
+						if (cond == 6)
+						{
+							htmltext = "30643-01.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30643-03.htm";
+						}
+						break;
+					}
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == FLAME_LORD_KAKAI)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20564:
+			{
+				if (hasQuestItems(player, CHIANTA_CHARM) && (getQuestItemsCount(player, MONSTEREYE_CORNEA) < 20))
+				{
+					giveItems(player, MONSTEREYE_CORNEA, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20583:
+			case 20584:
+			case 20585:
+			{
+				if (hasQuestItems(player, HATOS_CHARM) && (getRandom(100) < 71) && (getQuestItemsCount(player, TIMAK_ORC_SKULL) < 10))
+				{
+					giveItems(player, TIMAK_ORC_SKULL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20586:
+			{
+				if (hasQuestItems(player, HATOS_CHARM) && (getRandom(100) < 81) && (getQuestItemsCount(player, TIMAK_ORC_SKULL) < 10))
+				{
+					giveItems(player, TIMAK_ORC_SKULL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20587:
+			case 20588:
+			{
+				if (hasQuestItems(player, HATOS_CHARM) && (getQuestItemsCount(player, TIMAK_ORC_SKULL) < 10))
+				{
+					giveItems(player, TIMAK_ORC_SKULL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20233:
+			{
+				if (hasQuestItems(player, TAKUNA_CHARM))
+				{
+					if (getQuestItemsCount(player, MARSH_SPIDER_FEELER) >= 10)
+					{
+						giveItems(player, MARSH_SPIDER_FEET, 1);
+					}
+					else
+					{
+						giveItems(player, MARSH_SPIDER_FEELER, 1);
+					}
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20269:
+			{
+				if (hasQuestItems(player, MANAKIAS_ORDERS) && (getRandom(100) < 41) && (getQuestItemsCount(player, BREKA_ORC_FANG) < 20))
+				{
+					giveItems(player, BREKA_ORC_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20270:
+			{
+				if (hasQuestItems(player, MANAKIAS_ORDERS) && (getRandom(100) < 51) && (getQuestItemsCount(player, BREKA_ORC_FANG) < 20))
+				{
+					giveItems(player, BREKA_ORC_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20778:
+			case 20779:
+			{
+				if (hasQuestItems(player, MARTANKUS_CHARM))
+				{
+					if (!hasQuestItems(player, RAGNA_CHIEF_NOTICE))
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+						giveItems(player, RAGNA_CHIEF_NOTICE, 1);
+					}
+					else if (!hasQuestItems(player, RAGNA_ORC_HEAD))
+					{
+						st.setCond(5, true);
+						giveItems(player, RAGNA_ORC_HEAD, 1);
+					}
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

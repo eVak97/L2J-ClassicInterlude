@@ -16,20 +16,15 @@
  */
 package quests.Q00404_PathOfTheHumanWizard;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path Of The Human Wizard (404)
- * @author ivantotov
- */
 public class Q00404_PathOfTheHumanWizard extends Quest
 {
 	// NPCs
@@ -45,353 +40,271 @@ public class Q00404_PathOfTheHumanWizard extends Quest
 	private static final int FLAME_EARING = 1282;
 	private static final int BROKEN_BRONZE_MIRROR = 1283;
 	private static final int WIND_FEATHER = 1284;
-	private static final int WIND_BANGLE = 1285;
-	private static final int RAMAS_DIARY = 1286;
+	private static final int WIND_BANGEL = 1285;
+	private static final int RAMA_DIARY = 1286;
 	private static final int SPARKLE_PEBBLE = 1287;
 	private static final int WATER_NECKLACE = 1288;
-	private static final int RUSTY_COIN = 1289;
+	private static final int RUST_GOLD_COIN = 1289;
 	private static final int RED_SOIL = 1290;
 	private static final int EARTH_RING = 1291;
-	// Reward
 	private static final int BEAD_OF_SEASON = 1292;
-	// Monster
-	private static final int RED_BEAR = 20021;
-	private static final int RATMAN_WARRIOR = 20359;
-	// Quest Monster
-	private static final int WATER_SEER = 27030;
-	// Misc
-	private static final int MIN_LEVEL = 19;
 	
 	public Q00404_PathOfTheHumanWizard()
 	{
 		super(404);
+		registerQuestItems(MAP_OF_LUSTER, KEY_OF_FLAME, FLAME_EARING, BROKEN_BRONZE_MIRROR, WIND_FEATHER, WIND_BANGEL, RAMA_DIARY, SPARKLE_PEBBLE, WATER_NECKLACE, RUST_GOLD_COIN, RED_SOIL, EARTH_RING);
 		addStartNpc(PARINA);
 		addTalkId(PARINA, EARTH_SNAKE, WASTELAND_LIZARDMAN, FLAME_SALAMANDER, WIND_SYLPH, WATER_UNDINE);
-		addKillId(RED_BEAR, RATMAN_WARRIOR, WATER_SEER);
-		registerQuestItems(MAP_OF_LUSTER, KEY_OF_FLAME, FLAME_EARING, BROKEN_BRONZE_MIRROR, WIND_FEATHER, WIND_BANGLE, RAMAS_DIARY, SPARKLE_PEBBLE, WATER_NECKLACE, RUSTY_COIN, RED_SOIL, EARTH_RING);
+		addKillId(20021, 20359, 27030);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("30391-08.htm"))
 		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.MAGE)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, BEAD_OF_SEASON))
-						{
-							htmltext = "30391-03.htm";
-						}
-						else
-						{
-							qs.startQuest();
-							htmltext = "30391-07.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30391-02.htm";
-					}
-				}
-				else if (player.getClassId() == ClassId.WIZARD)
-				{
-					htmltext = "30391-02a.htm";
-				}
-				else
-				{
-					htmltext = "30391-01.htm";
-				}
-				break;
-			}
-			case "30410-02.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30410-03.html":
-			{
-				giveItems(player, WIND_FEATHER, 1);
-				qs.setCond(6, true);
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30410-03.htm"))
+		{
+			st.setCond(6, true);
+			takeItems(player, BROKEN_BRONZE_MIRROR, 1);
+			giveItems(player, WIND_FEATHER, 1);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case RED_BEAR:
-				{
-					if (hasQuestItems(killer, RUSTY_COIN) && !hasQuestItems(killer, RED_SOIL) && (getRandom(100) < 20))
-					{
-						giveItems(killer, RED_SOIL, 1);
-						qs.setCond(12, true);
-					}
-					break;
-				}
-				case RATMAN_WARRIOR:
-				{
-					if (hasQuestItems(killer, MAP_OF_LUSTER) && !hasQuestItems(killer, KEY_OF_FLAME) && (getRandom(100) < 80))
-					{
-						giveItems(killer, KEY_OF_FLAME, 1);
-						qs.setCond(3, true);
-					}
-					break;
-				}
-				case WATER_SEER:
-				{
-					if (hasQuestItems(killer, RAMAS_DIARY) && (getQuestItemsCount(killer, SPARKLE_PEBBLE) < 2) && (getRandom(100) < 80))
-					{
-						giveItems(killer, SPARKLE_PEBBLE, 1);
-						if (getQuestItemsCount(killer, SPARKLE_PEBBLE) == 2)
-						{
-							qs.setCond(9, true);
-						}
-						else
-						{
-							playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		final int cond = st.getCond();
+		switch (st.getState())
 		{
-			if (npc.getId() == PARINA)
+			case State.CREATED:
 			{
-				htmltext = "30391-04.htm";
-			}
-		}
-		if (qs.isCompleted())
-		{
-			if (npc.getId() == PARINA)
-			{
-				return htmltext;
-			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case PARINA:
+				if (player.getClassId() != ClassId.MAGE)
 				{
-					if (!hasQuestItems(player, FLAME_EARING, WIND_BANGLE, WATER_NECKLACE, EARTH_RING))
+					htmltext = (player.getClassId() == ClassId.WIZARD) ? "30391-02a.htm" : "30391-01.htm";
+				}
+				else if (player.getLevel() < 19)
+				{
+					htmltext = "30391-02.htm";
+				}
+				else if (hasQuestItems(player, BEAD_OF_SEASON))
+				{
+					htmltext = "30391-03.htm";
+				}
+				else
+				{
+					htmltext = "30391-04.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case PARINA:
 					{
-						htmltext = "30391-05.html";
+						if (cond < 13)
+						{
+							htmltext = "30391-05.htm";
+						}
+						else if (cond == 13)
+						{
+							htmltext = "30391-06.htm";
+							takeItems(player, EARTH_RING, 1);
+							takeItems(player, FLAME_EARING, 1);
+							takeItems(player, WATER_NECKLACE, 1);
+							takeItems(player, WIND_BANGEL, 1);
+							giveItems(player, BEAD_OF_SEASON, 1);
+							addExpAndSp(player, 3200, 2020);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
+						}
+						break;
+					}
+					case FLAME_SALAMANDER:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30411-01.htm";
+							st.setCond(2, true);
+							giveItems(player, MAP_OF_LUSTER, 1);
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30411-02.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30411-03.htm";
+							st.setCond(4, true);
+							takeItems(player, KEY_OF_FLAME, 1);
+							takeItems(player, MAP_OF_LUSTER, 1);
+							giveItems(player, FLAME_EARING, 1);
+						}
+						else if (cond > 3)
+						{
+							htmltext = "30411-04.htm";
+						}
+						break;
+					}
+					case WIND_SYLPH:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30412-01.htm";
+							st.setCond(5, true);
+							giveItems(player, BROKEN_BRONZE_MIRROR, 1);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30412-02.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30412-03.htm";
+							st.setCond(7, true);
+							takeItems(player, WIND_FEATHER, 1);
+							giveItems(player, WIND_BANGEL, 1);
+						}
+						else if (cond > 6)
+						{
+							htmltext = "30412-04.htm";
+						}
+						break;
+					}
+					case WASTELAND_LIZARDMAN:
+					{
+						if (cond == 5)
+						{
+							htmltext = "30410-01.htm";
+						}
+						else if (cond > 5)
+						{
+							htmltext = "30410-04.htm";
+						}
+						break;
+					}
+					case WATER_UNDINE:
+					{
+						if (cond == 7)
+						{
+							htmltext = "30413-01.htm";
+							st.setCond(8, true);
+							giveItems(player, RAMA_DIARY, 1);
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30413-02.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30413-03.htm";
+							st.setCond(10, true);
+							takeItems(player, RAMA_DIARY, 1);
+							takeItems(player, SPARKLE_PEBBLE, -1);
+							giveItems(player, WATER_NECKLACE, 1);
+						}
+						else if (cond > 9)
+						{
+							htmltext = "30413-04.htm";
+						}
+						break;
+					}
+					case EARTH_SNAKE:
+					{
+						if (cond == 10)
+						{
+							htmltext = "30409-01.htm";
+							st.setCond(11, true);
+							giveItems(player, RUST_GOLD_COIN, 1);
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30409-02.htm";
+						}
+						else if (cond == 12)
+						{
+							htmltext = "30409-03.htm";
+							st.setCond(13, true);
+							takeItems(player, RED_SOIL, 1);
+							takeItems(player, RUST_GOLD_COIN, 1);
+							giveItems(player, EARTH_RING, 1);
+						}
+						else if (cond > 12)
+						{
+							htmltext = "30409-04.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20359: // Ratman Warrior
+			{
+				if (st.isCond(2) && (getRandom(10) < 8))
+				{
+					giveItems(player, KEY_OF_FLAME, 1);
+					st.setCond(3, true);
+				}
+				break;
+			}
+			case 27030: // Water Seer
+			{
+				if (st.isCond(8) && (getRandom(10) < 8))
+				{
+					giveItems(player, SPARKLE_PEBBLE, 1);
+					if (getQuestItemsCount(player, SPARKLE_PEBBLE) < 2)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else
 					{
-						takeItems(player, FLAME_EARING, 1);
-						takeItems(player, WIND_BANGLE, 1);
-						takeItems(player, WATER_NECKLACE, 1);
-						takeItems(player, EARTH_RING, 1);
-						if (!hasQuestItems(player, BEAD_OF_SEASON))
-						{
-							giveItems(player, BEAD_OF_SEASON, 1);
-						}
-						final int level = player.getLevel();
-						if (level >= 20)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else if (level == 19)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30391-06.html";
+						st.setCond(9, true);
 					}
-					break;
 				}
-				case EARTH_SNAKE:
+				break;
+			}
+			case 20021: // Red Bear
+			{
+				if (st.isCond(11) && (getRandom(10) < 2))
 				{
-					if (hasQuestItems(player, WATER_NECKLACE) && !hasAtLeastOneQuestItem(player, RUSTY_COIN, EARTH_RING))
-					{
-						if (!hasQuestItems(player, RUSTY_COIN))
-						{
-							giveItems(player, RUSTY_COIN, 1);
-						}
-						qs.setCond(11, true);
-						htmltext = "30409-01.html";
-					}
-					else if (hasQuestItems(player, RUSTY_COIN))
-					{
-						if (!hasQuestItems(player, RED_SOIL))
-						{
-							htmltext = "30409-02.html";
-						}
-						else
-						{
-							takeItems(player, RUSTY_COIN, 1);
-							takeItems(player, RED_SOIL, 1);
-							if (!hasQuestItems(player, EARTH_RING))
-							{
-								giveItems(player, EARTH_RING, 1);
-							}
-							qs.setCond(13, true);
-							htmltext = "30409-03.html";
-						}
-					}
-					else if (hasQuestItems(player, EARTH_RING))
-					{
-						htmltext = "30409-04.html";
-					}
-					break;
+					giveItems(player, RED_SOIL, 1);
+					st.setCond(12, true);
 				}
-				case WASTELAND_LIZARDMAN:
-				{
-					if (hasQuestItems(player, BROKEN_BRONZE_MIRROR))
-					{
-						if (!hasQuestItems(player, WIND_FEATHER))
-						{
-							htmltext = "30410-01.html";
-						}
-						else
-						{
-							htmltext = "30410-04.html";
-						}
-					}
-					break;
-				}
-				case FLAME_SALAMANDER:
-				{
-					if (!hasAtLeastOneQuestItem(player, MAP_OF_LUSTER, FLAME_EARING))
-					{
-						if (!hasQuestItems(player, MAP_OF_LUSTER))
-						{
-							giveItems(player, MAP_OF_LUSTER, 1);
-						}
-						qs.setCond(2, true);
-						htmltext = "30411-01.html";
-					}
-					else if (hasQuestItems(player, MAP_OF_LUSTER))
-					{
-						if (!hasQuestItems(player, KEY_OF_FLAME))
-						{
-							htmltext = "30411-02.html";
-						}
-						else
-						{
-							takeItems(player, MAP_OF_LUSTER, 1);
-							takeItems(player, KEY_OF_FLAME, 1);
-							if (!hasQuestItems(player, FLAME_EARING))
-							{
-								giveItems(player, FLAME_EARING, 1);
-							}
-							qs.setCond(4, true);
-							htmltext = "30411-03.html";
-						}
-					}
-					else if (hasQuestItems(player, FLAME_EARING))
-					{
-						htmltext = "30411-04.html";
-					}
-					break;
-				}
-				case WIND_SYLPH:
-				{
-					if (hasQuestItems(player, FLAME_EARING) && !hasAtLeastOneQuestItem(player, BROKEN_BRONZE_MIRROR, WIND_BANGLE))
-					{
-						if (!hasQuestItems(player, BROKEN_BRONZE_MIRROR))
-						{
-							giveItems(player, BROKEN_BRONZE_MIRROR, 1);
-						}
-						qs.setCond(5, true);
-						htmltext = "30412-01.html";
-					}
-					else if (hasQuestItems(player, BROKEN_BRONZE_MIRROR))
-					{
-						if (!hasQuestItems(player, WIND_FEATHER))
-						{
-							htmltext = "30412-02.html";
-						}
-						else
-						{
-							takeItems(player, BROKEN_BRONZE_MIRROR, 1);
-							takeItems(player, WIND_FEATHER, 1);
-							if (!hasQuestItems(player, WIND_BANGLE))
-							{
-								giveItems(player, WIND_BANGLE, 1);
-							}
-							qs.setCond(7, true);
-							htmltext = "30412-03.html";
-						}
-					}
-					else if (hasQuestItems(player, WIND_BANGLE))
-					{
-						htmltext = "30412-04.html";
-					}
-					break;
-				}
-				case WATER_UNDINE:
-				{
-					if (hasQuestItems(player, WIND_BANGLE) && !hasAtLeastOneQuestItem(player, RAMAS_DIARY, WATER_NECKLACE))
-					{
-						if (!hasQuestItems(player, RAMAS_DIARY))
-						{
-							giveItems(player, RAMAS_DIARY, 1);
-						}
-						qs.setCond(8, true);
-						htmltext = "30413-01.html";
-					}
-					else if (hasQuestItems(player, RAMAS_DIARY))
-					{
-						if (getQuestItemsCount(player, SPARKLE_PEBBLE) < 2)
-						{
-							htmltext = "30413-02.html";
-						}
-						else
-						{
-							takeItems(player, RAMAS_DIARY, 1);
-							takeItems(player, SPARKLE_PEBBLE, -1);
-							if (!hasQuestItems(player, WATER_NECKLACE))
-							{
-								giveItems(player, WATER_NECKLACE, 1);
-							}
-							qs.setCond(10, true);
-							htmltext = "30413-03.html";
-						}
-					}
-					else if (hasQuestItems(player, WATER_NECKLACE))
-					{
-						htmltext = "30413-04.html";
-					}
-					break;
-				}
+				break;
 			}
 		}
-		return htmltext;
+		
+		return null;
 	}
 }

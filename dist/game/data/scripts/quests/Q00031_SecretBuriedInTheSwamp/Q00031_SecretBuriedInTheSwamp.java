@@ -16,19 +16,12 @@
  */
 package quests.Q00031_SecretBuriedInTheSwamp;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Secret Buried in the Swamp (31)
- * @author Janiko
- */
 public class Q00031_SecretBuriedInTheSwamp extends Quest
 {
 	// NPCs
@@ -38,178 +31,186 @@ public class Q00031_SecretBuriedInTheSwamp extends Quest
 	private static final int FORGOTTEN_MONUMENT_3 = 31663;
 	private static final int FORGOTTEN_MONUMENT_4 = 31664;
 	private static final int CORPSE_OF_DWARF = 31665;
-	// Items
-	private static final int KRORINS_JOURNAL = 7252;
-	// Misc
-	private static final int MIN_LEVEL = 66;
-	// Monuments
-	private static final List<Integer> MONUMENTS = Arrays.asList(FORGOTTEN_MONUMENT_1, FORGOTTEN_MONUMENT_2, FORGOTTEN_MONUMENT_3, FORGOTTEN_MONUMENT_4);
+	// Item
+	private static final int KRORIN_JOURNAL = 7252;
 	
 	public Q00031_SecretBuriedInTheSwamp()
 	{
 		super(31);
+		registerQuestItems(KRORIN_JOURNAL);
 		addStartNpc(ABERCROMBIE);
-		addTalkId(ABERCROMBIE, CORPSE_OF_DWARF);
-		addTalkId(MONUMENTS);
-		registerQuestItems(KRORINS_JOURNAL);
+		addTalkId(ABERCROMBIE, CORPSE_OF_DWARF, FORGOTTEN_MONUMENT_1, FORGOTTEN_MONUMENT_2, FORGOTTEN_MONUMENT_3, FORGOTTEN_MONUMENT_4);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "31555-02.html":
+			case "31555-01.htm":
 			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
+				st.startQuest();
 				break;
 			}
-			case "31665-02.html":
+			case "31665-01.htm":
 			{
-				if (qs.isCond(1))
-				{
-					qs.setCond(2, true);
-					giveItems(player, KRORINS_JOURNAL, 1);
-					htmltext = event;
-				}
+				st.setCond(2, true);
+				giveItems(player, KRORIN_JOURNAL, 1);
 				break;
 			}
-			case "31555-05.html":
+			case "31555-04.htm":
 			{
-				if (qs.isCond(2) && hasQuestItems(player, KRORINS_JOURNAL))
-				{
-					takeItems(player, KRORINS_JOURNAL, -1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
 				break;
 			}
-			case "31661-02.html":
-			case "31662-02.html":
-			case "31663-02.html":
-			case "31664-02.html":
+			case "31661-01.htm":
 			{
-				if (MONUMENTS.contains(npc.getId()) && qs.isCond(MONUMENTS.indexOf(npc.getId()) + 3))
-				{
-					qs.setCond(qs.getCond() + 1, true);
-					htmltext = event;
-				}
+				st.setCond(4, true);
 				break;
 			}
-			case "31555-08.html":
+			case "31662-01.htm":
 			{
-				if (qs.isCond(7))
-				{
-					addExpAndSp(player, 490000, 45880);
-					giveAdena(player, 120000, true);
-					qs.exitQuest(false, true);
-					htmltext = event;
-				}
+				st.setCond(5, true);
+				break;
+			}
+			case "31663-01.htm":
+			{
+				st.setCond(6, true);
+				break;
+			}
+			case "31664-01.htm":
+			{
+				st.setCond(7, true);
+				break;
+			}
+			case "31555-07.htm":
+			{
+				takeItems(player, KRORIN_JOURNAL, 1);
+				giveAdena(player, 40000, true);
+				addExpAndSp(player, 130000, 0);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case ABERCROMBIE:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				htmltext = (player.getLevel() < 66) ? "31555-00a.htm" : "31555-00.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					case State.CREATED:
+					case ABERCROMBIE:
 					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "31555-01.htm" : "31555-03.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						switch (qs.getCond())
+						if (cond == 1)
 						{
-							case 1:
-							{
-								htmltext = "31555-02.html";
-								break;
-							}
-							case 2:
-							{
-								if (hasQuestItems(player, KRORINS_JOURNAL))
-								{
-									htmltext = "31555-04.html";
-								}
-								break;
-							}
-							case 3:
-							{
-								htmltext = "31555-06.html";
-								break;
-							}
-							case 7:
-							{
-								htmltext = "31555-07.html";
-								break;
-							}
+							htmltext = "31555-02.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "31555-03.htm";
+						}
+						else if ((cond > 2) && (cond < 7))
+						{
+							htmltext = "31555-05.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "31555-06.htm";
 						}
 						break;
 					}
-					case State.COMPLETED:
+					case CORPSE_OF_DWARF:
 					{
-						htmltext = getAlreadyCompletedMsg(player);
+						if (cond == 1)
+						{
+							htmltext = "31665-00.htm";
+						}
+						else if (cond > 1)
+						{
+							htmltext = "31665-02.htm";
+						}
+						break;
+					}
+					case FORGOTTEN_MONUMENT_1:
+					{
+						if (cond == 3)
+						{
+							htmltext = "31661-00.htm";
+						}
+						else if (cond > 3)
+						{
+							htmltext = "31661-02.htm";
+						}
+						break;
+					}
+					case FORGOTTEN_MONUMENT_2:
+					{
+						if (cond == 4)
+						{
+							htmltext = "31662-00.htm";
+						}
+						else if (cond > 4)
+						{
+							htmltext = "31662-02.htm";
+						}
+						break;
+					}
+					case FORGOTTEN_MONUMENT_3:
+					{
+						if (cond == 5)
+						{
+							htmltext = "31663-00.htm";
+						}
+						else if (cond > 5)
+						{
+							htmltext = "31663-02.htm";
+						}
+						break;
+					}
+					case FORGOTTEN_MONUMENT_4:
+					{
+						if (cond == 6)
+						{
+							htmltext = "31664-00.htm";
+						}
+						else if (cond > 6)
+						{
+							htmltext = "31664-02.htm";
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case CORPSE_OF_DWARF:
+			case State.COMPLETED:
 			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
-						htmltext = "31665-01.html";
-						break;
-					}
-					case 2:
-					{
-						htmltext = "31665-03.html";
-						break;
-					}
-				}
-				break;
-			}
-			case FORGOTTEN_MONUMENT_1:
-			case FORGOTTEN_MONUMENT_2:
-			case FORGOTTEN_MONUMENT_3:
-			case FORGOTTEN_MONUMENT_4:
-			{
-				final int loc = MONUMENTS.indexOf(npc.getId()) + 3;
-				if (qs.isCond(loc))
-				{
-					htmltext = npc.getId() + "-01.html";
-				}
-				else if (qs.isCond(loc + 1))
-				{
-					htmltext = npc.getId() + "-03.html";
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

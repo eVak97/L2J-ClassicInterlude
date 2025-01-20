@@ -23,93 +23,150 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Find Glittering Jewelry (35)
- * @author malyelfik
- */
+import quests.Q00037_MakeFormalWear.Q00037_MakeFormalWear;
+
 public class Q00035_FindGlitteringJewelry extends Quest
 {
 	// NPCs
 	private static final int ELLIE = 30091;
 	private static final int FELTON = 30879;
-	// Monster
-	private static final int ALLIGATOR = 20135;
 	// Items
-	private static final int ACCESSORY_GEM = 36556;
-	private static final int IRON_ORE = 36521;
-	private static final int ARMOR_FRAGMENT = 36551;
-	private static final int JEWEL_BOX = 7077;
 	private static final int ROUGH_JEWEL = 7162;
-	// Misc
-	private static final int MIN_LEVEL = 85;
-	private static final int JEWEL_COUNT = 10;
-	private static final int IRON_ORE_COUNT = 95;
-	private static final int ACCESSORY_GEM_COUNT = 385;
-	private static final int ARMOR_FRAGMENT_COUNT = 405;
+	private static final int ORIHARUKON = 1893;
+	private static final int SILVER_NUGGET = 1873;
+	private static final int THONS = 4044;
+	// Reward
+	private static final int JEWEL_BOX = 7077;
 	
 	public Q00035_FindGlitteringJewelry()
 	{
 		super(35);
+		registerQuestItems(ROUGH_JEWEL);
 		addStartNpc(ELLIE);
 		addTalkId(ELLIE, FELTON);
-		addKillId(ALLIGATOR);
-		registerQuestItems(ROUGH_JEWEL);
+		addKillId(20135); // Alligator
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = event;
 		switch (event)
 		{
-			case "30091-03.htm":
+			case "30091-1.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
-			case "30879-02.html":
+			case "30879-1.htm":
 			{
-				qs.setCond(2, true);
+				st.setCond(2, true);
 				break;
 			}
-			case "30091-07.html":
+			case "30091-3.htm":
 			{
-				if (getQuestItemsCount(player, ROUGH_JEWEL) < JEWEL_COUNT)
+				st.setCond(4, true);
+				takeItems(player, ROUGH_JEWEL, 10);
+				break;
+			}
+			case "30091-5.htm":
+			{
+				if ((getQuestItemsCount(player, ORIHARUKON) >= 5) && (getQuestItemsCount(player, SILVER_NUGGET) >= 500) && (getQuestItemsCount(player, THONS) >= 150))
 				{
-					return "30091-08.html";
-				}
-				takeItems(player, ROUGH_JEWEL, -1);
-				qs.setCond(4, true);
-				break;
-			}
-			case "30091-11.html":
-			{
-				if ((getQuestItemsCount(player, IRON_ORE) >= IRON_ORE_COUNT) && (getQuestItemsCount(player, ACCESSORY_GEM) >= ACCESSORY_GEM_COUNT) && (getQuestItemsCount(player, ARMOR_FRAGMENT) >= ARMOR_FRAGMENT_COUNT))
-				{
-					takeItems(player, IRON_ORE, IRON_ORE_COUNT);
-					takeItems(player, ACCESSORY_GEM, ACCESSORY_GEM_COUNT);
-					takeItems(player, ARMOR_FRAGMENT, ARMOR_FRAGMENT_COUNT);
+					takeItems(player, ORIHARUKON, 5);
+					takeItems(player, SILVER_NUGGET, 500);
+					takeItems(player, THONS, 150);
 					giveItems(player, JEWEL_BOX, 1);
-					qs.exitQuest(false, true);
+					st.exitQuest(false, true);
 				}
 				else
 				{
-					htmltext = "30091-12.html";
+					htmltext = "30091-4a.htm";
 				}
 				break;
 			}
-			default:
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				htmltext = null;
+				if (player.getLevel() >= 60)
+				{
+					final QuestState fwear = player.getQuestState(Q00037_MakeFormalWear.class.getSimpleName());
+					if ((fwear != null) && fwear.isCond(6))
+					{
+						htmltext = "30091-0.htm";
+					}
+					else
+					{
+						htmltext = "30091-0a.htm";
+					}
+				}
+				else
+				{
+					htmltext = "30091-0b.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case ELLIE:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							htmltext = "30091-1a.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30091-2.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = ((getQuestItemsCount(player, ORIHARUKON) >= 5) && (getQuestItemsCount(player, SILVER_NUGGET) >= 500) && (getQuestItemsCount(player, THONS) >= 150)) ? "30091-4.htm" : "30091-4a.htm";
+						}
+						break;
+					}
+					case FELTON:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30879-0.htm";
+						}
+						else if (cond > 1)
+						{
+							htmltext = "30879-1a.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -119,82 +176,16 @@ public class Q00035_FindGlitteringJewelry extends Quest
 		final Player member = getRandomPartyMember(player, 2);
 		if ((member != null) && getRandomBoolean())
 		{
-			giveItems(player, ROUGH_JEWEL, 1);
-			if (getQuestItemsCount(player, ROUGH_JEWEL) >= JEWEL_COUNT)
+			giveItems(member, ROUGH_JEWEL, 1);
+			if (getQuestItemsCount(member, ROUGH_JEWEL) >= 10)
 			{
 				getQuestState(member, false).setCond(3, true);
 			}
 			else
 			{
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		String htmltext = getNoQuestMsg(player);
-		final QuestState qs = getQuestState(player, true);
-		
-		switch (npc.getId())
-		{
-			case ELLIE:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30091-01.htm" : "30091-02.html";
-						break;
-					}
-					case State.STARTED:
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
-								htmltext = "30091-04.html";
-								break;
-							}
-							case 3:
-							{
-								htmltext = (getQuestItemsCount(player, ROUGH_JEWEL) >= JEWEL_COUNT) ? "30091-06.html" : "30091-05.html";
-								break;
-							}
-							case 4:
-							{
-								htmltext = ((getQuestItemsCount(player, IRON_ORE) >= IRON_ORE_COUNT) && (getQuestItemsCount(player, ACCESSORY_GEM) >= ACCESSORY_GEM_COUNT) && (getQuestItemsCount(player, ARMOR_FRAGMENT) >= ARMOR_FRAGMENT_COUNT)) ? "30091-09.html" : "30091-10.html";
-								break;
-							}
-						}
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
-						break;
-					}
-				}
-				break;
-			}
-			case FELTON:
-			{
-				if (qs.isStarted())
-				{
-					if (qs.isCond(1))
-					{
-						htmltext = "30879-01.html";
-					}
-					else if (qs.isCond(2))
-					{
-						htmltext = "30879-03.html";
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

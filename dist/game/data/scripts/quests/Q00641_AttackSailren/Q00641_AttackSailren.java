@@ -22,119 +22,128 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 
 import quests.Q00126_TheNameOfEvil2.Q00126_TheNameOfEvil2;
 
-/**
- * Attack Sailren! (641)
- * @author Adry_85
- */
 public class Q00641_AttackSailren extends Quest
 {
 	// NPC
-	private static final int SHILENS_STONE_STATUE = 32109;
-	// Items
+	private static final int STATUE = 32109;
+	// Quest Item
 	private static final int GAZKH_FRAGMENT = 8782;
 	private static final int GAZKH = 8784;
-	// Monsters
-	private static int[] MOBS =
-	{
-		22196, // Velociraptor
-		22197, // Velociraptor
-		22198, // Velociraptor
-		22218, // Velociraptor
-		22223, // Velociraptor
-		22199, // Pterosaur
-	};
 	
 	public Q00641_AttackSailren()
 	{
 		super(641);
-		addStartNpc(SHILENS_STONE_STATUE);
-		addTalkId(SHILENS_STONE_STATUE);
-		addKillId(MOBS);
 		registerQuestItems(GAZKH_FRAGMENT);
+		addStartNpc(STATUE);
+		addTalkId(STATUE);
+		addKillId(22196, 22197, 22198, 22199, 22218, 22223);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = player.getQuestState(getName());
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return null;
+		}
+		String htmltext = event;
+		
+		if (event.equals("32109-5.htm"))
+		{
+			st.startQuest();
+		}
+		else if (event.equals("32109-8.htm"))
+		{
+			if (getQuestItemsCount(player, GAZKH_FRAGMENT) >= 30)
+			{
+				npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 3000, 0));
+				takeItems(player, GAZKH_FRAGMENT, -1);
+				giveItems(player, GAZKH, 1);
+				st.exitQuest(true, true);
+			}
+			else
+			{
+				htmltext = "32109-6.htm";
+				st.setCond(1);
+			}
 		}
 		
-		switch (event)
-		{
-			case "32109-1.html":
-			{
-				qs.startQuest();
-				break;
-			}
-			case "32109-2a.html":
-			{
-				if (getQuestItemsCount(player, GAZKH_FRAGMENT) >= 30)
-				{
-					giveItems(player, GAZKH, 1);
-					qs.exitQuest(true, true);
-				}
-				break;
-			}
-		}
-		return event;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final Player partyMember = getRandomPartyMember(player, 1);
-		if (partyMember != null)
-		{
-			final QuestState qs = getQuestState(partyMember, false);
-			if (qs != null)
-			{
-				giveItems(partyMember, GAZKH_FRAGMENT, 1);
-				if (getQuestItemsCount(partyMember, GAZKH_FRAGMENT) < 30)
-				{
-					playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else
-				{
-					qs.setCond(2, true);
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
 				if (player.getLevel() < 77)
 				{
-					htmltext = "32109-0.htm";
+					htmltext = "32109-3.htm";
 				}
 				else
 				{
-					qs = player.getQuestState(Q00126_TheNameOfEvil2.class.getSimpleName());
-					htmltext = ((qs != null) && qs.isCompleted()) ? "32109-0a.htm" : "32109-0b.htm";
+					final QuestState st2 = player.getQuestState(Q00126_TheNameOfEvil2.class.getSimpleName());
+					htmltext = ((st2 != null) && st2.isCompleted()) ? "32109-1.htm" : "32109-2.htm";
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				htmltext = qs.isCond(1) ? "32109-1a.html" : "32109-2.html";
+				final int cond = st.getCond();
+				if (cond == 1)
+				{
+					htmltext = "32109-5.htm";
+				}
+				else if (cond == 2)
+				{
+					htmltext = "32109-7.htm";
+				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState qs = getRandomPartyMemberState(player, 1, 3, npc);
+		if (qs == null)
+		{
+			return null;
+		}
+		final Player partyMember = qs.getPlayer();
+		
+		final QuestState st = getQuestState(partyMember, false);
+		if (st == null)
+		{
+			return null;
+		}
+		
+		if (getRandom(100) < 5)
+		{
+			giveItems(partyMember, GAZKH_FRAGMENT, 1);
+			if (getQuestItemsCount(partyMember, GAZKH_FRAGMENT) < 30)
+			{
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

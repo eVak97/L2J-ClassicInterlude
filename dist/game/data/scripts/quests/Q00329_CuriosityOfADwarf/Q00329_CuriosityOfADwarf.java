@@ -16,135 +16,105 @@
  */
 package quests.Q00329_CuriosityOfADwarf;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Curiosity Of A Dwarf (329)
- * @author ivantotov
- */
 public class Q00329_CuriosityOfADwarf extends Quest
 {
-	// NPC
-	private static final int TRADER_ROLENTO = 30437;
 	// Items
 	private static final int GOLEM_HEARTSTONE = 1346;
 	private static final int BROKEN_HEARTSTONE = 1365;
-	// Misc
-	private static final int MIN_LEVEL = 33;
-	// Monsters
-	private static final Map<Integer, List<ItemHolder>> MONSTER_DROPS = new HashMap<>();
-	static
-	{
-		MONSTER_DROPS.put(20083, Arrays.asList(new ItemHolder(GOLEM_HEARTSTONE, 3), new ItemHolder(BROKEN_HEARTSTONE, 54))); // Granitic Golem
-		MONSTER_DROPS.put(20085, Arrays.asList(new ItemHolder(GOLEM_HEARTSTONE, 3), new ItemHolder(BROKEN_HEARTSTONE, 58))); // Puncher
-	}
 	
 	public Q00329_CuriosityOfADwarf()
 	{
 		super(329);
-		addStartNpc(TRADER_ROLENTO);
-		addTalkId(TRADER_ROLENTO);
-		addKillId(MONSTER_DROPS.keySet());
-		registerQuestItems(GOLEM_HEARTSTONE, BROKEN_HEARTSTONE);
-		addCondMaxLevel(38, getNoQuestMsg(null));
+		addStartNpc(30437); // Rolento
+		addTalkId(30437);
+		addKillId(20083, 20085); // Granite golem, Puncher
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30437-03.htm"))
 		{
-			case "30437-03.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30437-06.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30437-07.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30437-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			final int rnd = getRandom(100);
-			for (ItemHolder drop : MONSTER_DROPS.get(npc.getId()))
-			{
-				if (rnd < drop.getCount())
-				{
-					giveItemRandomly(killer, npc, drop.getId(), 1, 0, 1, true);
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() >= MIN_LEVEL ? "30437-02.htm" : "30437-01.htm";
+				htmltext = (player.getLevel() < 33) ? "30437-01.htm" : "30437-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
+				final int golem = (int) getQuestItemsCount(player, GOLEM_HEARTSTONE);
+				final int broken = (int) getQuestItemsCount(player, BROKEN_HEARTSTONE);
+				if ((golem + broken) == 0)
 				{
-					final long broken = getQuestItemsCount(player, BROKEN_HEARTSTONE);
-					final long golem = getQuestItemsCount(player, GOLEM_HEARTSTONE);
-					giveAdena(player, ((broken * 5) + (golem * 40) + ((broken + golem) >= 700 ? 700 : 1000)), true);
-					takeItems(player, -1, getRegisteredItemIds());
-					htmltext = "30437-05.html";
+					htmltext = "30437-04.htm";
 				}
 				else
 				{
-					htmltext = "30437-04.html";
+					htmltext = "30437-05.htm";
+					takeItems(player, GOLEM_HEARTSTONE, -1);
+					takeItems(player, BROKEN_HEARTSTONE, -1);
+					giveAdena(player, (broken * 50) + (golem * 1000) + (((golem + broken) > 10) ? 1183 : 0), true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int chance = getRandom(100);
+		if (chance < 2)
+		{
+			giveItems(player, GOLEM_HEARTSTONE, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		else if (chance < ((npc.getId() == 20083) ? 44 : 50))
+		{
+			giveItems(player, BROKEN_HEARTSTONE, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

@@ -16,633 +16,548 @@
  */
 package quests.Q00226_TestOfTheHealer;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.CategoryType;
+import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
+import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Test Of The Healer(226)
- * @author ivantotov
- */
 public class Q00226_TestOfTheHealer extends Quest
 {
 	// NPCs
-	private static final int MASTER_SORIUS = 30327;
+	private static final int BANDELLOS = 30473;
+	private static final int SORIUS = 30327;
 	private static final int ALLANA = 30424;
 	private static final int PERRIN = 30428;
-	private static final int PRIEST_BANDELLOS = 30473;
-	private static final int FATHER_GUPU = 30658;
+	private static final int GUPU = 30658;
 	private static final int ORPHAN_GIRL = 30659;
 	private static final int WINDY_SHAORING = 30660;
-	private static final int MYSTERIOUS_DARK_ELF = 30661;
+	private static final int MYSTERIOUS_DARKELF = 30661;
 	private static final int PIPER_LONGBOW = 30662;
 	private static final int SLEIN_SHINING_BLADE = 30663;
-	private static final int CAIN_FLYING_KNIFE = 30664;
-	private static final int SAINT_KRISTINA = 30665;
+	private static final int KAIN_FLYING_KNIFE = 30664;
+	private static final int KRISTINA = 30665;
 	private static final int DAURIN_HAMMERCRUSH = 30674;
+	// Monsters
+	private static final int LETO_LIZARDMAN_LEADER = 27123;
+	private static final int LETO_LIZARDMAN_ASSASSIN = 27124;
+	private static final int LETO_LIZARDMAN_SNIPER = 27125;
+	private static final int LETO_LIZARDMAN_WIZARD = 27126;
+	private static final int LETO_LIZARDMAN_LORD = 27127;
+	private static final int TATOMA = 27134;
 	// Items
-	private static final int ADENA = 57;
 	private static final int REPORT_OF_PERRIN = 2810;
-	private static final int CRISTINAS_LETTER = 2811;
+	private static final int KRISTINA_LETTER = 2811;
 	private static final int PICTURE_OF_WINDY = 2812;
 	private static final int GOLDEN_STATUE = 2813;
-	private static final int WINDYS_PEBBLES = 2814;
+	private static final int WINDY_PEBBLES = 2814;
 	private static final int ORDER_OF_SORIUS = 2815;
-	private static final int SECRET_LETTER1 = 2816;
-	private static final int SECRET_LETTER2 = 2817;
-	private static final int SECRET_LETTER3 = 2818;
-	private static final int SECRET_LETTER4 = 2819;
-	// Reward
+	private static final int SECRET_LETTER_1 = 2816;
+	private static final int SECRET_LETTER_2 = 2817;
+	private static final int SECRET_LETTER_3 = 2818;
+	private static final int SECRET_LETTER_4 = 2819;
+	// Rewards
 	private static final int MARK_OF_HEALER = 2820;
-	// Quest Monster
-	private static final int LERO_LIZARDMAN_AGENT = 27122;
-	private static final int LERO_LIZARDMAN_LEADER = 27123;
-	private static final int LERO_LIZARDMAN_ASSASSIN = 27124;
-	private static final int LERO_LIZARDMAN_SNIPER = 27125;
-	private static final int LERO_LIZARDMAN_WIZARD = 27126;
-	private static final int LERO_LIZARDMAN_LORD = 27127;
-	private static final int TATOMA = 27134;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	// Misc
-	private static final int MIN_LEVEL = 39;
+	private Npc _tatoma;
+	private Npc _letoLeader;
 	
 	public Q00226_TestOfTheHealer()
 	{
 		super(226);
-		addStartNpc(PRIEST_BANDELLOS);
-		addTalkId(PRIEST_BANDELLOS, MASTER_SORIUS, ALLANA, PERRIN, FATHER_GUPU, ORPHAN_GIRL, WINDY_SHAORING, MYSTERIOUS_DARK_ELF, PIPER_LONGBOW, SLEIN_SHINING_BLADE, CAIN_FLYING_KNIFE, SAINT_KRISTINA, DAURIN_HAMMERCRUSH);
-		addKillId(LERO_LIZARDMAN_AGENT, LERO_LIZARDMAN_LEADER, LERO_LIZARDMAN_ASSASSIN, LERO_LIZARDMAN_SNIPER, LERO_LIZARDMAN_WIZARD, LERO_LIZARDMAN_LORD, TATOMA);
-		registerQuestItems(REPORT_OF_PERRIN, CRISTINAS_LETTER, PICTURE_OF_WINDY, GOLDEN_STATUE, WINDYS_PEBBLES, ORDER_OF_SORIUS, SECRET_LETTER1, SECRET_LETTER2, SECRET_LETTER3, SECRET_LETTER4);
+		registerQuestItems(REPORT_OF_PERRIN, KRISTINA_LETTER, PICTURE_OF_WINDY, GOLDEN_STATUE, WINDY_PEBBLES, ORDER_OF_SORIUS, SECRET_LETTER_1, SECRET_LETTER_2, SECRET_LETTER_3, SECRET_LETTER_4);
+		addStartNpc(BANDELLOS);
+		addTalkId(BANDELLOS, SORIUS, ALLANA, PERRIN, GUPU, ORPHAN_GIRL, WINDY_SHAORING, MYSTERIOUS_DARKELF, PIPER_LONGBOW, SLEIN_SHINING_BLADE, KAIN_FLYING_KNIFE, KRISTINA, DAURIN_HAMMERCRUSH);
+		addKillId(LETO_LIZARDMAN_LEADER, LETO_LIZARDMAN_ASSASSIN, LETO_LIZARDMAN_SNIPER, LETO_LIZARDMAN_WIZARD, LETO_LIZARDMAN_LORD, TATOMA);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30473-04.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, REPORT_OF_PERRIN, 1);
+				if (!player.getVariables().getBoolean("secondClassChange39", false))
 				{
-					qs.startQuest();
-					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					giveItems(player, REPORT_OF_PERRIN, 1);
+					htmltext = "30473-04a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_39.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange39", true);
 				}
 				break;
 			}
-			case "30473-08.html":
+			case "30473-09.htm":
 			{
-				if (qs.isMemoState(10) && hasQuestItems(player, GOLDEN_STATUE))
+				takeItems(player, GOLDEN_STATUE, 1);
+				giveItems(player, MARK_OF_HEALER, 1);
+				addExpAndSp(player, 134839, 50000);
+				player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+				st.exitQuest(false, true);
+				break;
+			}
+			case "30428-02.htm":
+			{
+				st.setCond(2, true);
+				if (_tatoma == null)
 				{
-					htmltext = event;
+					_tatoma = addSpawn(TATOMA, -93254, 147559, -2679, 0, false, 0);
+					startQuestTimer("tatoma_despawn", 200000, null, player, false);
 				}
 				break;
 			}
-			case "30473-09.html":
+			case "30658-02.htm":
 			{
-				if (qs.isMemoState(10) && hasQuestItems(player, GOLDEN_STATUE))
+				if (getQuestItemsCount(player, 57) >= 100000)
 				{
-					giveAdena(player, 233490, true);
-					giveItems(player, MARK_OF_HEALER, 1);
-					addExpAndSp(player, 738283, 50662);
-					qs.exitQuest(false, true);
-					player.sendPacket(new SocialAction(player.getObjectId(), 3));
-					htmltext = event;
+					st.setCond(7, true);
+					takeItems(player, 57, 100000);
+					giveItems(player, PICTURE_OF_WINDY, 1);
+				}
+				else
+				{
+					htmltext = "30658-05.htm";
 				}
 				break;
 			}
-			case "30428-02.html":
+			case "30658-03.htm":
 			{
-				if (qs.isMemoState(1) && hasQuestItems(player, REPORT_OF_PERRIN))
-				{
-					qs.setCond(2, true);
-					if (npc.getSummonedNpcCount() < 1)
-					{
-						addAttackPlayerDesire(addSpawn(npc, TATOMA, npc, true, 200000), player);
-					}
-				}
-				htmltext = event;
+				st.set("gupu", "1");
 				break;
 			}
-			case "30658-02.html":
+			case "30658-07.htm":
 			{
-				if (qs.isMemoState(4) && !hasAtLeastOneQuestItem(player, PICTURE_OF_WINDY, WINDYS_PEBBLES, GOLDEN_STATUE))
+				st.setCond(9, true);
+				break;
+			}
+			case "30660-03.htm":
+			{
+				st.setCond(8, true);
+				takeItems(player, PICTURE_OF_WINDY, 1);
+				giveItems(player, WINDY_PEBBLES, 1);
+				break;
+			}
+			case "30674-02.htm":
+			{
+				st.setCond(11, true);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+				takeItems(player, ORDER_OF_SORIUS, 1);
+				if (_letoLeader == null)
 				{
-					if (getQuestItemsCount(player, ADENA) >= 1000)
-					{
-						takeItems(player, ADENA, 1000);
-						giveItems(player, PICTURE_OF_WINDY, 1);
-						qs.setCond(7, true);
-						htmltext = event;
-					}
-					else
-					{
-						htmltext = "30658-05.html";
-					}
+					_letoLeader = addSpawn(LETO_LIZARDMAN_LEADER, -97441, 106585, -3405, 0, false, 0);
+					startQuestTimer("leto_leader_despawn", 200000, null, player, false);
 				}
 				break;
 			}
-			case "30658-03.html":
+			case "30665-02.htm":
 			{
-				if (qs.isMemoState(4) && !hasAtLeastOneQuestItem(player, PICTURE_OF_WINDY, WINDYS_PEBBLES, GOLDEN_STATUE))
-				{
-					qs.setMemoState(5);
-					htmltext = event;
-				}
+				st.setCond(22, true);
+				takeItems(player, SECRET_LETTER_1, 1);
+				takeItems(player, SECRET_LETTER_2, 1);
+				takeItems(player, SECRET_LETTER_3, 1);
+				takeItems(player, SECRET_LETTER_4, 1);
+				giveItems(player, KRISTINA_LETTER, 1);
 				break;
 			}
-			case "30658-07.html":
+			case "tatoma_despawn":
 			{
-				htmltext = event;
-				break;
+				_tatoma.deleteMe();
+				_tatoma = null;
+				return null;
 			}
-			case "30660-02.html":
+			case "leto_leader_despawn":
 			{
-				if (hasQuestItems(player, PICTURE_OF_WINDY))
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "30660-03.html":
-			{
-				if (hasQuestItems(player, PICTURE_OF_WINDY))
-				{
-					takeItems(player, PICTURE_OF_WINDY, 1);
-					giveItems(player, WINDYS_PEBBLES, 1);
-					qs.setCond(8, true);
-					npc.deleteMe();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30665-02.html":
-			{
-				if ((getQuestItemsCount(player, SECRET_LETTER1) + getQuestItemsCount(player, SECRET_LETTER2) + getQuestItemsCount(player, SECRET_LETTER3) + getQuestItemsCount(player, SECRET_LETTER4)) == 4)
-				{
-					giveItems(player, CRISTINAS_LETTER, 1);
-					takeItems(player, SECRET_LETTER1, 1);
-					takeItems(player, SECRET_LETTER2, 1);
-					takeItems(player, SECRET_LETTER3, 1);
-					takeItems(player, SECRET_LETTER4, 1);
-					qs.setMemoState(9);
-					qs.setCond(22, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30674-02.html":
-			{
-				if (qs.isMemoState(6))
-				{
-					qs.setCond(11);
-					takeItems(player, ORDER_OF_SORIUS, 1);
-					addSpawn(npc, LERO_LIZARDMAN_AGENT, npc, true, 200000);
-					addSpawn(npc, LERO_LIZARDMAN_AGENT, npc, true, 200000);
-					addSpawn(npc, LERO_LIZARDMAN_LEADER, npc, true, 200000);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
-					htmltext = event;
-				}
-				break;
+				_letoLeader.deleteMe();
+				_letoLeader = null;
+				return null;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case LERO_LIZARDMAN_LEADER:
-				{
-					if (qs.isMemoState(6) && !hasQuestItems(killer, SECRET_LETTER1))
-					{
-						giveItems(killer, SECRET_LETTER1, 1);
-						qs.setCond(12, true);
-					}
-					break;
-				}
-				case LERO_LIZARDMAN_ASSASSIN:
-				{
-					if (qs.isMemoState(8) && hasQuestItems(killer, SECRET_LETTER1) && !hasQuestItems(killer, SECRET_LETTER2))
-					{
-						giveItems(killer, SECRET_LETTER2, 1);
-						qs.setCond(15, true);
-					}
-					break;
-				}
-				case LERO_LIZARDMAN_SNIPER:
-				{
-					if (qs.isMemoState(8) && hasQuestItems(killer, SECRET_LETTER1) && !hasQuestItems(killer, SECRET_LETTER3))
-					{
-						giveItems(killer, SECRET_LETTER3, 1);
-						qs.setCond(17, true);
-					}
-					break;
-				}
-				case LERO_LIZARDMAN_LORD:
-				{
-					if (qs.isMemoState(8) && hasQuestItems(killer, SECRET_LETTER1) && !hasQuestItems(killer, SECRET_LETTER4))
-					{
-						giveItems(killer, SECRET_LETTER4, 1);
-						qs.setCond(19, true);
-					}
-					break;
-				}
-				case TATOMA:
-				{
-					if (qs.isMemoState(1))
-					{
-						qs.setMemoState(2);
-						qs.setCond(3, true);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
-		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == PRIEST_BANDELLOS)
+			case State.CREATED:
 			{
-				if (player.isInCategory(CategoryType.WHITE_MAGIC_GROUP))
+				if ((player.getClassId() != ClassId.KNIGHT) && (player.getClassId() != ClassId.ELVEN_KNIGHT) && (player.getClassId() != ClassId.CLERIC) && (player.getClassId() != ClassId.ORACLE))
 				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						htmltext = "30473-03.htm";
-					}
-					else
-					{
-						htmltext = "30473-01.html";
-					}
+					htmltext = "30473-01.htm";
+				}
+				else if (player.getLevel() < 39)
+				{
+					htmltext = "30473-02.htm";
 				}
 				else
 				{
-					htmltext = "30473-02.html";
+					htmltext = "30473-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case PRIEST_BANDELLOS:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if ((memoState >= 1) && (memoState < 10))
+					case BANDELLOS:
 					{
-						htmltext = "30473-05.html";
-					}
-					else if (memoState == 10)
-					{
-						if (hasQuestItems(player, GOLDEN_STATUE))
+						if (cond < 23)
 						{
-							htmltext = "30473-07.html";
+							htmltext = "30473-05.htm";
 						}
 						else
 						{
-							giveAdena(player, 266980, true);
-							giveItems(player, MARK_OF_HEALER, 1);
-							addExpAndSp(player, 1476566, 101324);
-							qs.exitQuest(false, true);
-							player.sendPacket(new SocialAction(player.getObjectId(), 3));
-							htmltext = "30473-06.html";
+							if (!hasQuestItems(player, GOLDEN_STATUE))
+							{
+								htmltext = "30473-06.htm";
+								giveItems(player, MARK_OF_HEALER, 1);
+								addExpAndSp(player, 118304, 26250);
+								player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+								st.exitQuest(false, true);
+							}
+							else
+							{
+								htmltext = "30473-07.htm";
+							}
 						}
+						break;
 					}
-					break;
-				}
-				case MASTER_SORIUS:
-				{
-					if (memoState == 5)
+					case PERRIN:
 					{
-						giveItems(player, ORDER_OF_SORIUS, 1);
-						qs.setMemoState(6);
-						qs.setCond(10, true);
-						htmltext = "30327-01.html";
-					}
-					else if ((memoState >= 6) && (memoState < 9))
-					{
-						htmltext = "30327-02.html";
-					}
-					else if (memoState == 9)
-					{
-						if (hasQuestItems(player, CRISTINAS_LETTER))
+						if (cond < 3)
 						{
-							takeItems(player, CRISTINAS_LETTER, 1);
-							qs.setMemoState(10);
-							qs.setCond(23, true);
-							htmltext = "30327-03.html";
+							htmltext = "30428-01.htm";
 						}
-					}
-					else if (memoState >= 10)
-					{
-						htmltext = "30327-04.html";
-					}
-					break;
-				}
-				case ALLANA:
-				{
-					if (memoState == 3)
-					{
-						qs.setMemoState(4);
-						qs.setCond(5, true);
-						htmltext = "30424-01.html";
-					}
-					else if (memoState == 4)
-					{
-						qs.setMemoState(4);
-						htmltext = "30424-02.html";
-					}
-					break;
-				}
-				case PERRIN:
-				{
-					if (memoState == 1)
-					{
-						if (hasQuestItems(player, REPORT_OF_PERRIN))
+						else if (cond == 3)
 						{
-							htmltext = "30428-01.html";
+							htmltext = "30428-03.htm";
+							st.setCond(4, true);
+							takeItems(player, REPORT_OF_PERRIN, 1);
 						}
-					}
-					else if (memoState == 2)
-					{
-						takeItems(player, REPORT_OF_PERRIN, 1);
-						qs.setMemoState(3);
-						qs.setCond(4, true);
-						htmltext = "30428-03.html";
-					}
-					else if (memoState == 3)
-					{
-						htmltext = "30428-04.html";
-					}
-					break;
-				}
-				case FATHER_GUPU:
-				{
-					if (memoState == 4)
-					{
-						if (!hasAtLeastOneQuestItem(player, PICTURE_OF_WINDY, WINDYS_PEBBLES, GOLDEN_STATUE))
+						else
 						{
-							qs.setCond(6, true);
-							htmltext = "30658-01.html";
+							htmltext = "30428-04.htm";
 						}
-						else if (hasQuestItems(player, PICTURE_OF_WINDY))
+						break;
+					}
+					case ORPHAN_GIRL:
+					{
+						htmltext = "30659-0" + getRandom(1, 5) + ".htm";
+						break;
+					}
+					case ALLANA:
+					{
+						if (cond == 4)
 						{
-							htmltext = "30658-04.html";
+							htmltext = "30424-01.htm";
+							st.setCond(5, true);
 						}
-						else if (hasQuestItems(player, WINDYS_PEBBLES))
+						else if (cond > 4)
 						{
+							htmltext = "30424-02.htm";
+						}
+						break;
+					}
+					case GUPU:
+					{
+						if ((st.getInt("gupu") == 1) && (cond != 9))
+						{
+							htmltext = "30658-07.htm";
+							st.setCond(9, true);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30658-01.htm";
+							st.setCond(6, true);
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30658-01.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30658-04.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30658-06.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							takeItems(player, WINDY_PEBBLES, 1);
 							giveItems(player, GOLDEN_STATUE, 1);
-							takeItems(player, WINDYS_PEBBLES, 1);
-							qs.setMemoState(5);
-							htmltext = "30658-06.html";
 						}
+						else if (cond > 8)
+						{
+							htmltext = "30658-07.htm";
+						}
+						break;
 					}
-					else if (memoState == 5)
+					case WINDY_SHAORING:
 					{
-						qs.setCond(9, true);
-						htmltext = "30658-07.html";
+						if (cond == 7)
+						{
+							htmltext = "30660-01.htm";
+						}
+						else if (hasQuestItems(player, WINDY_PEBBLES))
+						{
+							htmltext = "30660-04.htm";
+						}
+						break;
 					}
-					break;
-				}
-				case ORPHAN_GIRL:
-				{
-					switch (getRandom(5))
+					case SORIUS:
 					{
-						case 0:
+						if (cond == 9)
 						{
-							htmltext = "30659-01.html";
-							break;
+							htmltext = "30327-01.htm";
+							st.setCond(10, true);
+							giveItems(player, ORDER_OF_SORIUS, 1);
 						}
-						case 1:
+						else if ((cond > 9) && (cond < 22))
 						{
-							htmltext = "30659-02.html";
-							break;
+							htmltext = "30327-02.htm";
 						}
-						case 2:
+						else if (cond == 22)
 						{
-							htmltext = "30659-03.html";
-							break;
+							htmltext = "30327-03.htm";
+							st.setCond(23, true);
+							takeItems(player, KRISTINA_LETTER, 1);
 						}
-						case 3:
+						else if (cond == 23)
 						{
-							htmltext = "30659-04.html";
-							break;
+							htmltext = "30327-04.htm";
 						}
-						case 4:
-						{
-							htmltext = "30659-05.html";
-							break;
-						}
+						break;
 					}
-					break;
-				}
-				case WINDY_SHAORING:
-				{
-					if (hasQuestItems(player, PICTURE_OF_WINDY))
+					case DAURIN_HAMMERCRUSH:
 					{
-						htmltext = "30660-01.html";
-					}
-					else if (hasQuestItems(player, WINDYS_PEBBLES))
-					{
-						htmltext = "30660-04.html";
-					}
-					break;
-				}
-				case MYSTERIOUS_DARK_ELF:
-				{
-					if (memoState == 8)
-					{
-						if (hasQuestItems(player, SECRET_LETTER1) && !hasQuestItems(player, SECRET_LETTER2))
+						if (cond == 10)
 						{
-							if ((npc.getSummonedNpcCount() < 36) && !player.isSimulatingTalking())
+							htmltext = "30674-01.htm";
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30674-02a.htm";
+							if (_letoLeader == null)
 							{
-								addSpawn(npc, LERO_LIZARDMAN_ASSASSIN, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_ASSASSIN, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_ASSASSIN, npc, true, 200000);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
-								npc.deleteMe();
+								_letoLeader = addSpawn(LETO_LIZARDMAN_LEADER, -97441, 106585, -3405, 0, false, 0);
+								startQuestTimer("leto_leader_despawn", 200000, null, player, false);
 							}
-							qs.setCond(14);
-							htmltext = "30661-01.html";
 						}
-						else if (hasQuestItems(player, SECRET_LETTER1, SECRET_LETTER2) && !hasQuestItems(player, SECRET_LETTER3))
+						else if (cond == 12)
 						{
-							if ((npc.getSummonedNpcCount() < 36) && !player.isSimulatingTalking())
-							{
-								addSpawn(npc, LERO_LIZARDMAN_SNIPER, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_SNIPER, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_SNIPER, npc, true, 200000);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
-								npc.deleteMe();
-							}
-							qs.setCond(16);
-							htmltext = "30661-02.html";
+							htmltext = "30674-03.htm";
+							st.setCond(13, true);
 						}
-						else if (hasQuestItems(player, SECRET_LETTER1, SECRET_LETTER2, SECRET_LETTER3) && !hasQuestItems(player, SECRET_LETTER4))
+						else if (cond > 12)
 						{
-							if ((npc.getSummonedNpcCount() < 36) && !player.isSimulatingTalking())
-							{
-								addSpawn(npc, LERO_LIZARDMAN_WIZARD, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_WIZARD, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_LORD, npc, true, 200000);
-								playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
-								npc.deleteMe();
-							}
-							qs.setCond(18);
-							htmltext = "30661-03.html";
+							htmltext = "30674-04.htm";
 						}
-						else if ((getQuestItemsCount(player, SECRET_LETTER1) + getQuestItemsCount(player, SECRET_LETTER2) + getQuestItemsCount(player, SECRET_LETTER3) + getQuestItemsCount(player, SECRET_LETTER4)) == 4)
-						{
-							qs.setCond(20, true);
-							htmltext = "30661-04.html";
-						}
+						break;
 					}
-					break;
+					case PIPER_LONGBOW:
+					case SLEIN_SHINING_BLADE:
+					case KAIN_FLYING_KNIFE:
+					{
+						if ((cond == 13) || (cond == 14))
+						{
+							htmltext = npc.getId() + "-01.htm";
+						}
+						else if ((cond > 14) && (cond < 19))
+						{
+							htmltext = npc.getId() + "-02.htm";
+						}
+						else if ((cond > 18) && (cond < 22))
+						{
+							htmltext = npc.getId() + "-03.htm";
+							st.setCond(21, true);
+						}
+						break;
+					}
+					case MYSTERIOUS_DARKELF:
+					{
+						if (cond == 13)
+						{
+							htmltext = "30661-01.htm";
+							st.setCond(14);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+							addSpawn(LETO_LIZARDMAN_ASSASSIN, player, true, 300000);
+							addSpawn(LETO_LIZARDMAN_ASSASSIN, player, true, 300000);
+							addSpawn(LETO_LIZARDMAN_ASSASSIN, player, true, 300000);
+						}
+						else if (cond == 14)
+						{
+							htmltext = "30661-01.htm";
+							checkSpawn(LETO_LIZARDMAN_ASSASSIN, 3, player);
+						}
+						else if (cond == 15)
+						{
+							htmltext = "30661-02.htm";
+							st.setCond(16);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+							addSpawn(LETO_LIZARDMAN_SNIPER, player, true, 300000);
+							addSpawn(LETO_LIZARDMAN_SNIPER, player, true, 300000);
+							addSpawn(LETO_LIZARDMAN_SNIPER, player, true, 300000);
+						}
+						else if (cond == 16)
+						{
+							htmltext = "30661-02.htm";
+							checkSpawn(LETO_LIZARDMAN_SNIPER, 3, player);
+						}
+						else if (cond == 17)
+						{
+							htmltext = "30661-03.htm";
+							st.setCond(18);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+							addSpawn(LETO_LIZARDMAN_WIZARD, player, true, 300000);
+							addSpawn(LETO_LIZARDMAN_WIZARD, player, true, 300000);
+							addSpawn(LETO_LIZARDMAN_LORD, player, true, 300000);
+						}
+						else if (cond == 18)
+						{
+							htmltext = "30661-03.htm";
+							checkSpawn(LETO_LIZARDMAN_WIZARD, 2, player);
+							checkSpawn(LETO_LIZARDMAN_LORD, 1, player);
+						}
+						else if (cond == 19)
+						{
+							htmltext = "30661-04.htm";
+							st.setCond(20, true);
+						}
+						else if ((cond == 20) || (cond == 21))
+						{
+							htmltext = "30661-04.htm";
+						}
+						break;
+					}
+					case KRISTINA:
+					{
+						if ((cond > 18) && (cond < 22))
+						{
+							htmltext = "30665-01.htm";
+						}
+						else if (cond > 21)
+						{
+							htmltext = "30665-04.htm";
+						}
+						else
+						{
+							htmltext = "30665-03.htm";
+						}
+						break;
+					}
 				}
-				case PIPER_LONGBOW:
-				{
-					if (memoState == 8)
-					{
-						if (hasQuestItems(player, SECRET_LETTER1) && !hasQuestItems(player, SECRET_LETTER2))
-						{
-							htmltext = "30662-01.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER2) && !hasQuestItems(player, SECRET_LETTER3, SECRET_LETTER4))
-						{
-							htmltext = "30662-02.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER2, SECRET_LETTER3, SECRET_LETTER4))
-						{
-							qs.setCond(21, true);
-							htmltext = "30662-03.html";
-						}
-					}
-					break;
-				}
-				case SLEIN_SHINING_BLADE:
-				{
-					if (memoState == 8)
-					{
-						if (hasQuestItems(player, SECRET_LETTER1) && !hasQuestItems(player, SECRET_LETTER2))
-						{
-							htmltext = "30663-01.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER2) && !hasQuestItems(player, SECRET_LETTER3, SECRET_LETTER4))
-						{
-							htmltext = "30663-02.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER2, SECRET_LETTER3, SECRET_LETTER4))
-						{
-							qs.setCond(21, true);
-							htmltext = "30663-03.html";
-						}
-					}
-					break;
-				}
-				case CAIN_FLYING_KNIFE:
-				{
-					if (memoState == 8)
-					{
-						if (hasQuestItems(player, SECRET_LETTER1) && !hasQuestItems(player, SECRET_LETTER4))
-						{
-							htmltext = "30664-01.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER2) && !hasQuestItems(player, SECRET_LETTER3, SECRET_LETTER4))
-						{
-							htmltext = "30664-02.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER2, SECRET_LETTER3, SECRET_LETTER4))
-						{
-							qs.setCond(21, true);
-							htmltext = "30664-03.html";
-						}
-					}
-					break;
-				}
-				case SAINT_KRISTINA:
-				{
-					if ((getQuestItemsCount(player, SECRET_LETTER1) + getQuestItemsCount(player, SECRET_LETTER2) + getQuestItemsCount(player, SECRET_LETTER3) + getQuestItemsCount(player, SECRET_LETTER4)) == 4)
-					{
-						htmltext = "30665-01.html";
-					}
-					else if (memoState < 9)
-					{
-						if ((getQuestItemsCount(player, SECRET_LETTER1) + getQuestItemsCount(player, SECRET_LETTER2) + getQuestItemsCount(player, SECRET_LETTER3) + getQuestItemsCount(player, SECRET_LETTER4)) < 4)
-						{
-							htmltext = "30665-03.html";
-						}
-					}
-					else if (memoState >= 9)
-					{
-						htmltext = "30665-04.html";
-					}
-					break;
-				}
-				case DAURIN_HAMMERCRUSH:
-				{
-					if (memoState == 6)
-					{
-						if (hasQuestItems(player, ORDER_OF_SORIUS))
-						{
-							htmltext = "30674-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, SECRET_LETTER1, ORDER_OF_SORIUS))
-						{
-							if ((npc.getSummonedNpcCount() < 4) && !player.isSimulatingTalking())
-							{
-								addSpawn(npc, LERO_LIZARDMAN_AGENT, npc, true, 200000);
-								addSpawn(npc, LERO_LIZARDMAN_LEADER, npc, true, 200000);
-							}
-							htmltext = "30674-02a.html";
-						}
-						else if (hasQuestItems(player, SECRET_LETTER1))
-						{
-							qs.setMemoState(8);
-							qs.setCond(13, true);
-							htmltext = "30674-03.html";
-						}
-					}
-					else if (memoState >= 8)
-					{
-						htmltext = "30674-04.html";
-					}
-					break;
-				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == PRIEST_BANDELLOS)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int cond = st.getCond();
+		switch (npc.getId())
+		{
+			case TATOMA:
+			{
+				if ((cond == 1) || (cond == 2))
+				{
+					st.setCond(3, true);
+				}
+				_tatoma = null;
+				cancelQuestTimer("tatoma_despawn", null, player);
+				break;
+			}
+			case LETO_LIZARDMAN_LEADER:
+			{
+				if ((cond == 10) || (cond == 11))
+				{
+					st.setCond(12, true);
+					giveItems(player, SECRET_LETTER_1, 1);
+				}
+				_letoLeader = null;
+				cancelQuestTimer("leto_leader_despawn", null, player);
+				break;
+			}
+			case LETO_LIZARDMAN_ASSASSIN:
+			{
+				if ((cond == 13) || (cond == 14))
+				{
+					st.setCond(15, true);
+					giveItems(player, SECRET_LETTER_2, 1);
+				}
+				break;
+			}
+			case LETO_LIZARDMAN_SNIPER:
+			{
+				if ((cond == 15) || (cond == 16))
+				{
+					st.setCond(17, true);
+					giveItems(player, SECRET_LETTER_3, 1);
+				}
+				break;
+			}
+			case LETO_LIZARDMAN_LORD:
+			{
+				if ((cond == 17) || (cond == 18))
+				{
+					st.setCond(19, true);
+					giveItems(player, SECRET_LETTER_4, 1);
+				}
+				break;
+			}
+		}
+		
+		return null;
+	}
+	
+	private void checkSpawn(int npcId, int count, Player player)
+	{
+		int found = 0;
+		while (found < count)
+		{
+			found = 0;
+			for (Npc nearby : World.getInstance().getVisibleObjects(player, Npc.class))
+			{
+				if (nearby.getId() == npcId)
+				{
+					found++;
+				}
+			}
+			if (found < count)
+			{
+				addSpawn(npcId, player, true, 300000);
+			}
+		}
 	}
 }

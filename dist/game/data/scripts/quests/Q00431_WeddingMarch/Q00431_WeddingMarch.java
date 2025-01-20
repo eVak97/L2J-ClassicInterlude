@@ -23,102 +23,115 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Wedding March (431)<br>
- * Original Jython script by CubicVirtuoso.
- * @author eyjine
- */
 public class Q00431_WeddingMarch extends Quest
 {
 	// NPC
 	private static final int KANTABILON = 31042;
-	// Monsters
-	private static final int[] MOBS =
-	{
-		20786, // Lienrik
-		20787, // Lienrik Lad
-	};
-	// Items
+	// Item
 	private static final int SILVER_CRYSTAL = 7540;
+	// Reward
 	private static final int WEDDING_ECHO_CRYSTAL = 7062;
-	// Misc
-	private static final int MIN_LEVEL = 38;
-	private static final int CRYSTAL_COUNT = 50;
 	
 	public Q00431_WeddingMarch()
 	{
 		super(431);
+		registerQuestItems(SILVER_CRYSTAL);
 		addStartNpc(KANTABILON);
 		addTalkId(KANTABILON);
-		addKillId(MOBS);
-		registerQuestItems(SILVER_CRYSTAL);
+		addKillId(20786, 20787);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		if (event.equalsIgnoreCase("31042-02.htm"))
+		if (event.equals("31042-02.htm"))
 		{
-			qs.startQuest();
-			htmltext = event;
+			st.startQuest();
 		}
-		else if (event.equalsIgnoreCase("31042-06.html"))
+		else if (event.equals("31042-05.htm"))
 		{
-			if (getQuestItemsCount(player, SILVER_CRYSTAL) < CRYSTAL_COUNT)
+			if (getQuestItemsCount(player, SILVER_CRYSTAL) < 50)
 			{
-				return "31042-05.html";
-			}
-			giveItems(player, WEDDING_ECHO_CRYSTAL, 25);
-			qs.exitQuest(true, true);
-			htmltext = event;
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final Player member = getRandomPartyMember(player, 1);
-		if ((member != null) && getRandomBoolean())
-		{
-			giveItems(member, SILVER_CRYSTAL, 1);
-			if (getQuestItemsCount(member, SILVER_CRYSTAL) >= CRYSTAL_COUNT)
-			{
-				getQuestState(member, false).setCond(2, true);
+				htmltext = "31042-03.htm";
 			}
 			else
 			{
-				playSound(member, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, SILVER_CRYSTAL, -1);
+				giveItems(player, WEDDING_ECHO_CRYSTAL, 25);
+				st.exitQuest(true, true);
 			}
 		}
-		return super.onKill(npc, player, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "31042-01.htm" : "31042-00.htm";
+				htmltext = (player.getLevel() < 38) ? "31042-00.htm" : "31042-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				htmltext = qs.isCond(1) ? "31042-03.html" : "31042-04.html";
+				final int cond = st.getCond();
+				if (cond == 1)
+				{
+					htmltext = "31042-02.htm";
+				}
+				else if (cond == 2)
+				{
+					htmltext = (getQuestItemsCount(player, SILVER_CRYSTAL) < 50) ? "31042-03.htm" : "31042-04.htm";
+				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState qs = getRandomPartyMemberState(player, 1, 3, npc);
+		if (qs == null)
+		{
+			return null;
+		}
+		final Player partyMember = qs.getPlayer();
+		
+		final QuestState st = getQuestState(partyMember, false);
+		if (st == null)
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
+		{
+			giveItems(partyMember, SILVER_CRYSTAL, 1);
+			if (getQuestItemsCount(partyMember, SILVER_CRYSTAL) < 50)
+			{
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

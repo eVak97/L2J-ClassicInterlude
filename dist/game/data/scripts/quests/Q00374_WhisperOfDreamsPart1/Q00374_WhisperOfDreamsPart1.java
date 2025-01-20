@@ -1,22 +1,18 @@
 /*
- * Copyright (c) 2013 L2jMobius
+ * This file is part of the L2J Mobius project.
  * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
  * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
- * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package quests.Q00374_WhisperOfDreamsPart1;
 
@@ -46,10 +42,10 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 	{
 		// @formatter:off
 		{5486, 3, 2950}, // Dark Crystal, 3x, 2950 adena
-		{5487, 3, 18050}, // Nightmare, 3x, 18050 adena
-		{5488, 3, 18050}, // Majestic, 3x, 18050 adena
-		{5485, 3, 10450}, // Tallum Tunic, 3x, 10450 adena
-		{5489, 3, 15550}, // Tallum Stockings, 3x, 15550 adena
+		{5487, 2, 18050}, // Nightmare, 2x, 18050 adena
+		{5488, 2, 18050}, // Majestic, 2x, 18050 adena
+		{5485, 4, 10450}, // Tallum Tunic, 4, 10450 adena
+		{5489, 6, 15550}, // Tallum Stockings, 6, 15550 adena
 		// @formatter:on
 	};
 	
@@ -87,8 +83,8 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 				
 				final int[] reward = REWARDS[Integer.parseInt(event.substring(9, 10))];
 				
-				takeItems(player, CAVE_BEAST_TOOTH, 65);
-				takeItems(player, DEATH_WAVE_LIGHT, 65);
+				takeItems(player, CAVE_BEAST_TOOTH, -1);
+				takeItems(player, DEATH_WAVE_LIGHT, -1);
 				
 				giveAdena(player, reward[2], true);
 				giveItems(player, reward[0], reward[1]);
@@ -198,7 +194,7 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 		
 		if (getRandomBoolean())
 		{
-			giveItems(st.getPlayer(), (npc.getId() == CAVE_BEAST) ? CAVE_BEAST_TOOTH : DEATH_WAVE_LIGHT, Rnd.get(1, 5));
+			giveItems(st.getPlayer(), (npc.getId() == CAVE_BEAST) ? CAVE_BEAST_TOOTH : DEATH_WAVE_LIGHT, Rnd.get(1, 65));
 		}
 		
 		// Drop sealed mysterious stone to party member who still need it.
@@ -214,7 +210,7 @@ public class Q00374_WhisperOfDreamsPart1 extends Quest
 			return null;
 		}
 		
-		if (Rnd.get(100) < 1) // 1%
+		if (Rnd.get(100) < 1)
 		{
 			giveItems(st.getPlayer(), SEALED_MYSTERIOUS_STONE, 1);
 			st.unset("condStone");

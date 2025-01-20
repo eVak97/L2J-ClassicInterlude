@@ -872,7 +872,8 @@ public enum ServerPackets
 	EX_DPSVR(0xFE, 0x24C),
 	EX_SEND_CMD_LIST(0xFE, 0x24D),
 	EX_SHANGHAI_HEALTHY_TIPS(0xFE, 0x24E),
-	EX_MAX(0xFE, 0x24F);
+	EX_MAX(0xFE, 0x24F),
+	EX_SHOW_SLIDESHOW_KAMAEL(0xFE, 0x5B);
 	
 	private final int _id1;
 	private final int _id2;

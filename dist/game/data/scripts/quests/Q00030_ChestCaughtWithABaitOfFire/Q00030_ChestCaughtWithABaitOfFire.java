@@ -24,11 +24,6 @@ import org.l2jmobius.gameserver.model.quest.State;
 
 import quests.Q00053_LinnaeusSpecialBait.Q00053_LinnaeusSpecialBait;
 
-/**
- * Chest Caught With A Bait Of Fire (30)<br>
- * Original Jython script by Ethernaly.
- * @author nonom
- */
 public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 {
 	// NPCs
@@ -36,15 +31,15 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 	private static final int RUKAL = 30629;
 	// Items
 	private static final int RED_TREASURE_BOX = 6511;
-	private static final int RUKAL_MUSICAL = 7628;
-	private static final int PROTECTION_NECKLACE = 916;
+	private static final int MUSICAL_SCORE = 7628;
+	private static final int NECKLACE_OF_PROTECTION = 916;
 	
 	public Q00030_ChestCaughtWithABaitOfFire()
 	{
 		super(30);
+		registerQuestItems(MUSICAL_SCORE);
 		addStartNpc(LINNAEUS);
 		addTalkId(LINNAEUS, RUKAL);
-		registerQuestItems(RUKAL_MUSICAL);
 	}
 	
 	@Override
@@ -59,92 +54,93 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 		
 		switch (event)
 		{
-			case "31577-02.htm":
+			case "31577-04.htm":
 			{
 				st.startQuest();
 				break;
 			}
-			case "31577-04a.htm":
+			case "31577-07.htm":
 			{
-				if (st.isCond(1) && hasQuestItems(player, RED_TREASURE_BOX))
+				if (hasQuestItems(player, RED_TREASURE_BOX))
 				{
-					giveItems(player, RUKAL_MUSICAL, 1);
-					takeItems(player, RED_TREASURE_BOX, -1);
-					st.setCond(2, true);
-					htmltext = "31577-04.htm";
+					st.setCond(2);
+					takeItems(player, RED_TREASURE_BOX, 1);
+					giveItems(player, MUSICAL_SCORE, 1);
+				}
+				else
+				{
+					htmltext = "31577-08.htm";
 				}
 				break;
 			}
 			case "30629-02.htm":
 			{
-				if (st.isCond(2) && hasQuestItems(player, RUKAL_MUSICAL))
+				if (hasQuestItems(player, MUSICAL_SCORE))
 				{
-					giveItems(player, PROTECTION_NECKLACE, 1);
+					htmltext = "30629-02.htm";
+					takeItems(player, MUSICAL_SCORE, 1);
+					giveItems(player, NECKLACE_OF_PROTECTION, 1);
 					st.exitQuest(false, true);
+				}
+				else
+				{
 					htmltext = "30629-03.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
 		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
 			case State.CREATED:
 			{
-				final QuestState qs = player.getQuestState(Q00053_LinnaeusSpecialBait.class.getSimpleName());
-				if (npcId == LINNAEUS)
+				if (player.getLevel() < 60)
 				{
-					htmltext = "31577-00.htm";
-					if (qs != null)
+					htmltext = "31577-02.htm";
+				}
+				else
+				{
+					final QuestState st2 = player.getQuestState(Q00053_LinnaeusSpecialBait.class.getSimpleName());
+					if ((st2 != null) && st2.isCompleted())
 					{
-						htmltext = ((player.getLevel() >= 61) && qs.isCompleted()) ? "31577-01.htm" : htmltext;
+						htmltext = "31577-01.htm";
+					}
+					else
+					{
+						htmltext = "31577-03.htm";
 					}
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (npcId)
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
 					case LINNAEUS:
 					{
-						switch (st.getCond())
+						if (cond == 1)
 						{
-							case 1:
-							{
-								htmltext = "31577-03a.htm";
-								if (hasQuestItems(player, RED_TREASURE_BOX))
-								{
-									htmltext = "31577-03.htm";
-								}
-								break;
-							}
-							case 2:
-							{
-								htmltext = "31577-05.htm";
-								break;
-							}
+							htmltext = (!hasQuestItems(player, RED_TREASURE_BOX)) ? "31577-06.htm" : "31577-05.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "31577-09.htm";
 						}
 						break;
 					}
 					case RUKAL:
 					{
-						if (st.isCond(2))
+						if (cond == 2)
 						{
 							htmltext = "30629-01.htm";
 						}
@@ -153,7 +149,13 @@ public class Q00030_ChestCaughtWithABaitOfFire extends Quest
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 }

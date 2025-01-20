@@ -22,11 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Pavel the Giants (121)<br>
- * Original Jython script by Ethernaly.
- * @author malyelfik
- */
 public class Q00121_PavelTheGiant extends Quest
 {
 	// NPCs
@@ -43,67 +38,63 @@ public class Q00121_PavelTheGiant extends Quest
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("31961-2.htm"))
 		{
-			case "31961-02.htm":
-			{
-				qs.startQuest();
-				break;
-			}
-			case "32041-02.html":
-			{
-				addExpAndSp(player, 346320, 26069);
-				qs.exitQuest(false, true);
-				break;
-			}
+			st.startQuest();
 		}
-		return event;
+		else if (event.equals("32041-2.htm"))
+		{
+			addExpAndSp(player, 10000, 0);
+			st.exitQuest(false, true);
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case NEWYEAR:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				htmltext = (player.getLevel() < 46) ? "31961-1a.htm" : "31961-1.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
 				{
-					case State.CREATED:
+					case NEWYEAR:
 					{
-						htmltext = (player.getLevel() >= 70) ? "31961-01.htm" : "31961-00.htm";
+						htmltext = "31961-2a.htm";
 						break;
 					}
-					case State.STARTED:
+					case YUMI:
 					{
-						htmltext = "31961-03.html";
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
+						htmltext = "32041-1.htm";
 						break;
 					}
 				}
 				break;
 			}
-			case YUMI:
+			case State.COMPLETED:
 			{
-				if (qs.isStarted())
-				{
-					htmltext = "32041-01.html";
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

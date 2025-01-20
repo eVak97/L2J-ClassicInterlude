@@ -22,7 +22,6 @@ import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.network.NpcStringId;
 
 public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 {
@@ -67,12 +66,20 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 	public Q00241_PossessorOfAPreciousSoul1()
 	{
 		super(241);
-		// Corrected registering of quest items
-		registerQuestItems(LEGEND_OF_SEVENTEEN, MALRUK_SUCCUBUS_CLAW, ECHO_CRYSTAL, POETRY_BOOK, CRIMSON_MOSS, RAHORAKTIS_MEDICINE);
+		
+		_questItemIds = new int[]
+		{
+			LEGEND_OF_SEVENTEEN,
+			MALRUK_SUCCUBUS_CLAW,
+			ECHO_CRYSTAL,
+			POETRY_BOOK,
+			CRIMSON_MOSS,
+			RAHORAKTIS_MEDICINE
+		};
+		
 		addStartNpc(TALIEN);
 		addTalkId(TALIEN, GABRIELLE, GILMORE, KANTABILON, STEDMIEL, VIRGIL, OGMAR, RAHORAKTI, KASSANDRA, CARADINE, NOEL);
 		addKillId(BARAHAM, MALRUK_SUCCUBUS, MALRUK_SUCCUBUS_TUREN, SPLINTER_STAKATO, SPLINTER_STAKATO_WALKER, SPLINTER_STAKATO_SOLDIER, SPLINTER_STAKATO_DRONE1, SPLINTER_STAKATO_DRONE2);
-		setQuestNameNpcStringId(NpcStringId.PATH_OF_THE_NOBLESSE_PRECIOUS_SOUL_1_2);
 	}
 	
 	@Override
@@ -207,7 +214,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				if (!player.isSubClassActive() || (player.getLevel() < 50))
 				{
 					htmltext = "31739-02.htm";
-					st.exitQuest(false, true);
+					st.exitQuest(true, true);
 				}
 				else
 				{

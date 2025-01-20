@@ -16,336 +16,272 @@
  */
 package quests.Q00235_MimirsElixir;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
-import org.l2jmobius.gameserver.model.holders.SkillHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
+import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 
-/**
- * Mimir's Elixir (235)
- * @author Adry_85
- */
 public class Q00235_MimirsElixir extends Quest
 {
 	// NPCs
 	private static final int JOAN = 30718;
 	private static final int LADD = 30721;
-	private static final int ALCHEMISTS_MIXING_URN = 31149;
+	private static final int MIXING_URN = 31149;
 	// Items
 	private static final int STAR_OF_DESTINY = 5011;
-	private static final int MAGISTERS_MIXING_STONE = 5905;
-	private static final int BLOOD_FIRE = 6318;
-	private static final int MIMIRS_ELIXIR = 6319;
 	private static final int PURE_SILVER = 6320;
 	private static final int TRUE_GOLD = 6321;
-	private static final int SAGES_STONE = 6322;
+	private static final int SAGE_STONE = 6322;
+	private static final int BLOOD_FIRE = 6318;
+	private static final int MIMIR_ELIXIR = 6319;
+	private static final int MAGISTER_MIXING_STONE = 5905;
 	// Reward
-	private static final int ENCHANT_WEAPON_A = 729;
-	// Misc
-	private static final int MIN_LEVEL = 75;
-	// Skill
-	private static final SkillHolder QUEST_MIMIRS_ELIXIR = new SkillHolder(4339, 1);
-	// Mobs
-	private static final Map<Integer, ItemChanceHolder> MOBS = new HashMap<>();
-	static
-	{
-		MOBS.put(20965, new ItemChanceHolder(SAGES_STONE, 4, 1)); // chimera_piece
-		MOBS.put(21090, new ItemChanceHolder(BLOOD_FIRE, 7, 1)); // bloody_guardian
-	}
+	private static final int SCROLL_ENCHANT_WEAPON_A = 729;
 	
 	public Q00235_MimirsElixir()
 	{
 		super(235);
+		registerQuestItems(PURE_SILVER, TRUE_GOLD, SAGE_STONE, BLOOD_FIRE, MAGISTER_MIXING_STONE, MIMIR_ELIXIR);
 		addStartNpc(LADD);
-		addTalkId(LADD, JOAN, ALCHEMISTS_MIXING_URN);
-		addKillId(MOBS.keySet());
-		registerQuestItems(MAGISTERS_MIXING_STONE, BLOOD_FIRE, MIMIRS_ELIXIR, TRUE_GOLD, SAGES_STONE);
-		setQuestNameNpcStringId(NpcStringId.MIMIR_S_ELIXIR);
-	}
-	
-	@Override
-	public boolean checkPartyMember(Player member, Npc npc)
-	{
-		final QuestState qs = getQuestState(member, false);
-		return ((qs != null) && (qs.isMemoState(3) || qs.isMemoState(6)));
+		addTalkId(LADD, JOAN, MIXING_URN);
+		addKillId(20965, 21090);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "30721-02.htm":
-			case "30721-03.htm":
-			case "30721-04.htm":
-			case "30721-05.htm":
-			{
-				htmltext = event;
-				break;
-			}
 			case "30721-06.htm":
 			{
-				qs.setMemoState(1);
-				qs.startQuest();
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30721-12.html":
+			case "30721-12.htm":
 			{
-				if (qs.isMemoState(1))
+				if (hasQuestItems(player, TRUE_GOLD))
 				{
-					qs.setMemoState(2);
-					qs.setCond(2);
-					htmltext = event;
+					st.setCond(6, true);
+					giveItems(player, MAGISTER_MIXING_STONE, 1);
 				}
 				break;
 			}
-			case "30721-15.html":
+			case "30721-16.htm":
 			{
-				if (qs.isMemoState(5))
+				if (hasQuestItems(player, MIMIR_ELIXIR))
 				{
-					giveItems(player, MAGISTERS_MIXING_STONE, 1);
-					qs.setMemoState(6);
-					qs.setCond(6);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30721-18.html":
-			{
-				if (qs.isMemoState(8))
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "30721-19.html":
-			{
-				if (qs.isMemoState(8) && hasQuestItems(player, MAGISTERS_MIXING_STONE, MIMIRS_ELIXIR))
-				{
-					npc.setTarget(player);
-					npc.doCast(QUEST_MIMIRS_ELIXIR.getSkill());
+					player.broadcastPacket(new MagicSkillUse(player, player, 4339, 1, 1, 1));
+					takeItems(player, MAGISTER_MIXING_STONE, -1);
+					takeItems(player, MIMIR_ELIXIR, -1);
 					takeItems(player, STAR_OF_DESTINY, -1);
-					rewardItems(player, ENCHANT_WEAPON_A, 1);
-					qs.exitQuest(false, true);
-					player.sendPacket(new SocialAction(player.getObjectId(), 3));
-					htmltext = event;
+					giveItems(player, SCROLL_ENCHANT_WEAPON_A, 1);
+					player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+					st.exitQuest(false, true);
 				}
 				break;
 			}
-			case "30718-02.html":
+			case "30718-03.htm":
 			{
-				if (qs.isMemoState(2))
+				st.setCond(3, true);
+				break;
+			}
+			case "31149-02.htm":
+			{
+				if (!hasQuestItems(player, MAGISTER_MIXING_STONE))
 				{
-					htmltext = event;
+					htmltext = "31149-havent.htm";
 				}
 				break;
 			}
-			case "30718-03.html":
+			case "31149-03.htm":
 			{
-				if (qs.isMemoState(2))
+				if (!hasQuestItems(player, MAGISTER_MIXING_STONE, PURE_SILVER))
 				{
-					qs.setMemoState(3);
-					qs.setCond(3, true);
-					htmltext = event;
+					htmltext = "31149-havent.htm";
 				}
 				break;
 			}
-			case "30718-06.html":
+			case "31149-05.htm":
 			{
-				if (qs.isMemoState(4) && hasQuestItems(player, SAGES_STONE))
+				if (!hasQuestItems(player, MAGISTER_MIXING_STONE, PURE_SILVER, TRUE_GOLD))
 				{
-					giveItems(player, TRUE_GOLD, 1);
-					takeItems(player, SAGES_STONE, -1);
-					qs.setMemoState(5);
-					qs.setCond(5, true);
-					htmltext = event;
+					htmltext = "31149-havent.htm";
 				}
 				break;
 			}
-			case "31149-02.html":
-			case "31149-05.html":
-			case "31149-07.html":
-			case "31149-09.html":
-			case "31149-10.html":
+			case "31149-07.htm":
 			{
-				if (qs.isMemoState(7))
+				if (!hasQuestItems(player, MAGISTER_MIXING_STONE, PURE_SILVER, TRUE_GOLD, BLOOD_FIRE))
 				{
-					htmltext = event;
+					htmltext = "31149-havent.htm";
 				}
 				break;
 			}
-			case "PURE_SILVER":
+			case "31149-success.htm":
 			{
-				if (qs.isMemoState(7))
+				if (hasQuestItems(player, MAGISTER_MIXING_STONE, PURE_SILVER, TRUE_GOLD, BLOOD_FIRE))
 				{
-					htmltext = ((hasQuestItems(player, PURE_SILVER)) ? "31149-04.html" : "31149-03.html");
+					st.setCond(8, true);
+					takeItems(player, PURE_SILVER, -1);
+					takeItems(player, TRUE_GOLD, -1);
+					takeItems(player, BLOOD_FIRE, -1);
+					giveItems(player, MIMIR_ELIXIR, 1);
 				}
-				break;
-			}
-			case "TRUE_GOLD":
-			{
-				if (qs.isMemoState(7))
+				else
 				{
-					htmltext = ((hasQuestItems(player, TRUE_GOLD)) ? "31149-06.html" : "31149-03.html");
-				}
-				break;
-			}
-			case "BLOOD_FIRE":
-			{
-				if (qs.isMemoState(7))
-				{
-					htmltext = ((hasQuestItems(player, BLOOD_FIRE)) ? "31149-08.html" : "31149-03.html");
-				}
-				break;
-			}
-			case "31149-11.html":
-			{
-				if (qs.isMemoState(7) && hasQuestItems(player, BLOOD_FIRE, PURE_SILVER, TRUE_GOLD))
-				{
-					giveItems(player, MIMIRS_ELIXIR, 1);
-					takeItems(player, -1, BLOOD_FIRE, PURE_SILVER, TRUE_GOLD);
-					qs.setMemoState(8);
-					qs.setCond(8, true);
-					htmltext = event;
+					htmltext = "31149-havent.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		if (getRandom(5) == 0)
-		{
-			final Player luckyPlayer = getRandomPartyMember(player, npc);
-			if (luckyPlayer != null)
-			{
-				final ItemChanceHolder item = MOBS.get(npc.getId());
-				if (giveItemRandomly(luckyPlayer, npc, item.getId(), item.getCount(), item.getCount(), 1, true))
-				{
-					final QuestState qs = luckyPlayer.getQuestState(getName());
-					qs.setMemoState((int) item.getChance());
-					qs.setCond((int) item.getChance());
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == LADD)
+			case State.CREATED:
 			{
-				if (player.getLevel() < MIN_LEVEL)
+				if (player.getLevel() < 75)
 				{
-					htmltext = "30721-08.html";
+					htmltext = "30721-01b.htm";
+				}
+				else if (!hasQuestItems(player, STAR_OF_DESTINY))
+				{
+					htmltext = "30721-01a.htm";
 				}
 				else
 				{
-					htmltext = ((hasQuestItems(player, STAR_OF_DESTINY)) ? "30721-01.htm" : "30721-07.html");
+					htmltext = "30721-01.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case LADD:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					switch (qs.getMemoState())
+					case LADD:
 					{
-						case 1:
+						if (cond == 1)
 						{
-							htmltext = ((hasQuestItems(player, PURE_SILVER)) ? "30721-11.html" : "30721-10.html");
-							break;
+							if (hasQuestItems(player, PURE_SILVER))
+							{
+								htmltext = "30721-08.htm";
+								st.setCond(2, true);
+							}
+							else
+							{
+								htmltext = "30721-07.htm";
+							}
 						}
-						case 2:
-						case 3:
-						case 4:
+						else if (cond < 5)
 						{
-							htmltext = "30721-13.html";
-							break;
+							htmltext = "30721-10.htm";
 						}
-						case 5:
+						else if ((cond == 5) && hasQuestItems(player, TRUE_GOLD))
 						{
-							htmltext = "30721-14.html";
-							break;
+							htmltext = "30721-11.htm";
 						}
-						case 6:
-						case 7:
+						else if ((cond == 6) || (cond == 7))
 						{
-							htmltext = "30721-16.html";
-							break;
+							htmltext = "30721-13.htm";
 						}
-						case 8:
+						else if ((cond == 8) && hasQuestItems(player, MIMIR_ELIXIR))
 						{
-							htmltext = "30721-17.html";
-							break;
+							htmltext = "30721-14.htm";
 						}
+						break;
 					}
-					break;
-				}
-				case JOAN:
-				{
-					switch (qs.getMemoState())
+					case JOAN:
 					{
-						case 2:
+						if (cond == 2)
 						{
-							htmltext = "30718-01.html";
-							break;
+							htmltext = "30718-01.htm";
 						}
-						case 3:
+						else if (cond == 3)
 						{
-							htmltext = "30718-04.html";
-							break;
+							htmltext = "30718-04.htm";
 						}
-						case 4:
+						else if ((cond == 4) && hasQuestItems(player, SAGE_STONE))
 						{
-							htmltext = "30718-05.html";
-							break;
+							htmltext = "30718-05.htm";
+							st.setCond(5, true);
+							takeItems(player, SAGE_STONE, -1);
+							giveItems(player, TRUE_GOLD, 1);
 						}
+						else if (cond > 4)
+						{
+							htmltext = "30718-06.htm";
+						}
+						break;
 					}
-					break;
-				}
-				case ALCHEMISTS_MIXING_URN:
-				{
-					if (qs.isMemoState(7) && hasQuestItems(player, MAGISTERS_MIXING_STONE))
+					// The urn gives the same first htm. Bypasses' events will do all the job.
+					case MIXING_URN:
 					{
-						htmltext = "31149-01.html";
+						htmltext = "31149-01.htm";
+						break;
 					}
-					break;
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == LADD)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20965:
+			{
+				if (st.isCond(3) && (getRandom(10) < 2))
+				{
+					giveItems(player, SAGE_STONE, 1);
+					st.setCond(4, true);
+				}
+				break;
+			}
+			case 21090:
+			{
+				if (st.isCond(6) && (getRandom(10) < 2))
+				{
+					giveItems(player, BLOOD_FIRE, 1);
+					st.setCond(7, true);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

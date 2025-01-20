@@ -1,22 +1,18 @@
 /*
- * Copyright (c) 2013 L2jMobius
+ * This file is part of the L2J Mobius project.
  * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  * 
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
  * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
- * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package quests.Q00336_CoinsOfMagic;
 
@@ -52,12 +48,12 @@ public class Q00336_CoinsOfMagic extends Quest
 	private static final int SILVER_DRYAD = 3492;
 	private static final int SILVER_GOLEM = 3494;
 	private static final int SILVER_UNDINE = 3495;
-	private static final int[] BASIC_COINS =
-	{
-		BLOOD_MEDUSA,
-		GOLD_WYVERN,
-		SILVER_UNICORN
-	};
+	// private static final int[] BASIC_COINS =
+	// {
+	// BLOOD_MEDUSA,
+	// GOLD_WYVERN,
+	// SILVER_UNICORN
+	// };
 	private static final int SORINT = 30232;
 	private static final int BERNARD = 30702;
 	private static final int PAGE = 30696;
@@ -192,7 +188,7 @@ public class Q00336_CoinsOfMagic extends Quest
 		}
 		else if ("30232-04.htm".equals(event) || "30232-18a.htm".equals(event))
 		{
-			st.exitQuest(true, true);
+			st.exitQuest(true, false);
 			playSound(player, QuestSound.ITEMSOUND_QUEST_GIVEUP);
 		}
 		else if ("raise".equals(event))
@@ -275,7 +271,7 @@ public class Q00336_CoinsOfMagic extends Quest
 					if (st.getPlayer().getLevel() < 40)
 					{
 						htmltext = "30232-01.htm";
-						st.exitQuest(true, true);
+						st.exitQuest(true, false);
 					}
 					else
 					{
@@ -344,62 +340,50 @@ public class Q00336_CoinsOfMagic extends Quest
 	public String onKill(Npc npc, Player player, boolean isPet)
 	{
 		final QuestState st = getQuestState(player, false);
-		if ((st != null) && st.isStarted())
+		if ((st == null) || !st.isStarted())
 		{
-			final int cond = st.getCond();
-			final int npcId = npc.getId();
-			if ((npcId == HARIT_LIZARDMAN_MATRIARCH) || (npcId == HARIT_LIZARDMAN_SHAMAN))
+			return null;
+		}
+		
+		final int cond = st.getCond();
+		final int npcId = npc.getId();
+		if ((npcId == HARIT_LIZARDMAN_MATRIARCH) || (npcId == HARIT_LIZARDMAN_SHAMAN))
+		{
+			if ((cond == 2) && (getRandom(1000) < 63))
 			{
-				if ((cond == 2) && (getRandom(1000) < 63))
+				giveItems(player, KALDIS_COIN, 1);
+				st.setCond(3);
+			}
+			return null;
+		}
+		
+		final int grade = st.getInt("grade");
+		final int chance = (npc.getLevel() + (grade * 3)) - 20;
+		for (int[] e : DROPLIST)
+		{
+			if (e[0] == npcId)
+			{
+				if (getRandom(100) < chance)
 				{
-					giveItems(player, KALDIS_COIN, 1);
-					st.setCond(3);
+					giveItems(player, e[1], 1);
 				}
-			}
-			
-			final int grade = st.getInt("grade");
-			
-			int chance = ((npc.getLevel() + (1 * 3)) - 20) * 2;
-			switch (grade)
-			{
-				case 1:
-					chance = ((npc.getLevel() + (3 * 3)) - 20) * 2;
-					break;
-				case 2:
-					chance = ((npc.getLevel() + (2 * 3)) - 20) * 2;
-					break;
-				case 3:
-					chance = ((npc.getLevel() + (1 * 3)) - 20) * 2;
-					break;
-			}
-			int amount = 1;
-			if (chance > 100)
-			{
-				amount = chance / 100;
-			}
-			
-			for (int[] e : DROPLIST)
-			{
-				if (e[0] == npcId)
-				{
-					if (getRandom(100) < chance)
-					{
-						giveItems(player, e[1], amount);
-					}
-				}
-			}
-			
-			for (int u : MONSTERS)
-			{
-				if (u == npcId)
-				{
-					if (getRandom(100) < (chance))
-					{
-						giveItems(player, BASIC_COINS[getRandom(BASIC_COINS.length)], 1);
-					}
-				}
+				return null;
 			}
 		}
-		return super.onKill(npc, player, isPet);
+		
+		// TODO: getBaseHpConsumeRate was 0.
+		// for (int u : MONSTERS)
+		// {
+		// if (u == npcId)
+		// {
+		// if (getRandom(100) < (chance * npc.getTemplate().getBaseHpConsumeRate()))
+		// {
+		// giveItems(player, BASIC_COINS[getRandom(BASIC_COINS.length)], 1);
+		// }
+		// return null;
+		// }
+		// }
+		
+		return null;
 	}
 }

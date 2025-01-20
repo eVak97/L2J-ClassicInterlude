@@ -16,94 +16,110 @@
  */
 package quests.Q00295_DreamingOfTheSkies;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.util.Util;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Dreaming of the Skies (295)
- * @author xban1x
- */
 public class Q00295_DreamingOfTheSkies extends Quest
 {
-	// NPC
-	private static final int ARIN = 30536;
-	// Monster
-	private static final int MAGICAL_WEAVER = 20153;
 	// Item
 	private static final int FLOATING_STONE = 1492;
 	// Reward
 	private static final int RING_OF_FIREFLY = 1509;
-	// Misc
-	private static final int MIN_LEVEL = 11;
 	
 	public Q00295_DreamingOfTheSkies()
 	{
 		super(295);
-		addStartNpc(ARIN);
-		addTalkId(ARIN);
-		addKillId(MAGICAL_WEAVER);
 		registerQuestItems(FLOATING_STONE);
-		addCondMaxLevel(15, getNoQuestMsg(null));
+		addStartNpc(30536); // Arin
+		addTalkId(30536);
+		addKillId(20153); // Magical Weaver
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCreated() && event.equals("30536-03.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
+		
+		if (event.equals("30536-03.htm"))
+		{
+			st.startQuest();
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true) && giveItemRandomly(killer, npc, FLOATING_STONE, (getRandom(100) > 25) ? 1 : 2, 50, 1, true))
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			qs.setCond(2);
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String html = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
-			html = (talker.getLevel() >= MIN_LEVEL) ? "30536-02.htm" : "30536-01.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isCond(2))
+			case State.CREATED:
 			{
-				if (hasQuestItems(talker, RING_OF_FIREFLY))
+				htmltext = (player.getLevel() < 11) ? "30536-01.htm" : "30536-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if (st.isCond(1))
 				{
-					giveAdena(talker, 200, true);
-					html = "30536-06.html";
+					htmltext = "30536-04.htm";
 				}
 				else
 				{
-					giveItems(talker, RING_OF_FIREFLY, 1);
-					html = "30536-05.html";
+					takeItems(player, FLOATING_STONE, -1);
+					
+					if (!hasQuestItems(player, RING_OF_FIREFLY))
+					{
+						htmltext = "30536-05.htm";
+						giveItems(player, RING_OF_FIREFLY, 1);
+					}
+					else
+					{
+						htmltext = "30536-06.htm";
+						giveAdena(player, 2400, true);
+					}
+					
+					addExpAndSp(player, 0, 500);
+					st.exitQuest(true, true);
 				}
-				takeItems(talker, FLOATING_STONE, -1);
-				qs.exitQuest(true, true);
-			}
-			else
-			{
-				html = "30536-04.html";
+				break;
 			}
 		}
-		return html;
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		giveItems(player, FLOATING_STONE, getRandom(100) > 25 ? 1 : 2);
+		if (getQuestItemsCount(player, FLOATING_STONE) < 50)
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		else
+		{
+			st.setCond(2, true);
+		}
+		
+		return null;
 	}
 }

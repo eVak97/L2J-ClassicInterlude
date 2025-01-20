@@ -24,27 +24,22 @@ import org.l2jmobius.gameserver.model.quest.State;
 
 import quests.Q00051_OFullesSpecialBait.Q00051_OFullesSpecialBait;
 
-/**
- * Chest Caught With A Bait Of Icy Air (28)<br>
- * Original Jython script by Skeleton.
- * @author nonom
- */
 public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 {
 	// NPCs
 	private static final int OFULLE = 31572;
 	private static final int KIKI = 31442;
 	// Items
-	private static final int YELLOW_TREASURE_BOX = 6503;
-	private static final int KIKIS_LETTER = 7626;
+	private static final int BIG_YELLOW_TREASURE_CHEST = 6503;
+	private static final int KIKI_LETTER = 7626;
 	private static final int ELVEN_RING = 881;
 	
 	public Q00028_ChestCaughtWithABaitOfIcyAir()
 	{
 		super(28);
+		registerQuestItems(KIKI_LETTER);
 		addStartNpc(OFULLE);
 		addTalkId(OFULLE, KIKI);
-		registerQuestItems(KIKIS_LETTER);
 	}
 	
 	@Override
@@ -64,86 +59,88 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 				st.startQuest();
 				break;
 			}
-			case "31572-08.htm":
+			case "31572-07.htm":
 			{
-				if (st.isCond(1) && hasQuestItems(player, YELLOW_TREASURE_BOX))
+				if (hasQuestItems(player, BIG_YELLOW_TREASURE_CHEST))
 				{
-					giveItems(player, KIKIS_LETTER, 1);
-					takeItems(player, YELLOW_TREASURE_BOX, -1);
-					st.setCond(2, true);
-					htmltext = "31572-07.htm";
+					st.setCond(2);
+					takeItems(player, BIG_YELLOW_TREASURE_CHEST, 1);
+					giveItems(player, KIKI_LETTER, 1);
+				}
+				else
+				{
+					htmltext = "31572-08.htm";
 				}
 				break;
 			}
-			case "31442-03.htm":
+			case "31442-02.htm":
 			{
-				if (st.isCond(2) && hasQuestItems(player, KIKIS_LETTER))
+				if (hasQuestItems(player, KIKI_LETTER))
 				{
+					htmltext = "31442-02.htm";
+					takeItems(player, KIKI_LETTER, 1);
 					giveItems(player, ELVEN_RING, 1);
 					st.exitQuest(false, true);
-					htmltext = "31442-02.htm";
+				}
+				else
+				{
+					htmltext = "31442-03.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
 		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
 			case State.CREATED:
 			{
-				final QuestState qs = player.getQuestState(Q00051_OFullesSpecialBait.class.getSimpleName());
-				if (npcId == OFULLE)
+				if (player.getLevel() < 36)
 				{
 					htmltext = "31572-02.htm";
-					if (qs != null)
+				}
+				else
+				{
+					final QuestState st2 = player.getQuestState(Q00051_OFullesSpecialBait.class.getSimpleName());
+					if ((st2 != null) && st2.isCompleted())
 					{
-						htmltext = ((player.getLevel() >= 36) && qs.isCompleted()) ? "31572-01.htm" : htmltext;
+						htmltext = "31572-01.htm";
+					}
+					else
+					{
+						htmltext = "31572-03.htm";
 					}
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (npcId)
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
 					case OFULLE:
 					{
-						switch (st.getCond())
+						if (cond == 1)
 						{
-							case 1:
-							{
-								htmltext = "31572-06.htm";
-								if (hasQuestItems(player, YELLOW_TREASURE_BOX))
-								{
-									htmltext = "31572-05.htm";
-								}
-								break;
-							}
-							case 2:
-							{
-								htmltext = "31572-09.htm";
-								break;
-							}
+							htmltext = (!hasQuestItems(player, BIG_YELLOW_TREASURE_CHEST)) ? "31572-06.htm" : "31572-05.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "31572-09.htm";
 						}
 						break;
 					}
 					case KIKI:
 					{
-						if (st.isCond(2))
+						if (cond == 2)
 						{
 							htmltext = "31442-01.htm";
 						}
@@ -152,7 +149,13 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 }

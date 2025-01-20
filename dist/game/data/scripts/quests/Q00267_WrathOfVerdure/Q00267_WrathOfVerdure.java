@@ -16,6 +16,7 @@
  */
 package quests.Q00267_WrathOfVerdure;
 
+import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -24,101 +25,107 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Wrath of Verdure (267)
- * @author xban1x
- */
 public class Q00267_WrathOfVerdure extends Quest
 {
-	// NPC
-	private static final int TREANT_BREMEC = 31853;
-	// Item
+	// Items
 	private static final int GOBLIN_CLUB = 1335;
-	// Monster
-	private static final int GOBLIN_RAIDER = 20325;
-	// Misc
-	private static final int MIN_LEVEL = 4;
+	// Reward
+	private static final int SILVERY_LEAF = 1340;
 	
 	public Q00267_WrathOfVerdure()
 	{
 		super(267);
-		addStartNpc(TREANT_BREMEC);
-		addTalkId(TREANT_BREMEC);
-		addKillId(GOBLIN_RAIDER);
 		registerQuestItems(GOBLIN_CLUB);
-		addCondMaxLevel(9, getNoQuestMsg(null));
+		addStartNpc(31853); // Bremec
+		addTalkId(31853);
+		addKillId(20325); // Goblin
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
-			{
-				case "31853-04.htm":
-				{
-					qs.startQuest();
-					htmltext = event;
-					break;
-				}
-				case "31853-07.html":
-				{
-					qs.exitQuest(true, true);
-					htmltext = event;
-					break;
-				}
-				case "31853-08.html":
-				{
-					htmltext = event;
-					break;
-				}
-			}
+			return htmltext;
 		}
+		
+		if (event.equals("31853-03.htm"))
+		{
+			st.startQuest();
+		}
+		else if (event.equals("31853-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && (getRandom(10) < 5))
-		{
-			giveItems(killer, GOBLIN_CLUB, 1);
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LEVEL) ? "31853-03.htm" : "31853-02.htm" : "31853-01.htm";
+				if (player.getRace() != Race.ELF)
+				{
+					htmltext = "31853-00.htm";
+				}
+				else if (player.getLevel() < 4)
+				{
+					htmltext = "31853-01.htm";
+				}
+				else
+				{
+					htmltext = "31853-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasQuestItems(player, GOBLIN_CLUB))
+				final int count = (int) getQuestItemsCount(player, GOBLIN_CLUB);
+				if (count > 0)
 				{
-					giveAdena(player, 2 + getQuestItemsCount(player, GOBLIN_CLUB), true);
+					htmltext = "31853-05.htm";
 					takeItems(player, GOBLIN_CLUB, -1);
-					htmltext = "31853-06.html";
+					rewardItems(player, SILVERY_LEAF, count);
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
+					{
+						giveAdena(player, 600, true);
+					}
 				}
 				else
 				{
-					htmltext = "31853-05.html";
+					htmltext = "31853-04.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
+		{
+			giveItems(player, GOBLIN_CLUB, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

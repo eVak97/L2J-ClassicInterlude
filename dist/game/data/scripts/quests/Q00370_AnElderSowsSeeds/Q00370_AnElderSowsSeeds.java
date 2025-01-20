@@ -23,11 +23,8 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * An Elder Sows Seeds (370)
- * @author Adry_85
- */
 public class Q00370_AnElderSowsSeeds extends Quest
 {
 	// NPC
@@ -38,9 +35,7 @@ public class Q00370_AnElderSowsSeeds extends Quest
 	private static final int CHAPTER_OF_WATER = 5918;
 	private static final int CHAPTER_OF_WIND = 5919;
 	private static final int CHAPTER_OF_EARTH = 5920;
-	// Misc
-	private static final int MIN_LEVEL = 28;
-	// Mobs
+	// Drop chances
 	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
 	private static final Map<Integer, Double> MOBS2 = new HashMap<>();
 	static
@@ -55,143 +50,99 @@ public class Q00370_AnElderSowsSeeds extends Quest
 	public Q00370_AnElderSowsSeeds()
 	{
 		super(370);
+		registerQuestItems(SPELLBOOK_PAGE, CHAPTER_OF_FIRE, CHAPTER_OF_WATER, CHAPTER_OF_WIND, CHAPTER_OF_EARTH);
 		addStartNpc(CASIAN);
 		addTalkId(CASIAN);
-		addKillId(MOBS1.keySet());
-		addKillId(MOBS2.keySet());
-		addCondMaxLevel(42, getNoQuestMsg(null));
-	}
-	
-	@Override
-	public boolean checkPartyMember(Player member, Npc npc)
-	{
-		final QuestState qs = getQuestState(member, false);
-		return ((qs != null) && qs.isStarted());
+		addKillId(20082, 20084, 20086, 20089, 20090);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "30612-02.htm":
-			case "30612-03.htm":
-			case "30612-06.html":
-			case "30612-07.html":
-			case "30612-09.html":
+			case "30612-3.htm":
 			{
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30612-04.htm":
+			case "30612-6.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "REWARD":
-			{
-				if (qs.isStarted())
+				if (hasQuestItems(player, CHAPTER_OF_FIRE, CHAPTER_OF_WATER, CHAPTER_OF_WIND, CHAPTER_OF_EARTH))
 				{
-					if (exchangeChapters(player, false))
-					{
-						htmltext = "30612-08.html";
-					}
-					else
-					{
-						htmltext = "30612-11.html";
-					}
+					htmltext = "30612-8.htm";
+					takeItems(player, CHAPTER_OF_FIRE, 1);
+					takeItems(player, CHAPTER_OF_WATER, 1);
+					takeItems(player, CHAPTER_OF_WIND, 1);
+					takeItems(player, CHAPTER_OF_EARTH, 1);
+					giveAdena(player, 3600, true);
 				}
 				break;
 			}
-			case "30612-10.html":
+			case "30612-9.htm":
 			{
-				if (qs.isStarted())
-				{
-					exchangeChapters(player, true);
-					qs.exitQuest(true, true);
-					htmltext = event;
-				}
+				st.exitQuest(true, true);
 				break;
 			}
 		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 28) ? "30612-0a.htm" : "30612-0.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				htmltext = "30612-4.htm";
+				break;
+			}
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onKill(Npc npc, Player player, boolean isSummon)
 	{
-		final int npcId = npc.getId();
-		if (MOBS1.containsKey(npcId))
+		final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
+		if (qs != null)
 		{
-			if (getRandom(100) < MOBS1.get(npcId))
+			final int npcId = npc.getId();
+			if (MOBS1.containsKey(npcId))
 			{
-				final Player luckyPlayer = getRandomPartyMember(player, npc);
-				if (luckyPlayer != null)
+				if (getRandom(100) < MOBS1.get(npcId))
 				{
-					giveItemRandomly(luckyPlayer, npc, SPELLBOOK_PAGE, 1, 0, 1, true);
+					final Player luckyPlayer = getRandomPartyMember(player, npc);
+					if (luckyPlayer != null)
+					{
+						giveItemRandomly(luckyPlayer, npc, SPELLBOOK_PAGE, 1, 0, 1, true);
+					}
 				}
 			}
-		}
-		else
-		{
-			final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
-			if (qs != null)
+			else
 			{
 				giveItemRandomly(qs.getPlayer(), npc, SPELLBOOK_PAGE, 1, 0, MOBS2.get(npcId), true);
 			}
 		}
+		
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30612-01.htm" : "30612-05.html";
-		}
-		else if (qs.isStarted())
-		{
-			htmltext = "30612-06.html";
-		}
-		return htmltext;
-	}
-	
-	private final boolean exchangeChapters(Player player, boolean takeAllItems)
-	{
-		final long waterChapters = getQuestItemsCount(player, CHAPTER_OF_WATER);
-		final long earthChapters = getQuestItemsCount(player, CHAPTER_OF_EARTH);
-		final long windChapters = getQuestItemsCount(player, CHAPTER_OF_WIND);
-		final long fireChapters = getQuestItemsCount(player, CHAPTER_OF_FIRE);
-		long minCount = waterChapters;
-		if (earthChapters < minCount)
-		{
-			minCount = earthChapters;
-		}
-		if (windChapters < minCount)
-		{
-			minCount = windChapters;
-		}
-		if (fireChapters < minCount)
-		{
-			minCount = fireChapters;
-		}
-		if (minCount > 0)
-		{
-			giveAdena(player, minCount * 3600, true);
-		}
-		final long countToTake = (takeAllItems ? -1 : minCount);
-		takeItems(player, (int) countToTake, CHAPTER_OF_WATER, CHAPTER_OF_EARTH, CHAPTER_OF_WIND, CHAPTER_OF_FIRE);
-		return (minCount > 0);
 	}
 }

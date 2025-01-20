@@ -16,118 +16,138 @@
  */
 package quests.Q00294_CovertBusiness;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.util.Util;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Covert Business (294)
- * @author xban1x
- */
 public class Q00294_CovertBusiness extends Quest
 {
-	// NPC
-	private static final int KEEF = 30534;
 	// Item
 	private static final int BAT_FANG = 1491;
-	// Monsters
-	private static final Map<Integer, List<Integer>> MONSTER_DROP_CHANCE = new HashMap<>();
-	static
-	{
-		MONSTER_DROP_CHANCE.put(20370, Arrays.asList(6, 3, 1, -1));
-		MONSTER_DROP_CHANCE.put(20480, Arrays.asList(5, 2, -1));
-	}
 	// Reward
 	private static final int RING_OF_RACCOON = 1508;
-	// Misc
-	private static final int MIN_LEVEL = 10;
 	
 	public Q00294_CovertBusiness()
 	{
 		super(294);
-		addStartNpc(KEEF);
-		addTalkId(KEEF);
-		addKillId(MONSTER_DROP_CHANCE.keySet());
 		registerQuestItems(BAT_FANG);
-		addCondMaxLevel(16, getNoQuestMsg(null));
+		addStartNpc(30534); // Keef
+		addTalkId(30534);
+		addKillId(20370, 20480); // Barded Bat, Blade Bat
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCreated() && event.equals("30534-03.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
+		
+		if (event.equals("30534-03.htm"))
+		{
+			st.startQuest();
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			final int chance = getRandom(10);
-			int count = 0;
-			for (int i : MONSTER_DROP_CHANCE.get(npc.getId()))
+			case State.CREATED:
 			{
-				count++;
-				if (chance > i)
+				if (player.getRace() != Race.DWARF)
 				{
-					if (giveItemRandomly(killer, npc, BAT_FANG, count, 100, 1, true))
-					{
-						qs.setCond(2);
-					}
-					break;
+					htmltext = "30534-00.htm";
 				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String html = getNoQuestMsg(talker);
-		if (qs.isCreated())
-		{
-			html = (talker.getRace() == Race.DWARF) ? (talker.getLevel() >= MIN_LEVEL) ? "30534-02.htm" : "30534-01.htm" : "30534-00.htm";
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isCond(2))
-			{
-				if (hasQuestItems(talker, RING_OF_RACCOON))
+				else if (player.getLevel() < 10)
 				{
-					giveAdena(talker, 200, true);
-					html = "30534-06.html";
+					htmltext = "30534-01.htm";
 				}
 				else
 				{
-					giveItems(talker, RING_OF_RACCOON, 1);
-					html = "30534-05.html";
+					htmltext = "30534-02.htm";
 				}
-				takeItems(talker, BAT_FANG, -1);
-				qs.exitQuest(true, true);
+				break;
 			}
-			else
+			case State.STARTED:
 			{
-				html = "30534-04.html";
+				if (st.isCond(1))
+				{
+					htmltext = "30534-04.htm";
+				}
+				else
+				{
+					takeItems(player, BAT_FANG, -1);
+					
+					if (!hasQuestItems(player, RING_OF_RACCOON))
+					{
+						htmltext = "30534-05.htm";
+						giveItems(player, RING_OF_RACCOON, 1);
+					}
+					else
+					{
+						htmltext = "30534-06.htm";
+						giveAdena(player, 2400, true);
+					}
+					addExpAndSp(player, 0, 600);
+					st.exitQuest(true, true);
+				}
+				break;
 			}
 		}
-		return html;
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		int count = 1;
+		final int chance = getRandom(10);
+		final boolean isBarded = (npc.getId() == 20370);
+		
+		if (chance < 3)
+		{
+			count++;
+		}
+		else if (chance < ((isBarded) ? 5 : 6))
+		{
+			count += 2;
+		}
+		else if (isBarded && (chance < 7))
+		{
+			count += 3;
+		}
+		
+		giveItems(player, BAT_FANG, count);
+		if (getQuestItemsCount(player, BAT_FANG) < 100)
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		else
+		{
+			st.setCond(2, true);
+		}
+		
+		return null;
 	}
 }

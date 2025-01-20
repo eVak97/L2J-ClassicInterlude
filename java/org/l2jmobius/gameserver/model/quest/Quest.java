@@ -94,7 +94,7 @@ public class Quest extends AbstractScript implements IIdentifiable
 	private boolean _isCustom = false;
 	private NpcStringId _questNameNpcStringId;
 	
-	private int[] _questItemIds = null;
+	public int[] _questItemIds = null;
 	
 	private static final String DEFAULT_NO_QUEST_MSG = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
 	
@@ -106,6 +106,65 @@ public class Quest extends AbstractScript implements IIdentifiable
 	
 	private static final int STEEL_DOOR_COIN = 37045; // Steel Door Guild Coin
 	private static final SkillHolder STORY_QUEST_REWARD = new SkillHolder(27580, 1);
+	
+	// Dimensional Diamond Rewards by Class for 2nd class transfer quest (35)
+	protected static final Map<Integer, Integer> DF_REWARD_35 = new HashMap<>();
+	static
+	{
+		DF_REWARD_35.put(1, 61);
+		DF_REWARD_35.put(4, 45);
+		DF_REWARD_35.put(7, 128);
+		DF_REWARD_35.put(11, 168);
+		DF_REWARD_35.put(15, 49);
+		DF_REWARD_35.put(19, 61);
+		DF_REWARD_35.put(22, 128);
+		DF_REWARD_35.put(26, 168);
+		DF_REWARD_35.put(29, 49);
+		DF_REWARD_35.put(32, 61);
+		DF_REWARD_35.put(35, 128);
+		DF_REWARD_35.put(39, 168);
+		DF_REWARD_35.put(42, 49);
+		DF_REWARD_35.put(45, 61);
+		DF_REWARD_35.put(47, 61);
+		DF_REWARD_35.put(50, 49);
+		DF_REWARD_35.put(54, 85);
+		DF_REWARD_35.put(56, 85);
+	}
+	
+	// Dimensional Diamond Rewards by Race for 2nd class transfer quest (37)
+	protected static final Map<Integer, Integer> DF_REWARD_37 = new HashMap<>();
+	static
+	{
+		DF_REWARD_37.put(0, 96);
+		DF_REWARD_37.put(1, 102);
+		DF_REWARD_37.put(2, 98);
+		DF_REWARD_37.put(3, 109);
+		DF_REWARD_37.put(4, 50);
+	}
+	
+	// Dimensional Diamond Rewards by Class for 2nd class transfer quest (39)
+	protected static final Map<Integer, Integer> DF_REWARD_39 = new HashMap<>();
+	static
+	{
+		DF_REWARD_39.put(1, 72);
+		DF_REWARD_39.put(4, 104);
+		DF_REWARD_39.put(7, 96);
+		DF_REWARD_39.put(11, 122);
+		DF_REWARD_39.put(15, 60);
+		DF_REWARD_39.put(19, 72);
+		DF_REWARD_39.put(22, 96);
+		DF_REWARD_39.put(26, 122);
+		DF_REWARD_39.put(29, 45);
+		DF_REWARD_39.put(32, 104);
+		DF_REWARD_39.put(35, 96);
+		DF_REWARD_39.put(39, 122);
+		DF_REWARD_39.put(42, 60);
+		DF_REWARD_39.put(45, 64);
+		DF_REWARD_39.put(47, 72);
+		DF_REWARD_39.put(50, 92);
+		DF_REWARD_39.put(54, 82);
+		DF_REWARD_39.put(56, 23);
+	}
 	
 	/**
 	 * @return the reset hour for a daily quest, could be overridden on a script.

@@ -24,60 +24,72 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Linnaeus Special Bait (53)<br>
- * Original Jython script by Next and DooMita.
- * @author nonom
- */
 public class Q00053_LinnaeusSpecialBait extends Quest
 {
-	// NPCs
-	private static final int LINNAEUS = 31577;
-	private static final int CRIMSON_DRAKE = 20670;
-	// Items
+	// Item
 	private static final int CRIMSON_DRAKE_HEART = 7624;
+	// Reward
 	private static final int FLAMING_FISHING_LURE = 7613;
 	
 	public Q00053_LinnaeusSpecialBait()
 	{
 		super(53);
-		addStartNpc(LINNAEUS);
-		addTalkId(LINNAEUS);
-		addKillId(CRIMSON_DRAKE);
 		registerQuestItems(CRIMSON_DRAKE_HEART);
+		addStartNpc(31577); // Linnaeus
+		addTalkId(31577);
+		addKillId(20670); // Crimson Drake
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		String htmltext = event;
-		switch (event)
+		if (event.equals("31577-03.htm"))
 		{
-			case "31577-1.htm":
+			st.startQuest();
+		}
+		else if (event.equals("31577-07.htm"))
+		{
+			htmltext = "31577-06.htm";
+			takeItems(player, CRIMSON_DRAKE_HEART, -1);
+			rewardItems(player, FLAMING_FISHING_LURE, 4);
+			st.exitQuest(false, true);
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				qs.startQuest();
+				htmltext = (player.getLevel() < 60) ? "31577-02.htm" : "31577-01.htm";
 				break;
 			}
-			case "31577-3.htm":
+			case State.STARTED:
 			{
-				if (qs.isCond(2) && (getQuestItemsCount(player, CRIMSON_DRAKE_HEART) >= 100))
-				{
-					giveItems(player, FLAMING_FISHING_LURE, 4);
-					qs.exitQuest(false, true);
-				}
-				else
-				{
-					htmltext = "31577-5.html";
-				}
+				htmltext = (getQuestItemsCount(player, CRIMSON_DRAKE_HEART) == 100) ? "31577-04.htm" : "31577-05.htm";
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -91,47 +103,21 @@ public class Q00053_LinnaeusSpecialBait extends Quest
 		}
 		
 		final QuestState qs = getQuestState(partyMember, false);
-		if (getQuestItemsCount(player, CRIMSON_DRAKE_HEART) < 100)
+		if (getQuestItemsCount(partyMember, CRIMSON_DRAKE_HEART) < 100)
 		{
 			final float chance = 33 * Config.RATE_QUEST_DROP;
 			if (getRandom(100) < chance)
 			{
-				rewardItems(player, CRIMSON_DRAKE_HEART, 1);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(partyMember, CRIMSON_DRAKE_HEART, 1);
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		
-		if (getQuestItemsCount(player, CRIMSON_DRAKE_HEART) >= 100)
+		if (getQuestItemsCount(partyMember, CRIMSON_DRAKE_HEART) >= 100)
 		{
 			qs.setCond(2, true);
 		}
 		
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
-			case State.CREATED:
-			{
-				htmltext = (player.getLevel() > 59) ? "31577-0.htm" : "31577-0a.html";
-				break;
-			}
-			case State.STARTED:
-			{
-				htmltext = (qs.isCond(1)) ? "31577-4.html" : "31577-2.html";
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

@@ -99,7 +99,7 @@ public class Q00635_IntoTheDimensionalRift extends Quest
 		}
 		else if (event.equals("6.htm"))
 		{
-			qs.exitQuest(true, true);
+			qs.exitQuest(true, false);
 		}
 		
 		return htmltext;

@@ -22,19 +22,13 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Walk of Fate (112)
- * @author Zoey76
- */
 public class Q00112_WalkOfFate extends Quest
 {
 	// NPCs
 	private static final int LIVINA = 30572;
 	private static final int KARUDA = 32017;
-	// Item
-	private static final int SCROLL_ENCHANT_ARMOR_D_GRADE = 956;
-	// Misc
-	private static final int MIN_LEVEL = 20;
+	// Rewards
+	private static final int ENCHANT_D = 956;
 	
 	public Q00112_WalkOfFate()
 	{
@@ -46,43 +40,38 @@ public class Q00112_WalkOfFate extends Quest
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs == null) || (player.getLevel() < MIN_LEVEL))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("30572-02.htm"))
 		{
-			case "30572-04.htm":
-			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "32017-02.html":
-			{
-				giveAdena(player, 22308, true);
-				addExpAndSp(player, 112876, 5774);
-				giveItems(player, SCROLL_ENCHANT_ARMOR_D_GRADE, 1);
-				qs.exitQuest(false, true);
-				htmltext = event;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("32017-02.htm"))
+		{
+			giveItems(player, ENCHANT_D, 1);
+			giveAdena(player, 4665, true);
+			st.exitQuest(false, true);
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() < MIN_LEVEL) ? "30572-03.html" : "30572-01.htm";
+				htmltext = (player.getLevel() < 20) ? "30572-00.htm" : "30572-01.htm";
 				break;
 			}
 			case State.STARTED:
@@ -91,12 +80,12 @@ public class Q00112_WalkOfFate extends Quest
 				{
 					case LIVINA:
 					{
-						htmltext = "30572-05.html";
+						htmltext = "30572-03.htm";
 						break;
 					}
 					case KARUDA:
 					{
-						htmltext = "32017-01.html";
+						htmltext = "32017-01.htm";
 						break;
 					}
 				}
@@ -108,6 +97,7 @@ public class Q00112_WalkOfFate extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

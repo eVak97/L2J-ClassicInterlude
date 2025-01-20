@@ -16,141 +16,137 @@
  */
 package quests.Q00264_KeenClaws;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Keen Claws (264)
- * @author xban1x
- */
 public class Q00264_KeenClaws extends Quest
 {
-	// Npc
-	private static final int PAINT = 30136;
 	// Item
 	private static final int WOLF_CLAW = 1367;
-	// Monsters
-	private static final Map<Integer, List<ItemHolder>> MONSTER_CHANCES = new HashMap<>();
 	// Rewards
-	private static final Map<Integer, List<ItemHolder>> REWARDS = new HashMap<>();
-	// Misc
-	private static final int MIN_LEVEL = 3;
-	private static final int WOLF_CLAW_COUNT = 50;
-	static
-	{
-		MONSTER_CHANCES.put(20003, Arrays.asList(new ItemHolder(2, 25), new ItemHolder(8, 50)));
-		MONSTER_CHANCES.put(20456, Arrays.asList(new ItemHolder(1, 80), new ItemHolder(2, 100)));
-		
-		REWARDS.put(0, Arrays.asList(new ItemHolder(735, 1)));
-		REWARDS.put(1, Arrays.asList(new ItemHolder(734, 1)));
-		REWARDS.put(2, Arrays.asList(new ItemHolder(35, 1)));
-	}
+	private static final int LEATHER_SANDALS = 36;
+	private static final int WOODEN_HELMET = 43;
+	private static final int STOCKINGS = 462;
+	private static final int HEALING_POTION = 1061;
+	private static final int SHORT_GLOVES = 48;
+	private static final int CLOTH_SHOES = 35;
 	
 	public Q00264_KeenClaws()
 	{
 		super(264);
-		addStartNpc(PAINT);
-		addTalkId(PAINT);
-		addKillId(MONSTER_CHANCES.keySet());
 		registerQuestItems(WOLF_CLAW);
-		addCondMaxLevel(9, getNoQuestMsg(null));
+		addStartNpc(30136); // Payne
+		addTalkId(30136);
+		addKillId(20003, 20456); // Goblin, Wolf
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30136-03.htm"))
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1))
+		
+		if (event.equals("30136-03.htm"))
 		{
-			final int random = getRandom(100);
-			for (ItemHolder drop : MONSTER_CHANCES.get(npc.getId()))
-			{
-				if (random < drop.getCount())
-				{
-					if (giveItemRandomly(killer, WOLF_CLAW, drop.getId(), WOLF_CLAW_COUNT, 1, true))
-					{
-						qs.setCond(2);
-					}
-					break;
-				}
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30136-02.htm" : "30136-01.htm";
+				htmltext = (player.getLevel() < 3) ? "30136-01.htm" : "30136-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				final int count = (int) getQuestItemsCount(player, WOLF_CLAW);
+				if (count < 50)
 				{
-					case 1:
+					htmltext = "30136-04.htm";
+				}
+				else
+				{
+					htmltext = "30136-05.htm";
+					takeItems(player, WOLF_CLAW, -1);
+					
+					final int n = getRandom(17);
+					if (n == 0)
 					{
-						htmltext = "30136-04.html";
-						break;
+						giveItems(player, WOODEN_HELMET, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
 					}
-					case 2:
+					else if (n < 2)
 					{
-						if (getQuestItemsCount(player, WOLF_CLAW) >= WOLF_CLAW_COUNT)
-						{
-							final int chance = getRandom(17);
-							for (Entry<Integer, List<ItemHolder>> reward : REWARDS.entrySet())
-							{
-								if (chance < reward.getKey())
-								{
-									for (ItemHolder item : reward.getValue())
-									{
-										rewardItems(player, item);
-									}
-									if (chance == 0)
-									{
-										playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
-									}
-									break;
-								}
-							}
-							qs.exitQuest(true, true);
-							htmltext = "30136-05.html";
-						}
-						break;
+						giveAdena(player, 1000, true);
 					}
+					else if (n < 5)
+					{
+						giveItems(player, LEATHER_SANDALS, 1);
+					}
+					else if (n < 8)
+					{
+						giveItems(player, STOCKINGS, 1);
+						giveAdena(player, 50, true);
+					}
+					else if (n < 11)
+					{
+						giveItems(player, HEALING_POTION, 1);
+					}
+					else if (n < 14)
+					{
+						giveItems(player, SHORT_GLOVES, 1);
+					}
+					else
+					{
+						giveItems(player, CLOTH_SHOES, 1);
+					}
+					
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		giveItems(player, WOLF_CLAW, (getRandomBoolean() ? 1 : 2) * ((npc.getId() == 20003) ? 2 : 1));
+		if (getQuestItemsCount(player, WOLF_CLAW) >= 50)
+		{
+			st.setCond(2, true);
+		}
+		else
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

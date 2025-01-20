@@ -16,359 +16,265 @@
  */
 package quests.Q00403_PathOfTheRogue;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
-import org.l2jmobius.gameserver.model.item.instance.Item;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path Of The Rogue (403)
- * @author ivantotov
- */
 public class Q00403_PathOfTheRogue extends Quest
 {
 	// NPCs
-	private static final int CAPTAIN_BEZIQUE = 30379;
+	private static final int BEZIQUE = 30379;
 	private static final int NETI = 30425;
 	// Items
-	private static final int BEZIQUES_LETTER = 1180;
-	private static final int NETIS_BOW = 1181;
-	private static final int NETIS_DAGGER = 1182;
-	private static final int SPARTOIS_BONES = 1183;
+	private static final int BEZIQUE_LETTER = 1180;
+	private static final int NETI_BOW = 1181;
+	private static final int NETI_DAGGER = 1182;
+	private static final int SPARTOI_BONES = 1183;
 	private static final int HORSESHOE_OF_LIGHT = 1184;
 	private static final int MOST_WANTED_LIST = 1185;
 	private static final int STOLEN_JEWELRY = 1186;
 	private static final int STOLEN_TOMES = 1187;
 	private static final int STOLEN_RING = 1188;
 	private static final int STOLEN_NECKLACE = 1189;
-	private static final int[] STOLEN_ITEMS =
-	{
-		STOLEN_JEWELRY,
-		STOLEN_TOMES,
-		STOLEN_RING,
-		STOLEN_NECKLACE
-	};
-	// Reward
-	private static final int BEZIQUES_RECOMMENDATION = 1190;
-	// Misc
-	private static final int MIN_LEVEL = 19;
-	private static final int REQUIRED_ITEM_COUNT = 10;
-	// Quest Monster
-	private static final int CATS_EYE_BANDIT = 27038;
-	// Monster
-	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
-		MONSTER_DROPS.put(20035, new ItemChanceHolder(SPARTOIS_BONES, 2)); // Tracker Skeleton
-		MONSTER_DROPS.put(20042, new ItemChanceHolder(SPARTOIS_BONES, 3)); // Tracker Skeleton Leader
-		MONSTER_DROPS.put(20045, new ItemChanceHolder(SPARTOIS_BONES, 2)); // Skeleton Scout
-		MONSTER_DROPS.put(20051, new ItemChanceHolder(SPARTOIS_BONES, 2)); // Skeleton Bowman
-		MONSTER_DROPS.put(20054, new ItemChanceHolder(SPARTOIS_BONES, 8)); // Ruin Spartoi
-		MONSTER_DROPS.put(20060, new ItemChanceHolder(SPARTOIS_BONES, 8)); // Raging Spartoi
-	}
+	private static final int BEZIQUE_RECOMMENDATION = 1190;
 	
 	public Q00403_PathOfTheRogue()
 	{
 		super(403);
-		addStartNpc(CAPTAIN_BEZIQUE);
-		addTalkId(CAPTAIN_BEZIQUE, NETI);
-		addAttackId(MONSTER_DROPS.keySet());
-		addAttackId(CATS_EYE_BANDIT);
-		addKillId(MONSTER_DROPS.keySet());
-		addKillId(CATS_EYE_BANDIT);
-		registerQuestItems(BEZIQUES_LETTER, NETIS_BOW, NETIS_DAGGER, SPARTOIS_BONES, HORSESHOE_OF_LIGHT, MOST_WANTED_LIST, STOLEN_JEWELRY, STOLEN_TOMES, STOLEN_RING, STOLEN_NECKLACE);
+		registerQuestItems(BEZIQUE_LETTER, NETI_BOW, NETI_DAGGER, SPARTOI_BONES, HORSESHOE_OF_LIGHT, MOST_WANTED_LIST, STOLEN_JEWELRY, STOLEN_TOMES, STOLEN_RING, STOLEN_NECKLACE);
+		addStartNpc(BEZIQUE);
+		addTalkId(BEZIQUE, NETI);
+		addKillId(20035, 20042, 20045, 20051, 20054, 20060, 27038);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30379-05.htm":
 			{
-				if (player.getClassId() == ClassId.FIGHTER)
+				if (player.getClassId() != ClassId.FIGHTER)
 				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, BEZIQUES_RECOMMENDATION))
-						{
-							htmltext = "30379-04.htm";
-						}
-						else
-						{
-							htmltext = "30379-05.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30379-03.htm";
-					}
+					htmltext = (player.getClassId() == ClassId.ROGUE) ? "30379-02a.htm" : "30379-02.htm";
 				}
-				else if (player.getClassId() == ClassId.ROGUE)
-				{
-					htmltext = "30379-02a.htm";
-				}
-				else
+				else if (player.getLevel() < 19)
 				{
 					htmltext = "30379-02.htm";
+				}
+				else if (hasQuestItems(player, BEZIQUE_RECOMMENDATION))
+				{
+					htmltext = "30379-04.htm";
 				}
 				break;
 			}
 			case "30379-06.htm":
 			{
-				qs.startQuest();
-				giveItems(player, BEZIQUES_LETTER, 1);
-				htmltext = event;
+				st.startQuest();
+				giveItems(player, BEZIQUE_LETTER, 1);
 				break;
 			}
-			case "30425-02.html":
-			case "30425-03.html":
-			case "30425-04.html":
+			case "30425-05.htm":
 			{
-				htmltext = event;
-				break;
-			}
-			case "30425-05.html":
-			{
-				if (hasQuestItems(player, BEZIQUES_LETTER))
-				{
-					takeItems(player, BEZIQUES_LETTER, 1);
-					if (!hasQuestItems(player, NETIS_BOW))
-					{
-						giveItems(player, NETIS_BOW, 1);
-					}
-					if (!hasQuestItems(player, NETIS_DAGGER))
-					{
-						giveItems(player, NETIS_DAGGER, 1);
-					}
-					qs.setCond(2, true);
-				}
-				htmltext = event;
+				st.setCond(2, true);
+				giveItems(player, NETI_BOW, 1);
+				giveItems(player, NETI_DAGGER, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getScriptValue())
-			{
-				case 0:
-				{
-					npc.getVariables().set("lastAttacker", attacker.getObjectId());
-					if (!checkWeapon(attacker))
-					{
-						npc.setScriptValue(2);
-					}
-					else
-					{
-						if (npc.getId() == CATS_EYE_BANDIT)
-						{
-							attacker.sendPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.YOU_CHILDISH_FOOL_DO_YOU_THINK_YOU_CAN_CATCH_ME));
-						}
-						npc.setScriptValue(1);
-					}
-					break;
-				}
-				case 1:
-				{
-					if (!checkWeapon(attacker))
-					{
-						npc.setScriptValue(2);
-					}
-					else if (npc.getVariables().getInt("lastAttacker") != attacker.getObjectId())
-					{
-						npc.setScriptValue(2);
-					}
-					break;
-				}
-			}
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && npc.isScriptValue(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			if (npc.getId() == CATS_EYE_BANDIT)
-			{
-				npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.I_MUST_DO_SOMETHING_ABOUT_THIS_SHAMEFUL_INCIDENT));
-				if (hasQuestItems(killer, MOST_WANTED_LIST))
-				{
-					final int randomItem = STOLEN_ITEMS[getRandom(STOLEN_ITEMS.length)];
-					if (!hasQuestItems(killer, randomItem))
-					{
-						giveItems(killer, randomItem, 1);
-						if (hasQuestItems(killer, STOLEN_ITEMS))
-						{
-							qs.setCond(6, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-				}
-			}
-			else
-			{
-				final ItemChanceHolder reward = MONSTER_DROPS.get(npc.getId());
-				if ((getQuestItemsCount(killer, reward.getId()) < REQUIRED_ITEM_COUNT) && npc.isScriptValue(1) && (getRandom(REQUIRED_ITEM_COUNT) < reward.getChance()))
-				{
-					giveItems(killer, reward.getId(), reward.getCount());
-					if (getQuestItemsCount(killer, reward.getId()) >= REQUIRED_ITEM_COUNT)
-					{
-						qs.setCond(3, true);
-					}
-					else
-					{
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	private boolean checkWeapon(Player player)
-	{
-		final Item weapon = player.getActiveWeaponInstance();
-		return ((weapon != null) && ((weapon.getId() == NETIS_BOW) || (weapon.getId() == NETIS_DAGGER)));
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == CAPTAIN_BEZIQUE)
+			case State.CREATED:
 			{
 				htmltext = "30379-01.htm";
+				break;
 			}
-		}
-		if (qs.isCompleted())
-		{
-			if (npc.getId() == CAPTAIN_BEZIQUE)
+			case State.STARTED:
 			{
-				return htmltext;
-			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case CAPTAIN_BEZIQUE:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, STOLEN_JEWELRY, STOLEN_TOMES, STOLEN_RING, STOLEN_NECKLACE))
+					case BEZIQUE:
 					{
-						takeItems(player, NETIS_BOW, 1);
-						takeItems(player, NETIS_DAGGER, 1);
-						takeItems(player, MOST_WANTED_LIST, 1);
-						takeItems(player, STOLEN_JEWELRY, 1);
-						takeItems(player, STOLEN_TOMES, 1);
-						takeItems(player, STOLEN_RING, 1);
-						takeItems(player, STOLEN_NECKLACE, 1);
-						giveItems(player, BEZIQUES_RECOMMENDATION, 1);
-						final int level = player.getLevel();
-						if (level >= 20)
+						if (cond == 1)
 						{
-							addExpAndSp(player, 80314, 5087);
+							htmltext = "30379-07.htm";
 						}
-						else if (level == 19)
+						else if ((cond == 2) || (cond == 3))
 						{
-							addExpAndSp(player, 80314, 5087);
+							htmltext = "30379-10.htm";
 						}
-						else
+						else if (cond == 4)
 						{
-							addExpAndSp(player, 80314, 5087);
+							htmltext = "30379-08.htm";
+							st.setCond(5, true);
+							takeItems(player, HORSESHOE_OF_LIGHT, 1);
+							giveItems(player, MOST_WANTED_LIST, 1);
 						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30379-09.html";
-					}
-					else if (!hasQuestItems(player, HORSESHOE_OF_LIGHT) && hasQuestItems(player, BEZIQUES_LETTER))
-					{
-						htmltext = "30379-07.html";
-					}
-					else if (hasQuestItems(player, HORSESHOE_OF_LIGHT))
-					{
-						takeItems(player, HORSESHOE_OF_LIGHT, 1);
-						giveItems(player, MOST_WANTED_LIST, 1);
-						qs.setCond(5, true);
-						htmltext = "30379-08.html";
-					}
-					else if (hasQuestItems(player, NETIS_BOW, NETIS_DAGGER) && !hasQuestItems(player, MOST_WANTED_LIST))
-					{
-						htmltext = "30379-10.html";
-					}
-					else if (hasQuestItems(player, MOST_WANTED_LIST))
-					{
-						htmltext = "30379-11.html";
-					}
-					break;
-				}
-				case NETI:
-				{
-					if (hasQuestItems(player, BEZIQUES_LETTER))
-					{
-						htmltext = "30425-01.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, HORSESHOE_OF_LIGHT, BEZIQUES_LETTER))
-					{
-						if (hasQuestItems(player, MOST_WANTED_LIST))
+						else if (cond == 5)
 						{
-							htmltext = "30425-08.html";
+							htmltext = "30379-11.htm";
 						}
-						else if (getQuestItemsCount(player, SPARTOIS_BONES) < REQUIRED_ITEM_COUNT)
+						else if (cond == 6)
 						{
-							htmltext = "30425-06.html";
+							htmltext = "30379-09.htm";
+							takeItems(player, NETI_BOW, 1);
+							takeItems(player, NETI_DAGGER, 1);
+							takeItems(player, STOLEN_JEWELRY, 1);
+							takeItems(player, STOLEN_NECKLACE, 1);
+							takeItems(player, STOLEN_RING, 1);
+							takeItems(player, STOLEN_TOMES, 1);
+							giveItems(player, BEZIQUE_RECOMMENDATION, 1);
+							addExpAndSp(player, 3200, 1500);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
 						}
-						else
+						break;
+					}
+					case NETI:
+					{
+						if (cond == 1)
 						{
-							takeItems(player, SPARTOIS_BONES, REQUIRED_ITEM_COUNT);
+							htmltext = "30425-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30425-06.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30425-07.htm";
+							st.setCond(4, true);
+							takeItems(player, SPARTOI_BONES, 10);
 							giveItems(player, HORSESHOE_OF_LIGHT, 1);
-							qs.setCond(4, true);
-							htmltext = "30425-07.html";
 						}
+						else if (cond > 3)
+						{
+							htmltext = "30425-08.htm";
+						}
+						break;
 					}
-					else if (hasQuestItems(player, HORSESHOE_OF_LIGHT))
-					{
-						htmltext = "30425-08.html";
-					}
-					break;
 				}
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int equippedItemId = player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND);
+		if ((equippedItemId != NETI_BOW) && (equippedItemId != NETI_DAGGER))
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20035:
+			case 20045:
+			case 20051:
+			{
+				if (st.isCond(2) && (getRandom(10) < 2))
+				{
+					giveItems(player, SPARTOI_BONES, 1);
+					if (getQuestItemsCount(player, SPARTOI_BONES) < 10)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					else
+					{
+						st.setCond(3, true);
+					}
+				}
+				break;
+			}
+			case 20042:
+			{
+				if (st.isCond(2) && (getRandom(10) < 3))
+				{
+					giveItems(player, SPARTOI_BONES, 1);
+					if (getQuestItemsCount(player, SPARTOI_BONES) < 10)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					else
+					{
+						st.setCond(3, true);
+					}
+				}
+				break;
+			}
+			case 20054:
+			case 20060:
+			{
+				if (st.isCond(2) && (getRandom(10) < 8))
+				{
+					giveItems(player, SPARTOI_BONES, 1);
+					if (getQuestItemsCount(player, SPARTOI_BONES) < 10)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					else
+					{
+						st.setCond(3, true);
+					}
+				}
+				break;
+			}
+			case 27038:
+			{
+				if (st.isCond(5))
+				{
+					final int randomItem = getRandom(STOLEN_JEWELRY, STOLEN_NECKLACE);
+					if (!hasQuestItems(player, randomItem))
+					{
+						giveItems(player, randomItem, 1);
+						if (hasQuestItems(player, STOLEN_JEWELRY, STOLEN_TOMES, STOLEN_RING, STOLEN_NECKLACE))
+						{
+							st.setCond(6, true);
+						}
+						else
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+					}
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

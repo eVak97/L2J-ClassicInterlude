@@ -23,51 +23,73 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Recover Smuggled Goods (157)
- * @author xban1x
- */
 public class Q00157_RecoverSmuggledGoods extends Quest
 {
-	// NPC
-	private static final int WILFORD = 30005;
-	// Monster
-	private static final int GIANT_TOAD = 20121;
-	// Items
-	private static final int BUCKLER = 20;
+	// Item
 	private static final int ADAMANTITE_ORE = 1024;
-	// Misc
-	private static final int MIN_LEVEL = 5;
+	// Reward
+	private static final int BUCKLER = 20;
 	
 	public Q00157_RecoverSmuggledGoods()
 	{
 		super(157);
-		addStartNpc(WILFORD);
-		addTalkId(WILFORD);
-		addKillId(GIANT_TOAD);
 		registerQuestItems(ADAMANTITE_ORE);
+		addStartNpc(30005); // Wilford
+		addTalkId(30005);
+		addKillId(20121); // Toad
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
+			return htmltext;
+		}
+		
+		if (event.equals("30005-05.htm"))
+		{
+			st.startQuest();
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				case "30005-03.htm":
+				htmltext = (player.getLevel() < 5) ? "30005-02.htm" : "30005-03.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				if (cond == 1)
 				{
-					htmltext = event;
-					break;
+					htmltext = "30005-06.htm";
 				}
-				case "30005-04.htm":
+				else if (cond == 2)
 				{
-					qs.startQuest();
-					htmltext = event;
-					break;
+					htmltext = "30005-07.htm";
+					takeItems(player, ADAMANTITE_ORE, -1);
+					giveItems(player, BUCKLER, 1);
+					st.exitQuest(false, true);
 				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
 		return htmltext;
@@ -90,40 +112,5 @@ public class Q00157_RecoverSmuggledGoods extends Quest
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
-				htmltext = player.getLevel() >= MIN_LEVEL ? "30005-02.htm" : "30005-01.htm";
-				break;
-			}
-			case State.STARTED:
-			{
-				if (qs.isCond(2) && (getQuestItemsCount(player, ADAMANTITE_ORE) >= 20))
-				{
-					giveItems(player, BUCKLER, 1);
-					qs.exitQuest(false, true);
-					htmltext = "30005-06.html";
-				}
-				else
-				{
-					htmltext = "30005-05.html";
-				}
-				break;
-			}
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

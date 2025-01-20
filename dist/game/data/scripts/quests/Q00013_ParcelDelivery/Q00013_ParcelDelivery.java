@@ -22,11 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Parcel Delivery (13)<br>
- * Original Jython script by Emperorc.
- * @author nonom
- */
 public class Q00013_ParcelDelivery extends Quest
 {
 	// NPCs
@@ -38,85 +33,73 @@ public class Q00013_ParcelDelivery extends Quest
 	public Q00013_ParcelDelivery()
 	{
 		super(13);
+		registerQuestItems(PACKAGE);
 		addStartNpc(FUNDIN);
 		addTalkId(FUNDIN, VULCAN);
-		registerQuestItems(PACKAGE);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("31274-2.htm"))
 		{
-			case "31274-02.html":
-			{
-				qs.startQuest();
-				giveItems(player, PACKAGE, 1);
-				break;
-			}
-			case "31539-01.html":
-			{
-				if (qs.isCond(1) && hasQuestItems(player, PACKAGE))
-				{
-					giveAdena(player, 157834, true);
-					addExpAndSp(player, 589092, 58794);
-					qs.exitQuest(false, true);
-				}
-				else
-				{
-					htmltext = "31539-02.html";
-				}
-				break;
-			}
+			st.startQuest();
+			giveItems(player, PACKAGE, 1);
 		}
+		else if (event.equals("31539-1.htm"))
+		{
+			takeItems(player, PACKAGE, 1);
+			giveAdena(player, 82656, true);
+			st.exitQuest(false, true);
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 74) ? "31274-1.htm" : "31274-0.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case FUNDIN:
+					{
+						htmltext = "31274-2.htm";
+						break;
+					}
+					case VULCAN:
+					{
+						htmltext = "31539-0.htm";
+						break;
+					}
+				}
+				break;
+			}
 			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npcId == FUNDIN)
-				{
-					htmltext = (player.getLevel() >= 74) ? "31274-00.htm" : "31274-01.html";
-				}
-				break;
-			}
-			case State.STARTED:
-			{
-				if (qs.isCond(1))
-				{
-					if (npcId == FUNDIN)
-					{
-						htmltext = "31274-02.html";
-					}
-					else if (npcId == VULCAN)
-					{
-						htmltext = "31539-00.html";
-					}
-				}
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 }

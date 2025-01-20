@@ -24,98 +24,101 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Wrath of Ancestors (272)
- * @author xban1x
- */
 public class Q00272_WrathOfAncestors extends Quest
 {
-	// NPC
-	private static final int LIVINA = 30572;
-	// Items
+	// Item
 	private static final int GRAVE_ROBBERS_HEAD = 1474;
-	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
-		20319, // Goblin Grave Robber
-		20320, // Goblin Tomb Raider Leader
-	};
-	// Misc
-	private static final int MIN_LEVEL = 5;
 	
 	public Q00272_WrathOfAncestors()
 	{
 		super(272);
-		addStartNpc(LIVINA);
-		addTalkId(LIVINA);
-		addKillId(MONSTERS);
 		registerQuestItems(GRAVE_ROBBERS_HEAD);
-		addCondMaxLevel(16, getNoQuestMsg(null));
+		addStartNpc(30572); // Livina
+		addTalkId(30572);
+		addKillId(20319, 20320); // Goblin Grave Robber, Goblin Tomb Raider Leader
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30572-04.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1))
+		
+		if (event.equals("30572-03.htm"))
 		{
-			giveItems(killer, GRAVE_ROBBERS_HEAD, 1);
-			if (getQuestItemsCount(killer, GRAVE_ROBBERS_HEAD) >= 50)
-			{
-				qs.setCond(2, true);
-			}
-			else
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LEVEL) ? "30572-03.htm" : "30572-02.htm" : "30572-01.htm";
+				if (player.getRace() != Race.ORC)
+				{
+					htmltext = "30572-00.htm";
+				}
+				else if (player.getLevel() < 5)
+				{
+					htmltext = "30572-01.htm";
+				}
+				else
+				{
+					htmltext = "30572-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						htmltext = "30572-05.html";
-						break;
-					}
-					case 2:
-					{
-						giveAdena(player, 100, true);
-						qs.exitQuest(true, true);
-						htmltext = "30572-06.html";
-						break;
-					}
+					htmltext = "30572-04.htm";
+				}
+				else
+				{
+					htmltext = "30572-05.htm";
+					takeItems(player, GRAVE_ROBBERS_HEAD, -1);
+					giveAdena(player, 1500, true);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		giveItems(player, GRAVE_ROBBERS_HEAD, 1);
+		if (getQuestItemsCount(player, GRAVE_ROBBERS_HEAD) < 50)
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		else
+		{
+			st.setCond(2, true);
+		}
+		
+		return null;
 	}
 }

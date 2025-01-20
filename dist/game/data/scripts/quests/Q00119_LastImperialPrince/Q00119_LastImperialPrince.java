@@ -22,10 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Last Imperial Prince (119)
- * @author Adry_85
- */
 public class Q00119_LastImperialPrince extends Quest
 {
 	// NPCs
@@ -33,12 +29,11 @@ public class Q00119_LastImperialPrince extends Quest
 	private static final int DEVORIN = 32009;
 	// Item
 	private static final int ANTIQUE_BROOCH = 7262;
-	// Misc
-	private static final int MIN_LEVEL = 74;
 	
 	public Q00119_LastImperialPrince()
 	{
 		super(119);
+		registerQuestItems(ANTIQUE_BROOCH);
 		addStartNpc(NAMELESS_SPIRIT);
 		addTalkId(NAMELESS_SPIRIT, DEVORIN);
 	}
@@ -46,51 +41,46 @@ public class Q00119_LastImperialPrince extends Quest
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "31453-02.htm":
-			case "31453-03.htm":
-			case "31453-10.html":
+			case "31453-04.htm":
 			{
-				htmltext = event;
-				break;
-			}
-			case "31453-04.html":
-			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "31453-11.html":
-			{
-				if (qs.isCond(2))
+				if (hasQuestItems(player, ANTIQUE_BROOCH))
 				{
-					giveAdena(player, 150292, true);
-					addExpAndSp(player, 902439, 90067);
-					qs.exitQuest(false, true);
-					htmltext = event;
+					st.startQuest();
+				}
+				else
+				{
+					htmltext = "31453-04b.htm";
+					st.exitQuest(true, true);
 				}
 				break;
 			}
-			case "brooch":
+			case "32009-02.htm":
 			{
-				htmltext = hasQuestItems(player, ANTIQUE_BROOCH) ? "32009-02.html" : "32009-03.html";
+				if (!hasQuestItems(player, ANTIQUE_BROOCH))
+				{
+					htmltext = "31453-02a.htm";
+					st.exitQuest(true, true);
+				}
 				break;
 			}
-			case "32009-04.html":
+			case "32009-03.htm":
 			{
-				if (qs.isCond(1) && hasQuestItems(player, ANTIQUE_BROOCH))
-				{
-					qs.setCond(2, true);
-					htmltext = event;
-				}
+				st.setCond(2, true);
+				break;
+			}
+			case "31453-07.htm":
+			{
+				giveAdena(player, 68787, true);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
@@ -100,58 +90,55 @@ public class Q00119_LastImperialPrince extends Quest
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				if (npc.getId() == NAMELESS_SPIRIT)
-				{
-					htmltext = "31453-06.html";
-				}
-				break;
-			}
 			case State.CREATED:
 			{
-				htmltext = ((player.getLevel() >= MIN_LEVEL) && hasQuestItems(player, ANTIQUE_BROOCH)) ? "31453-01.htm" : "31453-05.html";
+				htmltext = (!hasQuestItems(player, ANTIQUE_BROOCH) || (player.getLevel() < 74)) ? "31453-00a.htm" : "31453-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (npc.getId() == NAMELESS_SPIRIT)
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (qs.isCond(1))
+					case NAMELESS_SPIRIT:
 					{
-						if (hasQuestItems(player, ANTIQUE_BROOCH))
+						if (cond == 1)
 						{
-							htmltext = "31453-07.html";
+							htmltext = "31453-04a.htm";
 						}
-						else
+						else if (cond == 2)
 						{
-							htmltext = "31453-08.html";
-							qs.exitQuest(true, true);
+							htmltext = "31453-05.htm";
 						}
+						break;
 					}
-					else if (qs.isCond(2))
+					case DEVORIN:
 					{
-						htmltext = "31453-09.html";
-					}
-				}
-				else if (npc.getId() == DEVORIN)
-				{
-					if (qs.isCond(1))
-					{
-						htmltext = "32009-01.html";
-					}
-					else if (qs.isCond(2))
-					{
-						htmltext = "32009-05.html";
+						if (cond == 1)
+						{
+							htmltext = "32009-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "32009-04.htm";
+						}
+						break;
 					}
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = "31453-00b.htm";
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 }

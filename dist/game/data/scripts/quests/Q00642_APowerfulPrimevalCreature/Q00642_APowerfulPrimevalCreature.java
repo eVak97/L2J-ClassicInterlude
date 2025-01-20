@@ -16,143 +16,159 @@
  */
 package quests.Q00642_APowerfulPrimevalCreature;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.gameserver.enums.QuestType;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * A Powerful Primeval Creature (642)
- * @author Adry_85
- */
 public class Q00642_APowerfulPrimevalCreature extends Quest
 {
 	// NPC
-	private static final int DINN = 32105;
+	private static final int ANCIENT_EGG = 18344;
 	// Items
 	private static final int DINOSAUR_TISSUE = 8774;
 	private static final int DINOSAUR_EGG = 8775;
-	// Misc
-	private static final int MIN_LEVEL = 75;
-	// Mobs
-	private static final int ANCIENT_EGG = 18344;
-	
-	private static final Map<Integer, Double> MOBS_TISSUE = new HashMap<>();
-	static
+	// Rewards
+	private static final int[] REWARDS =
 	{
-		MOBS_TISSUE.put(22196, 0.309); // Velociraptor
-		MOBS_TISSUE.put(22197, 0.309); // Velociraptor
-		MOBS_TISSUE.put(22198, 0.309); // Velociraptor
-		MOBS_TISSUE.put(22199, 0.309); // Pterosaur
-		MOBS_TISSUE.put(22215, 0.988); // Tyrannosaurus
-		MOBS_TISSUE.put(22216, 0.988); // Tyrannosaurus
-		MOBS_TISSUE.put(22217, 0.988); // Tyrannosaurus
-		MOBS_TISSUE.put(22218, 0.309); // Velociraptor
-		MOBS_TISSUE.put(22223, 0.309); // Velociraptor
-	}
+		8690,
+		8692,
+		8694,
+		8696,
+		8698,
+		8700,
+		8702,
+		8704,
+		8706,
+		8708,
+		8710
+	};
 	
 	public Q00642_APowerfulPrimevalCreature()
 	{
 		super(642);
-		addStartNpc(DINN);
-		addTalkId(DINN);
-		addKillId(ANCIENT_EGG);
-		addKillId(MOBS_TISSUE.keySet());
 		registerQuestItems(DINOSAUR_TISSUE, DINOSAUR_EGG);
+		addStartNpc(32105); // Dinn
+		addTalkId(32105);
+		// Dinosaurs + egg
+		addKillId(22196, 22197, 22198, 22199, 22200, 22201, 22202, 22203, 22204, 22205, 22218, 22219, 22220, 22223, 22224, 22225, ANCIENT_EGG);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
-			return null;
-		}
-		
 		String htmltext = event;
-		switch (event)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			case "32105-05.html":
-			{
-				qs.startQuest();
-				break;
-			}
-			case "32105-06.htm":
-			{
-				qs.exitQuest(QuestType.REPEATABLE);
-				break;
-			}
-			case "32105-09.html":
-			{
-				if (hasQuestItems(player, DINOSAUR_TISSUE))
-				{
-					giveAdena(player, 5000 * getQuestItemsCount(player, DINOSAUR_TISSUE), true);
-					takeItems(player, DINOSAUR_TISSUE, -1);
-				}
-				else
-				{
-					htmltext = "32105-14.html";
-				}
-				break;
-			}
-			case "exit":
-			{
-				if (hasQuestItems(player, DINOSAUR_TISSUE))
-				{
-					giveAdena(player, 5000 * getQuestItemsCount(player, DINOSAUR_TISSUE), true);
-					qs.exitQuest(true, true);
-					htmltext = "32105-12.html";
-				}
-				else
-				{
-					qs.exitQuest(true, true);
-					htmltext = "32105-13.html";
-				}
-				break;
-			}
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs == null)
-		{
-			return null;
+			return htmltext;
 		}
 		
-		final int npcId = npc.getId();
-		if (MOBS_TISSUE.containsKey(npcId))
+		if (event.equals("32105-04.htm"))
 		{
-			giveItemRandomly(qs.getPlayer(), npc, DINOSAUR_TISSUE, 1, 0, MOBS_TISSUE.get(npcId), true);
+			st.startQuest();
 		}
-		else
+		else if (event.equals("32105-08.htm"))
 		{
-			giveItemRandomly(qs.getPlayer(), npc, DINOSAUR_EGG, 1, 0, 1, true);
+			if ((getQuestItemsCount(player, DINOSAUR_TISSUE) >= 150) && hasQuestItems(player, DINOSAUR_EGG))
+			{
+				htmltext = "32105-06.htm";
+			}
 		}
-		return super.onKill(npc, killer, isSummon);
+		else if (event.equals("32105-07.htm"))
+		{
+			final int tissues = (int) getQuestItemsCount(player, DINOSAUR_TISSUE);
+			if (tissues > 0)
+			{
+				takeItems(player, DINOSAUR_TISSUE, -1);
+				giveAdena(player, tissues * 5000, true);
+			}
+			else
+			{
+				htmltext = "32105-08.htm";
+			}
+		}
+		else if (event.contains("event_"))
+		{
+			if ((getQuestItemsCount(player, DINOSAUR_TISSUE) >= 150) && hasQuestItems(player, DINOSAUR_EGG))
+			{
+				htmltext = "32105-07.htm";
+				takeItems(player, DINOSAUR_TISSUE, 150);
+				takeItems(player, DINOSAUR_EGG, 1);
+				giveAdena(player, 44000, true);
+				giveItems(player, REWARDS[Integer.parseInt(event.split("_")[1])], 1);
+			}
+			else
+			{
+				htmltext = "32105-08.htm";
+			}
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			htmltext = player.getLevel() < MIN_LEVEL ? "32105-01.htm" : "32105-02.htm";
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 75) ? "32105-00.htm" : "32105-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				htmltext = (!hasQuestItems(player, DINOSAUR_TISSUE)) ? "32105-08.htm" : "32105-05.htm";
+				break;
+			}
 		}
-		else if (qs.isStarted())
-		{
-			htmltext = hasAtLeastOneQuestItem(player, DINOSAUR_TISSUE, DINOSAUR_EGG) ? "32105-08.html" : "32105-07.html";
-		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (npc.getId() == ANCIENT_EGG)
+		{
+			if (getRandom(100) < 1)
+			{
+				giveItems(player, DINOSAUR_EGG, 1);
+				if (getQuestItemsCount(player, DINOSAUR_TISSUE) >= 150)
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+			}
+		}
+		else if (getRandom(100) < 33)
+		{
+			rewardItems(player, DINOSAUR_TISSUE, 1);
+			if ((getQuestItemsCount(player, DINOSAUR_TISSUE) >= 150) && hasQuestItems(player, DINOSAUR_EGG))
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+			}
+			else
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+		}
+		
+		return null;
 	}
 }

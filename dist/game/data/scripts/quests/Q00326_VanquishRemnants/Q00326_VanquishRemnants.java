@@ -16,9 +16,6 @@
  */
 package quests.Q00326_VanquishRemnants;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -26,126 +23,146 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Vanquish Remnants (326)
- * @author xban1x
- */
 public class Q00326_VanquishRemnants extends Quest
 {
-	// NPC
-	private static final int LEOPOLD = 30435;
 	// Items
 	private static final int RED_CROSS_BADGE = 1359;
 	private static final int BLUE_CROSS_BADGE = 1360;
 	private static final int BLACK_CROSS_BADGE = 1361;
+	// Reward
 	private static final int BLACK_LION_MARK = 1369;
-	// Monsters
-	private static final Map<Integer, int[]> MONSTERS = new HashMap<>();
-	//@formatter:off
-	static
-	{
-		MONSTERS.put(20053, new int[] {61, RED_CROSS_BADGE}); // Ol Mahum Patrol
-		MONSTERS.put(20058, new int[] {61, RED_CROSS_BADGE}); // Ol Mahum Guard
-		MONSTERS.put(20061, new int[] {57, BLUE_CROSS_BADGE}); // Ol Mahum Remnants
-		MONSTERS.put(20063, new int[] {63, BLUE_CROSS_BADGE}); // Ol Mahum Shooter
-		MONSTERS.put(20066, new int[] {59, BLACK_CROSS_BADGE}); // Ol Mahum Captain
-		MONSTERS.put(20436, new int[] {55, BLUE_CROSS_BADGE}); // Ol Mahum Supplier
-		MONSTERS.put(20437, new int[] {59, RED_CROSS_BADGE}); // Ol Mahum Recruit
-		MONSTERS.put(20438, new int[] {60, BLACK_CROSS_BADGE}); // Ol Mahum General
-		MONSTERS.put(20439, new int[] {62, BLUE_CROSS_BADGE}); // Ol Mahum Officer
-	}
-	//@formatter:on
-	// Misc
-	private static final int MIN_LEVEL = 21;
 	
 	public Q00326_VanquishRemnants()
 	{
 		super(326);
-		addStartNpc(LEOPOLD);
-		addTalkId(LEOPOLD);
-		addKillId(MONSTERS.keySet());
 		registerQuestItems(RED_CROSS_BADGE, BLUE_CROSS_BADGE, BLACK_CROSS_BADGE);
-		addCondMaxLevel(30, getNoQuestMsg(null));
+		addStartNpc(30435); // Leopold
+		addTalkId(30435);
+		addKillId(20053, 20437, 20058, 20436, 20061, 20439, 20063, 20066, 20438);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
-			{
-				case "30435-03.htm":
-				{
-					qs.startQuest();
-					htmltext = event;
-					break;
-				}
-				case "30435-07.html":
-				{
-					qs.exitQuest(true, true);
-					htmltext = event;
-					break;
-				}
-				case "30435-08.html":
-				{
-					htmltext = event;
-					break;
-				}
-			}
+			return htmltext;
 		}
+		
+		if (event.equals("30435-03.htm"))
+		{
+			st.startQuest();
+		}
+		else if (event.equals("30435-07.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && (getRandom(100) < MONSTERS.get(npc.getId())[0]))
-		{
-			giveItems(killer, MONSTERS.get(npc.getId())[1], 1);
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = null;
-		switch (qs.getState())
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30435-02.htm" : "30435-01.htm";
+				htmltext = (player.getLevel() < 21) ? "30435-01.htm" : "30435-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				final long red_badges = getQuestItemsCount(player, RED_CROSS_BADGE);
-				final long blue_badges = getQuestItemsCount(player, BLUE_CROSS_BADGE);
-				final long black_badges = getQuestItemsCount(player, BLACK_CROSS_BADGE);
-				final long sum = red_badges + blue_badges + black_badges;
-				if (sum > 0)
+				final int redBadges = (int) getQuestItemsCount(player, RED_CROSS_BADGE);
+				final int blueBadges = (int) getQuestItemsCount(player, BLUE_CROSS_BADGE);
+				final int blackBadges = (int) getQuestItemsCount(player, BLACK_CROSS_BADGE);
+				final int badgesSum = redBadges + blueBadges + blackBadges;
+				if (badgesSum > 0)
 				{
-					if ((sum >= 100) && !hasQuestItems(player, BLACK_LION_MARK))
+					takeItems(player, RED_CROSS_BADGE, -1);
+					takeItems(player, BLUE_CROSS_BADGE, -1);
+					takeItems(player, BLACK_CROSS_BADGE, -1);
+					giveAdena(player, ((redBadges * 60) + (blueBadges * 65) + (blackBadges * 70) + ((badgesSum >= 10) ? 4320 : 0)), true);
+					if (badgesSum >= 100)
 					{
-						giveItems(player, BLACK_LION_MARK, 1);
+						if (!hasQuestItems(player, BLACK_LION_MARK))
+						{
+							htmltext = "30435-06.htm";
+							giveItems(player, BLACK_LION_MARK, 1);
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+						else
+						{
+							htmltext = "30435-09.htm";
+						}
 					}
-					giveAdena(player, ((red_badges * 10) + (blue_badges * 10) + (black_badges * 12) + ((sum >= 10) ? 1000 : 0)), true);
-					takeItems(player, -1, RED_CROSS_BADGE, BLUE_CROSS_BADGE, BLACK_CROSS_BADGE);
-					htmltext = (sum >= 100) ? (hasQuestItems(player, BLACK_LION_MARK)) ? "30435-09.html" : "30435-06.html" : "30435-05.html";
+					else
+					{
+						htmltext = "30435-05.htm";
+					}
 				}
 				else
 				{
-					htmltext = "30435-04.html";
+					htmltext = "30435-04.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20053:
+			case 20437:
+			case 20058:
+			{
+				if (getRandom(100) < 33)
+				{
+					giveItems(player, RED_CROSS_BADGE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20436:
+			case 20061:
+			case 20439:
+			case 20063:
+			{
+				if (getRandom(100) < 16)
+				{
+					giveItems(player, BLUE_CROSS_BADGE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case 20066:
+			case 20438:
+			{
+				if (getRandom(100) < 12)
+				{
+					giveItems(player, BLACK_CROSS_BADGE, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

@@ -24,12 +24,9 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Family Honor (355)
- * @author Adry_85
- */
 public class Q00355_FamilyHonor extends Quest
 {
 	private static class DropInfo
@@ -57,134 +54,149 @@ public class Q00355_FamilyHonor extends Quest
 	// NPCs
 	private static final int GALIBREDO = 30181;
 	private static final int PATRIN = 30929;
+	// Monsters
+	private static final int TIMAK_ORC_TROOP_LEADER = 20767;
+	private static final int TIMAK_ORC_TROOP_SHAMAN = 20768;
+	private static final int TIMAK_ORC_TROOP_WARRIOR = 20769;
+	private static final int TIMAK_ORC_TROOP_ARCHER = 20770;
 	// Items
-	private static final int GALFREDO_ROMERS_BUST = 4252;
-	private static final int SCULPTOR_BERONA = 4350;
-	private static final int ANCIENT_STATUE_PROTOTYPE = 4351;
-	private static final int ANCIENT_STATUE_ORIGINAL = 4352;
-	private static final int ANCIENT_STATUE_REPLICA = 4353;
-	private static final int ANCIENT_STATUE_FORGERY = 4354;
-	// Misc
-	private static final int MIN_LEVEL = 36;
-	
+	private static final int GALIBREDO_BUST = 4252;
+	private static final int WORK_OF_BERONA = 4350;
+	private static final int STATUE_PROTOTYPE = 4351;
+	private static final int STATUE_ORIGINAL = 4352;
+	private static final int STATUE_REPLICA = 4353;
+	private static final int STATUE_FORGERY = 4354;
+	// Drop chances
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
 	static
 	{
-		MOBS.put(20767, new DropInfo(560, 684)); // timak_orc_troop_leader
-		MOBS.put(20768, new DropInfo(530, 650)); // timak_orc_troop_shaman
-		MOBS.put(20769, new DropInfo(420, 516)); // timak_orc_troop_warrior
-		MOBS.put(20770, new DropInfo(440, 560)); // timak_orc_troop_archer
+		MOBS.put(TIMAK_ORC_TROOP_LEADER, new DropInfo(560, 684)); // timak_orc_troop_leader
+		MOBS.put(TIMAK_ORC_TROOP_SHAMAN, new DropInfo(530, 650)); // timak_orc_troop_shaman
+		MOBS.put(TIMAK_ORC_TROOP_WARRIOR, new DropInfo(420, 516)); // timak_orc_troop_warrior
+		MOBS.put(TIMAK_ORC_TROOP_ARCHER, new DropInfo(440, 560)); // timak_orc_troop_archer
 	}
 	
 	public Q00355_FamilyHonor()
 	{
 		super(355);
+		registerQuestItems(GALIBREDO_BUST);
 		addStartNpc(GALIBREDO);
 		addTalkId(GALIBREDO, PATRIN);
-		addKillId(MOBS.keySet());
-		registerQuestItems(GALFREDO_ROMERS_BUST);
-		addCondMaxLevel(49, getNoQuestMsg(null));
+		addKillId(TIMAK_ORC_TROOP_LEADER, TIMAK_ORC_TROOP_SHAMAN, TIMAK_ORC_TROOP_WARRIOR, TIMAK_ORC_TROOP_ARCHER);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "30181-02.htm":
-			case "30181-09.html":
-			case "30929-01.html":
-			case "30929-02.html":
+			case "30181-2.htm":
 			{
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30181-03.htm":
+			case "30181-4b.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30181-06.html":
-			{
-				final long galfredoRomersBustCount = getQuestItemsCount(player, GALFREDO_ROMERS_BUST);
-				if (galfredoRomersBustCount < 1)
+				final int count = (int) getQuestItemsCount(player, GALIBREDO_BUST);
+				if (count > 0)
 				{
-					htmltext = event;
-				}
-				else if (galfredoRomersBustCount >= 100)
-				{
-					giveAdena(player, (galfredoRomersBustCount * 20), true);
-					takeItems(player, GALFREDO_ROMERS_BUST, -1);
-					htmltext = "30181-07.html";
-				}
-				else
-				{
-					giveAdena(player, (galfredoRomersBustCount * 20), true);
-					takeItems(player, GALFREDO_ROMERS_BUST, -1);
-					htmltext = "30181-08.html";
-				}
-				break;
-			}
-			case "30181-10.html":
-			{
-				final long galfredoRomersBustCount = getQuestItemsCount(player, GALFREDO_ROMERS_BUST);
-				if (galfredoRomersBustCount > 0)
-				{
-					giveAdena(player, galfredoRomersBustCount * 120, true);
-				}
-				
-				takeItems(player, GALFREDO_ROMERS_BUST, -1);
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30929-03.html":
-			{
-				final int random = getRandom(100);
-				if (hasQuestItems(player, SCULPTOR_BERONA))
-				{
-					if (random < 2)
+					htmltext = "30181-4.htm";
+					
+					int reward = count * 232;
+					if (count >= 100)
 					{
-						giveItems(player, ANCIENT_STATUE_PROTOTYPE, 1);
-						htmltext = event;
+						htmltext = "30181-4a.htm";
+						reward += 5000;
 					}
-					else if (random < 32)
+					
+					takeItems(player, GALIBREDO_BUST, count);
+					giveAdena(player, reward, true);
+				}
+				break;
+			}
+			case "30929-7.htm":
+			{
+				if (hasQuestItems(player, WORK_OF_BERONA))
+				{
+					takeItems(player, WORK_OF_BERONA, 1);
+					
+					final int appraising = getRandom(100);
+					if (appraising < 20)
 					{
-						giveItems(player, ANCIENT_STATUE_ORIGINAL, 1);
-						htmltext = "30929-04.html";
+						htmltext = "30929-2.htm";
 					}
-					else if (random < 62)
+					else if (appraising < 40)
 					{
-						giveItems(player, ANCIENT_STATUE_REPLICA, 1);
-						htmltext = "30929-05.html";
+						htmltext = "30929-3.htm";
+						giveItems(player, STATUE_REPLICA, 1);
 					}
-					else if (random < 77)
+					else if (appraising < 60)
 					{
-						giveItems(player, ANCIENT_STATUE_FORGERY, 1);
-						htmltext = "30929-06.html";
+						htmltext = "30929-4.htm";
+						giveItems(player, STATUE_ORIGINAL, 1);
+					}
+					else if (appraising < 80)
+					{
+						htmltext = "30929-5.htm";
+						giveItems(player, STATUE_FORGERY, 1);
 					}
 					else
 					{
-						htmltext = "30929-07.html";
+						htmltext = "30929-6.htm";
+						giveItems(player, STATUE_PROTOTYPE, 1);
 					}
-					
-					takeItems(player, SCULPTOR_BERONA, 1);
 				}
-				else
+				break;
+			}
+			case "30181-6.htm":
+			{
+				st.exitQuest(true, true);
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 36) ? "30181-0a.htm" : "30181-0.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
 				{
-					htmltext = "30929-08.html";
+					case GALIBREDO:
+					{
+						htmltext = (hasQuestItems(player, GALIBREDO_BUST)) ? "30181-3a.htm" : "30181-3.htm";
+						break;
+					}
+					case PATRIN:
+					{
+						htmltext = "30929-0.htm";
+						break;
+					}
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -201,42 +213,13 @@ public class Q00355_FamilyHonor extends Quest
 		final int random = getRandom(1000);
 		if (random < info.getFirstChance())
 		{
-			giveItemRandomly(killer, npc, GALFREDO_ROMERS_BUST, 1, 0, 1, true);
+			giveItemRandomly(killer, npc, GALIBREDO_BUST, 1, 0, 1, true);
 		}
 		else if (random < info.getSecondChance())
 		{
-			giveItemRandomly(killer, npc, SCULPTOR_BERONA, 1, 0, 1, true);
+			giveItemRandomly(killer, npc, WORK_OF_BERONA, 1, 0, 1, true);
 		}
+		
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
-		{
-			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30181-01.htm" : "30181-04.html";
-		}
-		else if (qs.isStarted())
-		{
-			if (npc.getId() == GALIBREDO)
-			{
-				if (hasQuestItems(player, SCULPTOR_BERONA))
-				{
-					htmltext = "30181-11.html";
-				}
-				else
-				{
-					htmltext = "30181-05.html";
-				}
-			}
-			else
-			{
-				htmltext = "30929-01.html";
-			}
-		}
-		return htmltext;
 	}
 }

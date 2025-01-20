@@ -16,9 +16,7 @@
  */
 package quests.Q00263_OrcSubjugation;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -27,113 +25,110 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Orc Subjugation (263)
- * @author ivantotov
- */
 public class Q00263_OrcSubjugation extends Quest
 {
-	// NPCs
-	private static final int KAYLEEN = 30346;
 	// Items
 	private static final int ORC_AMULET = 1116;
 	private static final int ORC_NECKLACE = 1117;
-	// Misc
-	private static final int MIN_LEVEL = 8;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(20385, ORC_AMULET); // Balor Orc Archer
-		MONSTERS.put(20386, ORC_NECKLACE); // Balor Orc Fighter
-		MONSTERS.put(20387, ORC_NECKLACE); // Balor Orc Fighter Leader
-		MONSTERS.put(20388, ORC_NECKLACE); // Balor Orc Lieutenant
-	}
 	
 	public Q00263_OrcSubjugation()
 	{
 		super(263);
-		addStartNpc(KAYLEEN);
-		addTalkId(KAYLEEN);
-		addKillId(MONSTERS.keySet());
 		registerQuestItems(ORC_AMULET, ORC_NECKLACE);
-		addCondMaxLevel(16, getNoQuestMsg(null));
+		addStartNpc(30346); // Kayleen
+		addTalkId(30346);
+		addKillId(20385, 20386, 20387, 20388);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30346-03.htm"))
 		{
-			case "30346-04.htm":
-			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30346-07.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30346-08.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30346-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && (getRandom(10) > 4))
-		{
-			giveItems(killer, MONSTERS.get(npc.getId()), 1);
-			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30346-03.htm" : "30346-02.htm" : "30346-01.htm";
+				if (player.getRace() != Race.DARK_ELF)
+				{
+					htmltext = "30346-00.htm";
+				}
+				else if (player.getLevel() < 8)
+				{
+					htmltext = "30346-01.htm";
+				}
+				else
+				{
+					htmltext = "30346-02.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
+				final int amulet = (int) getQuestItemsCount(player, ORC_AMULET);
+				final int necklace = (int) getQuestItemsCount(player, ORC_NECKLACE);
+				if ((amulet == 0) && (necklace == 0))
 				{
-					final long amulets = getQuestItemsCount(player, ORC_AMULET);
-					final long necklaces = getQuestItemsCount(player, ORC_NECKLACE);
-					giveAdena(player, ((amulets * 8) + (necklaces * 10) + ((amulets + necklaces) >= 10 ? 1100 : 0)), true);
-					takeItems(player, -1, getRegisteredItemIds());
-					htmltext = "30346-06.html";
+					htmltext = "30346-04.htm";
 				}
 				else
 				{
-					htmltext = "30346-05.html";
+					htmltext = "30346-05.htm";
+					takeItems(player, ORC_AMULET, -1);
+					takeItems(player, ORC_NECKLACE, -1);
+					int reward = (amulet * 20) + (necklace * 30);
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && ((amulet + necklace) >= 10))
+					{
+						reward += 1000;
+					}
+					
+					giveAdena(player, reward, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
+		{
+			giveItems(player, (npc.getId() == 20385) ? ORC_AMULET : ORC_NECKLACE, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

@@ -22,14 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-import quests.Q00017_LightAndDarkness.Q00017_LightAndDarkness;
-
-/**
- * The Coming Darkness (16)<br>
- * Original jython script by disKret.<br>
- * TODO: Zoey76: This quest is still not retail like, Altars AI is incomplete.
- * @author nonom
- */
 public class Q00016_TheComingDarkness extends Quest
 {
 	// NPCs
@@ -39,104 +31,147 @@ public class Q00016_TheComingDarkness extends Quest
 	private static final int EVIL_ALTAR_3 = 31514;
 	private static final int EVIL_ALTAR_4 = 31515;
 	private static final int EVIL_ALTAR_5 = 31516;
+	
 	// Item
 	private static final int CRYSTAL_OF_SEAL = 7167;
 	
 	public Q00016_TheComingDarkness()
 	{
 		super(16);
+		registerQuestItems(CRYSTAL_OF_SEAL);
 		addStartNpc(HIERARCH);
 		addTalkId(HIERARCH, EVIL_ALTAR_1, EVIL_ALTAR_2, EVIL_ALTAR_3, EVIL_ALTAR_4, EVIL_ALTAR_5);
-		registerQuestItems(CRYSTAL_OF_SEAL);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		final int cond = qs.getCond();
 		switch (event)
 		{
-			case "31517-02.htm":
+			case "31517-2.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				giveItems(player, CRYSTAL_OF_SEAL, 5);
 				break;
 			}
-			case "31512-01.html":
-			case "31513-01.html":
-			case "31514-01.html":
-			case "31515-01.html":
-			case "31516-01.html":
+			case "31512-1.htm":
 			{
-				final int npcId = Integer.parseInt(event.replace("-01.html", ""));
-				if ((cond == (npcId - 31511)) && hasQuestItems(player, CRYSTAL_OF_SEAL))
-				{
-					takeItems(player, CRYSTAL_OF_SEAL, 1);
-					qs.setCond(cond + 1, true);
-				}
+				st.setCond(2, true);
+				takeItems(player, CRYSTAL_OF_SEAL, 1);
+				break;
+			}
+			case "31513-1.htm":
+			{
+				st.setCond(3, true);
+				takeItems(player, CRYSTAL_OF_SEAL, 1);
+				break;
+			}
+			case "31514-1.htm":
+			{
+				st.setCond(4, true);
+				takeItems(player, CRYSTAL_OF_SEAL, 1);
+				break;
+			}
+			case "31515-1.htm":
+			{
+				st.setCond(5, true);
+				takeItems(player, CRYSTAL_OF_SEAL, 1);
+				break;
+			}
+			case "31516-1.htm":
+			{
+				st.setCond(6, true);
+				takeItems(player, CRYSTAL_OF_SEAL, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final QuestState qs2 = player.getQuestState(Q00017_LightAndDarkness.class.getSimpleName());
-		if ((qs2 != null) && !qs2.isCompleted())
-		{
-			return "31517-04.html";
-		}
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 62) ? "31517-0a.htm" : "31517-0.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				final int npcId = npc.getId();
+				
+				switch (npcId)
+				{
+					case HIERARCH:
+					{
+						if (cond == 6)
+						{
+							htmltext = "31517-4.htm";
+							addExpAndSp(player, 221958, 0);
+							st.exitQuest(false, true);
+						}
+						else
+						{
+							if (hasQuestItems(player, CRYSTAL_OF_SEAL))
+							{
+								htmltext = "31517-3.htm";
+							}
+							else
+							{
+								htmltext = "31517-3a.htm";
+								st.exitQuest(true, true);
+							}
+						}
+						break;
+					}
+					case EVIL_ALTAR_1:
+					case EVIL_ALTAR_2:
+					case EVIL_ALTAR_3:
+					case EVIL_ALTAR_4:
+					case EVIL_ALTAR_5:
+					{
+						final int condAltar = npcId - 31511;
+						if (cond == condAltar)
+						{
+							if (hasQuestItems(player, CRYSTAL_OF_SEAL))
+							{
+								htmltext = npcId + "-0.htm";
+							}
+							else
+							{
+								htmltext = "altar_nocrystal.htm";
+							}
+						}
+						else if (cond > condAltar)
+						{
+							htmltext = npcId + "-2.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
 			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				htmltext = (player.getLevel() >= 62) ? "31517-00.htm" : "31517-05.html";
-				break;
-			}
-			case State.STARTED:
-			{
-				final int npcId = npc.getId();
-				if (npcId == HIERARCH)
-				{
-					if (qs.isCond(6))
-					{
-						addExpAndSp(player, 865187, 69172);
-						qs.exitQuest(false, true);
-						htmltext = "31517-03.html";
-					}
-					else
-					{
-						htmltext = "31517-02a.html";
-					}
-				}
-				else if ((npcId - 31511) == qs.getCond())
-				{
-					htmltext = npcId + "-00.html";
-				}
-				else
-				{
-					htmltext = npcId + "-01.html";
-				}
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 }

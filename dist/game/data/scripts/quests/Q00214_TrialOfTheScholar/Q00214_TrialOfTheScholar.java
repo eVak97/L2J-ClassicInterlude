@@ -16,1053 +16,926 @@
  */
 package quests.Q00214_TrialOfTheScholar;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Trial Of The Scholar (214)
- * @author ivantotov
- */
 public class Q00214_TrialOfTheScholar extends Quest
 {
 	// NPCs
-	private static final int HIGH_PRIEST_SYLVAIN = 30070;
-	private static final int CAPTAIN_LUCAS = 30071;
-	private static final int WAREHOUSE_KEEPER_VALKON = 30103;
-	private static final int MAGISTER_DIETER = 30111;
-	private static final int GRAND_MAGISTER_JUREK = 30115;
-	private static final int TRADER_EDROC = 30230;
-	private static final int WAREHOUSE_KEEPER_RAUT = 30316;
-	private static final int BLACKSMITH_POITAN = 30458;
-	private static final int MAGISTER_MIRIEN = 30461;
+	private static final int SYLVAIN = 30070;
+	private static final int LUCAS = 30071;
+	private static final int VALKON = 30103;
+	private static final int DIETER = 30111;
+	private static final int JUREK = 30115;
+	private static final int EDROC = 30230;
+	private static final int RAUT = 30316;
+	private static final int POITAN = 30458;
+	private static final int MIRIEN = 30461;
 	private static final int MARIA = 30608;
-	private static final int ASTROLOGER_CRETA = 30609;
-	private static final int ELDER_CRONOS = 30610;
-	private static final int DRUNKARD_TRIFF = 30611;
-	private static final int ELDER_CASIAN = 30612;
-	// Items
-	private static final int MIRIENS_1ST_SIGIL = 2675;
-	private static final int MIRIENS_2ND_SIGIL = 2676;
-	private static final int MIRIENS_3RD_SIGIL = 2677;
-	private static final int MIRIENS_INSTRUCTION = 2678;
-	private static final int MARIAS_1ST_LETTER = 2679;
-	private static final int MARIAS_2ND_LETTER = 2680;
-	private static final int LUCASS_LETTER = 2681;
-	private static final int LUCILLAS_HANDBAG = 2682;
-	private static final int CRETAS_1ST_LETTER = 2683;
-	private static final int CRERAS_PAINTING1 = 2684;
-	private static final int CRERAS_PAINTING2 = 2685;
-	private static final int CRERAS_PAINTING3 = 2686;
-	private static final int BROWN_SCROLL_SCRAP = 2687;
-	private static final int CRYSTAL_OF_PURITY1 = 2688;
-	private static final int HIGH_PRIESTS_SIGIL = 2689;
-	private static final int GRAND_MAGISTER_SIGIL = 2690;
-	private static final int CRONOS_SIGIL = 2691;
-	private static final int SYLVAINS_LETTER = 2692;
-	private static final int SYMBOL_OF_SYLVAIN = 2693;
-	private static final int JUREKS_LIST = 2694;
-	private static final int MONSTER_EYE_DESTROYER_SKIN = 2695;
-	private static final int SHAMANS_NECKLACE = 2696;
-	private static final int SHACKLES_SCALP = 2697;
-	private static final int SYMBOL_OF_JUREK = 2698;
-	private static final int CRONOS_LETTER = 2699;
-	private static final int DIETERS_KEY = 2700;
-	private static final int CRETAS_2ND_LETTER = 2701;
-	private static final int DIETERS_LETTER = 2702;
-	private static final int DIETERS_DIARY = 2703;
-	private static final int RAUTS_LETTER_ENVELOPE = 2704;
-	private static final int TRIFFS_RING = 2705;
-	private static final int SCRIPTURE_CHAPTER_1 = 2706;
-	private static final int SCRIPTURE_CHAPTER_2 = 2707;
-	private static final int SCRIPTURE_CHAPTER_3 = 2708;
-	private static final int SCRIPTURE_CHAPTER_4 = 2709;
-	private static final int VALKONS_REQUEST = 2710;
-	private static final int POITANS_NOTES = 2711;
-	private static final int STRONG_LIGUOR = 2713;
-	private static final int CRYSTAL_OF_PURITY2 = 2714;
-	private static final int CASIANS_LIST = 2715;
-	private static final int GHOULS_SKIN = 2716;
-	private static final int MEDUSAS_BLOOD = 2717;
-	private static final int FETTERED_SOULS_ICHOR = 2718;
-	private static final int ENCHANTED_GARGOYLES_NAIL = 2719;
-	private static final int SYMBOL_OF_CRONOS = 2720;
-	// Reward
-	private static final int MARK_OF_SCHOLAR = 2674;
+	private static final int CRETA = 30609;
+	private static final int CRONOS = 30610;
+	private static final int TRIFF = 30611;
+	private static final int CASIAN = 30612;
 	// Monsters
-	private static final int MONSTER_EYE_DESTREOYER = 20068;
+	private static final int MONSTER_EYE_DESTROYER = 20068;
 	private static final int MEDUSA = 20158;
 	private static final int GHOUL = 20201;
-	private static final int SHACKLE1 = 20235;
+	private static final int SHACKLE_1 = 20235;
+	private static final int SHACKLE_2 = 20279;
 	private static final int BREKA_ORC_SHAMAN = 20269;
-	private static final int SHACKLE2 = 20279;
 	private static final int FETTERED_SOUL = 20552;
 	private static final int GRANDIS = 20554;
 	private static final int ENCHANTED_GARGOYLE = 20567;
 	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
-	// Misc
-	private static final int MIN_LEVEL = 35;
-	private static final int LEVEL = 36;
+	// Items
+	private static final int MIRIEN_SIGIL_1 = 2675;
+	private static final int MIRIEN_SIGIL_2 = 2676;
+	private static final int MIRIEN_SIGIL_3 = 2677;
+	private static final int MIRIEN_INSTRUCTION = 2678;
+	private static final int MARIA_LETTER_1 = 2679;
+	private static final int MARIA_LETTER_2 = 2680;
+	private static final int LUCAS_LETTER = 2681;
+	private static final int LUCILLA_HANDBAG = 2682;
+	private static final int CRETA_LETTER_1 = 2683;
+	private static final int CRETA_PAINTING_1 = 2684;
+	private static final int CRETA_PAINTING_2 = 2685;
+	private static final int CRETA_PAINTING_3 = 2686;
+	private static final int BROWN_SCROLL_SCRAP = 2687;
+	private static final int CRYSTAL_OF_PURITY_1 = 2688;
+	private static final int HIGH_PRIEST_SIGIL = 2689;
+	private static final int GRAND_MAGISTER_SIGIL = 2690;
+	private static final int CRONOS_SIGIL = 2691;
+	private static final int SYLVAIN_LETTER = 2692;
+	private static final int SYMBOL_OF_SYLVAIN = 2693;
+	private static final int JUREK_LIST = 2694;
+	private static final int MONSTER_EYE_DESTROYER_SKIN = 2695;
+	private static final int SHAMAN_NECKLACE = 2696;
+	private static final int SHACKLE_SCALP = 2697;
+	private static final int SYMBOL_OF_JUREK = 2698;
+	private static final int CRONOS_LETTER = 2699;
+	private static final int DIETER_KEY = 2700;
+	private static final int CRETA_LETTER_2 = 2701;
+	private static final int DIETER_LETTER = 2702;
+	private static final int DIETER_DIARY = 2703;
+	private static final int RAUT_LETTER_ENVELOPE = 2704;
+	private static final int TRIFF_RING = 2705;
+	private static final int SCRIPTURE_CHAPTER_1 = 2706;
+	private static final int SCRIPTURE_CHAPTER_2 = 2707;
+	private static final int SCRIPTURE_CHAPTER_3 = 2708;
+	private static final int SCRIPTURE_CHAPTER_4 = 2709;
+	private static final int VALKON_REQUEST = 2710;
+	private static final int POITAN_NOTES = 2711;
+	private static final int STRONG_LIQUOR = 2713;
+	private static final int CRYSTAL_OF_PURITY_2 = 2714;
+	private static final int CASIAN_LIST = 2715;
+	private static final int GHOUL_SKIN = 2716;
+	private static final int MEDUSA_BLOOD = 2717;
+	private static final int FETTERED_SOUL_ICHOR = 2718;
+	private static final int ENCHANTED_GARGOYLE_NAIL = 2719;
+	private static final int SYMBOL_OF_CRONOS = 2720;
+	// Rewards
+	private static final int MARK_OF_SCHOLAR = 2674;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00214_TrialOfTheScholar()
 	{
 		super(214);
-		addStartNpc(MAGISTER_MIRIEN);
-		addTalkId(MAGISTER_MIRIEN, HIGH_PRIEST_SYLVAIN, CAPTAIN_LUCAS, WAREHOUSE_KEEPER_VALKON, MAGISTER_DIETER, GRAND_MAGISTER_JUREK, TRADER_EDROC, WAREHOUSE_KEEPER_RAUT, BLACKSMITH_POITAN, MARIA, ASTROLOGER_CRETA, ELDER_CRONOS, DRUNKARD_TRIFF, ELDER_CASIAN);
-		addKillId(MONSTER_EYE_DESTREOYER, MEDUSA, GHOUL, SHACKLE1, BREKA_ORC_SHAMAN, SHACKLE2, FETTERED_SOUL, GRANDIS, ENCHANTED_GARGOYLE, LETO_LIZARDMAN_WARRIOR);
-		registerQuestItems(MIRIENS_1ST_SIGIL, MIRIENS_2ND_SIGIL, MIRIENS_3RD_SIGIL, MIRIENS_INSTRUCTION, MARIAS_1ST_LETTER, MARIAS_2ND_LETTER, LUCASS_LETTER, LUCILLAS_HANDBAG, CRETAS_1ST_LETTER, CRERAS_PAINTING1, CRERAS_PAINTING1, CRERAS_PAINTING3, BROWN_SCROLL_SCRAP, CRYSTAL_OF_PURITY1, HIGH_PRIESTS_SIGIL, GRAND_MAGISTER_SIGIL, CRONOS_SIGIL, SYLVAINS_LETTER, SYMBOL_OF_SYLVAIN, JUREKS_LIST, MONSTER_EYE_DESTROYER_SKIN, SHAMANS_NECKLACE, SHACKLES_SCALP, SYMBOL_OF_JUREK, CRONOS_LETTER, DIETERS_KEY, CRETAS_2ND_LETTER, DIETERS_LETTER, DIETERS_DIARY, RAUTS_LETTER_ENVELOPE, TRIFFS_RING, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4, VALKONS_REQUEST, POITANS_NOTES, STRONG_LIGUOR, CRYSTAL_OF_PURITY2, CASIANS_LIST, GHOULS_SKIN, MEDUSAS_BLOOD, FETTERED_SOULS_ICHOR, ENCHANTED_GARGOYLES_NAIL, SYMBOL_OF_CRONOS);
+		registerQuestItems(MIRIEN_SIGIL_1, MIRIEN_SIGIL_2, MIRIEN_SIGIL_3, MIRIEN_INSTRUCTION, MARIA_LETTER_1, MARIA_LETTER_2, LUCAS_LETTER, LUCILLA_HANDBAG, CRETA_LETTER_1, CRETA_PAINTING_1, CRETA_PAINTING_2, CRETA_PAINTING_3, BROWN_SCROLL_SCRAP, CRYSTAL_OF_PURITY_1, HIGH_PRIEST_SIGIL, GRAND_MAGISTER_SIGIL, CRONOS_SIGIL, SYLVAIN_LETTER, SYMBOL_OF_SYLVAIN, JUREK_LIST, MONSTER_EYE_DESTROYER_SKIN, SHAMAN_NECKLACE, SHACKLE_SCALP, SYMBOL_OF_JUREK, CRONOS_LETTER, DIETER_KEY, CRETA_LETTER_2, DIETER_LETTER, DIETER_DIARY, RAUT_LETTER_ENVELOPE, TRIFF_RING, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4, VALKON_REQUEST, POITAN_NOTES, STRONG_LIQUOR, CRYSTAL_OF_PURITY_2, CASIAN_LIST, GHOUL_SKIN, MEDUSA_BLOOD, FETTERED_SOUL_ICHOR, ENCHANTED_GARGOYLE_NAIL, SYMBOL_OF_CRONOS);
+		addStartNpc(MIRIEN);
+		addTalkId(MIRIEN, SYLVAIN, LUCAS, VALKON, DIETER, JUREK, EDROC, RAUT, POITAN, MARIA, CRETA, CRONOS, TRIFF, CASIAN);
+		addKillId(MONSTER_EYE_DESTROYER, MEDUSA, GHOUL, SHACKLE_1, SHACKLE_2, BREKA_ORC_SHAMAN, FETTERED_SOUL, GRANDIS, ENCHANTED_GARGOYLE, LETO_LIZARDMAN_WARRIOR);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30461-04.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, MIRIEN_SIGIL_1, 1);
+				if (!player.getVariables().getBoolean("secondClassChange35", false))
 				{
-					qs.startQuest();
-					if (!hasQuestItems(player, MIRIENS_1ST_SIGIL))
-					{
-						giveItems(player, MIRIENS_1ST_SIGIL, 1);
-					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					htmltext = "30461-04a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_35.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange35", true);
 				}
 				break;
 			}
-			case "30103-02.html":
-			case "30103-03.html":
-			case "30111-02.html":
-			case "30111-03.html":
-			case "30111-04.html":
-			case "30111-08.html":
-			case "30111-14.html":
-			case "30115-02.html":
-			case "30316-03.html":
-			case "30461-09.html":
-			case "30608-07.html":
-			case "30609-02.html":
-			case "30609-03.html":
-			case "30609-04.html":
-			case "30609-08.html":
-			case "30609-13.html":
-			case "30610-02.html":
-			case "30610-03.html":
-			case "30610-04.html":
-			case "30610-05.html":
-			case "30610-06.html":
-			case "30610-07.html":
-			case "30610-08.html":
-			case "30610-09.html":
-			case "30610-13.html":
-			case "30611-02.html":
-			case "30611-03.html":
-			case "30611-06.html":
-			case "30612-03.html":
+			case "30461-09.htm":
 			{
-				htmltext = event;
-				break;
-			}
-			case "30461-10.html":
-			{
-				if (hasQuestItems(player, MIRIENS_2ND_SIGIL, SYMBOL_OF_JUREK))
+				if (player.getLevel() < 36)
 				{
-					takeItems(player, MIRIENS_2ND_SIGIL, 1);
-					giveItems(player, MIRIENS_3RD_SIGIL, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, MIRIEN_INSTRUCTION, 1);
+				}
+				else
+				{
+					htmltext = "30461-10.htm";
+					st.setCond(19, true);
+					takeItems(player, MIRIEN_SIGIL_2, 1);
 					takeItems(player, SYMBOL_OF_JUREK, 1);
-					qs.setCond(19, true);
-					htmltext = event;
+					giveItems(player, MIRIEN_SIGIL_3, 1);
 				}
 				break;
 			}
-			case "30070-02.html":
+			case "30070-02.htm":
 			{
-				giveItems(player, HIGH_PRIESTS_SIGIL, 1);
-				giveItems(player, SYLVAINS_LETTER, 1);
-				qs.setCond(2, true);
-				htmltext = event;
+				st.setCond(2, true);
+				giveItems(player, HIGH_PRIEST_SIGIL, 1);
+				giveItems(player, SYLVAIN_LETTER, 1);
 				break;
 			}
-			case "30071-04.html":
+			case "30608-02.htm":
 			{
-				if (hasQuestItems(player, CRERAS_PAINTING2))
-				{
-					takeItems(player, CRERAS_PAINTING2, 1);
-					giveItems(player, CRERAS_PAINTING3, 1);
-					qs.setCond(10, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
+				takeItems(player, SYLVAIN_LETTER, 1);
+				giveItems(player, MARIA_LETTER_1, 1);
 				break;
 			}
-			case "30103-04.html":
+			case "30608-08.htm":
 			{
-				giveItems(player, VALKONS_REQUEST, 1);
-				htmltext = event;
+				st.setCond(7, true);
+				takeItems(player, CRETA_LETTER_1, 1);
+				giveItems(player, LUCILLA_HANDBAG, 1);
 				break;
 			}
-			case "30111-05.html":
+			case "30608-14.htm":
 			{
-				if (hasQuestItems(player, CRONOS_LETTER))
-				{
-					takeItems(player, CRONOS_LETTER, 1);
-					giveItems(player, DIETERS_KEY, 1);
-					qs.setCond(21, true);
-					htmltext = event;
-				}
+				st.setCond(13, true);
+				takeItems(player, BROWN_SCROLL_SCRAP, -1);
+				takeItems(player, CRETA_PAINTING_3, 1);
+				giveItems(player, CRYSTAL_OF_PURITY_1, 1);
 				break;
 			}
-			case "30111-09.html":
+			case "30115-03.htm":
 			{
-				if (hasQuestItems(player, CRETAS_2ND_LETTER))
-				{
-					takeItems(player, CRETAS_2ND_LETTER, 1);
-					giveItems(player, DIETERS_LETTER, 1);
-					giveItems(player, DIETERS_DIARY, 1);
-					qs.setCond(23, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30115-03.html":
-			{
-				giveItems(player, JUREKS_LIST, 1);
+				st.setCond(16, true);
 				giveItems(player, GRAND_MAGISTER_SIGIL, 1);
-				qs.setCond(16, true);
-				htmltext = event;
+				giveItems(player, JUREK_LIST, 1);
 				break;
 			}
-			case "30230-02.html":
+			case "30071-04.htm":
 			{
-				if (hasQuestItems(player, DIETERS_LETTER))
-				{
-					takeItems(player, DIETERS_LETTER, 1);
-					giveItems(player, RAUTS_LETTER_ENVELOPE, 1);
-					qs.setCond(24, true);
-					htmltext = event;
-				}
+				st.setCond(10, true);
+				takeItems(player, CRETA_PAINTING_2, 1);
+				giveItems(player, CRETA_PAINTING_3, 1);
 				break;
 			}
-			case "30316-02.html":
+			case "30609-05.htm":
 			{
-				if (hasQuestItems(player, RAUTS_LETTER_ENVELOPE))
-				{
-					takeItems(player, RAUTS_LETTER_ENVELOPE, 1);
-					giveItems(player, SCRIPTURE_CHAPTER_1, 1);
-					giveItems(player, STRONG_LIGUOR, 1);
-					qs.setCond(25, true);
-					htmltext = event;
-				}
+				st.setCond(6, true);
+				takeItems(player, MARIA_LETTER_2, 1);
+				giveItems(player, CRETA_LETTER_1, 1);
 				break;
 			}
-			case "30608-02.html":
+			case "30609-09.htm":
 			{
-				if (hasQuestItems(player, SYLVAINS_LETTER))
-				{
-					giveItems(player, MARIAS_1ST_LETTER, 1);
-					takeItems(player, SYLVAINS_LETTER, 1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(8, true);
+				takeItems(player, LUCILLA_HANDBAG, 1);
+				giveItems(player, CRETA_PAINTING_1, 1);
 				break;
 			}
-			case "30608-08.html":
+			case "30609-14.htm":
 			{
-				if (hasQuestItems(player, CRETAS_1ST_LETTER))
-				{
-					giveItems(player, LUCILLAS_HANDBAG, 1);
-					takeItems(player, CRETAS_1ST_LETTER, 1);
-					qs.setCond(7, true);
-					htmltext = event;
-				}
+				st.setCond(22, true);
+				takeItems(player, DIETER_KEY, 1);
+				giveItems(player, CRETA_LETTER_2, 1);
 				break;
 			}
-			case "30608-14.html":
+			case "30610-10.htm":
 			{
-				if (hasQuestItems(player, CRERAS_PAINTING3))
-				{
-					takeItems(player, CRERAS_PAINTING3, 1);
-					takeItems(player, BROWN_SCROLL_SCRAP, -1);
-					giveItems(player, CRYSTAL_OF_PURITY1, 1);
-					qs.setCond(13, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30609-05.html":
-			{
-				if (hasQuestItems(player, MARIAS_2ND_LETTER))
-				{
-					takeItems(player, MARIAS_2ND_LETTER, 1);
-					giveItems(player, CRETAS_1ST_LETTER, 1);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30609-09.html":
-			{
-				if (hasQuestItems(player, LUCILLAS_HANDBAG))
-				{
-					takeItems(player, LUCILLAS_HANDBAG, 1);
-					giveItems(player, CRERAS_PAINTING1, 1);
-					qs.setCond(8, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30609-14.html":
-			{
-				if (hasQuestItems(player, DIETERS_KEY))
-				{
-					takeItems(player, DIETERS_KEY, 1);
-					giveItems(player, CRETAS_2ND_LETTER, 1);
-					qs.setCond(22, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30610-10.html":
-			{
-				giveItems(player, CRONOS_SIGIL, 1);
+				st.setCond(20, true);
 				giveItems(player, CRONOS_LETTER, 1);
-				qs.setCond(20, true);
-				htmltext = event;
+				giveItems(player, CRONOS_SIGIL, 1);
 				break;
 			}
-			case "30610-14.html":
+			case "30610-14.htm":
 			{
-				if (hasQuestItems(player, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4))
-				{
-					takeItems(player, CRONOS_SIGIL, 1);
-					takeItems(player, DIETERS_DIARY, 1);
-					takeItems(player, TRIFFS_RING, 1);
-					takeItems(player, SCRIPTURE_CHAPTER_1, 1);
-					takeItems(player, SCRIPTURE_CHAPTER_2, 1);
-					takeItems(player, SCRIPTURE_CHAPTER_3, 1);
-					takeItems(player, SCRIPTURE_CHAPTER_4, 1);
-					giveItems(player, SYMBOL_OF_CRONOS, 1);
-					qs.setCond(31, true);
-					htmltext = event;
-				}
+				st.setCond(31, true);
+				takeItems(player, CRONOS_SIGIL, 1);
+				takeItems(player, DIETER_DIARY, 1);
+				takeItems(player, SCRIPTURE_CHAPTER_1, 1);
+				takeItems(player, SCRIPTURE_CHAPTER_2, 1);
+				takeItems(player, SCRIPTURE_CHAPTER_3, 1);
+				takeItems(player, SCRIPTURE_CHAPTER_4, 1);
+				takeItems(player, TRIFF_RING, 1);
+				giveItems(player, SYMBOL_OF_CRONOS, 1);
 				break;
 			}
-			case "30611-04.html":
+			case "30111-05.htm":
 			{
-				if (hasQuestItems(player, STRONG_LIGUOR))
-				{
-					giveItems(player, TRIFFS_RING, 1);
-					takeItems(player, STRONG_LIGUOR, 1);
-					qs.setCond(26, true);
-					htmltext = event;
-				}
+				st.setCond(21, true);
+				takeItems(player, CRONOS_LETTER, 1);
+				giveItems(player, DIETER_KEY, 1);
 				break;
 			}
-			case "30612-04.html":
+			case "30111-09.htm":
 			{
-				giveItems(player, CASIANS_LIST, 1);
-				qs.setCond(28, true);
-				htmltext = event;
+				st.setCond(23, true);
+				takeItems(player, CRETA_LETTER_2, 1);
+				giveItems(player, DIETER_DIARY, 1);
+				giveItems(player, DIETER_LETTER, 1);
 				break;
 			}
-			case "30612-07.html":
+			case "30230-02.htm":
 			{
+				st.setCond(24, true);
+				takeItems(player, DIETER_LETTER, 1);
+				giveItems(player, RAUT_LETTER_ENVELOPE, 1);
+				break;
+			}
+			case "30316-02.htm":
+			{
+				st.setCond(25, true);
+				takeItems(player, RAUT_LETTER_ENVELOPE, 1);
+				giveItems(player, SCRIPTURE_CHAPTER_1, 1);
+				giveItems(player, STRONG_LIQUOR, 1);
+				break;
+			}
+			case "30611-04.htm":
+			{
+				st.setCond(26, true);
+				takeItems(player, STRONG_LIQUOR, 1);
+				giveItems(player, TRIFF_RING, 1);
+				break;
+			}
+			case "30103-04.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, VALKON_REQUEST, 1);
+				break;
+			}
+			case "30612-04.htm":
+			{
+				st.setCond(28, true);
+				giveItems(player, CASIAN_LIST, 1);
+				break;
+			}
+			case "30612-07.htm":
+			{
+				st.setCond(30, true);
+				takeItems(player, CASIAN_LIST, 1);
+				takeItems(player, ENCHANTED_GARGOYLE_NAIL, -1);
+				takeItems(player, FETTERED_SOUL_ICHOR, -1);
+				takeItems(player, GHOUL_SKIN, -1);
+				takeItems(player, MEDUSA_BLOOD, -1);
+				takeItems(player, POITAN_NOTES, 1);
 				giveItems(player, SCRIPTURE_CHAPTER_4, 1);
-				takeItems(player, POITANS_NOTES, 1);
-				takeItems(player, CASIANS_LIST, 1);
-				takeItems(player, GHOULS_SKIN, -1);
-				takeItems(player, MEDUSAS_BLOOD, -1);
-				takeItems(player, FETTERED_SOULS_ICHOR, -1);
-				takeItems(player, ENCHANTED_GARGOYLES_NAIL, -1);
-				qs.setCond(30, true);
-				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case MONSTER_EYE_DESTREOYER:
-				{
-					if (hasQuestItems(killer, MIRIENS_2ND_SIGIL, GRAND_MAGISTER_SIGIL, JUREKS_LIST) && (getQuestItemsCount(killer, MONSTER_EYE_DESTROYER_SKIN) < 5))
-					{
-						giveItems(killer, MONSTER_EYE_DESTROYER_SKIN, 1);
-						if ((getQuestItemsCount(killer, MONSTER_EYE_DESTROYER_SKIN) == 5) && (getQuestItemsCount(killer, SHAMANS_NECKLACE) >= 5) && (getQuestItemsCount(killer, SHACKLES_SCALP) >= 2))
-						{
-							qs.setCond(17, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MEDUSA:
-				{
-					if (hasQuestItems(killer, TRIFFS_RING, POITANS_NOTES, CASIANS_LIST) && (getQuestItemsCount(killer, MEDUSAS_BLOOD) < 12))
-					{
-						giveItems(killer, MEDUSAS_BLOOD, 1);
-						if (getQuestItemsCount(killer, MEDUSAS_BLOOD) == 12)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case GHOUL:
-				{
-					if (hasQuestItems(killer, TRIFFS_RING, POITANS_NOTES, CASIANS_LIST) && (getQuestItemsCount(killer, GHOULS_SKIN) < 10))
-					{
-						giveItems(killer, GHOULS_SKIN, 1);
-						if (getQuestItemsCount(killer, GHOULS_SKIN) == 10)
-						{
-							qs.setCond(29, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case SHACKLE1:
-				case SHACKLE2:
-				{
-					if (hasQuestItems(killer, MIRIENS_2ND_SIGIL, GRAND_MAGISTER_SIGIL, JUREKS_LIST) && (getQuestItemsCount(killer, SHACKLES_SCALP) < 2))
-					{
-						giveItems(killer, SHACKLES_SCALP, 1);
-						if ((getQuestItemsCount(killer, MONSTER_EYE_DESTROYER_SKIN) >= 5) && (getQuestItemsCount(killer, SHAMANS_NECKLACE) >= 5) && (getQuestItemsCount(killer, SHACKLES_SCALP) == 2))
-						{
-							qs.setCond(17, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case BREKA_ORC_SHAMAN:
-				{
-					if (hasQuestItems(killer, MIRIENS_2ND_SIGIL, GRAND_MAGISTER_SIGIL, JUREKS_LIST) && (getQuestItemsCount(killer, SHAMANS_NECKLACE) < 5))
-					{
-						giveItems(killer, SHAMANS_NECKLACE, 1);
-						if ((getQuestItemsCount(killer, MONSTER_EYE_DESTROYER_SKIN) >= 5) && (getQuestItemsCount(killer, SHAMANS_NECKLACE) == 5) && (getQuestItemsCount(killer, SHACKLES_SCALP) >= 2))
-						{
-							qs.setCond(17, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case FETTERED_SOUL:
-				{
-					if (hasQuestItems(killer, TRIFFS_RING, POITANS_NOTES, CASIANS_LIST) && (getQuestItemsCount(killer, FETTERED_SOULS_ICHOR) < 5))
-					{
-						giveItems(killer, FETTERED_SOULS_ICHOR, 1);
-						if (getQuestItemsCount(killer, FETTERED_SOULS_ICHOR) >= 5)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case GRANDIS:
-				{
-					if (hasQuestItems(killer, MIRIENS_3RD_SIGIL, CRONOS_SIGIL, TRIFFS_RING) && !hasQuestItems(killer, SCRIPTURE_CHAPTER_3))
-					{
-						giveItems(killer, SCRIPTURE_CHAPTER_3, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					}
-					break;
-				}
-				case ENCHANTED_GARGOYLE:
-				{
-					if (hasQuestItems(killer, TRIFFS_RING, POITANS_NOTES, CASIANS_LIST) && (getQuestItemsCount(killer, ENCHANTED_GARGOYLES_NAIL) < 5))
-					{
-						giveItems(killer, ENCHANTED_GARGOYLES_NAIL, 1);
-						if (getQuestItemsCount(killer, ENCHANTED_GARGOYLES_NAIL) >= 5)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case LETO_LIZARDMAN_WARRIOR:
-				{
-					if (hasQuestItems(killer, MIRIENS_1ST_SIGIL, HIGH_PRIESTS_SIGIL, CRERAS_PAINTING3) && (getQuestItemsCount(killer, BROWN_SCROLL_SCRAP) < 5))
-					{
-						giveItems(killer, BROWN_SCROLL_SCRAP, 1);
-						if (getQuestItemsCount(killer, BROWN_SCROLL_SCRAP) == 5)
-						{
-							qs.setCond(12, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == MAGISTER_MIRIEN)
+			case State.CREATED:
 			{
-				if ((player.getClassId() == ClassId.WIZARD) || (player.getClassId() == ClassId.ELVEN_WIZARD) || (player.getClassId() == ClassId.DARK_WIZARD))
+				if ((player.getClassId() != ClassId.WIZARD) && (player.getClassId() != ClassId.ELVEN_WIZARD) && (player.getClassId() != ClassId.DARK_WIZARD))
 				{
-					if (player.getLevel() < MIN_LEVEL)
-					{
-						htmltext = "30461-02.html";
-					}
-					else
-					{
-						htmltext = "30461-03.htm";
-					}
+					htmltext = "30461-01.htm";
+				}
+				else if (player.getLevel() < 35)
+				{
+					htmltext = "30461-02.htm";
 				}
 				else
 				{
-					htmltext = "30461-01.html";
+					htmltext = "30461-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case MAGISTER_MIRIEN:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, MIRIENS_1ST_SIGIL))
+					case MIRIEN:
 					{
-						if (!hasQuestItems(player, SYMBOL_OF_SYLVAIN))
+						if (cond < 14)
 						{
-							htmltext = "30461-05.html";
+							htmltext = "30461-05.htm";
 						}
-						else
+						else if (cond == 14)
 						{
-							takeItems(player, MIRIENS_1ST_SIGIL, 1);
-							giveItems(player, MIRIENS_2ND_SIGIL, 1);
+							htmltext = "30461-06.htm";
+							st.setCond(15, true);
+							takeItems(player, MIRIEN_SIGIL_1, 1);
 							takeItems(player, SYMBOL_OF_SYLVAIN, 1);
-							qs.setCond(15, true);
-							htmltext = "30461-06.html";
+							giveItems(player, MIRIEN_SIGIL_2, 1);
 						}
-					}
-					else if (hasQuestItems(player, MIRIENS_2ND_SIGIL))
-					{
-						if (!hasQuestItems(player, SYMBOL_OF_JUREK))
+						else if ((cond > 14) && (cond < 18))
 						{
-							htmltext = "30461-07.html";
+							htmltext = "30461-07.htm";
 						}
-						else
+						else if (cond == 18)
 						{
-							htmltext = "30461-08.html";
+							if (!hasQuestItems(player, MIRIEN_INSTRUCTION))
+							{
+								htmltext = "30461-08.htm";
+							}
+							else
+							{
+								if (player.getLevel() < 36)
+								{
+									htmltext = "30461-11.htm";
+								}
+								else
+								{
+									htmltext = "30461-12.htm";
+									st.setCond(19, true);
+									takeItems(player, MIRIEN_INSTRUCTION, 1);
+									takeItems(player, MIRIEN_SIGIL_2, 1);
+									takeItems(player, SYMBOL_OF_JUREK, 1);
+									giveItems(player, MIRIEN_SIGIL_3, 1);
+								}
+							}
 						}
-					}
-					else if (hasQuestItems(player, MIRIENS_INSTRUCTION))
-					{
-						if (player.getLevel() < LEVEL)
+						else if ((cond > 18) && (cond < 31))
 						{
-							htmltext = "30461-11.html";
+							htmltext = "30461-13.htm";
 						}
-						else
+						else if (cond == 31)
 						{
-							takeItems(player, MIRIENS_INSTRUCTION, 1);
-							giveItems(player, MIRIENS_3RD_SIGIL, 1);
-							qs.setCond(19, true);
-							htmltext = "30461-12.html";
-						}
-					}
-					else if (hasQuestItems(player, MIRIENS_3RD_SIGIL))
-					{
-						if (!hasQuestItems(player, SYMBOL_OF_CRONOS))
-						{
-							htmltext = "30461-13.html";
-						}
-						else
-						{
-							giveAdena(player, 319628, true);
+							htmltext = "30461-14.htm";
+							takeItems(player, MIRIEN_SIGIL_3, 1);
+							takeItems(player, SYMBOL_OF_CRONOS, 1);
 							giveItems(player, MARK_OF_SCHOLAR, 1);
-							addExpAndSp(player, 1753926, 113754);
-							qs.exitQuest(false, true);
-							player.sendPacket(new SocialAction(player.getObjectId(), 3));
-							htmltext = "30461-14.html";
+							addExpAndSp(player, 80265, 30000);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
+						break;
 					}
-					break;
-				}
-				case HIGH_PRIEST_SYLVAIN:
-				{
-					if (hasQuestItems(player, MIRIENS_1ST_SIGIL) && !hasAtLeastOneQuestItem(player, HIGH_PRIESTS_SIGIL, SYMBOL_OF_SYLVAIN))
+					case SYLVAIN:
 					{
-						htmltext = "30070-01.html";
-					}
-					else if (!hasQuestItems(player, CRYSTAL_OF_PURITY1) && hasQuestItems(player, HIGH_PRIESTS_SIGIL, MIRIENS_1ST_SIGIL))
-					{
-						htmltext = "30070-03.html";
-					}
-					else if (hasQuestItems(player, HIGH_PRIESTS_SIGIL, MIRIENS_1ST_SIGIL, CRYSTAL_OF_PURITY1))
-					{
-						takeItems(player, CRYSTAL_OF_PURITY1, 1);
-						takeItems(player, HIGH_PRIESTS_SIGIL, 1);
-						giveItems(player, SYMBOL_OF_SYLVAIN, 1);
-						qs.setCond(14, true);
-						htmltext = "30070-04.html";
-					}
-					else if (hasQuestItems(player, MIRIENS_1ST_SIGIL, SYMBOL_OF_SYLVAIN) && !hasQuestItems(player, HIGH_PRIESTS_SIGIL))
-					{
-						htmltext = "30070-05.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, MIRIENS_2ND_SIGIL, MIRIENS_3RD_SIGIL))
-					{
-						htmltext = "30070-06.html";
-					}
-					break;
-				}
-				case CAPTAIN_LUCAS:
-				{
-					if (hasQuestItems(player, MIRIENS_1ST_SIGIL, HIGH_PRIESTS_SIGIL))
-					{
-						if (hasQuestItems(player, MARIAS_1ST_LETTER))
+						if (cond == 1)
 						{
-							takeItems(player, MARIAS_1ST_LETTER, 1);
-							giveItems(player, LUCASS_LETTER, 1);
-							qs.setCond(4, true);
-							htmltext = "30071-01.html";
+							htmltext = "30070-01.htm";
 						}
-						else if (hasAtLeastOneQuestItem(player, MARIAS_2ND_LETTER, CRETAS_1ST_LETTER, LUCILLAS_HANDBAG, CRERAS_PAINTING1, LUCASS_LETTER))
+						else if (cond < 13)
 						{
-							htmltext = "30071-02.html";
+							htmltext = "30070-03.htm";
 						}
-						else if (hasQuestItems(player, CRERAS_PAINTING2))
+						else if (cond == 13)
 						{
-							htmltext = "30071-03.html";
+							htmltext = "30070-04.htm";
+							st.setCond(14, true);
+							takeItems(player, CRYSTAL_OF_PURITY_1, 1);
+							takeItems(player, HIGH_PRIEST_SIGIL, 1);
+							giveItems(player, SYMBOL_OF_SYLVAIN, 1);
 						}
-						else if (hasQuestItems(player, CRERAS_PAINTING3))
+						else if (cond == 14)
 						{
-							if (getQuestItemsCount(player, BROWN_SCROLL_SCRAP) < 5)
+							htmltext = "30070-05.htm";
+						}
+						else if (cond > 14)
+						{
+							htmltext = "30070-06.htm";
+						}
+						break;
+					}
+					case MARIA:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30608-01.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30608-03.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30608-04.htm";
+							st.setCond(5, true);
+							takeItems(player, LUCAS_LETTER, 1);
+							giveItems(player, MARIA_LETTER_2, 1);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30608-05.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30608-06.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30608-09.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30608-10.htm";
+							st.setCond(9, true);
+							takeItems(player, CRETA_PAINTING_1, 1);
+							giveItems(player, CRETA_PAINTING_2, 1);
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30608-11.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30608-12.htm";
+							st.setCond(11, true);
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30608-12.htm";
+						}
+						else if (cond == 12)
+						{
+							htmltext = "30608-13.htm";
+						}
+						else if (cond == 13)
+						{
+							htmltext = "30608-15.htm";
+						}
+						else if (hasAtLeastOneQuestItem(player, SYMBOL_OF_SYLVAIN, MIRIEN_SIGIL_2))
+						{
+							htmltext = "30608-16.htm";
+						}
+						else if (cond > 18)
+						{
+							if (!hasQuestItems(player, VALKON_REQUEST))
 							{
-								htmltext = "30071-05.html";
+								htmltext = "30608-17.htm";
 							}
 							else
 							{
-								htmltext = "30071-06.html";
+								htmltext = "30608-18.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								takeItems(player, VALKON_REQUEST, 1);
+								giveItems(player, CRYSTAL_OF_PURITY_2, 1);
 							}
 						}
+						break;
 					}
-					else if (hasAtLeastOneQuestItem(player, SYMBOL_OF_SYLVAIN, MIRIENS_2ND_SIGIL, MIRIENS_3RD_SIGIL, CRYSTAL_OF_PURITY1))
+					case JUREK:
 					{
-						htmltext = "30071-07.html";
+						if (cond == 15)
+						{
+							htmltext = "30115-01.htm";
+						}
+						else if (cond == 16)
+						{
+							htmltext = "30115-04.htm";
+						}
+						else if (cond == 17)
+						{
+							htmltext = "30115-05.htm";
+							st.setCond(18, true);
+							takeItems(player, GRAND_MAGISTER_SIGIL, 1);
+							takeItems(player, JUREK_LIST, 1);
+							takeItems(player, MONSTER_EYE_DESTROYER_SKIN, -1);
+							takeItems(player, SHACKLE_SCALP, -1);
+							takeItems(player, SHAMAN_NECKLACE, -1);
+							giveItems(player, SYMBOL_OF_JUREK, 1);
+						}
+						else if (cond == 18)
+						{
+							htmltext = "30115-06.htm";
+						}
+						else if (cond > 18)
+						{
+							htmltext = "30115-07.htm";
+						}
+						break;
 					}
-					break;
-				}
-				case WAREHOUSE_KEEPER_VALKON:
-				{
-					if (hasQuestItems(player, TRIFFS_RING))
+					case LUCAS:
 					{
-						if (!hasAtLeastOneQuestItem(player, VALKONS_REQUEST, CRYSTAL_OF_PURITY2, SCRIPTURE_CHAPTER_2))
+						if (cond == 3)
 						{
-							htmltext = "30103-01.html";
+							htmltext = "30071-01.htm";
+							st.setCond(4, true);
+							takeItems(player, MARIA_LETTER_1, 1);
+							giveItems(player, LUCAS_LETTER, 1);
 						}
-						else if (hasQuestItems(player, VALKONS_REQUEST) && !hasAtLeastOneQuestItem(player, CRYSTAL_OF_PURITY2, SCRIPTURE_CHAPTER_2))
+						else if ((cond > 3) && (cond < 9))
 						{
-							htmltext = "30103-05.html";
+							htmltext = "30071-02.htm";
 						}
-						else if (hasQuestItems(player, CRYSTAL_OF_PURITY2) && !hasAtLeastOneQuestItem(player, VALKONS_REQUEST, SCRIPTURE_CHAPTER_2))
+						else if (cond == 9)
 						{
-							giveItems(player, SCRIPTURE_CHAPTER_2, 1);
-							takeItems(player, CRYSTAL_OF_PURITY2, 1);
-							htmltext = "30103-06.html";
+							htmltext = "30071-03.htm";
 						}
-						else if (hasQuestItems(player, SCRIPTURE_CHAPTER_2) && !hasAtLeastOneQuestItem(player, VALKONS_REQUEST, CRYSTAL_OF_PURITY2))
+						else if ((cond == 10) || (cond == 11))
 						{
-							htmltext = "30103-07.html";
+							htmltext = "30071-05.htm";
 						}
+						else if (cond == 12)
+						{
+							htmltext = "30071-06.htm";
+						}
+						else if (cond > 12)
+						{
+							htmltext = "30071-07.htm";
+						}
+						break;
 					}
-					break;
-				}
-				case MAGISTER_DIETER:
-				{
-					if (hasQuestItems(player, MIRIENS_3RD_SIGIL, CRONOS_SIGIL))
+					case CRETA:
 					{
-						if (hasQuestItems(player, CRONOS_LETTER))
+						if (cond == 5)
 						{
-							htmltext = "30111-01.html";
+							htmltext = "30609-01.htm";
 						}
-						else if (hasQuestItems(player, DIETERS_KEY))
+						else if (cond == 6)
 						{
-							htmltext = "30111-06.html";
+							htmltext = "30609-06.htm";
 						}
-						else if (hasQuestItems(player, CRETAS_2ND_LETTER))
+						else if (cond == 7)
 						{
-							htmltext = "30111-07.html";
+							htmltext = "30609-07.htm";
 						}
-						else if (hasQuestItems(player, DIETERS_DIARY, DIETERS_LETTER))
+						else if ((cond > 7) && (cond < 13))
 						{
-							htmltext = "30111-10.html";
+							htmltext = "30609-10.htm";
 						}
-						else if (hasQuestItems(player, DIETERS_DIARY, RAUTS_LETTER_ENVELOPE))
+						else if ((cond >= 13) && (cond < 19))
 						{
-							htmltext = "30111-11.html";
+							htmltext = "30609-11.htm";
 						}
-						else if (hasQuestItems(player, DIETERS_DIARY) && !hasAtLeastOneQuestItem(player, DIETERS_LETTER, RAUTS_LETTER_ENVELOPE))
+						else if (cond == 21)
 						{
-							if (hasQuestItems(player, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4))
+							htmltext = "30609-12.htm";
+						}
+						else if (cond > 21)
+						{
+							htmltext = "30609-15.htm";
+						}
+						break;
+					}
+					case CRONOS:
+					{
+						if (cond == 19)
+						{
+							htmltext = "30610-01.htm";
+						}
+						else if ((cond > 19) && (cond < 30))
+						{
+							htmltext = "30610-11.htm";
+						}
+						else if (cond == 30)
+						{
+							htmltext = "30610-12.htm";
+						}
+						else if (cond == 31)
+						{
+							htmltext = "30610-15.htm";
+						}
+						break;
+					}
+					case DIETER:
+					{
+						if (cond == 20)
+						{
+							htmltext = "30111-01.htm";
+						}
+						else if (cond == 21)
+						{
+							htmltext = "30111-06.htm";
+						}
+						else if (cond == 22)
+						{
+							htmltext = "30111-07.htm";
+						}
+						else if (cond == 23)
+						{
+							htmltext = "30111-10.htm";
+						}
+						else if (cond == 24)
+						{
+							htmltext = "30111-11.htm";
+						}
+						else if ((cond > 24) && (cond < 31))
+						{
+							htmltext = (!hasQuestItems(player, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4)) ? "30111-12.htm" : "30111-13.htm";
+						}
+						else if (cond == 31)
+						{
+							htmltext = "30111-15.htm";
+						}
+						break;
+					}
+					case EDROC:
+					{
+						if (cond == 23)
+						{
+							htmltext = "30230-01.htm";
+						}
+						else if (cond == 24)
+						{
+							htmltext = "30230-03.htm";
+						}
+						else if (cond > 24)
+						{
+							htmltext = "30230-04.htm";
+						}
+						break;
+					}
+					case RAUT:
+					{
+						if (cond == 24)
+						{
+							htmltext = "30316-01.htm";
+						}
+						else if (cond == 25)
+						{
+							htmltext = "30316-04.htm";
+						}
+						else if (cond > 25)
+						{
+							htmltext = "30316-05.htm";
+						}
+						break;
+					}
+					case TRIFF:
+					{
+						if (cond == 25)
+						{
+							htmltext = "30611-01.htm";
+						}
+						else if (cond > 25)
+						{
+							htmltext = "30611-05.htm";
+						}
+						break;
+					}
+					case VALKON:
+					{
+						if (hasQuestItems(player, TRIFF_RING))
+						{
+							if (!hasQuestItems(player, SCRIPTURE_CHAPTER_2))
 							{
-								htmltext = "30111-13.html";
+								if (!hasQuestItems(player, VALKON_REQUEST))
+								{
+									if (!hasQuestItems(player, CRYSTAL_OF_PURITY_2))
+									{
+										htmltext = "30103-01.htm";
+									}
+									else
+									{
+										htmltext = "30103-06.htm";
+										playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+										takeItems(player, CRYSTAL_OF_PURITY_2, 1);
+										giveItems(player, SCRIPTURE_CHAPTER_2, 1);
+									}
+								}
+								else
+								{
+									htmltext = "30103-05.htm";
+								}
 							}
 							else
 							{
-								htmltext = "30111-12.html";
+								htmltext = "30103-07.htm";
 							}
 						}
+						break;
 					}
-					else if (hasQuestItems(player, SYMBOL_OF_CRONOS))
+					case POITAN:
 					{
-						htmltext = "30111-15.html";
-					}
-					break;
-				}
-				case GRAND_MAGISTER_JUREK:
-				{
-					if (hasQuestItems(player, MIRIENS_2ND_SIGIL))
-					{
-						if (!hasAtLeastOneQuestItem(player, GRAND_MAGISTER_SIGIL, SYMBOL_OF_JUREK))
+						if ((cond == 26) || (cond == 27))
 						{
-							htmltext = "30115-01.html";
-						}
-						else if (hasQuestItems(player, JUREKS_LIST))
-						{
-							if ((getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) + getQuestItemsCount(player, SHAMANS_NECKLACE) + getQuestItemsCount(player, SHACKLES_SCALP)) < 12)
+							if (!hasQuestItems(player, POITAN_NOTES))
 							{
-								htmltext = "30115-04.html";
+								htmltext = "30458-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, POITAN_NOTES, 1);
 							}
 							else
 							{
-								takeItems(player, GRAND_MAGISTER_SIGIL, 1);
-								takeItems(player, JUREKS_LIST, 1);
-								takeItems(player, MONSTER_EYE_DESTROYER_SKIN, -1);
-								takeItems(player, SHAMANS_NECKLACE, -1);
-								takeItems(player, SHACKLES_SCALP, -1);
-								giveItems(player, SYMBOL_OF_JUREK, 1);
-								qs.setCond(18, true);
-								htmltext = "30115-05.html";
+								htmltext = "30458-02.htm";
 							}
 						}
-						else if (hasQuestItems(player, SYMBOL_OF_JUREK) && !hasQuestItems(player, GRAND_MAGISTER_SIGIL))
+						else if ((cond == 28) || (cond == 29))
 						{
-							htmltext = "30115-06.html";
+							htmltext = "30458-03.htm";
 						}
+						else if (cond == 30)
+						{
+							htmltext = "30458-04.htm";
+						}
+						break;
 					}
-					else if (hasAtLeastOneQuestItem(player, MIRIENS_1ST_SIGIL, MIRIENS_3RD_SIGIL))
+					case CASIAN:
 					{
-						htmltext = "30115-07.html";
-					}
-					break;
-				}
-				case TRADER_EDROC:
-				{
-					if (hasQuestItems(player, DIETERS_DIARY))
-					{
-						if (hasQuestItems(player, DIETERS_LETTER))
-						{
-							htmltext = "30230-01.html";
-						}
-						else if (hasQuestItems(player, RAUTS_LETTER_ENVELOPE))
-						{
-							htmltext = "30230-03.html";
-						}
-						else if (hasAtLeastOneQuestItem(player, STRONG_LIGUOR, TRIFFS_RING))
-						{
-							htmltext = "30230-04.html";
-						}
-					}
-					break;
-				}
-				case WAREHOUSE_KEEPER_RAUT:
-				{
-					if (hasQuestItems(player, DIETERS_DIARY))
-					{
-						if (hasQuestItems(player, RAUTS_LETTER_ENVELOPE))
-						{
-							htmltext = "30316-01.html";
-						}
-						else if (hasQuestItems(player, SCRIPTURE_CHAPTER_1, STRONG_LIGUOR))
-						{
-							htmltext = "30316-04.html";
-						}
-						else if (hasQuestItems(player, SCRIPTURE_CHAPTER_1, TRIFFS_RING))
-						{
-							htmltext = "30316-05.html";
-						}
-					}
-					break;
-				}
-				case BLACKSMITH_POITAN:
-				{
-					if (hasQuestItems(player, TRIFFS_RING))
-					{
-						if (!hasAtLeastOneQuestItem(player, POITANS_NOTES, CASIANS_LIST, SCRIPTURE_CHAPTER_4))
-						{
-							giveItems(player, POITANS_NOTES, 1);
-							htmltext = "30458-01.html";
-						}
-						else if (hasQuestItems(player, POITANS_NOTES) && !hasAtLeastOneQuestItem(player, CASIANS_LIST, SCRIPTURE_CHAPTER_4))
-						{
-							htmltext = "30458-02.html";
-						}
-						else if (hasQuestItems(player, POITANS_NOTES, CASIANS_LIST) && !hasQuestItems(player, SCRIPTURE_CHAPTER_4))
-						{
-							htmltext = "30458-03.html";
-						}
-						else if (hasQuestItems(player, SCRIPTURE_CHAPTER_4) && !hasAtLeastOneQuestItem(player, POITANS_NOTES, CASIANS_LIST))
-						{
-							htmltext = "30458-04.html";
-						}
-					}
-					break;
-				}
-				case MARIA:
-				{
-					if (hasQuestItems(player, MIRIENS_1ST_SIGIL, HIGH_PRIESTS_SIGIL))
-					{
-						if (hasQuestItems(player, SYLVAINS_LETTER))
-						{
-							htmltext = "30608-01.html";
-						}
-						else if (hasQuestItems(player, MARIAS_1ST_LETTER))
-						{
-							htmltext = "30608-03.html";
-						}
-						else if (hasQuestItems(player, LUCASS_LETTER))
-						{
-							giveItems(player, MARIAS_2ND_LETTER, 1);
-							takeItems(player, LUCASS_LETTER, 1);
-							qs.setCond(5, true);
-							htmltext = "30608-04.html";
-						}
-						else if (hasQuestItems(player, MARIAS_2ND_LETTER))
-						{
-							htmltext = "30608-05.html";
-						}
-						else if (hasQuestItems(player, CRETAS_1ST_LETTER))
-						{
-							htmltext = "30608-06.html";
-						}
-						else if (hasQuestItems(player, LUCILLAS_HANDBAG))
-						{
-							htmltext = "30608-09.html";
-						}
-						else if (hasQuestItems(player, CRERAS_PAINTING1))
-						{
-							takeItems(player, CRERAS_PAINTING1, 1);
-							giveItems(player, CRERAS_PAINTING2, 1);
-							qs.setCond(9, true);
-							htmltext = "30608-10.html";
-						}
-						else if (hasQuestItems(player, CRERAS_PAINTING2))
-						{
-							htmltext = "30608-11.html";
-						}
-						else if (hasQuestItems(player, CRERAS_PAINTING3))
-						{
-							if (getQuestItemsCount(player, BROWN_SCROLL_SCRAP) < 5)
-							{
-								qs.setCond(11, true);
-								htmltext = "30608-12.html";
-							}
-							else
-							{
-								htmltext = "30608-13.html";
-							}
-						}
-						else if (hasQuestItems(player, CRYSTAL_OF_PURITY1))
-						{
-							htmltext = "30608-15.html";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, SYMBOL_OF_SYLVAIN, MIRIENS_2ND_SIGIL))
-					{
-						htmltext = "30608-16.html";
-					}
-					else if (hasQuestItems(player, MIRIENS_3RD_SIGIL))
-					{
-						if (!hasQuestItems(player, VALKONS_REQUEST))
-						{
-							htmltext = "30608-17.html";
-						}
-						else
-						{
-							takeItems(player, VALKONS_REQUEST, 1);
-							giveItems(player, CRYSTAL_OF_PURITY2, 1);
-							htmltext = "30608-18.html";
-						}
-					}
-					break;
-				}
-				case ASTROLOGER_CRETA:
-				{
-					if (hasQuestItems(player, MIRIENS_1ST_SIGIL, HIGH_PRIESTS_SIGIL))
-					{
-						if (hasQuestItems(player, MARIAS_2ND_LETTER))
-						{
-							htmltext = "30609-01.html";
-						}
-						else if (hasQuestItems(player, CRETAS_1ST_LETTER))
-						{
-							htmltext = "30609-06.html";
-						}
-						else if (hasQuestItems(player, LUCILLAS_HANDBAG))
-						{
-							htmltext = "30609-07.html";
-						}
-						else if (hasAtLeastOneQuestItem(player, CRERAS_PAINTING1, CRERAS_PAINTING2, CRERAS_PAINTING3))
-						{
-							htmltext = "30609-10.html";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, CRYSTAL_OF_PURITY1, SYMBOL_OF_SYLVAIN, MIRIENS_2ND_SIGIL))
-					{
-						htmltext = "30609-11.html";
-					}
-					else if (hasQuestItems(player, MIRIENS_3RD_SIGIL))
-					{
-						if (hasQuestItems(player, DIETERS_KEY))
-						{
-							htmltext = "30609-12.html";
-						}
-						else
-						{
-							htmltext = "30609-15.html";
-						}
-					}
-					break;
-				}
-				case ELDER_CRONOS:
-				{
-					if (hasQuestItems(player, MIRIENS_3RD_SIGIL))
-					{
-						if (!hasAtLeastOneQuestItem(player, CRONOS_SIGIL, SYMBOL_OF_CRONOS))
-						{
-							htmltext = "30610-01.html";
-						}
-						else if (hasQuestItems(player, CRONOS_SIGIL))
-						{
-							if (hasQuestItems(player, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4))
-							{
-								htmltext = "30610-12.html";
-							}
-							else
-							{
-								htmltext = "30610-11.html";
-							}
-						}
-						else if (hasQuestItems(player, SYMBOL_OF_CRONOS) && !hasQuestItems(player, CRONOS_SIGIL))
-						{
-							htmltext = "30610-15.html";
-						}
-					}
-					break;
-				}
-				case DRUNKARD_TRIFF:
-				{
-					if (hasQuestItems(player, DIETERS_DIARY, SCRIPTURE_CHAPTER_1, STRONG_LIGUOR))
-					{
-						htmltext = "30611-01.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, TRIFFS_RING, SYMBOL_OF_CRONOS))
-					{
-						htmltext = "30611-05.html";
-					}
-					break;
-				}
-				case ELDER_CASIAN:
-				{
-					if (hasQuestItems(player, TRIFFS_RING, POITANS_NOTES))
-					{
-						if (!hasQuestItems(player, CASIANS_LIST))
+						if (((cond == 26) || (cond == 27)) && hasQuestItems(player, POITAN_NOTES))
 						{
 							if (hasQuestItems(player, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3))
 							{
-								htmltext = "30612-02.html";
+								htmltext = "30612-02.htm";
 							}
 							else
 							{
-								htmltext = "30612-01.html";
+								htmltext = "30612-01.htm";
+								if (cond == 26)
+								{
+									st.setCond(27, true);
+								}
 							}
 						}
-						else
+						else if (cond == 28)
 						{
-							if ((getQuestItemsCount(player, GHOULS_SKIN) + getQuestItemsCount(player, MEDUSAS_BLOOD) + getQuestItemsCount(player, FETTERED_SOULS_ICHOR) + getQuestItemsCount(player, ENCHANTED_GARGOYLES_NAIL)) < 32)
-							{
-								htmltext = "30612-05.html";
-							}
-							else
-							{
-								htmltext = "30612-06.html";
-							}
+							htmltext = "30612-05.htm";
 						}
+						else if (cond == 29)
+						{
+							htmltext = "30612-06.htm";
+						}
+						else if (cond == 30)
+						{
+							htmltext = "30612-08.htm";
+						}
+						break;
 					}
-					else if (hasQuestItems(player, TRIFFS_RING, SCRIPTURE_CHAPTER_1, SCRIPTURE_CHAPTER_2, SCRIPTURE_CHAPTER_3, SCRIPTURE_CHAPTER_4) && !hasAtLeastOneQuestItem(player, POITANS_NOTES, CASIANS_LIST))
-					{
-						htmltext = "30612-08.html";
-					}
-					break;
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == MAGISTER_MIRIEN)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case LETO_LIZARDMAN_WARRIOR:
+			{
+				if (st.isCond(11) && getRandomBoolean())
+				{
+					giveItems(player, BROWN_SCROLL_SCRAP, 1);
+					if (getQuestItemsCount(player, BROWN_SCROLL_SCRAP) >= 5)
+					{
+						st.setCond(12, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case SHACKLE_1:
+			case SHACKLE_2:
+			{
+				if (st.isCond(16) && (getQuestItemsCount(player, SHACKLE_SCALP) < 2) && getRandomBoolean())
+				{
+					giveItems(player, SHACKLE_SCALP, 1);
+					if ((getQuestItemsCount(player, SHACKLE_SCALP) >= 2) && (getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) == 5) && (getQuestItemsCount(player, SHAMAN_NECKLACE) == 5))
+					{
+						st.setCond(17, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MONSTER_EYE_DESTROYER:
+			{
+				if (st.isCond(16) && (getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) < 5) && getRandomBoolean())
+				{
+					giveItems(player, MONSTER_EYE_DESTROYER_SKIN, 1);
+					if ((getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) >= 5) && (getQuestItemsCount(player, SHACKLE_SCALP) == 2) && (getQuestItemsCount(player, SHAMAN_NECKLACE) == 5))
+					{
+						st.setCond(17, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case BREKA_ORC_SHAMAN:
+			{
+				if (st.isCond(16) && (getQuestItemsCount(player, SHAMAN_NECKLACE) < 5) && getRandomBoolean())
+				{
+					giveItems(player, SHAMAN_NECKLACE, 1);
+					if ((getQuestItemsCount(player, SHAMAN_NECKLACE) >= 5) && (getQuestItemsCount(player, SHACKLE_SCALP) == 2) && (getQuestItemsCount(player, MONSTER_EYE_DESTROYER_SKIN) == 5))
+					{
+						st.setCond(17, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case GRANDIS:
+			{
+				if (hasQuestItems(player, TRIFF_RING) && !hasQuestItems(player, SCRIPTURE_CHAPTER_3) && (getRandom(100) < 30))
+				{
+					giveItems(player, SCRIPTURE_CHAPTER_3, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case MEDUSA:
+			{
+				if (st.isCond(28) && !hasQuestItems(player, MEDUSA_BLOOD))
+				{
+					giveItems(player, MEDUSA_BLOOD, 1);
+					if ((getQuestItemsCount(player, MEDUSA_BLOOD) >= 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
+					{
+						st.setCond(29, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case GHOUL:
+			{
+				if (st.isCond(28) && !hasQuestItems(player, GHOUL_SKIN))
+				{
+					giveItems(player, GHOUL_SKIN, 1);
+					if ((getQuestItemsCount(player, GHOUL_SKIN) >= 10) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
+					{
+						st.setCond(29, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case FETTERED_SOUL:
+			{
+				if (st.isCond(28) && !hasQuestItems(player, FETTERED_SOUL_ICHOR))
+				{
+					giveItems(player, FETTERED_SOUL_ICHOR, 1);
+					if ((getQuestItemsCount(player, FETTERED_SOUL_ICHOR) >= 5) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) == 5))
+					{
+						st.setCond(29, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case ENCHANTED_GARGOYLE:
+			{
+				if (st.isCond(28) && !hasQuestItems(player, ENCHANTED_GARGOYLE_NAIL))
+				{
+					giveItems(player, ENCHANTED_GARGOYLE_NAIL, 1);
+					if ((getQuestItemsCount(player, ENCHANTED_GARGOYLE_NAIL) >= 5) && (getQuestItemsCount(player, MEDUSA_BLOOD) == 12) && (getQuestItemsCount(player, GHOUL_SKIN) == 10) && (getQuestItemsCount(player, FETTERED_SOUL_ICHOR) == 5))
+					{
+						st.setCond(29, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

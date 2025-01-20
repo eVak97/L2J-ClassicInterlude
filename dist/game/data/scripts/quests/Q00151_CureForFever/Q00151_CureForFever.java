@@ -22,126 +22,116 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Cure for Fever (151)
- * @author malyelfik
- */
 public class Q00151_CureForFever extends Quest
 {
 	// NPCs
-	private static final int ELLIAS = 30050;
+	private static final int ELIAS = 30050;
 	private static final int YOHANES = 30032;
-	// Monsters
-	private static final int[] MOBS =
-	{
-		20103, // Giant Spider
-		20106, // Talon Spider
-		20108, // Blade Spider
-	};
 	// Items
-	private static final int ROUND_SHIELD = 102;
 	private static final int POISON_SAC = 703;
 	private static final int FEVER_MEDICINE = 704;
-	// Misc
-	private static final int MIN_LEVEL = 15;
-	private static final int CHANCE = 0;
 	
 	public Q00151_CureForFever()
 	{
 		super(151);
-		addStartNpc(ELLIAS);
-		addTalkId(ELLIAS, YOHANES);
-		addKillId(MOBS);
-		registerQuestItems(POISON_SAC, FEVER_MEDICINE);
+		registerQuestItems(FEVER_MEDICINE, POISON_SAC);
+		addStartNpc(ELIAS);
+		addTalkId(ELIAS, YOHANES);
+		addKillId(20103, 20106, 20108);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30050-03.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
+		
+		if (event.equals("30050-03.htm"))
+		{
+			st.startQuest();
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 15) ? "30050-01.htm" : "30050-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case ELIAS:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30050-04.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30050-05.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30050-06.htm";
+							takeItems(player, FEVER_MEDICINE, 1);
+							giveItems(player, 102, 1);
+							st.exitQuest(false, true);
+						}
+						break;
+					}
+					case YOHANES:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30032-01.htm";
+							st.setCond(3, true);
+							takeItems(player, POISON_SAC, 1);
+							giveItems(player, FEVER_MEDICINE, 1);
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30032-02.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && (getRandom(5) == CHANCE))
+		if ((qs != null) && qs.isCond(1) && (getRandom(10) < 2))
 		{
 			giveItems(killer, POISON_SAC, 1);
 			qs.setCond(2, true);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case ELLIAS:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30050-02.htm" : "30050-01.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						if (qs.isCond(3) && hasQuestItems(player, FEVER_MEDICINE))
-						{
-							giveItems(player, ROUND_SHIELD, 1);
-							addExpAndSp(player, 13106, 613);
-							qs.exitQuest(false, true);
-							showOnScreenMsg(player, "Last duty complete. \\n Go find the Newbie Guide.", 5000); // TODO: Newbie Guide
-							htmltext = "30050-06.html";
-						}
-						else if (qs.isCond(2) && hasQuestItems(player, POISON_SAC))
-						{
-							htmltext = "30050-05.html";
-						}
-						else
-						{
-							htmltext = "30050-04.html";
-						}
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
-						break;
-					}
-				}
-				break;
-			}
-			case YOHANES:
-			{
-				if (qs.isStarted())
-				{
-					if (qs.isCond(2) && hasQuestItems(player, POISON_SAC))
-					{
-						qs.setCond(3, true);
-						takeItems(player, POISON_SAC, -1);
-						giveItems(player, FEVER_MEDICINE, 1);
-						htmltext = "30032-01.html";
-					}
-					else if (qs.isCond(3) && hasQuestItems(player, FEVER_MEDICINE))
-					{
-						htmltext = "30032-02.html";
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

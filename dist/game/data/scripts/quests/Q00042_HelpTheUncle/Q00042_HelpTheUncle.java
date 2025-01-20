@@ -23,10 +23,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Help The Uncle! (42)
- * @author malyelfik
- */
 public class Q00042_HelpTheUncle extends Quest
 {
 	// NPCs
@@ -40,86 +36,130 @@ public class Q00042_HelpTheUncle extends Quest
 	private static final int MAP_PIECE = 7548;
 	private static final int MAP = 7549;
 	private static final int PET_TICKET = 7583;
-	// Misc
-	private static final int MIN_LEVEL = 25;
 	
 	public Q00042_HelpTheUncle()
 	{
 		super(42);
+		registerQuestItems(MAP_PIECE, MAP);
 		addStartNpc(WATERS);
 		addTalkId(WATERS, SOPHYA);
 		addKillId(MONSTER_EYE_DESTROYER, MONSTER_EYE_GAZER);
-		registerQuestItems(MAP, MAP_PIECE);
-		addCondMinLevel(MIN_LEVEL, "30828-00a.html");
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		String htmltext = event;
 		switch (event)
 		{
 			case "30828-01.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
-			case "30828-03.html":
+			case "30828-03.htm":
 			{
 				if (hasQuestItems(player, TRIDENT))
 				{
+					st.setCond(2, true);
 					takeItems(player, TRIDENT, 1);
-					qs.setCond(2, true);
-				}
-				else
-				{
-					htmltext = "30828-03a.html";
 				}
 				break;
 			}
-			case "30828-06.html":
+			case "30828-05.htm":
 			{
-				if (getQuestItemsCount(player, MAP_PIECE) == 30)
-				{
-					takeItems(player, MAP_PIECE, -1);
-					giveItems(player, MAP, 1);
-					qs.setCond(4, true);
-				}
-				else
-				{
-					htmltext = "30828-06a.html";
-				}
+				st.setCond(4, true);
+				takeItems(player, MAP_PIECE, 30);
+				giveItems(player, MAP, 1);
 				break;
 			}
-			case "30735-02.html":
+			case "30735-06.htm":
 			{
-				if (hasQuestItems(player, MAP))
-				{
-					takeItems(player, MAP, -1);
-					qs.setCond(5, true);
-				}
-				else
-				{
-					htmltext = "30735-02a.html";
-				}
+				st.setCond(5, true);
+				takeItems(player, MAP, 1);
 				break;
 			}
-			case "30828-09.html":
+			case "30828-07.htm":
 			{
-				if (qs.isCond(5))
-				{
-					giveItems(player, PET_TICKET, 1);
-					qs.exitQuest(false, true);
-				}
+				giveItems(player, PET_TICKET, 1);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 25) ? "30828-00a.htm" : "30828-00.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case WATERS:
+					{
+						if (cond == 1)
+						{
+							htmltext = (!hasQuestItems(player, TRIDENT)) ? "30828-01a.htm" : "30828-02.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30828-03a.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30828-04.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30828-05a.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30828-06.htm";
+						}
+						break;
+					}
+					case SOPHYA:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30735-05.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30735-06a.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
 		return htmltext;
 	}
 	
@@ -140,81 +180,5 @@ public class Q00042_HelpTheUncle extends Quest
 			}
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		String htmltext = getNoQuestMsg(player);
-		final QuestState qs = getQuestState(player, true);
-		
-		switch (npc.getId())
-		{
-			case WATERS:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						htmltext = "30828-00.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
-								htmltext = (hasQuestItems(player, TRIDENT)) ? "30828-02.html" : "30828-02a.html";
-								break;
-							}
-							case 2:
-							{
-								htmltext = "30828-04.html";
-								break;
-							}
-							case 3:
-							{
-								htmltext = "30828-05.html";
-								break;
-							}
-							case 4:
-							{
-								htmltext = "30828-07.html";
-								break;
-							}
-							case 5:
-							{
-								htmltext = "30828-08.html";
-								break;
-							}
-						}
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
-						break;
-					}
-				}
-				break;
-			}
-			case SOPHYA:
-			{
-				if (qs.isStarted())
-				{
-					if (qs.isCond(4))
-					{
-						htmltext = "30735-01.html";
-					}
-					else if (qs.isCond(5))
-					{
-						htmltext = "30735-03.html";
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

@@ -16,710 +16,589 @@
  */
 package quests.Q00218_TestimonyOfLife;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.CategoryType;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Testimony Of Life (218)
- * @author ivantotov
- */
 public class Q00218_TestimonyOfLife extends Quest
 {
 	// NPCs
-	private static final int HIERARCH_ASTERIOS = 30154;
-	private static final int BLACKSMITH_PUSHKIN = 30300;
+	private static final int ASTERIOS = 30154;
+	private static final int PUSHKIN = 30300;
 	private static final int THALIA = 30371;
-	private static final int PRIEST_ADONIUS = 30375;
+	private static final int ADONIUS = 30375;
 	private static final int ARKENIA = 30419;
-	private static final int MASTER_CARDIEN = 30460;
-	private static final int ISAEL_SILVERSHADOW = 30655;
+	private static final int CARDIEN = 30460;
+	private static final int ISAEL = 30655;
 	// Items
 	private static final int TALINS_SPEAR = 3026;
-	private static final int CARDIENS_LETTER = 3141;
+	private static final int CARDIEN_LETTER = 3141;
 	private static final int CAMOMILE_CHARM = 3142;
-	private static final int HIERARCHS_LETTER = 3143;
+	private static final int HIERARCH_LETTER = 3143;
 	private static final int MOONFLOWER_CHARM = 3144;
 	private static final int GRAIL_DIAGRAM = 3145;
-	private static final int THALIAS_1ST_LETTER = 3146;
-	private static final int THALIAS_2ND_LETTER = 3147;
-	private static final int THALIAS_INSTRUCTIONS = 3148;
-	private static final int PUSHKINS_LIST = 3149;
+	private static final int THALIA_LETTER_1 = 3146;
+	private static final int THALIA_LETTER_2 = 3147;
+	private static final int THALIA_INSTRUCTIONS = 3148;
+	private static final int PUSHKIN_LIST = 3149;
 	private static final int PURE_MITHRIL_CUP = 3150;
-	private static final int ARKENIAS_CONTRACT = 3151;
-	private static final int ARKENIAS_INSTRUCTIONS = 3152;
+	private static final int ARKENIA_CONTRACT = 3151;
+	private static final int ARKENIA_INSTRUCTIONS = 3152;
 	private static final int ADONIUS_LIST = 3153;
 	private static final int ANDARIEL_SCRIPTURE_COPY = 3154;
 	private static final int STARDUST = 3155;
-	private static final int ISAELS_INSTRUCTIONS = 3156;
-	private static final int ISAELS_LETTER = 3157;
+	private static final int ISAEL_INSTRUCTIONS = 3156;
+	private static final int ISAEL_LETTER = 3157;
 	private static final int GRAIL_OF_PURITY = 3158;
 	private static final int TEARS_OF_UNICORN = 3159;
 	private static final int WATER_OF_LIFE = 3160;
 	private static final int PURE_MITHRIL_ORE = 3161;
 	private static final int ANT_SOLDIER_ACID = 3162;
-	private static final int WYRMS_TALON = 3163;
+	private static final int WYRM_TALON = 3163;
 	private static final int SPIDER_ICHOR = 3164;
-	private static final int HARPYS_DOWN = 3165;
-	private static final int TALINS_SPEAR_BLADE = 3166;
-	private static final int TALINS_SPEAR_SHAFT = 3167;
-	private static final int TALINS_RUBY = 3168;
-	private static final int TALINS_AQUAMARINE = 3169;
-	private static final int TALINS_AMETHYST = 3170;
-	private static final int TALINS_PERIDOT = 3171;
-	// Reward
+	private static final int HARPY_DOWN = 3165;
+	private static final int[] TALINS_PIECES =
+	{
+		3166,
+		3167,
+		3168,
+		3169,
+		3170,
+		3171
+	};
+	// Rewards
 	private static final int MARK_OF_LIFE = 3140;
-	// Monster
-	private static final int ANT_RECRUIT = 20082;
-	private static final int ANT_PATROL = 20084;
-	private static final int ANT_GUARD = 20086;
-	private static final int ANT_SOLDIER = 20087;
-	private static final int ANT_WARRIOR_CAPTAIN = 20088;
-	private static final int HARPY = 20145;
-	private static final int WYRM = 20176;
-	private static final int MARSH_SPIDER = 20233;
-	private static final int GUARDIAN_BASILISK = 20550;
-	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
-	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
-	// Quest Monster
-	private static final int UNICORN_OF_EVA = 27077;
-	// Misc
-	private static final int MIN_LEVEL = 37;
-	private static final int LEVEL = 38;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00218_TestimonyOfLife()
 	{
 		super(218);
-		addStartNpc(MASTER_CARDIEN);
-		addTalkId(MASTER_CARDIEN, HIERARCH_ASTERIOS, BLACKSMITH_PUSHKIN, THALIA, PRIEST_ADONIUS, ARKENIA, ISAEL_SILVERSHADOW);
-		addKillId(ANT_RECRUIT, ANT_PATROL, ANT_GUARD, ANT_SOLDIER, ANT_WARRIOR_CAPTAIN, HARPY, WYRM, MARSH_SPIDER, GUARDIAN_BASILISK, LETO_LIZARDMAN_SHAMAN, LETO_LIZARDMAN_OVERLORD, UNICORN_OF_EVA);
-		registerQuestItems(TALINS_SPEAR, CARDIENS_LETTER, CAMOMILE_CHARM, HIERARCHS_LETTER, MOONFLOWER_CHARM, GRAIL_DIAGRAM, THALIAS_1ST_LETTER, THALIAS_2ND_LETTER, THALIAS_INSTRUCTIONS, PUSHKINS_LIST, PURE_MITHRIL_CUP, ARKENIAS_CONTRACT, ARKENIAS_INSTRUCTIONS, ADONIUS_LIST, ANDARIEL_SCRIPTURE_COPY, STARDUST, ISAELS_INSTRUCTIONS, ISAELS_LETTER, GRAIL_OF_PURITY, TEARS_OF_UNICORN, WATER_OF_LIFE, PURE_MITHRIL_ORE, ANT_SOLDIER_ACID, WYRMS_TALON, SPIDER_ICHOR, HARPYS_DOWN, TALINS_SPEAR_BLADE, TALINS_SPEAR_SHAFT, TALINS_RUBY, TALINS_AQUAMARINE, TALINS_AMETHYST, TALINS_PERIDOT);
+		registerQuestItems(TALINS_SPEAR, CARDIEN_LETTER, CAMOMILE_CHARM, HIERARCH_LETTER, MOONFLOWER_CHARM, GRAIL_DIAGRAM, THALIA_LETTER_1, THALIA_LETTER_2, THALIA_INSTRUCTIONS, PUSHKIN_LIST, PURE_MITHRIL_CUP, ARKENIA_CONTRACT, ARKENIA_INSTRUCTIONS, ADONIUS_LIST, ANDARIEL_SCRIPTURE_COPY, STARDUST, ISAEL_INSTRUCTIONS, ISAEL_LETTER, GRAIL_OF_PURITY, TEARS_OF_UNICORN, WATER_OF_LIFE, PURE_MITHRIL_ORE, ANT_SOLDIER_ACID, WYRM_TALON, SPIDER_ICHOR, HARPY_DOWN, 3166, 3167, 3168, 3169, 3170, 3171);
+		addStartNpc(CARDIEN);
+		addTalkId(ASTERIOS, PUSHKIN, THALIA, ADONIUS, ARKENIA, CARDIEN, ISAEL);
+		addKillId(20145, 20176, 20233, 27077, 20550, 20581, 20582, 20082, 20084, 20086, 20087, 20088);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30460-04.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, CARDIEN_LETTER, 1);
+				if (!player.getVariables().getBoolean("secondClassChange37", false))
 				{
-					qs.startQuest();
-					if (!hasQuestItems(player, CARDIENS_LETTER))
-					{
-						giveItems(player, CARDIENS_LETTER, 1);
-					}
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					htmltext = "30460-04.htm";
+					htmltext = "30460-04a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_37.get(player.getRace().ordinal()));
+					player.getVariables().set("secondClassChange37", true);
 				}
 				break;
 			}
-			case "30154-02.html":
-			case "30154-03.html":
-			case "30154-04.html":
-			case "30154-05.html":
-			case "30154-06.html":
-			case "30300-02.html":
-			case "30300-03.html":
-			case "30300-04.html":
-			case "30300-05.html":
-			case "30300-09.html":
-			case "30300-07a.html":
-			case "30371-02.html":
-			case "30371-10.html":
-			case "30419-02.html":
-			case "30419-03.html":
+			case "30154-07.htm":
 			{
-				htmltext = event;
+				st.setCond(2, true);
+				takeItems(player, CARDIEN_LETTER, 1);
+				giveItems(player, HIERARCH_LETTER, 1);
+				giveItems(player, MOONFLOWER_CHARM, 1);
 				break;
 			}
-			case "30154-07.html":
+			case "30371-03.htm":
 			{
-				if (hasQuestItems(player, CARDIENS_LETTER))
+				st.setCond(3, true);
+				takeItems(player, HIERARCH_LETTER, 1);
+				giveItems(player, GRAIL_DIAGRAM, 1);
+				break;
+			}
+			case "30371-11.htm":
+			{
+				takeItems(player, STARDUST, 1);
+				if (player.getLevel() < 38)
 				{
-					takeItems(player, CARDIENS_LETTER, 1);
-					giveItems(player, HIERARCHS_LETTER, 1);
-					giveItems(player, MOONFLOWER_CHARM, 1);
-					qs.setCond(2, true);
-					htmltext = event;
+					htmltext = "30371-10.htm";
+					st.setCond(13, true);
+					giveItems(player, THALIA_INSTRUCTIONS, 1);
+				}
+				else
+				{
+					st.setCond(14, true);
+					giveItems(player, THALIA_LETTER_2, 1);
 				}
 				break;
 			}
-			case "30300-06.html":
+			case "30300-06.htm":
 			{
-				if (hasQuestItems(player, GRAIL_DIAGRAM))
-				{
-					takeItems(player, GRAIL_DIAGRAM, 1);
-					giveItems(player, PUSHKINS_LIST, 1);
-					qs.setCond(4, true);
-					htmltext = event;
-				}
+				st.setCond(4, true);
+				takeItems(player, GRAIL_DIAGRAM, 1);
+				giveItems(player, PUSHKIN_LIST, 1);
 				break;
 			}
-			case "30300-10.html":
+			case "30300-10.htm":
 			{
-				if (hasQuestItems(player, PUSHKINS_LIST))
-				{
-					takeItems(player, PUSHKINS_LIST, 1);
-					giveItems(player, PURE_MITHRIL_CUP, 1);
-					takeItems(player, PURE_MITHRIL_ORE, -1);
-					takeItems(player, ANT_SOLDIER_ACID, -1);
-					takeItems(player, WYRMS_TALON, -1);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
+				st.setCond(6, true);
+				takeItems(player, PUSHKIN_LIST, 1);
+				takeItems(player, ANT_SOLDIER_ACID, -1);
+				takeItems(player, PURE_MITHRIL_ORE, -1);
+				takeItems(player, WYRM_TALON, -1);
+				giveItems(player, PURE_MITHRIL_CUP, 1);
 				break;
 			}
-			case "30371-03.html":
+			case "30419-04.htm":
 			{
-				if (hasQuestItems(player, HIERARCHS_LETTER))
-				{
-					takeItems(player, HIERARCHS_LETTER, 1);
-					giveItems(player, GRAIL_DIAGRAM, 1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(8, true);
+				takeItems(player, THALIA_LETTER_1, 1);
+				giveItems(player, ARKENIA_CONTRACT, 1);
+				giveItems(player, ARKENIA_INSTRUCTIONS, 1);
 				break;
 			}
-			case "30371-11.html":
+			case "30375-02.htm":
 			{
-				if (hasQuestItems(player, STARDUST))
-				{
-					giveItems(player, THALIAS_2ND_LETTER, 1);
-					takeItems(player, STARDUST, 1);
-					qs.setCond(14, true);
-					htmltext = event;
-				}
+				st.setCond(9, true);
+				takeItems(player, ARKENIA_INSTRUCTIONS, 1);
+				giveItems(player, ADONIUS_LIST, 1);
 				break;
 			}
-			case "30419-04.html":
+			case "30655-02.htm":
 			{
-				if (hasQuestItems(player, THALIAS_1ST_LETTER))
-				{
-					takeItems(player, THALIAS_1ST_LETTER, 1);
-					giveItems(player, ARKENIAS_CONTRACT, 1);
-					giveItems(player, ARKENIAS_INSTRUCTIONS, 1);
-					qs.setCond(8, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30375-02.html":
-			{
-				if (hasQuestItems(player, ARKENIAS_INSTRUCTIONS))
-				{
-					takeItems(player, ARKENIAS_INSTRUCTIONS, 1);
-					giveItems(player, ADONIUS_LIST, 1);
-					qs.setCond(9, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30655-02.html":
-			{
-				if (hasQuestItems(player, THALIAS_2ND_LETTER))
-				{
-					takeItems(player, THALIAS_2ND_LETTER, 1);
-					giveItems(player, ISAELS_INSTRUCTIONS, 1);
-					qs.setCond(15, true);
-					htmltext = event;
-				}
+				st.setCond(15, true);
+				takeItems(player, THALIA_LETTER_2, 1);
+				giveItems(player, ISAEL_INSTRUCTIONS, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case ANT_RECRUIT:
-				case ANT_PATROL:
-				case ANT_GUARD:
-				case ANT_SOLDIER:
-				case ANT_WARRIOR_CAPTAIN:
-				{
-					if (hasQuestItems(killer, MOONFLOWER_CHARM, PUSHKINS_LIST) && (getQuestItemsCount(killer, ANT_SOLDIER_ACID) < 20))
-					{
-						giveItems(killer, ANT_SOLDIER_ACID, 2);
-						if (getQuestItemsCount(killer, ANT_SOLDIER_ACID) == 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(killer, WYRMS_TALON) >= 20))
-							{
-								qs.setCond(5);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case HARPY:
-				{
-					if (hasQuestItems(killer, MOONFLOWER_CHARM, ADONIUS_LIST) && (getQuestItemsCount(killer, HARPYS_DOWN) < 20))
-					{
-						giveItems(killer, HARPYS_DOWN, 4);
-						if (getQuestItemsCount(killer, HARPYS_DOWN) == 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if (getQuestItemsCount(killer, SPIDER_ICHOR) >= 20)
-							{
-								qs.setCond(10);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case WYRM:
-				{
-					if (hasQuestItems(killer, MOONFLOWER_CHARM, PUSHKINS_LIST) && (getQuestItemsCount(killer, WYRMS_TALON) < 20))
-					{
-						giveItems(killer, WYRMS_TALON, 4);
-						if (getQuestItemsCount(killer, WYRMS_TALON) == 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(killer, ANT_SOLDIER_ACID) >= 20))
-							{
-								qs.setCond(5);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MARSH_SPIDER:
-				{
-					if (hasQuestItems(killer, MOONFLOWER_CHARM, ADONIUS_LIST) && (getQuestItemsCount(killer, SPIDER_ICHOR) < 20))
-					{
-						giveItems(killer, SPIDER_ICHOR, 4);
-						if (getQuestItemsCount(killer, SPIDER_ICHOR) == 20)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if (getQuestItemsCount(killer, HARPYS_DOWN) >= 20)
-							{
-								qs.setCond(10);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case GUARDIAN_BASILISK:
-				{
-					if (hasQuestItems(killer, MOONFLOWER_CHARM, PUSHKINS_LIST) && (getQuestItemsCount(killer, PURE_MITHRIL_ORE) < 10))
-					{
-						giveItems(killer, PURE_MITHRIL_ORE, 2);
-						if (getQuestItemsCount(killer, PURE_MITHRIL_ORE) == 10)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, WYRMS_TALON) >= 20) && (getQuestItemsCount(killer, ANT_SOLDIER_ACID) >= 20))
-							{
-								qs.setCond(5);
-							}
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case LETO_LIZARDMAN_SHAMAN:
-				case LETO_LIZARDMAN_OVERLORD:
-				{
-					if (hasQuestItems(killer, ISAELS_INSTRUCTIONS))
-					{
-						if (!hasQuestItems(killer, TALINS_SPEAR_BLADE))
-						{
-							giveItems(killer, TALINS_SPEAR_BLADE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TALINS_SPEAR_SHAFT))
-						{
-							giveItems(killer, TALINS_SPEAR_SHAFT, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TALINS_RUBY))
-						{
-							giveItems(killer, TALINS_RUBY, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TALINS_AQUAMARINE))
-						{
-							giveItems(killer, TALINS_AQUAMARINE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TALINS_AMETHYST))
-						{
-							giveItems(killer, TALINS_AMETHYST, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else if (!hasQuestItems(killer, TALINS_PERIDOT))
-						{
-							giveItems(killer, TALINS_PERIDOT, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-					}
-					break;
-				}
-				case UNICORN_OF_EVA:
-				{
-					if (!hasQuestItems(killer, TEARS_OF_UNICORN) && hasQuestItems(killer, MOONFLOWER_CHARM, TALINS_SPEAR, GRAIL_OF_PURITY) && (npc.getKillingBlowWeapon() == TALINS_SPEAR))
-					{
-						takeItems(killer, TALINS_SPEAR, 1);
-						takeItems(killer, GRAIL_OF_PURITY, 1);
-						giveItems(killer, TEARS_OF_UNICORN, 1);
-						qs.setCond(19, true);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == MASTER_CARDIEN)
+			case State.CREATED:
 			{
-				if (player.getRace() == Race.ELF)
+				if (player.getRace() != Race.ELF)
 				{
-					if ((player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.ELF_2ND_GROUP))
-					{
-						htmltext = "30460-03.htm";
-					}
-					else if (player.getLevel() >= MIN_LEVEL)
-					{
-						htmltext = "30460-01a.html";
-					}
-					else
-					{
-						htmltext = "30460-02.html";
-					}
+					htmltext = "30460-01.htm";
+				}
+				else if ((player.getLevel() < 37) || (player.getClassId().level() != 1))
+				{
+					htmltext = "30460-02.htm";
 				}
 				else
 				{
-					htmltext = "30460-01.html";
+					htmltext = "30460-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case MASTER_CARDIEN:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, CARDIENS_LETTER))
+					case ASTERIOS:
 					{
-						htmltext = "30460-05.html";
-					}
-					else if (hasQuestItems(player, MOONFLOWER_CHARM))
-					{
-						htmltext = "30460-06.html";
-					}
-					else if (hasQuestItems(player, CAMOMILE_CHARM))
-					{
-						giveAdena(player, 342288, true);
-						giveItems(player, MARK_OF_LIFE, 1);
-						addExpAndSp(player, 1886832, 125918);
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30460-07.html";
-					}
-					break;
-				}
-				case HIERARCH_ASTERIOS:
-				{
-					if (hasQuestItems(player, CARDIENS_LETTER))
-					{
-						htmltext = "30154-01.html";
-					}
-					else if (hasQuestItems(player, MOONFLOWER_CHARM))
-					{
-						if (!hasQuestItems(player, WATER_OF_LIFE))
+						if (cond == 1)
 						{
-							htmltext = "30154-08.html";
+							htmltext = "30154-01.htm";
 						}
-						else
+						else if (cond == 2)
 						{
-							giveItems(player, CAMOMILE_CHARM, 1);
+							htmltext = "30154-08.htm";
+						}
+						else if (cond == 20)
+						{
+							htmltext = "30154-09.htm";
+							st.setCond(21, true);
 							takeItems(player, MOONFLOWER_CHARM, 1);
 							takeItems(player, WATER_OF_LIFE, 1);
-							qs.setCond(21, true);
-							htmltext = "30154-09.html";
+							giveItems(player, CAMOMILE_CHARM, 1);
 						}
+						else if (cond == 21)
+						{
+							htmltext = "30154-10.htm";
+						}
+						break;
 					}
-					else if (hasQuestItems(player, CAMOMILE_CHARM))
+					case PUSHKIN:
 					{
-						htmltext = "30154-10.html";
+						if (cond == 3)
+						{
+							htmltext = "30300-01.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30300-07.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30300-08.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30300-11.htm";
+						}
+						else if (cond > 6)
+						{
+							htmltext = "30300-12.htm";
+						}
+						break;
 					}
-					break;
-				}
-				case BLACKSMITH_PUSHKIN:
-				{
-					if (hasQuestItems(player, MOONFLOWER_CHARM))
+					case THALIA:
 					{
-						if (hasQuestItems(player, GRAIL_DIAGRAM))
+						if (cond == 2)
 						{
-							htmltext = "30300-01.html";
+							htmltext = "30371-01.htm";
 						}
-						else if (hasQuestItems(player, PUSHKINS_LIST))
+						else if (cond == 3)
 						{
-							if ((getQuestItemsCount(player, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(player, ANT_SOLDIER_ACID) >= 20) && (getQuestItemsCount(player, WYRMS_TALON) >= 20))
-							{
-								htmltext = "30300-08.html";
-							}
-							else
-							{
-								htmltext = "30300-07.html";
-							}
+							htmltext = "30371-04.htm";
 						}
-						else if (hasQuestItems(player, PURE_MITHRIL_CUP))
+						else if ((cond > 3) && (cond < 6))
 						{
-							htmltext = "30300-11.html";
+							htmltext = "30371-05.htm";
 						}
-						else if (!hasAtLeastOneQuestItem(player, GRAIL_DIAGRAM, PUSHKINS_LIST, PURE_MITHRIL_CUP))
+						else if (cond == 6)
 						{
-							htmltext = "30300-12.html";
-						}
-					}
-					break;
-				}
-				case THALIA:
-				{
-					if (hasQuestItems(player, MOONFLOWER_CHARM))
-					{
-						if (hasQuestItems(player, HIERARCHS_LETTER))
-						{
-							htmltext = "30371-01.html";
-						}
-						else if (hasQuestItems(player, GRAIL_DIAGRAM))
-						{
-							htmltext = "30371-04.html";
-						}
-						else if (hasQuestItems(player, PUSHKINS_LIST))
-						{
-							htmltext = "30371-05.html";
-						}
-						else if (hasQuestItems(player, PURE_MITHRIL_CUP))
-						{
-							giveItems(player, THALIAS_1ST_LETTER, 1);
+							htmltext = "30371-06.htm";
+							st.setCond(7, true);
 							takeItems(player, PURE_MITHRIL_CUP, 1);
-							qs.setCond(7, true);
-							htmltext = "30371-06.html";
+							giveItems(player, THALIA_LETTER_1, 1);
 						}
-						else if (hasQuestItems(player, THALIAS_1ST_LETTER))
+						else if (cond == 7)
 						{
-							htmltext = "30371-07.html";
+							htmltext = "30371-07.htm";
 						}
-						else if (hasQuestItems(player, ARKENIAS_CONTRACT))
+						else if ((cond > 7) && (cond < 12))
 						{
-							htmltext = "30371-08.html";
+							htmltext = "30371-08.htm";
 						}
-						else if (hasQuestItems(player, STARDUST))
+						else if (cond == 12)
 						{
-							htmltext = "30371-09.html";
+							htmltext = "30371-09.htm";
 						}
-						else if (hasQuestItems(player, THALIAS_INSTRUCTIONS))
+						else if (cond == 13)
 						{
-							if (player.getLevel() >= LEVEL)
+							if (player.getLevel() < 38)
 							{
-								takeItems(player, THALIAS_INSTRUCTIONS, 1);
-								giveItems(player, THALIAS_2ND_LETTER, 1);
-								qs.setCond(14, true);
-								htmltext = "30371-13.html";
+								htmltext = "30371-12.htm";
 							}
 							else
 							{
-								htmltext = "30371-12.html";
+								htmltext = "30371-13.htm";
+								st.setCond(14, true);
+								takeItems(player, THALIA_INSTRUCTIONS, 1);
+								giveItems(player, THALIA_LETTER_2, 1);
 							}
 						}
-						else if (hasQuestItems(player, THALIAS_2ND_LETTER))
+						else if (cond == 14)
 						{
-							htmltext = "30371-14.html";
+							htmltext = "30371-14.htm";
 						}
-						else if (hasQuestItems(player, ISAELS_INSTRUCTIONS))
+						else if ((cond > 14) && (cond < 17))
 						{
-							htmltext = "30371-15.html";
+							htmltext = "30371-15.htm";
 						}
-						else if (hasQuestItems(player, TALINS_SPEAR, ISAELS_LETTER))
+						else if (cond == 17)
 						{
-							takeItems(player, ISAELS_LETTER, 1);
+							htmltext = "30371-16.htm";
+							st.setCond(18, true);
+							takeItems(player, ISAEL_LETTER, 1);
 							giveItems(player, GRAIL_OF_PURITY, 1);
-							qs.setCond(18, true);
-							htmltext = "30371-16.html";
 						}
-						else if (hasQuestItems(player, TALINS_SPEAR, GRAIL_OF_PURITY))
+						else if (cond == 18)
 						{
-							htmltext = "30371-17.html";
+							htmltext = "30371-17.htm";
 						}
-						else if (hasQuestItems(player, TEARS_OF_UNICORN))
+						else if (cond == 19)
 						{
+							htmltext = "30371-18.htm";
+							st.setCond(20, true);
 							takeItems(player, TEARS_OF_UNICORN, 1);
 							giveItems(player, WATER_OF_LIFE, 1);
-							qs.setCond(20, true);
-							htmltext = "30371-18.html";
 						}
-						else if (hasAtLeastOneQuestItem(player, CAMOMILE_CHARM, WATER_OF_LIFE))
+						else if (cond > 19)
 						{
-							htmltext = "30371-19.html";
+							htmltext = "30371-19.htm";
 						}
+						break;
 					}
-					break;
-				}
-				case ARKENIA:
-				{
-					if (hasQuestItems(player, MOONFLOWER_CHARM))
+					case ADONIUS:
 					{
-						if (hasQuestItems(player, THALIAS_1ST_LETTER))
+						if (cond == 8)
 						{
-							htmltext = "30419-01.html";
+							htmltext = "30375-01.htm";
 						}
-						else if (hasAtLeastOneQuestItem(player, ARKENIAS_INSTRUCTIONS, ADONIUS_LIST))
+						else if (cond == 9)
 						{
-							htmltext = "30419-05.html";
+							htmltext = "30375-03.htm";
 						}
-						else if (hasQuestItems(player, ANDARIEL_SCRIPTURE_COPY))
+						else if (cond == 10)
 						{
-							takeItems(player, ARKENIAS_CONTRACT, 1);
+							htmltext = "30375-04.htm";
+							st.setCond(11, true);
+							takeItems(player, ADONIUS_LIST, 1);
+							takeItems(player, HARPY_DOWN, -1);
+							takeItems(player, SPIDER_ICHOR, -1);
+							giveItems(player, ANDARIEL_SCRIPTURE_COPY, 1);
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30375-05.htm";
+						}
+						else if (cond > 11)
+						{
+							htmltext = "30375-06.htm";
+						}
+						break;
+					}
+					case ARKENIA:
+					{
+						if (cond == 7)
+						{
+							htmltext = "30419-01.htm";
+						}
+						else if ((cond > 7) && (cond < 11))
+						{
+							htmltext = "30419-05.htm";
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30419-06.htm";
+							st.setCond(12, true);
 							takeItems(player, ANDARIEL_SCRIPTURE_COPY, 1);
+							takeItems(player, ARKENIA_CONTRACT, 1);
 							giveItems(player, STARDUST, 1);
-							qs.setCond(12, true);
-							htmltext = "30419-06.html";
 						}
-						else if (hasQuestItems(player, STARDUST))
+						else if (cond == 12)
 						{
-							htmltext = "30419-07.html";
+							htmltext = "30419-07.htm";
 						}
-						else if (!hasAtLeastOneQuestItem(player, THALIAS_1ST_LETTER, ARKENIAS_CONTRACT, ANDARIEL_SCRIPTURE_COPY, STARDUST))
+						else if (cond > 12)
 						{
-							htmltext = "30419-08.html";
+							htmltext = "30419-08.htm";
 						}
+						break;
 					}
-					break;
-				}
-				case PRIEST_ADONIUS:
-				{
-					if (hasQuestItems(player, MOONFLOWER_CHARM))
+					case CARDIEN:
 					{
-						if (hasQuestItems(player, ARKENIAS_INSTRUCTIONS))
+						if (cond == 1)
 						{
-							htmltext = "30375-01.html";
+							htmltext = "30460-05.htm";
 						}
-						else if (hasQuestItems(player, ADONIUS_LIST))
+						else if ((cond > 1) && (cond < 21))
 						{
-							if ((getQuestItemsCount(player, SPIDER_ICHOR) >= 20) && (getQuestItemsCount(player, HARPYS_DOWN) >= 20))
-							{
-								takeItems(player, ADONIUS_LIST, 1);
-								giveItems(player, ANDARIEL_SCRIPTURE_COPY, 1);
-								takeItems(player, SPIDER_ICHOR, -1);
-								takeItems(player, HARPYS_DOWN, -1);
-								qs.setCond(11, true);
-								htmltext = "30375-04.html";
-							}
-							else
-							{
-								htmltext = "30375-03.html";
-							}
+							htmltext = "30460-06.htm";
 						}
-						else if (hasQuestItems(player, ANDARIEL_SCRIPTURE_COPY))
+						else if (cond == 21)
 						{
-							htmltext = "30375-05.html";
+							htmltext = "30460-07.htm";
+							takeItems(player, CAMOMILE_CHARM, 1);
+							giveItems(player, MARK_OF_LIFE, 1);
+							addExpAndSp(player, 104591, 11250);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
-						else if (!hasAtLeastOneQuestItem(player, ARKENIAS_INSTRUCTIONS, ADONIUS_LIST, ANDARIEL_SCRIPTURE_COPY))
-						{
-							htmltext = "30375-06.html";
-						}
+						break;
 					}
-					break;
-				}
-				case ISAEL_SILVERSHADOW:
-				{
-					if (hasQuestItems(player, MOONFLOWER_CHARM))
+					case ISAEL:
 					{
-						if (hasQuestItems(player, THALIAS_2ND_LETTER))
+						if (cond == 14)
 						{
-							htmltext = "30655-01.html";
+							htmltext = "30655-01.htm";
 						}
-						else if (hasQuestItems(player, ISAELS_INSTRUCTIONS))
+						else if (cond == 15)
 						{
-							if (hasQuestItems(player, TALINS_SPEAR_BLADE, TALINS_SPEAR_SHAFT, TALINS_RUBY, TALINS_AQUAMARINE, TALINS_AMETHYST, TALINS_PERIDOT))
+							htmltext = "30655-03.htm";
+						}
+						else if (cond == 16)
+						{
+							if (hasQuestItems(player, TALINS_PIECES))
 							{
+								htmltext = "30655-04.htm";
+								st.setCond(17, true);
+								
+								for (int itemId : TALINS_PIECES)
+								{
+									takeItems(player, itemId, 1);
+								}
+								
+								takeItems(player, ISAEL_INSTRUCTIONS, 1);
+								giveItems(player, ISAEL_LETTER, 1);
 								giveItems(player, TALINS_SPEAR, 1);
-								takeItems(player, ISAELS_INSTRUCTIONS, 1);
-								giveItems(player, ISAELS_LETTER, 1);
-								takeItems(player, TALINS_SPEAR_BLADE, 1);
-								takeItems(player, TALINS_SPEAR_SHAFT, 1);
-								takeItems(player, TALINS_RUBY, 1);
-								takeItems(player, TALINS_AQUAMARINE, 1);
-								takeItems(player, TALINS_AMETHYST, 1);
-								takeItems(player, TALINS_PERIDOT, 1);
-								qs.setCond(17, true);
-								htmltext = "30655-04.html";
 							}
 							else
 							{
-								htmltext = "30655-03.html";
+								htmltext = "30655-03.htm";
 							}
 						}
-						else if (hasQuestItems(player, TALINS_SPEAR, ISAELS_LETTER))
+						else if (cond == 17)
 						{
-							htmltext = "30655-05.html";
+							htmltext = "30655-05.htm";
 						}
-						else if (hasAtLeastOneQuestItem(player, GRAIL_OF_PURITY, WATER_OF_LIFE, CAMOMILE_CHARM))
+						else if (cond > 17)
 						{
-							htmltext = "30655-06.html";
+							htmltext = "30655-06.htm";
 						}
+						break;
 					}
-					break;
+					
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_CARDIEN)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20550:
+			{
+				if (st.isCond(4) && (getQuestItemsCount(player, PURE_MITHRIL_ORE) < 10) && getRandomBoolean())
+				{
+					giveItems(player, PURE_MITHRIL_ORE, 1);
+					if ((getQuestItemsCount(player, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(player, WYRM_TALON) >= 20) && (getQuestItemsCount(player, ANT_SOLDIER_ACID) >= 20))
+					{
+						st.setCond(5, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case 20176:
+			{
+				if (st.isCond(4) && (getQuestItemsCount(player, WYRM_TALON) < 20) && getRandomBoolean())
+				{
+					giveItems(player, WYRM_TALON, 1);
+					if ((getQuestItemsCount(player, WYRM_TALON) >= 20) && (getQuestItemsCount(player, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(player, ANT_SOLDIER_ACID) >= 20))
+					{
+						st.setCond(5, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case 20082:
+			case 20084:
+			case 20086:
+			case 20087:
+			case 20088:
+			{
+				if (st.isCond(4) && (getQuestItemsCount(player, ANT_SOLDIER_ACID) < 20) && (getRandom(10) < 8))
+				{
+					giveItems(player, ANT_SOLDIER_ACID, 1);
+					if ((getQuestItemsCount(player, ANT_SOLDIER_ACID) >= 20) && (getQuestItemsCount(player, PURE_MITHRIL_ORE) >= 10) && (getQuestItemsCount(player, WYRM_TALON) >= 20))
+					{
+						st.setCond(5, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case 20233:
+			{
+				if (st.isCond(9) && (getQuestItemsCount(player, SPIDER_ICHOR) < 20) && getRandomBoolean())
+				{
+					giveItems(player, SPIDER_ICHOR, 1);
+					if ((getQuestItemsCount(player, SPIDER_ICHOR) >= 20) && (getQuestItemsCount(player, HARPY_DOWN) >= 20))
+					{
+						st.setCond(10, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case 20145:
+			{
+				if (st.isCond(9) && (getQuestItemsCount(player, HARPY_DOWN) < 20) && getRandomBoolean())
+				{
+					giveItems(player, HARPY_DOWN, 1);
+					if ((getQuestItemsCount(player, HARPY_DOWN) >= 20) && (getQuestItemsCount(player, SPIDER_ICHOR) >= 20))
+					{
+						st.setCond(10, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case 27077:
+			{
+				if (st.isCond(18) && (player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND) == TALINS_SPEAR))
+				{
+					st.setCond(19, true);
+					takeItems(player, GRAIL_OF_PURITY, 1);
+					takeItems(player, TALINS_SPEAR, 1);
+					giveItems(player, TEARS_OF_UNICORN, 1);
+				}
+				break;
+			}
+			case 20581:
+			case 20582:
+			{
+				if (st.isCond(15) && getRandomBoolean())
+				{
+					for (int itemId : TALINS_PIECES)
+					{
+						if (!hasQuestItems(player, itemId))
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							giveItems(player, itemId, 1);
+							return null;
+						}
+					}
+					st.setCond(16, true);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

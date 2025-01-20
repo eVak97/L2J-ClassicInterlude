@@ -24,116 +24,117 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Skirmish with the Werewolves (274)
- * @author xban1x
- */
 public class Q00274_SkirmishWithTheWerewolves extends Quest
 {
-	// NPC
-	private static final int BRUKURSE = 30569;
-	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
-		20363, // Maraku Werewolf
-		20364, // Maraku Werewolf Chieftain
-	};
-	// Items
-	private static final int NECKLACE_OF_COURAGE = 1506;
+	// Needed items
 	private static final int NECKLACE_OF_VALOR = 1507;
-	private static final int WEREWOLF_HEAD = 1477;
-	private static final int WEREWOLF_TOTEM = 1501;
-	// Misc
-	private static final int MIN_LEVEL = 9;
+	private static final int NECKLACE_OF_COURAGE = 1506;
+	// Items
+	private static final int MARAKU_WEREWOLF_HEAD = 1477;
+	private static final int MARAKU_WOLFMEN_TOTEM = 1501;
 	
 	public Q00274_SkirmishWithTheWerewolves()
 	{
 		super(274);
-		addStartNpc(BRUKURSE);
-		addTalkId(BRUKURSE);
-		addKillId(MONSTERS);
-		registerQuestItems(WEREWOLF_HEAD, WEREWOLF_TOTEM);
-		addCondMaxLevel(18, getNoQuestMsg(null));
+		registerQuestItems(MARAKU_WEREWOLF_HEAD, MARAKU_WOLFMEN_TOTEM);
+		addStartNpc(30569);
+		addTalkId(30569);
+		addKillId(20363, 20364);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30569-04.htm"))
+		final QuestState st = player.getQuestState(getName());
+		final String htmltext = event;
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1))
+		
+		if (event.equals("30569-03.htm"))
 		{
-			giveItems(killer, WEREWOLF_HEAD, 1);
-			if (getRandom(100) <= 5)
-			{
-				giveItems(killer, WEREWOLF_TOTEM, 1);
-			}
-			if (getQuestItemsCount(killer, WEREWOLF_HEAD) >= 40)
-			{
-				qs.setCond(2, true);
-			}
-			else
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				if (hasAtLeastOneQuestItem(player, NECKLACE_OF_VALOR, NECKLACE_OF_COURAGE))
+				if (player.getRace() != Race.ORC)
 				{
-					htmltext = (player.getRace() == Race.ORC) ? (player.getLevel() >= MIN_LEVEL) ? "30569-03.htm" : "30569-02.html" : "30569-01.html";
+					htmltext = "30569-00.htm";
+				}
+				else if (player.getLevel() < 9)
+				{
+					htmltext = "30569-01.htm";
+				}
+				else if (hasAtLeastOneQuestItem(player, NECKLACE_OF_COURAGE, NECKLACE_OF_VALOR))
+				{
+					htmltext = "30569-02.htm";
 				}
 				else
 				{
-					htmltext = "30569-08.html";
+					htmltext = "30569-07.htm";
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						htmltext = "30569-05.html";
-						break;
-					}
-					case 2:
-					{
-						final long heads = getQuestItemsCount(player, WEREWOLF_HEAD);
-						if (heads >= 40)
-						{
-							final long totems = getQuestItemsCount(player, WEREWOLF_TOTEM);
-							giveAdena(player, 200, true);
-							qs.exitQuest(true, true);
-							htmltext = (totems > 0) ? "30569-07.html" : "30569-06.html";
-						}
-					}
+					htmltext = "30569-04.htm";
+				}
+				else
+				{
+					htmltext = "30569-05.htm";
+					
+					final int amount = (int) (3500 + (getQuestItemsCount(player, MARAKU_WOLFMEN_TOTEM) * 600));
+					takeItems(player, MARAKU_WEREWOLF_HEAD, -1);
+					takeItems(player, MARAKU_WOLFMEN_TOTEM, -1);
+					giveAdena(player, amount, true);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		giveItems(player, MARAKU_WEREWOLF_HEAD, 1);
+		if (getQuestItemsCount(player, MARAKU_WEREWOLF_HEAD) < 40)
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		else
+		{
+			st.setCond(2, true);
+		}
+		
+		if (getRandom(100) < 6)
+		{
+			giveItems(player, MARAKU_WOLFMEN_TOTEM, 1);
+		}
+		
+		return null;
 	}
 }

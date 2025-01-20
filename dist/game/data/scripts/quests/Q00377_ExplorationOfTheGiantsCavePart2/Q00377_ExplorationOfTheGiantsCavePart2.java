@@ -16,24 +16,14 @@
  */
 package quests.Q00377_ExplorationOfTheGiantsCavePart2;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Exploration of the Giants' Cave Part 2 (377)<br>
- * Original Jython script by Gnacik.
- * @author nonom
- */
 public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 {
-	// NPC
-	private static final int SOBLING = 31147;
 	// Items
 	private static final int ANCIENT_BOOK = 5955;
 	private static final int DICTIONARY_INTERMEDIATE = 5892;
@@ -56,36 +46,21 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 		{5420, 5422}
 		// @formatter:on
 	};
-	// Mobs
-	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
-	static
-	{
-		MOBS1.put(20653, 366); // lesser_giant_re
-		MOBS1.put(20654, 424); // lesser_giant_soldier_re
-		MOBS1.put(20655, 304); // lesser_giant_shooter_re
-		MOBS1.put(20656, 304); // lesser_giant_scout_re
-		MOBS1.put(20657, 354); // lesser_giant_mage_re
-		MOBS1.put(20658, 324); // lesser_giant_elder_re
-		MOBS1.put(20771, 366); // barif_re
-		MOBS1.put(20772, 366); // barif_pet_re
-		MOBS1.put(20651, 366); // gamlin_re
-		MOBS1.put(20652, 366); // leogul_re
-	}
 	
 	public Q00377_ExplorationOfTheGiantsCavePart2()
 	{
 		super(377);
-		addStartNpc(SOBLING);
-		addTalkId(SOBLING);
-		addKillId(MOBS1.keySet());
+		addStartNpc(31147); // Sobling
+		addTalkId(31147);
+		addKillId(20654, 20656, 20657, 20658);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
@@ -94,7 +69,7 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 		{
 			case "31147-03.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
 			case "31147-04.htm":
@@ -104,7 +79,30 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 			}
 			case "31147-07.htm":
 			{
-				qs.exitQuest(true, true);
+				st.exitQuest(true, true);
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = ((player.getLevel() < 57) || !hasQuestItems(player, DICTIONARY_INTERMEDIATE)) ? "31147-01.htm" : "31147-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				htmltext = checkItems(player);
 				break;
 			}
 		}
@@ -123,29 +121,6 @@ public class Q00377_ExplorationOfTheGiantsCavePart2 extends Quest
 		}
 		
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		String htmltext = getNoQuestMsg(player);
-		final QuestState qs = getQuestState(player, true);
-		
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
-				htmltext = ((player.getLevel() < 57) || !hasQuestItems(player, DICTIONARY_INTERMEDIATE)) ? "31147-01.htm" : "31147-02.htm";
-				break;
-			}
-			case State.STARTED:
-			{
-				htmltext = checkItems(player);
-				break;
-			}
-		}
-		
-		return htmltext;
 	}
 	
 	private static String checkItems(Player player)

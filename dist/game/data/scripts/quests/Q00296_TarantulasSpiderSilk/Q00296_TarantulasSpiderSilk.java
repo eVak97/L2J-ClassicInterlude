@@ -17,153 +17,153 @@
 package quests.Q00296_TarantulasSpiderSilk;
 
 import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.util.Util;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Tarantula's Spider Silk (296)
- * @author xban1x
- */
 public class Q00296_TarantulasSpiderSilk extends Quest
 {
 	// NPCs
-	private static final int TRADER_MION = 30519;
+	private static final int MION = 30519;
 	private static final int DEFENDER_NATHAN = 30548;
-	// Items
+	// Quest Items
 	private static final int TARANTULA_SPIDER_SILK = 1493;
 	private static final int TARANTULA_SPINNERETTE = 1494;
-	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
-		20394,
-		20403,
-		20508,
-	};
-	// Misc
-	private static final int MIN_LEVEL = 15;
+	// Items
+	private static final int RING_OF_RACCOON = 1508;
+	private static final int RING_OF_FIREFLY = 1509;
 	
 	public Q00296_TarantulasSpiderSilk()
 	{
 		super(296);
-		addStartNpc(TRADER_MION);
-		addTalkId(TRADER_MION, DEFENDER_NATHAN);
-		addKillId(MONSTERS);
 		registerQuestItems(TARANTULA_SPIDER_SILK, TARANTULA_SPINNERETTE);
-		addCondMaxLevel(21, getNoQuestMsg(null));
+		addStartNpc(MION);
+		addTalkId(MION, DEFENDER_NATHAN);
+		addKillId(20394, 20403, 20508); // Crimson Tarantula, Hunter Tarantula, Plunder arantula
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String html = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
 		switch (event)
 		{
 			case "30519-03.htm":
 			{
-				if (qs.isCreated())
+				if (hasAtLeastOneQuestItem(player, RING_OF_RACCOON, RING_OF_FIREFLY))
 				{
-					qs.startQuest();
-					html = event;
-				}
-				break;
-			}
-			case "30519-06.html":
-			{
-				if (qs.isStarted())
-				{
-					qs.exitQuest(true, true);
-					html = event;
-				}
-				break;
-			}
-			case "30519-07.html":
-			{
-				if (qs.isStarted())
-				{
-					html = event;
-				}
-				break;
-			}
-			case "30548-03.html":
-			{
-				if (qs.isStarted())
-				{
-					if (hasQuestItems(player, TARANTULA_SPINNERETTE))
-					{
-						giveItems(player, TARANTULA_SPIDER_SILK, (15 + getRandom(9)) * getQuestItemsCount(player, TARANTULA_SPINNERETTE));
-						takeItems(player, TARANTULA_SPINNERETTE, -1);
-						html = event;
-					}
-					else
-					{
-						html = "30548-02.html";
-					}
-				}
-				break;
-			}
-		}
-		return html;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			final int chance = getRandom(100);
-			if (chance > 95)
-			{
-				giveItemRandomly(killer, npc, TARANTULA_SPINNERETTE, 1, 0, 1, true);
-			}
-			else if (chance > 45)
-			{
-				giveItemRandomly(killer, npc, TARANTULA_SPIDER_SILK, 1, 0, 1, true);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String html = getNoQuestMsg(talker);
-		if (qs.isCreated() && (npc.getId() == TRADER_MION))
-		{
-			html = (talker.getLevel() >= MIN_LEVEL ? "30519-02.htm" : "30519-01.htm");
-		}
-		else if (qs.isStarted())
-		{
-			if (npc.getId() == TRADER_MION)
-			{
-				final long silk = getQuestItemsCount(talker, TARANTULA_SPIDER_SILK);
-				if (silk >= 1)
-				{
-					giveAdena(talker, (silk * 5) + (silk >= 10 ? 1000 : 0), true);
-					takeItems(talker, TARANTULA_SPIDER_SILK, -1);
-					// Q00281_HeadForTheHills.giveNewbieReward(talker); // TODO: It's using wrong bitmask, need to create a general bitmask for this using EnumIntBitmask class inside Quest class for handling Quest rewards.
-					html = "30519-05.html";
+					st.startQuest();
 				}
 				else
 				{
-					html = "30519-04.html";
+					htmltext = "30519-03a.htm";
 				}
+				break;
 			}
-			else if (npc.getId() == DEFENDER_NATHAN)
+			case "30519-06.htm":
 			{
-				html = "30548-01.html";
+				takeItems(player, TARANTULA_SPIDER_SILK, -1);
+				takeItems(player, TARANTULA_SPINNERETTE, -1);
+				st.exitQuest(true, true);
+				break;
+			}
+			case "30548-02.htm":
+			{
+				final int count = (int) getQuestItemsCount(player, TARANTULA_SPINNERETTE);
+				if (count > 0)
+				{
+					htmltext = "30548-03.htm";
+					takeItems(player, TARANTULA_SPINNERETTE, -1);
+					giveItems(player, TARANTULA_SPIDER_SILK, count * (15 + getRandom(10)));
+				}
+				break;
 			}
 		}
-		return html;
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 15) ? "30519-01.htm" : "30519-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case MION:
+					{
+						final int count = (int) getQuestItemsCount(player, TARANTULA_SPIDER_SILK);
+						if (count == 0)
+						{
+							htmltext = "30519-04.htm";
+						}
+						else
+						{
+							htmltext = "30519-05.htm";
+							takeItems(player, TARANTULA_SPIDER_SILK, -1);
+							
+							int reward = count * 20;
+							if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (count >= 10))
+							{
+								reward += 2000;
+							}
+							
+							giveAdena(player, reward, true);
+						}
+						break;
+					}
+					case DEFENDER_NATHAN:
+					{
+						htmltext = "30548-01.htm";
+						break;
+					}
+				}
+				break;
+			}
+		}
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int rnd = getRandom(100);
+		if (rnd > 95)
+		{
+			giveItems(player, TARANTULA_SPINNERETTE, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		else if (rnd > 45)
+		{
+			giveItems(player, TARANTULA_SPIDER_SILK, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

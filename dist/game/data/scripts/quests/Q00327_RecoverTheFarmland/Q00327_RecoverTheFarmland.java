@@ -22,35 +22,30 @@ import java.util.Map;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-
-/**
- * Recover the Farmland (327).
- * @author GKR
- */
+import org.l2jmobius.gameserver.model.quest.State;
 
 public class Q00327_RecoverTheFarmland extends Quest
 {
 	// NPCs
+	private static final int LEIKAN = 30382;
+	private static final int PIOTUR = 30597;
 	private static final int IRIS = 30034;
 	private static final int ASHA = 30313;
 	private static final int NESTLE = 30314;
-	private static final int LEIKAN = 30382;
-	private static final int PIOTUR = 30597;
-	private static final int TUREK_ORK_WARLORD = 20495;
-	private static final int TUREK_ORK_ARCHER = 20496;
-	private static final int TUREK_ORK_SKIRMISHER = 20497;
-	private static final int TUREK_ORK_SUPPLIER = 20498;
-	private static final int TUREK_ORK_FOOTMAN = 20499;
-	private static final int TUREK_ORK_SENTINEL = 20500;
-	private static final int TUREK_ORK_SHAMAN = 20501;
-	
+	// Monsters
+	private static final int TUREK_ORC_WARLORD = 20495;
+	private static final int TUREK_ORC_ARCHER = 20496;
+	private static final int TUREK_ORC_SKIRMISHER = 20497;
+	private static final int TUREK_ORC_SUPPLIER = 20498;
+	private static final int TUREK_ORC_FOOTMAN = 20499;
+	private static final int TUREK_ORC_SENTINEL = 20500;
+	private static final int TUREK_ORC_SHAMAN = 20501;
 	// Items
-	private static final int TUREK_DOG_TAG = 1846;
+	private static final int LEIKAN_LETTER = 5012;
+	private static final int TUREK_DOGTAG = 1846;
 	private static final int TUREK_MEDALLION = 1847;
-	private static final int LEIKANS_LETTER = 5012;
 	private static final int CLAY_URN_FRAGMENT = 1848;
 	private static final int BRASS_TRINKET_PIECE = 1849;
 	private static final int BRONZE_MIRROR_PIECE = 1850;
@@ -59,238 +54,252 @@ public class Q00327_RecoverTheFarmland extends Quest
 	private static final int ANCIENT_BRASS_TIARA = 1853;
 	private static final int ANCIENT_BRONZE_MIRROR = 1854;
 	private static final int ANCIENT_JADE_NECKLACE = 1855;
-	private static final int QUICK_STEP_POTION = 734;
-	private static final int SWIFT_ATTACK_POTION = 735;
-	private static final int SCROLL_OF_ESCAPE = 736;
-	private static final int SCROLL_OF_RESURRECTION = 737;
-	private static final int HEALING_POTION = 1061;
+	// Rewards
+	private static final int ADENA = 57;
 	private static final int SOULSHOT_D = 1463;
 	private static final int SPIRITSHOT_D = 2510;
-	
-	// Misc
-	private static final int MIN_LEVEL = 25;
-	private static final Map<String, ItemHolder> FRAGMENTS_REWARD_DATA = new HashMap<>(4);
-	private static final Map<Integer, Integer> FRAGMENTS_DROP_PROB = new HashMap<>(7);
-	private static final ItemHolder[] FULL_REWARD_DATA =
+	private static final int HEALING_POTION = 1061;
+	private static final int HASTE_POTION = 734;
+	private static final int POTION_OF_ALACRITY = 735;
+	private static final int SCROLL_OF_ESCAPE = 736;
+	private static final int SCROLL_OF_RESURRECTION = 737;
+	// Chances
+	private static final int[][] DROPLIST =
 	{
-		new ItemHolder(ANCIENT_CLAY_URN, 2766),
-		new ItemHolder(ANCIENT_BRASS_TIARA, 3227),
-		new ItemHolder(ANCIENT_BRONZE_MIRROR, 3227),
-		new ItemHolder(ANCIENT_JADE_NECKLACE, 3919)
+		// @formatter:off
+		{TUREK_ORC_ARCHER, 140000, TUREK_DOGTAG},
+		{TUREK_ORC_SKIRMISHER, 70000, TUREK_DOGTAG},
+		{TUREK_ORC_SUPPLIER, 120000, TUREK_DOGTAG},
+		{TUREK_ORC_FOOTMAN, 100000, TUREK_DOGTAG},
+		{TUREK_ORC_SENTINEL, 80000, TUREK_DOGTAG},
+		{TUREK_ORC_SHAMAN, 90000, TUREK_MEDALLION},
+		{TUREK_ORC_WARLORD, 180000, TUREK_MEDALLION}
+		// @formatter:on
 	};
+	// Exp
+	private static final Map<Integer, Integer> EXP_REWARD = new HashMap<>();
 	static
 	{
-		FRAGMENTS_REWARD_DATA.put("30034-03.html", new ItemHolder(CLAY_URN_FRAGMENT, 307));
-		FRAGMENTS_REWARD_DATA.put("30034-04.html", new ItemHolder(BRASS_TRINKET_PIECE, 368));
-		FRAGMENTS_REWARD_DATA.put("30034-05.html", new ItemHolder(BRONZE_MIRROR_PIECE, 368));
-		FRAGMENTS_REWARD_DATA.put("30034-06.html", new ItemHolder(JADE_NECKLACE_BEAD, 430));
-		
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_ARCHER, 21);
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_FOOTMAN, 19);
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_SENTINEL, 18);
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_SHAMAN, 22);
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_SKIRMISHER, 21);
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_SUPPLIER, 20);
-		FRAGMENTS_DROP_PROB.put(TUREK_ORK_WARLORD, 26);
+		EXP_REWARD.put(ANCIENT_CLAY_URN, 2766);
+		EXP_REWARD.put(ANCIENT_BRASS_TIARA, 3227);
+		EXP_REWARD.put(ANCIENT_BRONZE_MIRROR, 3227);
+		EXP_REWARD.put(ANCIENT_JADE_NECKLACE, 3919);
 	}
 	
 	public Q00327_RecoverTheFarmland()
 	{
 		super(327);
+		registerQuestItems(LEIKAN_LETTER);
 		addStartNpc(LEIKAN, PIOTUR);
 		addTalkId(LEIKAN, PIOTUR, IRIS, ASHA, NESTLE);
-		addKillId(TUREK_ORK_WARLORD, TUREK_ORK_ARCHER, TUREK_ORK_SKIRMISHER, TUREK_ORK_SUPPLIER, TUREK_ORK_FOOTMAN, TUREK_ORK_SENTINEL, TUREK_ORK_SHAMAN);
-		registerQuestItems(TUREK_DOG_TAG, TUREK_MEDALLION, LEIKANS_LETTER);
-		addCondMaxLevel(34, getNoQuestMsg(null));
+		addKillId(TUREK_ORC_WARLORD, TUREK_ORC_ARCHER, TUREK_ORC_SKIRMISHER, TUREK_ORC_SUPPLIER, TUREK_ORC_FOOTMAN, TUREK_ORC_SENTINEL, TUREK_ORC_SHAMAN);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
-		
-		String html = null;
 		
 		switch (event)
 		{
-			case "30034-01.html":
-			case "30313-01.html":
-			case "30314-02.html":
-			case "30314-08.html":
-			case "30314-09.html":
-			case "30382-05a.html":
-			case "30382-05b.html":
-			case "30597-03.html":
-			case "30597-07.html":
+			case "30597-03.htm":
 			{
-				html = event;
+				if ((st.getCond() < 1))
+				{
+					st.startQuest();
+				}
+				break;
+			}
+			case "30597-06.htm":
+			{
+				st.exitQuest(true, true);
 				break;
 			}
 			case "30382-03.htm":
 			{
-				qs.startQuest();
-				giveItems(player, LEIKANS_LETTER, 1);
-				qs.setCond(2);
-				html = event;
+				st.startQuest();
+				st.setCond(2);
+				giveItems(player, LEIKAN_LETTER, 1);
 				break;
 			}
-			case "30597-03.htm":
+			case "30313-02.htm":
 			{
-				qs.startQuest();
-				html = event;
-				break;
-			}
-			case "30597-06.html":
-			{
-				qs.exitQuest(true, true);
-				html = event;
-				break;
-			}
-			case "30034-03.html":
-			case "30034-04.html":
-			case "30034-05.html":
-			case "30034-06.html":
-			{
-				final ItemHolder item = FRAGMENTS_REWARD_DATA.get(event);
-				if (!hasQuestItems(player, item.getId()))
-				{
-					html = "30034-02.html";
-				}
-				else
-				{
-					addExpAndSp(player, getQuestItemsCount(player, item.getId()) * item.getCount(), 0);
-					takeItems(player, item.getId(), -1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					html = event;
-				}
-				break;
-			}
-			case "30034-07.html":
-			{
-				boolean rewarded = false;
-				for (ItemHolder it : FULL_REWARD_DATA)
-				{
-					if (hasQuestItems(player, it.getId()))
-					{
-						addExpAndSp(player, getQuestItemsCount(player, it.getId()) * it.getCount(), 0);
-						takeItems(player, it.getId(), -1);
-						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						rewarded = true;
-					}
-				}
-				html = rewarded ? event : "30034-02.html";
-				break;
-			}
-			case "30313-03.html":
-			{
-				if (getQuestItemsCount(player, CLAY_URN_FRAGMENT) < 5)
-				{
-					html = "30313-02.html";
-				}
-				else
+				if (getQuestItemsCount(player, CLAY_URN_FRAGMENT) >= 5)
 				{
 					takeItems(player, CLAY_URN_FRAGMENT, 5);
 					if (getRandom(6) < 5)
 					{
-						giveItems(player, ANCIENT_CLAY_URN, 1);
-						html = event;
+						htmltext = "30313-03.htm";
+						rewardItems(player, ANCIENT_CLAY_URN, 1);
 					}
 					else
 					{
-						html = "30313-10.html";
+						htmltext = "30313-10.htm";
 					}
 				}
 				break;
 			}
-			case "30313-05.html":
+			case "30313-04.htm":
 			{
-				if (getQuestItemsCount(player, BRASS_TRINKET_PIECE) < 5)
-				{
-					html = "30313-04.html";
-				}
-				else
+				if (getQuestItemsCount(player, BRASS_TRINKET_PIECE) >= 5)
 				{
 					takeItems(player, BRASS_TRINKET_PIECE, 5);
 					if (getRandom(7) < 6)
 					{
-						giveItems(player, ANCIENT_BRASS_TIARA, 1);
-						html = event;
+						htmltext = "30313-05.htm";
+						rewardItems(player, ANCIENT_BRASS_TIARA, 1);
 					}
 					else
 					{
-						html = "30313-10.html";
+						htmltext = "30313-10.htm";
 					}
 				}
 				break;
 			}
-			case "30313-07.html":
+			case "30313-06.htm":
 			{
-				if (getQuestItemsCount(player, BRONZE_MIRROR_PIECE) < 5)
-				{
-					html = "30313-06.html";
-				}
-				else
+				if (getQuestItemsCount(player, BRONZE_MIRROR_PIECE) >= 5)
 				{
 					takeItems(player, BRONZE_MIRROR_PIECE, 5);
 					if (getRandom(7) < 6)
 					{
-						giveItems(player, ANCIENT_BRONZE_MIRROR, 1);
-						html = event;
+						htmltext = "30313-07.htm";
+						rewardItems(player, ANCIENT_BRONZE_MIRROR, 1);
 					}
 					else
 					{
-						html = "30313-10.html";
+						htmltext = "30313-10.htm";
 					}
 				}
 				break;
 			}
-			case "30313-09.html":
+			case "30313-08.htm":
 			{
-				if (getQuestItemsCount(player, JADE_NECKLACE_BEAD) < 5)
-				{
-					html = "30313-08.html";
-				}
-				else
+				if (getQuestItemsCount(player, JADE_NECKLACE_BEAD) >= 5)
 				{
 					takeItems(player, JADE_NECKLACE_BEAD, 5);
 					if (getRandom(8) < 7)
 					{
-						giveItems(player, ANCIENT_JADE_NECKLACE, 1);
-						html = event;
+						htmltext = "30313-09.htm";
+						rewardItems(player, ANCIENT_JADE_NECKLACE, 1);
 					}
 					else
 					{
-						html = "30313-10.html";
+						htmltext = "30313-10.htm";
 					}
 				}
 				break;
 			}
-			case "30314-03.html":
+			case "30034-03.htm":
 			{
-				if (!hasQuestItems(player, ANCIENT_CLAY_URN))
+				final int n = (int) getQuestItemsCount(player, CLAY_URN_FRAGMENT);
+				if (n == 0)
 				{
-					html = "30314-07.html";
+					htmltext = "30034-02.htm";
 				}
 				else
 				{
-					rewardItems(player, SOULSHOT_D, getRandom(70, 110));
-					takeItems(player, ANCIENT_CLAY_URN, 1);
-					html = event;
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					takeItems(player, CLAY_URN_FRAGMENT, n);
+					addExpAndSp(player, n * 307, 0);
 				}
 				break;
 			}
-			case "30314-04.html":
+			case "30034-04.htm":
 			{
-				if (!hasQuestItems(player, ANCIENT_BRASS_TIARA))
+				final int n = (int) getQuestItemsCount(player, BRASS_TRINKET_PIECE);
+				if (n == 0)
 				{
-					html = "30314-07.html";
+					htmltext = "30034-02.htm";
 				}
 				else
 				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					takeItems(player, BRASS_TRINKET_PIECE, n);
+					addExpAndSp(player, n * 368, 0);
+				}
+				break;
+			}
+			case "30034-05.htm":
+			{
+				final int n = (int) getQuestItemsCount(player, BRONZE_MIRROR_PIECE);
+				if (n == 0)
+				{
+					htmltext = "30034-02.htm";
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					takeItems(player, BRONZE_MIRROR_PIECE, n);
+					addExpAndSp(player, n * 368, 0);
+				}
+				break;
+			}
+			case "30034-06.htm":
+			{
+				final int n = (int) getQuestItemsCount(player, JADE_NECKLACE_BEAD);
+				if (n == 0)
+				{
+					htmltext = "30034-02.htm";
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					takeItems(player, JADE_NECKLACE_BEAD, n);
+					addExpAndSp(player, n * 430, 0);
+				}
+				break;
+			}
+			case "30034-07.htm":
+			{
+				boolean isRewarded = false;
+				for (int i = 1852; i < 1856; i++)
+				{
+					final int n = (int) getQuestItemsCount(player, i);
+					if (n > 0)
+					{
+						takeItems(player, i, n);
+						addExpAndSp(player, n * EXP_REWARD.get(i), 0);
+						isRewarded = true;
+					}
+				}
+				if (!isRewarded)
+				{
+					htmltext = "30034-02.htm";
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case "30314-03.htm":
+			{
+				if (!hasQuestItems(player, ANCIENT_CLAY_URN))
+				{
+					htmltext = "30314-07.htm";
+				}
+				else
+				{
+					takeItems(player, ANCIENT_CLAY_URN, 1);
+					rewardItems(player, SOULSHOT_D, 70 + getRandom(41));
+				}
+				break;
+			}
+			case "30314-04.htm":
+			{
+				if (!hasQuestItems(player, ANCIENT_BRASS_TIARA))
+				{
+					htmltext = "30314-07.htm";
+				}
+				else
+				{
+					takeItems(player, ANCIENT_BRASS_TIARA, 1);
 					final int rnd = getRandom(100);
 					if (rnd < 40)
 					{
@@ -298,161 +307,150 @@ public class Q00327_RecoverTheFarmland extends Quest
 					}
 					else if (rnd < 84)
 					{
-						rewardItems(player, QUICK_STEP_POTION, 1);
+						rewardItems(player, HASTE_POTION, 1);
 					}
 					else
 					{
-						rewardItems(player, SWIFT_ATTACK_POTION, 1);
+						rewardItems(player, POTION_OF_ALACRITY, 1);
 					}
-					takeItems(player, ANCIENT_BRASS_TIARA, 1);
-					html = event;
 				}
 				break;
 			}
-			case "30314-05.html":
+			case "30314-05.htm":
 			{
 				if (!hasQuestItems(player, ANCIENT_BRONZE_MIRROR))
 				{
-					html = "30314-07.html";
+					htmltext = "30314-07.htm";
 				}
 				else
 				{
-					rewardItems(player, (getRandom(100) < 59) ? SCROLL_OF_ESCAPE : SCROLL_OF_RESURRECTION, 1);
 					takeItems(player, ANCIENT_BRONZE_MIRROR, 1);
-					html = event;
+					rewardItems(player, (getRandom(100) < 59) ? SCROLL_OF_ESCAPE : SCROLL_OF_RESURRECTION, 1);
 				}
 				break;
 			}
-			case "30314-06.html":
+			case "30314-06.htm":
 			{
 				if (!hasQuestItems(player, ANCIENT_JADE_NECKLACE))
 				{
-					html = "30314-07.html";
+					htmltext = "30314-07.htm";
 				}
 				else
 				{
-					rewardItems(player, SPIRITSHOT_D, getRandom(50, 90));
 					takeItems(player, ANCIENT_JADE_NECKLACE, 1);
-					html = event;
+					rewardItems(player, SPIRITSHOT_D, 50 + getRandom(41));
 				}
 				break;
 			}
 		}
 		
-		return html;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if (qs != null)
-		{
-			if ((npc.getId() == TUREK_ORK_SHAMAN) || (npc.getId() == TUREK_ORK_WARLORD))
-			{
-				giveItems(killer, TUREK_MEDALLION, 1);
-			}
-			else
-			{
-				giveItems(killer, TUREK_DOG_TAG, 1);
-			}
-			
-			if (getRandom(100) < FRAGMENTS_DROP_PROB.get(npc.getId()))
-			{
-				giveItems(killer, getRandom(CLAY_URN_FRAGMENT, JADE_NECKLACE_BEAD), 1);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
-		String html = getNoQuestMsg(player);
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (npc.getId())
+		switch (st.getState())
 		{
-			case LEIKAN:
+			case State.CREATED:
 			{
-				if (qs.isCreated())
-				{
-					html = ((player.getLevel() >= MIN_LEVEL) ? "30382-02.htm" : "30382-01.htm");
-				}
-				else if (qs.isStarted())
-				{
-					if (hasQuestItems(player, LEIKANS_LETTER))
-					{
-						html = "30382-04.html";
-					}
-					else
-					{
-						html = "30382-05.html";
-						qs.setCond(5, true);
-					}
-				}
+				htmltext = npc.getId() + ((player.getLevel() < 25) ? "-01.htm" : "-02.htm");
 				break;
 			}
-			case PIOTUR:
+			case State.STARTED:
 			{
-				if (qs.isCreated())
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					html = ((player.getLevel() >= MIN_LEVEL) ? "30597-02.htm" : "30597-01.htm");
-				}
-				else if (qs.isStarted())
-				{
-					if (hasQuestItems(player, LEIKANS_LETTER))
+					case PIOTUR:
 					{
-						html = "30597-03a.htm";
-						takeItems(player, LEIKANS_LETTER, -1);
-						qs.setCond(3, true);
-					}
-					else
-					{
-						if (!hasQuestItems(player, TUREK_DOG_TAG) && !hasQuestItems(player, TUREK_MEDALLION))
+						if (!hasQuestItems(player, LEIKAN_LETTER))
 						{
-							html = "30597-04.html";
+							if (hasAtLeastOneQuestItem(player, TUREK_DOGTAG, TUREK_MEDALLION))
+							{
+								htmltext = "30597-05.htm";
+								
+								if (cond < 4)
+								{
+									st.setCond(4, true);
+								}
+								
+								final int dogtag = (int) getQuestItemsCount(player, TUREK_DOGTAG);
+								final int medallion = (int) getQuestItemsCount(player, TUREK_MEDALLION);
+								takeItems(player, TUREK_DOGTAG, -1);
+								takeItems(player, TUREK_MEDALLION, -1);
+								rewardItems(player, ADENA, (dogtag * 40) + (medallion * 50) + (((dogtag + medallion) >= 10) ? 619 : 0));
+							}
+							else
+							{
+								htmltext = "30597-04.htm";
+							}
 						}
 						else
 						{
-							html = "30597-05.html";
-							final long dogTags = getQuestItemsCount(player, TUREK_DOG_TAG);
-							final long medallions = getQuestItemsCount(player, TUREK_MEDALLION);
-							final long rewardCount = (dogTags * 8) + (medallions * 8) + (((dogTags + medallions) >= 10) ? 1000 : 0);
-							giveAdena(player, rewardCount, true);
-							takeItems(player, TUREK_DOG_TAG, -1);
-							takeItems(player, TUREK_MEDALLION, -1);
-							qs.setCond(4, true);
+							htmltext = "30597-03a.htm";
+							st.setCond(3, true);
+							takeItems(player, LEIKAN_LETTER, 1);
 						}
+						break;
 					}
-				}
-				break;
-			}
-			case IRIS:
-			{
-				if (qs.isStarted())
-				{
-					html = "30034-01.html";
-				}
-				break;
-			}
-			case ASHA:
-			{
-				if (qs.isStarted())
-				{
-					html = "30313-01.html";
-				}
-				break;
-			}
-			case NESTLE:
-			{
-				if (qs.isStarted())
-				{
-					html = "30314-01.html";
+					case LEIKAN:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30382-04.htm";
+						}
+						else if ((cond == 3) || (cond == 4))
+						{
+							htmltext = "30382-05.htm";
+							st.setCond(5, true);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30382-05.htm";
+						}
+						break;
+					}
+					default:
+					{
+						htmltext = npc.getId() + "-01.htm";
+						break;
+					}
 				}
 				break;
 			}
 		}
-		return html;
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		for (int[] npcData : DROPLIST)
+		{
+			if (npcData[0] == npc.getId())
+			{
+				giveItems(player, npcData[2], 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				
+				if (getRandom(1000000) < npcData[1])
+				{
+					giveItems(player, getRandom(1848, 1851), 1);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

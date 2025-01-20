@@ -16,530 +16,403 @@
  */
 package quests.Q00212_TrialOfDuty;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.CategoryType;
+import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.item.Weapon;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Trial of Duty (212)
- * @author jurchiks
- */
 public class Q00212_TrialOfDuty extends Quest
 {
 	// NPCs
 	private static final int HANNAVALT = 30109;
 	private static final int DUSTIN = 30116;
-	private static final int SIR_COLLIN_WINDAWOOD = 30311;
-	private static final int SIR_ARON_TANFORD = 30653;
-	private static final int SIR_KIEL_NIGHTHAWK = 30654;
-	private static final int ISAEL_SILVERSHADOW = 30655;
-	private static final int SPIRIT_OF_SIR_TALIANUS = 30656;
+	private static final int SIR_COLLIN = 30311;
+	private static final int SIR_ARON = 30653;
+	private static final int SIR_KIEL = 30654;
+	private static final int SILVERSHADOW = 30655;
+	private static final int SPIRIT_TALIANUS = 30656;
 	// Items
 	private static final int LETTER_OF_DUSTIN = 2634;
 	private static final int KNIGHTS_TEAR = 2635;
 	private static final int MIRROR_OF_ORPIC = 2636;
 	private static final int TEAR_OF_CONFESSION = 2637;
-	private static final ItemHolder REPORT_PIECE = new ItemHolder(2638, 10);
-	private static final int TALIANUSS_REPORT = 2639;
+	private static final int REPORT_PIECE_1 = 2638;
+	private static final int REPORT_PIECE_2 = 2639;
 	private static final int TEAR_OF_LOYALTY = 2640;
-	private static final ItemHolder MILITAS_ARTICLE = new ItemHolder(2641, 20);
-	private static final int SAINTS_ASHES_URN = 2641;
-	private static final int ATHEBALDTS_SKULL = 2643;
-	private static final int ATHEBALDTS_RIBS = 2644;
-	private static final int ATHEBALDTS_SHIN = 2645;
+	private static final int MILITAS_ARTICLE = 2641;
+	private static final int SAINTS_ASHES_URN = 2642;
+	private static final int ATHEBALDT_SKULL = 2643;
+	private static final int ATHEBALDT_RIBS = 2644;
+	private static final int ATHEBALDT_SHIN = 2645;
 	private static final int LETTER_OF_WINDAWOOD = 2646;
-	private static final int OLD_KNIGHTS_SWORD = 3027;
-	// Monsters
-	private static final int HANGMAN_TREE = 20144;
-	private static final int SKELETON_MARAUDER = 20190;
-	private static final int SKELETON_RAIDER = 20191;
-	private static final int STRAIN = 20200;
-	private static final int GHOUL = 20201;
-	private static final int BREKA_ORC_PREFECT = 20270;
-	private static final int LETO_LIZARDMAN = 20577;
-	private static final int LETO_LIZARDMAN_ARCHER = 20578;
-	private static final int LETO_LIZARDMAN_SOLDIER = 20579;
-	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
-	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
-	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
-	private static final int SPIRIT_OF_SIR_HEROD = 27119;
+	private static final int OLD_KNIGHT_SWORD = 3027;
 	// Rewards
 	private static final int MARK_OF_DUTY = 2633;
-	// Misc
-	private static final int MIN_LEVEL = 35;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00212_TrialOfDuty()
 	{
 		super(212);
+		registerQuestItems(LETTER_OF_DUSTIN, KNIGHTS_TEAR, MIRROR_OF_ORPIC, TEAR_OF_CONFESSION, REPORT_PIECE_1, REPORT_PIECE_2, TEAR_OF_LOYALTY, MILITAS_ARTICLE, SAINTS_ASHES_URN, ATHEBALDT_SKULL, ATHEBALDT_RIBS, ATHEBALDT_SHIN, LETTER_OF_WINDAWOOD, OLD_KNIGHT_SWORD);
 		addStartNpc(HANNAVALT);
-		addTalkId(HANNAVALT, DUSTIN, SIR_COLLIN_WINDAWOOD, SIR_ARON_TANFORD, SIR_KIEL_NIGHTHAWK, ISAEL_SILVERSHADOW, SPIRIT_OF_SIR_TALIANUS);
-		addKillId(HANGMAN_TREE, SKELETON_MARAUDER, SKELETON_RAIDER, STRAIN, GHOUL, BREKA_ORC_PREFECT, LETO_LIZARDMAN, LETO_LIZARDMAN_ARCHER, LETO_LIZARDMAN_SOLDIER, LETO_LIZARDMAN_WARRIOR, LETO_LIZARDMAN_SHAMAN, LETO_LIZARDMAN_OVERLORD, SPIRIT_OF_SIR_HEROD);
-		registerQuestItems(LETTER_OF_DUSTIN, KNIGHTS_TEAR, MIRROR_OF_ORPIC, TEAR_OF_CONFESSION, REPORT_PIECE.getId(), TALIANUSS_REPORT, TEAR_OF_LOYALTY, MILITAS_ARTICLE.getId(), SAINTS_ASHES_URN, ATHEBALDTS_SKULL, ATHEBALDTS_RIBS, ATHEBALDTS_SHIN, LETTER_OF_WINDAWOOD, OLD_KNIGHTS_SWORD);
+		addTalkId(HANNAVALT, DUSTIN, SIR_COLLIN, SIR_ARON, SIR_KIEL, SILVERSHADOW, SPIRIT_TALIANUS);
+		addKillId(20144, 20190, 20191, 20200, 20201, 20270, 27119, 20577, 20578, 20579, 20580, 20581, 20582);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String html = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return html;
+			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30109-04.htm"))
 		{
-			case "quest_accept":
+			st.startQuest();
+			if (!player.getVariables().getBoolean("secondClassChange35", false))
 			{
-				if (qs.isCreated() && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.KNIGHT_GROUP))
-				{
-					qs.startQuest();
-					qs.setMemoState(1);
-					qs.set("flag", 0);
-				}
-				break;
-			}
-			case "30116-02.html":
-			case "30116-03.html":
-			case "30116-04.html":
-			{
-				if (qs.isMemoState(10) && hasQuestItems(player, TEAR_OF_LOYALTY))
-				{
-					html = event;
-				}
-				break;
-			}
-			case "30116-05.html":
-			{
-				if (qs.isMemoState(10) && hasQuestItems(player, TEAR_OF_LOYALTY))
-				{
-					html = event;
-					takeItems(player, TEAR_OF_LOYALTY, -1);
-					qs.setMemoState(11);
-					qs.setCond(14, true);
-				}
-				break;
+				htmltext = "30109-04a.htm";
+				giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_35.get(player.getClassId().getId()));
+				player.getVariables().set("secondClassChange35", true);
 			}
 		}
-		return html;
+		else if (event.equals("30116-05.htm"))
+		{
+			st.setCond(14, true);
+			takeItems(player, TEAR_OF_LOYALTY, 1);
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs == null) || !Util.checkIfInRange(Config.ALT_PARTY_RANGE, killer, npc, true))
-		{
-			return super.onKill(npc, killer, isSummon);
-		}
+		String htmltext = Quest.getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (npc.getId())
+		switch (st.getState())
 		{
-			case SKELETON_MARAUDER:
-			case SKELETON_RAIDER:
+			case State.CREATED:
 			{
-				if (qs.isMemoState(2))
+				if ((player.getClassId() != ClassId.KNIGHT) && (player.getClassId() != ClassId.ELVEN_KNIGHT) && (player.getClassId() != ClassId.PALUS_KNIGHT))
 				{
-					final int flag = qs.getInt("flag");
-					if (getRandom(100) < (flag * 10))
-					{
-						addSpawn(SPIRIT_OF_SIR_HEROD, npc);
-						qs.set("flag", 0);
-					}
-					else
-					{
-						qs.set("flag", flag + 1);
-					}
+					htmltext = "30109-02.htm";
 				}
-				break;
-			}
-			case SPIRIT_OF_SIR_HEROD:
-			{
-				if (qs.isMemoState(2))
+				else if (player.getLevel() < 35)
 				{
-					final Weapon weapon = killer.getActiveWeaponItem();
-					if ((weapon != null) && (weapon.getId() == OLD_KNIGHTS_SWORD))
-					{
-						giveItems(killer, KNIGHTS_TEAR, 1);
-						qs.setMemoState(3);
-						qs.setCond(3, true);
-					}
-				}
-				break;
-			}
-			case STRAIN:
-			case GHOUL:
-			{
-				if (qs.isMemoState(5) && !hasQuestItems(killer, TALIANUSS_REPORT) && giveItemRandomly(killer, npc, REPORT_PIECE.getId(), 1, REPORT_PIECE.getCount(), 1, true))
-				{
-					takeItem(killer, REPORT_PIECE);
-					giveItems(killer, TALIANUSS_REPORT, 1);
-					qs.setCond(6);
-				}
-				break;
-			}
-			case HANGMAN_TREE:
-			{
-				if (qs.isMemoState(6))
-				{
-					final int flag = qs.getInt("flag");
-					if (getRandom(100) < ((flag - 3) * 33))
-					{
-						addSpawn(SPIRIT_OF_SIR_TALIANUS, npc);
-						qs.set("flag", 0);
-						qs.setCond(8, true);
-					}
-					else
-					{
-						qs.set("flag", flag + 1);
-					}
-				}
-				break;
-			}
-			case LETO_LIZARDMAN:
-			case LETO_LIZARDMAN_ARCHER:
-			case LETO_LIZARDMAN_SOLDIER:
-			case LETO_LIZARDMAN_WARRIOR:
-			case LETO_LIZARDMAN_SHAMAN:
-			case LETO_LIZARDMAN_OVERLORD:
-			{
-				if (qs.isMemoState(9) && giveItemRandomly(killer, npc, MILITAS_ARTICLE.getId(), 1, MILITAS_ARTICLE.getCount(), 1, true))
-				{
-					qs.setCond(12);
-				}
-				break;
-			}
-			case BREKA_ORC_PREFECT:
-			{
-				if (qs.isMemoState(11))
-				{
-					if (!hasQuestItems(killer, ATHEBALDTS_SKULL))
-					{
-						giveItems(killer, ATHEBALDTS_SKULL, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else if (!hasQuestItems(killer, ATHEBALDTS_RIBS))
-					{
-						giveItems(killer, ATHEBALDTS_RIBS, 1);
-						playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-					else if (!hasQuestItems(killer, ATHEBALDTS_SHIN))
-					{
-						giveItems(killer, ATHEBALDTS_SHIN, 1);
-						qs.setCond(15, true);
-					}
-				}
-				break;
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String html = getNoQuestMsg(talker);
-		
-		switch (npc.getId())
-		{
-			case HANNAVALT:
-			{
-				if (qs.isCreated())
-				{
-					if (!talker.isInCategory(CategoryType.KNIGHT_GROUP))
-					{
-						html = "30109-02.html";
-					}
-					else if (talker.getLevel() < MIN_LEVEL)
-					{
-						html = "30109-01.html";
-					}
-					else
-					{
-						html = "30109-03.htm";
-					}
-				}
-				else if (qs.isStarted())
-				{
-					switch (qs.getMemoState())
-					{
-						case 1:
-						{
-							html = "30109-04.html";
-							break;
-						}
-						case 14:
-						{
-							if (hasQuestItems(talker, LETTER_OF_DUSTIN))
-							{
-								html = "30109-05.html";
-								takeItems(talker, LETTER_OF_DUSTIN, -1);
-								addExpAndSp(talker, 762576, 49458);
-								giveAdena(talker, 138968, true);
-								giveItems(talker, MARK_OF_DUTY, 1);
-								qs.exitQuest(false, true);
-								talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
-							}
-							break;
-						}
-					}
+					htmltext = "30109-01.htm";
 				}
 				else
 				{
-					html = getAlreadyCompletedMsg(talker);
+					htmltext = "30109-03.htm";
 				}
 				break;
 			}
-			case SIR_ARON_TANFORD:
+			case State.STARTED:
 			{
-				switch (qs.getMemoState())
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					case 1:
+					case HANNAVALT:
 					{
-						html = "30653-01.html";
-						if (!hasQuestItems(talker, OLD_KNIGHTS_SWORD))
+						if (cond == 18)
 						{
-							giveItems(talker, OLD_KNIGHTS_SWORD, 1);
-						}
-						
-						qs.setMemoState(2);
-						qs.setCond(2, true);
-						break;
-					}
-					case 2:
-					{
-						if (hasQuestItems(talker, OLD_KNIGHTS_SWORD))
-						{
-							html = "30653-02.html";
-						}
-						break;
-					}
-					case 3:
-					{
-						if (hasQuestItems(talker, KNIGHTS_TEAR))
-						{
-							html = "30653-03.html";
-							takeItems(talker, -1, KNIGHTS_TEAR, OLD_KNIGHTS_SWORD);
-							qs.setMemoState(4);
-							qs.setCond(4, true);
-						}
-						break;
-					}
-					case 4:
-					{
-						html = "30653-04.html";
-						break;
-					}
-				}
-				break;
-			}
-			case SIR_KIEL_NIGHTHAWK:
-			{
-				switch (qs.getMemoState())
-				{
-					case 4:
-					{
-						html = "30654-01.html";
-						qs.setMemoState(5);
-						qs.setCond(5, true);
-						break;
-					}
-					case 5:
-					{
-						if (!hasQuestItems(talker, TALIANUSS_REPORT))
-						{
-							html = "30654-02.html";
+							htmltext = "30109-05.htm";
+							takeItems(player, LETTER_OF_DUSTIN, 1);
+							giveItems(player, MARK_OF_DUTY, 1);
+							addExpAndSp(player, 79832, 3750);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
 						else
 						{
-							html = "30654-03.html";
-							qs.setMemoState(6);
-							qs.setCond(7, true);
-							giveItems(talker, MIRROR_OF_ORPIC, 1);
+							htmltext = "30109-04a.htm";
 						}
 						break;
 					}
-					case 6:
+					case SIR_ARON:
 					{
-						if (hasQuestItems(talker, MIRROR_OF_ORPIC))
+						if (cond == 1)
 						{
-							html = "30654-04.html";
+							htmltext = "30653-01.htm";
+							st.setCond(2, true);
+							giveItems(player, OLD_KNIGHT_SWORD, 1);
 						}
-						break;
-					}
-					case 7:
-					{
-						if (hasQuestItems(talker, TEAR_OF_CONFESSION))
+						else if (cond == 2)
 						{
-							html = "30654-05.html";
-							takeItems(talker, TEAR_OF_CONFESSION, -1);
-							qs.setMemoState(8);
-							qs.setCond(10, true);
+							htmltext = "30653-02.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30653-03.htm";
+							st.setCond(4, true);
+							takeItems(player, KNIGHTS_TEAR, 1);
+							takeItems(player, OLD_KNIGHT_SWORD, 1);
+						}
+						else if (cond > 3)
+						{
+							htmltext = "30653-04.htm";
 						}
 						break;
 					}
-					case 8:
+					case SIR_KIEL:
 					{
-						html = "30654-06.html";
+						if (cond == 4)
+						{
+							htmltext = "30654-01.htm";
+							st.setCond(5, true);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30654-02.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30654-03.htm";
+							st.setCond(7, true);
+							giveItems(player, MIRROR_OF_ORPIC, 1);
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30654-04.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30654-05.htm";
+							st.setCond(10, true);
+							takeItems(player, TEAR_OF_CONFESSION, 1);
+						}
+						else if (cond > 9)
+						{
+							htmltext = "30654-06.htm";
+						}
+						break;
+					}
+					case SPIRIT_TALIANUS:
+					{
+						if (cond == 8)
+						{
+							htmltext = "30656-01.htm";
+							st.setCond(9, true);
+							takeItems(player, MIRROR_OF_ORPIC, 1);
+							takeItems(player, REPORT_PIECE_2, 1);
+							giveItems(player, TEAR_OF_CONFESSION, 1);
+							
+							// Despawn the spirit.
+							npc.deleteMe();
+						}
+						break;
+					}
+					case SILVERSHADOW:
+					{
+						if (cond == 10)
+						{
+							if (player.getLevel() < 35)
+							{
+								htmltext = "30655-01.htm";
+							}
+							else
+							{
+								htmltext = "30655-02.htm";
+								st.setCond(11, true);
+							}
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30655-03.htm";
+						}
+						else if (cond == 12)
+						{
+							htmltext = "30655-04.htm";
+							st.setCond(13, true);
+							takeItems(player, MILITAS_ARTICLE, -1);
+							giveItems(player, TEAR_OF_LOYALTY, 1);
+						}
+						else if (cond == 13)
+						{
+							htmltext = "30655-05.htm";
+						}
+						break;
+					}
+					case DUSTIN:
+					{
+						if (cond == 13)
+						{
+							htmltext = "30116-01.htm";
+						}
+						else if (cond == 14)
+						{
+							htmltext = "30116-06.htm";
+						}
+						else if (cond == 15)
+						{
+							htmltext = "30116-07.htm";
+							st.setCond(16, true);
+							takeItems(player, ATHEBALDT_SKULL, 1);
+							takeItems(player, ATHEBALDT_RIBS, 1);
+							takeItems(player, ATHEBALDT_SHIN, 1);
+							giveItems(player, SAINTS_ASHES_URN, 1);
+						}
+						else if (cond == 16)
+						{
+							htmltext = "30116-09.htm";
+						}
+						else if (cond == 17)
+						{
+							htmltext = "30116-08.htm";
+							st.setCond(18, true);
+							takeItems(player, LETTER_OF_WINDAWOOD, 1);
+							giveItems(player, LETTER_OF_DUSTIN, 1);
+						}
+						else if (cond == 18)
+						{
+							htmltext = "30116-10.htm";
+						}
+						break;
+					}
+					case SIR_COLLIN:
+					{
+						if (cond == 16)
+						{
+							htmltext = "30311-01.htm";
+							st.setCond(17, true);
+							takeItems(player, SAINTS_ASHES_URN, 1);
+							giveItems(player, LETTER_OF_WINDAWOOD, 1);
+						}
+						else if (cond > 16)
+						{
+							htmltext = "30311-02.htm";
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case SPIRIT_OF_SIR_TALIANUS:
+			case State.COMPLETED:
 			{
-				if (qs.isMemoState(6) && hasQuestItems(talker, MIRROR_OF_ORPIC, TALIANUSS_REPORT))
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20190:
+			case 20191:
+			{
+				if (st.isCond(2) && (getRandom(10) < 1))
 				{
-					html = "30656-01.html";
-					takeItems(talker, -1, MIRROR_OF_ORPIC, TALIANUSS_REPORT);
-					giveItems(talker, TEAR_OF_CONFESSION, 1);
-					qs.setMemoState(7);
-					qs.setCond(9, true);
-					npc.deleteMe();
+					playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+					addSpawn(27119, npc, false, 120000);
 				}
 				break;
 			}
-			case ISAEL_SILVERSHADOW:
+			case 27119:
 			{
-				switch (qs.getMemoState())
+				if (st.isCond(2) && (player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND) == OLD_KNIGHT_SWORD))
 				{
-					case 8:
-					{
-						if (talker.getLevel() < MIN_LEVEL)
-						{
-							html = "30655-01.html";
-						}
-						else
-						{
-							html = "30655-02.html";
-							qs.setMemoState(9);
-							qs.setCond(11, true);
-						}
-						break;
-					}
-					case 9:
-					{
-						if (!hasItem(talker, MILITAS_ARTICLE))
-						{
-							html = "30655-03.html";
-						}
-						else
-						{
-							html = "30655-04.html";
-							giveItems(talker, TEAR_OF_LOYALTY, 1);
-							takeItem(talker, MILITAS_ARTICLE);
-							qs.setMemoState(10);
-							qs.setCond(13, true);
-						}
-						break;
-					}
-					case 10:
-					{
-						if (hasQuestItems(talker, TEAR_OF_LOYALTY))
-						{
-							html = "30655-05.html";
-						}
-						break;
-					}
+					st.setCond(3, true);
+					giveItems(player, KNIGHTS_TEAR, 1);
 				}
 				break;
 			}
-			case DUSTIN:
+			case 20201:
+			case 20200:
 			{
-				switch (qs.getMemoState())
+				if (st.isCond(5))
 				{
-					case 10:
+					giveItems(player, REPORT_PIECE_1, 1);
+					if (getQuestItemsCount(player, REPORT_PIECE_1) >= 10)
 					{
-						if (hasQuestItems(talker, TEAR_OF_LOYALTY))
-						{
-							html = "30116-01.html";
-						}
-						break;
+						st.setCond(6);
+						takeItems(player, REPORT_PIECE_1, -1);
+						giveItems(player, REPORT_PIECE_2, 1);
 					}
-					case 11:
+					else
 					{
-						if (!hasQuestItems(talker, ATHEBALDTS_SKULL, ATHEBALDTS_RIBS, ATHEBALDTS_SHIN))
-						{
-							html = "30116-06.html";
-						}
-						else
-						{
-							html = "30116-07.html";
-							takeItems(talker, -1, ATHEBALDTS_SKULL, ATHEBALDTS_RIBS, ATHEBALDTS_SHIN);
-							giveItems(talker, SAINTS_ASHES_URN, 1);
-							qs.setMemoState(12);
-							qs.setCond(16, true);
-						}
-						break;
-					}
-					case 12:
-					{
-						if (hasQuestItems(talker, SAINTS_ASHES_URN))
-						{
-							html = "30116-09.html";
-						}
-						break;
-					}
-					case 13:
-					{
-						if (hasQuestItems(talker, LETTER_OF_WINDAWOOD))
-						{
-							html = "30116-08.html";
-							takeItems(talker, LETTER_OF_WINDAWOOD, -1);
-							giveItems(talker, LETTER_OF_DUSTIN, 1);
-							qs.setMemoState(14);
-							qs.setCond(18, true);
-						}
-						break;
-					}
-					case 14:
-					{
-						if (hasQuestItems(talker, LETTER_OF_DUSTIN))
-						{
-							html = "30116-10.html";
-						}
-						break;
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			}
-			case SIR_COLLIN_WINDAWOOD:
+			case 20144:
 			{
-				switch (qs.getMemoState())
+				if ((st.isCond(7) || st.isCond(8)) && (getRandom(100) < 33))
 				{
-					case 12:
+					if (st.isCond(7))
 					{
-						if (hasQuestItems(talker, SAINTS_ASHES_URN))
-						{
-							html = "30311-01.html";
-							takeItems(talker, SAINTS_ASHES_URN, -1);
-							giveItems(talker, LETTER_OF_WINDAWOOD, 1);
-							qs.setMemoState(13);
-							qs.setCond(17, true);
-						}
-						break;
+						st.setCond(8, true);
 					}
-					case 13:
+					addSpawn(30656, npc, false, 300000);
+				}
+				break;
+			}
+			case 20577:
+			case 20578:
+			case 20579:
+			case 20580:
+			case 20581:
+			case 20582:
+			{
+				if (st.isCond(11))
+				{
+					giveItems(player, MILITAS_ARTICLE, 1);
+					if (getQuestItemsCount(player, MILITAS_ARTICLE) >= 20)
 					{
-						if (hasQuestItems(talker, LETTER_OF_WINDAWOOD))
-						{
-							html = "30311-02.html";
-						}
-						break;
+						st.setCond(12, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case 20270:
+			{
+				if (st.isCond(14) && getRandomBoolean())
+				{
+					if (!hasQuestItems(player, ATHEBALDT_SKULL))
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, ATHEBALDT_SKULL, 1);
+					}
+					else if (!hasQuestItems(player, ATHEBALDT_RIBS))
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, ATHEBALDT_RIBS, 1);
+					}
+					else if (!hasQuestItems(player, ATHEBALDT_SHIN))
+					{
+						st.setCond(15, true);
+						giveItems(player, ATHEBALDT_SHIN, 1);
 					}
 				}
 				break;
 			}
 		}
-		return html;
+		
+		return null;
 	}
 }

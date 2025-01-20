@@ -296,6 +296,7 @@ public class Q00611_AllianceWithVarkaSilenos extends Quest
 			if ((qs.getCond() >= info.getMinCond()) && (qs.getCond() < 6) && canGetItem(qs, info.getItemId()) && (getRandom(1000) < info.getChance()))
 			{
 				giveItems(member, info.getItemId(), 1);
+				playSound(member, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		return super.onKill(npc, killer, isSummon);

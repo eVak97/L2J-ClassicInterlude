@@ -1,504 +1,333 @@
 /*
- * This file is part of the L2J Mobius project.
+ * Copyright (c) 2013 L2jMobius
  * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
  * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+ * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package quests.Q00421_LittleWingsBigAdventure;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.ai.CtrlIntention;
+import org.l2jmobius.gameserver.data.xml.SkillData;
 import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.QuestSound;
+import org.l2jmobius.gameserver.model.actor.Attackable;
+import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.actor.Summon;
-import org.l2jmobius.gameserver.model.holders.SkillHolder;
+import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.item.instance.Item;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.util.Util;
+import org.l2jmobius.gameserver.model.skill.Skill;
 
 /**
- * Little Wing's Big Adventure (421)
- * @author Pandragon, jurchiks
+ * iCond is an internal variable, used because cond isn't developped on that quest (only 3 states) :
+ * <ul>
+ * <li>1-3 leads initial mimyu behavior ;</li>
+ * <li>used for leaves support as mask : 4, 8, 16 or 32 = 60 overall ;</li>
+ * <li>63 becomes the "marker" to get back to mimyu (60 + 3), meaning you hitted the 4 trees ;</li>
+ * <li>setted to 100 if mimyu check is ok.</li>
+ * </ul>
  */
 public class Q00421_LittleWingsBigAdventure extends Quest
 {
 	// NPCs
 	private static final int CRONOS = 30610;
 	private static final int MIMYU = 30747;
-	// Items
-	private static final int DRAGONFLUTE_OF_WIND = 3500;
-	private static final int DRAGONFLUTE_OF_STAR = 3501;
-	private static final int DRAGONFLUTE_OF_TWILIGHT = 3502;
+	// Item
 	private static final int FAIRY_LEAF = 4325;
-	// Monsters
-	private static final int TREE_OF_WIND = 27185;
-	private static final int TREE_OF_STAR = 27186;
-	private static final int TREE_OF_TWILIGHT = 27187;
-	private static final int TREE_OF_ABYSS = 27188;
-	private static final int SOUL_OF_TREE_GUARDIAN = 27189;
-	// Skills
-	private static final SkillHolder CURSE_OF_MIMYU = new SkillHolder(4167, 1);
-	private static final SkillHolder DRYAD_ROOT = new SkillHolder(1201, 33);
-	private static final SkillHolder VICIOUS_POISON = new SkillHolder(4243, 1);
-	// Rewards
-	private static final int DRAGON_BUGLE_OF_WIND = 4422;
-	private static final int DRAGON_BUGLE_OF_STAR = 4423;
-	private static final int DRAGON_BUGLE_OF_TWILIGHT = 4424;
-	// Misc
-	private static final int MIN_PLAYER_LEVEL = 45;
-	private static final int MIN_HACHLING_LEVEL = 55;
-	private static final Map<Integer, NpcData> NPC_DATA = new HashMap<>();
-	
-	static
-	{
-		NPC_DATA.put(TREE_OF_WIND, new NpcData(NpcStringId.HEY_YOU_VE_ALREADY_DRUNK_THE_ESSENCE_OF_WIND, 2, 1, 270));
-		NPC_DATA.put(TREE_OF_STAR, new NpcData(NpcStringId.HEY_YOU_VE_ALREADY_DRUNK_THE_ESSENCE_OF_A_STAR, 4, 2, 400));
-		NPC_DATA.put(TREE_OF_TWILIGHT, new NpcData(NpcStringId.HEY_YOU_VE_ALREADY_DRUNK_THE_ESSENCE_OF_DUSK, 8, 4, 150));
-		NPC_DATA.put(TREE_OF_ABYSS, new NpcData(NpcStringId.HEY_YOU_VE_ALREADY_DRUNK_THE_ESSENCE_OF_THE_ABYSS, 16, 8, 270));
-	}
 	
 	public Q00421_LittleWingsBigAdventure()
 	{
 		super(421);
+		registerQuestItems(FAIRY_LEAF);
 		addStartNpc(CRONOS);
 		addTalkId(CRONOS, MIMYU);
-		addAttackId(NPC_DATA.keySet());
-		addKillId(NPC_DATA.keySet());
-		registerQuestItems(FAIRY_LEAF);
+		addAttackId(27185, 27186, 27187, 27188);
+		addKillId(27185, 27186, 27187, 27188);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "30610-05.htm":
+			case "30610-06.htm":
 			{
-				if (qs.isCreated())
+				if ((getQuestItemsCount(player, 3500) + getQuestItemsCount(player, 3501) + getQuestItemsCount(player, 3502)) == 1)
 				{
-					if (getQuestItemsCount(player, DRAGONFLUTE_OF_WIND, DRAGONFLUTE_OF_STAR, DRAGONFLUTE_OF_TWILIGHT) == 1)
+					// Find the level of the flute.
+					for (int i = 3500; i < 3503; i++)
 					{
-						final Item flute = getFlute(player);
-						if (flute.getEnchantLevel() < MIN_HACHLING_LEVEL)
+						final Item item = player.getInventory().getItemByItemId(i);
+						if ((item != null) && (item.getEnchantLevel() >= 55))
 						{
-							htmltext = "30610-06.html";
+							st.startQuest();
+							st.set("iCond", "1");
+							st.set("summonOid", String.valueOf(item.getObjectId()));
+							return "30610-05.htm";
 						}
-						else
+					}
+				}
+				// Exit quest if you got more than one flute, or the flute level doesn't meat requirements.
+				st.exitQuest(true, false);
+				break;
+			}
+			case "30747-02.htm":
+			{
+				final Summon summon = player.getPet();
+				if (summon != null)
+				{
+					htmltext = (summon.getControlObjectId() == st.getInt("summonOid")) ? "30747-04.htm" : "30747-03.htm";
+				}
+				break;
+			}
+			case "30747-05.htm":
+			{
+				final Summon summon = player.getPet();
+				if ((summon == null) || (summon.getControlObjectId() != st.getInt("summonOid")))
+				{
+					htmltext = "30747-06.htm";
+				}
+				else
+				{
+					st.setCond(2, true);
+					st.set("iCond", "3");
+					giveItems(player, FAIRY_LEAF, 4);
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				// Wrong level.
+				if (player.getLevel() < 45)
+				{
+					htmltext = "30610-01.htm";
+				}
+				else if ((getQuestItemsCount(player, 3500) + getQuestItemsCount(player, 3501) + getQuestItemsCount(player, 3502)) != 1)
+				{
+					htmltext = "30610-02.htm";
+				}
+				else
+				{
+					// Find the level of the hatchling.
+					for (int i = 3500; i < 3503; i++)
+					{
+						final Item item = player.getInventory().getItemByItemId(i);
+						if ((item != null) && (item.getEnchantLevel() >= 55))
 						{
-							qs.startQuest();
-							qs.setMemoState(100);
-							qs.set("fluteObjectId", flute.getObjectId());
-							htmltext = event;
+							return "30610-04.htm";
 						}
+					}
+					
+					// Invalid level.
+					htmltext = "30610-03.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case CRONOS:
+					{
+						htmltext = "30610-07.htm";
+						break;
+					}
+					case MIMYU:
+					{
+						final int id = st.getInt("iCond");
+						if (id == 1)
+						{
+							htmltext = "30747-01.htm";
+							st.set("iCond", "2");
+						}
+						else if (id == 2)
+						{
+							final Summon summon = player.getPet();
+							htmltext = (summon != null) ? ((summon.getControlObjectId() == st.getInt("summonOid")) ? "30747-04.htm" : "30747-03.htm") : "30747-02.htm";
+						}
+						else if (id == 3)
+						{
+							htmltext = "30747-07.htm";
+						}
+						else if ((id > 3) && (id < 63))
+						{
+							htmltext = "30747-11.htm";
+						}
+						else if (id == 63) // Did all trees, no more leaves.
+						{
+							final Summon summon = player.getPet();
+							if (summon == null)
+							{
+								return "30747-12.htm";
+							}
+							
+							if (summon.getControlObjectId() != st.getInt("summonOid"))
+							{
+								return "30747-14.htm";
+							}
+							
+							htmltext = "30747-13.htm";
+							st.set("iCond", "100");
+						}
+						else if (id == 100) // Spoke with the Fairy.
+						{
+							final Summon summon = player.getPet();
+							if ((summon != null) && (summon.getControlObjectId() == st.getInt("summonOid")))
+							{
+								return "30747-15.htm";
+							}
+							
+							if ((getQuestItemsCount(player, 3500) + getQuestItemsCount(player, 3501) + getQuestItemsCount(player, 3502)) > 1)
+							{
+								return "30747-17.htm";
+							}
+							
+							for (int i = 3500; i < 3503; i++)
+							{
+								final Item item = player.getInventory().getItemByItemId(i);
+								if ((item != null) && (item.getObjectId() == st.getInt("summonOid")))
+								{
+									takeItems(player, i, 1);
+									giveItems(player, i + 922, 1); // TODO: rebuild entirely pet system in order enchant is given a fuck. Supposed to give an item level XX for a flute level XX.
+									st.exitQuest(true, true);
+									return "30747-16.htm";
+								}
+							}
+							
+							// Curse if the registered objectId is the wrong one (switch flutes).
+							htmltext = "30747-18.htm";
+							
+							final Skill skill = SkillData.getInstance().getSkill(4167, 1);
+							if ((skill != null) && player.isAffectedBySkill(skill.getId()))
+							{
+								skill.applyEffects(npc, player);
+							}
+						}
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet)
+	{
+		// Minions scream no matter current quest state.
+		if (npc.asMonster().hasMinions())
+		{
+			for (Monster ghost : npc.asMonster().getMinionList().getSpawnedMinions())
+			{
+				if (!ghost.isDead() && (getRandom(100) < 1))
+				{
+					ghost.broadcastSay(ChatType.GENERAL, "We must protect the fairy tree!");
+				}
+			}
+		}
+		
+		// Condition required : 2.
+		final QuestState st = getQuestState(attacker, false);
+		if ((st == null) || !st.isCond(2))
+		{
+			return null;
+		}
+		
+		// A pet was the attacker, and the objectId is the good one.
+		if (isPet && (attacker.getPet().getControlObjectId() == st.getInt("summonOid")))
+		{
+			// Random luck is reached and you still have some leaves ; go further.
+			if ((getRandom(100) < 1) && hasQuestItems(st.getPlayer(), FAIRY_LEAF))
+			{
+				final int idMask = (int) Math.pow(2, (npc.getId() - 27182) - 1);
+				final int iCond = st.getInt("iCond");
+				if ((iCond | idMask) != iCond)
+				{
+					st.set("iCond", String.valueOf(iCond | idMask));
+					npc.broadcastSay(ChatType.GENERAL, "Give me a Fairy Leaf...!");
+					takeItems(st.getPlayer(), FAIRY_LEAF, 1);
+					npc.broadcastSay(ChatType.GENERAL, "Leave now, before you incur the wrath of the guardian ghost...");
+					
+					// Four leafs have been used ; update quest state.
+					if (st.getInt("iCond") == 63)
+					{
+						st.setCond(3, true);
 					}
 					else
 					{
-						htmltext = "30610-06.html";
+						playSound(st.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
-				break;
-			}
-			case "30747-04.html":
-			{
-				final Summon summon = player.getPet();
-				if (summon == null)
-				{
-					htmltext = "30747-02.html";
-				}
-				else if (summon.getControlObjectId() != qs.getInt("fluteObjectId"))
-				{
-					htmltext = "30747-03.html";
-				}
-				else
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "30747-05.html":
-			{
-				final Summon summon = player.getPet();
-				if (summon == null)
-				{
-					htmltext = "30747-06.html";
-				}
-				else if (summon.getControlObjectId() != qs.getInt("fluteObjectId"))
-				{
-					htmltext = "30747-06.html";
-				}
-				else
-				{
-					giveItems(player, FAIRY_LEAF, 4);
-					qs.setCond(2, true);
-					qs.setMemoState(0);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30747-07.html":
-			case "30747-08.html":
-			case "30747-09.html":
-			case "30747-10.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "DESPAWN_GUARDIAN":
-			{
-				if (npc != null)
-				{
-					npc.deleteMe();
-				}
-				break;
 			}
 		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player talker)
-	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
 		
-		switch (npc.getId())
-		{
-			case CRONOS:
-			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						final long fluteCount = getQuestItemsCount(talker, DRAGONFLUTE_OF_WIND, DRAGONFLUTE_OF_STAR, DRAGONFLUTE_OF_TWILIGHT);
-						if (fluteCount == 0)
-						{
-							break; // this quest does not show up if no flute in inventory
-						}
-						
-						if (talker.getLevel() < MIN_PLAYER_LEVEL)
-						{
-							htmltext = "30610-01.htm";
-						}
-						else if (fluteCount > 1)
-						{
-							htmltext = "30610-02.htm";
-						}
-						else if (getFlute(talker).getEnchantLevel() < MIN_HACHLING_LEVEL)
-						{
-							htmltext = "30610-03.html";
-						}
-						else
-						{
-							htmltext = "30610-04.htm";
-						}
-						break;
-					}
-					case State.STARTED:
-					{
-						htmltext = "30610-07.html";
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(talker);
-						break;
-					}
-				}
-				break;
-			}
-			case MIMYU:
-			{
-				switch (qs.getMemoState())
-				{
-					case 100:
-					{
-						qs.setMemoState(200);
-						htmltext = "30747-01.html";
-						break;
-					}
-					case 200:
-					{
-						final Summon summon = talker.getPet();
-						if (summon == null)
-						{
-							htmltext = "30747-02.html";
-						}
-						else if (summon.getControlObjectId() != qs.getInt("fluteObjectId"))
-						{
-							htmltext = "30747-03.html";
-						}
-						else
-						{
-							htmltext = "30747-04.html";
-						}
-						break;
-					}
-					case 0:
-					{
-						htmltext = "30747-07.html";
-						break;
-					}
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-					case 5:
-					case 6:
-					case 7:
-					case 8:
-					case 9:
-					case 10:
-					case 11:
-					case 12:
-					case 13:
-					case 14:
-					{
-						if (hasQuestItems(talker, FAIRY_LEAF))
-						{
-							htmltext = "30747-11.html";
-						}
-						break;
-					}
-					case 15:
-					{
-						if (!hasQuestItems(talker, FAIRY_LEAF))
-						{
-							final Summon summon = talker.getPet();
-							if (summon == null)
-							{
-								htmltext = "30747-12.html";
-							}
-							else if (summon.getControlObjectId() == qs.getInt("fluteObjectId"))
-							{
-								qs.setMemoState(16);
-								htmltext = "30747-13.html";
-							}
-							else
-							{
-								htmltext = "30747-14.html";
-							}
-						}
-						break;
-					}
-					case 16:
-					{
-						if (!hasQuestItems(talker, FAIRY_LEAF))
-						{
-							if (talker.hasSummon())
-							{
-								htmltext = "30747-15.html";
-							}
-							else
-							{
-								final long fluteCount = getQuestItemsCount(talker, DRAGONFLUTE_OF_WIND, DRAGONFLUTE_OF_STAR, DRAGONFLUTE_OF_TWILIGHT);
-								if (fluteCount > 1)
-								{
-									htmltext = "30747-17.html";
-								}
-								else if (fluteCount == 1)
-								{
-									final Item flute = getFlute(talker);
-									if (flute.getObjectId() == qs.getInt("fluteObjectId"))
-									{
-										// TODO what if the hatchling has items in his inventory?
-										// Should they be transfered to the strider or given to the player?
-										switch (flute.getId())
-										{
-											case DRAGONFLUTE_OF_WIND:
-											{
-												takeItems(talker, DRAGONFLUTE_OF_WIND, -1);
-												giveItems(talker, DRAGON_BUGLE_OF_WIND, 1);
-												break;
-											}
-											case DRAGONFLUTE_OF_STAR:
-											{
-												takeItems(talker, DRAGONFLUTE_OF_STAR, -1);
-												giveItems(talker, DRAGON_BUGLE_OF_STAR, 1);
-												break;
-											}
-											case DRAGONFLUTE_OF_TWILIGHT:
-											{
-												takeItems(talker, DRAGONFLUTE_OF_TWILIGHT, -1);
-												giveItems(talker, DRAGON_BUGLE_OF_TWILIGHT, 1);
-												break;
-											}
-										}
-										
-										qs.exitQuest(true, true);
-										htmltext = "30747-16.html";
-									}
-									else
-									{
-										npc.setTarget(talker);
-										npc.doCast(CURSE_OF_MIMYU.getSkill());
-										htmltext = "30747-18.html";
-									}
-								}
-							}
-						}
-						break;
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
+		return null;
 	}
 	
 	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
+	public String onKill(Npc npc, Player killer, boolean isPet)
 	{
-		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isCond(2))
-		{
-			if (isSummon)
-			{
-				final NpcData data = NPC_DATA.get(npc.getId());
-				if ((qs.getMemoState() % data.memoStateMod) < data.memoStateValue)
-				{
-					final Summon pet = attacker.getPet();
-					if ((pet != null) && (pet.getControlObjectId() == qs.getInt("fluteObjectId")))
-					{
-						final int hits = qs.getInt("hits") + 1;
-						qs.set("hits", hits);
-						if (hits < data.minHits)
-						{
-							if ((npc.getId() == TREE_OF_ABYSS) && (getRandom(100) < 2))
-							{
-								npc.setTarget(attacker);
-								npc.doCast(DRYAD_ROOT.getSkill());
-							}
-						}
-						else if (getRandom(100) < 2)
-						{
-							if (hasQuestItems(attacker, FAIRY_LEAF))
-							{
-								npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.GIVE_ME_A_FAIRY_LEAF);
-								takeItems(attacker, FAIRY_LEAF, 1);
-								qs.setMemoState(qs.getMemoState() + data.memoStateValue);
-								qs.unset("hits");
-								playSound(attacker, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-								if (qs.getMemoState() == 15)
-								{
-									qs.setCond(3);
-								}
-							}
-						}
-					}
-				}
-				else
-				{
-					switch (getRandom(3))
-					{
-						case 0:
-						{
-							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHY_DO_YOU_BOTHER_ME_AGAIN);
-							break;
-						}
-						case 1:
-						{
-							npc.broadcastSay(ChatType.NPC_GENERAL, data.message);
-							break;
-						}
-						case 2:
-						{
-							npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.LEAVE_NOW_BEFORE_YOU_INCUR_THE_WRATH_OF_THE_GUARDIAN_GHOST);
-							break;
-						}
-					}
-				}
-			}
-			else if (getRandom(100) < 30)
-			{
-				npc.setTarget(attacker);
-				npc.doCast(VICIOUS_POISON.getSkill());
-			}
-		}
-		else if ((npc.getCurrentHp() < (npc.getMaxHp() * 0.67)) && (getRandom(100) < 30))
-		{
-			npc.setTarget(attacker);
-			npc.doCast(VICIOUS_POISON.getSkill());
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, killer, npc, true))
-		{
-			for (int i = 0; i < 20; i++)
-			{
-				final Npc guardian = addSpawn(SOUL_OF_TREE_GUARDIAN, npc);
-				startQuestTimer("DESPAWN_GUARDIAN", 300000, guardian, null);
-				if (i == 0)
-				{
-					npc.setTarget(killer);
-					npc.doCast(VICIOUS_POISON.getSkill());
-				}
-				
-				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, killer);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	private static Item getFlute(Player player)
-	{
-		final int fluteItemId;
-		if (hasQuestItems(player, DRAGONFLUTE_OF_WIND))
-		{
-			fluteItemId = DRAGONFLUTE_OF_WIND;
-		}
-		else if (hasQuestItems(player, DRAGONFLUTE_OF_STAR))
-		{
-			fluteItemId = DRAGONFLUTE_OF_STAR;
-		}
-		else
-		{
-			fluteItemId = DRAGONFLUTE_OF_TWILIGHT;
-		}
-		return player.getInventory().getItemByItemId(fluteItemId);
-	}
-	
-	private static class NpcData
-	{
-		public NpcStringId message;
-		public int memoStateMod;
-		public int memoStateValue;
-		public int minHits;
+		final Creature originalKiller = isPet ? killer.getPet() : killer;
 		
-		public NpcData(NpcStringId message, int memoStateMod, int memoStateValue, int minHits)
+		// Tree curses the killer.
+		if ((getRandom(100) < 30) && (originalKiller != null))
 		{
-			this.message = message;
-			this.memoStateMod = memoStateMod;
-			this.memoStateValue = memoStateValue;
-			this.minHits = minHits;
+			final Skill skill = SkillData.getInstance().getSkill(4243, 1);
+			if ((skill != null) && originalKiller.isAffectedBySkill(skill.getId()))
+			{
+				skill.applyEffects(npc, originalKiller);
+			}
 		}
+		
+		// Spawn 20 ghosts, attacking the killer.
+		for (int i = 0; i < 20; i++)
+		{
+			final Attackable newNpc = addSpawn(27189, npc.getX(), npc.getY(), npc.getZ(), getRandom(65536), true, 300000).asAttackable();
+			newNpc.setRunning();
+			newNpc.addDamageHate(originalKiller, 0, 999);
+			newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, originalKiller);
+		}
+		
+		return null;
 	}
 }

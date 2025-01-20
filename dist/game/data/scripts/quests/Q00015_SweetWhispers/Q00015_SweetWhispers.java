@@ -22,122 +22,106 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Sweet Whisper (15)<br>
- * Original jython script by disKret.
- * @author nonom
- */
 public class Q00015_SweetWhispers extends Quest
 {
 	// NPCs
 	private static final int VLADIMIR = 31302;
 	private static final int HIERARCH = 31517;
-	private static final int M_NECROMANCER = 31518;
+	private static final int MYSTERIOUS_NECRO = 31518;
 	
 	public Q00015_SweetWhispers()
 	{
 		super(15);
 		addStartNpc(VLADIMIR);
-		addTalkId(VLADIMIR, HIERARCH, M_NECROMANCER);
+		addTalkId(VLADIMIR, HIERARCH, MYSTERIOUS_NECRO);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "31302-01.html":
+			case "31302-01.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
-			case "31518-01.html":
+			case "31518-01.htm":
 			{
-				if (qs.isCond(1))
-				{
-					qs.setCond(2);
-				}
+				st.setCond(2, true);
 				break;
 			}
-			case "31517-01.html":
+			case "31517-01.htm":
 			{
-				if (qs.isCond(2))
-				{
-					addExpAndSp(player, 350531, 28204);
-					qs.exitQuest(false, true);
-				}
+				addExpAndSp(player, 60217, 0);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
 			case State.CREATED:
 			{
-				if (npcId == VLADIMIR)
-				{
-					htmltext = (player.getLevel() >= 60) ? "31302-00.htm" : "31302-00a.html";
-				}
+				htmltext = (player.getLevel() < 60) ? "31302-00a.htm" : "31302-00.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (npcId)
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
 					case VLADIMIR:
 					{
-						if (qs.isCond(1))
-						{
-							htmltext = "31302-01a.html";
-						}
+						htmltext = "31302-01a.htm";
 						break;
 					}
-					case M_NECROMANCER:
+					case MYSTERIOUS_NECRO:
 					{
-						final int cond = qs.getCond();
 						if (cond == 1)
 						{
-							htmltext = "31518-00.html";
+							htmltext = "31518-00.htm";
 						}
 						else if (cond == 2)
 						{
-							htmltext = "31518-01a.html";
+							htmltext = "31518-01a.htm";
 						}
 						break;
 					}
 					case HIERARCH:
 					{
-						if (qs.isCond(2))
+						if (cond == 2)
 						{
-							htmltext = "31517-00.html";
+							htmltext = "31517-00.htm";
 						}
 						break;
 					}
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 }

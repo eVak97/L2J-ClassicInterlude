@@ -16,25 +16,15 @@
  */
 package quests.Q00382_KailsMagicCoin;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.util.Util;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Kail's Magic Coin (382)
- * @author Sdw, jurchiks
- */
 public class Q00382_KailsMagicCoin extends Quest
 {
-	// NPCs
-	private static final int VERGARA = 30687;
 	// Monsters
 	private static final int FALLEN_ORC = 21017;
 	private static final int FALLEN_ORC_ARCHER = 21019;
@@ -42,96 +32,109 @@ public class Q00382_KailsMagicCoin extends Quest
 	private static final int FALLEN_ORC_CAPTAIN = 21022;
 	// Items
 	private static final int ROYAL_MEMBERSHIP = 5898;
-	private static final int KAILS_SILVER_BASILISK = 5961;
-	private static final int KAILS_GOLD_GOLEM = 5962;
-	private static final int KAILS_BLOOD_DRAGON = 5963;
-	// Drops
-	private static final double ORC_CAPTAIN_DROP_CHANCE = 0.069;
-	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
-		MONSTER_DROPS.put(FALLEN_ORC, new ItemChanceHolder(KAILS_SILVER_BASILISK, 0.073));
-		MONSTER_DROPS.put(FALLEN_ORC_ARCHER, new ItemChanceHolder(KAILS_GOLD_GOLEM, 0.075));
-		MONSTER_DROPS.put(FALLEN_ORC_SHAMAN, new ItemChanceHolder(KAILS_BLOOD_DRAGON, 0.073));
-	}
-	
-	// Misc
-	private static final int MIN_LEVEL = 55;
+	private static final int SILVER_BASILISK = 5961;
+	private static final int GOLD_GOLEM = 5962;
+	private static final int BLOOD_DRAGON = 5963;
 	
 	public Q00382_KailsMagicCoin()
 	{
 		super(382);
-		addStartNpc(VERGARA);
-		addTalkId(VERGARA);
+		registerQuestItems(SILVER_BASILISK, GOLD_GOLEM, BLOOD_DRAGON);
+		addStartNpc(30687); // Vergara
+		addTalkId(30687);
 		addKillId(FALLEN_ORC, FALLEN_ORC_ARCHER, FALLEN_ORC_SHAMAN, FALLEN_ORC_CAPTAIN);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30687-03.htm"))
 		{
-			case "30687-03.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30687-05.htm":
-			case "30687-06.htm":
-			{
-				if (qs.isStarted())
-				{
-					htmltext = event;
-				}
-				break;
-			}
+			st.startQuest();
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player talker)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
-		if (qs.isCreated())
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			htmltext = ((talker.getLevel() >= MIN_LEVEL) && hasQuestItems(talker, ROYAL_MEMBERSHIP)) ? "30687-02.htm" : "30687-01.htm";
+			case State.CREATED:
+			{
+				htmltext = ((player.getLevel() < 55) || !hasQuestItems(player, ROYAL_MEMBERSHIP)) ? "30687-01.htm" : "30687-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				htmltext = "30687-04.htm";
+				break;
+			}
 		}
-		else if (qs.isStarted())
-		{
-			htmltext = "30687-04.htm";
-		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && hasQuestItems(killer, ROYAL_MEMBERSHIP) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
 		{
-			if (npc.getId() == FALLEN_ORC_CAPTAIN)
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case FALLEN_ORC:
 			{
-				giveItemRandomly(killer, KAILS_SILVER_BASILISK + getRandom(3), 1, 0, ORC_CAPTAIN_DROP_CHANCE, true);
+				if (getRandom(10) < 1)
+				{
+					giveItems(player, SILVER_BASILISK, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
 			}
-			else
+			case FALLEN_ORC_ARCHER:
 			{
-				final ItemChanceHolder ih = MONSTER_DROPS.get(npc.getId());
-				giveItemRandomly(killer, ih.getId(), 1, 0, ih.getChance(), true);
+				if (getRandom(10) < 1)
+				{
+					giveItems(player, GOLD_GOLEM, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case FALLEN_ORC_SHAMAN:
+			{
+				if (getRandom(10) < 1)
+				{
+					giveItems(player, BLOOD_DRAGON, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case FALLEN_ORC_CAPTAIN:
+			{
+				if (getRandom(10) < 1)
+				{
+					giveItems(player, 5961 + getRandom(3), 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
 			}
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return null;
 	}
 }

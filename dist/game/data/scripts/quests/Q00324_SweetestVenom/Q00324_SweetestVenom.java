@@ -26,102 +26,101 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Sweetest Venom (324)
- * @author xban1x
- */
 public class Q00324_SweetestVenom extends Quest
 {
-	// NPCs
-	private static final int ASTARON = 30351;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	// Item
+	private static final int VENOM_SAC = 1077;
+	// Drop chances
+	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
 	{
-		MONSTERS.put(20034, 26);
-		MONSTERS.put(20038, 29);
-		MONSTERS.put(20043, 30);
+		CHANCES.put(20034, 220000);
+		CHANCES.put(20038, 230000);
+		CHANCES.put(20043, 250000);
 	}
-	// Items
-	private static final int VENOM_SAC = 1077;
-	// Misc
-	private static final int MIN_LEVEL = 18;
-	private static final int REQUIRED_COUNT = 10;
-	private static final int ADENA_COUNT = 1000;
 	
 	public Q00324_SweetestVenom()
 	{
 		super(324);
-		addStartNpc(ASTARON);
-		addTalkId(ASTARON);
-		addKillId(MONSTERS.keySet());
 		registerQuestItems(VENOM_SAC);
-		addCondMaxLevel(23, getNoQuestMsg(null));
+		addStartNpc(30351); // Astaron
+		addTalkId(30351);
+		addKillId(20034, 20038, 20043);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if ((qs != null) && event.equals("30351-04.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			htmltext = event;
+			return htmltext;
 		}
+		
+		if (event.equals("30351-04.htm"))
+		{
+			st.startQuest();
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() < MIN_LEVEL ? "30351-02.html" : "30351-03.htm";
+				htmltext = (player.getLevel() < 18) ? "30351-02.htm" : "30351-03.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (qs.isCond(2))
+				if (st.isCond(1))
 				{
-					giveAdena(player, ADENA_COUNT, true);
-					qs.exitQuest(true, true);
-					htmltext = "30351-06.html";
+					htmltext = "30351-05.htm";
 				}
 				else
 				{
-					htmltext = "30351-05.html";
+					htmltext = "30351-06.htm";
+					takeItems(player, VENOM_SAC, -1);
+					giveAdena(player, 5810, true);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isCond(1))
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
 		{
-			long sacs = getQuestItemsCount(player, VENOM_SAC);
-			if ((sacs < REQUIRED_COUNT) && (getRandom(100) < MONSTERS.get(npc.getId())))
+			return null;
+		}
+		
+		if (getRandom(1000000) < CHANCES.get(npc.getId()))
+		{
+			giveItems(player, VENOM_SAC, 1);
+			if (getQuestItemsCount(player, VENOM_SAC) < 10)
 			{
-				giveItems(player, VENOM_SAC, 1);
-				if ((++sacs) < REQUIRED_COUNT)
-				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else
-				{
-					qs.setCond(2, true);
-				}
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
 			}
 		}
-		return super.onKill(npc, player, isPet);
+		
+		return null;
 	}
 }

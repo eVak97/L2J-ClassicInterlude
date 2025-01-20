@@ -16,122 +16,116 @@
  */
 package quests.Q00211_TrialOfTheChallenger;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.data.SpawnTable;
-import org.l2jmobius.gameserver.enums.CategoryType;
+import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.serverpackets.RadarControl;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Trial of the Challenger (211)
- * @author Pandragon
- */
 public class Q00211_TrialOfTheChallenger extends Quest
 {
 	// NPCs
 	private static final int FILAUR = 30535;
 	private static final int KASH = 30644;
-	private static final int MARTIAN = 30645;
+	private static final int MARTIEN = 30645;
 	private static final int RALDO = 30646;
 	private static final int CHEST_OF_SHYSLASSYS = 30647;
 	// Monsters
 	private static final int SHYSLASSYS = 27110;
-	private static final int CAVEBASILISK = 27111;
 	private static final int GORR = 27112;
 	private static final int BARAHAM = 27113;
-	private static final int QUEEN_OF_SUCCUBUS = 27114;
+	private static final int SUCCUBUS_QUEEN = 27114;
 	// Items
 	private static final int LETTER_OF_KASH = 2628;
-	private static final int WATCHERS_EYE1 = 2629;
-	private static final int WATCHERS_EYE2 = 2630;
+	private static final int WATCHER_EYE_1 = 2629;
+	private static final int WATCHER_EYE_2 = 2630;
 	private static final int SCROLL_OF_SHYSLASSYS = 2631;
 	private static final int BROKEN_KEY = 2632;
-	
 	// Rewards
+	private static final int ADENA = 57;
 	private static final int ELVEN_NECKLACE_BEADS = 1904;
 	private static final int WHITE_TUNIC_PATTERN = 1936;
 	private static final int IRON_BOOTS_DESIGN = 1940;
 	private static final int MANTICOR_SKIN_GAITERS_PATTERN = 1943;
-	private static final int GAUNTLET_OF_REPOSE_PATTERN = 1946;
-	private static final int MITHRIL_SCALE_GAITERS_MATERIAL = 2918;
-	private static final int BRIGAMDINE_GAUNTLET_PATTERN = 2927;
+	private static final int RIP_GAUNTLETS_PATTERN = 1946;
 	private static final int TOME_OF_BLOOD_PAGE = 2030;
+	private static final int MITHRIL_SCALE_GAITERS_MATERIAL = 2918;
+	private static final int BRIGANDINE_GAUNTLETS_PATTERN = 2927;
 	private static final int MARK_OF_CHALLENGER = 2627;
-	// Misc
-	private static final int MIN_LEVEL = 35;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00211_TrialOfTheChallenger()
 	{
 		super(211);
+		registerQuestItems(LETTER_OF_KASH, WATCHER_EYE_1, WATCHER_EYE_2, SCROLL_OF_SHYSLASSYS, BROKEN_KEY);
 		addStartNpc(KASH);
-		addTalkId(FILAUR, KASH, MARTIAN, RALDO, CHEST_OF_SHYSLASSYS);
-		addKillId(SHYSLASSYS, CAVEBASILISK, GORR, BARAHAM, QUEEN_OF_SUCCUBUS);
-		registerQuestItems(LETTER_OF_KASH, WATCHERS_EYE1, WATCHERS_EYE2, SCROLL_OF_SHYSLASSYS, BROKEN_KEY);
+		addTalkId(FILAUR, KASH, MARTIEN, RALDO, CHEST_OF_SHYSLASSYS);
+		addKillId(SHYSLASSYS, GORR, BARAHAM, SUCCUBUS_QUEEN);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "30644-04.htm":
+			case "30644-05.htm":
 			{
-				htmltext = event;
-				break;
-			}
-			case "30645-07.html":
-			case "30645-08.html":
-			case "30646-02.html":
-			case "30646-03.html":
-			{
-				if (qs.isStarted())
+				st.startQuest();
+				if (!player.getVariables().getBoolean("secondClassChange35", false))
 				{
-					htmltext = event;
+					htmltext = "30644-05a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_35.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange35", true);
 				}
 				break;
 			}
-			case "30644-06.htm":
+			case "30645-02.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
+				st.setCond(4, true);
+				takeItems(player, LETTER_OF_KASH, 1);
 				break;
 			}
-			case "30647-02.html":
+			case "30646-04.htm":
+			case "30646-06.htm":
 			{
-				if (qs.isCond(2) && hasQuestItems(player, BROKEN_KEY))
+				st.setCond(8, true);
+				takeItems(player, WATCHER_EYE_2, 1);
+				break;
+			}
+			case "30647-04.htm":
+			{
+				if (hasQuestItems(player, BROKEN_KEY))
 				{
-					takeItems(player, BROKEN_KEY, -1);
 					if (getRandom(10) < 2)
 					{
+						htmltext = "30647-03.htm";
 						playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
-						final int random = getRandom(100);
-						if (random > 90)
+						takeItems(player, BROKEN_KEY, 1);
+						final int chance = getRandom(100);
+						if (chance > 90)
 						{
-							rewardItems(player, MITHRIL_SCALE_GAITERS_MATERIAL, 1);
-							rewardItems(player, BRIGAMDINE_GAUNTLET_PATTERN, 1);
-							rewardItems(player, MANTICOR_SKIN_GAITERS_PATTERN, 1);
-							rewardItems(player, GAUNTLET_OF_REPOSE_PATTERN, 1);
+							rewardItems(player, BRIGANDINE_GAUNTLETS_PATTERN, 1);
 							rewardItems(player, IRON_BOOTS_DESIGN, 1);
+							rewardItems(player, MANTICOR_SKIN_GAITERS_PATTERN, 1);
+							rewardItems(player, MITHRIL_SCALE_GAITERS_MATERIAL, 1);
+							rewardItems(player, RIP_GAUNTLETS_PATTERN, 1);
 						}
-						else if (random > 70)
+						else if (chance > 70)
 						{
-							rewardItems(player, TOME_OF_BLOOD_PAGE, 1);
 							rewardItems(player, ELVEN_NECKLACE_BEADS, 1);
+							rewardItems(player, TOME_OF_BLOOD_PAGE, 1);
 						}
-						else if (random > 40)
+						else if (chance > 40)
 						{
 							rewardItems(player, WHITE_TUNIC_PATTERN, 1);
 						}
@@ -139,283 +133,219 @@ public class Q00211_TrialOfTheChallenger extends Quest
 						{
 							rewardItems(player, IRON_BOOTS_DESIGN, 1);
 						}
-						htmltext = "30647-03.html";
 					}
 					else
 					{
-						giveAdena(player, getRandom(1000) + 1, true);
-						htmltext = event;
+						htmltext = "30647-02.htm";
+						takeItems(player, BROKEN_KEY, 1);
+						rewardItems(player, ADENA, getRandom(1, 1000));
 					}
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				if ((player.getClassId() != ClassId.WARRIOR) && (player.getClassId() != ClassId.ELVEN_KNIGHT) && (player.getClassId() != ClassId.PALUS_KNIGHT) && (player.getClassId() != ClassId.ORC_RAIDER) && (player.getClassId() != ClassId.ORC_MONK))
+				{
+					htmltext = "30644-02.htm";
+				}
+				else if (player.getLevel() < 35)
+				{
+					htmltext = "30644-01.htm";
 				}
 				else
 				{
-					htmltext = "30647-04.html";
+					htmltext = "30644-03.htm";
 				}
 				break;
 			}
-			case "30645-02.html":
+			case State.STARTED:
 			{
-				if (qs.isCond(3) && hasQuestItems(player, LETTER_OF_KASH))
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					qs.setCond(4, true);
-					htmltext = event;
+					case KASH:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30644-06.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30644-07.htm";
+							st.setCond(3, true);
+							takeItems(player, SCROLL_OF_SHYSLASSYS, 1);
+							giveItems(player, LETTER_OF_KASH, 1);
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30644-08.htm";
+						}
+						else if (cond > 3)
+						{
+							htmltext = "30644-09.htm";
+						}
+						break;
+					}
+					case CHEST_OF_SHYSLASSYS:
+					{
+						htmltext = "30647-01.htm";
+						break;
+					}
+					case MARTIEN:
+					{
+						if (cond == 3)
+						{
+							htmltext = "30645-01.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30645-03.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30645-04.htm";
+							st.setCond(6, true);
+							takeItems(player, WATCHER_EYE_1, 1);
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30645-05.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30645-07.htm";
+						}
+						else if (cond > 7)
+						{
+							htmltext = "30645-06.htm";
+						}
+						break;
+					}
+					case RALDO:
+					{
+						if (cond == 7)
+						{
+							htmltext = "30646-01.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "30646-06a.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30646-07.htm";
+							takeItems(player, BROKEN_KEY, 1);
+							giveItems(player, MARK_OF_CHALLENGER, 1);
+							addExpAndSp(player, 72394, 11250);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
+						}
+						break;
+					}
+					case FILAUR:
+					{
+						if (cond == 8)
+						{
+							if (player.getLevel() >= 36)
+							{
+								htmltext = "30535-01.htm";
+								st.setCond(9, true);
+							}
+							else
+							{
+								htmltext = "30535-03.htm";
+							}
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30535-02.htm";
+							addRadar(player, 176560, -184969, -3729);
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30535-04.htm";
+						}
+						break;
+					}
 				}
 				break;
 			}
-			case "30646-04.html":
-			case "30646-05.html":
+			case State.COMPLETED:
 			{
-				if (qs.isCond(7) && hasQuestItems(player, WATCHERS_EYE2))
-				{
-					takeItems(player, WATCHERS_EYE2, -1);
-					qs.setCond(8, true);
-					htmltext = event;
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player talker)
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmltext = getNoQuestMsg(talker);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
 		{
-			case KASH:
-			{
-				if (qs.isCreated())
-				{
-					if (!talker.isInCategory(CategoryType.WARRIOR_GROUP))
-					{
-						htmltext = "30644-02.html";
-					}
-					else if (talker.getLevel() < MIN_LEVEL)
-					{
-						htmltext = "30644-01.html";
-					}
-					else
-					{
-						htmltext = "30644-03.htm";
-					}
-				}
-				else if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						{
-							htmltext = "30644-07.html";
-							break;
-						}
-						case 2:
-						{
-							if (hasQuestItems(talker, SCROLL_OF_SHYSLASSYS))
-							{
-								takeItems(talker, SCROLL_OF_SHYSLASSYS, -1);
-								giveItems(talker, LETTER_OF_KASH, 1);
-								qs.setCond(3, true);
-								htmltext = "30644-08.html";
-							}
-							break;
-						}
-						case 3:
-						{
-							if (hasQuestItems(talker, LETTER_OF_KASH))
-							{
-								htmltext = "30644-09.html";
-							}
-							break;
-						}
-						case 8:
-						case 9:
-						case 10:
-						{
-							htmltext = "30644-10.html";
-							break;
-						}
-					}
-				}
-				else if (qs.isCompleted())
-				{
-					htmltext = getAlreadyCompletedMsg(talker);
-				}
-				break;
-			}
-			case MARTIAN:
-			{
-				switch (qs.getCond())
-				{
-					case 3:
-					{
-						if (hasQuestItems(talker, LETTER_OF_KASH))
-						{
-							htmltext = "30645-01.html";
-						}
-						break;
-					}
-					case 4:
-					{
-						htmltext = "30645-03.html";
-						break;
-					}
-					case 5:
-					{
-						if (hasQuestItems(talker, WATCHERS_EYE1))
-						{
-							takeItems(talker, WATCHERS_EYE1, -1);
-							qs.setCond(6, true);
-							htmltext = "30645-04.html";
-						}
-						break;
-					}
-					case 6:
-					{
-						htmltext = "30645-05.html";
-						break;
-					}
-					case 7:
-					{
-						htmltext = "30645-06.html";
-						break;
-					}
-					case 8:
-					case 9:
-					{
-						htmltext = "30645-09.html";
-						break;
-					}
-				}
-				break;
-			}
-			case CHEST_OF_SHYSLASSYS:
-			{
-				if (qs.isStarted())
-				{
-					htmltext = "30647-01.html";
-				}
-				break;
-			}
-			case RALDO:
-			{
-				switch (qs.getCond())
-				{
-					case 7:
-					{
-						if (hasQuestItems(talker, WATCHERS_EYE2))
-						{
-							htmltext = "30646-01.html";
-						}
-						break;
-					}
-					case 8:
-					{
-						htmltext = "30646-06.html";
-						break;
-					}
-					case 10:
-					{
-						addExpAndSp(talker, 1067606, 69242);
-						giveAdena(talker, 194556, true);
-						giveItems(talker, MARK_OF_CHALLENGER, 1);
-						talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
-						qs.exitQuest(false, true);
-						htmltext = "30646-07.html";
-						break;
-					}
-				}
-				break;
-			}
-			case FILAUR:
-			{
-				switch (qs.getCond())
-				{
-					case 8:
-					{
-						htmltext = "30535-01.html";
-						qs.setCond(9, true);
-						break;
-					}
-					case 9:
-					{
-						talker.sendPacket(new RadarControl(0, 2, 151589, -174823, -1776));
-						htmltext = "30535-02.html";
-						break;
-					}
-					case 10:
-					{
-						htmltext = "30535-03.html";
-						break;
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs == null) || !Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			return super.onKill(npc, killer, isSummon);
+			return null;
 		}
 		
 		switch (npc.getId())
 		{
 			case SHYSLASSYS:
 			{
-				if (qs.isCond(1))
+				if (st.isCond(1))
 				{
-					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10)
-					{
-						addSpawn(CHEST_OF_SHYSLASSYS, npc, false, 200000);
-					}
-					giveItems(killer, SCROLL_OF_SHYSLASSYS, 1);
-					giveItems(killer, BROKEN_KEY, 1);
-					qs.setCond(2, true);
+					st.setCond(2, true);
+					giveItems(player, BROKEN_KEY, 1);
+					giveItems(player, SCROLL_OF_SHYSLASSYS, 1);
+					addSpawn(CHEST_OF_SHYSLASSYS, npc, false, 200000);
 				}
 				break;
 			}
 			case GORR:
 			{
-				if (qs.isCond(4))
+				if (st.isCond(4))
 				{
-					giveItems(killer, WATCHERS_EYE1, 1);
-					qs.setCond(5, true);
+					giveItems(player, WATCHER_EYE_1, 1);
+					st.setCond(5, true);
 				}
 				break;
 			}
 			case BARAHAM:
 			{
-				if (qs.isCond(6))
+				if (st.isCond(6))
 				{
-					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10)
-					{
-						addSpawn(RALDO, npc, false, 100000);
-					}
-					giveItems(killer, WATCHERS_EYE2, 1);
-					qs.setCond(7, true);
+					giveItems(player, WATCHER_EYE_2, 1);
+					st.setCond(7, true);
 				}
+				addSpawn(RALDO, npc, false, 100000);
 				break;
 			}
-			case QUEEN_OF_SUCCUBUS:
+			case SUCCUBUS_QUEEN:
 			{
-				if (qs.isCond(9))
+				if (st.isCond(9))
 				{
-					if (SpawnTable.getInstance().getSpawns(npc.getId()).size() < 10)
-					{
-						addSpawn(RALDO, npc, false, 100000);
-					}
-					qs.setCond(10, true);
+					st.setCond(10, true);
 				}
+				addSpawn(RALDO, npc, false, 100000);
 				break;
 			}
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return null;
 	}
 }

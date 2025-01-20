@@ -24,27 +24,22 @@ import org.l2jmobius.gameserver.model.quest.State;
 
 import quests.Q00052_WilliesSpecialBait.Q00052_WilliesSpecialBait;
 
-/**
- * Chest Caught With A Bait Of Earth (29)<br>
- * Original Jython script by Skeleton.
- * @author nonom
- */
 public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 {
 	// NPCs
 	private static final int WILLIE = 31574;
 	private static final int ANABEL = 30909;
 	// Items
-	private static final int PURPLE_TREASURE_BOX = 6507;
+	private static final int SMALL_PURPLE_TREASURE_CHEST = 6507;
 	private static final int SMALL_GLASS_BOX = 7627;
 	private static final int PLATED_LEATHER_GLOVES = 2455;
 	
 	public Q00029_ChestCaughtWithABaitOfEarth()
 	{
 		super(29);
+		registerQuestItems(SMALL_GLASS_BOX);
 		addStartNpc(WILLIE);
 		addTalkId(WILLIE, ANABEL);
-		registerQuestItems(SMALL_GLASS_BOX);
 	}
 	
 	@Override
@@ -64,86 +59,88 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 				st.startQuest();
 				break;
 			}
-			case "31574-08.htm":
+			case "31574-07.htm":
 			{
-				if (st.isCond(1) && hasQuestItems(player, PURPLE_TREASURE_BOX))
+				if (hasQuestItems(player, SMALL_PURPLE_TREASURE_CHEST))
 				{
+					st.setCond(2);
+					takeItems(player, SMALL_PURPLE_TREASURE_CHEST, 1);
 					giveItems(player, SMALL_GLASS_BOX, 1);
-					takeItems(player, PURPLE_TREASURE_BOX, -1);
-					st.setCond(2, true);
-					htmltext = "31574-07.htm";
+				}
+				else
+				{
+					htmltext = "31574-08.htm";
 				}
 				break;
 			}
-			case "30909-03.htm":
+			case "30909-02.htm":
 			{
-				if (st.isCond(2) && hasQuestItems(player, SMALL_GLASS_BOX))
+				if (hasQuestItems(player, SMALL_GLASS_BOX))
 				{
+					htmltext = "30909-02.htm";
+					takeItems(player, SMALL_GLASS_BOX, 1);
 					giveItems(player, PLATED_LEATHER_GLOVES, 1);
 					st.exitQuest(false, true);
-					htmltext = "30909-02.htm";
+				}
+				else
+				{
+					htmltext = "30909-03.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
 		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
 			case State.CREATED:
 			{
-				final QuestState qs = player.getQuestState(Q00052_WilliesSpecialBait.class.getSimpleName());
-				if (npcId == WILLIE)
+				if (player.getLevel() < 48)
 				{
 					htmltext = "31574-02.htm";
-					if (qs != null)
+				}
+				else
+				{
+					final QuestState st2 = player.getQuestState(Q00052_WilliesSpecialBait.class.getSimpleName());
+					if ((st2 != null) && st2.isCompleted())
 					{
-						htmltext = ((player.getLevel() >= 48) && qs.isCompleted()) ? "31574-01.htm" : htmltext;
+						htmltext = "31574-01.htm";
+					}
+					else
+					{
+						htmltext = "31574-03.htm";
 					}
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (npcId)
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
 					case WILLIE:
 					{
-						switch (st.getCond())
+						if (cond == 1)
 						{
-							case 1:
-							{
-								htmltext = "31574-06.htm";
-								if (hasQuestItems(player, PURPLE_TREASURE_BOX))
-								{
-									htmltext = "31574-05.htm";
-								}
-								break;
-							}
-							case 2:
-							{
-								htmltext = "31574-09.htm";
-								break;
-							}
+							htmltext = (!hasQuestItems(player, SMALL_PURPLE_TREASURE_CHEST)) ? "31574-06.htm" : "31574-05.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "31574-09.htm";
 						}
 						break;
 					}
 					case ANABEL:
 					{
-						if (st.isCond(2))
+						if (cond == 2)
 						{
 							htmltext = "30909-01.htm";
 						}
@@ -152,7 +149,13 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 }

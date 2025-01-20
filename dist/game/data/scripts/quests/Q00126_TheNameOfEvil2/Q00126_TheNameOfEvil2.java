@@ -16,761 +16,560 @@
  */
 package quests.Q00126_TheNameOfEvil2;
 
-import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.network.serverpackets.MagicSkillUse;
 
 import quests.Q00125_TheNameOfEvil1.Q00125_TheNameOfEvil1;
 
-/**
- * The Name of Evil - 2 (126)
- * @author Adry_85
- */
 public class Q00126_TheNameOfEvil2 extends Quest
 {
-	// NPCs
-	private static final int SHILENS_STONE_STATUE = 32109;
 	private static final int MUSHIKA = 32114;
-	private static final int ASAMAH = 32115;
+	private static final int ASAMANAH = 32115;
 	private static final int ULU_KAIMU = 32119;
 	private static final int BALU_KAIMU = 32120;
 	private static final int CHUTA_KAIMU = 32121;
-	private static final int WARRIORS_GRAVE = 32122;
-	// Items
-	private static final int GAZKH_FRAGMENT = 8782;
-	private static final int BONE_POWDER = 8783;
-	// Reward
-	private static final int ENCHANT_WEAPON_A = 729;
+	private static final int WARRIOR_GRAVE = 32122;
+	private static final int SHILEN_STONE_STATUE = 32109;
+	private static final int BONEPOWDER = 8783;
+	private static final int EWA = 729;
 	
 	public Q00126_TheNameOfEvil2()
 	{
 		super(126);
-		addStartNpc(ASAMAH);
-		addTalkId(ASAMAH, ULU_KAIMU, BALU_KAIMU, CHUTA_KAIMU, WARRIORS_GRAVE, SHILENS_STONE_STATUE, MUSHIKA);
-		registerQuestItems(GAZKH_FRAGMENT, BONE_POWDER);
+		addStartNpc(ASAMANAH);
+		addTalkId(ASAMANAH, MUSHIKA, ULU_KAIMU, BALU_KAIMU, CHUTA_KAIMU, WARRIOR_GRAVE, SHILEN_STONE_STATUE);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "32115-1.html":
+			case "32115-05.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
-			case "32115-1b.html":
+			case "32115-10.htm":
 			{
-				if (qs.isCond(1))
+				st.setCond(2, true);
+				break;
+			}
+			case "32119-02.htm":
+			{
+				st.setCond(3, true);
+				break;
+			}
+			case "32119-09.htm":
+			{
+				st.setCond(4, true);
+				break;
+			}
+			case "32119-11.htm":
+			{
+				st.setCond(5, true);
+				break;
+			}
+			case "32120-07.htm":
+			{
+				st.setCond(6, true);
+				break;
+			}
+			case "32120-09.htm":
+			{
+				st.setCond(7, true);
+				break;
+			}
+			case "32120-11.htm":
+			{
+				st.setCond(8, true);
+				break;
+			}
+			case "32121-07.htm":
+			{
+				st.setCond(9, true);
+				break;
+			}
+			case "32121-10.htm":
+			{
+				st.setCond(10, true);
+				break;
+			}
+			case "32121-15.htm":
+			{
+				st.setCond(11, true);
+				break;
+			}
+			case "32122-03.htm":
+			{
+				st.setCond(12, true);
+				break;
+			}
+			case "32122-15.htm":
+			{
+				st.setCond(13, true);
+				break;
+			}
+			case "32122-18.htm":
+			{
+				st.setCond(14, true);
+				break;
+			}
+			case "32122-87.htm":
+			{
+				giveItems(player, BONEPOWDER, 1);
+				break;
+			}
+			case "32122-90.htm":
+			{
+				st.setCond(18, true);
+				break;
+			}
+			case "32109-02.htm":
+			{
+				st.setCond(19, true);
+				break;
+			}
+			case "32109-19.htm":
+			{
+				st.setCond(20, true);
+				takeItems(player, BONEPOWDER, 1);
+				break;
+			}
+			case "32115-21.htm":
+			{
+				st.setCond(21, true);
+				break;
+			}
+			case "32115-28.htm":
+			{
+				st.setCond(22, true);
+				break;
+			}
+			case "32114-08.htm":
+			{
+				st.setCond(23, true);
+				break;
+			}
+			case "32114-09.htm":
+			{
+				giveItems(player, EWA, 1);
+				st.exitQuest(false, true);
+				break;
+			}
+			case "DOOne":
+			{
+				htmltext = "32122-26.htm";
+				if (st.getInt("DO") < 1)
 				{
-					qs.setCond(2, true);
+					st.set("DO", "1");
 				}
 				break;
 			}
-			case "32119-3.html":
+			case "MIOne":
 			{
-				if (qs.isCond(2))
+				htmltext = "32122-30.htm";
+				if (st.getInt("MI") < 1)
 				{
-					qs.setCond(3, true);
+					st.set("MI", "1");
 				}
 				break;
 			}
-			case "32119-4.html":
+			case "FAOne":
 			{
-				if (qs.isCond(3))
+				htmltext = "32122-34.htm";
+				if (st.getInt("FA") < 1)
 				{
-					qs.setCond(4, true);
+					st.set("FA", "1");
 				}
 				break;
 			}
-			case "32119-4a.html":
-			case "32119-5b.html":
+			case "SOLOne":
 			{
-				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_1ST);
-				break;
-			}
-			case "32119-5.html":
-			{
-				if (qs.isCond(4))
+				htmltext = "32122-38.htm";
+				if (st.getInt("SOL") < 1)
 				{
-					qs.setCond(5, true);
+					st.set("SOL", "1");
 				}
 				break;
 			}
-			case "32120-3.html":
+			case "FA_2One":
 			{
-				if (qs.isCond(5))
+				if (st.getInt("FA_2") < 1)
 				{
-					qs.setCond(6, true);
+					st.set("FA_2", "1");
+				}
+				htmltext = getSongOne(st);
+				break;
+			}
+			case "FATwo":
+			{
+				htmltext = "32122-47.htm";
+				if (st.getInt("FA") < 1)
+				{
+					st.set("FA", "1");
 				}
 				break;
 			}
-			case "32120-4.html":
+			case "SOLTwo":
 			{
-				if (qs.isCond(6))
+				htmltext = "32122-51.htm";
+				if (st.getInt("SOL") < 1)
 				{
-					qs.setCond(7, true);
+					st.set("SOL", "1");
 				}
 				break;
 			}
-			case "32120-4a.html":
-			case "32120-5b.html":
+			case "TITwo":
 			{
-				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_2ND);
-				break;
-			}
-			case "32120-5.html":
-			{
-				if (qs.isCond(7))
+				htmltext = "32122-55.htm";
+				if (st.getInt("TI") < 1)
 				{
-					qs.setCond(8, true);
+					st.set("TI", "1");
 				}
 				break;
 			}
-			case "32121-3.html":
+			case "SOL_2Two":
 			{
-				if (qs.isCond(8))
+				htmltext = "32122-59.htm";
+				if (st.getInt("SOL_2") < 1)
 				{
-					qs.setCond(9, true);
+					st.set("SOL_2", "1");
 				}
 				break;
 			}
-			case "32121-4.html":
+			case "FA_2Two":
 			{
-				if (qs.isCond(9))
+				if (st.getInt("FA_2") < 1)
 				{
-					qs.setCond(10, true);
+					st.set("FA_2", "1");
+				}
+				htmltext = getSongTwo(st);
+				break;
+			}
+			case "SOLTri":
+			{
+				htmltext = "32122-68.htm";
+				if (st.getInt("SOL") < 1)
+				{
+					st.set("SOL", "1");
 				}
 				break;
 			}
-			case "32121-4a.html":
-			case "32121-5b.html":
+			case "FATri":
 			{
-				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_3RD);
-				break;
-			}
-			case "32121-5.html":
-			{
-				if (qs.isCond(10))
+				htmltext = "32122-72.htm";
+				if (st.getInt("FA") < 1)
 				{
-					giveItems(player, GAZKH_FRAGMENT, 1);
-					qs.setCond(11, true);
+					st.set("FA", "1");
 				}
 				break;
 			}
-			case "32122-2a.html":
+			case "MITri":
 			{
-				npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
-				break;
-			}
-			case "32122-2d.html":
-			{
-				takeItems(player, GAZKH_FRAGMENT, -1);
-				break;
-			}
-			case "32122-3.html":
-			{
-				if (qs.isCond(12))
+				htmltext = "32122-76.htm";
+				if (st.getInt("MI") < 1)
 				{
-					qs.setCond(13, true);
+					st.set("MI", "1");
 				}
 				break;
 			}
-			case "32122-4.html":
+			case "FA_2Tri":
 			{
-				if (qs.isCond(13))
+				htmltext = "32122-80.htm";
+				if (st.getInt("FA_2") < 1)
 				{
-					qs.setCond(14, true);
+					st.set("FA_2", "1");
 				}
 				break;
 			}
-			case "DO_One":
+			case "MI_2Tri":
 			{
-				qs.set("DO", "1");
-				return "32122-4d.html";
-			}
-			case "MI_One":
-			{
-				qs.set("MI", "1");
-				return "32122-4f.html";
-			}
-			case "FA_One":
-			{
-				qs.set("FA", "1");
-				return "32122-4h.html";
-			}
-			case "SOL_One":
-			{
-				qs.set("SOL", "1");
-				return "32122-4j.html";
-			}
-			case "FA2_One":
-			{
-				qs.set("FA2", "1");
-				if (qs.isCond(14) && (qs.getInt("DO") > 0) && (qs.getInt("MI") > 0) && (qs.getInt("FA") > 0) && (qs.getInt("SOL") > 0) && (qs.getInt("FA2") > 0))
+				if (st.getInt("MI_2") < 1)
 				{
-					qs.setCond(15, true);
-					qs.unset("DO");
-					qs.unset("MI");
-					qs.unset("FA");
-					qs.unset("SOL");
-					qs.unset("FA2");
-					return "32122-4n.html";
+					st.set("MI_2", "1");
 				}
-				qs.unset("DO");
-				qs.unset("MI");
-				qs.unset("FA");
-				qs.unset("SOL");
-				qs.unset("FA2");
-				return "32122-4m.html";
-			}
-			case "32122-4m.html":
-			{
-				qs.unset("DO");
-				qs.unset("MI");
-				qs.unset("FA");
-				qs.unset("SOL");
-				qs.unset("FA2");
-				break;
-			}
-			case "FA_Two":
-			{
-				qs.set("FA", "1");
-				return "32122-5a.html";
-			}
-			case "SOL_Two":
-			{
-				qs.set("SOL", "1");
-				return "32122-5c.html";
-			}
-			case "TI_Two":
-			{
-				qs.set("TI", "1");
-				return "32122-5e.html";
-			}
-			case "SOL2_Two":
-			{
-				qs.set("SOL2", "1");
-				return "32122-5g.html";
-			}
-			case "FA2_Two":
-			{
-				qs.set("FA2", "1");
-				if (qs.isCond(15) && (qs.getInt("FA") > 0) && (qs.getInt("SOL") > 0) && (qs.getInt("TI") > 0) && (qs.getInt("SOL2") > 0) && (qs.getInt("FA2") > 0))
-				{
-					qs.setCond(16, true);
-					qs.unset("FA");
-					qs.unset("SOL");
-					qs.unset("TI");
-					qs.unset("SOL2");
-					qs.unset("FA2");
-					return "32122-5j.html";
-				}
-				qs.unset("FA");
-				qs.unset("SOL");
-				qs.unset("TI");
-				qs.unset("SOL2");
-				qs.unset("FA2");
-				return "32122-5i.html";
-			}
-			case "32122-5i.html":
-			{
-				qs.unset("FA");
-				qs.unset("SOL");
-				qs.unset("TI");
-				qs.unset("SOL2");
-				qs.unset("FA2");
-				break;
-			}
-			case "SOL_Three":
-			{
-				qs.set("SOL", "1");
-				return "32122-6a.html";
-			}
-			case "FA_Three":
-			{
-				qs.set("FA", "1");
-				return "32122-6c.html";
-			}
-			case "MI_Three":
-			{
-				qs.set("MI", "1");
-				return "32122-6e.html";
-			}
-			case "FA2_Three":
-			{
-				qs.set("FA2", "1");
-				return "32122-6g.html";
-			}
-			case "MI2_Three":
-			{
-				qs.set("MI2", "1");
-				if (qs.isCond(16) && (qs.getInt("SOL") > 0) && (qs.getInt("FA") > 0) && (qs.getInt("MI") > 0) && (qs.getInt("FA2") > 0) && (qs.getInt("MI2") > 0))
-				{
-					qs.setCond(17, true);
-					qs.unset("SOL");
-					qs.unset("FA");
-					qs.unset("MI");
-					qs.unset("FA2");
-					qs.unset("MI2");
-					return "32122-6j.html";
-				}
-				qs.unset("SOL");
-				qs.unset("FA");
-				qs.unset("MI");
-				qs.unset("FA2");
-				qs.unset("MI2");
-				return "32122-6i.html";
-			}
-			case "32122-6i.html":
-			{
-				qs.unset("SOL");
-				qs.unset("FA");
-				qs.unset("MI");
-				qs.unset("FA2");
-				qs.unset("MI2");
-				break;
-			}
-			case "32122-7.html":
-			{
-				giveItems(player, BONE_POWDER, 1);
-				playSound(player, QuestSound.ETCSOUND_ELROKI_SONG_FULL);
-				npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
-				break;
-			}
-			case "32122-8.html":
-			{
-				if (qs.isCond(17))
-				{
-					qs.setCond(18, true);
-				}
-				break;
-			}
-			case "32109-2.html":
-			{
-				if (qs.isCond(18))
-				{
-					qs.setCond(19, true);
-				}
-				break;
-			}
-			case "32109-3.html":
-			{
-				if (qs.isCond(19))
-				{
-					takeItems(player, BONE_POWDER, -1);
-					qs.setCond(20, true);
-				}
-				break;
-			}
-			case "32115-4.html":
-			{
-				if (qs.isCond(20))
-				{
-					qs.setCond(21, true);
-				}
-				break;
-			}
-			case "32115-5.html":
-			{
-				if (qs.isCond(21))
-				{
-					qs.setCond(22, true);
-				}
-				break;
-			}
-			case "32114-2.html":
-			{
-				if (qs.isCond(22))
-				{
-					qs.setCond(23, true);
-				}
-				break;
-			}
-			case "32114-3.html":
-			{
-				rewardItems(player, ENCHANT_WEAPON_A, 1);
-				giveAdena(player, 460483, true);
-				addExpAndSp(player, 1015973, 102802);
-				qs.exitQuest(false, true);
+				htmltext = getSongTri(st);
 				break;
 			}
 		}
-		return event;
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (npc.getId())
+		switch (st.getState())
 		{
-			case ASAMAH:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				if (player.getLevel() < 77)
 				{
-					case State.CREATED:
-					{
-						if (player.getLevel() < 77)
-						{
-							htmltext = "32115-0.htm";
-						}
-						else
-						{
-							qs = player.getQuestState(Q00125_TheNameOfEvil1.class.getSimpleName());
-							htmltext = ((qs != null) && qs.isCompleted()) ? "32115-0a.htm" : "32115-0b.htm";
-						}
-						break;
-					}
-					case State.STARTED:
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
-								htmltext = "32115-1d.html";
-								break;
-							}
-							case 2:
-							{
-								htmltext = "32115-1c.html";
-								break;
-							}
-							case 3:
-							case 4:
-							case 5:
-							case 6:
-							case 7:
-							case 8:
-							case 9:
-							case 10:
-							case 11:
-							case 12:
-							case 13:
-							case 14:
-							case 15:
-							case 16:
-							case 17:
-							case 18:
-							case 19:
-							{
-								htmltext = "32115-2.html";
-								break;
-							}
-							case 20:
-							{
-								htmltext = "32115-3.html";
-								break;
-							}
-							case 21:
-							{
-								htmltext = "32115-4j.html";
-								break;
-							}
-							case 22:
-							{
-								htmltext = "32115-5a.html";
-								break;
-							}
-						}
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
-						break;
-					}
+					htmltext = "32115-02.htm";
 				}
-				break;
-			}
-			case ULU_KAIMU:
-			{
-				if (qs.isStarted())
+				else
 				{
-					switch (qs.getCond())
+					final QuestState st2 = player.getQuestState(Q00125_TheNameOfEvil1.class.getSimpleName());
+					if ((st2 != null) && st2.isCompleted())
 					{
-						case 1:
-						{
-							htmltext = "32119-1.html";
-							break;
-						}
-						case 2:
-						{
-							htmltext = "32119-2.html";
-							npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
-							break;
-						}
-						case 3:
-						{
-							htmltext = "32119-3c.html";
-							break;
-						}
-						case 4:
-						{
-							htmltext = "32119-4c.html";
-							break;
-						}
-						case 5:
-						{
-							htmltext = "32119-5a.html";
-							break;
-						}
-					}
-				}
-				break;
-			}
-			case BALU_KAIMU:
-			{
-				if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						{
-							htmltext = "32120-1.html";
-							break;
-						}
-						case 5:
-						{
-							htmltext = "32120-2.html";
-							npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
-							break;
-						}
-						case 6:
-						{
-							htmltext = "32120-3c.html";
-							break;
-						}
-						case 7:
-						{
-							htmltext = "32120-4c.html";
-							break;
-						}
-						default:
-						{
-							htmltext = "32120-5a.html";
-							break;
-						}
-					}
-				}
-				break;
-			}
-			case CHUTA_KAIMU:
-			{
-				if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						case 5:
-						case 6:
-						case 7:
-						{
-							htmltext = "32121-1.html";
-							break;
-						}
-						case 8:
-						{
-							htmltext = "32121-2.html";
-							npc.broadcastPacket(new MagicSkillUse(npc, player, 5089, 1, 1000, 0));
-							break;
-						}
-						case 9:
-						{
-							htmltext = "32121-3e.html";
-							break;
-						}
-						case 10:
-						{
-							htmltext = "32121-4e.html";
-							break;
-						}
-						default:
-						{
-							htmltext = "32121-5a.html";
-							break;
-						}
-					}
-				}
-				break;
-			}
-			case WARRIORS_GRAVE:
-			{
-				if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						case 5:
-						case 6:
-						case 7:
-						case 8:
-						case 9:
-						case 10:
-						{
-							htmltext = "32122-1.html";
-							break;
-						}
-						case 11:
-						{
-							htmltext = "32122-2.html";
-							qs.setCond(12, true);
-							break;
-						}
-						case 12:
-						{
-							htmltext = "32122-2l.html";
-							break;
-						}
-						case 13:
-						{
-							htmltext = "32122-3b.html";
-							break;
-						}
-						case 14:
-						{
-							htmltext = "32122-4.html";
-							qs.unset("DO");
-							qs.unset("MI");
-							qs.unset("FA");
-							qs.unset("SOL");
-							qs.unset("FA2");
-							break;
-						}
-						case 15:
-						{
-							htmltext = "32122-5.html";
-							qs.unset("FA");
-							qs.unset("SOL");
-							qs.unset("TI");
-							qs.unset("SOL2");
-							qs.unset("FA2");
-							break;
-						}
-						case 16:
-						{
-							htmltext = "32122-6.html";
-							qs.unset("SOL");
-							qs.unset("FA");
-							qs.unset("MI");
-							qs.unset("FA2");
-							qs.unset("MI2");
-							break;
-						}
-						case 17:
-						{
-							htmltext = hasQuestItems(player, BONE_POWDER) ? "32122-7.html" : "32122-7b.html";
-							break;
-						}
-						case 18:
-						{
-							htmltext = "32122-8.html";
-							break;
-						}
-						default:
-						{
-							htmltext = "32122-9.html";
-							break;
-						}
-					}
-				}
-				break;
-			}
-			case SHILENS_STONE_STATUE:
-			{
-				if (qs.isStarted())
-				{
-					switch (qs.getCond())
-					{
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						case 5:
-						case 6:
-						case 7:
-						case 8:
-						case 9:
-						case 10:
-						case 11:
-						case 12:
-						case 13:
-						case 14:
-						case 15:
-						case 16:
-						case 17:
-						{
-							htmltext = "32109-1a.html";
-							break;
-						}
-						case 18:
-						{
-							if (hasQuestItems(player, BONE_POWDER))
-							{
-								htmltext = "32109-1.html";
-							}
-							break;
-						}
-						case 19:
-						{
-							htmltext = "32109-2l.html";
-							break;
-						}
-						case 20:
-						{
-							htmltext = "32109-5.html";
-							break;
-						}
-						default:
-						{
-							htmltext = "32109-4.html";
-							break;
-						}
-					}
-				}
-				break;
-			}
-			case MUSHIKA:
-			{
-				if (qs.isStarted())
-				{
-					if (qs.getCond() < 22)
-					{
-						htmltext = "32114-4.html";
-					}
-					else if (qs.isCond(22))
-					{
-						htmltext = "32114-1.html";
+						htmltext = "32115-01.htm";
 					}
 					else
 					{
-						htmltext = "32114-2.html";
+						htmltext = "32115-04.htm";
 					}
 				}
 				break;
 			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case ASAMANAH:
+					{
+						if (cond == 1)
+						{
+							htmltext = "32115-11.htm";
+							st.setCond(2, true);
+						}
+						else if ((cond > 1) && (cond < 20))
+						{
+							htmltext = "32115-12.htm";
+						}
+						else if (cond == 20)
+						{
+							htmltext = "32115-13.htm";
+						}
+						else if (cond == 21)
+						{
+							htmltext = "32115-22.htm";
+						}
+						else if (cond == 22)
+						{
+							htmltext = "32115-29.htm";
+						}
+						break;
+					}
+					case ULU_KAIMU:
+					{
+						if (cond == 1)
+						{
+							htmltext = "32119-01a.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "32119-02.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "32119-08.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "32119-09.htm";
+						}
+						else if (cond > 4)
+						{
+							htmltext = "32119-12.htm";
+						}
+						break;
+					}
+					case BALU_KAIMU:
+					{
+						if (cond < 5)
+						{
+							htmltext = "32120-02.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "32120-01.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "32120-03.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "32120-08.htm";
+						}
+						else if (cond > 7)
+						{
+							htmltext = "32120-12.htm";
+						}
+						break;
+					}
+					case CHUTA_KAIMU:
+					{
+						if (cond < 8)
+						{
+							htmltext = "32121-02.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "32121-01.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "32121-03.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "32121-10.htm";
+						}
+						else if (cond > 10)
+						{
+							htmltext = "32121-16.htm";
+						}
+						break;
+					}
+					case WARRIOR_GRAVE:
+					{
+						if (cond < 11)
+						{
+							htmltext = "32122-02.htm";
+						}
+						else if (cond == 11)
+						{
+							htmltext = "32122-01.htm";
+						}
+						else if (cond == 12)
+						{
+							htmltext = "32122-15.htm";
+						}
+						else if (cond == 13)
+						{
+							htmltext = "32122-18.htm";
+						}
+						else if (cond == 14)
+						{
+							htmltext = "32122-24.htm";
+						}
+						else if (cond == 15)
+						{
+							htmltext = "32122-45.htm";
+						}
+						else if (cond == 16)
+						{
+							htmltext = "32122-66.htm";
+						}
+						else if (cond == 17)
+						{
+							htmltext = "32122-84.htm";
+						}
+						else if (cond == 18)
+						{
+							htmltext = "32122-91.htm";
+						}
+						break;
+					}
+					case SHILEN_STONE_STATUE:
+					{
+						if (cond < 18)
+						{
+							htmltext = "32109-03.htm";
+						}
+						else if (cond == 18)
+						{
+							htmltext = "32109-02.htm";
+						}
+						else if (cond == 19)
+						{
+							htmltext = "32109-05.htm";
+						}
+						else if (cond > 19)
+						{
+							htmltext = "32109-04.htm";
+						}
+						break;
+					}
+					case MUSHIKA:
+					{
+						if (cond < 22)
+						{
+							htmltext = "32114-02.htm";
+						}
+						else if (cond == 22)
+						{
+							htmltext = "32114-01.htm";
+						}
+						else if (cond == 23)
+						{
+							htmltext = "32114-04.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	private static String getSongOne(QuestState st)
+	{
+		String htmltext = "32122-24.htm";
+		if (st.isCond(14) && (st.getInt("DO") > 0) && (st.getInt("MI") > 0) && (st.getInt("FA") > 0) && (st.getInt("SOL") > 0) && (st.getInt("FA_2") > 0))
+		{
+			htmltext = "32122-42.htm";
+			st.setCond(15, true);
+			st.unset("DO");
+			st.unset("MI");
+			st.unset("FA");
+			st.unset("SOL");
+			st.unset("FA_2");
+		}
+		return htmltext;
+	}
+	
+	private static String getSongTwo(QuestState st)
+	{
+		String htmltext = "32122-45.htm";
+		if (st.isCond(15) && (st.getInt("FA") > 0) && (st.getInt("SOL") > 0) && (st.getInt("TI") > 0) && (st.getInt("SOL_2") > 0) && (st.getInt("FA_2") > 0))
+		{
+			htmltext = "32122-63.htm";
+			st.setCond(16, true);
+			st.unset("FA");
+			st.unset("SOL");
+			st.unset("TI");
+			st.unset("SOL_2");
+			st.unset("FA3_2");
+		}
+		return htmltext;
+	}
+	
+	private static String getSongTri(QuestState st)
+	{
+		String htmltext = "32122-66.htm";
+		if (st.isCond(16) && (st.getInt("SOL") > 0) && (st.getInt("FA") > 0) && (st.getInt("MI") > 0) && (st.getInt("FA_2") > 0) && (st.getInt("MI_2") > 0))
+		{
+			htmltext = "32122-84.htm";
+			st.setCond(17, true);
+			st.unset("SOL");
+			st.unset("FA");
+			st.unset("MI");
+			st.unset("FA_2");
+			st.unset("MI_2");
 		}
 		return htmltext;
 	}

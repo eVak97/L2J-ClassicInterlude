@@ -21,23 +21,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
+import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Grim Collector (325)
- * @author ivantotov
- */
 public class Q00325_GrimCollector extends Quest
 {
 	// NPCs
-	private static final int GUARD_CURTIZ = 30336;
+	private static final int CURTIS = 30336;
 	private static final int VARSAK = 30342;
 	private static final int SAMED = 30434;
 	// Items
@@ -51,226 +46,219 @@ public class Q00325_GrimCollector extends Quest
 	private static final int ARM_BONE = 1356;
 	private static final int THIGH_BONE = 1357;
 	private static final int COMPLETE_SKELETON = 1358;
-	// Misc
-	private static final int MIN_LEVEL = 15;
-	// Monsters
-	private static final Map<Integer, List<ItemChanceHolder>> MONSTER_DROPS = new HashMap<>();
+	// Drops
+	private static final Map<Integer, List<ItemHolder>> DROPLIST = new HashMap<>();
 	static
 	{
-		MONSTER_DROPS.put(20026, Arrays.asList(new ItemChanceHolder(ZOMBIE_HEAD, 30), new ItemChanceHolder(ZOMBIE_HEART, 50), new ItemChanceHolder(ZOMBIE_LIVER, 75)));
-		MONSTER_DROPS.put(20029, Arrays.asList(new ItemChanceHolder(ZOMBIE_HEAD, 30), new ItemChanceHolder(ZOMBIE_HEART, 52), new ItemChanceHolder(ZOMBIE_LIVER, 75)));
-		MONSTER_DROPS.put(20035, Arrays.asList(new ItemChanceHolder(SKULL, 5), new ItemChanceHolder(RIB_BONE, 15), new ItemChanceHolder(SPINE, 29), new ItemChanceHolder(THIGH_BONE, 79)));
-		MONSTER_DROPS.put(20042, Arrays.asList(new ItemChanceHolder(SKULL, 6), new ItemChanceHolder(RIB_BONE, 19), new ItemChanceHolder(ARM_BONE, 69), new ItemChanceHolder(THIGH_BONE, 86)));
-		MONSTER_DROPS.put(20045, Arrays.asList(new ItemChanceHolder(SKULL, 9), new ItemChanceHolder(SPINE, 59), new ItemChanceHolder(ARM_BONE, 77), new ItemChanceHolder(THIGH_BONE, 97)));
-		MONSTER_DROPS.put(20051, Arrays.asList(new ItemChanceHolder(SKULL, 9), new ItemChanceHolder(RIB_BONE, 59), new ItemChanceHolder(SPINE, 79), new ItemChanceHolder(ARM_BONE, 100)));
-		MONSTER_DROPS.put(20457, Arrays.asList(new ItemChanceHolder(ZOMBIE_HEAD, 40), new ItemChanceHolder(ZOMBIE_HEART, 60), new ItemChanceHolder(ZOMBIE_LIVER, 80)));
-		MONSTER_DROPS.put(20458, Arrays.asList(new ItemChanceHolder(ZOMBIE_HEAD, 40), new ItemChanceHolder(ZOMBIE_HEART, 70), new ItemChanceHolder(ZOMBIE_LIVER, 100)));
-		MONSTER_DROPS.put(20514, Arrays.asList(new ItemChanceHolder(SKULL, 6), new ItemChanceHolder(RIB_BONE, 21), new ItemChanceHolder(SPINE, 30), new ItemChanceHolder(ARM_BONE, 31), new ItemChanceHolder(THIGH_BONE, 64)));
-		MONSTER_DROPS.put(20515, Arrays.asList(new ItemChanceHolder(SKULL, 5), new ItemChanceHolder(RIB_BONE, 20), new ItemChanceHolder(SPINE, 31), new ItemChanceHolder(ARM_BONE, 33), new ItemChanceHolder(THIGH_BONE, 69)));
+		DROPLIST.put(20026, Arrays.asList(new ItemHolder(ZOMBIE_HEAD, 30), new ItemHolder(ZOMBIE_HEART, 50), new ItemHolder(ZOMBIE_LIVER, 75)));
+		DROPLIST.put(20029, Arrays.asList(new ItemHolder(ZOMBIE_HEAD, 30), new ItemHolder(ZOMBIE_HEART, 52), new ItemHolder(ZOMBIE_LIVER, 75)));
+		DROPLIST.put(20035, Arrays.asList(new ItemHolder(SKULL, 5), new ItemHolder(RIB_BONE, 15), new ItemHolder(SPINE, 29), new ItemHolder(THIGH_BONE, 79)));
+		DROPLIST.put(20042, Arrays.asList(new ItemHolder(SKULL, 6), new ItemHolder(RIB_BONE, 19), new ItemHolder(ARM_BONE, 69), new ItemHolder(THIGH_BONE, 86)));
+		DROPLIST.put(20045, Arrays.asList(new ItemHolder(SKULL, 9), new ItemHolder(SPINE, 59), new ItemHolder(ARM_BONE, 77), new ItemHolder(THIGH_BONE, 97)));
+		DROPLIST.put(20051, Arrays.asList(new ItemHolder(SKULL, 9), new ItemHolder(RIB_BONE, 59), new ItemHolder(SPINE, 79), new ItemHolder(ARM_BONE, 100)));
+		DROPLIST.put(20457, Arrays.asList(new ItemHolder(ZOMBIE_HEAD, 40), new ItemHolder(ZOMBIE_HEART, 60), new ItemHolder(ZOMBIE_LIVER, 80)));
+		DROPLIST.put(20458, Arrays.asList(new ItemHolder(ZOMBIE_HEAD, 40), new ItemHolder(ZOMBIE_HEART, 70), new ItemHolder(ZOMBIE_LIVER, 100)));
+		DROPLIST.put(20514, Arrays.asList(new ItemHolder(SKULL, 6), new ItemHolder(RIB_BONE, 21), new ItemHolder(SPINE, 30), new ItemHolder(ARM_BONE, 31), new ItemHolder(THIGH_BONE, 64)));
+		DROPLIST.put(20515, Arrays.asList(new ItemHolder(SKULL, 5), new ItemHolder(RIB_BONE, 20), new ItemHolder(SPINE, 31), new ItemHolder(ARM_BONE, 33), new ItemHolder(THIGH_BONE, 69)));
 	}
 	
 	public Q00325_GrimCollector()
 	{
 		super(325);
-		addStartNpc(GUARD_CURTIZ);
-		addTalkId(GUARD_CURTIZ, VARSAK, SAMED);
-		addKillId(MONSTER_DROPS.keySet());
-		registerQuestItems(ANATOMY_DIAGRAM, ZOMBIE_HEAD, ZOMBIE_HEART, ZOMBIE_LIVER, SKULL, RIB_BONE, SPINE, ARM_BONE, THIGH_BONE, COMPLETE_SKELETON);
+		registerQuestItems(ZOMBIE_HEAD, ZOMBIE_HEART, ZOMBIE_LIVER, SKULL, RIB_BONE, SPINE, ARM_BONE, THIGH_BONE, COMPLETE_SKELETON, ANATOMY_DIAGRAM);
+		addStartNpc(CURTIS);
+		addTalkId(CURTIS, VARSAK, SAMED);
+		addKillId(DROPLIST.keySet());
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
-		String htmltext = null;
+		
 		switch (event)
 		{
 			case "30336-03.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				break;
+			}
+			case "30434-03.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(player, ANATOMY_DIAGRAM, 1);
+				break;
+			}
+			case "30434-06.htm":
+			{
+				takeItems(player, ANATOMY_DIAGRAM, -1);
+				payback(player);
+				st.exitQuest(true, true);
+				break;
+			}
+			case "30434-07.htm":
+			{
+				payback(player);
+				break;
+			}
+			case "30434-09.htm":
+			{
+				final int skeletons = (int) getQuestItemsCount(player, COMPLETE_SKELETON);
+				if (skeletons > 0)
 				{
-					qs.startQuest();
-					htmltext = event;
+					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					takeItems(player, COMPLETE_SKELETON, -1);
+					giveAdena(player, 543 + (341 * skeletons), true);
 				}
 				break;
 			}
-			case "assembleSkeleton":
+			case "30342-03.htm":
 			{
 				if (!hasQuestItems(player, SPINE, ARM_BONE, SKULL, RIB_BONE, THIGH_BONE))
 				{
-					htmltext = "30342-02.html";
+					htmltext = "30342-02.htm";
 				}
 				else
 				{
-					takeItems(player, 1, SPINE, ARM_BONE, SKULL, RIB_BONE, THIGH_BONE);
-					if (getRandom(5) < 4)
+					takeItems(player, SPINE, 1);
+					takeItems(player, SKULL, 1);
+					takeItems(player, ARM_BONE, 1);
+					takeItems(player, RIB_BONE, 1);
+					takeItems(player, THIGH_BONE, 1);
+					
+					if (getRandom(10) < 9)
 					{
 						giveItems(player, COMPLETE_SKELETON, 1);
-						htmltext = "30342-03.html";
 					}
 					else
 					{
-						htmltext = "30342-04.html";
+						htmltext = "30342-04.htm";
 					}
-				}
-				break;
-			}
-			case "30434-02.htm":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30434-03.html":
-			{
-				giveItems(player, ANATOMY_DIAGRAM, 1);
-				htmltext = event;
-				break;
-			}
-			case "30434-06.html":
-			case "30434-07.html":
-			{
-				if (hasQuestItems(player, getRegisteredItemIds()))
-				{
-					final long head = getQuestItemsCount(player, ZOMBIE_HEAD);
-					final long heart = getQuestItemsCount(player, ZOMBIE_HEART);
-					final long liver = getQuestItemsCount(player, ZOMBIE_LIVER);
-					final long skull = getQuestItemsCount(player, SKULL);
-					final long rib = getQuestItemsCount(player, RIB_BONE);
-					final long spine = getQuestItemsCount(player, SPINE);
-					final long arm = getQuestItemsCount(player, ARM_BONE);
-					final long thigh = getQuestItemsCount(player, THIGH_BONE);
-					final long complete = getQuestItemsCount(player, COMPLETE_SKELETON);
-					final long totalCount = (head + heart + liver + skull + rib + spine + arm + thigh + complete);
-					if (totalCount > 0)
-					{
-						long sum = ((head * 8) + (heart * 5) + (liver * 5) + (skull * 25) + (rib * 5) + (spine * 5) + (arm * 5) + (thigh * 5));
-						if (totalCount >= 10)
-						{
-							sum += 1629;
-						}
-						
-						if (complete > 0)
-						{
-							sum += 543 + (complete * 341);
-						}
-						
-						giveAdena(player, sum, true);
-					}
-					
-					takeItems(player, -1, getRegisteredItemIds());
-				}
-				
-				if (event.equals("30434-06.html"))
-				{
-					qs.exitQuest(true, true);
-				}
-				
-				htmltext = event;
-				break;
-			}
-			case "30434-09.html":
-			{
-				final long complete = getQuestItemsCount(player, COMPLETE_SKELETON);
-				if (complete > 0)
-				{
-					giveAdena(player, ((complete * 341) + 543), true);
-					takeItems(player, COMPLETE_SKELETON, -1);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs == null) || !qs.isStarted())
-		{
-			return super.onKill(npc, killer, isSummon);
-		}
-		
-		if (!Util.checkIfInRange(Config.ALT_PARTY_RANGE, killer, npc, true) || !hasQuestItems(killer, ANATOMY_DIAGRAM))
-		{
-			return super.onKill(npc, killer, isSummon);
-		}
-		
-		final int rnd = getRandom(100);
-		for (ItemChanceHolder drop : MONSTER_DROPS.get(npc.getId()))
-		{
-			if (rnd < drop.getChance())
-			{
-				giveItemRandomly(killer, npc, drop.getId(), 1, 0, 1, true);
-				break;
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case GUARD_CURTIZ:
+			case State.CREATED:
 			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30336-02.htm" : "30336-01.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						htmltext = hasQuestItems(player, ANATOMY_DIAGRAM) ? "30336-05.html" : "30336-04.html";
-						break;
-					}
-				}
+				htmltext = (player.getLevel() < 15) ? "30336-01.htm" : "30336-02.htm";
 				break;
 			}
-			case VARSAK:
+			case State.STARTED:
 			{
-				if (qs.isStarted() && hasQuestItems(player, ANATOMY_DIAGRAM))
+				switch (npc.getId())
 				{
-					htmltext = "30342-01.html";
-				}
-				break;
-			}
-			case SAMED:
-			{
-				if (qs.isStarted())
-				{
-					if (!hasQuestItems(player, ANATOMY_DIAGRAM))
+					case CURTIS:
 					{
-						htmltext = "30434-01.html";
+						htmltext = (!hasQuestItems(player, ANATOMY_DIAGRAM)) ? "30336-04.htm" : "30336-05.htm";
+						break;
 					}
-					else
+					case SAMED:
 					{
-						if (!hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
+						if (!hasQuestItems(player, ANATOMY_DIAGRAM))
 						{
-							htmltext = "30434-04.html";
-						}
-						else if (!hasQuestItems(player, COMPLETE_SKELETON))
-						{
-							htmltext = "30434-05.html";
+							htmltext = "30434-01.htm";
 						}
 						else
 						{
-							htmltext = "30434-08.html";
+							if (getNumberOfPieces(player) == 0)
+							{
+								htmltext = "30434-04.htm";
+							}
+							else
+							{
+								htmltext = !hasQuestItems(player, COMPLETE_SKELETON) ? "30434-05.htm" : "30434-08.htm";
+							}
 						}
+						break;
+					}
+					case VARSAK:
+					{
+						htmltext = "30342-01.htm";
+						break;
 					}
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (hasQuestItems(player, ANATOMY_DIAGRAM))
+		{
+			final int chance = getRandom(100);
+			for (ItemHolder drop : DROPLIST.get(npc.getId()))
+			{
+				if (chance < drop.getCount())
+				{
+					giveItems(player, drop.getId(), 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					break;
+				}
+			}
+		}
+		
+		return null;
+	}
+	
+	private static int getNumberOfPieces(Player player)
+	{
+		return (int) (getQuestItemsCount(player, ZOMBIE_HEAD) + getQuestItemsCount(player, SPINE) + getQuestItemsCount(player, ARM_BONE) + getQuestItemsCount(player, ZOMBIE_HEART) + getQuestItemsCount(player, ZOMBIE_LIVER) + getQuestItemsCount(player, SKULL) + getQuestItemsCount(player, RIB_BONE) + getQuestItemsCount(player, THIGH_BONE) + getQuestItemsCount(player, COMPLETE_SKELETON));
+	}
+	
+	private void payback(Player player)
+	{
+		final int count = getNumberOfPieces(player);
+		if (count > 0)
+		{
+			int reward = (int) ((30 * getQuestItemsCount(player, ZOMBIE_HEAD)) + (20 * getQuestItemsCount(player, ZOMBIE_HEART)) + (20 * getQuestItemsCount(player, ZOMBIE_LIVER)) + (100 * getQuestItemsCount(player, SKULL)) + (40 * getQuestItemsCount(player, RIB_BONE)) + (14 * getQuestItemsCount(player, SPINE)) + (14 * getQuestItemsCount(player, ARM_BONE)) + (14 * getQuestItemsCount(player, THIGH_BONE)) + (341 * getQuestItemsCount(player, COMPLETE_SKELETON)));
+			if (count > 10)
+			{
+				reward += 1629;
+			}
+			
+			if (hasQuestItems(player, COMPLETE_SKELETON))
+			{
+				reward += 543;
+			}
+			
+			takeItems(player, ZOMBIE_HEAD, -1);
+			takeItems(player, ZOMBIE_HEART, -1);
+			takeItems(player, ZOMBIE_LIVER, -1);
+			takeItems(player, SKULL, -1);
+			takeItems(player, RIB_BONE, -1);
+			takeItems(player, SPINE, -1);
+			takeItems(player, ARM_BONE, -1);
+			takeItems(player, THIGH_BONE, -1);
+			takeItems(player, COMPLETE_SKELETON, -1);
+			
+			giveAdena(player, reward, true);
+		}
 	}
 }

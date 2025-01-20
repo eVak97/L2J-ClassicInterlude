@@ -85,7 +85,7 @@ public class Q00636_TruthBeyond extends Quest
 				else
 				{
 					htmltext = "31329-01.htm";
-					qs.exitQuest(true, true);
+					qs.exitQuest(true, false);
 				}
 			}
 		}

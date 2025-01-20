@@ -16,9 +16,6 @@
  */
 package quests.Q00376_ExplorationOfTheGiantsCavePart1;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
@@ -27,16 +24,12 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Exploration of the Giants' Cave Part 1 (376)<br>
- * Original Jython script by Gnacik.
- * @author nonom
- */
 public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 {
-	// NPC
+	// NPCs
 	private static final int SOBLING = 31147;
 	private static final int CLIFF = 30182;
+	
 	// Items
 	private static final int PARCHMENT = 5944;
 	private static final int DICTIONARY_BASIC = 5891;
@@ -69,34 +62,22 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 		{5424, 5340}
 		// @formatter:on
 	};
-	// Mobs
-	private static final Map<Integer, Double> MOBS = new HashMap<>();
-	static
-	{
-		MOBS.put(20646, 0.302); // Halingka
-		MOBS.put(21058, 0.300); // Beast Lord
-		MOBS.put(20647, 0.258); // yintzu
-		MOBS.put(20648, 0.264); // paliote
-		MOBS.put(20649, 0.258); // hamrit
-		MOBS.put(20650, 0.266); // kranrot
-	}
 	
 	public Q00376_ExplorationOfTheGiantsCavePart1()
 	{
 		super(376);
+		registerQuestItems(DICTIONARY_BASIC, MYSTERIOUS_BOOK);
 		addStartNpc(SOBLING);
 		addTalkId(SOBLING, CLIFF);
-		addKillId(MOBS.keySet());
-		registerQuestItems(DICTIONARY_BASIC, MYSTERIOUS_BOOK);
-		registerQuestItems(PARCHMENT);
+		addKillId(20647, 20648, 20649, 20650);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
@@ -105,24 +86,24 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 		{
 			case "31147-03.htm":
 			{
-				qs.startQuest();
-				qs.set("condBook", "1");
+				st.startQuest();
+				st.set("condBook", "1");
 				giveItems(player, DICTIONARY_BASIC, 1);
 				break;
 			}
 			case "31147-04.htm":
 			{
-				htmltext = checkItems(player, qs);
+				htmltext = checkItems(player, st);
 				break;
 			}
 			case "31147-09.htm":
 			{
-				qs.exitQuest(true, true);
+				st.exitQuest(true, true);
 				break;
 			}
 			case "30182-02.htm":
 			{
-				qs.setCond(3, true);
+				st.setCond(3, true);
 				takeItems(player, MYSTERIOUS_BOOK, -1);
 				giveItems(player, DICTIONARY_INTERMEDIATE, 1);
 				break;
@@ -133,45 +114,12 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		// Drop parchment to anyone
-		Player partyMember = getRandomPartyMemberState(player, State.STARTED);
-		if (partyMember == null)
-		{
-			return null;
-		}
-		
-		QuestState sq = partyMember.getQuestState(getName());
-		if (sq != null)
-		{
-			giveItemRandomly(sq.getPlayer(), npc, PARCHMENT, 1, 0, MOBS.get(npc.getId()), true);
-			// Drop mysterious book to person who still need it
-			partyMember = getRandomPartyMember(player, "condBook", "1");
-			if (partyMember != null)
-			{
-				sq = partyMember.getQuestState(getName());
-				if (sq != null)
-				{
-					if (Rnd.get(100) < 10) // 10%
-					{
-						giveItems(partyMember, MYSTERIOUS_BOOK, 1);
-						playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						sq.unset("condBook");
-					}
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
 	public String onTalk(Npc npc, Player player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		final QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
@@ -180,12 +128,12 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 			}
 			case State.STARTED:
 			{
-				final int cond = qs.getCond();
+				final int cond = st.getCond();
 				switch (npc.getId())
 				{
 					case SOBLING:
 					{
-						htmltext = checkItems(player, qs);
+						htmltext = checkItems(player, st);
 						break;
 					}
 					case CLIFF:
@@ -208,14 +156,55 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 		return htmltext;
 	}
 	
-	private static String checkItems(Player player, QuestState qs)
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		// Drop parchment to anyone
+		Player partyMember = getRandomPartyMemberState(player, State.STARTED);
+		if (partyMember == null)
+		{
+			return null;
+		}
+		
+		QuestState st = partyMember.getQuestState(getName());
+		if (st == null)
+		{
+			return null;
+		}
+		
+		giveItemRandomly(partyMember, npc, PARCHMENT, 1, 0, 0.2, true);
+		
+		// Drop mysterious book to person who still need it
+		partyMember = getRandomPartyMember(player, "condBook", "1");
+		if (partyMember == null)
+		{
+			return null;
+		}
+		
+		st = partyMember.getQuestState(getName());
+		if (st == null)
+		{
+			return null;
+		}
+		
+		if (Rnd.get(100d) < 0.1)
+		{
+			giveItems(partyMember, MYSTERIOUS_BOOK, 1);
+			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			st.unset("condBook");
+		}
+		
+		return null;
+	}
+	
+	private static String checkItems(Player player, QuestState st)
 	{
 		if (hasQuestItems(player, MYSTERIOUS_BOOK))
 		{
-			final int cond = qs.getCond();
+			final int cond = st.getCond();
 			if (cond == 1)
 			{
-				qs.setCond(2, true);
+				st.setCond(2, true);
 				return "31147-07.htm";
 			}
 			return "31147-08.htm";

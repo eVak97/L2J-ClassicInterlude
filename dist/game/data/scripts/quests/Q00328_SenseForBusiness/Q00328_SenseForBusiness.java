@@ -26,137 +26,119 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Sense for Business (328)
- * @author xban1x
- */
 public class Q00328_SenseForBusiness extends Quest
 {
-	// NPCs
-	private static final int SARIEN = 30436;
-	private static final Map<Integer, int[]> MONSTER_EYES = new HashMap<>();
-	private static final Map<Integer, Integer> MONSTER_BASILISKS = new HashMap<>();
-	// @formatter:off
+	// Items
+	private static final int MONSTER_EYE_LENS = 1366;
+	private static final int MONSTER_EYE_CARCASS = 1347;
+	private static final int BASILISK_GIZZARD = 1348;
+	// Drop chances
+	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
 	{
-		MONSTER_EYES.put(20055, new int[] { 61, 62 });
-		MONSTER_EYES.put(20059, new int[] { 61, 62 });
-		MONSTER_EYES.put(20067, new int[] { 72, 74 });
-		MONSTER_EYES.put(20068, new int[] { 78, 79 });
-		MONSTER_BASILISKS.put(20070, 60);
-		MONSTER_BASILISKS.put(20072, 63);
+		CHANCES.put(20055, 48);
+		CHANCES.put(20059, 52);
+		CHANCES.put(20067, 68);
+		CHANCES.put(20068, 76);
+		CHANCES.put(20070, 500000);
+		CHANCES.put(20072, 510000);
 	}
-	// @formatter:on
-	// Items
-	private static final int MONSTER_EYE_CARCASS = 1347;
-	private static final int MONSTER_EYE_LENS = 1366;
-	private static final int BASILISK_GIZZARD = 1348;
-	// Misc
-	private static final int MONSTER_EYE_CARCASS_ADENA = 2;
-	private static final int MONSTER_EYE_LENS_ADENA = 10;
-	private static final int BASILISK_GIZZARD_ADENA = 2;
-	private static final int BONUS = 100;
-	private static final int BONUS_COUNT = 10;
-	private static final int MIN_LEVEL = 21;
 	
 	public Q00328_SenseForBusiness()
 	{
 		super(328);
-		addStartNpc(SARIEN);
-		addTalkId(SARIEN);
-		addKillId(MONSTER_EYES.keySet());
-		addKillId(MONSTER_BASILISKS.keySet());
-		registerQuestItems(MONSTER_EYE_CARCASS, MONSTER_EYE_LENS, BASILISK_GIZZARD);
+		registerQuestItems(MONSTER_EYE_LENS, MONSTER_EYE_CARCASS, BASILISK_GIZZARD);
+		addStartNpc(30436); // Sarien
+		addTalkId(30436);
+		addKillId(20055, 20059, 20067, 20068, 20070, 20072);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
-			{
-				case "30436-03.htm":
-				{
-					qs.startQuest();
-					htmltext = event;
-					break;
-				}
-				case "30436-06.html":
-				{
-					qs.exitQuest(true, true);
-					htmltext = event;
-					break;
-				}
-			}
+			return htmltext;
 		}
+		
+		if (event.equals("30436-03.htm"))
+		{
+			st.startQuest();
+		}
+		else if (event.equals("30436-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() < MIN_LEVEL ? "30436-01.htm" : "30436-02.htm";
+				htmltext = (player.getLevel() < 21) ? "30436-01.htm" : "30436-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				final long carcass = getQuestItemsCount(player, MONSTER_EYE_CARCASS);
-				final long lens = getQuestItemsCount(player, MONSTER_EYE_LENS);
-				final long gizzards = getQuestItemsCount(player, BASILISK_GIZZARD);
-				if ((carcass + lens + gizzards) > 0)
+				final int carcasses = (int) getQuestItemsCount(player, MONSTER_EYE_CARCASS);
+				final int lenses = (int) getQuestItemsCount(player, MONSTER_EYE_LENS);
+				final int gizzards = (int) getQuestItemsCount(player, BASILISK_GIZZARD);
+				final int all = carcasses + lenses + gizzards;
+				if (all == 0)
 				{
-					giveAdena(player, ((carcass * MONSTER_EYE_CARCASS_ADENA) + (lens * MONSTER_EYE_LENS_ADENA) + (gizzards * BASILISK_GIZZARD_ADENA) + ((carcass + lens + gizzards) >= BONUS_COUNT ? BONUS : 0)), true);
-					takeItems(player, -1, MONSTER_EYE_CARCASS, MONSTER_EYE_LENS, BASILISK_GIZZARD);
-					htmltext = "30436-05.html";
+					htmltext = "30436-04.htm";
 				}
 				else
 				{
-					htmltext = "30436-04.html";
+					htmltext = "30436-05.htm";
+					takeItems(player, MONSTER_EYE_CARCASS, -1);
+					takeItems(player, MONSTER_EYE_LENS, -1);
+					takeItems(player, BASILISK_GIZZARD, -1);
+					giveAdena(player, (30 * carcasses) + (2000 * lenses) + (75 * gizzards) + ((all >= 10) ? 618 : 0), true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && qs.isStarted())
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
 		{
-			final int chance = getRandom(100);
-			if (MONSTER_EYES.containsKey(npc.getId()))
+			return null;
+		}
+		
+		final int npcId = npc.getId();
+		final int chance = CHANCES.get(npcId);
+		if (npcId < 20069)
+		{
+			final int rnd = getRandom(100);
+			if (rnd < (chance + 1))
 			{
-				if (chance < MONSTER_EYES.get(npc.getId())[0])
-				{
-					giveItems(player, MONSTER_EYE_CARCASS, 1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-				else if (chance < MONSTER_EYES.get(npc.getId())[1])
-				{
-					giveItems(player, MONSTER_EYE_LENS, 1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-			}
-			else if (MONSTER_BASILISKS.containsKey(npc.getId()))
-			{
-				if (chance < MONSTER_BASILISKS.get(npc.getId()))
-				{
-					giveItems(player, BASILISK_GIZZARD, 1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
+				giveItems(player, rnd < chance ? MONSTER_EYE_CARCASS : MONSTER_EYE_LENS, 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
-		return super.onKill(npc, player, isPet);
+		else if (getRandom(1000000) < chance)
+		{
+			giveItems(player, BASILISK_GIZZARD, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

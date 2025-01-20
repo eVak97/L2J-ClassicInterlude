@@ -18,264 +18,156 @@ package quests.Q00023_LidiasHeart;
 
 import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.QuestSound;
-import org.l2jmobius.gameserver.model.Location;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 
 import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
-import quests.Q00024_InhabitantsOfTheForestOfTheDead.Q00024_InhabitantsOfTheForestOfTheDead;
 
-/**
- * Lidia's Heart (23)
- * @author ivantotov
- */
 public class Q00023_LidiasHeart extends Quest
 {
 	// NPCs
-	private static final int HIGH_PRIEST_INNOCENTIN = 31328;
-	private static final int TRADER_VIOLET = 31386;
-	private static final int TOMBSTONE = 31523;
-	private static final int GHOST_OF_VON_HELLMANN = 31524;
+	private static final int INNOCENTIN = 31328;
 	private static final int BROKEN_BOOKSHELF = 31526;
+	private static final int GHOST_OF_VON_HELLMANN = 31524;
+	private static final int TOMBSTONE = 31523;
+	private static final int VIOLET = 31386;
 	private static final int BOX = 31530;
+	
+	// NPC instance
+	private Npc _ghost = null;
+	
 	// Items
-	private static final int LIDIAS_DIARY = 7064;
+	private static final int FOREST_OF_DEADMAN_MAP = 7063;
 	private static final int SILVER_KEY = 7149;
+	private static final int LIDIA_HAIRPIN = 7148;
+	private static final int LIDIA_DIARY = 7064;
 	private static final int SILVER_SPEAR = 7150;
-	// Reward
-	private static final int MAP_FOREST_OF_THE_DEAD = 7063;
-	private static final int LIDIAS_HAIRPIN = 7148;
-	// Misc
-	private static final int MIN_LEVEL = 64;
-	// Locations
-	private static final Location GHOST_SPAWN = new Location(51432, -54570, -3136);
 	
 	public Q00023_LidiasHeart()
 	{
 		super(23);
-		addStartNpc(HIGH_PRIEST_INNOCENTIN);
-		addTalkId(HIGH_PRIEST_INNOCENTIN, TRADER_VIOLET, TOMBSTONE, GHOST_OF_VON_HELLMANN, BROKEN_BOOKSHELF, BOX);
-		addSpawnId(GHOST_OF_VON_HELLMANN);
-		registerQuestItems(LIDIAS_DIARY, SILVER_KEY, SILVER_SPEAR);
+		
+		registerQuestItems(FOREST_OF_DEADMAN_MAP, SILVER_KEY, LIDIA_DIARY, SILVER_SPEAR);
+		
+		addStartNpc(INNOCENTIN);
+		addTalkId(INNOCENTIN, BROKEN_BOOKSHELF, GHOST_OF_VON_HELLMANN, VIOLET, BOX, TOMBSTONE);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		if ("DESPAWN".equals(event))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			final Npc npc0 = npc.getVariables().getObject("npc0", Npc.class);
-			if (npc0 != null)
-			{
-				npc0.getVariables().set("SPAWNED", false);
-			}
-			npc.deleteMe();
-			return super.onEvent(event, npc, player);
+			return htmltext;
 		}
 		
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
-		{
-			return null;
-		}
-		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "31328-02.htm":
 			{
-				if (player.getLevel() < MIN_LEVEL)
+				st.startQuest();
+				giveItems(player, FOREST_OF_DEADMAN_MAP, 1);
+				giveItems(player, SILVER_KEY, 1);
+				break;
+			}
+			case "31328-06.htm":
+			{
+				st.setCond(2, true);
+				break;
+			}
+			case "31526-05.htm":
+			{
+				if (!hasQuestItems(player, LIDIA_HAIRPIN))
 				{
-					htmltext = "31328-02.htm";
-				}
-				else
-				{
-					if (!hasQuestItems(player, MAP_FOREST_OF_THE_DEAD))
+					giveItems(player, LIDIA_HAIRPIN, 1);
+					if (hasQuestItems(player, LIDIA_DIARY))
 					{
-						giveItems(player, MAP_FOREST_OF_THE_DEAD, 1);
-					}
-					giveItems(player, SILVER_KEY, 1);
-					qs.startQuest();
-					qs.setMemoState(1);
-					htmltext = "31328-03.htm";
-				}
-				break;
-			}
-			case "31328-05.html":
-			case "31328-06.html":
-			case "31328-10.html":
-			case "31328-11.html":
-			case "31328-16.html":
-			case "31328-17.html":
-			case "31328-18.html":
-			case "31524-03.html":
-			case "31526-04.html":
-			case "31526-05.html":
-			case "31526-07a.html":
-			case "31526-09.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "31328-07.html":
-			{
-				if (qs.isMemoState(1))
-				{
-					qs.setMemoState(2);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "31328-12.html":
-			{
-				if (qs.isMemoState(5) || qs.isMemoState(6))
-				{
-					qs.setMemoState(6);
-					qs.setCond(5);
-					htmltext = event;
-				}
-				break;
-			}
-			case "31328-13.html":
-			{
-				if (qs.isMemoState(5) || qs.isMemoState(6))
-				{
-					qs.setMemoState(7);
-					htmltext = event;
-				}
-				break;
-			}
-			case "31328-19.html":
-			{
-				playSound(player, QuestSound.AMBSOUND_MT_CREAK);
-				htmltext = event;
-				break;
-			}
-			case "31328-20.html":
-			{
-				if (qs.isMemoState(7))
-				{
-					qs.setMemoState(8);
-					qs.setCond(6);
-					htmltext = event;
-				}
-				break;
-			}
-			case "31328-21.html":
-			{
-				qs.setCond(5);
-				htmltext = event;
-				break;
-			}
-			case "31523-02.html":
-			{
-				if (qs.isMemoState(8) || qs.isMemoState(9))
-				{
-					playSound(player, QuestSound.SKILLSOUND_HORROR_02);
-					if (!npc.getVariables().getBoolean("SPAWNED", false))
-					{
-						npc.getVariables().set("SPAWNED", true);
-						final Npc ghost = addSpawn(npc, GHOST_OF_VON_HELLMANN, GHOST_SPAWN, false, 0);
-						ghost.getVariables().set("npc0", npc);
-						htmltext = event;
+						st.setCond(4, true);
 					}
 					else
 					{
-						htmltext = "31523-03.html";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 				}
 				break;
 			}
-			case "31523-06.html":
+			case "31526-11.htm":
 			{
-				if (qs.isMemoState(9))
+				if (!hasQuestItems(player, LIDIA_DIARY))
 				{
-					giveItems(player, SILVER_KEY, 1);
-					qs.setMemoState(10);
-					qs.setCond(8);
-					htmltext = event;
+					giveItems(player, LIDIA_DIARY, 1);
+					if (hasQuestItems(player, LIDIA_HAIRPIN))
+					{
+						st.setCond(4, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
 				}
 				break;
 			}
-			case "31524-02.html":
+			case "31328-11.htm":
 			{
-				playSound(player, QuestSound.CHRSOUND_MHFIGHTER_CRY);
-				htmltext = event;
-				break;
-			}
-			case "31524-04.html":
-			{
-				if (qs.isMemoState(8))
+				if (st.getCond() < 5)
 				{
-					takeItems(player, LIDIAS_DIARY, 1);
-					qs.setMemoState(9);
-					qs.setCond(7);
-					htmltext = event;
+					st.setCond(5, true);
 				}
 				break;
 			}
-			case "31526-02.html":
+			case "31328-19.htm":
 			{
-				if (qs.isMemoState(2) && hasQuestItems(player, SILVER_KEY))
+				st.setCond(6, true);
+				break;
+			}
+			case "31524-04.htm":
+			{
+				st.setCond(7, true);
+				takeItems(player, LIDIA_DIARY, 1);
+				break;
+			}
+			case "31523-02.htm":
+			{
+				if (_ghost == null)
 				{
-					takeItems(player, SILVER_KEY, -1);
-					qs.setMemoState(3);
-					htmltext = event;
+					_ghost = addSpawn(31524, 51432, -54570, -3136, 0, false, 60000);
+					_ghost.broadcastSay(ChatType.GENERAL, "Who awoke me?");
+					startQuestTimer("ghost_cleanup", 58000, null, player, false);
 				}
 				break;
 			}
-			case "31526-06.html":
+			case "31523-05.htm":
 			{
-				if (!hasQuestItems(player, LIDIAS_HAIRPIN))
+				// Don't launch twice the same task...
+				if (getQuestTimer("tomb_digger", null, player) == null)
 				{
-					giveItems(player, LIDIAS_HAIRPIN, 1);
-				}
-				qs.setMemoState(qs.getMemoState() + 1);
-				if (hasQuestItems(player, LIDIAS_DIARY))
-				{
-					qs.setCond(4);
-				}
-				htmltext = event;
-				break;
-			}
-			case "31526-08.html":
-			{
-				playSound(player, QuestSound.ITEMSOUND_ARMOR_LEATHER);
-				htmltext = event;
-				break;
-			}
-			case "31526-10.html":
-			{
-				playSound(player, QuestSound.AMBSOUND_EG_DRON);
-				htmltext = event;
-				break;
-			}
-			case "31526-11.html":
-			{
-				giveItems(player, LIDIAS_DIARY, 1);
-				qs.setMemoState(qs.getMemoState() + 1);
-				if (hasQuestItems(player, LIDIAS_HAIRPIN))
-				{
-					qs.setCond(4);
-				}
-				htmltext = event;
-				break;
-			}
-			case "31530-02.html":
-			{
-				if (qs.isMemoState(11) && hasQuestItems(player, SILVER_KEY))
-				{
-					giveItems(player, SILVER_SPEAR, 1);
-					takeItems(player, SILVER_KEY, -1);
-					playSound(player, QuestSound.ITEMSOUND_WEAPON_SPEAR);
-					qs.setCond(10);
-					htmltext = event;
+					startQuestTimer("tomb_digger", 10000, null, player, false);
 				}
 				break;
+			}
+			case "tomb_digger":
+			{
+				htmltext = "31523-06.htm";
+				st.setCond(8, true);
+				giveItems(player, SILVER_KEY, 1);
+				break;
+			}
+			case "31530-02.htm":
+			{
+				st.setCond(10, true);
+				takeItems(player, SILVER_KEY, 1);
+				giveItems(player, SILVER_SPEAR, 1);
+				break;
+			}
+			case "ghost_cleanup":
+			{
+				_ghost = null;
+				return null;
 			}
 		}
 		return htmltext;
@@ -284,224 +176,169 @@ public class Q00023_LidiasHeart extends Quest
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == HIGH_PRIEST_INNOCENTIN)
+			case State.CREATED:
 			{
-				final QuestState q22 = player.getQuestState(Q00022_TragedyInVonHellmannForest.class.getSimpleName());
-				if ((q22 != null) && q22.isCompleted())
+				final QuestState st2 = player.getQuestState(Q00022_TragedyInVonHellmannForest.class.getSimpleName());
+				if ((st2 != null) && st2.isCompleted())
 				{
-					htmltext = "31328-01.htm";
+					if (player.getLevel() >= 64)
+					{
+						htmltext = "31328-01.htm";
+					}
+					else
+					{
+						htmltext = "31328-00a.htm";
+					}
 				}
 				else
 				{
-					htmltext = "31328-01a.html";
+					htmltext = "31328-00.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case HIGH_PRIEST_INNOCENTIN:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					switch (qs.getMemoState())
+					case INNOCENTIN:
 					{
-						case 1:
+						if (cond == 1)
 						{
-							htmltext = "31328-04.html";
-							break;
+							htmltext = "31328-03.htm";
 						}
-						case 2:
+						else if (cond == 2)
 						{
-							htmltext = "31328-08.html";
-							break;
+							htmltext = "31328-07.htm";
 						}
-						case 5:
+						else if (cond == 4)
 						{
-							htmltext = "31328-09.html";
-							break;
+							htmltext = "31328-08.htm";
 						}
-						case 6:
+						else if (cond == 5)
 						{
-							htmltext = "31328-14.html";
-							break;
+							htmltext = "31328-10.htm";
 						}
-						case 7:
+						else if (cond > 5)
 						{
-							htmltext = "31328-15.html";
-							break;
+							htmltext = "31328-21.htm";
 						}
-						case 8:
-						{
-							qs.setCond(6, true);
-							htmltext = "31328-22.html";
-							break;
-						}
+						break;
 					}
-					break;
-				}
-				case TRADER_VIOLET:
-				{
-					switch (qs.getMemoState())
+					case BROKEN_BOOKSHELF:
 					{
-						case 10:
+						if (cond == 2)
 						{
-							if (hasQuestItems(player, SILVER_KEY))
-							{
-								qs.setMemoState(11);
-								qs.setCond(9, true);
-								htmltext = "31386-01.html";
-							}
-							break;
+							htmltext = "31526-00.htm";
+							st.setCond(3, true);
 						}
-						case 11:
+						else if (cond == 3)
 						{
-							if (!hasQuestItems(player, SILVER_SPEAR))
+							if (!hasQuestItems(player, LIDIA_DIARY))
 							{
-								htmltext = "31386-02.html";
+								htmltext = (!hasQuestItems(player, LIDIA_HAIRPIN)) ? "31526-02.htm" : "31526-06.htm";
+							}
+							else if (!hasQuestItems(player, LIDIA_HAIRPIN))
+							{
+								htmltext = "31526-12.htm";
+							}
+						}
+						else if (cond > 3)
+						{
+							htmltext = "31526-13.htm";
+						}
+						break;
+					}
+					case GHOST_OF_VON_HELLMANN:
+					{
+						if (cond == 6)
+						{
+							htmltext = "31524-01.htm";
+						}
+						else if (cond > 6)
+						{
+							htmltext = "31524-05.htm";
+						}
+						break;
+					}
+					case TOMBSTONE:
+					{
+						if (cond == 6)
+						{
+							htmltext = (_ghost == null) ? "31523-01.htm" : "31523-03.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "31523-04.htm";
+						}
+						else if (cond > 7)
+						{
+							htmltext = "31523-06.htm";
+						}
+						break;
+					}
+					case VIOLET:
+					{
+						if (cond == 8)
+						{
+							htmltext = "31386-01.htm";
+							st.setCond(9, true);
+						}
+						else if (cond == 9)
+						{
+							htmltext = "31386-02.htm";
+						}
+						else if (cond == 10)
+						{
+							if (hasQuestItems(player, SILVER_SPEAR))
+							{
+								htmltext = "31386-03.htm";
+								takeItems(player, SILVER_SPEAR, 1);
+								giveAdena(player, 100000, true);
+								st.exitQuest(false, true);
 							}
 							else
 							{
-								giveAdena(player, 350000, true);
-								addExpAndSp(player, 456893, 42112);
-								qs.exitQuest(false, true);
-								htmltext = "31386-03.html";
+								htmltext = "31386-02.htm";
+								st.setCond(9);
 							}
-							break;
 						}
+						break;
 					}
-					break;
+					case BOX:
+					{
+						if (cond == 9)
+						{
+							htmltext = "31530-01.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "31530-03.htm";
+						}
+						break;
+					}
 				}
-				case TOMBSTONE:
+				break;
+			}
+			case State.COMPLETED:
+			{
+				if (npc.getId() == VIOLET)
 				{
-					switch (qs.getMemoState())
-					{
-						case 8:
-						{
-							htmltext = "31523-01.html";
-							break;
-						}
-						case 9:
-						{
-							htmltext = "31523-04.html";
-							break;
-						}
-						case 10:
-						{
-							htmltext = "31523-05.html";
-							break;
-						}
-					}
-					break;
+					htmltext = "31386-04.htm";
 				}
-				case GHOST_OF_VON_HELLMANN:
+				else
 				{
-					final int memoState = qs.getMemoState();
-					if (memoState == 8)
-					{
-						htmltext = "31524-01.html";
-					}
-					else if (memoState == 9)
-					{
-						if (!hasQuestItems(player, SILVER_KEY))
-						{
-							htmltext = "31524-05.html";
-						}
-					}
-					else if ((memoState == 9) || (memoState == 10))
-					{
-						if (hasQuestItems(player, SILVER_KEY))
-						{
-							qs.setMemoState(10);
-							htmltext = "31524-06.html";
-						}
-					}
-					break;
+					htmltext = getAlreadyCompletedMsg(player);
 				}
-				case BROKEN_BOOKSHELF:
-				{
-					switch (qs.getMemoState())
-					{
-						case 2:
-						{
-							if (hasQuestItems(player, SILVER_KEY))
-							{
-								qs.setCond(3, true);
-								htmltext = "31526-01.html";
-							}
-							break;
-						}
-						case 3:
-						{
-							htmltext = "31526-03.html";
-							break;
-						}
-						case 4:
-						{
-							if (hasQuestItems(player, LIDIAS_HAIRPIN))
-							{
-								htmltext = "31526-07.html";
-							}
-							else if (hasQuestItems(player, LIDIAS_DIARY))
-							{
-								htmltext = "31526-12.html";
-							}
-							break;
-						}
-						case 5:
-						{
-							if (hasQuestItems(player, LIDIAS_HAIRPIN, LIDIAS_DIARY))
-							{
-								htmltext = "31526-13.html";
-							}
-							break;
-						}
-					}
-					break;
-				}
-				case BOX:
-				{
-					if (qs.getMemoState() == 11)
-					{
-						if (hasQuestItems(player, SILVER_KEY))
-						{
-							htmltext = "31530-01.html";
-						}
-						else if (hasQuestItems(player, SILVER_SPEAR))
-						{
-							htmltext = "31530-03.html";
-						}
-					}
-					break;
-				}
+				break;
 			}
 		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == HIGH_PRIEST_INNOCENTIN)
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-			}
-			else if (npc.getId() == TRADER_VIOLET)
-			{
-				final QuestState q24 = player.getQuestState(Q00024_InhabitantsOfTheForestOfTheDead.class.getSimpleName());
-				if ((q24 == null))
-				{
-					htmltext = "31386-04.html";
-				}
-			}
-		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onSpawn(Npc npc)
-	{
-		startQuestTimer("DESPAWN", 300000, npc, null);
-		npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, "Who awoke me?"));
-		return super.onSpawn(npc);
 	}
 }

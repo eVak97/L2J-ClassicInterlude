@@ -16,314 +16,271 @@
  */
 package quests.Q00405_PathOfTheCleric;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path Of The Cleric (405)
- * @author ivantotov
- */
 public class Q00405_PathOfTheCleric extends Quest
 {
 	// NPCs
 	private static final int GALLINT = 30017;
 	private static final int ZIGAUNT = 30022;
 	private static final int VIVYAN = 30030;
-	private static final int TRADER_SIMPLON = 30253;
-	private static final int GUARD_PRAGA = 30333;
+	private static final int PRAGA = 30333;
+	private static final int SIMPLON = 30253;
 	private static final int LIONEL = 30408;
 	// Items
-	private static final int LETTER_OF_ORDER_1ST = 1191;
-	private static final int LETTER_OF_ORDER_2ND = 1192;
-	private static final int LIONELS_BOOK = 1193;
+	private static final int LETTER_OF_ORDER_1 = 1191;
+	private static final int LETTER_OF_ORDER_2 = 1192;
+	private static final int LIONEL_BOOK = 1193;
 	private static final int BOOK_OF_VIVYAN = 1194;
 	private static final int BOOK_OF_SIMPLON = 1195;
 	private static final int BOOK_OF_PRAGA = 1196;
 	private static final int CERTIFICATE_OF_GALLINT = 1197;
 	private static final int PENDANT_OF_MOTHER = 1198;
 	private static final int NECKLACE_OF_MOTHER = 1199;
-	private static final int LEMONIELLS_COVENANT = 1200;
+	private static final int LIONEL_COVENANT = 1200;
 	// Reward
-	private static final int MARK_OF_FAITH = 1201;
-	// Monster
-	private static final int RUIN_ZOMBIE = 20026;
-	private static final int RUIN_ZOMBIE_LEADER = 20029;
-	// Misc
-	private static final int MIN_LEVEL = 19;
+	private static final int MARK_OF_FATE = 1201;
 	
 	public Q00405_PathOfTheCleric()
 	{
 		super(405);
+		registerQuestItems(LETTER_OF_ORDER_1, BOOK_OF_SIMPLON, BOOK_OF_PRAGA, BOOK_OF_VIVYAN, NECKLACE_OF_MOTHER, PENDANT_OF_MOTHER, LETTER_OF_ORDER_2, LIONEL_BOOK, CERTIFICATE_OF_GALLINT, LIONEL_COVENANT);
 		addStartNpc(ZIGAUNT);
-		addTalkId(ZIGAUNT, GALLINT, VIVYAN, TRADER_SIMPLON, GUARD_PRAGA, LIONEL);
-		addKillId(RUIN_ZOMBIE, RUIN_ZOMBIE_LEADER);
-		registerQuestItems(LETTER_OF_ORDER_1ST, LETTER_OF_ORDER_2ND, LIONELS_BOOK, BOOK_OF_VIVYAN, BOOK_OF_SIMPLON, BOOK_OF_PRAGA, CERTIFICATE_OF_GALLINT, PENDANT_OF_MOTHER, NECKLACE_OF_MOTHER, LEMONIELLS_COVENANT);
+		addTalkId(ZIGAUNT, SIMPLON, PRAGA, VIVYAN, LIONEL, GALLINT);
+		addKillId(20029, 20026);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("30022-05.htm"))
 		{
-			case "ACCEPT":
-			{
-				if (player.getClassId() == ClassId.MAGE)
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, MARK_OF_FAITH))
-						{
-							htmltext = "30022-04.htm";
-						}
-						else
-						{
-							qs.startQuest();
-							giveItems(player, LETTER_OF_ORDER_1ST, 1);
-							htmltext = "30022-05.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30022-03.htm";
-					}
-				}
-				else if (player.getClassId() == ClassId.CLERIC)
-				{
-					htmltext = "30022-02a.htm";
-				}
-				else
-				{
-					htmltext = "30022-02.htm";
-				}
-				break;
-			}
+			st.startQuest();
+			giveItems(player, LETTER_OF_ORDER_1, 1);
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true) && hasQuestItems(killer, NECKLACE_OF_MOTHER) && !hasQuestItems(killer, PENDANT_OF_MOTHER))
-		{
-			giveItems(killer, PENDANT_OF_MOTHER, 1);
-			playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_MIDDLE);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == ZIGAUNT)
+			case State.CREATED:
 			{
-				if (!hasQuestItems(player, MARK_OF_FAITH))
+				if (player.getClassId() != ClassId.MAGE)
 				{
-					htmltext = "30022-01.htm";
+					htmltext = (player.getClassId() == ClassId.CLERIC) ? "30022-02a.htm" : "30022-02.htm";
 				}
-				else
+				else if (player.getLevel() < 19)
+				{
+					htmltext = "30022-03.htm";
+				}
+				else if (hasQuestItems(player, MARK_OF_FATE))
 				{
 					htmltext = "30022-04.htm";
 				}
-			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == ZIGAUNT)
-			{
-				return htmltext;
-			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case ZIGAUNT:
+				else
 				{
-					if (!hasQuestItems(player, LEMONIELLS_COVENANT) && hasQuestItems(player, LETTER_OF_ORDER_2ND))
+					htmltext = "30022-01.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case ZIGAUNT:
 					{
-						htmltext = "30022-07.html";
-					}
-					else if (hasQuestItems(player, LETTER_OF_ORDER_2ND, LEMONIELLS_COVENANT))
-					{
-						takeItems(player, LETTER_OF_ORDER_2ND, 1);
-						takeItems(player, LEMONIELLS_COVENANT, 1);
-						giveItems(player, MARK_OF_FAITH, 1);
-						final int level = player.getLevel();
-						if (level >= 20)
+						if (cond == 1)
 						{
-							addExpAndSp(player, 80314, 5087);
+							htmltext = "30022-06.htm";
 						}
-						else if (level == 19)
+						else if (cond == 2)
 						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30022-09.html";
-					}
-					else if (hasQuestItems(player, LETTER_OF_ORDER_1ST))
-					{
-						if (hasQuestItems(player, BOOK_OF_VIVYAN, BOOK_OF_SIMPLON, BOOK_OF_PRAGA))
-						{
-							takeItems(player, LETTER_OF_ORDER_1ST, 1);
-							giveItems(player, LETTER_OF_ORDER_2ND, 1);
-							takeItems(player, BOOK_OF_VIVYAN, 1);
-							takeItems(player, BOOK_OF_SIMPLON, -1);
+							htmltext = "30022-08.htm";
+							st.setCond(3, true);
 							takeItems(player, BOOK_OF_PRAGA, 1);
-							qs.setCond(3, true);
-							htmltext = "30022-08.html";
+							takeItems(player, BOOK_OF_VIVYAN, 1);
+							takeItems(player, BOOK_OF_SIMPLON, 3);
+							takeItems(player, LETTER_OF_ORDER_1, 1);
+							giveItems(player, LETTER_OF_ORDER_2, 1);
 						}
-						else
+						else if ((cond > 2) && (cond < 6))
 						{
-							htmltext = "30022-06.html";
+							htmltext = "30022-07.htm";
 						}
+						else if (cond == 6)
+						{
+							htmltext = "30022-09.htm";
+							takeItems(player, LETTER_OF_ORDER_2, 1);
+							takeItems(player, LIONEL_COVENANT, 1);
+							giveItems(player, MARK_OF_FATE, 1);
+							addExpAndSp(player, 3200, 5610);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
+						}
+						break;
 					}
-					break;
-				}
-				case GALLINT:
-				{
-					if (!hasQuestItems(player, LEMONIELLS_COVENANT) && hasQuestItems(player, LETTER_OF_ORDER_2ND))
+					case SIMPLON:
 					{
-						if (!hasQuestItems(player, CERTIFICATE_OF_GALLINT) && hasQuestItems(player, LIONELS_BOOK))
+						if ((cond == 1) && !hasQuestItems(player, BOOK_OF_SIMPLON))
 						{
-							takeItems(player, LIONELS_BOOK, 1);
-							giveItems(player, CERTIFICATE_OF_GALLINT, 1);
-							qs.setCond(5, true);
-							htmltext = "30017-01.html";
-						}
-						else
-						{
-							htmltext = "30017-02.html";
-						}
-					}
-					break;
-				}
-				case VIVYAN:
-				{
-					if (hasQuestItems(player, LETTER_OF_ORDER_1ST))
-					{
-						if (!hasQuestItems(player, BOOK_OF_VIVYAN))
-						{
-							giveItems(player, BOOK_OF_VIVYAN, 1);
-							if ((getQuestItemsCount(player, BOOK_OF_SIMPLON) >= 3) && (getQuestItemsCount(player, BOOK_OF_VIVYAN) >= 0) && (getQuestItemsCount(player, BOOK_OF_PRAGA) >= 1))
-							{
-								qs.setCond(2, true);
-							}
-							htmltext = "30030-01.html";
-						}
-						else
-						{
-							htmltext = "30030-02.html";
-						}
-					}
-					break;
-				}
-				case TRADER_SIMPLON:
-				{
-					if (hasQuestItems(player, LETTER_OF_ORDER_1ST))
-					{
-						if (!hasQuestItems(player, BOOK_OF_SIMPLON))
-						{
+							htmltext = "30253-01.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 							giveItems(player, BOOK_OF_SIMPLON, 3);
-							if ((getQuestItemsCount(player, BOOK_OF_SIMPLON) >= 0) && (getQuestItemsCount(player, BOOK_OF_VIVYAN) >= 1) && (getQuestItemsCount(player, BOOK_OF_PRAGA) >= 1))
+						}
+						else if ((cond > 1) || hasQuestItems(player, BOOK_OF_SIMPLON))
+						{
+							htmltext = "30253-02.htm";
+						}
+						break;
+					}
+					case PRAGA:
+					{
+						if (cond == 1)
+						{
+							if (!hasQuestItems(player, BOOK_OF_PRAGA) && !hasQuestItems(player, NECKLACE_OF_MOTHER) && hasQuestItems(player, BOOK_OF_SIMPLON))
 							{
-								qs.setCond(2, true);
+								htmltext = "30333-01.htm";
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								giveItems(player, NECKLACE_OF_MOTHER, 1);
 							}
-							htmltext = "30253-01.html";
-						}
-						else
-						{
-							htmltext = "30253-02.html";
-						}
-					}
-					break;
-				}
-				case GUARD_PRAGA:
-				{
-					if (hasQuestItems(player, LETTER_OF_ORDER_1ST))
-					{
-						if (!hasAtLeastOneQuestItem(player, BOOK_OF_PRAGA, NECKLACE_OF_MOTHER))
-						{
-							giveItems(player, NECKLACE_OF_MOTHER, 1);
-							htmltext = "30333-01.html";
-						}
-						else if (!hasAtLeastOneQuestItem(player, BOOK_OF_PRAGA, PENDANT_OF_MOTHER) && hasQuestItems(player, NECKLACE_OF_MOTHER))
-						{
-							htmltext = "30333-02.html";
-						}
-						else if (!hasQuestItems(player, BOOK_OF_PRAGA) && hasQuestItems(player, NECKLACE_OF_MOTHER, PENDANT_OF_MOTHER))
-						{
-							giveItems(player, BOOK_OF_PRAGA, 1);
-							takeItems(player, PENDANT_OF_MOTHER, 1);
-							takeItems(player, NECKLACE_OF_MOTHER, 1);
-							if ((getQuestItemsCount(player, BOOK_OF_SIMPLON) >= 3) && (getQuestItemsCount(player, BOOK_OF_VIVYAN) >= 1) && (getQuestItemsCount(player, BOOK_OF_PRAGA) >= 0))
+							else if (!hasQuestItems(player, PENDANT_OF_MOTHER))
 							{
-								qs.setCond(2, true);
+								htmltext = "30333-02.htm";
 							}
-							htmltext = "30333-03.html";
+							else if (hasQuestItems(player, PENDANT_OF_MOTHER))
+							{
+								htmltext = "30333-03.htm";
+								takeItems(player, NECKLACE_OF_MOTHER, 1);
+								takeItems(player, PENDANT_OF_MOTHER, 1);
+								giveItems(player, BOOK_OF_PRAGA, 1);
+								
+								if (hasQuestItems(player, BOOK_OF_VIVYAN))
+								{
+									st.setCond(2, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
 						}
-						else if (hasQuestItems(player, BOOK_OF_PRAGA))
+						else if ((cond > 1) || (hasQuestItems(player, BOOK_OF_PRAGA)))
 						{
-							htmltext = "30333-04.html";
+							htmltext = "30333-04.htm";
 						}
+						break;
 					}
-					break;
+					case VIVYAN:
+					{
+						if ((cond == 1) && !hasQuestItems(player, BOOK_OF_VIVYAN) && hasQuestItems(player, BOOK_OF_SIMPLON))
+						{
+							htmltext = "30030-01.htm";
+							giveItems(player, BOOK_OF_VIVYAN, 1);
+							
+							if (hasQuestItems(player, BOOK_OF_PRAGA))
+							{
+								st.setCond(2, true);
+							}
+							else
+							{
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							}
+						}
+						else if ((cond > 1) || hasQuestItems(player, BOOK_OF_VIVYAN))
+						{
+							htmltext = "30030-02.htm";
+						}
+						break;
+					}
+					case LIONEL:
+					{
+						if (cond < 3)
+						{
+							htmltext = "30408-02.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30408-01.htm";
+							st.setCond(4, true);
+							giveItems(player, LIONEL_BOOK, 1);
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30408-03.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30408-04.htm";
+							st.setCond(6, true);
+							takeItems(player, CERTIFICATE_OF_GALLINT, 1);
+							giveItems(player, LIONEL_COVENANT, 1);
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30408-05.htm";
+						}
+						break;
+					}
+					case GALLINT:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30017-01.htm";
+							st.setCond(5, true);
+							takeItems(player, LIONEL_BOOK, 1);
+							giveItems(player, CERTIFICATE_OF_GALLINT, 1);
+						}
+						else if (cond > 4)
+						{
+							htmltext = "30017-02.htm";
+						}
+						break;
+					}
 				}
-				case LIONEL:
-				{
-					if (!hasQuestItems(player, LETTER_OF_ORDER_2ND))
-					{
-						htmltext = "30408-02.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LIONELS_BOOK, LEMONIELLS_COVENANT, CERTIFICATE_OF_GALLINT) && hasQuestItems(player, LETTER_OF_ORDER_2ND))
-					{
-						giveItems(player, LIONELS_BOOK, 1);
-						qs.setCond(4, true);
-						htmltext = "30408-01.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LEMONIELLS_COVENANT, CERTIFICATE_OF_GALLINT) && hasQuestItems(player, LETTER_OF_ORDER_2ND, LIONELS_BOOK))
-					{
-						htmltext = "30408-03.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LIONELS_BOOK, LEMONIELLS_COVENANT) && hasQuestItems(player, LETTER_OF_ORDER_2ND, CERTIFICATE_OF_GALLINT))
-					{
-						takeItems(player, CERTIFICATE_OF_GALLINT, 1);
-						giveItems(player, LEMONIELLS_COVENANT, 1);
-						qs.setCond(6, true);
-						htmltext = "30408-04.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LIONELS_BOOK, CERTIFICATE_OF_GALLINT) && hasQuestItems(player, LETTER_OF_ORDER_2ND, LEMONIELLS_COVENANT))
-					{
-						htmltext = "30408-05.html";
-					}
-					break;
-				}
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (hasQuestItems(player, NECKLACE_OF_MOTHER) && !hasQuestItems(player, PENDANT_OF_MOTHER))
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+			giveItems(player, PENDANT_OF_MOTHER, 1);
+		}
+		
+		return null;
 	}
 }

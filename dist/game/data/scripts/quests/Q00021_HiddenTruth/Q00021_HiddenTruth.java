@@ -16,437 +16,345 @@
  */
 package quests.Q00021_HiddenTruth;
 
+import org.l2jmobius.gameserver.ai.CtrlIntention;
 import org.l2jmobius.gameserver.enums.ChatType;
-import org.l2jmobius.gameserver.enums.QuestSound;
-import org.l2jmobius.gameserver.instancemanager.WalkingManager;
 import org.l2jmobius.gameserver.model.Location;
-import org.l2jmobius.gameserver.model.World;
-import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
 
-import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
-
-/**
- * Hidden Truth (21)
- * @author xban1x
- */
 public class Q00021_HiddenTruth extends Quest
 {
 	// NPCs
-	private static final int INNOCENTIN = 31328;
-	private static final int AGRIPEL = 31348;
-	private static final int BENEDICT = 31349;
-	private static final int DOMINIC = 31350;
 	private static final int MYSTERIOUS_WIZARD = 31522;
 	private static final int TOMBSTONE = 31523;
-	private static final int GHOST_OF_VON_HELLMAN = 31524;
-	private static final int GHOST_OF_VON_HELLMANS_PAGE = 31525;
+	private static final int VON_HELLMAN_DUKE = 31524;
+	private static final int VON_HELLMAN_PAGE = 31525;
 	private static final int BROKEN_BOOKSHELF = 31526;
-	// Location
-	private static final Location GHOST_LOC = new Location(51432, -54570, -3136, 0);
-	private static final Location PAGE_LOC = new Location(51446, -54514, -3136, 0);
+	private static final int AGRIPEL = 31348;
+	private static final int DOMINIC = 31350;
+	private static final int BENEDICT = 31349;
+	private static final int INNOCENTIN = 31328;
 	// Items
 	private static final int CROSS_OF_EINHASAD = 7140;
-	private static final int CROSS_OF_EINHASAD2 = 7141;
-	// Misc
-	private static final int MIN_LEVEL = 63;
-	private static final String PAGE_ROUTE_NAME = "rune_ghost1b";
-	private static int PAGE_COUNT = 0;
-	private static boolean GHOST_SPAWNED = false;
-	private boolean PAGE_SPAWNED = false;
-	private boolean MOVE_ENDED = false;
+	private static final int CROSS_OF_EINHASAD_NEXT_QUEST = 7141;
+	
+	private static final Location[] PAGE_LOCS =
+	{
+		new Location(51992, -54424, -3160),
+		new Location(52328, -53400, -3160),
+		new Location(51928, -51656, -3096)
+	};
+	
+	private Npc _duke;
+	private Npc _page;
 	
 	public Q00021_HiddenTruth()
 	{
 		super(21);
-		addStartNpc(MYSTERIOUS_WIZARD);
-		addTalkId(MYSTERIOUS_WIZARD, TOMBSTONE, GHOST_OF_VON_HELLMAN, GHOST_OF_VON_HELLMANS_PAGE, BROKEN_BOOKSHELF, AGRIPEL, BENEDICT, DOMINIC, INNOCENTIN);
-		addRouteFinishedId(GHOST_OF_VON_HELLMANS_PAGE);
-		addCreatureSeeId(GHOST_OF_VON_HELLMANS_PAGE);
 		registerQuestItems(CROSS_OF_EINHASAD);
+		addStartNpc(MYSTERIOUS_WIZARD);
+		addTalkId(MYSTERIOUS_WIZARD, TOMBSTONE, VON_HELLMAN_DUKE, VON_HELLMAN_PAGE, BROKEN_BOOKSHELF, AGRIPEL, DOMINIC, BENEDICT, INNOCENTIN);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
+			return htmltext;
+		}
+		
+		switch (event)
+		{
+			case "31522-02.htm":
 			{
-				case "31328-02.html":
-				case "31328-03.html":
-				case "31328-04.html":
-				case "31522-01.htm":
-				case "31522-04.html":
-				case "31523-02.html":
-				case "31524-02.html":
-				case "31524-03.html":
-				case "31524-04.html":
-				case "31524-05.html":
-				case "31526-01.html":
-				case "31526-02.html":
-				case "31526-04.html":
-				case "31526-05.html":
-				case "31526-06.html":
-				case "31526-12.html":
-				case "31526-13.html":
+				st.startQuest();
+				break;
+			}
+			case "31523-03.htm":
+			{
+				st.setCond(2, true);
+				spawnTheDuke(player);
+				break;
+			}
+			case "31524-06.htm":
+			{
+				st.setCond(3, true);
+				spawnThePage(player);
+				break;
+			}
+			case "31526-08.htm":
+			{
+				st.setCond(5, true);
+				break;
+			}
+			case "31526-14.htm":
+			{
+				st.setCond(6, true);
+				giveItems(player, CROSS_OF_EINHASAD, 1);
+				break;
+			}
+			case "1":
+			{
+				_page.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, PAGE_LOCS[0]);
+				_page.broadcastSay(ChatType.GENERAL, "Follow me...");
+				startQuestTimer("2", 5000, _page, player, false);
+				return null;
+			}
+			case "2":
+			{
+				_page.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, PAGE_LOCS[1]);
+				startQuestTimer("3", 12000, _page, player, false);
+				return null;
+			}
+			case "3":
+			{
+				_page.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, PAGE_LOCS[2]);
+				startQuestTimer("4", 18000, _page, player, false);
+				return null;
+			}
+			case "4":
+			{
+				st.set("end_walk", "1");
+				_page.broadcastSay(ChatType.GENERAL, "Please check this bookcase, " + player.getName() + ".");
+				startQuestTimer("5", 47000, _page, player, false);
+				return null;
+			}
+			case "5":
+			{
+				_page.broadcastSay(ChatType.GENERAL, "I'm confused! Maybe it's time to go back.");
+				return null;
+			}
+			case "31328-05.htm":
+			{
+				if (hasQuestItems(player, CROSS_OF_EINHASAD))
 				{
-					htmltext = event;
-					break;
+					takeItems(player, CROSS_OF_EINHASAD, 1);
+					giveItems(player, CROSS_OF_EINHASAD_NEXT_QUEST, 1);
+					st.exitQuest(false, true);
 				}
-				case "31328-05.html":
-				{
-					if (qs.isCond(7))
-					{
-						giveItems(player, CROSS_OF_EINHASAD2, 1);
-						addExpAndSp(player, 131228, 11978);
-						qs.exitQuest(false, true);
-						htmltext = event;
-					}
-					break;
-				}
-				case "31522-02.htm":
-				{
-					if (player.getLevel() < MIN_LEVEL)
-					{
-						htmltext = "31522-03.htm";
-					}
-					else
-					{
-						qs.startQuest();
-						htmltext = event;
-					}
-					break;
-				}
-				case "31523-03.html":
-				{
-					if (GHOST_SPAWNED)
-					{
-						htmltext = "31523-04.html";
-						playSound(player, QuestSound.SKILLSOUND_HORROR_2);
-					}
-					else
-					{
-						final Npc ghost = addSpawn(GHOST_OF_VON_HELLMAN, GHOST_LOC, false, 0);
-						ghost.broadcastPacket(new NpcSay(ghost.getObjectId(), ChatType.GENERAL, ghost.getId(), "Who awoke me?"));
-						GHOST_SPAWNED = true;
-						startQuestTimer("DESPAWN_GHOST", 1000 * 300, ghost, player);
-						qs.setCond(2);
-						playSound(player, QuestSound.SKILLSOUND_HORROR_2);
-						htmltext = event;
-					}
-					break;
-				}
-				case "31524-06.html":
-				{
-					if (PAGE_COUNT < 5)
-					{
-						final Npc page = addSpawn(GHOST_OF_VON_HELLMANS_PAGE, PAGE_LOC, false, 0);
-						page.setScriptValue(player.getObjectId());
-						page.broadcastPacket(new NpcSay(page.getObjectId(), ChatType.NPC_GENERAL, page.getId(), NpcStringId.MY_MASTER_HAS_INSTRUCTED_ME_TO_BE_YOUR_GUIDE_S1).addStringParameter(player.getName()));
-						WalkingManager.getInstance().startMoving(page, PAGE_ROUTE_NAME);
-						PAGE_COUNT++;
-						qs.setCond(3);
-						htmltext = event;
-					}
-					else
-					{
-						htmltext = "31524-06a.html";
-					}
-					break;
-				}
-				case "31526-03.html":
-				{
-					playSound(player, QuestSound.ITEMSOUND_ARMOR_CLOTH);
-					htmltext = event;
-					break;
-				}
-				case "31526-07.html":
-				{
-					qs.setCond(4);
-					htmltext = event;
-					break;
-				}
-				case "31526-08.html":
-				{
-					if (!qs.isCond(5))
-					{
-						playSound(player, QuestSound.AMDSOUND_ED_CHIMES);
-						qs.setCond(5);
-						htmltext = event;
-					}
-					else
-					{
-						htmltext = "31526-09.html";
-					}
-					break;
-				}
-				case "31526-14.html":
-				{
-					giveItems(player, CROSS_OF_EINHASAD, 1);
-					qs.setCond(6);
-					htmltext = event;
-					break;
-				}
-				case "DESPAWN_GHOST":
-				{
-					GHOST_SPAWNED = false;
-					npc.deleteMe();
-					break;
-				}
-				case "DESPAWN":
-				{
-					PAGE_COUNT--;
-					npc.deleteMe();
-					break;
-				}
+				break;
+			}
+			case "dukeDespawn":
+			{
+				_duke.deleteMe();
+				_duke = null;
+				return null;
+			}
+			case "pageDespawn":
+			{
+				_page.deleteMe();
+				_page = null;
+				return null;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case MYSTERIOUS_WIZARD:
+			case State.CREATED:
 			{
-				switch (qs.getState())
-				{
-					case State.CREATED:
-					{
-						htmltext = "31522-01.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						htmltext = "31522-05.html";
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
-						break;
-					}
-				}
+				htmltext = (player.getLevel() < 63) ? "31522-03.htm" : "31522-01.htm";
 				break;
 			}
-			case TOMBSTONE:
+			case State.STARTED:
 			{
-				htmltext = "31523-01.html";
-				break;
-			}
-			case GHOST_OF_VON_HELLMAN:
-			{
-				switch (qs.getCond())
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					case 2:
+					case MYSTERIOUS_WIZARD:
 					{
-						htmltext = "31524-01.html";
+						htmltext = "31522-05.htm";
 						break;
 					}
-					case 3:
+					case TOMBSTONE:
 					{
-						if (PAGE_SPAWNED)
+						if (cond == 1)
 						{
-							htmltext = "31524-07b.html";
+							htmltext = "31523-01.htm";
 						}
-						else
+						else if ((cond == 2) || (cond == 3))
 						{
-							if (PAGE_COUNT < 5)
+							htmltext = "31523-04.htm";
+							spawnTheDuke(player);
+						}
+						else if (cond > 3)
+						{
+							htmltext = "31523-04.htm";
+						}
+						break;
+					}
+					case VON_HELLMAN_DUKE:
+					{
+						if (cond == 2)
+						{
+							htmltext = "31524-01.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "31524-07.htm";
+							spawnThePage(player);
+						}
+						else if (cond > 3)
+						{
+							htmltext = "31524-07a.htm";
+						}
+						break;
+					}
+					case VON_HELLMAN_PAGE:
+					{
+						if (cond == 3)
+						{
+							if (st.getInt("end_walk") == 1)
 							{
-								final Npc page = addSpawn(GHOST_OF_VON_HELLMANS_PAGE, PAGE_LOC, true, 0);
-								PAGE_COUNT++;
-								PAGE_SPAWNED = true;
-								page.setScriptValue(player.getObjectId());
-								WalkingManager.getInstance().startMoving(page, PAGE_ROUTE_NAME);
-								htmltext = "31524-07.html";
+								htmltext = "31525-02.htm";
+								st.setCond(4, true);
 							}
 							else
 							{
-								htmltext = "31524-07a.html";
+								htmltext = "31525-01.htm";
 							}
+						}
+						else if (cond == 4)
+						{
+							htmltext = "31525-02.htm";
 						}
 						break;
 					}
-					case 4:
+					case BROKEN_BOOKSHELF:
 					{
-						htmltext = "31524-07c.html";
+						if (((cond == 3) && (st.getInt("end_walk") == 1)) || (cond == 4))
+						{
+							htmltext = "31526-01.htm";
+							st.setCond(5, true);
+							
+							if (_page != null)
+							{
+								cancelQuestTimer("5", _page, player);
+								cancelQuestTimer("pageDespawn", _page, player);
+								_page.deleteMe();
+								_page = null;
+							}
+							
+							if (_duke != null)
+							{
+								cancelQuestTimer("dukeDespawn", _duke, player);
+								_duke.deleteMe();
+								_duke = null;
+							}
+						}
+						else if (cond == 5)
+						{
+							htmltext = "31526-10.htm";
+						}
+						else if (cond > 5)
+						{
+							htmltext = "31526-15.htm";
+						}
+						break;
+					}
+					case AGRIPEL:
+					case BENEDICT:
+					case DOMINIC:
+					{
+						if (((cond == 6) || (cond == 7)) && hasQuestItems(player, CROSS_OF_EINHASAD))
+						{
+							final int npcId = npc.getId();
+							
+							// For cond 6, make checks until cond 7 is activated.
+							if (cond == 6)
+							{
+								int npcId1 = 0;
+								int npcId2 = 0;
+								if (npcId == AGRIPEL)
+								{
+									npcId1 = BENEDICT;
+									npcId2 = DOMINIC;
+								}
+								else if (npcId == BENEDICT)
+								{
+									npcId1 = AGRIPEL;
+									npcId2 = DOMINIC;
+								}
+								else if (npcId == DOMINIC)
+								{
+									npcId1 = AGRIPEL;
+									npcId2 = BENEDICT;
+								}
+								
+								if ((st.getInt(String.valueOf(npcId1)) == 1) && (st.getInt(String.valueOf(npcId2)) == 1))
+								{
+									st.setCond(7, true);
+								}
+								else
+								{
+									st.set(String.valueOf(npcId), "1");
+								}
+							}
+							
+							htmltext = npcId + "-01.htm";
+						}
+						break;
+					}
+					case INNOCENTIN:
+					{
+						if ((cond == 7) && hasQuestItems(player, CROSS_OF_EINHASAD))
+						{
+							htmltext = "31328-01.htm";
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case GHOST_OF_VON_HELLMANS_PAGE:
+			case State.COMPLETED:
 			{
-				if (qs.isCond(3))
+				if (npc.getId() == INNOCENTIN)
 				{
-					if (MOVE_ENDED)
-					{
-						htmltext = "31525-02.html";
-						startQuestTimer("DESPAWN", 3000, npc, player);
-					}
-					else
-					{
-						htmltext = "31525-01.html";
-					}
+					htmltext = "31328-06.htm";
 				}
-				break;
-			}
-			case BROKEN_BOOKSHELF:
-			{
-				switch (qs.getCond())
+				else
 				{
-					case 3:
-					{
-						htmltext = "31526-01.html";
-						break;
-					}
-					case 4:
-					{
-						qs.setCond(5);
-						playSound(player, QuestSound.AMDSOUND_ED_CHIMES);
-						htmltext = "31526-10.html";
-						break;
-					}
-					case 5:
-					{
-						htmltext = "31526-11.html";
-						break;
-					}
-					case 6:
-					{
-						htmltext = "31526-15.html";
-						break;
-					}
-				}
-				break;
-			}
-			case AGRIPEL:
-			{
-				if (hasQuestItems(player, CROSS_OF_EINHASAD) && qs.isCond(6))
-				{
-					qs.set("AGRIPEL", "1");
-					if ((qs.getInt("AGRIPEL") == 1) && (qs.getInt("DOMINIC") == 1) && (qs.getInt("BENEDICT") == 1))
-					{
-						htmltext = "31348-03.html";
-						qs.setCond(7);
-					}
-					else if ((qs.getInt("DOMINIC") == 1) || (qs.getInt("BENEDICT") == 1))
-					{
-						htmltext = "31348-02.html";
-					}
-					else
-					{
-						htmltext = "31348-01.html";
-					}
-				}
-				else if (qs.isCond(7))
-				{
-					htmltext = "31348-03.html";
-				}
-				break;
-			}
-			
-			case BENEDICT:
-			{
-				if (hasQuestItems(player, CROSS_OF_EINHASAD) && qs.isCond(6))
-				{
-					qs.set("BENEDICT", "1");
-					if ((qs.getInt("AGRIPEL") == 1) && (qs.getInt("DOMINIC") == 1) && (qs.getInt("BENEDICT") == 1))
-					{
-						htmltext = "31349-03.html";
-						qs.setCond(7);
-					}
-					else if ((qs.getInt("AGRIPEL") == 1) || (qs.getInt("DOMINIC") == 1))
-					{
-						htmltext = "31349-02.html";
-					}
-					else
-					{
-						htmltext = "31349-01.html";
-					}
-				}
-				else if (qs.isCond(7))
-				{
-					htmltext = "31349-03.html";
-				}
-				break;
-			}
-			case DOMINIC:
-			{
-				if (hasQuestItems(player, CROSS_OF_EINHASAD) && qs.isCond(6))
-				{
-					qs.set("DOMINIC", "1");
-					if ((qs.getInt("AGRIPEL") == 1) && (qs.getInt("DOMINIC") == 1) && (qs.getInt("BENEDICT") == 1))
-					{
-						htmltext = "31350-03.html";
-						qs.setCond(7);
-					}
-					else if ((qs.getInt("AGRIPEL") == 1) || (qs.getInt("BENEDICT") == 1))
-					{
-						htmltext = "31350-02.html";
-					}
-					else
-					{
-						htmltext = "31350-01.html";
-					}
-				}
-				else if (qs.isCond(7))
-				{
-					htmltext = "31350-03.html";
-				}
-				break;
-			}
-			case INNOCENTIN:
-			{
-				if (qs.isCond(7) && hasQuestItems(player, CROSS_OF_EINHASAD))
-				{
-					htmltext = "31328-01.html";
-				}
-				else if (qs.isCompleted())
-				{
-					qs = player.getQuestState(Q00022_TragedyInVonHellmannForest.class.getSimpleName());
-					if (qs == null)
-					{
-						htmltext = "31328-06.html";
-					}
+					htmltext = getAlreadyCompletedMsg(player);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
-	@Override
-	public String onCreatureSee(Npc npc, Creature creature)
+	private void spawnTheDuke(Player player)
 	{
-		if (creature.isPlayer())
+		if (_duke == null)
 		{
-			playSound(creature.asPlayer(), QuestSound.HORROR_01);
+			_duke = addSpawn(VON_HELLMAN_DUKE, 51432, -54570, -3136, 0, false, 0);
+			_duke.broadcastSay(ChatType.GENERAL, "Who awoke me?");
+			startQuestTimer("dukeDespawn", 300000, _duke, player, false);
 		}
-		return super.onCreatureSee(npc, creature);
 	}
 	
-	@Override
-	public void onRouteFinished(Npc npc)
+	private void spawnThePage(Player player)
 	{
-		final QuestState qs = World.getInstance().getPlayer(npc.getScriptValue()).getQuestState(getName());
-		if (qs != null)
+		if (_page == null)
 		{
-			startQuestTimer("DESPAWN", 15000, npc, null);
-			MOVE_ENDED = true;
+			_page = addSpawn(VON_HELLMAN_PAGE, 51608, -54520, -3168, 0, false, 0);
+			_page.broadcastSay(ChatType.GENERAL, "My master has instructed me to be your guide, " + player.getName() + ".");
+			startQuestTimer("1", 4000, _page, player, false);
+			startQuestTimer("pageDespawn", 90000, _page, player, false);
 		}
 	}
 }

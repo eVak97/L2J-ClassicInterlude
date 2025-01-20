@@ -22,106 +22,84 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Whereabouts of the Archaeologist (14)<br>
- * Original Jython script by disKret.
- * @author nonom
- */
 public class Q00014_WhereaboutsOfTheArchaeologist extends Quest
 {
 	// NPCs
 	private static final int LIESEL = 31263;
 	private static final int GHOST_OF_ADVENTURER = 31538;
-	// Item
+	// Items
 	private static final int LETTER = 7253;
 	
 	public Q00014_WhereaboutsOfTheArchaeologist()
 	{
 		super(14);
+		registerQuestItems(LETTER);
 		addStartNpc(LIESEL);
 		addTalkId(LIESEL, GHOST_OF_ADVENTURER);
-		registerQuestItems(LETTER);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("31263-2.htm"))
 		{
-			case "31263-02.html":
-			{
-				qs.startQuest();
-				giveItems(player, LETTER, 1);
-				break;
-			}
-			case "31538-01.html":
-			{
-				if (qs.isCond(1) && hasQuestItems(player, LETTER))
-				{
-					giveAdena(player, 136928, true);
-					addExpAndSp(player, 325881, 32524);
-					qs.exitQuest(false, true);
-				}
-				else
-				{
-					htmltext = "31538-02.html";
-				}
-				break;
-			}
+			st.startQuest();
+			giveItems(player, LETTER, 1);
 		}
+		else if (event.equals("31538-1.htm"))
+		{
+			takeItems(player, LETTER, 1);
+			giveAdena(player, 113228, true);
+			st.exitQuest(false, true);
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 74) ? "31263-1.htm" : "31263-0.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
+				{
+					case LIESEL:
+					{
+						htmltext = "31263-2.htm";
+						break;
+					}
+					case GHOST_OF_ADVENTURER:
+					{
+						htmltext = "31538-0.htm";
+						break;
+					}
+				}
+				break;
+			}
 			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npcId == LIESEL)
-				{
-					htmltext = (player.getLevel() < 74) ? "31263-01.html" : "31263-00.htm";
-				}
-				break;
-			}
-			case State.STARTED:
-			{
-				if (qs.isCond(1))
-				{
-					switch (npcId)
-					{
-						case LIESEL:
-						{
-							htmltext = "31263-02.html";
-							break;
-						}
-						case GHOST_OF_ADVENTURER:
-						{
-							htmltext = "31538-00.html";
-							break;
-						}
-					}
-				}
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 }

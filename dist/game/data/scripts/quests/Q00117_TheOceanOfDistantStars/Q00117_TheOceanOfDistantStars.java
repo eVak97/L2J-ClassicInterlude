@@ -16,181 +16,229 @@
  */
 package quests.Q00117_TheOceanOfDistantStars;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.util.Util;
 
-/**
- * The Ocean of Distant Stars (117)
- * @author Adry_85
- */
 public class Q00117_TheOceanOfDistantStars extends Quest
 {
 	// NPCs
-	private static final int OBI = 32052;
 	private static final int ABEY = 32053;
-	private static final int GHOST_OF_A_RAILROAD_ENGINEER = 32054;
-	private static final int GHOST_OF_AN_ANCIENT_RAILROAD_ENGINEER = 32055;
+	private static final int GHOST = 32054;
+	private static final int ANCIENT_GHOST = 32055;
+	private static final int OBI = 32052;
 	private static final int BOX = 32076;
-	// Items
-	private static final int ENGRAVED_HAMMER = 8488;
-	private static final int BOOK_OF_GREY_STAR = 8495;
-	// Misc
-	private static final int MIN_LEVEL = 39;
 	// Monsters
 	private static final int BANDIT_WARRIOR = 22023;
 	private static final int BANDIT_INSPECTOR = 22024;
-	private static final Map<Integer, Double> MONSTER_DROP_CHANCES = new HashMap<>();
-	static
-	{
-		MONSTER_DROP_CHANCES.put(BANDIT_WARRIOR, 0.179);
-		MONSTER_DROP_CHANCES.put(BANDIT_INSPECTOR, 0.1);
-	}
+	// Items
+	private static final int GREY_STAR = 8495;
+	private static final int ENGRAVED_HAMMER = 8488;
 	
 	public Q00117_TheOceanOfDistantStars()
 	{
 		super(117);
+		registerQuestItems(GREY_STAR, ENGRAVED_HAMMER);
 		addStartNpc(ABEY);
-		addTalkId(ABEY, GHOST_OF_A_RAILROAD_ENGINEER, GHOST_OF_AN_ANCIENT_RAILROAD_ENGINEER, BOX, OBI);
+		addTalkId(ABEY, ANCIENT_GHOST, GHOST, OBI, BOX);
 		addKillId(BANDIT_WARRIOR, BANDIT_INSPECTOR);
-		registerQuestItems(ENGRAVED_HAMMER, BOOK_OF_GREY_STAR);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
 			case "32053-02.htm":
 			{
-				qs.setMemoState(1);
-				qs.startQuest();
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "32053-06.html":
+			case "32055-02.htm":
 			{
-				if (qs.isMemoState(3))
-				{
-					qs.setMemoState(4);
-					qs.setCond(4, true);
-					htmltext = event;
-				}
+				st.setCond(2, true);
 				break;
 			}
-			case "32053-09.html":
+			case "32052-02.htm":
 			{
-				if (qs.isMemoState(5) && hasQuestItems(player, ENGRAVED_HAMMER))
-				{
-					qs.setMemoState(6);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
 				break;
 			}
-			case "32054-02.html":
+			case "32053-04.htm":
 			{
-				if (qs.isMemoState(9))
-				{
-					htmltext = event;
-				}
+				st.setCond(4, true);
 				break;
 			}
-			case "32054-03.html":
+			case "32076-02.htm":
 			{
-				if (qs.isMemoState(9))
-				{
-					giveAdena(player, 17647, true);
-					addExpAndSp(player, 107387, 7369);
-					qs.exitQuest(false, true);
-					htmltext = event;
-				}
+				st.setCond(5, true);
+				giveItems(player, ENGRAVED_HAMMER, 1);
 				break;
 			}
-			case "32055-02.html":
+			case "32053-06.htm":
 			{
-				if (qs.isMemoState(1))
-				{
-					qs.setMemoState(2);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
+				st.setCond(6, true);
 				break;
 			}
-			case "32055-05.html":
+			case "32052-04.htm":
 			{
-				if (qs.isMemoState(8))
-				{
-					if (hasQuestItems(player, ENGRAVED_HAMMER))
-					{
-						qs.setMemoState(9);
-						qs.setCond(10, true);
-						takeItems(player, ENGRAVED_HAMMER, -1);
-						htmltext = event;
-					}
-					else
-					{
-						htmltext = "32055-06.html";
-					}
-				}
+				st.setCond(7, true);
 				break;
 			}
-			case "32076-02.html":
+			case "32052-06.htm":
 			{
-				if (qs.isMemoState(4))
-				{
-					qs.setMemoState(5);
-					qs.setCond(5, true);
-					giveItems(player, ENGRAVED_HAMMER, 1);
-					htmltext = event;
-				}
+				st.setCond(9, true);
+				takeItems(player, GREY_STAR, 1);
 				break;
 			}
-			case "32052-02.html":
+			case "32055-04.htm":
 			{
-				if (qs.isMemoState(2))
-				{
-					qs.setMemoState(3);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(10, true);
+				takeItems(player, ENGRAVED_HAMMER, 1);
 				break;
 			}
-			case "32052-05.html":
+			case "32054-03.htm":
 			{
-				if (qs.isMemoState(6))
-				{
-					qs.setMemoState(7);
-					qs.setCond(7, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32052-07.html":
-			{
-				if (qs.isMemoState(7) && hasQuestItems(player, BOOK_OF_GREY_STAR))
-				{
-					qs.setMemoState(8);
-					qs.setCond(9, true);
-					takeItems(player, BOOK_OF_GREY_STAR, -1);
-					htmltext = event;
-				}
+				addExpAndSp(player, 63591, 0);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 39) ? "32053-00.htm" : "32053-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case ANCIENT_GHOST:
+					{
+						if (cond == 1)
+						{
+							htmltext = "32055-01.htm";
+						}
+						else if ((cond > 1) && (cond < 9))
+						{
+							htmltext = "32055-02.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "32055-03.htm";
+						}
+						else if (cond > 9)
+						{
+							htmltext = "32055-05.htm";
+						}
+						break;
+					}
+					case OBI:
+					{
+						if (cond == 2)
+						{
+							htmltext = "32052-01.htm";
+						}
+						else if ((cond > 2) && (cond < 6))
+						{
+							htmltext = "32052-02.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "32052-03.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "32052-04.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = "32052-05.htm";
+						}
+						else if (cond > 8)
+						{
+							htmltext = "32052-06.htm";
+						}
+						break;
+					}
+					case ABEY:
+					{
+						if ((cond == 1) || (cond == 2))
+						{
+							htmltext = "32053-02.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = "32053-03.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "32053-04.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "32053-05.htm";
+						}
+						else if (cond > 5)
+						{
+							htmltext = "32053-06.htm";
+						}
+						break;
+					}
+					case BOX:
+					{
+						if (cond == 4)
+						{
+							htmltext = "32076-01.htm";
+						}
+						else if (cond > 4)
+						{
+							htmltext = "32076-03.htm";
+						}
+						break;
+					}
+					case GHOST:
+					{
+						if (cond == 10)
+						{
+							htmltext = "32054-01.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
 		return htmltext;
 	}
 	
@@ -200,152 +248,14 @@ public class Q00117_TheOceanOfDistantStars extends Quest
 		final QuestState qs = getRandomPartyMemberState(killer, 7, 3, npc);
 		if ((qs == null) || !Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
 		{
-			return null;
+			return super.onKill(npc, killer, isSummon);
 		}
 		
-		if (giveItemRandomly(killer, npc, BOOK_OF_GREY_STAR, 1, 1, MONSTER_DROP_CHANCES.get(npc.getId()), true))
+		if (giveItemRandomly(killer, npc, GREY_STAR, 1, 1, 0.2, true))
 		{
 			qs.setCond(8);
 		}
+		
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		if (qs.isCompleted())
-		{
-			if (npc.getId() == ABEY)
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-			}
-		}
-		else if (qs.isCreated())
-		{
-			htmltext = (player.getLevel() >= MIN_LEVEL) ? "32053-01.htm" : "32053-03.htm";
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case ABEY:
-				{
-					switch (qs.getMemoState())
-					{
-						case 1:
-						{
-							htmltext = "32053-04.html";
-							break;
-						}
-						case 3:
-						{
-							htmltext = "32053-05.html";
-							break;
-						}
-						case 4:
-						{
-							htmltext = "32053-07.html";
-							break;
-						}
-						case 5:
-						{
-							if (hasQuestItems(player, ENGRAVED_HAMMER))
-							{
-								htmltext = "32053-08.html";
-							}
-							break;
-						}
-						case 6:
-						{
-							htmltext = "32053-10.html";
-							break;
-						}
-					}
-					break;
-				}
-				case GHOST_OF_A_RAILROAD_ENGINEER:
-				{
-					if (qs.isMemoState(9))
-					{
-						htmltext = "32054-01.html";
-					}
-					break;
-				}
-				case GHOST_OF_AN_ANCIENT_RAILROAD_ENGINEER:
-				{
-					switch (qs.getMemoState())
-					{
-						case 1:
-						{
-							htmltext = "32055-01.html";
-							break;
-						}
-						case 2:
-						{
-							htmltext = "32055-03.html";
-							break;
-						}
-						case 8:
-						{
-							htmltext = "32055-04.html";
-							break;
-						}
-						case 9:
-						{
-							htmltext = "32055-07.html";
-							break;
-						}
-					}
-					break;
-				}
-				case BOX:
-				{
-					if (qs.isMemoState(4))
-					{
-						htmltext = "32076-01.html";
-					}
-					else if (qs.isMemoState(5))
-					{
-						htmltext = "32076-03.html";
-					}
-					break;
-				}
-				case OBI:
-				{
-					switch (qs.getMemoState())
-					{
-						case 2:
-						{
-							htmltext = "32052-01.html";
-							break;
-						}
-						case 3:
-						{
-							htmltext = "32052-03.html";
-							break;
-						}
-						case 6:
-						{
-							htmltext = "32052-04.html";
-							break;
-						}
-						case 7:
-						{
-							htmltext = hasQuestItems(player, BOOK_OF_GREY_STAR) ? "32052-06.html" : "32052-08.html";
-							break;
-						}
-						case 8:
-						{
-							htmltext = "32052-09.html";
-							break;
-						}
-					}
-					break;
-				}
-			}
-		}
-		return htmltext;
 	}
 }

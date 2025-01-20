@@ -16,103 +16,101 @@
  */
 package quests.Q00303_CollectArrowheads;
 
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Collect Arrowheads (303)
- * @author ivantotov
- */
 public class Q00303_CollectArrowheads extends Quest
 {
-	// NPC
-	private static final int MINIA = 30029;
 	// Item
 	private static final int ORCISH_ARROWHEAD = 963;
-	// Misc
-	private static final int MIN_LEVEL = 10;
-	private static final int REQUIRED_ITEM_COUNT = 10;
-	// Monster
-	private static final int TUNATH_ORC_MARKSMAN = 20361;
 	
 	public Q00303_CollectArrowheads()
 	{
 		super(303);
-		addStartNpc(MINIA);
-		addTalkId(MINIA);
-		addKillId(TUNATH_ORC_MARKSMAN);
 		registerQuestItems(ORCISH_ARROWHEAD);
-		addCondMaxLevel(14, getNoQuestMsg(null));
+		addStartNpc(30029); // Minia
+		addTalkId(30029);
+		addKillId(20361);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30029-04.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final Player partyMember = getRandomPartyMember(player, 1);
-		if (partyMember != null)
+		
+		if (event.equals("30029-03.htm"))
 		{
-			final QuestState qs = getQuestState(partyMember, false);
-			if (giveItemRandomly(player, npc, ORCISH_ARROWHEAD, 1, REQUIRED_ITEM_COUNT, 0.4, true))
-			{
-				qs.setCond(2);
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, player, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() >= MIN_LEVEL ? "30029-03.htm" : "30029-02.htm";
+				htmltext = (player.getLevel() < 10) ? "30029-01.htm" : "30029-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						if (getQuestItemsCount(player, ORCISH_ARROWHEAD) < REQUIRED_ITEM_COUNT)
-						{
-							htmltext = "30029-05.html";
-						}
-						break;
-					}
-					case 2:
-					{
-						if (getQuestItemsCount(player, ORCISH_ARROWHEAD) >= REQUIRED_ITEM_COUNT)
-						{
-							giveAdena(player, 500, true);
-							qs.exitQuest(true, true);
-							htmltext = "30029-06.html";
-						}
-						break;
-					}
+					htmltext = "30029-04.htm";
+				}
+				else
+				{
+					htmltext = "30029-05.htm";
+					takeItems(player, ORCISH_ARROWHEAD, -1);
+					giveAdena(player, 1000, true);
+					addExpAndSp(player, 2000, 0);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandom(10) < 4)
+		{
+			giveItems(player, ORCISH_ARROWHEAD, 1);
+			if (getQuestItemsCount(player, ORCISH_ARROWHEAD) < 10)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

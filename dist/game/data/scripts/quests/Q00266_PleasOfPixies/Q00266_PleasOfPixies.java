@@ -16,163 +16,185 @@
  */
 package quests.Q00266_PleasOfPixies;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Pleas of Pixies (266)
- * @author xban1x
- */
 public class Q00266_PleasOfPixies extends Quest
 {
-	// NPC
-	private static final int PIXY_MURIKA = 31852;
 	// Items
-	private static final int PREDATORS_FANG = 1334;
-	// Monsters
-	private static final Map<Integer, List<ItemHolder>> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(20537, Arrays.asList(new ItemHolder(10, 2))); // Elder Red Keltir
-		MONSTERS.put(20525, Arrays.asList(new ItemHolder(5, 2), new ItemHolder(10, 3))); // Gray Wolf
-		MONSTERS.put(20534, Arrays.asList(new ItemHolder(6, 1))); // Red Keltir
-		MONSTERS.put(20530, Arrays.asList(new ItemHolder(8, 1))); // Young Red Keltir
-	}
+	private static final int PREDATOR_FANG = 1334;
 	// Rewards
-	private static final Map<Integer, List<ItemHolder>> REWARDS = new HashMap<>();
-	static
-	{
-		REWARDS.put(0, Arrays.asList(new ItemHolder(1336, 1), new ItemHolder(57, 100))); // Glass Shard, Adena
-		REWARDS.put(1, Arrays.asList(new ItemHolder(1339, 1), new ItemHolder(57, 300))); // Onyx, Adena
-		REWARDS.put(2, Arrays.asList(new ItemHolder(1338, 1), new ItemHolder(57, 500))); // Blue Onyx, Adena
-		REWARDS.put(3, Arrays.asList(new ItemHolder(1337, 1), new ItemHolder(57, 5000))); // Emerald , Adena
-	}
-	// Misc
-	private static final int MIN_LEVEL = 3;
+	private static final int GLASS_SHARD = 1336;
+	private static final int EMERALD = 1337;
+	private static final int BLUE_ONYX = 1338;
+	private static final int ONYX = 1339;
 	
 	public Q00266_PleasOfPixies()
 	{
 		super(266);
-		addStartNpc(PIXY_MURIKA);
-		addTalkId(PIXY_MURIKA);
-		addKillId(MONSTERS.keySet());
-		registerQuestItems(PREDATORS_FANG);
-		addCondMaxLevel(8, getNoQuestMsg(null));
+		registerQuestItems(PREDATOR_FANG);
+		addStartNpc(31852); // Murika
+		addTalkId(31852);
+		addKillId(20525, 20530, 20534, 20537);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("31852-04.htm"))
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1))
+		
+		if (event.equals("31852-03.htm"))
 		{
-			final int chance = getRandom(10);
-			for (ItemHolder mob : MONSTERS.get(npc.getId()))
-			{
-				if (chance < mob.getId())
-				{
-					if (giveItemRandomly(killer, npc, PREDATORS_FANG, mob.getCount(), 100, 1, true))
-					{
-						qs.setCond(2);
-					}
-					break;
-				}
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
 				if (player.getRace() != Race.ELF)
 				{
-					htmltext = "31852-01.htm";
+					htmltext = "31852-00.htm";
 				}
-				else if (player.getLevel() < MIN_LEVEL)
+				else if (player.getLevel() < 3)
 				{
-					htmltext = "31852-02.htm";
+					htmltext = "31852-01.htm";
 				}
 				else
 				{
-					htmltext = "31852-03.htm";
+					htmltext = "31852-02.htm";
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (getQuestItemsCount(player, PREDATOR_FANG) < 100)
 				{
-					case 1:
+					htmltext = "31852-04.htm";
+				}
+				else
+				{
+					htmltext = "31852-05.htm";
+					takeItems(player, PREDATOR_FANG, -1);
+					
+					final int n = getRandom(100);
+					if (n < 10)
 					{
-						htmltext = "31852-05.html";
-						break;
+						playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
+						rewardItems(player, EMERALD, 1);
 					}
-					case 2:
+					else if (n < 30)
 					{
-						if (getQuestItemsCount(player, PREDATORS_FANG) >= 100)
-						{
-							final int chance = getRandom(100);
-							int reward;
-							if (chance < 2)
-							{
-								reward = 0;
-								playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
-							}
-							else if (chance < 20)
-							{
-								reward = 1;
-							}
-							else if (chance < 45)
-							{
-								reward = 2;
-							}
-							else
-							{
-								reward = 3;
-							}
-							for (ItemHolder item : REWARDS.get(reward))
-							{
-								rewardItems(player, item);
-							}
-							qs.exitQuest(true, true);
-							htmltext = "31852-06.html";
-						}
-						break;
+						rewardItems(player, BLUE_ONYX, 1);
 					}
+					else if (n < 60)
+					{
+						rewardItems(player, ONYX, 1);
+					}
+					else
+					{
+						rewardItems(player, GLASS_SHARD, 1);
+					}
+					
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20525:
+			{
+				giveItems(player, PREDATOR_FANG, getRandom(2, 3));
+				if (getQuestItemsCount(player, PREDATOR_FANG) < 100)
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				else
+				{
+					st.setCond(2, true);
+				}
+				break;
+			}
+			case 20530:
+			{
+				if (getRandom(10) < 8)
+				{
+					giveItems(player, PREDATOR_FANG, 1);
+					if (getQuestItemsCount(player, PREDATOR_FANG) < 100)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					else
+					{
+						st.setCond(2, true);
+					}
+				}
+				break;
+			}
+			case 20534:
+			{
+				if (getRandom(10) < 6)
+				{
+					giveItems(player, PREDATOR_FANG, getRandom(3) == 0 ? 1 : 2);
+					if (getQuestItemsCount(player, PREDATOR_FANG) < 100)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					else
+					{
+						st.setCond(2, true);
+					}
+				}
+				break;
+			}
+			case 20537:
+			{
+				giveItems(player, PREDATOR_FANG, 2);
+				if (getQuestItemsCount(player, PREDATOR_FANG) < 100)
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				else
+				{
+					st.setCond(2, true);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

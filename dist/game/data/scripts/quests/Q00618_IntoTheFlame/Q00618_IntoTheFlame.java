@@ -41,7 +41,7 @@ public class Q00618_IntoTheFlame extends Quest
 		addStartNpc(KLEIN);
 		addTalkId(KLEIN, HILDA);
 		// Kookaburras, Bandersnatches, Grendels
-		addKillId(21274, 21275, 21276, 21282, 21283, 21284, 21290, 21291, 21292);
+		addKillId(21274, 21275, 21276, 21277, 21282, 21283, 21284, 21285, 21290, 21291, 21292, 21293);
 	}
 	
 	@Override

@@ -16,10 +16,6 @@
  */
 package quests.Q00258_BringWolfPelts;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -27,118 +23,129 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Bring Wolf Pelts (258)
- * @author xban1x
- */
 public class Q00258_BringWolfPelts extends Quest
 {
-	// Npc
-	private static final int LECTOR = 30001;
 	// Item
 	private static final int WOLF_PELT = 702;
-	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
-		20120, // Wolf
-		20442, // Elder Wolf
-	};
 	// Rewards
-	private static final Map<Integer, Integer> REWARDS = new HashMap<>();
-	static
-	{
-		REWARDS.put(41, 1); // Cloth Cap
-		REWARDS.put(42, 6); // Leather Cap
-		REWARDS.put(462, 9); // Stockings
-	}
-	// Misc
-	private static final int MIN_LEVEL = 3;
-	private static final int WOLF_PELT_COUNT = 40;
+	private static final int COTTON_SHIRT = 390;
+	private static final int LEATHER_PANTS = 29;
+	private static final int LEATHER_SHIRT = 22;
+	private static final int SHORT_LEATHER_GLOVES = 1119;
+	private static final int TUNIC = 426;
 	
 	public Q00258_BringWolfPelts()
 	{
 		super(258);
-		addStartNpc(LECTOR);
-		addTalkId(LECTOR);
-		addKillId(MONSTERS);
 		registerQuestItems(WOLF_PELT);
-		addCondMaxLevel(9, getNoQuestMsg(null));
+		addStartNpc(30001); // Lector
+		addTalkId(30001);
+		addKillId(20120, 20442); // Wolf, Elder Wolf
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equalsIgnoreCase("30001-03.html"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1))
+		
+		if (event.equals("30001-03.htm"))
 		{
-			giveItems(killer, WOLF_PELT, 1);
-			if (getQuestItemsCount(killer, WOLF_PELT) >= WOLF_PELT_COUNT)
-			{
-				qs.setCond(2, true);
-			}
-			else
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30001-02.htm" : "30001-01.html";
+				htmltext = (player.getLevel() < 3) ? "30001-01.htm" : "30001-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (getQuestItemsCount(player, WOLF_PELT) < 40)
 				{
-					case 1:
+					htmltext = "30001-05.htm";
+				}
+				else
+				{
+					takeItems(player, WOLF_PELT, -1);
+					final int randomNumber = getRandom(16);
+					
+					// Reward is based on a random number (1D16).
+					if (randomNumber == 0)
 					{
-						htmltext = "30001-04.html";
-						break;
+						giveItems(player, COTTON_SHIRT, 1);
 					}
-					case 2:
+					else if (randomNumber < 6)
 					{
-						if (getQuestItemsCount(player, WOLF_PELT) >= WOLF_PELT_COUNT)
-						{
-							final int chance = getRandom(16);
-							for (Entry<Integer, Integer> reward : REWARDS.entrySet())
-							{
-								if (chance < reward.getValue())
-								{
-									giveItems(player, reward.getKey(), 1);
-									break;
-								}
-							}
-							qs.exitQuest(true, true);
-							htmltext = "30001-05.html";
-							break;
-						}
+						giveItems(player, LEATHER_PANTS, 1);
 					}
+					else if (randomNumber < 9)
+					{
+						giveItems(player, LEATHER_SHIRT, 1);
+					}
+					else if (randomNumber < 13)
+					{
+						giveItems(player, SHORT_LEATHER_GLOVES, 1);
+					}
+					else
+					{
+						giveItems(player, TUNIC, 1);
+					}
+					
+					htmltext = "30001-06.htm";
+					
+					if (randomNumber == 0)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_JACKPOT);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_FINISH);
+					}
+					
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		giveItems(player, WOLF_PELT, 1);
+		if (getQuestItemsCount(player, WOLF_PELT) >= 40)
+		{
+			st.setCond(2, true);
+		}
+		else
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

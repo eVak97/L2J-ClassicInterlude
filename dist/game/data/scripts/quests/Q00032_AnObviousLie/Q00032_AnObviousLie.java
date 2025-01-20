@@ -16,154 +16,240 @@
  */
 package quests.Q00032_AnObviousLie;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * An Obvious Lie (32).
- * @author janiko
- */
 public class Q00032_AnObviousLie extends Quest
 {
 	// NPCs
-	private static final int MAXIMILIAN = 30120;
 	private static final int GENTLER = 30094;
+	private static final int MAXIMILIAN = 30120;
 	private static final int MIKI_THE_CAT = 31706;
-	// Monster
-	private static final int ALLIGATOR = 20135;
 	// Items
-	private static final int MAP_OF_GENTLER = 7165;
-	private static final ItemHolder MEDICINAL_HERB = new ItemHolder(7166, 20);
-	private static final ItemHolder SPIRIT_ORE = new ItemHolder(3031, 500);
-	private static final ItemHolder THREAD = new ItemHolder(1868, 1000);
-	private static final ItemHolder SUEDE = new ItemHolder(1866, 500);
-	// Misc
-	private static final int MIN_LEVEL = 45;
-	// Reward
-	private static final Map<String, Integer> EARS = new HashMap<>();
-	static
-	{
-		EARS.put("cat", 6843); // Cat Ears
-		EARS.put("raccoon", 7680); // Raccoon ears
-		EARS.put("rabbit", 7683); // Rabbit ears
-	}
+	private static final int SUEDE = 1866;
+	private static final int THREAD = 1868;
+	private static final int SPIRIT_ORE = 3031;
+	private static final int MAP = 7165;
+	private static final int MEDICINAL_HERB = 7166;
+	// Rewards
+	private static final int CAT_EARS = 6843;
+	private static final int RACOON_EARS = 7680;
+	private static final int RABBIT_EARS = 7683;
 	
 	public Q00032_AnObviousLie()
 	{
 		super(32);
+		registerQuestItems(MAP, MEDICINAL_HERB);
 		addStartNpc(MAXIMILIAN);
 		addTalkId(MAXIMILIAN, GENTLER, MIKI_THE_CAT);
-		addKillId(ALLIGATOR);
-		registerQuestItems(MAP_OF_GENTLER, MEDICINAL_HERB.getId());
+		addKillId(20135); // Alligator
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "30120-02.html":
+			case "30120-1.htm":
 			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
+				st.startQuest();
 				break;
 			}
-			case "30094-02.html":
+			case "30094-1.htm":
 			{
-				if (qs.isCond(1))
-				{
-					giveItems(player, MAP_OF_GENTLER, 1);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
+				st.setCond(2, true);
+				giveItems(player, MAP, 1);
 				break;
 			}
-			case "31706-02.html":
+			case "31706-1.htm":
 			{
-				if (qs.isCond(2) && hasQuestItems(player, MAP_OF_GENTLER))
-				{
-					takeItems(player, MAP_OF_GENTLER, -1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
+				takeItems(player, MAP, 1);
 				break;
 			}
-			case "30094-06.html":
+			case "30094-4.htm":
 			{
-				if (qs.isCond(4) && hasItem(player, MEDICINAL_HERB))
-				{
-					takeItem(player, MEDICINAL_HERB);
-					qs.setCond(5, true);
-					htmltext = event;
-				}
+				st.setCond(5, true);
+				takeItems(player, MEDICINAL_HERB, 20);
 				break;
 			}
-			case "30094-09.html":
+			case "30094-7.htm":
 			{
-				if (qs.isCond(5) && hasItem(player, SPIRIT_ORE))
+				if (getQuestItemsCount(player, SPIRIT_ORE) < 500)
 				{
-					takeItem(player, SPIRIT_ORE);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30094-12.html":
-			{
-				if (qs.isCond(7))
-				{
-					qs.setCond(8, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30094-15.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "31706-05.html":
-			{
-				if (qs.isCond(6))
-				{
-					qs.setCond(7, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "cat":
-			case "raccoon":
-			case "rabbit":
-			{
-				if (qs.isCond(8) && takeAllItems(player, THREAD, SUEDE))
-				{
-					giveItems(player, EARS.get(event), 1);
-					qs.exitQuest(false, true);
-					htmltext = "30094-16.html";
+					htmltext = "30094-5.htm";
 				}
 				else
 				{
-					htmltext = "30094-17.html";
+					st.setCond(6, true);
+					takeItems(player, SPIRIT_ORE, 500);
+				}
+				break;
+			}
+			case "31706-4.htm":
+			{
+				st.setCond(7, true);
+				break;
+			}
+			case "30094-10.htm":
+			{
+				st.setCond(8, true);
+				break;
+			}
+			case "30094-13.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+				break;
+			}
+			case "cat":
+			{
+				if ((getQuestItemsCount(player, THREAD) < 1000) || (getQuestItemsCount(player, SUEDE) < 500))
+				{
+					htmltext = "30094-11.htm";
+				}
+				else
+				{
+					htmltext = "30094-14.htm";
+					takeItems(player, SUEDE, 500);
+					takeItems(player, THREAD, 1000);
+					giveItems(player, CAT_EARS, 1);
+					st.exitQuest(false, true);
+				}
+				break;
+			}
+			case "racoon":
+			{
+				if ((getQuestItemsCount(player, THREAD) < 1000) || (getQuestItemsCount(player, SUEDE) < 500))
+				{
+					htmltext = "30094-11.htm";
+				}
+				else
+				{
+					htmltext = "30094-14.htm";
+					takeItems(player, SUEDE, 500);
+					takeItems(player, THREAD, 1000);
+					giveItems(player, RACOON_EARS, 1);
+					st.exitQuest(false, true);
+				}
+				break;
+			}
+			case "rabbit":
+			{
+				if ((getQuestItemsCount(player, THREAD) < 1000) || (getQuestItemsCount(player, SUEDE) < 500))
+				{
+					htmltext = "30094-11.htm";
+				}
+				else
+				{
+					htmltext = "30094-14.htm";
+					takeItems(player, SUEDE, 500);
+					takeItems(player, THREAD, 1000);
+					giveItems(player, RABBIT_EARS, 1);
+					st.exitQuest(false, true);
 				}
 				break;
 			}
 		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 45) ? "30120-0a.htm" : "30120-0.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case MAXIMILIAN:
+					{
+						htmltext = "30120-2.htm";
+						break;
+					}
+					case GENTLER:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30094-0.htm";
+						}
+						else if ((cond == 2) || (cond == 3))
+						{
+							htmltext = "30094-2.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30094-3.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = (getQuestItemsCount(player, SPIRIT_ORE) < 500) ? "30094-5.htm" : "30094-6.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30094-8.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30094-9.htm";
+						}
+						else if (cond == 8)
+						{
+							htmltext = ((getQuestItemsCount(player, THREAD) < 1000) || (getQuestItemsCount(player, SUEDE) < 500)) ? "30094-11.htm" : "30094-12.htm";
+						}
+						break;
+					}
+					case MIKI_THE_CAT:
+					{
+						if (cond == 2)
+						{
+							htmltext = "31706-0.htm";
+						}
+						else if ((cond > 2) && (cond < 6))
+						{
+							htmltext = "31706-2.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "31706-3.htm";
+						}
+						else if (cond > 6)
+						{
+							htmltext = "31706-5.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
+		}
+		
 		return htmltext;
 	}
 	
@@ -171,121 +257,10 @@ public class Q00032_AnObviousLie extends Quest
 	public String onKill(Npc npc, Player killer, boolean isSummon)
 	{
 		final QuestState qs = getRandomPartyMemberState(killer, 3, 3, npc);
-		if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, MEDICINAL_HERB.getId(), 1, MEDICINAL_HERB.getCount(), 1, true))
+		if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, MEDICINAL_HERB, 1, 20, 1, true))
 		{
-			qs.setCond(4);
+			qs.setCond(4, true);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
-		{
-			case MAXIMILIAN:
-			{
-				if (qs.isCreated())
-				{
-					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30120-01.htm" : "30120-03.htm";
-				}
-				else if (qs.isStarted())
-				{
-					if (qs.isCond(1))
-					{
-						htmltext = "30120-04.html";
-					}
-				}
-				else
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-				}
-				break;
-			}
-			case GENTLER:
-			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
-						htmltext = "30094-01.html";
-						break;
-					}
-					case 2:
-					{
-						htmltext = "30094-03.html";
-						break;
-					}
-					case 4:
-					{
-						htmltext = hasItem(player, MEDICINAL_HERB) ? "30094-04.html" : "30094-05.html";
-						break;
-					}
-					case 5:
-					{
-						htmltext = hasItem(player, SPIRIT_ORE) ? "30094-07.html" : "30094-08.html";
-						break;
-					}
-					case 6:
-					{
-						htmltext = "30094-10.html";
-						break;
-					}
-					case 7:
-					{
-						htmltext = "30094-11.html";
-						break;
-					}
-					case 8:
-					{
-						if (hasAllItems(player, true, THREAD, SUEDE))
-						{
-							htmltext = "30094-13.html";
-						}
-						else
-						{
-							htmltext = "30094-14.html";
-						}
-						break;
-					}
-				}
-				break;
-			}
-			case MIKI_THE_CAT:
-			{
-				switch (qs.getCond())
-				{
-					case 2:
-					{
-						if (hasQuestItems(player, MAP_OF_GENTLER))
-						{
-							htmltext = "31706-01.html";
-						}
-						break;
-					}
-					case 3:
-					case 4:
-					case 5:
-					{
-						htmltext = "31706-03.html";
-						break;
-					}
-					case 6:
-					{
-						htmltext = "31706-04.html";
-						break;
-					}
-					case 7:
-					{
-						htmltext = "31706-06.html";
-						break;
-					}
-				}
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

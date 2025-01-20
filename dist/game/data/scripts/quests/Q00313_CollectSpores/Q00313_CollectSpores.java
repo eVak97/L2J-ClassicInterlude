@@ -16,118 +16,100 @@
  */
 package quests.Q00313_CollectSpores;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Collect Spores (313)
- * @author ivantotov
- */
 public class Q00313_CollectSpores extends Quest
 {
-	// NPC
-	private static final int HERBIEL = 30150;
 	// Item
 	private static final int SPORE_SAC = 1118;
-	// Misc
-	private static final int MIN_LEVEL = 8;
-	private static final int REQUIRED_SAC_COUNT = 10;
-	// Monster
-	private static final int SPORE_FUNGUS = 20509;
 	
 	public Q00313_CollectSpores()
 	{
 		super(313);
-		addStartNpc(HERBIEL);
-		addTalkId(HERBIEL);
-		addKillId(SPORE_FUNGUS);
 		registerQuestItems(SPORE_SAC);
-		addCondMaxLevel(13, getNoQuestMsg(null));
+		addStartNpc(30150); // Herbiel
+		addTalkId(30150);
+		addKillId(20509); // Spore Fungus
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
-		String htmltext = null;
-		switch (event)
+		
+		if (event.equals("30150-05.htm"))
 		{
-			case "30150-05.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30150-04.htm":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, false) && giveItemRandomly(killer, npc, SPORE_SAC, 1, REQUIRED_SAC_COUNT, 0.4, true))
-		{
-			qs.setCond(2);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() >= MIN_LEVEL ? "30150-03.htm" : "30150-02.htm";
+				htmltext = (player.getLevel() < 8) ? "30150-02.htm" : "30150-03.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						if (getQuestItemsCount(player, SPORE_SAC) < REQUIRED_SAC_COUNT)
-						{
-							htmltext = "30150-06.html";
-						}
-						break;
-					}
-					case 2:
-					{
-						if (getQuestItemsCount(player, SPORE_SAC) >= REQUIRED_SAC_COUNT)
-						{
-							giveAdena(player, 500, true);
-							qs.exitQuest(true, true);
-							htmltext = "30150-07.html";
-						}
-						break;
-					}
+					htmltext = "30150-06.htm";
+				}
+				else
+				{
+					htmltext = "30150-07.htm";
+					takeItems(player, SPORE_SAC, -1);
+					giveAdena(player, 3500, true);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandom(10) < 4)
+		{
+			giveItems(player, SPORE_SAC, 1);
+			if (getQuestItemsCount(player, SPORE_SAC) < 10)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

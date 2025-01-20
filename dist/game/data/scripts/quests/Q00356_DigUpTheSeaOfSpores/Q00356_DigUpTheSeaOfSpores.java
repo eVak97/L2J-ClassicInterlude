@@ -16,178 +16,177 @@
  */
 package quests.Q00356_DigUpTheSeaOfSpores;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.Config;
-import org.l2jmobius.commons.util.Rnd;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.util.Util;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Dig Up the Sea of Spores! (356)
- * @author Adry_85
- */
 public class Q00356_DigUpTheSeaOfSpores extends Quest
 {
-	// NPC
-	private static final int GAUEN = 30717;
 	// Items
-	private static final int CARNIVORE_SPORE = 5865;
-	private static final int HERBIVOROUS_SPORE = 5866;
-	// Misc
-	private static final int MIN_LEVEL = 43;
+	private static final int HERB_SPORE = 5866;
+	private static final int CARN_SPORE = 5865;
 	// Monsters
 	private static final int ROTTING_TREE = 20558;
 	private static final int SPORE_ZOMBIE = 20562;
-	private static final Map<Integer, Double> MONSTER_DROP_CHANCES = new HashMap<>();
-	static
-	{
-		MONSTER_DROP_CHANCES.put(ROTTING_TREE, 0.73);
-		MONSTER_DROP_CHANCES.put(SPORE_ZOMBIE, 0.94);
-	}
 	
 	public Q00356_DigUpTheSeaOfSpores()
 	{
 		super(356);
-		addStartNpc(GAUEN);
-		addTalkId(GAUEN);
+		registerQuestItems(HERB_SPORE, CARN_SPORE);
+		addStartNpc(30717); // Gauen
+		addTalkId(30717);
 		addKillId(ROTTING_TREE, SPORE_ZOMBIE);
-		registerQuestItems(HERBIVOROUS_SPORE, CARNIVORE_SPORE);
-		addCondMaxLevel(51, getNoQuestMsg(null));
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "30717-02.htm":
-			case "30717-03.htm":
-			case "30717-04.htm":
-			case "30717-10.html":
-			case "30717-18.html":
+			case "30717-06.htm":
 			{
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30717-05.htm":
+			case "30717-16.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
+				takeItems(player, HERB_SPORE, -1);
+				takeItems(player, CARN_SPORE, -1);
+				giveAdena(player, 44000, true);
+				st.exitQuest(true, true);
 				break;
 			}
-			case "30717-09.html":
+			case "30717-14.htm":
 			{
-				takeItems(player, CARNIVORE_SPORE, -1);
-				takeItems(player, HERBIVOROUS_SPORE, -1);
-				htmltext = event;
+				takeItems(player, HERB_SPORE, -1);
+				takeItems(player, CARN_SPORE, -1);
+				addExpAndSp(player, 35000, 2600);
+				st.exitQuest(true, true);
 				break;
 			}
-			case "30717-11.html":
+			case "30717-12.htm":
 			{
-				qs.exitQuest(true, true);
-				htmltext = event;
+				takeItems(player, HERB_SPORE, -1);
+				addExpAndSp(player, 24500, 0);
 				break;
 			}
-			case "30717-14.html":
+			case "30717-13.htm":
 			{
-				qs.exitQuest(true, true);
-				htmltext = event;
+				takeItems(player, CARN_SPORE, -1);
+				addExpAndSp(player, 0, 1820);
 				break;
 			}
-			case "FINISH":
-			{
-				final int value = Rnd.get(100);
-				int adena = 0;
-				if (value < 20)
-				{
-					adena = 3000;
-					htmltext = "30717-15.html";
-				}
-				else if (value < 70)
-				{
-					adena = 1300;
-					htmltext = "30717-16.html";
-				}
-				else
-				{
-					adena = 1300;
-					htmltext = "30717-17.html";
-				}
-				giveAdena(player, adena, true);
-				qs.exitQuest(true, true);
-				break;
-			}
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs == null) || !Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			return null;
 		}
 		
-		final int dropItem = ((npc.getId() == ROTTING_TREE) ? HERBIVOROUS_SPORE : CARNIVORE_SPORE);
-		final int otherItem = ((dropItem == HERBIVOROUS_SPORE) ? CARNIVORE_SPORE : HERBIVOROUS_SPORE);
-		if (giveItemRandomly(qs.getPlayer(), npc, dropItem, 1, 100, MONSTER_DROP_CHANCES.get(npc.getId()), true))
-		{
-			if (getQuestItemsCount(killer, otherItem) >= 100)
-			{
-				qs.setCond(3);
-			}
-			else
-			{
-				qs.setCond(2);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30717-01.htm" : "30717-06.htm";
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 43) ? "30717-01.htm" : "30717-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				if (cond == 1)
+				{
+					htmltext = "30717-07.htm";
+				}
+				else if (cond == 2)
+				{
+					if (getQuestItemsCount(player, HERB_SPORE) >= 50)
+					{
+						htmltext = "30717-08.htm";
+					}
+					else if (getQuestItemsCount(player, CARN_SPORE) >= 50)
+					{
+						htmltext = "30717-09.htm";
+					}
+					else
+					{
+						htmltext = "30717-07.htm";
+					}
+				}
+				else if (cond == 3)
+				{
+					htmltext = "30717-10.htm";
+				}
+				break;
+			}
+			
 		}
-		else if (qs.isStarted())
-		{
-			final boolean hasAllHerbSpores = (getQuestItemsCount(player, HERBIVOROUS_SPORE) >= 100);
-			final boolean hasAllCarnSpores = (getQuestItemsCount(player, CARNIVORE_SPORE) >= 100);
-			if (hasAllHerbSpores && hasAllCarnSpores)
-			{
-				htmltext = "30717-13.html";
-			}
-			else if (hasAllCarnSpores)
-			{
-				htmltext = "30717-12.html";
-			}
-			else if (hasAllHerbSpores)
-			{
-				htmltext = "30717-08.html";
-			}
-			else
-			{
-				htmltext = "30717-07.html";
-			}
-		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		final int cond = st.getCond();
+		if (cond < 3)
+		{
+			switch (npc.getId())
+			{
+				case ROTTING_TREE:
+				{
+					if (getRandom(100) < 63)
+					{
+						giveItems(player, HERB_SPORE, 1);
+						if (getQuestItemsCount(player, HERB_SPORE) < 50)
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+						else
+						{
+							st.setCond(cond == 2 ? 3 : 2, true);
+						}
+					}
+					break;
+				}
+				case SPORE_ZOMBIE:
+				{
+					if (getRandom(100) < 76)
+					{
+						giveItems(player, CARN_SPORE, 1);
+						if (getQuestItemsCount(player, CARN_SPORE) < 50)
+						{
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						}
+						else
+						{
+							st.setCond(cond == 2 ? 3 : 2, true);
+						}
+					}
+					break;
+				}
+			}
+		}
+		
+		return null;
 	}
 }

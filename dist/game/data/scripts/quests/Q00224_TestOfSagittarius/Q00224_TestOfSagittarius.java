@@ -16,47 +16,25 @@
  */
 package quests.Q00224_TestOfSagittarius;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Test Of Sagittarius (224)
- * @author ivantotov
- */
 public class Q00224_TestOfSagittarius extends Quest
 {
 	// NPCs
-	private static final int PREFECT_VOKIAN = 30514;
-	private static final int SAGITTARIUS_HAMIL = 30626;
+	private static final int BERNARD = 30702;
+	private static final int HAMIL = 30626;
 	private static final int SIR_ARON_TANFORD = 30653;
-	private static final int GUILD_PRESIDENT_BERNARD = 30702;
-	private static final int MAGISTER_GAUEN = 30717;
-	// Items
-	private static final int WOODEN_ARROW = 17;
-	private static final int CRESCENT_MOON_BOW = 3028;
-	private static final int BERNARDS_INTRODUCTION = 3294;
-	private static final int HAMILS_1ST_LETTER = 3295;
-	private static final int HAMILS_2ND_LETTER = 3296;
-	private static final int HAMILS_3RD_LETTER = 3297;
-	private static final int HUNTERS_1ST_RUNE = 3298;
-	private static final int HUNTERS_2ND_RUNE = 3299;
-	private static final int TALISMAN_OF_KADESH = 3300;
-	private static final int TALISMAN_OF_SNAKE = 3301;
-	private static final int MITHRIL_CLIP = 3302;
-	private static final int STAKATO_CHITIN = 3303;
-	private static final int REINFORCED_BOWSTRING = 3304;
-	private static final int MANASHENS_HORN = 3305;
-	private static final int BLOOD_OF_LIZARDMAN = 3306;
-	// Reward
-	private static final int MARK_OF_SAGITTARIUS = 3293;
-	// Monster
+	private static final int VOKIAN = 30514;
+	private static final int GAUEN = 30717;
+	// Monsters
 	private static final int ANT = 20079;
 	private static final int ANT_CAPTAIN = 20080;
 	private static final int ANT_OVERSEER = 20081;
@@ -65,12 +43,12 @@ public class Q00224_TestOfSagittarius extends Quest
 	private static final int ANT_GUARD = 20086;
 	private static final int NOBLE_ANT = 20089;
 	private static final int NOBLE_ANT_LEADER = 20090;
-	private static final int MARSH_STAKATO_WORKER = 20230;
-	private static final int MARSH_STAKATO_SOLDIER = 20232;
-	private static final int MARSH_SPIDER = 20233;
-	private static final int MARSH_STAKATO_DRONE = 20234;
 	private static final int BREKA_ORC_SHAMAN = 20269;
 	private static final int BREKA_ORC_OVERLORD = 20270;
+	private static final int MARSH_STAKATO_WORKER = 20230;
+	private static final int MARSH_STAKATO_SOLDIER = 20232;
+	private static final int MARSH_STAKATO_DRONE = 20234;
+	private static final int MARSH_SPIDER = 20233;
 	private static final int ROAD_SCAVENGER = 20551;
 	private static final int MANASHEN_GARGOYLE = 20563;
 	private static final int LETO_LIZARDMAN = 20577;
@@ -79,472 +57,411 @@ public class Q00224_TestOfSagittarius extends Quest
 	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
 	private static final int LETO_LIZARDMAN_SHAMAN = 20581;
 	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
-	// Quest Monster
 	private static final int SERPENT_DEMON_KADESH = 27090;
-	// Misc
-	private static final int MIN_LEVEL = 39;
+	// Items
+	private static final int BERNARD_INTRODUCTION = 3294;
+	private static final int HAMIL_LETTER_1 = 3295;
+	private static final int HAMIL_LETTER_2 = 3296;
+	private static final int HAMIL_LETTER_3 = 3297;
+	private static final int HUNTER_RUNE_1 = 3298;
+	private static final int HUNTER_RUNE_2 = 3299;
+	private static final int TALISMAN_OF_KADESH = 3300;
+	private static final int TALISMAN_OF_SNAKE = 3301;
+	private static final int MITHRIL_CLIP = 3302;
+	private static final int STAKATO_CHITIN = 3303;
+	private static final int REINFORCED_BOWSTRING = 3304;
+	private static final int MANASHEN_HORN = 3305;
+	private static final int BLOOD_OF_LIZARDMAN = 3306;
+	private static final int CRESCENT_MOON_BOW = 3028;
+	private static final int WOODEN_ARROW = 17;
+	// Rewards
+	private static final int MARK_OF_SAGITTARIUS = 3293;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00224_TestOfSagittarius()
 	{
 		super(224);
-		addStartNpc(GUILD_PRESIDENT_BERNARD);
-		addTalkId(GUILD_PRESIDENT_BERNARD, PREFECT_VOKIAN, SAGITTARIUS_HAMIL, SIR_ARON_TANFORD, MAGISTER_GAUEN);
-		addKillId(ANT, ANT_CAPTAIN, ANT_OVERSEER, ANT_RECRUIT, ANT_PATROL, ANT_GUARD, NOBLE_ANT, NOBLE_ANT_LEADER, MARSH_STAKATO_WORKER, MARSH_STAKATO_SOLDIER, MARSH_SPIDER, MARSH_STAKATO_DRONE, BREKA_ORC_SHAMAN, BREKA_ORC_OVERLORD, ROAD_SCAVENGER, MANASHEN_GARGOYLE, LETO_LIZARDMAN, LETO_LIZARDMAN_ARCHER, LETO_LIZARDMAN_SOLDIER, LETO_LIZARDMAN_WARRIOR, LETO_LIZARDMAN_SHAMAN, LETO_LIZARDMAN_OVERLORD, SERPENT_DEMON_KADESH);
-		registerQuestItems(CRESCENT_MOON_BOW, BERNARDS_INTRODUCTION, HAMILS_1ST_LETTER, HAMILS_2ND_LETTER, HAMILS_3RD_LETTER, HUNTERS_1ST_RUNE, HUNTERS_2ND_RUNE, TALISMAN_OF_KADESH, TALISMAN_OF_SNAKE, MITHRIL_CLIP, STAKATO_CHITIN, REINFORCED_BOWSTRING, MANASHENS_HORN, BLOOD_OF_LIZARDMAN);
+		registerQuestItems(BERNARD_INTRODUCTION, HAMIL_LETTER_1, HAMIL_LETTER_2, HAMIL_LETTER_3, HUNTER_RUNE_1, HUNTER_RUNE_2, TALISMAN_OF_KADESH, TALISMAN_OF_SNAKE, MITHRIL_CLIP, STAKATO_CHITIN, REINFORCED_BOWSTRING, MANASHEN_HORN, BLOOD_OF_LIZARDMAN, CRESCENT_MOON_BOW);
+		addStartNpc(BERNARD);
+		addTalkId(BERNARD, HAMIL, SIR_ARON_TANFORD, VOKIAN, GAUEN);
+		addKillId(ANT, ANT_CAPTAIN, ANT_OVERSEER, ANT_RECRUIT, ANT_PATROL, ANT_GUARD, NOBLE_ANT, NOBLE_ANT_LEADER, BREKA_ORC_SHAMAN, BREKA_ORC_OVERLORD, MARSH_STAKATO_WORKER, MARSH_STAKATO_SOLDIER, MARSH_STAKATO_DRONE, MARSH_SPIDER, ROAD_SCAVENGER, MANASHEN_GARGOYLE, LETO_LIZARDMAN, LETO_LIZARDMAN_ARCHER, LETO_LIZARDMAN_SOLDIER, LETO_LIZARDMAN_WARRIOR, LETO_LIZARDMAN_SHAMAN, LETO_LIZARDMAN_OVERLORD, SERPENT_DEMON_KADESH);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30702-04.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, BERNARD_INTRODUCTION, 1);
+				if (!player.getVariables().getBoolean("secondClassChange39", false))
 				{
-					qs.startQuest();
-					qs.setMemoState(1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					giveItems(player, BERNARDS_INTRODUCTION, 1);
+					htmltext = "30702-04a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_39.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange39", true);
 				}
 				break;
 			}
-			case "30514-02.html":
+			case "30626-03.htm":
 			{
-				if (hasQuestItems(player, HAMILS_2ND_LETTER))
-				{
-					takeItems(player, HAMILS_2ND_LETTER, 1);
-					qs.setMemoState(6);
-					qs.setCond(6, true);
-					htmltext = event;
-				}
+				st.setCond(2, true);
+				takeItems(player, BERNARD_INTRODUCTION, 1);
+				giveItems(player, HAMIL_LETTER_1, 1);
 				break;
 			}
-			case "30626-02.html":
-			case "30626-06.html":
+			case "30626-07.htm":
 			{
-				htmltext = event;
+				st.setCond(5, true);
+				takeItems(player, HUNTER_RUNE_1, 10);
+				giveItems(player, HAMIL_LETTER_2, 1);
 				break;
 			}
-			case "30626-03.html":
+			case "30653-02.htm":
 			{
-				if (hasQuestItems(player, BERNARDS_INTRODUCTION))
-				{
-					takeItems(player, BERNARDS_INTRODUCTION, 1);
-					giveItems(player, HAMILS_1ST_LETTER, 1);
-					qs.setMemoState(2);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
+				takeItems(player, HAMIL_LETTER_1, 1);
 				break;
 			}
-			case "30626-07.html":
+			case "30514-02.htm":
 			{
-				if (getQuestItemsCount(player, HUNTERS_1ST_RUNE) >= 10)
-				{
-					giveItems(player, HAMILS_2ND_LETTER, 1);
-					takeItems(player, HUNTERS_1ST_RUNE, -1);
-					qs.setMemoState(5);
-					qs.setCond(5, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30653-02.html":
-			{
-				if (hasQuestItems(player, HAMILS_1ST_LETTER))
-				{
-					takeItems(player, HAMILS_1ST_LETTER, 1);
-					qs.setMemoState(3);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
+				st.setCond(6, true);
+				takeItems(player, HAMIL_LETTER_2, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case ANT:
-				case ANT_CAPTAIN:
-				case ANT_OVERSEER:
-				case ANT_RECRUIT:
-				case ANT_PATROL:
-				case ANT_GUARD:
-				case NOBLE_ANT:
-				case NOBLE_ANT_LEADER:
-				{
-					if (qs.isMemoState(3) && (getQuestItemsCount(killer, HUNTERS_1ST_RUNE) < 10))
-					{
-						if (getQuestItemsCount(killer, HUNTERS_1ST_RUNE) == 9)
-						{
-							giveItems(killer, HUNTERS_1ST_RUNE, 1);
-							qs.setMemoState(4);
-							qs.setCond(4, true);
-						}
-						else
-						{
-							giveItems(killer, HUNTERS_1ST_RUNE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MARSH_STAKATO_WORKER:
-				case MARSH_STAKATO_SOLDIER:
-				case MARSH_STAKATO_DRONE:
-				{
-					if (qs.isMemoState(10) && !hasQuestItems(killer, STAKATO_CHITIN))
-					{
-						if (hasQuestItems(killer, MITHRIL_CLIP, REINFORCED_BOWSTRING, MANASHENS_HORN))
-						{
-							giveItems(killer, STAKATO_CHITIN, 1);
-							qs.setMemoState(11);
-							qs.setCond(11, true);
-						}
-						else
-						{
-							giveItems(killer, STAKATO_CHITIN, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MARSH_SPIDER:
-				{
-					if (qs.isMemoState(10) && !hasQuestItems(killer, REINFORCED_BOWSTRING))
-					{
-						if (hasQuestItems(killer, MITHRIL_CLIP, MANASHENS_HORN, STAKATO_CHITIN))
-						{
-							giveItems(killer, REINFORCED_BOWSTRING, 1);
-							qs.setMemoState(11);
-							qs.setCond(11, true);
-						}
-						else
-						{
-							giveItems(killer, REINFORCED_BOWSTRING, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case BREKA_ORC_SHAMAN:
-				case BREKA_ORC_OVERLORD:
-				{
-					if (qs.isMemoState(6) && (getQuestItemsCount(killer, HUNTERS_2ND_RUNE) < 10))
-					{
-						if (getQuestItemsCount(killer, HUNTERS_2ND_RUNE) == 9)
-						{
-							giveItems(killer, HUNTERS_2ND_RUNE, 1);
-							giveItems(killer, TALISMAN_OF_SNAKE, 1);
-							qs.setMemoState(7);
-							qs.setCond(7, true);
-						}
-						else
-						{
-							giveItems(killer, HUNTERS_2ND_RUNE, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case ROAD_SCAVENGER:
-				{
-					if (qs.isMemoState(10) && !hasQuestItems(killer, MITHRIL_CLIP))
-					{
-						if (hasQuestItems(killer, REINFORCED_BOWSTRING, MANASHENS_HORN, STAKATO_CHITIN))
-						{
-							giveItems(killer, MITHRIL_CLIP, 1);
-							qs.setMemoState(11);
-							qs.setCond(11, true);
-						}
-						else
-						{
-							giveItems(killer, MITHRIL_CLIP, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MANASHEN_GARGOYLE:
-				{
-					if (qs.isMemoState(10) && !hasQuestItems(killer, MANASHENS_HORN))
-					{
-						if (hasQuestItems(killer, MITHRIL_CLIP, REINFORCED_BOWSTRING, STAKATO_CHITIN))
-						{
-							giveItems(killer, MANASHENS_HORN, 1);
-							qs.setMemoState(11);
-							qs.setCond(11, true);
-						}
-						else
-						{
-							giveItems(killer, MANASHENS_HORN, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case LETO_LIZARDMAN:
-				case LETO_LIZARDMAN_ARCHER:
-				case LETO_LIZARDMAN_SOLDIER:
-				case LETO_LIZARDMAN_WARRIOR:
-				case LETO_LIZARDMAN_SHAMAN:
-				case LETO_LIZARDMAN_OVERLORD:
-				{
-					if (qs.isMemoState(13) && (getQuestItemsCount(killer, BLOOD_OF_LIZARDMAN) < 140))
-					{
-						if (((getQuestItemsCount(killer, BLOOD_OF_LIZARDMAN) - 10) * 5) > getRandom(100))
-						{
-							addSpawn(SERPENT_DEMON_KADESH, npc, true, 300000);
-							takeItems(killer, BLOOD_OF_LIZARDMAN, -1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
-						}
-						else
-						{
-							giveItems(killer, BLOOD_OF_LIZARDMAN, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case SERPENT_DEMON_KADESH:
-				{
-					if (qs.isMemoState(13) && !hasQuestItems(killer, TALISMAN_OF_KADESH))
-					{
-						if (npc.getKillingBlowWeapon() == CRESCENT_MOON_BOW)
-						{
-							giveItems(killer, TALISMAN_OF_KADESH, 1);
-							qs.setMemoState(14);
-							qs.setCond(14, true);
-						}
-						else
-						{
-							addSpawn(SERPENT_DEMON_KADESH, npc, true, 300000);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
-		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == GUILD_PRESIDENT_BERNARD)
+			case State.CREATED:
 			{
-				if ((player.getClassId() == ClassId.ROGUE) || (player.getClassId() == ClassId.ELVEN_SCOUT) || (player.getClassId() == ClassId.ASSASSIN))
+				if ((player.getClassId() != ClassId.ROGUE) && (player.getClassId() != ClassId.ELVEN_SCOUT) && (player.getClassId() != ClassId.ASSASSIN))
 				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						htmltext = "30702-03.htm";
-					}
-					else
-					{
-						htmltext = "30702-01.html";
-					}
+					htmltext = "30702-02.htm";
+				}
+				else if (player.getLevel() < 39)
+				{
+					htmltext = "30702-01.htm";
 				}
 				else
 				{
-					htmltext = "30702-02.html";
+					htmltext = "30702-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case GUILD_PRESIDENT_BERNARD:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, BERNARDS_INTRODUCTION))
+					case BERNARD:
 					{
-						htmltext = "30702-05.html";
+						htmltext = "30702-05.htm";
+						break;
 					}
-					break;
-				}
-				case PREFECT_VOKIAN:
-				{
-					if (memoState == 5)
+					case HAMIL:
 					{
-						if (hasQuestItems(player, HAMILS_2ND_LETTER))
+						if (cond == 1)
 						{
-							htmltext = "30514-01.html";
+							htmltext = "30626-01.htm";
 						}
-					}
-					else if (memoState == 6)
-					{
-						htmltext = "30514-03.html";
-					}
-					else if (memoState == 7)
-					{
-						if (hasQuestItems(player, TALISMAN_OF_SNAKE))
+						else if ((cond == 2) || (cond == 3))
 						{
-							takeItems(player, TALISMAN_OF_SNAKE, 1);
-							qs.setMemoState(8);
-							qs.setCond(8, true);
-							htmltext = "30514-04.html";
+							htmltext = "30626-04.htm";
 						}
-					}
-					else if (memoState == 8)
-					{
-						htmltext = "30514-05.html";
-					}
-					break;
-				}
-				case SAGITTARIUS_HAMIL:
-				{
-					if (memoState == 1)
-					{
-						if (hasQuestItems(player, BERNARDS_INTRODUCTION))
+						else if (cond == 4)
 						{
-							htmltext = "30626-01.html";
+							htmltext = "30626-05.htm";
 						}
-					}
-					else if (memoState == 2)
-					{
-						if (hasQuestItems(player, HAMILS_1ST_LETTER))
+						else if ((cond > 4) && (cond < 8))
 						{
-							htmltext = "30626-04.html";
+							htmltext = "30626-08.htm";
 						}
-					}
-					else if (memoState == 4)
-					{
-						if (getQuestItemsCount(player, HUNTERS_1ST_RUNE) == 10)
+						else if (cond == 8)
 						{
-							htmltext = "30626-05.html";
+							htmltext = "30626-09.htm";
+							st.setCond(9, true);
+							takeItems(player, HUNTER_RUNE_2, 10);
+							giveItems(player, HAMIL_LETTER_3, 1);
 						}
-					}
-					else if (memoState == 5)
-					{
-						if (hasQuestItems(player, HAMILS_2ND_LETTER))
+						else if ((cond > 8) && (cond < 12))
 						{
-							htmltext = "30626-08.html";
+							htmltext = "30626-10.htm";
 						}
-					}
-					else if (memoState == 8)
-					{
-						giveItems(player, HAMILS_3RD_LETTER, 1);
-						takeItems(player, HUNTERS_2ND_RUNE, -1);
-						qs.setMemoState(9);
-						qs.setCond(9, true);
-						htmltext = "30626-09.html";
-					}
-					else if (memoState == 9)
-					{
-						if (hasQuestItems(player, HAMILS_3RD_LETTER))
+						else if (cond == 12)
 						{
-							htmltext = "30626-10.html";
+							htmltext = "30626-11.htm";
+							st.setCond(13, true);
 						}
-					}
-					else if (memoState == 12)
-					{
-						if (hasQuestItems(player, CRESCENT_MOON_BOW))
+						else if (cond == 13)
 						{
-							qs.setCond(13, true);
-							qs.setMemoState(13);
-							htmltext = "30626-11.html";
+							htmltext = "30626-12.htm";
 						}
-					}
-					else if (memoState == 13)
-					{
-						htmltext = "30626-12.html";
-					}
-					else if (memoState == 14)
-					{
-						if (hasQuestItems(player, TALISMAN_OF_KADESH))
+						else if (cond == 14)
 						{
-							giveAdena(player, 161806, true);
+							htmltext = "30626-13.htm";
+							takeItems(player, BLOOD_OF_LIZARDMAN, -1);
+							takeItems(player, CRESCENT_MOON_BOW, 1);
+							takeItems(player, TALISMAN_OF_KADESH, 1);
 							giveItems(player, MARK_OF_SAGITTARIUS, 1);
-							addExpAndSp(player, 894888, 61408);
-							qs.exitQuest(false, true);
-							player.sendPacket(new SocialAction(player.getObjectId(), 3));
-							htmltext = "30626-13.html";
+							addExpAndSp(player, 54726, 20250);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
+						break;
 					}
-					break;
-				}
-				case SIR_ARON_TANFORD:
-				{
-					if (memoState == 2)
+					case SIR_ARON_TANFORD:
 					{
-						if (hasQuestItems(player, HAMILS_1ST_LETTER))
+						if (cond == 2)
 						{
-							htmltext = "30653-01.html";
+							htmltext = "30653-01.htm";
 						}
-					}
-					else if (memoState == 3)
-					{
-						htmltext = "30653-03.html";
-					}
-					break;
-				}
-				case MAGISTER_GAUEN:
-				{
-					if (memoState == 9)
-					{
-						if (hasQuestItems(player, HAMILS_3RD_LETTER))
+						else if (cond > 2)
 						{
-							takeItems(player, HAMILS_3RD_LETTER, 1);
-							qs.setMemoState(10);
-							qs.setCond(10, true);
-							htmltext = "30717-01.html";
+							htmltext = "30653-03.htm";
 						}
+						break;
 					}
-					else if (memoState == 10)
+					case VOKIAN:
 					{
-						htmltext = "30717-03.html";
-					}
-					else if (memoState == 12)
-					{
-						htmltext = "30717-04.html";
-					}
-					else if (memoState == 11)
-					{
-						if (hasQuestItems(player, STAKATO_CHITIN, MITHRIL_CLIP, REINFORCED_BOWSTRING, MANASHENS_HORN))
+						if (cond == 5)
 						{
-							giveItems(player, WOODEN_ARROW, 10);
-							giveItems(player, CRESCENT_MOON_BOW, 1);
+							htmltext = "30514-01.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30514-03.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30514-04.htm";
+							st.setCond(8, true);
+							takeItems(player, TALISMAN_OF_SNAKE, 1);
+						}
+						else if (cond > 7)
+						{
+							htmltext = "30514-05.htm";
+						}
+						break;
+					}
+					case GAUEN:
+					{
+						if (cond == 9)
+						{
+							htmltext = "30717-01.htm";
+							st.setCond(10, true);
+							takeItems(player, HAMIL_LETTER_3, 1);
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30717-03.htm";
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30717-02.htm";
+							st.setCond(12, true);
+							takeItems(player, MANASHEN_HORN, 1);
 							takeItems(player, MITHRIL_CLIP, 1);
-							takeItems(player, STAKATO_CHITIN, 1);
 							takeItems(player, REINFORCED_BOWSTRING, 1);
-							takeItems(player, MANASHENS_HORN, 1);
-							qs.setMemoState(12);
-							qs.setCond(12, true);
-							htmltext = "30717-02.html";
+							takeItems(player, STAKATO_CHITIN, 1);
+							giveItems(player, CRESCENT_MOON_BOW, 1);
+							giveItems(player, WOODEN_ARROW, 10);
 						}
+						else if (cond > 11)
+						{
+							htmltext = "30717-04.htm";
+						}
+						break;
 					}
-					break;
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == GUILD_PRESIDENT_BERNARD)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case ANT:
+			case ANT_CAPTAIN:
+			case ANT_OVERSEER:
+			case ANT_RECRUIT:
+			case ANT_PATROL:
+			case ANT_GUARD:
+			case NOBLE_ANT:
+			case NOBLE_ANT_LEADER:
+			{
+				if (st.isCond(3) && getRandomBoolean())
+				{
+					giveItems(player, HUNTER_RUNE_1, 1);
+					if ((getQuestItemsCount(player, HUNTER_RUNE_1) >= 10))
+					{
+						st.setCond(4);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case BREKA_ORC_SHAMAN:
+			case BREKA_ORC_OVERLORD:
+			{
+				if (st.isCond(6) && getRandomBoolean())
+				{
+					giveItems(player, HUNTER_RUNE_2, 1);
+					if ((getQuestItemsCount(player, HUNTER_RUNE_2) >= 10))
+					{
+						st.setCond(7, true);
+						giveItems(player, TALISMAN_OF_SNAKE, 1);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_STAKATO_WORKER:
+			case MARSH_STAKATO_SOLDIER:
+			case MARSH_STAKATO_DRONE:
+			{
+				if (st.isCond(10) && (getRandom(10) < 1))
+				{
+					giveItems(player, STAKATO_CHITIN, 1);
+					if (hasQuestItems(player, MANASHEN_HORN, MITHRIL_CLIP, REINFORCED_BOWSTRING))
+					{
+						st.setCond(11, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_SPIDER:
+			{
+				if (st.isCond(10) && (getRandom(10) < 1))
+				{
+					giveItems(player, REINFORCED_BOWSTRING, 1);
+					if (hasQuestItems(player, MANASHEN_HORN, MITHRIL_CLIP, STAKATO_CHITIN))
+					{
+						st.setCond(11, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case ROAD_SCAVENGER:
+			{
+				if (st.isCond(10) && (getRandom(10) < 1))
+				{
+					giveItems(player, MITHRIL_CLIP, 1);
+					if (hasQuestItems(player, MANASHEN_HORN, REINFORCED_BOWSTRING, STAKATO_CHITIN))
+					{
+						st.setCond(11, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MANASHEN_GARGOYLE:
+			{
+				if (st.isCond(10) && (getRandom(10) < 1))
+				{
+					giveItems(player, MANASHEN_HORN, 1);
+					if (hasQuestItems(player, REINFORCED_BOWSTRING, MITHRIL_CLIP, STAKATO_CHITIN))
+					{
+						st.setCond(11, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case LETO_LIZARDMAN:
+			case LETO_LIZARDMAN_ARCHER:
+			case LETO_LIZARDMAN_SOLDIER:
+			case LETO_LIZARDMAN_WARRIOR:
+			case LETO_LIZARDMAN_SHAMAN:
+			case LETO_LIZARDMAN_OVERLORD:
+			{
+				if (st.isCond(13))
+				{
+					if (((getQuestItemsCount(player, BLOOD_OF_LIZARDMAN) - 120) * 5) > getRandom(100))
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+						takeItems(player, BLOOD_OF_LIZARDMAN, -1);
+						addSpawn(SERPENT_DEMON_KADESH, player, false, 300000);
+					}
+					else
+					{
+						giveItems(player, BLOOD_OF_LIZARDMAN, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case SERPENT_DEMON_KADESH:
+			{
+				if (st.isCond(13))
+				{
+					if (player.getInventory().getPaperdollItemId(Inventory.PAPERDOLL_RHAND) == CRESCENT_MOON_BOW)
+					{
+						st.setCond(14, true);
+						giveItems(player, TALISMAN_OF_KADESH, 1);
+					}
+					else
+					{
+						addSpawn(SERPENT_DEMON_KADESH, player, false, 300000);
+					}
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

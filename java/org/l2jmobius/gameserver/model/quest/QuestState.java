@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.QuestType;
 import org.l2jmobius.gameserver.instancemanager.QuestManager;
+import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
 import org.l2jmobius.gameserver.model.events.EventType;
@@ -871,5 +872,19 @@ public class QuestState
 	public void playTutorialVoice(String voice)
 	{
 		_player.sendPacket(new PlaySound(2, voice, 0, 0, _player.getX(), _player.getY(), _player.getZ()));
+	}
+	
+	/**
+	 * Add player to get notification of characters death
+	 * @param creature the {@link Creature} object of the character to get notification of death
+	 */
+	public void addNotifyOfDeath(Creature creature)
+	{
+		if (!creature.isPlayer())
+		{
+			return;
+		}
+		
+		creature.asPlayer().addNotifyQuestOfDeath(this);
 	}
 }

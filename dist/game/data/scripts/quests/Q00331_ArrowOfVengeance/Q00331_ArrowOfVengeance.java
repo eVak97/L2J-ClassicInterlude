@@ -16,9 +16,6 @@
  */
 package quests.Q00331_ArrowOfVengeance;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -26,134 +23,123 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Arrow for Vengeance (331)
- * @author xban1x
- */
 public class Q00331_ArrowOfVengeance extends Quest
 {
-	// NPCs
-	private static final int BELTON = 30125;
 	// Items
 	private static final int HARPY_FEATHER = 1452;
 	private static final int MEDUSA_VENOM = 1453;
-	private static final int WYRMS_TOOTH = 1454;
-	// Monster
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
-	static
-	{
-		MONSTERS.put(20145, 59); // Harpy
-		MONSTERS.put(20158, 61); // Medusa
-		MONSTERS.put(20176, 60); // Wyrm
-	}
-	// Misc
-	private static final int MIN_LEVEL = 32;
-	private static final int HARPY_FEATHER_ADENA = 6;
-	private static final int MEDUSA_VENOM_ADENA = 7;
-	private static final int WYRMS_TOOTH_ADENA = 9;
-	private static final int BONUS = 1000;
-	private static final int BONUS_COUNT = 10;
+	private static final int WYRM_TOOTH = 1454;
 	
 	public Q00331_ArrowOfVengeance()
 	{
 		super(331);
-		addStartNpc(BELTON);
-		addTalkId(BELTON);
-		addKillId(MONSTERS.keySet());
-		registerQuestItems(HARPY_FEATHER, MEDUSA_VENOM, WYRMS_TOOTH);
-		addCondMaxLevel(39, getNoQuestMsg(null));
+		registerQuestItems(HARPY_FEATHER, MEDUSA_VENOM, WYRM_TOOTH);
+		addStartNpc(30125); // Belton
+		addTalkId(30125);
+		addKillId(20145, 20158, 20176);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
-			{
-				case "30125-03.htm":
-				{
-					qs.startQuest();
-					htmltext = event;
-					break;
-				}
-				case "30125-06.html":
-				{
-					qs.exitQuest(true, true);
-					htmltext = event;
-					break;
-				}
-				case "30125-07.html":
-				{
-					htmltext = event;
-					break;
-				}
-			}
+			return htmltext;
 		}
+		
+		if (event.equals("30125-03.htm"))
+		{
+			st.startQuest();
+		}
+		else if (event.equals("30125-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() < MIN_LEVEL ? "30125-01.htm" : "30125-02.htm";
+				htmltext = (player.getLevel() < 32) ? "30125-01.htm" : "30125-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				final long harpyFeathers = getQuestItemsCount(player, HARPY_FEATHER);
-				final long medusaVenoms = getQuestItemsCount(player, MEDUSA_VENOM);
-				final long wyrmsTeeth = getQuestItemsCount(player, WYRMS_TOOTH);
-				if ((harpyFeathers + medusaVenoms + wyrmsTeeth) > 0)
+				final int harpyFeather = (int) getQuestItemsCount(player, HARPY_FEATHER);
+				final int medusaVenom = (int) getQuestItemsCount(player, MEDUSA_VENOM);
+				final int wyrmTooth = (int) getQuestItemsCount(player, WYRM_TOOTH);
+				
+				if ((harpyFeather + medusaVenom + wyrmTooth) > 0)
 				{
-					giveAdena(player, ((harpyFeathers * HARPY_FEATHER_ADENA) + (medusaVenoms * MEDUSA_VENOM_ADENA) + (wyrmsTeeth * WYRMS_TOOTH_ADENA) + ((harpyFeathers + medusaVenoms + wyrmsTeeth) >= BONUS_COUNT ? BONUS : 0)), true);
-					takeItems(player, -1, HARPY_FEATHER, MEDUSA_VENOM, WYRMS_TOOTH);
-					htmltext = "30125-05.html";
+					htmltext = "30125-05.htm";
+					takeItems(player, HARPY_FEATHER, -1);
+					takeItems(player, MEDUSA_VENOM, -1);
+					takeItems(player, WYRM_TOOTH, -1);
+					
+					int reward = (harpyFeather * 80) + (medusaVenom * 90) + (wyrmTooth * 100);
+					if ((harpyFeather + medusaVenom + wyrmTooth) > 10)
+					{
+						reward += 3100;
+					}
+					
+					giveAdena(player, reward, true);
 				}
 				else
 				{
-					htmltext = "30125-04.html";
+					htmltext = "30125-04.htm";
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && (getRandom(100) < MONSTERS.get(npc.getId())))
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
 		{
 			switch (npc.getId())
 			{
 				case 20145:
 				{
 					giveItems(player, HARPY_FEATHER, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 				case 20158:
 				{
 					giveItems(player, MEDUSA_VENOM, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 				case 20176:
 				{
-					giveItems(player, WYRMS_TOOTH, 1);
+					giveItems(player, WYRM_TOOTH, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					break;
 				}
 			}
-			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
-		return super.onKill(npc, player, isPet);
+		
+		return null;
 	}
 }

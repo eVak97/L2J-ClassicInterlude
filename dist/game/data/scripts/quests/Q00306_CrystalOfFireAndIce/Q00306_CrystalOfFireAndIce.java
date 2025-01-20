@@ -16,150 +16,125 @@
  */
 package quests.Q00306_CrystalOfFireAndIce;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Crystals of Fire and Ice (306)
- * @author ivantotov
- */
 public class Q00306_CrystalOfFireAndIce extends Quest
 {
-	// NPC
-	private static final int KATERINA = 30004;
 	// Items
 	private static final int FLAME_SHARD = 1020;
 	private static final int ICE_SHARD = 1021;
-	// Misc
-	private static final int MIN_LEVEL = 17;
-	// Monsters
-	private static final int UNDINE_NOBLE = 20115;
-	private static final Map<Integer, ItemHolder> MONSTER_DROPS = new HashMap<>();
-	static
+	
+	// Droplist (npcId, itemId, chance)
+	private static final int[][] DROPLIST =
 	{
-		MONSTER_DROPS.put(20109, new ItemHolder(FLAME_SHARD, 925)); // Salamander
-		MONSTER_DROPS.put(20110, new ItemHolder(ICE_SHARD, 900)); // Undine
-		MONSTER_DROPS.put(20112, new ItemHolder(FLAME_SHARD, 900)); // Salamander Elder
-		MONSTER_DROPS.put(20113, new ItemHolder(ICE_SHARD, 925)); // Undine Elder
-		MONSTER_DROPS.put(20114, new ItemHolder(FLAME_SHARD, 925)); // Salamander Noble
-		MONSTER_DROPS.put(UNDINE_NOBLE, new ItemHolder(ICE_SHARD, 950)); // Undine Noble
-	}
+		// @formatter:off
+		{20109, FLAME_SHARD, 300000},
+		{20110, ICE_SHARD, 300000},
+		{20112, FLAME_SHARD, 400000},
+		{20113, ICE_SHARD, 400000},
+		{20114, FLAME_SHARD, 500000},
+		{20115, ICE_SHARD, 500000}
+		// @formatter:on
+	};
 	
 	public Q00306_CrystalOfFireAndIce()
 	{
 		super(306);
-		addStartNpc(KATERINA);
-		addTalkId(KATERINA);
-		addKillId(MONSTER_DROPS.keySet());
 		registerQuestItems(FLAME_SHARD, ICE_SHARD);
-		addCondMaxLevel(23, getNoQuestMsg(null));
+		addStartNpc(30004); // Katerina
+		addTalkId(30004);
+		addKillId(20109, 20110, 20112, 20113, 20114, 20115);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
-		String htmltext = null;
-		switch (event)
+		
+		if (event.equals("30004-03.htm"))
 		{
-			case "30004-04.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30004-08.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30004-09.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30004-06.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs;
-		if (npc.getId() == UNDINE_NOBLE) // Undine Noble gives quest drops only for the killer
-		{
-			qs = getQuestState(killer, false);
-			if ((qs != null) && qs.isStarted())
-			{
-				giveKillReward(killer, npc);
-			}
-		}
-		else
-		{
-			qs = getRandomPartyMemberState(killer, -1, 3, npc);
-			if (qs != null)
-			{
-				giveKillReward(qs.getPlayer(), npc);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() >= MIN_LEVEL ? "30004-03.htm" : "30004-02.htm";
+				htmltext = (player.getLevel() < 17) ? "30004-01.htm" : "30004-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
+				final int totalItems = (int) (getQuestItemsCount(player, FLAME_SHARD) + getQuestItemsCount(player, ICE_SHARD));
+				if (totalItems == 0)
 				{
-					final long flame = getQuestItemsCount(player, FLAME_SHARD);
-					final long ice = getQuestItemsCount(player, ICE_SHARD);
-					giveAdena(player, ((flame * 15) + (ice * 15) + ((flame + ice) >= 10 ? 5000 : 0)), true);
-					takeItems(player, -1, getRegisteredItemIds());
-					htmltext = "30004-07.html";
+					htmltext = "30004-04.htm";
 				}
 				else
 				{
-					htmltext = "30004-05.html";
+					htmltext = "30004-05.htm";
+					takeItems(player, FLAME_SHARD, -1);
+					takeItems(player, ICE_SHARD, -1);
+					
+					int reward = totalItems * 60;
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (totalItems >= 10))
+					{
+						reward += 5000;
+					}
+					
+					giveAdena(player, reward, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
-	private void giveKillReward(Player player, Npc npc)
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, player, false))
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
 		{
-			final ItemHolder item = MONSTER_DROPS.get(npc.getId());
-			giveItemRandomly(player, npc, item.getId(), 1, 0, 1000.0 / item.getCount(), true);
+			return null;
 		}
+		
+		for (int[] drop : DROPLIST)
+		{
+			if (npc.getId() == drop[0])
+			{
+				if (getRandom(1000000) < drop[2])
+				{
+					giveItems(player, drop[1], 1);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

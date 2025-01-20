@@ -22,10 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * To the Primeval Isle (110)
- * @author Adry_85, Gladicek
- */
 public class Q00110_ToThePrimevalIsle extends Quest
 {
 	// NPCs
@@ -33,64 +29,37 @@ public class Q00110_ToThePrimevalIsle extends Quest
 	private static final int MARQUEZ = 32113;
 	// Item
 	private static final int ANCIENT_BOOK = 8777;
-	// Misc
-	private static final int MIN_LEVEL = 75;
 	
 	public Q00110_ToThePrimevalIsle()
 	{
 		super(110);
+		registerQuestItems(ANCIENT_BOOK);
 		addStartNpc(ANTON);
 		addTalkId(ANTON, MARQUEZ);
-		addCondMinLevel(MIN_LEVEL, "");
-		registerQuestItems(ANCIENT_BOOK);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("31338-02.htm"))
 		{
-			case "31338-03.htm":
-			case "31338-04.htm":
-			case "32113-02.html":
-			case "32113-03.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "31338-05.html":
-			{
-				giveItems(player, ANCIENT_BOOK, 1);
-				qs.startQuest();
-				break;
-			}
-			case "32113-04.html":
-			case "32113-05.html":
-			{
-				if (qs.isCond(1))
-				{
-					if ((player.getLevel() >= MIN_LEVEL))
-					{
-						giveAdena(player, 189208, true);
-						addExpAndSp(player, 887732, 213);
-						qs.exitQuest(false, true);
-					}
-					else
-					{
-						htmltext = getNoQuestLevelRewardMsg(player);
-					}
-					break;
-				}
-				break;
-			}
+			st.startQuest();
+			giveItems(player, ANCIENT_BOOK, 1);
 		}
+		else if (event.equals("32113-03.htm") && hasQuestItems(player, ANCIENT_BOOK))
+		{
+			takeItems(player, ANCIENT_BOOK, 1);
+			giveAdena(player, 169380, true);
+			st.exitQuest(false, true);
+		}
+		
 		return htmltext;
 	}
 	
@@ -98,36 +67,28 @@ public class Q00110_ToThePrimevalIsle extends Quest
 	public String onTalk(Npc npc, Player player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		final QuestState qs = getQuestState(player, true);
-		if (qs == null)
-		{
-			return htmltext;
-		}
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				if (npc.getId() == ANTON)
-				{
-					htmltext = "31338-01.htm";
-				}
+				htmltext = (player.getLevel() < 75) ? "31338-00.htm" : "31338-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (npc.getId() == ANTON)
+				switch (npc.getId())
 				{
-					if (qs.isCond(1))
+					case ANTON:
 					{
-						htmltext = "32113-06.html";
+						htmltext = "31338-01c.htm";
+						break;
 					}
-				}
-				else if (npc.getId() == MARQUEZ)
-				{
-					if (qs.isCond(1))
+					case MARQUEZ:
 					{
-						htmltext = "32113-01.html";
+						htmltext = "32113-01.htm";
+						break;
 					}
 				}
 				break;
@@ -138,6 +99,7 @@ public class Q00110_ToThePrimevalIsle extends Quest
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

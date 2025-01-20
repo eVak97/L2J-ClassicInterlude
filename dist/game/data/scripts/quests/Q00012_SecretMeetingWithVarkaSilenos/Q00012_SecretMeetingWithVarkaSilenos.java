@@ -22,118 +22,114 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Secret Meeting With Varka Silenos (12)<br>
- * Original Jython script by Emperorc.
- * @author nonom
- */
 public class Q00012_SecretMeetingWithVarkaSilenos extends Quest
 {
 	// NPCs
 	private static final int CADMON = 31296;
 	private static final int HELMUT = 31258;
-	private static final int NARAN = 31378;
-	// Item
-	private static final int BOX = 7232;
+	private static final int NARAN_ASHANUK = 31378;
+	// Items
+	private static final int MUNITIONS_BOX = 7232;
 	
 	public Q00012_SecretMeetingWithVarkaSilenos()
 	{
 		super(12);
+		registerQuestItems(MUNITIONS_BOX);
 		addStartNpc(CADMON);
-		addTalkId(CADMON, HELMUT, NARAN);
-		registerQuestItems(BOX);
+		addTalkId(CADMON, HELMUT, NARAN_ASHANUK);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "31296-03.html":
+			case "31296-03.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
-			case "31258-02.html":
+			case "31258-02.htm":
 			{
-				if (qs.isCond(1))
-				{
-					qs.setCond(2, true);
-					giveItems(player, BOX, 1);
-				}
+				giveItems(player, MUNITIONS_BOX, 1);
+				st.setCond(2, true);
 				break;
 			}
-			case "31378-02.html":
+			case "31378-02.htm":
 			{
-				if (qs.isCond(2) && hasQuestItems(player, BOX))
-				{
-					addExpAndSp(player, 233125, 18142);
-					qs.exitQuest(false, true);
-				}
-				else
-				{
-					htmltext = "31378-03.html";
-				}
+				takeItems(player, MUNITIONS_BOX, 1);
+				addExpAndSp(player, 79761, 0);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 74) ? "31296-02.htm" : "31296-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case CADMON:
+					{
+						if (cond == 1)
+						{
+							htmltext = "31296-04.htm";
+						}
+						break;
+					}
+					case HELMUT:
+					{
+						if (cond == 1)
+						{
+							htmltext = "31258-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "31258-03.htm";
+						}
+						break;
+					}
+					case NARAN_ASHANUK:
+					{
+						if (cond == 2)
+						{
+							htmltext = "31378-01.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
 			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npcId == CADMON)
-				{
-					htmltext = (player.getLevel() >= 74) ? "31296-01.htm" : "31296-02.html";
-				}
-				break;
-			}
-			case State.STARTED:
-			{
-				final int cond = qs.getCond();
-				if ((npcId == CADMON) && (cond == 1))
-				{
-					htmltext = "31296-04.html";
-				}
-				else if (npcId == HELMUT)
-				{
-					if (cond == 1)
-					{
-						htmltext = "31258-01.html";
-					}
-					else if (cond == 2)
-					{
-						htmltext = "31258-03.html";
-					}
-				}
-				else if ((npcId == NARAN) && (cond == 2))
-				{
-					htmltext = "31378-01.html";
-				}
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 }

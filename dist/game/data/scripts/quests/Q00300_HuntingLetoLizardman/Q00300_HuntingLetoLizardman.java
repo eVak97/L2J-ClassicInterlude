@@ -22,156 +22,125 @@ import java.util.Map;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
-import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Hunting Leto Lizardman (300)
- * @author ivantotov
- */
 public class Q00300_HuntingLetoLizardman extends Quest
 {
-	// NPCs
-	private static final int RATH = 30126;
-	// Items
-	private static final int BRACELET_OF_LIZARDMAN = 7139;
-	private static final ItemHolder REWARD_ADENA = new ItemHolder(Inventory.ADENA_ID, 5000);
-	private static final ItemHolder REWARD_ANIMAL_BONE = new ItemHolder(1872, 50);
-	private static final ItemHolder REWARD_ANIMAL_SKIN = new ItemHolder(1867, 50);
-	// Misc
-	private static final int MIN_LEVEL = 34;
-	private static final int REQUIRED_BRACELET_COUNT = 60;
 	// Monsters
-	private static final Map<Integer, Integer> MOBS_SAC = new HashMap<>();
+	private static final int LETO_LIZARDMAN = 20577;
+	private static final int LETO_LIZARDMAN_ARCHER = 20578;
+	private static final int LETO_LIZARDMAN_SOLDIER = 20579;
+	private static final int LETO_LIZARDMAN_WARRIOR = 20580;
+	private static final int LETO_LIZARDMAN_OVERLORD = 20582;
+	// Item
+	private static final int BRACELET = 7139;
+	// Drop chances
+	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
 	{
-		MOBS_SAC.put(20577, 360); // Leto Lizardman
-		MOBS_SAC.put(20578, 390); // Leto Lizardman Archer
-		MOBS_SAC.put(20579, 410); // Leto Lizardman Soldier
-		MOBS_SAC.put(20580, 790); // Leto Lizardman Warrior
-		MOBS_SAC.put(20582, 890); // Leto Lizardman Overlord
+		CHANCES.put(LETO_LIZARDMAN, 300000);
+		CHANCES.put(LETO_LIZARDMAN_ARCHER, 320000);
+		CHANCES.put(LETO_LIZARDMAN_SOLDIER, 350000);
+		CHANCES.put(LETO_LIZARDMAN_WARRIOR, 650000);
+		CHANCES.put(LETO_LIZARDMAN_OVERLORD, 700000);
 	}
 	
 	public Q00300_HuntingLetoLizardman()
 	{
 		super(300);
-		addStartNpc(RATH);
-		addTalkId(RATH);
-		addKillId(MOBS_SAC.keySet());
-		registerQuestItems(BRACELET_OF_LIZARDMAN);
-		addCondMaxLevel(39, getNoQuestMsg(null));
+		registerQuestItems(BRACELET);
+		addStartNpc(30126); // Rath
+		addTalkId(30126);
+		addKillId(LETO_LIZARDMAN, LETO_LIZARDMAN_ARCHER, LETO_LIZARDMAN_SOLDIER, LETO_LIZARDMAN_WARRIOR, LETO_LIZARDMAN_OVERLORD);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
-		String htmltext = null;
-		switch (event)
+		
+		if (event.equals("30126-03.htm"))
 		{
-			case "30126-03.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30126-06.html":
-			{
-				if (getQuestItemsCount(player, BRACELET_OF_LIZARDMAN) >= REQUIRED_BRACELET_COUNT)
-				{
-					takeItems(player, BRACELET_OF_LIZARDMAN, -1);
-					final int rand = getRandom(1000);
-					if (rand < 500)
-					{
-						giveItems(player, REWARD_ADENA);
-					}
-					else if (rand < 750)
-					{
-						giveItems(player, REWARD_ANIMAL_SKIN);
-					}
-					else if (rand < 1000)
-					{
-						giveItems(player, REWARD_ANIMAL_BONE);
-					}
-					qs.exitQuest(true, true);
-					htmltext = event;
-				}
-				else
-				{
-					htmltext = "30126-07.html";
-				}
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30126-05.htm") && (getQuestItemsCount(player, BRACELET) >= 60))
+		{
+			htmltext = "30126-06.htm";
+			takeItems(player, BRACELET, -1);
+			
+			final int luck = getRandom(3);
+			if (luck == 0)
+			{
+				giveAdena(player, 30000, true);
+			}
+			else if (luck == 1)
+			{
+				rewardItems(player, 1867, 50);
+			}
+			else if (luck == 2)
+			{
+				rewardItems(player, 1872, 50);
+			}
+			
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final Player partyMember = getRandomPartyMember(player, 1);
-		if (partyMember != null)
-		{
-			final QuestState qs = getQuestState(partyMember, false);
-			if (qs.isCond(1) && (getRandom(1000) < MOBS_SAC.get(npc.getId())))
-			{
-				giveItems(player, BRACELET_OF_LIZARDMAN, 1);
-				if (getQuestItemsCount(player, BRACELET_OF_LIZARDMAN) == REQUIRED_BRACELET_COUNT)
-				{
-					qs.setCond(2, true);
-				}
-				else
-				{
-					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30126-01.htm" : "30126-02.htm";
+				htmltext = (player.getLevel() < 34) ? "30126-01.htm" : "30126-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
-						htmltext = "30126-04.html";
-						break;
-					}
-					case 2:
-					{
-						if (getQuestItemsCount(player, BRACELET_OF_LIZARDMAN) >= REQUIRED_BRACELET_COUNT)
-						{
-							htmltext = "30126-05.html";
-						}
-						break;
-					}
-				}
+				htmltext = st.isCond(1) ? "30126-04a.htm" : "30126-04.htm";
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getRandomPartyMemberState(player, 1, 3, npc);
+		if (st == null)
+		{
+			return null;
+		}
+		final Player partyMember = st.getPlayer();
+		
+		if (getRandom(1000000) < CHANCES.get(npc.getId()))
+		{
+			giveItems(partyMember, BRACELET, 1);
+			if (getQuestItemsCount(partyMember, BRACELET) < 60)
+			{
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

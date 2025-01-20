@@ -159,7 +159,6 @@ public class Q00350_EnhanceYourWeapon extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		
 		if (qs.getState() == State.CREATED)
 		{
 			if (player.getLevel() < MIN_LEVEL)
@@ -223,7 +222,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 			player.sendPacket(sms);
 			
 			// Send inventory update packet
-			player.sendPacket(playerIU);
+			player.sendInventoryUpdate(playerIU);
 		}
 	}
 	
@@ -285,7 +284,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		}
 		else
 		{
-			player.sendPacket(SystemMessageId.THE_SOUL_CRYSTAL_WAS_NOT_ABLE_TO_ABSORB_THE_SOUL);
+			player.sendPacket(SystemMessageId.THE_SOUL_CRYSTAL_IS_REFUSING_TO_ABSORB_THE_SOUL);
 		}
 	}
 	

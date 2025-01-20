@@ -16,108 +16,105 @@
  */
 package quests.Q00317_CatchTheWind;
 
+import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Catch The Wind (317)
- * @author ivantotov
- */
 public class Q00317_CatchTheWind extends Quest
 {
-	// NPC
-	private static final int RIZRAELL = 30361;
 	// Item
 	private static final int WIND_SHARD = 1078;
-	// Misc
-	private static final int MIN_LEVEL = 18;
-	private static final double DROP_CHANCE = 0.5;
-	// Monsters
-	private static final int[] MONSTERS =
-	{
-		20036, // Lirein
-		20044, // Lirein Elder
-	};
 	
 	public Q00317_CatchTheWind()
 	{
 		super(317);
-		addStartNpc(RIZRAELL);
-		addTalkId(RIZRAELL);
-		addKillId(MONSTERS);
 		registerQuestItems(WIND_SHARD);
-		addCondMaxLevel(23, getNoQuestMsg(null));
+		addStartNpc(30361); // Rizraell
+		addTalkId(30361);
+		addKillId(20036, 20044);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30361-04.htm"))
 		{
-			case "30361-04.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30361-08.html":
-			case "30361-09.html":
-			{
-				final long shardCount = getQuestItemsCount(player, WIND_SHARD);
-				if (shardCount > 0)
-				{
-					giveAdena(player, ((shardCount * 10) + (shardCount >= 10 ? 2988 : 0)), true);
-					takeItems(player, WIND_SHARD, -1);
-				}
-				
-				if (event.equals("30361-08.html"))
-				{
-					qs.exitQuest(true, true);
-				}
-				
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30361-08.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
-			giveItemRandomly(qs.getPlayer(), npc, WIND_SHARD, 1, 0, DROP_CHANCE, true);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			htmltext = ((player.getLevel() >= MIN_LEVEL) ? "30361-03.htm" : "30361-02.htm");
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 18) ? "30361-02.htm" : "30361-03.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int shards = (int) getQuestItemsCount(player, WIND_SHARD);
+				if (shards == 0)
+				{
+					htmltext = "30361-05.htm";
+				}
+				else
+				{
+					htmltext = "30361-07.htm";
+					takeItems(player, WIND_SHARD, -1);
+					
+					int reward = 30 * shards;
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (shards >= 10))
+					{
+						reward += 2988;
+					}
+					
+					giveAdena(player, reward, true);
+				}
+				break;
+			}
 		}
-		else if (qs.isStarted())
-		{
-			htmltext = (hasQuestItems(player, WIND_SHARD) ? "30361-07.html" : "30361-05.html");
-		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (getRandomBoolean())
+		{
+			giveItems(player, WIND_SHARD, 1);
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

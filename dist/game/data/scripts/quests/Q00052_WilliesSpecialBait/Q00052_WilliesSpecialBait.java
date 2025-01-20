@@ -24,57 +24,72 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Willie's Special Bait (52)<br>
- * Original Jython script by Kilkenny.
- * @author nonom
- */
 public class Q00052_WilliesSpecialBait extends Quest
 {
-	// NPCs
-	private static final int WILLIE = 31574;
-	private static final int TARLK_BASILISK = 20573;
-	// Items
+	// Item
 	private static final int TARLK_EYE = 7623;
+	// Reward
 	private static final int EARTH_FISHING_LURE = 7612;
 	
 	public Q00052_WilliesSpecialBait()
 	{
 		super(52);
-		addStartNpc(WILLIE);
-		addTalkId(WILLIE);
-		addKillId(TARLK_BASILISK);
 		registerQuestItems(TARLK_EYE);
+		addStartNpc(31574); // Willie
+		addTalkId(31574);
+		addKillId(20573); // Tarlk Basilik
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		String htmltext = event;
-		switch (event)
+		if (event.equals("31574-03.htm"))
 		{
-			case "31574-03.htm":
+			st.startQuest();
+		}
+		else if (event.equals("31574-07.htm"))
+		{
+			htmltext = "31574-06.htm";
+			takeItems(player, TARLK_EYE, -1);
+			rewardItems(player, EARTH_FISHING_LURE, 4);
+			st.exitQuest(false, true);
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				qs.startQuest();
+				htmltext = (player.getLevel() < 48) ? "31574-02.htm" : "31574-01.htm";
 				break;
 			}
-			case "31574-07.html":
+			case State.STARTED:
 			{
-				if (qs.isCond(2) && (getQuestItemsCount(player, TARLK_EYE) >= 100))
-				{
-					htmltext = "31574-06.htm";
-					giveItems(player, EARTH_FISHING_LURE, 4);
-					qs.exitQuest(false, true);
-				}
+				htmltext = (getQuestItemsCount(player, TARLK_EYE) == 100) ? "31574-04.htm" : "31574-05.htm";
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -88,46 +103,21 @@ public class Q00052_WilliesSpecialBait extends Quest
 		}
 		
 		final QuestState qs = getQuestState(partyMember, false);
-		if (getQuestItemsCount(player, TARLK_EYE) < 100)
+		if (getQuestItemsCount(partyMember, TARLK_EYE) < 100)
 		{
 			final float chance = 33 * Config.RATE_QUEST_DROP;
 			if (getRandom(100) < chance)
 			{
-				rewardItems(player, TARLK_EYE, 1);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(partyMember, TARLK_EYE, 1);
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		
-		if (getQuestItemsCount(player, TARLK_EYE) >= 100)
+		if (getQuestItemsCount(partyMember, TARLK_EYE) >= 100)
 		{
 			qs.setCond(2, true);
 		}
+		
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
-			case State.CREATED:
-			{
-				htmltext = (player.getLevel() >= 48) ? "31574-01.htm" : "31574-02.html";
-				break;
-			}
-			case State.STARTED:
-			{
-				htmltext = (qs.isCond(1)) ? "31574-05.html" : "31574-04.html";
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

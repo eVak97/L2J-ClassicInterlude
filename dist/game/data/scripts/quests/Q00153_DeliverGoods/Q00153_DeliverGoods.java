@@ -16,150 +16,176 @@
  */
 package quests.Q00153_DeliverGoods;
 
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Deliver Goods (153)
- * @author Zoey76
- * @version 1.0 Freya (11/16/2010), Based on Naia (EURO)
- */
 public class Q00153_DeliverGoods extends Quest
 {
 	// NPCs
-	private static final int JACKSON_ID = 30002;
-	private static final int SILVIA_ID = 30003;
-	private static final int ARNOLD_ID = 30041;
-	private static final int RANT_ID = 30054;
+	private static final int JACKSON = 30002;
+	private static final int SILVIA = 30003;
+	private static final int ARNOLD = 30041;
+	private static final int RANT = 30054;
 	// Items
-	private static final int DELIVERY_LIST_ID = 1012;
-	private static final int HEAVY_WOOD_BOX_ID = 1013;
-	private static final int CLOTH_BUNDLE_ID = 1014;
-	private static final int CLAY_POT_ID = 1015;
-	private static final int JACKSONS_RECEIPT_ID = 1016;
-	private static final int SILVIAS_RECEIPT_ID = 1017;
-	private static final int RANTS_RECEIPT_ID = 1018;
+	private static final int DELIVERY_LIST = 1012;
+	private static final int HEAVY_WOOD_BOX = 1013;
+	private static final int CLOTH_BUNDLE = 1014;
+	private static final int CLAY_POT = 1015;
+	private static final int JACKSON_RECEIPT = 1016;
+	private static final int SILVIA_RECEIPT = 1017;
+	private static final int RANT_RECEIPT = 1018;
 	// Rewards
-	private static final int SOULSHOT_NO_GRADE_ID = 1835; // You get 3 Soulshots no grade.
-	private static final int RING_OF_KNOWLEDGE_ID = 875;
-	private static final int XP_REWARD_AMOUNT = 600;
+	private static final int SOULSHOT_NO_GRADE = 1835;
+	private static final int RING_OF_KNOWLEDGE = 875;
 	
 	public Q00153_DeliverGoods()
 	{
 		super(153);
-		addStartNpc(ARNOLD_ID);
-		addTalkId(JACKSON_ID, SILVIA_ID, ARNOLD_ID, RANT_ID);
-		registerQuestItems(DELIVERY_LIST_ID, HEAVY_WOOD_BOX_ID, CLOTH_BUNDLE_ID, CLAY_POT_ID, JACKSONS_RECEIPT_ID, SILVIAS_RECEIPT_ID, RANTS_RECEIPT_ID);
+		registerQuestItems(DELIVERY_LIST, HEAVY_WOOD_BOX, CLOTH_BUNDLE, CLAY_POT, JACKSON_RECEIPT, SILVIA_RECEIPT, RANT_RECEIPT);
+		addStartNpc(ARNOLD);
+		addTalkId(JACKSON, SILVIA, ARNOLD, RANT);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && (npc.getId() == ARNOLD_ID) && event.equalsIgnoreCase("30041-02.html"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			giveItems(player, DELIVERY_LIST_ID, 1);
-			giveItems(player, HEAVY_WOOD_BOX_ID, 1);
-			giveItems(player, CLOTH_BUNDLE_ID, 1);
-			giveItems(player, CLAY_POT_ID, 1);
+			return htmltext;
 		}
-		return event;
+		
+		if (event.equals("30041-02.htm"))
+		{
+			st.startQuest();
+			giveItems(player, DELIVERY_LIST, 1);
+			giveItems(player, CLAY_POT, 1);
+			giveItems(player, CLOTH_BUNDLE, 1);
+			giveItems(player, HEAVY_WOOD_BOX, 1);
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (npc.getId() == ARNOLD_ID)
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			switch (qs.getState())
+			case State.CREATED:
 			{
-				case State.CREATED:
+				htmltext = (player.getLevel() < 2) ? "30041-00.htm" : "30041-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
 				{
-					htmltext = (player.getLevel() >= 2) ? "30041-01.htm" : "30041-00.htm";
-					break;
-				}
-				case State.STARTED:
-				{
-					if (qs.isCond(1))
+					case ARNOLD:
 					{
-						htmltext = "30041-03.html";
+						if (st.isCond(1))
+						{
+							htmltext = "30041-03.htm";
+						}
+						else if (st.isCond(2))
+						{
+							htmltext = "30041-04.htm";
+							takeItems(player, DELIVERY_LIST, 1);
+							takeItems(player, JACKSON_RECEIPT, 1);
+							takeItems(player, SILVIA_RECEIPT, 1);
+							takeItems(player, RANT_RECEIPT, 1);
+							giveItems(player, RING_OF_KNOWLEDGE, 1);
+							giveItems(player, RING_OF_KNOWLEDGE, 1);
+							addExpAndSp(player, 600, 0);
+							st.exitQuest(false, true);
+						}
+						break;
 					}
-					else if (qs.isCond(2))
+					case JACKSON:
 					{
-						takeItems(player, DELIVERY_LIST_ID, -1);
-						takeItems(player, JACKSONS_RECEIPT_ID, -1);
-						takeItems(player, SILVIAS_RECEIPT_ID, -1);
-						takeItems(player, RANTS_RECEIPT_ID, -1);
-						// On retail it gives 2 rings but one at the time.
-						giveItems(player, RING_OF_KNOWLEDGE_ID, 1);
-						giveItems(player, RING_OF_KNOWLEDGE_ID, 1);
-						addExpAndSp(player, XP_REWARD_AMOUNT, 0);
-						qs.exitQuest(false, true);
-						htmltext = "30041-04.html";
+						if (hasQuestItems(player, HEAVY_WOOD_BOX))
+						{
+							htmltext = "30002-01.htm";
+							takeItems(player, HEAVY_WOOD_BOX, 1);
+							giveItems(player, JACKSON_RECEIPT, 1);
+							if (hasQuestItems(player, SILVIA_RECEIPT, RANT_RECEIPT))
+							{
+								st.setCond(2, true);
+							}
+							else
+							{
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							}
+						}
+						else
+						{
+							htmltext = "30002-02.htm";
+						}
+						break;
 					}
-					break;
+					case SILVIA:
+					{
+						if (hasQuestItems(player, CLOTH_BUNDLE))
+						{
+							htmltext = "30003-01.htm";
+							takeItems(player, CLOTH_BUNDLE, 1);
+							giveItems(player, SILVIA_RECEIPT, 1);
+							giveItems(player, SOULSHOT_NO_GRADE, 3);
+							if (hasQuestItems(player, JACKSON_RECEIPT, RANT_RECEIPT))
+							{
+								st.setCond(2, true);
+							}
+							else
+							{
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							}
+						}
+						else
+						{
+							htmltext = "30003-02.htm";
+						}
+						break;
+					}
+					case RANT:
+					{
+						if (hasQuestItems(player, CLAY_POT))
+						{
+							htmltext = "30054-01.htm";
+							takeItems(player, CLAY_POT, 1);
+							giveItems(player, RANT_RECEIPT, 1);
+							if (hasQuestItems(player, JACKSON_RECEIPT, SILVIA_RECEIPT))
+							{
+								st.setCond(2, true);
+							}
+							else
+							{
+								playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							}
+						}
+						else
+						{
+							htmltext = "30054-02.htm";
+						}
+						break;
+					}
 				}
-				case State.COMPLETED:
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-					break;
-				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
-		else
-		{
-			if (npc.getId() == JACKSON_ID)
-			{
-				if (hasQuestItems(player, HEAVY_WOOD_BOX_ID))
-				{
-					takeItems(player, HEAVY_WOOD_BOX_ID, -1);
-					giveItems(player, JACKSONS_RECEIPT_ID, 1);
-					htmltext = "30002-01.html";
-				}
-				else
-				{
-					htmltext = "30002-02.html";
-				}
-			}
-			else if (npc.getId() == SILVIA_ID)
-			{
-				if (hasQuestItems(player, CLOTH_BUNDLE_ID))
-				{
-					takeItems(player, CLOTH_BUNDLE_ID, -1);
-					giveItems(player, SILVIAS_RECEIPT_ID, 1);
-					giveItems(player, SOULSHOT_NO_GRADE_ID, 3);
-					htmltext = "30003-01.html";
-				}
-				else
-				{
-					htmltext = "30003-02.html";
-				}
-			}
-			else if (npc.getId() == RANT_ID)
-			{
-				if (hasQuestItems(player, CLAY_POT_ID))
-				{
-					takeItems(player, CLAY_POT_ID, -1);
-					giveItems(player, RANTS_RECEIPT_ID, 1);
-					htmltext = "30054-01.html";
-				}
-				else
-				{
-					htmltext = "30054-02.html";
-				}
-			}
-			
-			if (qs.isCond(1) && hasQuestItems(player, JACKSONS_RECEIPT_ID) && hasQuestItems(player, SILVIAS_RECEIPT_ID) && hasQuestItems(player, RANTS_RECEIPT_ID))
-			{
-				qs.setCond(2, true);
-			}
-		}
+		
 		return htmltext;
 	}
 }

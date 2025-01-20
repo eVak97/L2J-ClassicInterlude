@@ -22,148 +22,115 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Millennium Love (156)
- * @author xban1x
- */
 public class Q00156_MillenniumLove extends Quest
 {
 	// NPCs
 	private static final int LILITH = 30368;
 	private static final int BAENEDES = 30369;
 	// Items
-	private static final int LILITHS_LETTER = 1022;
-	private static final int THEONS_DIARY = 1023;
-	private static final int GREATER_COMP_SOULSHOUT_PACKAGE_NO_GRADE = 5250;
-	// Misc
-	private static final int MIN_LEVEL = 15;
+	private static final int LILITH_LETTER = 1022;
+	private static final int THEON_DIARY = 1023;
 	
 	public Q00156_MillenniumLove()
 	{
 		super(156);
+		registerQuestItems(LILITH_LETTER, THEON_DIARY);
 		addStartNpc(LILITH);
 		addTalkId(LILITH, BAENEDES);
-		registerQuestItems(LILITHS_LETTER, THEONS_DIARY);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs != null)
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			switch (event)
+			return htmltext;
+		}
+		
+		switch (event)
+		{
+			case "30368-04.htm":
 			{
-				case "30368-02.html":
-				case "30368-03.html":
-				{
-					htmltext = event;
-					break;
-				}
-				case "30368-05.htm":
-				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						qs.startQuest();
-						giveItems(player, LILITHS_LETTER, 1);
-						htmltext = event;
-					}
-					else
-					{
-						htmltext = "30368-04.htm";
-					}
-					break;
-				}
-				case "30369-02.html":
-				{
-					if (qs.isCond(1) && hasQuestItems(player, LILITHS_LETTER))
-					{
-						takeItems(player, LILITHS_LETTER, 1);
-						giveItems(player, THEONS_DIARY, 1);
-						qs.setCond(2, true);
-						htmltext = event;
-					}
-					break;
-				}
-				case "30369-03.html":
-				{
-					if (qs.isCond(1) && hasQuestItems(player, LILITHS_LETTER))
-					{
-						addExpAndSp(player, 3000, 0);
-						qs.exitQuest(false, true);
-						htmltext = event;
-					}
-					break;
-				}
+				st.startQuest();
+				giveItems(player, LILITH_LETTER, 1);
+				break;
+			}
+			case "30369-02.htm":
+			{
+				st.setCond(2, true);
+				takeItems(player, LILITH_LETTER, 1);
+				giveItems(player, THEON_DIARY, 1);
+				break;
+			}
+			case "30369-03.htm":
+			{
+				takeItems(player, LILITH_LETTER, 1);
+				addExpAndSp(player, 3000, 0);
+				st.exitQuest(false, true);
+				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case LILITH:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				htmltext = (player.getLevel() < 15) ? "30368-00.htm" : "30368-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
 				{
-					case State.CREATED:
+					case LILITH:
 					{
-						htmltext = "30368-01.htm";
-						break;
-					}
-					case State.STARTED:
-					{
-						if (qs.isCond(1) && hasQuestItems(player, LILITHS_LETTER))
+						if (hasQuestItems(player, LILITH_LETTER))
 						{
-							htmltext = "30368-06.html";
+							htmltext = "30368-05.htm";
 						}
-						else if (qs.isCond(2) && hasQuestItems(player, THEONS_DIARY))
+						else if (hasQuestItems(player, THEON_DIARY))
 						{
-							giveItems(player, GREATER_COMP_SOULSHOUT_PACKAGE_NO_GRADE, 1);
+							htmltext = "30368-06.htm";
+							takeItems(player, THEON_DIARY, 1);
+							giveItems(player, 5250, 1);
 							addExpAndSp(player, 3000, 0);
-							qs.exitQuest(false, true);
-							htmltext = "30368-07.html";
+							st.exitQuest(false, true);
 						}
 						break;
 					}
-					case State.COMPLETED:
+					case BAENEDES:
 					{
-						htmltext = getAlreadyCompletedMsg(player);
+						if (hasQuestItems(player, LILITH_LETTER))
+						{
+							htmltext = "30369-01.htm";
+						}
+						else if (hasQuestItems(player, THEON_DIARY))
+						{
+							htmltext = "30369-04.htm";
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case BAENEDES:
+			case State.COMPLETED:
 			{
-				switch (qs.getCond())
-				{
-					case 1:
-					{
-						if (hasQuestItems(player, LILITHS_LETTER))
-						{
-							htmltext = "30369-01.html";
-						}
-						break;
-					}
-					case 2:
-					{
-						if (hasQuestItems(player, THEONS_DIARY))
-						{
-							htmltext = "30369-04.html";
-						}
-						break;
-					}
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

@@ -16,120 +16,100 @@
  */
 package quests.Q00319_ScentOfDeath;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Scent of Death (319)
- * @author Zoey76
- */
 public class Q00319_ScentOfDeath extends Quest
 {
-	// NPC
-	private static final int MINALESS = 30138;
-	// Monsters
-	private static final int MARSH_ZOMBIE = 20015;
-	private static final int MARSH_ZOMBIE_LORD = 20020;
 	// Item
-	private static final int ZOMBIES_SKIN = 1045;
-	// Misc
-	private static final int MIN_LEVEL = 11;
-	private static final int MIN_CHANCE = 7;
-	private static final int REQUIRED_ITEM_COUNT = 5;
+	private static final int ZOMBIE_SKIN = 1045;
 	
 	public Q00319_ScentOfDeath()
 	{
 		super(319);
-		addStartNpc(MINALESS);
-		addTalkId(MINALESS);
-		addKillId(MARSH_ZOMBIE, MARSH_ZOMBIE_LORD);
-		registerQuestItems(ZOMBIES_SKIN);
-		addCondMaxLevel(18, getNoQuestMsg(null));
+		registerQuestItems(ZOMBIE_SKIN);
+		addStartNpc(30138); // Minaless
+		addTalkId(30138);
+		addKillId(20015, 20020);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		if (player.getLevel() >= MIN_LEVEL)
+		if (event.equals("30138-04.htm"))
 		{
-			switch (event)
-			{
-				case "30138-04.htm":
-				{
-					qs.startQuest();
-					htmltext = event;
-					break;
-				}
-			}
+			st.startQuest();
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, false) && (getQuestItemsCount(killer, ZOMBIES_SKIN) < REQUIRED_ITEM_COUNT) && (getRandom(10) > MIN_CHANCE))
-		{
-			giveItems(killer, ZOMBIES_SKIN, 1);
-			if (getQuestItemsCount(killer, ZOMBIES_SKIN) < REQUIRED_ITEM_COUNT)
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
-			else
-			{
-				qs.setCond(2, true);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() >= MIN_LEVEL ? "30138-03.htm" : "30138-02.htm";
+				htmltext = (player.getLevel() < 11) ? "30138-02.htm" : "30138-03.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(1))
 				{
-					case 1:
-					{
-						htmltext = "30138-05.html";
-						break;
-					}
-					case 2:
-					{
-						giveAdena(player, 500, false);
-						takeItems(player, ZOMBIES_SKIN, -1);
-						qs.exitQuest(true, true);
-						htmltext = "30138-06.html";
-						break;
-					}
+					htmltext = "30138-05.htm";
+				}
+				else
+				{
+					htmltext = "30138-06.htm";
+					takeItems(player, ZOMBIE_SKIN, -1);
+					giveAdena(player, 3350, true);
+					rewardItems(player, 1060, 1);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandom(10) < 2)
+		{
+			giveItems(player, ZOMBIE_SKIN, 1);
+			if (getQuestItemsCount(player, ZOMBIE_SKIN) < 5)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

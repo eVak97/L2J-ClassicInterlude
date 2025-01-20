@@ -218,39 +218,6 @@ public class Q00123_TheLeaderAndTheFollower extends Quest
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case BRUIN_LIZARDMAN:
-				{
-					if (qs.isMemoState(1) && giveItemRandomly(killer, npc, BRUIN_LIZARDMAN_BLOOD, 1, 10, 7, true))
-					{
-						qs.setCond(2);
-					}
-					break;
-				}
-				case PICOT_ARANEID:
-				{
-					if (qs.isMemoState(4) && (killer.getSponsor() > 0))
-					{
-						final Player c0 = World.getInstance().getPlayer(killer.getSponsor());
-						if ((c0 != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, c0, true) && giveItemRandomly(killer, npc, PICOT_ARANEIDS_LEG, 1, 8, 7, true))
-						{
-							qs.setCond(8);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
-	}
-	
-	@Override
 	public String onTalk(Npc npc, Player player)
 	{
 		final QuestState qs = getQuestState(player, true);
@@ -383,5 +350,38 @@ public class Q00123_TheLeaderAndTheFollower extends Quest
 			}
 		}
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player killer, boolean isSummon)
+	{
+		final QuestState qs = getQuestState(killer, false);
+		if ((qs != null) && qs.isStarted())
+		{
+			switch (npc.getId())
+			{
+				case BRUIN_LIZARDMAN:
+				{
+					if (qs.isMemoState(1) && giveItemRandomly(killer, npc, BRUIN_LIZARDMAN_BLOOD, 1, 10, 7, true))
+					{
+						qs.setCond(2);
+					}
+					break;
+				}
+				case PICOT_ARANEID:
+				{
+					if (qs.isMemoState(4) && (killer.getSponsor() > 0))
+					{
+						final Player c0 = World.getInstance().getPlayer(killer.getSponsor());
+						if ((c0 != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, c0, true) && giveItemRandomly(killer, npc, PICOT_ARANEIDS_LEG, 1, 8, 7, true))
+						{
+							qs.setCond(8);
+						}
+					}
+					break;
+				}
+			}
+		}
+		return super.onKill(npc, killer, isSummon);
 	}
 }

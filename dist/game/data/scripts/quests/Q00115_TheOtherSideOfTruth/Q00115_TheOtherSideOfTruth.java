@@ -16,7 +16,7 @@
  */
 package quests.Q00115_TheOtherSideOfTruth;
 
-import org.l2jmobius.gameserver.enums.QuestSound;
+import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
@@ -24,361 +24,152 @@ import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
 /**
- * The Other Side of Truth (115)
- * @author Adry_85
+ * @author Mobius
+ * @note Based on python script
  */
 public class Q00115_TheOtherSideOfTruth extends Quest
 {
 	// NPCs
 	private static final int MISA = 32018;
+	private static final int SUSPICIOUS = 32019;
 	private static final int RAFFORTY = 32020;
-	private static final int ICE_SCULPTURE1 = 32021;
-	private static final int KIER = 32022;
-	private static final int ICE_SCULPTURE2 = 32077;
-	private static final int ICE_SCULPTURE3 = 32078;
-	private static final int ICE_SCULPTURE4 = 32079;
+	private static final int SCULPTURE1 = 32021;
+	private static final int KIERRE = 32022;
+	private static final int SCULPTURE2 = 32077;
+	private static final int SCULPTURE3 = 32078;
+	private static final int SCULPTURE4 = 32079;
 	// Items
-	private static final int MISAS_LETTER = 8079;
-	private static final int RAFFORTYS_LETTER = 8080;
-	private static final int PIECE_OF_TABLET = 8081;
-	private static final int REPORT_PIECE = 8082;
-	// Misc
-	private static final int MIN_LEVEL = 53;
+	private static final int LETTER = 8079;
+	private static final int LETTER2 = 8080;
+	private static final int TABLET = 8081;
+	private static final int REPORT = 8082;
 	
 	public Q00115_TheOtherSideOfTruth()
 	{
 		super(115);
 		addStartNpc(RAFFORTY);
-		addTalkId(RAFFORTY, MISA, KIER, ICE_SCULPTURE1, ICE_SCULPTURE2, ICE_SCULPTURE3, ICE_SCULPTURE4);
-		registerQuestItems(MISAS_LETTER, RAFFORTYS_LETTER, PIECE_OF_TABLET, REPORT_PIECE);
+		addTalkId(RAFFORTY, MISA, SCULPTURE1, SCULPTURE2, SCULPTURE3, SCULPTURE4, KIERRE);
+		registerQuestItems(LETTER, LETTER2, TABLET, REPORT);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
+		String htmltext = event;
+		final QuestState qs = player.getQuestState(getName());
 		if (qs == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "32020-02.html":
+			case "32018-04.htm":
+			{
+				qs.setCond(7, true);
+				takeItems(player, LETTER2, 1);
+				break;
+			}
+			case "32020-02.htm":
 			{
 				qs.startQuest();
-				htmltext = event;
 				break;
 			}
-			case "32020-07.html":
+			case "32020-05.htm":
 			{
-				if (qs.isCond(2))
+				qs.setCond(3, true);
+				takeItems(player, LETTER, 1);
+				break;
+			}
+			case "32020-06.htm":
+			case "32020-08a.htm":
+			{
+				qs.exitQuest(true, true);
+				break;
+			}
+			case "32020-08.htm":
+			case "32020-07a.htm":
+			{
+				qs.setCond(4, true);
+				break;
+			}
+			case "32020-12.htm":
+			{
+				qs.setCond(5, true);
+				break;
+			}
+			case "32020-16.htm":
+			{
+				qs.setCond(10, true);
+				takeItems(player, REPORT, 1);
+				break;
+			}
+			case "32020-18.htm":
+			{
+				if (getQuestItemsCount(player, TABLET) == 0)
 				{
-					takeItems(player, MISAS_LETTER, -1);
-					qs.setCond(3, true);
-					htmltext = event;
+					qs.setCond(11, true);
+					htmltext = "32020-19.htm";
+				}
+				else
+				{
+					qs.exitQuest(false, true);
+					giveAdena(player, 115673, true);
+					addExpAndSp(player, 493595, 40442);
 				}
 				break;
 			}
-			case "32020-05.html":
+			case "32020-19.htm":
 			{
-				if (qs.isCond(2))
+				qs.setCond(11, true);
+				break;
+			}
+			case "32022-02.htm":
+			{
+				qs.setCond(9, true);
+				final Npc man = addSpawn(SUSPICIOUS, 104562, -107598, -3688, 0, false, 4000);
+				man.broadcastSay(ChatType.GENERAL, "We meet again.");
+				startQuestTimer("2", 3700, man, player);
+				giveItems(player, REPORT, 1);
+				break;
+			}
+			case "Sculpture-04.htm":
+			{
+				qs.set("talk", "1");
+				htmltext = "Sculpture-05.htm";
+				qs.set("" + npc.getId(), "1");
+				break;
+			}
+			case "Sculpture-04a.htm":
+			{
+				qs.setCond(8, true);
+				final Npc man = addSpawn(SUSPICIOUS, 117890, -126478, -2584, 0, false, 4000);
+				man.broadcastSay(ChatType.GENERAL, "This looks like the right place...");
+				startQuestTimer("1", 3700, man, player);
+				htmltext = "Sculpture-04.htm";
+				if ((qs.getInt("" + SCULPTURE1) == 0) && (qs.getInt("" + SCULPTURE2) == 0))
 				{
-					takeItems(player, MISAS_LETTER, -1);
-					qs.exitQuest(true, true);
-					htmltext = event;
+					giveItems(player, TABLET, 1);
 				}
 				break;
 			}
-			case "32020-10.html":
+			case "Sculpture-05.htm":
 			{
-				if (qs.isCond(3))
-				{
-					qs.setCond(4, true);
-					htmltext = event;
-				}
+				qs.set("" + npc.getId(), "1");
 				break;
 			}
-			case "32020-11.html":
+			case "1":
 			{
-				if (qs.isCond(3))
-				{
-					qs.setCond(4, true);
-					htmltext = event;
-				}
+				npc.broadcastSay(ChatType.GENERAL, "I see someone. Is this fate?");
 				break;
 			}
-			case "32020-12.html":
+			case "2":
 			{
-				if (qs.isCond(3))
-				{
-					qs.exitQuest(true, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32020-08.html":
-			case "32020-09.html":
-			case "32020-13.html":
-			case "32020-14.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "32020-15.html":
-			{
-				if (qs.isCond(4))
-				{
-					qs.setCond(5, true);
-					playSound(player, QuestSound.AMBSOUND_WINGFLAP);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32020-23.html":
-			{
-				if (qs.isCond(9))
-				{
-					qs.setCond(10, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "finish":
-			{
-				if (qs.isCond(10))
-				{
-					if (hasQuestItems(player, PIECE_OF_TABLET))
-					{
-						giveAdena(player, 115673, true);
-						addExpAndSp(player, 493595, 40442);
-						qs.exitQuest(false, true);
-						htmltext = "32020-25.html";
-					}
-					else
-					{
-						qs.setCond(11, true);
-						htmltext = "32020-26.html";
-						playSound(player, QuestSound.AMBSOUND_THUNDER);
-					}
-				}
-				break;
-			}
-			case "finish2":
-			{
-				if (qs.isCond(10))
-				{
-					if (hasQuestItems(player, PIECE_OF_TABLET))
-					{
-						giveAdena(player, 115673, true);
-						addExpAndSp(player, 493595, 40442);
-						qs.exitQuest(false, true);
-						htmltext = "32020-27.html";
-					}
-					else
-					{
-						qs.setCond(11, true);
-						htmltext = "32020-28.html";
-						playSound(player, QuestSound.AMBSOUND_THUNDER);
-					}
-				}
-				break;
-			}
-			case "32018-05.html":
-			{
-				if (qs.isCond(6) && hasQuestItems(player, RAFFORTYS_LETTER))
-				{
-					takeItems(player, RAFFORTYS_LETTER, -1);
-					qs.setCond(7, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32022-02.html":
-			{
-				if (qs.isCond(8))
-				{
-					giveItems(player, REPORT_PIECE, 1);
-					qs.setCond(9, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32021-02.html":
-			{
-				switch (npc.getId())
-				{
-					case ICE_SCULPTURE1:
-					{
-						if (qs.isCond(7) && ((qs.getInt("ex") % 2) <= 1))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 6) || (ex == 10) || (ex == 12))
-							{
-								ex++;
-								qs.set("ex", ex);
-								giveItems(player, PIECE_OF_TABLET, 1);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE2:
-					{
-						if (qs.isCond(7) && ((qs.getInt("ex") % 4) <= 1))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 5) || (ex == 9) || (ex == 12))
-							{
-								ex += 2;
-								qs.set("ex", ex);
-								giveItems(player, PIECE_OF_TABLET, 1);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE3:
-					{
-						if (qs.isCond(7) && ((qs.getInt("ex") % 8) <= 3))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 3) || (ex == 9) || (ex == 10))
-							{
-								ex += 4;
-								qs.set("ex", ex);
-								giveItems(player, PIECE_OF_TABLET, 1);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE4:
-					{
-						if (qs.isCond(7) && (qs.getInt("ex") <= 7))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 3) || (ex == 5) || (ex == 6))
-							{
-								ex += 8;
-								qs.set("ex", ex);
-								giveItems(player, PIECE_OF_TABLET, 1);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-				}
-				break;
-			}
-			case "32021-03.html":
-			{
-				switch (npc.getId())
-				{
-					case ICE_SCULPTURE1:
-					{
-						if (qs.isCond(7) && ((qs.getInt("ex") % 2) <= 1))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 6) || (ex == 10) || (ex == 12))
-							{
-								ex++;
-								qs.set("ex", ex);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE2:
-					{
-						if (qs.isCond(7) && ((qs.getInt("ex") % 4) <= 1))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 5) || (ex == 9) || (ex == 12))
-							{
-								ex += 2;
-								qs.set("ex", ex);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE3:
-					{
-						if (qs.isCond(7) && ((qs.getInt("ex") % 8) <= 3))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 3) || (ex == 9) || (ex == 12))
-							{
-								ex += 4;
-								qs.set("ex", ex);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE4:
-					{
-						if (qs.isCond(7) && (qs.getInt("ex") <= 7))
-						{
-							int ex = qs.getInt("ex");
-							if ((ex == 3) || (ex == 5) || (ex == 6))
-							{
-								ex += 8;
-								qs.set("ex", ex);
-								htmltext = event;
-							}
-						}
-						break;
-					}
-				}
-				break;
-			}
-			case "32021-06.html":
-			{
-				switch (npc.getId())
-				{
-					case ICE_SCULPTURE1:
-					{
-						if (qs.isCond(7) && (qs.getInt("ex") == 14))
-						{
-							qs.setCond(8);
-							htmltext = event;
-						}
-						break;
-					}
-					case ICE_SCULPTURE2:
-					{
-						if (qs.isCond(7) && (qs.getInt("ex") == 13))
-						{
-							qs.setCond(8);
-							htmltext = event;
-						}
-						break;
-					}
-					case ICE_SCULPTURE3:
-					{
-						if (qs.isCond(7) && (qs.getInt("ex") == 11))
-						{
-							qs.setCond(8);
-							htmltext = event;
-						}
-						break;
-					}
-					case ICE_SCULPTURE4:
-					{
-						if (qs.isCond(7) && (qs.getInt("ex") == 7))
-						{
-							qs.setCond(8);
-							htmltext = event;
-						}
-						break;
-					}
-				}
+				npc.broadcastSay(ChatType.GENERAL, "Don't bother trying to find out more about me. Follow your own destiny.");
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -387,389 +178,228 @@ public class Q00115_TheOtherSideOfTruth extends Quest
 	{
 		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		
+		final int state = qs.getState();
+		final int npcId = npc.getId();
+		final int cond = qs.getCond();
+		if (state == State.COMPLETED)
 		{
-			case State.COMPLETED:
+			htmltext = getAlreadyCompletedMsg(player);
+		}
+		else if (npcId == RAFFORTY)
+		{
+			if (state == State.CREATED)
 			{
-				if (npc.getId() == RAFFORTY)
+				if (qs.getPlayer().getLevel() >= 53)
 				{
-					htmltext = getAlreadyCompletedMsg(player);
+					htmltext = "32020-01.htm";
 				}
-				break;
-			}
-			case State.CREATED:
-			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "32020-01.htm" : "32020-03.html";
-				break;
-			}
-			case State.STARTED:
-			{
-				switch (npc.getId())
+				else
 				{
-					case RAFFORTY:
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
-								htmltext = "32020-04.html";
-								break;
-							}
-							case 2:
-							{
-								htmltext = !hasQuestItems(player, MISAS_LETTER) ? "32020-05.html" : "32020-06.html";
-								break;
-							}
-							case 3:
-							{
-								htmltext = "32020-16.html";
-								break;
-							}
-							case 4:
-							{
-								htmltext = "32020-17.html";
-								break;
-							}
-							case 5:
-							{
-								giveItems(player, RAFFORTYS_LETTER, 1);
-								qs.setCond(6, true);
-								htmltext = "32020-18.html";
-								break;
-							}
-							case 6:
-							{
-								if (hasQuestItems(player, RAFFORTYS_LETTER))
-								{
-									htmltext = "32020-19.html";
-								}
-								else
-								{
-									giveItems(player, RAFFORTYS_LETTER, 1);
-									htmltext = "32020-20.html";
-								}
-								break;
-							}
-							case 7:
-							case 8:
-							{
-								htmltext = "32020-21.html";
-								break;
-							}
-							case 9:
-							{
-								if (hasQuestItems(player, REPORT_PIECE))
-								{
-									htmltext = "32020-22.html";
-								}
-								break;
-							}
-							case 10:
-							{
-								htmltext = "32020-24.html";
-								break;
-							}
-							case 11:
-							{
-								if (!hasQuestItems(player, PIECE_OF_TABLET))
-								{
-									htmltext = "32020-29.html";
-								}
-								else
-								{
-									giveAdena(player, 115673, true);
-									addExpAndSp(player, 493595, 40442);
-									qs.exitQuest(false, true);
-									htmltext = "32020-30.html";
-								}
-								break;
-							}
-						}
-						break;
-					}
-					case MISA:
-					{
-						switch (qs.getCond())
-						{
-							case 1:
-							{
-								giveItems(player, MISAS_LETTER, 1);
-								qs.setCond(2, true);
-								htmltext = "32018-01.html";
-								break;
-							}
-							case 2:
-							{
-								htmltext = "32018-02.html";
-								break;
-							}
-							case 3:
-							case 4:
-							{
-								htmltext = "32018-03.html";
-								break;
-							}
-							case 5:
-							{
-								break;
-							}
-							case 6:
-							{
-								if (hasQuestItems(player, RAFFORTYS_LETTER))
-								{
-									htmltext = "32018-04.html";
-								}
-								break;
-							}
-							case 7:
-							{
-								htmltext = "32018-06.html";
-								break;
-							}
-						}
-						break;
-					}
-					case KIER:
-					{
-						switch (qs.getCond())
-						{
-							case 8:
-							{
-								htmltext = "32022-01.html";
-								break;
-							}
-							case 9:
-							{
-								if (hasQuestItems(player, REPORT_PIECE))
-								{
-									htmltext = "32022-03.html";
-								}
-								else
-								{
-									giveItems(player, REPORT_PIECE, 1);
-									htmltext = "32022-04.html";
-								}
-								break;
-							}
-							case 11:
-							{
-								if (!hasQuestItems(player, REPORT_PIECE))
-								{
-									htmltext = "32022-05.html";
-								}
-								break;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE1:
-					{
-						switch (qs.getCond())
-						{
-							case 7:
-							{
-								if ((qs.getInt("ex") % 2) <= 1)
-								{
-									int ex = qs.getInt("ex");
-									if ((ex == 6) || (ex == 10) || (ex == 12))
-									{
-										htmltext = "32021-01.html";
-									}
-									else if (ex == 14)
-									{
-										htmltext = "32021-05.html";
-									}
-									else
-									{
-										ex++;
-										qs.set("ex", ex);
-										htmltext = "32021-07.html";
-									}
-								}
-								else
-								{
-									htmltext = "32021-04.html";
-								}
-								break;
-							}
-							case 8:
-							{
-								htmltext = "32021-08.html";
-								break;
-							}
-							case 11:
-							{
-								if (!hasQuestItems(player, PIECE_OF_TABLET))
-								{
-									giveItems(player, PIECE_OF_TABLET, 1);
-									htmltext = "32021-09.html";
-								}
-								else
-								{
-									htmltext = "32021-10.html";
-								}
-								break;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE2:
-					{
-						switch (qs.getCond())
-						{
-							case 7:
-							{
-								if ((qs.getInt("ex") % 4) <= 1)
-								{
-									int ex = qs.getInt("ex");
-									if ((ex == 5) || (ex == 9) || (ex == 12))
-									{
-										htmltext = "32021-01.html";
-									}
-									else if (ex == 13)
-									{
-										htmltext = "32021-05.html";
-									}
-									else
-									{
-										ex += 2;
-										qs.set("ex", ex);
-										htmltext = "32021-07.html";
-									}
-								}
-								else
-								{
-									htmltext = "32021-04.html";
-								}
-								break;
-							}
-							case 8:
-							{
-								htmltext = "32021-08.html";
-								break;
-							}
-							case 11:
-							{
-								if (!hasQuestItems(player, PIECE_OF_TABLET))
-								{
-									giveItems(player, PIECE_OF_TABLET, 1);
-									htmltext = "32021-09.html";
-								}
-								else
-								{
-									htmltext = "32021-10.html";
-								}
-								break;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE3:
-					{
-						switch (qs.getCond())
-						{
-							case 7:
-							{
-								if ((qs.getInt("ex") % 8) <= 3)
-								{
-									int ex = qs.getInt("ex");
-									if ((ex == 3) || (ex == 9) || (ex == 10))
-									{
-										htmltext = "32021-01.html";
-									}
-									else if (ex == 11)
-									{
-										htmltext = "32021-05.html";
-									}
-									else
-									{
-										ex += 4;
-										qs.set("ex", ex);
-										htmltext = "32021-07.html";
-									}
-								}
-								else
-								{
-									htmltext = "32021-04.html";
-								}
-								break;
-							}
-							case 8:
-							{
-								htmltext = "32021-08.html";
-								break;
-							}
-							case 11:
-							{
-								if (!hasQuestItems(player, PIECE_OF_TABLET))
-								{
-									giveItems(player, PIECE_OF_TABLET, 1);
-									htmltext = "32021-09.html";
-								}
-								else
-								{
-									htmltext = "32021-10.html";
-								}
-								break;
-							}
-						}
-						break;
-					}
-					case ICE_SCULPTURE4:
-					{
-						switch (qs.getCond())
-						{
-							case 7:
-							{
-								if (qs.getInt("ex") <= 7)
-								{
-									int ex = qs.getInt("ex");
-									if ((ex == 3) || (ex == 5) || (ex == 6))
-									{
-										htmltext = "32021-01.html";
-									}
-									else if (ex == 7)
-									{
-										htmltext = "32021-05.html";
-									}
-									else
-									{
-										ex += 8;
-										qs.set("ex", ex);
-										htmltext = "32021-07.html";
-									}
-								}
-								else
-								{
-									htmltext = "32021-04.html";
-								}
-								break;
-							}
-							case 8:
-							{
-								htmltext = "32021-08.html";
-								break;
-							}
-							case 11:
-							{
-								if (!hasQuestItems(player, PIECE_OF_TABLET))
-								{
-									giveItems(player, PIECE_OF_TABLET, 1);
-									htmltext = "32021-09.html";
-								}
-								else
-								{
-									htmltext = "32021-10.html";
-								}
-								break;
-							}
-						}
-						break;
-					}
+					htmltext = "32020-00.htm";
+					qs.exitQuest(true, true);
 				}
-				break;
+			}
+			else if (cond == 1)
+			{
+				htmltext = "32020-03.htm";
+			}
+			else if (cond == 2)
+			{
+				htmltext = "32020-04.htm";
+			}
+			else if (cond == 3)
+			{
+				htmltext = "32020-05.htm";
+			}
+			else if (cond == 4)
+			{
+				htmltext = "32020-11.htm";
+			}
+			else if (cond == 5)
+			{
+				htmltext = "32020-13.htm";
+				giveItems(player, LETTER2, 1);
+				qs.setCond(6, true);
+			}
+			else if (cond == 6)
+			{
+				htmltext = "32020-14.htm";
+			}
+			else if (cond == 9)
+			{
+				htmltext = "32020-15.htm";
+			}
+			else if (cond == 10)
+			{
+				htmltext = "32020-17.htm";
+			}
+			else if (cond == 11)
+			{
+				htmltext = "32020-20.htm";
+			}
+			else if (cond == 12)
+			{
+				htmltext = "32020-18.htm";
+				qs.exitQuest(false, true);
+				giveAdena(player, 60044, true);
 			}
 		}
+		else if (npcId == MISA)
+		{
+			if (cond == 1)
+			{
+				htmltext = "32018-01.htm";
+				giveItems(player, LETTER, 1);
+				qs.setCond(2, true);
+			}
+			else if (cond == 2)
+			{
+				htmltext = "32018-02.htm";
+			}
+			else if (cond == 6)
+			{
+				htmltext = "32018-03.htm";
+			}
+			else if (cond == 7)
+			{
+				htmltext = "32018-05.htm";
+			}
+		}
+		else if (npcId == SCULPTURE1)
+		{
+			if (cond == 7)
+			{
+				if (qs.getInt("" + npcId) == 1)
+				{
+					htmltext = "Sculpture-02.htm";
+				}
+				else if (qs.getInt("talk") == 1)
+				{
+					htmltext = "Sculpture-06.htm";
+				}
+				else
+				{
+					htmltext = "Sculpture-03.htm";
+				}
+			}
+			else if (cond == 8)
+			{
+				htmltext = "Sculpture-04.htm";
+			}
+			else if (cond == 11)
+			{
+				giveItems(player, TABLET, 1);
+				qs.setCond(12, true);
+				htmltext = "Sculpture-07.htm";
+			}
+			else if (cond == 12)
+			{
+				htmltext = "Sculpture-08.htm";
+			}
+		}
+		else if (npcId == SCULPTURE2)
+		{
+			if (cond == 7)
+			{
+				if (qs.getInt("" + npcId) == 1)
+				{
+					htmltext = "Sculpture-02.htm";
+				}
+				else if (qs.getInt("talk") == 1)
+				{
+					htmltext = "Sculpture-06.htm";
+				}
+				else
+				{
+					htmltext = "Sculpture-03.htm";
+				}
+			}
+			else if (cond == 8)
+			{
+				htmltext = "Sculpture-04.htm";
+			}
+			else if (cond == 11)
+			{
+				giveItems(player, TABLET, 1);
+				qs.setCond(12, true);
+				htmltext = "Sculpture-07.htm";
+			}
+			else if (cond == 12)
+			{
+				htmltext = "Sculpture-08.htm";
+			}
+		}
+		else if (npcId == SCULPTURE3)
+		{
+			if (cond == 7)
+			{
+				if (qs.getInt("" + npcId) == 1)
+				{
+					htmltext = "Sculpture-02.htm";
+				}
+				else
+				{
+					htmltext = "Sculpture-01.htm";
+					qs.set("" + npcId, "1");
+				}
+			}
+			else if (cond == 8)
+			{
+				htmltext = "Sculpture-04.htm";
+			}
+			else if (cond == 11)
+			{
+				giveItems(player, TABLET, 1);
+				qs.setCond(12, true);
+				htmltext = "Sculpture-07.htm";
+			}
+			else if (cond == 12)
+			{
+				htmltext = "Sculpture-08.htm";
+			}
+		}
+		else if (npcId == SCULPTURE4)
+		{
+			if (cond == 7)
+			{
+				if (qs.getInt("" + npcId) == 1)
+				{
+					htmltext = "Sculpture-02.htm";
+				}
+				else
+				{
+					htmltext = "Sculpture-01.htm";
+					qs.set("" + npcId, "1");
+				}
+			}
+			else if (cond == 8)
+			{
+				htmltext = "Sculpture-04.htm";
+			}
+			else if (cond == 11)
+			{
+				giveItems(player, TABLET, 1);
+				qs.setCond(12, true);
+				htmltext = "Sculpture-07.htm";
+			}
+			else if (cond == 12)
+			{
+				htmltext = "Sculpture-08.htm";
+			}
+		}
+		else if (npcId == KIERRE)
+		{
+			if (cond == 8)
+			{
+				htmltext = "32022-01.htm";
+			}
+			else if (cond == 9)
+			{
+				htmltext = "32022-03.htm";
+			}
+		}
+		
 		return htmltext;
 	}
 }

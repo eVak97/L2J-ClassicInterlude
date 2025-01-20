@@ -24,57 +24,72 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * O'Fulle's Special Bait (51)<br>
- * Original Jython script by Kilkenny.
- * @author nonom
- */
 public class Q00051_OFullesSpecialBait extends Quest
 {
-	// NPCs
-	private static final int OFULLE = 31572;
-	private static final int FETTERED_SOUL = 20552;
-	// Items
+	// Item
 	private static final int LOST_BAIT = 7622;
+	// Reward
 	private static final int ICY_AIR_LURE = 7611;
 	
 	public Q00051_OFullesSpecialBait()
 	{
 		super(51);
-		addStartNpc(OFULLE);
-		addTalkId(OFULLE);
-		addKillId(FETTERED_SOUL);
 		registerQuestItems(LOST_BAIT);
+		addStartNpc(31572); // O'Fulle
+		addTalkId(31572);
+		addKillId(20552); // Fettered Soul
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		String htmltext = event;
-		switch (event)
+		if (event.equals("31572-03.htm"))
 		{
-			case "31572-03.htm":
+			st.startQuest();
+		}
+		else if (event.equals("31572-07.htm"))
+		{
+			htmltext = "31572-06.htm";
+			takeItems(player, LOST_BAIT, -1);
+			rewardItems(player, ICY_AIR_LURE, 4);
+			st.exitQuest(false, true);
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				qs.startQuest();
+				htmltext = (player.getLevel() < 36) ? "31572-02.htm" : "31572-01.htm";
 				break;
 			}
-			case "31572-07.html":
+			case State.STARTED:
 			{
-				if ((qs.isCond(2)) && (getQuestItemsCount(player, LOST_BAIT) >= 100))
-				{
-					htmltext = "31572-06.htm";
-					giveItems(player, ICY_AIR_LURE, 4);
-					qs.exitQuest(false, true);
-				}
+				htmltext = (getQuestItemsCount(player, LOST_BAIT) == 100) ? "31572-04.htm" : "31572-05.htm";
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -88,46 +103,21 @@ public class Q00051_OFullesSpecialBait extends Quest
 		}
 		
 		final QuestState qs = getQuestState(partyMember, false);
-		if (getQuestItemsCount(player, LOST_BAIT) < 100)
+		if (getQuestItemsCount(partyMember, LOST_BAIT) < 100)
 		{
 			final float chance = 33 * Config.RATE_QUEST_DROP;
 			if (getRandom(100) < chance)
 			{
-				rewardItems(player, LOST_BAIT, 1);
-				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				giveItems(partyMember, LOST_BAIT, 1);
+				playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		
-		if (getQuestItemsCount(player, LOST_BAIT) >= 100)
+		if (getQuestItemsCount(partyMember, LOST_BAIT) >= 100)
 		{
 			qs.setCond(2, true);
 		}
+		
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
-				break;
-			}
-			case State.CREATED:
-			{
-				htmltext = (player.getLevel() >= 36) ? "31572-01.htm" : "31572-02.html";
-				break;
-			}
-			case State.STARTED:
-			{
-				htmltext = (qs.isCond(1)) ? "31572-05.html" : "31572-04.html";
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

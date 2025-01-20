@@ -16,514 +16,411 @@
  */
 package quests.Q00215_TrialOfThePilgrim;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.CategoryType;
+import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Trial Of The Pilgrim (215)
- * @author ivantotov
- */
 public class Q00215_TrialOfThePilgrim extends Quest
 {
 	// NPCs
-	private static final int PRIEST_PETRON = 30036;
-	private static final int PRIEST_PRIMOS = 30117;
-	private static final int ANDELLIA = 30362;
-	private static final int GAURI_TWINKLEROCK = 30550;
-	private static final int SEER_TANAPI = 30571;
-	private static final int ELDER_CASIAN = 30612;
-	private static final int HERMIT_SANTIAGO = 30648;
+	private static final int SANTIAGO = 30648;
+	private static final int TANAPI = 30571;
 	private static final int ANCESTOR_MARTANKUS = 30649;
-	private static final int PRIEST_OF_THE_EARTH_GERALD = 30650;
-	private static final int WANDERER_DORF = 30651;
+	private static final int GAURI_TWINKLEROCK = 30550;
+	private static final int DORF = 30651;
+	private static final int GERALD = 30650;
+	private static final int PRIMOS = 30117;
+	private static final int PETRON = 30036;
+	private static final int ANDELLIA = 30362;
 	private static final int URUHA = 30652;
+	private static final int CASIAN = 30612;
+	// Monsters
+	private static final int LAVA_SALAMANDER = 27116;
+	private static final int NAHIR = 27117;
+	private static final int BLACK_WILLOW = 27118;
 	// Items
-	private static final int ADENA = 57;
 	private static final int BOOK_OF_SAGE = 2722;
 	private static final int VOUCHER_OF_TRIAL = 2723;
 	private static final int SPIRIT_OF_FLAME = 2724;
-	private static final int ESSENSE_OF_FLAME = 2725;
+	private static final int ESSENCE_OF_FLAME = 2725;
 	private static final int BOOK_OF_GERALD = 2726;
-	private static final int GREY_BADGE = 2727;
+	private static final int GRAY_BADGE = 2727;
 	private static final int PICTURE_OF_NAHIR = 2728;
 	private static final int HAIR_OF_NAHIR = 2729;
 	private static final int STATUE_OF_EINHASAD = 2730;
 	private static final int BOOK_OF_DARKNESS = 2731;
 	private static final int DEBRIS_OF_WILLOW = 2732;
 	private static final int TAG_OF_RUMOR = 2733;
-	// Reward
+	// Rewards
 	private static final int MARK_OF_PILGRIM = 2721;
-	// Quest Monster
-	private static final int LAVA_SALAMANDER = 27116;
-	private static final int NAHIR = 27117;
-	private static final int BLACK_WILLOW = 27118;
-	// Misc
-	private static final int MIN_LEVEL = 35;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
 	
 	public Q00215_TrialOfThePilgrim()
 	{
 		super(215);
-		addStartNpc(HERMIT_SANTIAGO);
-		addTalkId(HERMIT_SANTIAGO, PRIEST_PETRON, PRIEST_PRIMOS, ANDELLIA, GAURI_TWINKLEROCK, SEER_TANAPI, ELDER_CASIAN, ANCESTOR_MARTANKUS, PRIEST_OF_THE_EARTH_GERALD, WANDERER_DORF, URUHA);
+		registerQuestItems(BOOK_OF_SAGE, VOUCHER_OF_TRIAL, SPIRIT_OF_FLAME, ESSENCE_OF_FLAME, BOOK_OF_GERALD, GRAY_BADGE, PICTURE_OF_NAHIR, HAIR_OF_NAHIR, STATUE_OF_EINHASAD, BOOK_OF_DARKNESS, DEBRIS_OF_WILLOW, TAG_OF_RUMOR);
+		addStartNpc(SANTIAGO);
+		addTalkId(SANTIAGO, TANAPI, ANCESTOR_MARTANKUS, GAURI_TWINKLEROCK, DORF, GERALD, PRIMOS, PETRON, ANDELLIA, URUHA, CASIAN);
 		addKillId(LAVA_SALAMANDER, NAHIR, BLACK_WILLOW);
-		registerQuestItems(BOOK_OF_SAGE, VOUCHER_OF_TRIAL, SPIRIT_OF_FLAME, ESSENSE_OF_FLAME, BOOK_OF_GERALD, GREY_BADGE, PICTURE_OF_NAHIR, HAIR_OF_NAHIR, STATUE_OF_EINHASAD, BOOK_OF_DARKNESS, DEBRIS_OF_WILLOW, TAG_OF_RUMOR);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30648-04.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, VOUCHER_OF_TRIAL, 1);
+				if (!player.getVariables().getBoolean("secondClassChange35", false))
 				{
-					qs.startQuest();
-					qs.setMemoState(1);
-					giveItems(player, VOUCHER_OF_TRIAL, 1);
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					htmltext = "30648-04a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_35.get(player.getClassId().getId()));
+					player.getVariables().set("secondClassChange35", true);
 				}
 				break;
 			}
-			case "30648-05.html":
-			case "30648-06.html":
-			case "30648-07.html":
-			case "30648-08.html":
+			case "30649-04.htm":
 			{
-				htmltext = event;
+				st.setCond(5, true);
+				takeItems(player, ESSENCE_OF_FLAME, 1);
+				giveItems(player, SPIRIT_OF_FLAME, 1);
 				break;
 			}
-			case "30362-05.html":
+			case "30650-02.htm":
 			{
-				if (qs.isMemoState(15) && hasQuestItems(player, BOOK_OF_DARKNESS))
+				if (getQuestItemsCount(player, 57) >= 100000)
 				{
-					takeItems(player, BOOK_OF_DARKNESS, 1);
-					qs.setMemoState(16);
-					qs.setCond(16, true);
-					htmltext = event;
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					takeItems(player, 57, 100000);
+					giveItems(player, BOOK_OF_GERALD, 1);
+				}
+				else
+				{
+					htmltext = "30650-03.htm";
 				}
 				break;
 			}
-			case "30362-04.html":
+			case "30652-02.htm":
 			{
-				if (qs.isMemoState(15) && hasQuestItems(player, BOOK_OF_DARKNESS))
-				{
-					qs.setMemoState(16);
-					qs.setCond(16, true);
-					htmltext = event;
-				}
+				st.setCond(15, true);
+				takeItems(player, DEBRIS_OF_WILLOW, 1);
+				giveItems(player, BOOK_OF_DARKNESS, 1);
 				break;
 			}
-			case "30649-04.html":
+			case "30362-04.htm":
 			{
-				if (qs.isMemoState(4) && hasQuestItems(player, ESSENSE_OF_FLAME))
-				{
-					giveItems(player, SPIRIT_OF_FLAME, 1);
-					takeItems(player, ESSENSE_OF_FLAME, 1);
-					qs.setMemoState(5);
-					qs.setCond(5, true);
-					htmltext = event;
-				}
+				st.setCond(16, true);
 				break;
 			}
-			case "30650-02.html":
+			case "30362-05.htm":
 			{
-				if (qs.isMemoState(6) && hasQuestItems(player, TAG_OF_RUMOR))
-				{
-					if (getQuestItemsCount(player, ADENA) >= 5000)
-					{
-						giveItems(player, BOOK_OF_GERALD, 1);
-						takeItems(player, ADENA, 5000);
-						qs.setMemoState(7);
-						htmltext = event;
-					}
-					else
-					{
-						htmltext = "30650-03.html";
-					}
-				}
-				break;
-			}
-			case "30650-03.html":
-			{
-				if (qs.isMemoState(6) && hasQuestItems(player, TAG_OF_RUMOR))
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "30652-02.html":
-			{
-				if (qs.isMemoState(14) && hasQuestItems(player, DEBRIS_OF_WILLOW))
-				{
-					giveItems(player, BOOK_OF_DARKNESS, 1);
-					takeItems(player, DEBRIS_OF_WILLOW, 1);
-					qs.setMemoState(15);
-					qs.setCond(15, true);
-					htmltext = event;
-				}
+				st.setCond(16, true);
+				takeItems(player, BOOK_OF_DARKNESS, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case LAVA_SALAMANDER:
-				{
-					if (qs.isMemoState(3) && !hasQuestItems(killer, ESSENSE_OF_FLAME))
-					{
-						qs.setMemoState(4);
-						qs.setCond(4, true);
-						giveItems(killer, ESSENSE_OF_FLAME, 1);
-					}
-					break;
-				}
-				case NAHIR:
-				{
-					if (qs.isMemoState(10) && !hasQuestItems(killer, HAIR_OF_NAHIR))
-					{
-						qs.setMemoState(11);
-						qs.setCond(11, true);
-						giveItems(killer, HAIR_OF_NAHIR, 1);
-					}
-					break;
-				}
-				case BLACK_WILLOW:
-				{
-					if (qs.isMemoState(13) && !hasQuestItems(killer, DEBRIS_OF_WILLOW))
-					{
-						qs.setMemoState(14);
-						qs.setCond(14, true);
-						giveItems(killer, DEBRIS_OF_WILLOW, 1);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
-		final int memoState = qs.getMemoState();
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == HERMIT_SANTIAGO)
+			case State.CREATED:
 			{
-				if (!player.isInCategory(CategoryType.HEAL_GROUP))
+				if ((player.getClassId() != ClassId.CLERIC) && (player.getClassId() != ClassId.ORACLE) && (player.getClassId() != ClassId.SHILLIEN_ORACLE) && (player.getClassId() != ClassId.ORC_SHAMAN))
 				{
-					htmltext = "30648-02.html";
+					htmltext = "30648-02.htm";
 				}
-				else if (player.getLevel() < MIN_LEVEL)
+				else if (player.getLevel() < 35)
 				{
-					htmltext = "30648-01.html";
+					htmltext = "30648-01.htm";
 				}
 				else
 				{
 					htmltext = "30648-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case HERMIT_SANTIAGO:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (memoState >= 1)
+					case SANTIAGO:
 					{
-						if (!hasQuestItems(player, BOOK_OF_SAGE))
+						if (cond < 17)
 						{
-							htmltext = "30648-09.html";
+							htmltext = "30648-09.htm";
 						}
-						else
+						else if (cond == 17)
 						{
+							htmltext = "30648-10.htm";
+							takeItems(player, BOOK_OF_SAGE, 1);
 							giveItems(player, MARK_OF_PILGRIM, 1);
-							addExpAndSp(player, 133300, 0);
-							qs.exitQuest(false, true);
-							player.sendPacket(new SocialAction(player.getObjectId(), 3));
-							htmltext = "30648-10.html";
+							addExpAndSp(player, 77382, 16000);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
 						}
+						break;
 					}
-					break;
-				}
-				case PRIEST_PETRON:
-				{
-					if (memoState == 9)
+					case TANAPI:
 					{
-						giveItems(player, PICTURE_OF_NAHIR, 1);
-						qs.setMemoState(10);
-						qs.setCond(10, true);
-						htmltext = "30036-01.html";
-					}
-					else if (memoState == 10)
-					{
-						htmltext = "30036-02.html";
-					}
-					else if (memoState == 11)
-					{
-						takeItems(player, PICTURE_OF_NAHIR, 1);
-						takeItems(player, HAIR_OF_NAHIR, 1);
-						giveItems(player, STATUE_OF_EINHASAD, 1);
-						qs.setMemoState(12);
-						qs.setCond(12, true);
-						htmltext = "30036-03.html";
-					}
-					else if (memoState == 12)
-					{
-						if (hasQuestItems(player, STATUE_OF_EINHASAD))
+						if (cond == 1)
 						{
-							htmltext = "30036-04.html";
-						}
-					}
-					break;
-				}
-				case PRIEST_PRIMOS:
-				{
-					if (memoState == 8)
-					{
-						qs.setMemoState(9);
-						qs.setCond(9, true);
-						htmltext = "30117-01.html";
-					}
-					else if (memoState == 9)
-					{
-						qs.setMemoState(9);
-						qs.setCond(9, true);
-						htmltext = "30117-02.html";
-					}
-					break;
-				}
-				case ANDELLIA:
-				{
-					if (memoState == 12)
-					{
-						if (player.getLevel() >= 0)
-						{
-							qs.setMemoState(13);
-							qs.setCond(13, true);
-							htmltext = "30362-01.html";
-						}
-						else
-						{
-							htmltext = "30362-01a.html";
-						}
-					}
-					else if (memoState == 13)
-					{
-						htmltext = "30362-02.html";
-					}
-					else if (memoState == 14)
-					{
-						htmltext = "30362-02a.html";
-					}
-					else if (memoState == 15)
-					{
-						if (hasQuestItems(player, BOOK_OF_DARKNESS))
-						{
-							htmltext = "30362-03.html";
-						}
-						else
-						{
-							htmltext = "30362-07.html";
-						}
-					}
-					else if (memoState == 16)
-					{
-						htmltext = "30362-06.html";
-					}
-					break;
-				}
-				case GAURI_TWINKLEROCK:
-				{
-					if (memoState == 5)
-					{
-						if (hasQuestItems(player, SPIRIT_OF_FLAME))
-						{
-							takeItems(player, SPIRIT_OF_FLAME, 1);
-							giveItems(player, TAG_OF_RUMOR, 1);
-							qs.setMemoState(6);
-							qs.setCond(7, true);
-							htmltext = "30550-01.html";
-						}
-					}
-					else if (memoState == 6)
-					{
-						htmltext = "30550-02.html";
-					}
-					break;
-				}
-				case SEER_TANAPI:
-				{
-					if (memoState == 1)
-					{
-						if (hasQuestItems(player, VOUCHER_OF_TRIAL))
-						{
+							htmltext = "30571-01.htm";
+							st.setCond(2, true);
 							takeItems(player, VOUCHER_OF_TRIAL, 1);
-							qs.setMemoState(2);
-							qs.setCond(2, true);
-							htmltext = "30571-01.html";
 						}
-					}
-					else if (memoState == 2)
-					{
-						htmltext = "30571-02.html";
-					}
-					else if (memoState == 5)
-					{
-						if (hasQuestItems(player, SPIRIT_OF_FLAME))
+						else if (cond < 5)
 						{
-							qs.setCond(6, true);
-							htmltext = "30571-03.html";
+							htmltext = "30571-02.htm";
 						}
-					}
-					break;
-				}
-				case ELDER_CASIAN:
-				{
-					if (memoState == 16)
-					{
-						qs.setMemoState(17);
-						if (!hasQuestItems(player, BOOK_OF_SAGE))
+						else if (cond >= 5)
 						{
+							htmltext = "30571-03.htm";
+							
+							if (cond == 5)
+							{
+								st.setCond(6, true);
+							}
+						}
+						break;
+					}
+					case ANCESTOR_MARTANKUS:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30649-01.htm";
+							st.setCond(3, true);
+						}
+						else if (cond == 3)
+						{
+							htmltext = "30649-02.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30649-03.htm";
+						}
+						break;
+					}
+					case GAURI_TWINKLEROCK:
+					{
+						if (cond == 6)
+						{
+							htmltext = "30550-01.htm";
+							st.setCond(7, true);
+							giveItems(player, TAG_OF_RUMOR, 1);
+						}
+						else if (cond > 6)
+						{
+							htmltext = "30550-02.htm";
+						}
+						break;
+					}
+					case DORF:
+					{
+						if (cond == 7)
+						{
+							htmltext = (!hasQuestItems(player, BOOK_OF_GERALD)) ? "30651-01.htm" : "30651-02.htm";
+							st.setCond(8, true);
+							takeItems(player, TAG_OF_RUMOR, 1);
+							giveItems(player, GRAY_BADGE, 1);
+						}
+						else if (cond > 7)
+						{
+							htmltext = "30651-03.htm";
+						}
+						break;
+					}
+					case GERALD:
+					{
+						if ((cond == 7) && !hasQuestItems(player, BOOK_OF_GERALD))
+						{
+							htmltext = "30650-01.htm";
+						}
+						else if ((cond == 8) && hasQuestItems(player, BOOK_OF_GERALD))
+						{
+							htmltext = "30650-04.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+							takeItems(player, BOOK_OF_GERALD, 1);
+							giveAdena(player, 100000, true);
+						}
+						break;
+					}
+					case PRIMOS:
+					{
+						if (cond == 8)
+						{
+							htmltext = "30117-01.htm";
+							st.setCond(9, true);
+						}
+						else if (cond > 8)
+						{
+							htmltext = "30117-02.htm";
+						}
+						break;
+					}
+					case PETRON:
+					{
+						if (cond == 9)
+						{
+							htmltext = "30036-01.htm";
+							st.setCond(10, true);
+							giveItems(player, PICTURE_OF_NAHIR, 1);
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30036-02.htm";
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30036-03.htm";
+							st.setCond(12, true);
+							takeItems(player, HAIR_OF_NAHIR, 1);
+							takeItems(player, PICTURE_OF_NAHIR, 1);
+							giveItems(player, STATUE_OF_EINHASAD, 1);
+						}
+						else if (cond > 11)
+						{
+							htmltext = "30036-04.htm";
+						}
+						break;
+					}
+					case ANDELLIA:
+					{
+						if (cond == 12)
+						{
+							if (player.getLevel() < 36)
+							{
+								htmltext = "30362-01a.htm";
+							}
+							else
+							{
+								htmltext = "30362-01.htm";
+								st.setCond(13, true);
+							}
+						}
+						else if (cond == 13)
+						{
+							htmltext = (getRandomBoolean()) ? "30362-02.htm" : "30362-02a.htm";
+						}
+						else if (cond == 14)
+						{
+							htmltext = "30362-07.htm";
+						}
+						else if (cond == 15)
+						{
+							htmltext = "30362-03.htm";
+						}
+						else if (cond == 16)
+						{
+							htmltext = "30362-06.htm";
+						}
+						break;
+					}
+					case URUHA:
+					{
+						if (cond == 14)
+						{
+							htmltext = "30652-01.htm";
+						}
+						else if (cond == 15)
+						{
+							htmltext = "30652-03.htm";
+						}
+						break;
+					}
+					case CASIAN:
+					{
+						if (cond == 16)
+						{
+							htmltext = "30612-01.htm";
+							st.setCond(17, true);
+							takeItems(player, BOOK_OF_DARKNESS, 1);
+							takeItems(player, GRAY_BADGE, 1);
+							takeItems(player, SPIRIT_OF_FLAME, 1);
+							takeItems(player, STATUE_OF_EINHASAD, 1);
 							giveItems(player, BOOK_OF_SAGE, 1);
 						}
-						takeItems(player, GREY_BADGE, 1);
-						takeItems(player, SPIRIT_OF_FLAME, 1);
-						takeItems(player, STATUE_OF_EINHASAD, 1);
-						if (hasQuestItems(player, BOOK_OF_DARKNESS))
+						else if (cond == 17)
 						{
-							addExpAndSp(player, 5000, 500);
-							takeItems(player, BOOK_OF_DARKNESS, 1);
+							htmltext = "30612-02.htm";
 						}
-						htmltext = "30612-01.html";
+						break;
 					}
-					else if (memoState == 17)
-					{
-						qs.setCond(17, true);
-						htmltext = "30612-02.html";
-					}
-					break;
 				}
-				case ANCESTOR_MARTANKUS:
-				{
-					if (memoState == 2)
-					{
-						qs.setMemoState(3);
-						qs.setCond(3, true);
-						htmltext = "30649-01.html";
-					}
-					else if (memoState == 3)
-					{
-						htmltext = "30649-02.html";
-					}
-					else if (memoState == 4)
-					{
-						if (hasQuestItems(player, ESSENSE_OF_FLAME))
-						{
-							htmltext = "30649-03.html";
-						}
-					}
-					break;
-				}
-				case PRIEST_OF_THE_EARTH_GERALD:
-				{
-					if (memoState == 6)
-					{
-						if (hasQuestItems(player, TAG_OF_RUMOR))
-						{
-							htmltext = "30650-01.html";
-						}
-					}
-					else if (hasQuestItems(player, GREY_BADGE, BOOK_OF_GERALD))
-					{
-						giveAdena(player, 5000, true);
-						takeItems(player, BOOK_OF_GERALD, 1);
-						htmltext = "30650-04.html";
-					}
-					break;
-				}
-				case WANDERER_DORF:
-				{
-					if (memoState == 6)
-					{
-						if (hasQuestItems(player, TAG_OF_RUMOR))
-						{
-							giveItems(player, GREY_BADGE, 1);
-							takeItems(player, TAG_OF_RUMOR, 1);
-							qs.setMemoState(8);
-							htmltext = "30651-01.html";
-						}
-					}
-					else if (memoState == 7)
-					{
-						if (hasQuestItems(player, TAG_OF_RUMOR))
-						{
-							giveItems(player, GREY_BADGE, 1);
-							takeItems(player, TAG_OF_RUMOR, 1);
-							qs.setMemoState(8);
-							htmltext = "30651-02.html";
-						}
-					}
-					else if (memoState == 8)
-					{
-						qs.setCond(8, true);
-						htmltext = "30651-03.html";
-					}
-					break;
-				}
-				case URUHA:
-				{
-					if (memoState == 14)
-					{
-						if (hasQuestItems(player, DEBRIS_OF_WILLOW))
-						{
-							htmltext = "30652-01.html";
-						}
-					}
-					else if (memoState == 15)
-					{
-						if (hasQuestItems(player, BOOK_OF_DARKNESS))
-						{
-							htmltext = "30652-03.html";
-						}
-					}
-					break;
-				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == HERMIT_SANTIAGO)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case LAVA_SALAMANDER:
+			{
+				if (st.isCond(3) && (getRandom(10) < 2))
+				{
+					giveItems(player, ESSENCE_OF_FLAME, 1);
+					st.setCond(4, true);
+				}
+				break;
+			}
+			case NAHIR:
+			{
+				if (st.isCond(10) && (getRandom(10) < 2))
+				{
+					giveItems(player, HAIR_OF_NAHIR, 1);
+					st.setCond(11, true);
+				}
+				break;
+			}
+			case BLACK_WILLOW:
+			{
+				if (st.isCond(13) && (getRandom(10) < 2))
+				{
+					giveItems(player, DEBRIS_OF_WILLOW, 1);
+					st.setCond(14, true);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

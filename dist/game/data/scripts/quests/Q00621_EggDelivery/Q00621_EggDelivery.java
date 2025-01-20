@@ -117,7 +117,7 @@ public class Q00621_EggDelivery extends Quest
 				{
 					htmltext = "31521-08.htm";
 					playSound(player, QuestSound.ITEMSOUND_QUEST_GIVEUP);
-					st.exitQuest(true, true);
+					st.exitQuest(true, false);
 				}
 				else
 				{

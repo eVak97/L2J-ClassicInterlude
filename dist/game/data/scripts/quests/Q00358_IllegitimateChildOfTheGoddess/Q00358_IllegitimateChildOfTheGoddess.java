@@ -16,121 +16,112 @@
  */
 package quests.Q00358_IllegitimateChildOfTheGoddess;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Illegitimate Child of the Goddess (358)
- * @author Adry_85
- */
 public class Q00358_IllegitimateChildOfTheGoddess extends Quest
 {
-	// NPC
-	private static final int OLTRAN = 30862;
 	// Item
-	private static final int SNAKE_SCALE = 5868;
-	// Misc
-	private static final int MIN_LEVEL = 63;
-	private static final int SNAKE_SCALE_COUNT = 108;
-	// Rewards
-	private static final int[] REWARDS = new int[]
+	private static final int SCALE = 5868;
+	// Reward
+	private static final int[] REWARD =
 	{
-		5364, // Recipe: Sealed Dark Crystal Shield(60%)
-		5366, // Recipe: Sealed Shield of Nightmare(60%)
-		6329, // Recipe: Sealed Phoenix Necklace(70%)
-		6331, // Recipe: Sealed Phoenix Earring(70%)
-		6333, // Recipe: Sealed Phoenix Ring(70%)
-		6335, // Recipe: Sealed Majestic Necklace(70%)
-		6337, // Recipe: Sealed Majestic Earring(70%)
-		6339, // Recipe: Sealed Majestic Ring(70%)
+		6329,
+		6331,
+		6333,
+		6335,
+		6337,
+		6339,
+		5364,
+		5366
 	};
-	// Mobs
-	private static final Map<Integer, Double> MOBS = new HashMap<>();
-	static
-	{
-		MOBS.put(20672, 0.71); // Trives
-		MOBS.put(20673, 0.74); // Falibati
-	}
 	
 	public Q00358_IllegitimateChildOfTheGoddess()
 	{
 		super(358);
-		addStartNpc(OLTRAN);
-		addTalkId(OLTRAN);
-		addKillId(MOBS.keySet());
-		registerQuestItems(SNAKE_SCALE);
+		registerQuestItems(SCALE);
+		addStartNpc(30862); // Oltlin
+		addTalkId(30862);
+		addKillId(20672, 20673); // Trives, Falibati
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("30862-05.htm"))
 		{
-			case "30862-02.htm":
-			case "30862-03.htm":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30862-04.htm":
-			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(player, 1, 3, npc);
-		if ((qs != null) && giveItemRandomly(player, npc, SNAKE_SCALE, 1, SNAKE_SCALE_COUNT, MOBS.get(npc.getId()), true))
-		{
-			qs.setCond(2, true);
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			htmltext = ((player.getLevel() >= MIN_LEVEL) ? "30862-01.htm" : "30862-05.html");
-		}
-		else if (qs.isStarted())
-		{
-			if (getQuestItemsCount(player, SNAKE_SCALE) < SNAKE_SCALE_COUNT)
+			case State.CREATED:
 			{
-				htmltext = "30862-06.html";
+				htmltext = (player.getLevel() < 63) ? "30862-01.htm" : "30862-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				if (st.isCond(1))
+				{
+					htmltext = "30862-06.htm";
+				}
+				else
+				{
+					htmltext = "30862-07.htm";
+					takeItems(player, SCALE, -1);
+					giveItems(player, REWARD[getRandom(REWARD.length)], 1);
+					st.exitQuest(true, true);
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandom(100) < (npc.getId() == 20672 ? 68 : 66))
+		{
+			giveItems(player, SCALE, 1);
+			if (getQuestItemsCount(player, SCALE) < 108)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else
 			{
-				int integerPart = (int) getQuestItemsCount(player, SNAKE_SCALE) / SNAKE_SCALE_COUNT;
-				for (int x = 0; x < integerPart; x++)
-				{
-					takeItems(player, SNAKE_SCALE, SNAKE_SCALE_COUNT);
-					rewardItems(player, REWARDS[getRandom(REWARDS.length)], 1);
-				}
-				htmltext = "30862-07.html";
+				st.setCond(2, true);
 			}
 		}
-		return htmltext;
+		
+		return null;
 	}
 }

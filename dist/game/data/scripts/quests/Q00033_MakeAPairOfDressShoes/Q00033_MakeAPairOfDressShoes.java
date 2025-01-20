@@ -18,32 +18,24 @@ package quests.Q00033_MakeAPairOfDressShoes;
 
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Make a Pair of Dress Shoes (33)
- * @author malyelfik
- */
+import quests.Q00037_MakeFormalWear.Q00037_MakeFormalWear;
+
 public class Q00033_MakeAPairOfDressShoes extends Quest
 {
 	// NPCs
-	private static final int IAN = 30164;
 	private static final int WOODLEY = 30838;
+	private static final int IAN = 30164;
 	private static final int LEIKAR = 31520;
 	// Items
-	private static final int LEATHER = 36516;
-	private static final int THREAD = 36556;
-	private static final int DRESS_SHOES_BOX = 7113;
-	// Misc
-	private static final int MIN_LEVEL = 85;
-	private static final int LEATHER_COUNT = 360;
-	private static final int THREAD_COUNT = 90;
-	private static final int ADENA_COUNT = 500000;
-	private static final int ADENA_COUNT2 = 200000;
-	private static final int ADENA_COUNT3 = 300000;
+	private static final int LEATHER = 1882;
+	private static final int THREAD = 1868;
+	private static final int ADENA = 57;
+	// Rewards
+	public static final int DRESS_SHOES_BOX = 7113;
 	
 	public Q00033_MakeAPairOfDressShoes()
 	{
@@ -55,61 +47,66 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = event;
 		switch (event)
 		{
-			case "30838-03.htm":
+			case "30838-1.htm":
 			{
-				qs.startQuest();
+				st.startQuest();
 				break;
 			}
-			case "30838-06.html":
+			case "31520-1.htm":
 			{
-				qs.setCond(3, true);
+				st.setCond(2, true);
 				break;
 			}
-			case "30838-13.html":
+			case "30838-3.htm":
 			{
-				if (player.getAdena() < ADENA_COUNT2)
+				st.setCond(3, true);
+				break;
+			}
+			case "30838-5.htm":
+			{
+				if ((getQuestItemsCount(player, LEATHER) >= 200) && (getQuestItemsCount(player, THREAD) >= 600) && (getQuestItemsCount(player, ADENA) >= 200000))
 				{
-					return "30838-10.html";
+					st.setCond(4, true);
+					takeItems(player, ADENA, 200000);
+					takeItems(player, LEATHER, 200);
+					takeItems(player, THREAD, 600);
 				}
-				takeItems(player, LEATHER, LEATHER_COUNT);
-				takeItems(player, THREAD, THREAD_COUNT);
-				takeItems(player, Inventory.ADENA_ID, ADENA_COUNT2);
+				else
+				{
+					htmltext = "30838-4a.htm";
+				}
+				break;
+			}
+			case "30164-1.htm":
+			{
+				if (getQuestItemsCount(player, ADENA) >= 300000)
+				{
+					st.setCond(5, true);
+					takeItems(player, ADENA, 300000);
+				}
+				else
+				{
+					htmltext = "30164-1a.htm";
+				}
+				break;
+			}
+			case "30838-7.htm":
+			{
 				giveItems(player, DRESS_SHOES_BOX, 1);
-				qs.exitQuest(false, true);
-				break;
-			}
-			case "31520-02.html":
-			{
-				qs.setCond(2, true);
-				break;
-			}
-			case "30164-02.html":
-			{
-				if (player.getAdena() < ADENA_COUNT3)
-				{
-					return "30164-03.html";
-				}
-				giveItems(player, LEATHER, LEATHER_COUNT);
-				giveItems(player, THREAD, THREAD_COUNT);
-				takeItems(player, Inventory.ADENA_ID, ADENA_COUNT3);
-				qs.setCond(5, true);
-				break;
-			}
-			default:
-			{
-				htmltext = null;
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -117,85 +114,100 @@ public class Q00033_MakeAPairOfDressShoes extends Quest
 	public String onTalk(Npc npc, Player player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		final QuestState qs = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (npc.getId())
+		switch (st.getState())
 		{
-			case WOODLEY:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				if (player.getLevel() >= 60)
 				{
-					case State.CREATED:
+					final QuestState fwear = player.getQuestState(Q00037_MakeFormalWear.class.getSimpleName());
+					if ((fwear != null) && fwear.isCond(7))
 					{
-						htmltext = (player.getLevel() >= MIN_LEVEL) ? "30838-01.htm" : "30838-02.html";
-						break;
+						htmltext = "30838-0.htm";
 					}
-					case State.STARTED:
+					else
 					{
-						switch (qs.getCond())
+						htmltext = "30838-0a.htm";
+					}
+				}
+				else
+				{
+					htmltext = "30838-0b.htm";
+				}
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case WOODLEY:
+					{
+						if (cond == 1)
 						{
-							case 1:
+							htmltext = "30838-1.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30838-2.htm";
+						}
+						else if (cond == 3)
+						{
+							if ((getQuestItemsCount(player, LEATHER) >= 200) && (getQuestItemsCount(player, THREAD) >= 600) && (getQuestItemsCount(player, ADENA) >= 200000))
 							{
-								htmltext = "30838-04.html";
-								break;
+								htmltext = "30838-4.htm";
 							}
-							case 2:
+							else
 							{
-								htmltext = "30838-05.html";
-								break;
+								htmltext = "30838-4a.htm";
 							}
-							case 3:
-							{
-								htmltext = ((getQuestItemsCount(player, LEATHER) >= LEATHER_COUNT) && (getQuestItemsCount(player, THREAD) >= THREAD_COUNT) && (player.getAdena() >= ADENA_COUNT)) ? "30838-07.html" : "30838-08.html";
-								break;
-							}
-							case 5:
-							{
-								htmltext = "30838-07.html";
-								break;
-							}
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30838-5a.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30838-6.htm";
 						}
 						break;
 					}
-					case State.COMPLETED:
+					case LEIKAR:
 					{
-						htmltext = getAlreadyCompletedMsg(player);
+						if (cond == 1)
+						{
+							htmltext = "31520-0.htm";
+						}
+						else if (cond > 1)
+						{
+							htmltext = "31520-1a.htm";
+						}
+						break;
+					}
+					case IAN:
+					{
+						if (cond == 4)
+						{
+							htmltext = "30164-0.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30164-2.htm";
+						}
 						break;
 					}
 				}
 				break;
 			}
-			case LEIKAR:
+			case State.COMPLETED:
 			{
-				if (qs.isStarted())
-				{
-					if (qs.isCond(1))
-					{
-						htmltext = "31520-01.html";
-					}
-					else if (qs.isCond(2))
-					{
-						htmltext = "31520-03.html";
-					}
-				}
-				break;
-			}
-			case IAN:
-			{
-				if (qs.isStarted())
-				{
-					if (qs.isCond(3))
-					{
-						htmltext = "30164-01.html";
-					}
-					else if (qs.isCond(4))
-					{
-						htmltext = "30164-04.html";
-					}
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

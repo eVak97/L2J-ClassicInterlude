@@ -19,136 +19,133 @@ package quests.Q00359_ForASleeplessDeadman;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * For a Sleepless Deadman (359)
- * @author Adry_85
- */
 public class Q00359_ForASleeplessDeadman extends Quest
 {
-	// NPC
-	private static final int ORVEN = 30857;
+	// Monsters
+	private static final int DOOM_SERVANT = 21006;
+	private static final int DOOM_GUARD = 21007;
+	private static final int DOOM_ARCHER = 21008;
 	// Item
-	private static final int REMAINS_OF_ADEN_RESIDENTS = 5869;
-	// Misc
-	private static final int MIN_LEVEL = 60;
-	private static final int REMAINS_COUNT = 60;
-	// Rewards
-	private static final int[] REWARDS = new int[]
+	private static final int REMAINS = 5869;
+	// Reward
+	private static final int[] REWARD =
 	{
-		5494, // Sealed Dark Crystal Shield Fragment
-		5495, // Sealed Shield of Nightmare Fragment
-		6341, // Sealed Phoenix Earring Gemstone
-		6342, // Sealed Majestic Earring Gemstone
-		6343, // Sealed Phoenix Necklace Beads
-		6344, // Sealed Majestic Necklace Beads
-		6345, // Sealed Phoenix Ring Gemstone
-		6346, // Sealed Majestic Ring Gemstone
+		6341,
+		6342,
+		6343,
+		6344,
+		6345,
+		6346,
+		5494,
+		5495
 	};
-	// Mobs
-	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	// Drop chances
+	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	static
 	{
-		MOBS.put(21006, 0.365); // doom_servant
-		MOBS.put(21007, 0.392); // doom_guard
-		MOBS.put(21008, 0.503); // doom_archer
+		CHANCES.put(DOOM_SERVANT, 320000);
+		CHANCES.put(DOOM_GUARD, 340000);
+		CHANCES.put(DOOM_ARCHER, 420000);
 	}
 	
 	public Q00359_ForASleeplessDeadman()
 	{
 		super(359);
-		addStartNpc(ORVEN);
-		addTalkId(ORVEN);
-		addKillId(MOBS.keySet());
-		registerQuestItems(REMAINS_OF_ADEN_RESIDENTS);
+		registerQuestItems(REMAINS);
+		addStartNpc(30857); // Orven
+		addTalkId(30857);
+		addKillId(DOOM_SERVANT, DOOM_GUARD, DOOM_ARCHER);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
-		switch (event)
+		if (event.equals("30857-06.htm"))
 		{
-			case "30857-02.htm":
-			case "30857-03.htm":
-			case "30857-04.htm":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30857-05.htm":
-			{
-				qs.setMemoState(1);
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30857-10.html":
-			{
-				int integerPart = (int) getQuestItemsCount(player, REMAINS_OF_ADEN_RESIDENTS) / REMAINS_COUNT;
-				for (int x = 0; x < integerPart; x++)
-				{
-					takeItems(player, REMAINS_OF_ADEN_RESIDENTS, REMAINS_COUNT);
-					rewardItems(player, REWARDS[getRandom(REWARDS.length)], 4);
-				}
-				
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30857-10.htm"))
+		{
+			giveItems(player, REWARD[getRandom(REWARD.length)], 4);
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(player, 1, 3, npc);
-		if ((qs != null) && giveItemRandomly(qs.getPlayer(), npc, REMAINS_OF_ADEN_RESIDENTS, 1, REMAINS_COUNT, MOBS.get(npc.getId()), true))
-		{
-			qs.setCond(2, true);
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			htmltext = (player.getLevel() >= MIN_LEVEL) ? "30857-01.htm" : "30857-06.html";
-		}
-		else if (qs.isStarted())
-		{
-			if (qs.isMemoState(1))
+			case State.CREATED:
 			{
-				if (getQuestItemsCount(player, REMAINS_OF_ADEN_RESIDENTS) < REMAINS_COUNT)
-				{
-					htmltext = "30857-07.html";
-				}
-				else
-				{
-					qs.setMemoState(2);
-					qs.setCond(3, true);
-					htmltext = "30857-08.html";
-				}
+				htmltext = (player.getLevel() < 60) ? "30857-01.htm" : "30857-02.htm";
+				break;
 			}
-			else if (qs.isMemoState(2))
+			case State.STARTED:
 			{
-				htmltext = "30857-09.html";
+				final int cond = st.getCond();
+				if (cond == 1)
+				{
+					htmltext = "30857-07.htm";
+				}
+				else if (cond == 2)
+				{
+					htmltext = "30857-08.htm";
+					st.setCond(3, true);
+					takeItems(player, REMAINS, -1);
+				}
+				else if (cond == 3)
+				{
+					htmltext = "30857-09.htm";
+				}
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandom(1000000) < CHANCES.get(npc.getId()))
+		{
+			giveItems(player, REMAINS, 1);
+			if (getQuestItemsCount(player, REMAINS) < 60)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }

@@ -28,20 +28,14 @@ import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Plunder Supplies (360)
- * @author netvirus
- */
 public class Q00360_PlunderTheirSupplies extends Quest
 {
-	// Npc
-	private static final int COLEMAN = 30873;
-	// Misc
-	private static final int MIN_LEVEL = 52;
-	// Monsters
+	// Items
+	private static final int SUPPLY_ITEM = 5872;
+	private static final int SUSPICIOUS_DOCUMENT = 5871;
+	private static final int RECIPE_OF_SUPPLY = 5870;
+	// Drops
 	private static final Map<Integer, Integer> MONSTER_DROP_CHANCES = new HashMap<>();
-	// Item
-	private static final int SUPPLY_ITEMS = 5872;
 	static
 	{
 		MONSTER_DROP_CHANCES.put(20666, 50); // Taik Orc Seeker
@@ -51,44 +45,69 @@ public class Q00360_PlunderTheirSupplies extends Quest
 	public Q00360_PlunderTheirSupplies()
 	{
 		super(360);
-		addStartNpc(COLEMAN);
-		addTalkId(COLEMAN);
+		registerQuestItems(RECIPE_OF_SUPPLY, SUPPLY_ITEM, SUSPICIOUS_DOCUMENT);
+		addStartNpc(30873); // Coleman
+		addTalkId(30873);
 		addKillId(MONSTER_DROP_CHANCES.keySet());
-		registerQuestItems(SUPPLY_ITEMS);
-		addCondMaxLevel(59, getNoQuestMsg(null));
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		final String htmltext = event;
+		final QuestState st = player.getQuestState(getName());
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30873-2.htm"))
 		{
-			case "30873-03.htm":
-			case "30873-09.html":
+			st.startQuest();
+		}
+		else if (event.equals("30873-6.htm"))
+		{
+			takeItems(player, SUPPLY_ITEM, -1);
+			takeItems(player, SUSPICIOUS_DOCUMENT, -1);
+			takeItems(player, RECIPE_OF_SUPPLY, -1);
+			st.exitQuest(true, true);
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onTalk(Npc npc, Player player)
+	{
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
+		{
+			case State.CREATED:
 			{
-				htmltext = event;
+				htmltext = (player.getLevel() < 52) ? "30873-0a.htm" : "30873-0.htm";
 				break;
 			}
-			case "30873-04.htm":
+			case State.STARTED:
 			{
-				qs.startQuest();
-				htmltext = event;
-				break;
-			}
-			case "30873-10.html":
-			{
-				qs.exitQuest(false, true);
-				htmltext = event;
+				final int supplyItems = (int) getQuestItemsCount(player, SUPPLY_ITEM);
+				if (supplyItems == 0)
+				{
+					htmltext = "30873-3.htm";
+				}
+				else
+				{
+					final int reward = (int) (6000 + (supplyItems * 100) + (getQuestItemsCount(player, RECIPE_OF_SUPPLY) * 6000));
+					htmltext = "30873-5.htm";
+					takeItems(player, SUPPLY_ITEM, -1);
+					takeItems(player, RECIPE_OF_SUPPLY, -1);
+					giveAdena(player, reward, true);
+				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -103,41 +122,24 @@ public class Q00360_PlunderTheirSupplies extends Quest
 		
 		if (getRandom(100) < MONSTER_DROP_CHANCES.get(npc.getId()))
 		{
-			giveItems(killer, SUPPLY_ITEMS, 1);
+			giveItems(killer, SUPPLY_ITEM, 1);
+			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		if (getRandom(100) < 10)
+		{
+			if (getQuestItemsCount(killer, SUSPICIOUS_DOCUMENT) < 4)
+			{
+				giveItems(killer, SUSPICIOUS_DOCUMENT, 1);
+			}
+			else
+			{
+				giveItems(killer, RECIPE_OF_SUPPLY, 1);
+				takeItems(killer, SUSPICIOUS_DOCUMENT, -1);
+			}
 			playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	@Override
-	public String onTalk(Npc npc, Player player)
-	{
-		final QuestState qs = getQuestState(player, true);
-		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
-		{
-			case State.CREATED:
-			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30873-02.htm" : "30873-01.html";
-				break;
-			}
-			case State.STARTED:
-			{
-				final long supplyCount = getQuestItemsCount(player, SUPPLY_ITEMS);
-				if (supplyCount < 0)
-				{
-					htmltext = "30873-05.html";
-				}
-				else if (supplyCount >= 500)
-				{
-					giveAdena(player, 14000, true);
-					takeItems(player, SUPPLY_ITEMS, -1);
-					htmltext = "30873-06.html";
-				}
-				break;
-			}
-		}
-		return htmltext;
 	}
 }

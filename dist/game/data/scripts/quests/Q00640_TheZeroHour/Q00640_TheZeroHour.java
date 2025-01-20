@@ -16,276 +16,129 @@
  */
 package quests.Q00640_TheZeroHour;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
+import org.l2jmobius.gameserver.util.Util;
 
 import quests.Q00109_InSearchOfTheNest.Q00109_InSearchOfTheNest;
 
-/**
- * The Zero Hour (640)<br>
- * @author Sacrifice
- */
 public class Q00640_TheZeroHour extends Quest
 {
-	// NPCs
+	// NPC
 	private static final int KAHMAN = 31554;
-	private static final int[] MONSTERS_TO_HUNT =
-	{
-		22105, // Spiked Stakato
-		22106, // Spiked Stakato Worker
-		22107, // Spiked Stakato Guard
-		22108, // Female Spiked Stakato
-		22109, // Male Spiked Stakato
-		22110, // Male Spiked Stakato
-		22111, // Spiked Stakato Sorcerer
-		22113, // Cannibalistic Stakato Leader
-		22114, // Cannibalistic Stakato Leader
-		22115, // Spiked Stakato Soldier
-		22116, // Spiked Stakato Drone
-		22117, // Spiked Stakato Captain
-		22118, // Spike Stakato Nurse
-		22119, // Spike Stakato Nurse
-		22121 // Spiked Stakato Shaman
-	};
 	// Item
 	private static final int FANG_OF_STAKATO = 8085;
-	// Misc
-	private static final int MIN_LEVEL = 66;
+	private static final int[][] REWARDS =
+	{
+		// @formatter:off
+		{12, 4042, 1},
+		{6, 4043, 1},
+		{6, 4044, 1},
+		{81, 1887, 10},
+		{33, 1888, 5},
+		{30, 1889, 10},
+		{150, 5550, 10},
+		{131, 1890, 10},
+		{123, 1893, 5}
+		// @formatter:on
+	};
 	
 	public Q00640_TheZeroHour()
 	{
 		super(640);
+		registerQuestItems(FANG_OF_STAKATO);
 		addStartNpc(KAHMAN);
 		addTalkId(KAHMAN);
-		addKillId(MONSTERS_TO_HUNT);
-		registerQuestItems(FANG_OF_STAKATO);
+		// All "spiked" stakatos types, except babies and cannibalistic followers.
+		addKillId(22105, 22106, 22107, 22108, 22109, 22110, 22111, 22113, 22114, 22115, 22116, 22117, 22118, 22119, 22121);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("31554-02.htm"))
 		{
-			case "31554-02.htm":
+			st.startQuest();
+		}
+		else if (event.equals("31554-05.htm"))
+		{
+			if (!hasQuestItems(player, FANG_OF_STAKATO))
 			{
-				qs.startQuest();
-				break;
-			}
-			case "31554-05.htm":
-			{
-				htmltext = "31554-05.htm";
-				break;
-			}
-			case "31554-08.htm":
-			{
-				qs.exitQuest(true, true);
-				break;
-			}
-			case "1":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 12)
-				{
-					takeItems(player, FANG_OF_STAKATO, 12);
-					rewardItems(player, 4042, 1); // Enria
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "2":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 6)
-				{
-					takeItems(player, FANG_OF_STAKATO, 6);
-					rewardItems(player, 4043, 1); // Asofe
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "3":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 6)
-				{
-					takeItems(player, FANG_OF_STAKATO, 6);
-					rewardItems(player, 4044, 1); // Thons
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "4":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 81)
-				{
-					takeItems(player, FANG_OF_STAKATO, 81);
-					rewardItems(player, 1887, 10); // Varnish of Purity
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "5":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 33)
-				{
-					takeItems(player, FANG_OF_STAKATO, 33);
-					rewardItems(player, 1888, 5); // Synthetic Cokes
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "6":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 30)
-				{
-					takeItems(player, FANG_OF_STAKATO, 30);
-					rewardItems(player, 1889, 10); // Compound Braid
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "7":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 150)
-				{
-					takeItems(player, FANG_OF_STAKATO, 150);
-					rewardItems(player, 5550, 10); // Durable Metal Plate
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "8":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 131)
-				{
-					takeItems(player, FANG_OF_STAKATO, 131);
-					rewardItems(player, 1890, 10); // Mithril Alloy
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
-			}
-			case "9":
-			{
-				if (getQuestItemsCount(player, FANG_OF_STAKATO) >= 123)
-				{
-					takeItems(player, FANG_OF_STAKATO, 123);
-					rewardItems(player, 1893, 5); // Oriharukon
-					htmltext = "31554-09.htm";
-				}
-				else
-				{
-					htmltext = "31554-07.htm";
-				}
-				break;
+				htmltext = "31554-06.htm";
 			}
 		}
+		else if (event.equals("31554-08.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		else if (Util.isDigit(event))
+		{
+			final int[] reward = REWARDS[Integer.parseInt(event)];
+			if (getQuestItemsCount(player, FANG_OF_STAKATO) >= reward[0])
+			{
+				htmltext = "31554-09.htm";
+				takeItems(player, FANG_OF_STAKATO, reward[0]);
+				rewardItems(player, reward[1], reward[2]);
+			}
+			else
+			{
+				htmltext = "31554-06.htm";
+			}
+		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onTalk(Npc npc, Player talker)
+	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(talker, true);
-		String htmlText = getNoQuestMsg(talker);
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				if (talker.getLevel() >= MIN_LEVEL)
+				if (player.getLevel() < 66)
 				{
-					final QuestState qs2 = qs.getPlayer().getQuestState(Q00109_InSearchOfTheNest.class.getSimpleName());
-					if ((qs2 != null) && (qs2.getState() == State.COMPLETED))
-					{
-						htmlText = "31554-01.htm";
-					}
-					else
-					{
-						htmlText = "31554-10.htm";
-					}
+					htmltext = "31554-00.htm";
 				}
 				else
 				{
-					htmlText = "31554-00.htm";
+					final QuestState st2 = player.getQuestState(Q00109_InSearchOfTheNest.class.getSimpleName());
+					htmltext = ((st2 != null) && st2.isCompleted()) ? "31554-01.htm" : "31554-10.htm";
 				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (qs.isCond(1))
-				{
-					if (getQuestItemsCount(talker, FANG_OF_STAKATO) >= 1)
-					{
-						htmlText = "31554-04.htm";
-					}
-					else
-					{
-						htmlText = "31554-03.htm";
-					}
-				}
+				htmltext = (hasQuestItems(player, FANG_OF_STAKATO)) ? "31554-04.htm" : "31554-03.htm";
 				break;
 			}
 		}
-		return htmlText;
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onKill(Npc npc, Player killer, boolean isSummon)
 	{
-		final Player partyMember = getRandomPartyMemberState(killer, State.STARTED);
-		if (partyMember == null)
+		final QuestState qs = getRandomPartyMemberState(killer, 1, 3, npc);
+		if (qs != null)
 		{
-			return super.onKill(npc, killer, isSummon);
+			giveItemRandomly(qs.getPlayer(), npc, FANG_OF_STAKATO, 1, 0, 1, true);
 		}
 		
-		if (partyMember.getQuestState(Q00640_TheZeroHour.class.getSimpleName()) == null)
-		{
-			return super.onKill(npc, killer, isSummon);
-		}
-		
-		giveItems(partyMember, FANG_OF_STAKATO, (long) Config.RATE_QUEST_DROP);
-		playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		return super.onKill(npc, killer, isSummon);
 	}
 }

@@ -16,369 +16,313 @@
  */
 package quests.Q00412_PathOfTheDarkWizard;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path Of The Dark Wizard (412)
- * @author ivantotov
- */
 public class Q00412_PathOfTheDarkWizard extends Quest
 {
 	// NPCs
+	private static final int VARIKA = 30421;
 	private static final int CHARKEREN = 30415;
 	private static final int ANNIKA = 30418;
 	private static final int ARKENIA = 30419;
-	private static final int VARIKA = 30421;
 	// Items
-	private static final int SEEDS_OF_ANGER = 1253;
-	private static final int SEEDS_OF_DESPAIR = 1254;
-	private static final int SEEDS_OF_HORROR = 1255;
-	private static final int SEEDS_OF_LUNACY = 1256;
-	private static final int FAMILYS_REMAINS = 1257;
+	private static final int SEED_OF_ANGER = 1253;
+	private static final int SEED_OF_DESPAIR = 1254;
+	private static final int SEED_OF_HORROR = 1255;
+	private static final int SEED_OF_LUNACY = 1256;
+	private static final int FAMILY_REMAINS = 1257;
+	private static final int VARIKA_LIQUOR = 1258;
 	private static final int KNEE_BONE = 1259;
 	private static final int HEART_OF_LUNACY = 1260;
+	private static final int JEWEL_OF_DARKNESS = 1261;
 	private static final int LUCKY_KEY = 1277;
 	private static final int CANDLE = 1278;
 	private static final int HUB_SCENT = 1279;
-	// Reward
-	private static final int JEWEL_OF_DARKNESS = 1261;
-	// Monster
-	private static final int MARSH_ZOMBIE = 20015;
-	private static final int MISERY_SKELETON = 20022;
-	private static final int SKELETON_SCOUT = 20045;
-	private static final int SKELETON_HUNTER = 20517;
-	private static final int SKELETON_HUNTER_ARCHER = 20518;
-	// Misc
-	private static final int MIN_LEVEL = 19;
 	
 	public Q00412_PathOfTheDarkWizard()
 	{
 		super(412);
+		registerQuestItems(SEED_OF_ANGER, SEED_OF_DESPAIR, SEED_OF_HORROR, SEED_OF_LUNACY, FAMILY_REMAINS, VARIKA_LIQUOR, KNEE_BONE, HEART_OF_LUNACY, LUCKY_KEY, CANDLE, HUB_SCENT);
 		addStartNpc(VARIKA);
 		addTalkId(VARIKA, CHARKEREN, ANNIKA, ARKENIA);
-		addKillId(MARSH_ZOMBIE, MISERY_SKELETON, SKELETON_SCOUT, SKELETON_HUNTER, SKELETON_HUNTER_ARCHER);
-		registerQuestItems(SEEDS_OF_ANGER, SEEDS_OF_DESPAIR, SEEDS_OF_HORROR, SEEDS_OF_LUNACY, FAMILYS_REMAINS, KNEE_BONE, HEART_OF_LUNACY, LUCKY_KEY, CANDLE, HUB_SCENT);
+		addKillId(20015, 20022, 20045, 20517, 20518);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30421-05.htm":
 			{
-				if (player.getClassId() == ClassId.DARK_MAGE)
+				if (player.getClassId() != ClassId.DARK_MAGE)
 				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, JEWEL_OF_DARKNESS))
-						{
-							htmltext = "30421-04.htm";
-						}
-						else
-						{
-							qs.startQuest();
-							giveItems(player, SEEDS_OF_DESPAIR, 1);
-							htmltext = "30421-05.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30421-02.htm";
-					}
+					htmltext = (player.getClassId() == ClassId.DARK_WIZARD) ? "30421-02a.htm" : "30421-03.htm";
 				}
-				else if (player.getClassId() == ClassId.DARK_WIZARD)
+				else if (player.getLevel() < 19)
 				{
-					htmltext = "30421-02a.htm";
+					htmltext = "30421-02.htm";
+				}
+				else if (hasQuestItems(player, JEWEL_OF_DARKNESS))
+				{
+					htmltext = "30421-04.htm";
 				}
 				else
 				{
-					htmltext = "30421-03.htm";
+					st.startQuest();
+					giveItems(player, SEED_OF_DESPAIR, 1);
 				}
 				break;
 			}
-			case "30421-06.html":
+			case "30421-07.htm":
 			{
-				if (hasQuestItems(player, SEEDS_OF_ANGER))
+				if (hasQuestItems(player, SEED_OF_ANGER))
 				{
-					htmltext = event;
+					htmltext = "30421-06.htm";
 				}
-				else
+				else if (hasQuestItems(player, LUCKY_KEY))
 				{
-					htmltext = "30421-07.html";
+					htmltext = "30421-08.htm";
+				}
+				else if (getQuestItemsCount(player, FAMILY_REMAINS) == 3)
+				{
+					htmltext = "30421-18.htm";
 				}
 				break;
 			}
-			case "30421-09.html":
+			case "30421-10.htm":
 			{
-				if (hasQuestItems(player, SEEDS_OF_HORROR))
+				if (hasQuestItems(player, SEED_OF_HORROR))
 				{
-					htmltext = event;
+					htmltext = "30421-09.htm";
 				}
-				else
+				else if (getQuestItemsCount(player, KNEE_BONE) == 2)
 				{
-					htmltext = "30421-10.html";
-				}
-				break;
-			}
-			case "30421-11.html":
-			{
-				if (hasQuestItems(player, SEEDS_OF_LUNACY))
-				{
-					htmltext = event;
-				}
-				else if (!hasQuestItems(player, SEEDS_OF_LUNACY) && hasQuestItems(player, SEEDS_OF_DESPAIR))
-				{
-					htmltext = "30421-12.html";
+					htmltext = "30421-19.htm";
 				}
 				break;
 			}
-			case "30421-08.html":
-			case "30415-02.html":
+			case "30421-13.htm":
 			{
-				htmltext = event;
+				if (hasQuestItems(player, SEED_OF_LUNACY))
+				{
+					htmltext = "30421-12.htm";
+				}
 				break;
 			}
-			case "30415-03.html":
+			case "30415-03.htm":
 			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				giveItems(player, LUCKY_KEY, 1);
-				htmltext = event;
 				break;
 			}
-			case "30418-02.html":
+			case "30418-02.htm":
 			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				giveItems(player, CANDLE, 1);
-				htmltext = event;
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case MARSH_ZOMBIE:
-				{
-					if (hasQuestItems(killer, LUCKY_KEY) && (getQuestItemsCount(killer, FAMILYS_REMAINS) < 3) && (getRandom(2) == 0))
-					{
-						giveItems(killer, FAMILYS_REMAINS, 1);
-						if (getQuestItemsCount(killer, FAMILYS_REMAINS) == 3)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MISERY_SKELETON:
-				case SKELETON_HUNTER:
-				case SKELETON_HUNTER_ARCHER:
-				{
-					if (hasQuestItems(killer, CANDLE) && (getQuestItemsCount(killer, KNEE_BONE) < 2) && (getRandom(2) == 0))
-					{
-						giveItems(killer, KNEE_BONE, 1);
-						if (getQuestItemsCount(killer, KNEE_BONE) == 2)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case SKELETON_SCOUT:
-				{
-					if (hasQuestItems(killer, HUB_SCENT) && (getQuestItemsCount(killer, HEART_OF_LUNACY) < 3) && (getRandom(2) == 0))
-					{
-						giveItems(killer, HEART_OF_LUNACY, 1);
-						if (getQuestItemsCount(killer, HEART_OF_LUNACY) == 3)
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == VARIKA)
+			case State.CREATED:
 			{
-				if (!hasQuestItems(player, JEWEL_OF_DARKNESS))
-				{
-					htmltext = "30421-01.htm";
-				}
-				else
-				{
-					htmltext = "30421-04.htm";
-				}
+				htmltext = "30421-01.htm";
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == VARIKA)
+			case State.STARTED:
 			{
-				return htmltext;
-			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case VARIKA:
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, SEEDS_OF_DESPAIR, SEEDS_OF_HORROR, SEEDS_OF_LUNACY, SEEDS_OF_ANGER))
+					case VARIKA:
 					{
-						giveItems(player, JEWEL_OF_DARKNESS, 1);
-						final int level = player.getLevel();
-						if (level >= 20)
+						if (hasQuestItems(player, SEED_OF_ANGER, SEED_OF_HORROR, SEED_OF_LUNACY))
 						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else if (level == 19)
-						{
-							addExpAndSp(player, 80314, 5087);
+							htmltext = "30421-16.htm";
+							takeItems(player, SEED_OF_ANGER, 1);
+							takeItems(player, SEED_OF_DESPAIR, 1);
+							takeItems(player, SEED_OF_HORROR, 1);
+							takeItems(player, SEED_OF_LUNACY, 1);
+							giveItems(player, JEWEL_OF_DARKNESS, 1);
+							addExpAndSp(player, 3200, 1650);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
 						}
 						else
 						{
-							addExpAndSp(player, 80314, 5087);
+							htmltext = "30421-17.htm";
 						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30421-13.html";
+						break;
 					}
-					else if (hasQuestItems(player, SEEDS_OF_DESPAIR))
+					case CHARKEREN:
 					{
-						if (!hasAtLeastOneQuestItem(player, FAMILYS_REMAINS, LUCKY_KEY, CANDLE, HUB_SCENT, KNEE_BONE, HEART_OF_LUNACY))
+						if (hasQuestItems(player, SEED_OF_ANGER))
 						{
-							htmltext = "30421-14.html";
+							htmltext = "30415-06.htm";
 						}
-						else if (!hasQuestItems(player, SEEDS_OF_ANGER))
+						else if (!hasQuestItems(player, LUCKY_KEY))
 						{
-							htmltext = "30421-08.html";
+							htmltext = "30415-01.htm";
 						}
-						else if (!hasQuestItems(player, SEEDS_OF_HORROR))
+						else if (getQuestItemsCount(player, FAMILY_REMAINS) == 3)
 						{
-							htmltext = "30421-15.html";
-						}
-						else if (!hasQuestItems(player, SEEDS_OF_LUNACY))
-						{
-							htmltext = "30421-12.html";
-						}
-					}
-					break;
-				}
-				case CHARKEREN:
-				{
-					if (!hasQuestItems(player, SEEDS_OF_ANGER) && hasQuestItems(player, SEEDS_OF_DESPAIR))
-					{
-						if (!hasAtLeastOneQuestItem(player, FAMILYS_REMAINS, LUCKY_KEY))
-						{
-							htmltext = "30415-01.html";
-						}
-						else if (hasQuestItems(player, LUCKY_KEY) && (getQuestItemsCount(player, FAMILYS_REMAINS) < 3))
-						{
-							htmltext = "30415-04.html";
-						}
-						else
-						{
-							giveItems(player, SEEDS_OF_ANGER, 1);
-							takeItems(player, FAMILYS_REMAINS, -1);
+							htmltext = "30415-05.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							takeItems(player, FAMILY_REMAINS, -1);
 							takeItems(player, LUCKY_KEY, 1);
-							htmltext = "30415-05.html";
+							giveItems(player, SEED_OF_ANGER, 1);
 						}
+						else
+						{
+							htmltext = "30415-04.htm";
+						}
+						break;
+					}
+					case ANNIKA:
+					{
+						if (hasQuestItems(player, SEED_OF_HORROR))
+						{
+							htmltext = "30418-04.htm";
+						}
+						else if (!hasQuestItems(player, CANDLE))
+						{
+							htmltext = "30418-01.htm";
+						}
+						else if (getQuestItemsCount(player, KNEE_BONE) == 2)
+						{
+							htmltext = "30418-04.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							takeItems(player, CANDLE, 1);
+							takeItems(player, KNEE_BONE, -1);
+							giveItems(player, SEED_OF_HORROR, 1);
+						}
+						else
+						{
+							htmltext = "30418-03.htm";
+						}
+						break;
+					}
+					case ARKENIA:
+					{
+						if (hasQuestItems(player, SEED_OF_LUNACY))
+						{
+							htmltext = "30419-03.htm";
+						}
+						else if (!hasQuestItems(player, HUB_SCENT))
+						{
+							htmltext = "30419-01.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							giveItems(player, HUB_SCENT, 1);
+						}
+						else if (getQuestItemsCount(player, HEART_OF_LUNACY) == 3)
+						{
+							htmltext = "30419-03.htm";
+							playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+							takeItems(player, HEART_OF_LUNACY, -1);
+							takeItems(player, HUB_SCENT, 1);
+							giveItems(player, SEED_OF_LUNACY, 1);
+						}
+						else
+						{
+							htmltext = "30419-02.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20015:
+			{
+				if (hasQuestItems(player, LUCKY_KEY) && (getQuestItemsCount(player, FAMILY_REMAINS) < 3) && (getRandom(10) < 5))
+				{
+					giveItems(player, FAMILY_REMAINS, 1);
+					if (getQuestItemsCount(player, FAMILY_REMAINS) < 3)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else
 					{
-						htmltext = "30415-06.html";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
 					}
-					break;
 				}
-				case ANNIKA:
+				break;
+			}
+			case 20022:
+			case 20517:
+			case 20518:
+			{
+				if (hasQuestItems(player, CANDLE) && (getQuestItemsCount(player, KNEE_BONE) < 2) && (getRandom(10) < 5))
 				{
-					if (!hasQuestItems(player, SEEDS_OF_HORROR) && hasQuestItems(player, SEEDS_OF_DESPAIR))
+					giveItems(player, KNEE_BONE, 1);
+					if (getQuestItemsCount(player, KNEE_BONE) < 2)
 					{
-						if (!hasAtLeastOneQuestItem(player, CANDLE, KNEE_BONE))
-						{
-							htmltext = "30418-01.html";
-						}
-						else if (hasQuestItems(player, CANDLE) && (getQuestItemsCount(player, KNEE_BONE) < 2))
-						{
-							htmltext = "30418-03.html";
-						}
-						else
-						{
-							giveItems(player, SEEDS_OF_HORROR, 1);
-							takeItems(player, KNEE_BONE, -1);
-							takeItems(player, CANDLE, 1);
-							htmltext = "30418-04.html";
-						}
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
-					break;
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					}
 				}
-				case ARKENIA:
+				break;
+			}
+			case 20045:
+			{
+				if (hasQuestItems(player, HUB_SCENT) && (getQuestItemsCount(player, HEART_OF_LUNACY) < 3) && (getRandom(10) < 5))
 				{
-					if (!hasQuestItems(player, SEEDS_OF_LUNACY))
+					giveItems(player, HEART_OF_LUNACY, 1);
+					if (getQuestItemsCount(player, HEART_OF_LUNACY) < 3)
 					{
-						if (!hasAtLeastOneQuestItem(player, HUB_SCENT, HEART_OF_LUNACY))
-						{
-							giveItems(player, HUB_SCENT, 1);
-							htmltext = "30419-01.html";
-						}
-						else if (hasQuestItems(player, HUB_SCENT) && (getQuestItemsCount(player, HEART_OF_LUNACY) < 3))
-						{
-							htmltext = "30419-02.html";
-						}
-						else
-						{
-							giveItems(player, SEEDS_OF_LUNACY, 1);
-							takeItems(player, HEART_OF_LUNACY, -1);
-							takeItems(player, HUB_SCENT, 1);
-							htmltext = "30419-03.html";
-						}
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
-					break;
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					}
 				}
+				break;
 			}
 		}
-		return htmltext;
+		
+		return null;
 	}
 }

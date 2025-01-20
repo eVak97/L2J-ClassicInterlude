@@ -22,111 +22,113 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Meeting With The Golden Ram (18)<br>
- * Original jython script by disKret.
- * @author nonom
- */
 public class Q00018_MeetingWithTheGoldenRam extends Quest
 {
 	// NPCs
 	private static final int DONAL = 31314;
 	private static final int DAISY = 31315;
 	private static final int ABERCROMBIE = 31555;
-	// Item
-	private static final int BOX = 7245;
+	// Items
+	private static final int SUPPLY_BOX = 7245;
 	
 	public Q00018_MeetingWithTheGoldenRam()
 	{
 		super(18);
+		
+		registerQuestItems(SUPPLY_BOX);
 		addStartNpc(DONAL);
 		addTalkId(DONAL, DAISY, ABERCROMBIE);
-		registerQuestItems(BOX);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
 		String htmltext = event;
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
 		switch (event)
 		{
-			case "31314-03.html":
+			case "31314-03.htm":
 			{
-				if (player.getLevel() >= 66)
-				{
-					qs.startQuest();
-				}
-				else
-				{
-					htmltext = "31314-02.html";
-				}
+				st.startQuest();
 				break;
 			}
-			case "31315-02.html":
+			case "31315-02.htm":
 			{
-				qs.setCond(2, true);
-				giveItems(player, BOX, 1);
+				st.setCond(2, true);
+				giveItems(player, SUPPLY_BOX, 1);
 				break;
 			}
-			case "31555-02.html":
+			case "31555-02.htm":
 			{
-				if (hasQuestItems(player, BOX))
-				{
-					giveAdena(player, 40000, true);
-					addExpAndSp(player, 126668, 11731);
-					qs.exitQuest(false, true);
-				}
+				takeItems(player, SUPPLY_BOX, 1);
+				giveAdena(player, 15000, true);
+				addExpAndSp(player, 50000, 0);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		final int npcId = npc.getId();
+		final QuestState st = getQuestState(player, true);
 		
-		switch (qs.getState())
+		switch (st.getState())
 		{
+			case State.CREATED:
+			{
+				htmltext = (player.getLevel() < 66) ? "31314-02.htm" : "31314-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
+				{
+					case DONAL:
+					{
+						htmltext = "31314-04.htm";
+						break;
+					}
+					case DAISY:
+					{
+						if (cond == 1)
+						{
+							htmltext = "31315-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "31315-03.htm";
+						}
+						break;
+					}
+					case ABERCROMBIE:
+					{
+						if (cond == 2)
+						{
+							htmltext = "31555-01.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
 			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
-			case State.CREATED:
-			{
-				if (npcId == DONAL)
-				{
-					htmltext = "31314-01.htm";
-				}
-				break;
-			}
-			case State.STARTED:
-			{
-				if (npcId == DONAL)
-				{
-					htmltext = "31314-04.html";
-				}
-				else if (npcId == DAISY)
-				{
-					htmltext = (qs.getCond() < 2) ? "31315-01.html" : "31315-03.html";
-				}
-				else if ((npcId == ABERCROMBIE) && qs.isCond(2) && hasQuestItems(player, BOX))
-				{
-					htmltext = "31555-01.html";
-				}
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 }

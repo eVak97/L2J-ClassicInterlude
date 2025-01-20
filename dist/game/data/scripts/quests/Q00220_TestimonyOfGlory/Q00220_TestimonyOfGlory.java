@@ -16,8 +16,6 @@
  */
 package quests.Q00220_TestimonyOfGlory;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.CategoryType;
 import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
@@ -25,69 +23,25 @@ import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Testimony Of Glory (220)
- * @author ivantotov
- */
 public class Q00220_TestimonyOfGlory extends Quest
 {
 	// NPCs
-	private static final int PREFECT_KASMAN = 30501;
-	private static final int PREFECT_VOKIAN = 30514;
-	private static final int SEER_MANAKIA = 30515;
-	private static final int FLAME_LORD_KAKAI = 30565;
-	private static final int SEER_TANAPI = 30571;
-	private static final int BREKA_CHIEF_VOLTAR = 30615;
-	private static final int ENKU_CHIEF_KEPRA = 30616;
-	private static final int TUREK_CHIEF_BURAI = 30617;
-	private static final int LEUNT_CHIEF_HARAK = 30618;
-	private static final int VUKU_CHIEF_DRIKO = 30619;
-	private static final int GANDI_CHIEF_CHIANTA = 30642;
-	// Items
-	private static final int VOKIANS_ORDER = 3204;
-	private static final int MANASHEN_SHARD = 3205;
-	private static final int TYRANT_TALON = 3206;
-	private static final int GUARDIAN_BASILISK_FANG = 3207;
-	private static final int VOKIANS_ORDER2 = 3208;
-	private static final int NECKLACE_OF_AUTHORITY = 3209;
-	private static final int CHIANTA_1ST_ORDER = 3210;
-	private static final int SCEPTER_OF_BREKA = 3211;
-	private static final int SCEPTER_OF_ENKU = 3212;
-	private static final int SCEPTER_OF_VUKU = 3213;
-	private static final int SCEPTER_OF_TUREK = 3214;
-	private static final int SCEPTER_OF_TUNATH = 3215;
-	private static final int CHIANTA_2ND_ORDER = 3216;
-	private static final int CHIANTA_3RD_ORDER = 3217;
-	private static final int TAMLIN_ORC_SKULL = 3218;
-	private static final int TIMAK_ORC_HEAD = 3219;
-	private static final int SCEPTER_BOX = 3220;
-	private static final int PASHIKAS_HEAD = 3221;
-	private static final int VULTUS_HEAD = 3222;
-	private static final int GLOVE_OF_VOLTAR = 3223;
-	private static final int ENKU_OVERLORD_HEAD = 3224;
-	private static final int GLOVE_OF_KEPRA = 3225;
-	private static final int MAKUM_BUGBEAR_HEAD = 3226;
-	private static final int GLOVE_OF_BURAI = 3227;
-	private static final int MANAKIA_1ST_LETTER = 3228;
-	private static final int MANAKIA_2ND_LETTER = 3229;
-	private static final int KASMANS_1ST_LETTER = 3230;
-	private static final int KASMANS_2ND_LETTER = 3231;
-	private static final int KASMANS_3RD_LETTER = 3232;
-	private static final int DRIKOS_CONTRACT = 3233;
-	private static final int STAKATO_DRONE_HUSK = 3234;
-	private static final int TANAPIS_ORDER = 3235;
-	private static final int SCEPTER_OF_TANTOS = 3236;
-	private static final int RITUAL_BOX = 3237;
-	// Reward
-	private static final int MARK_OF_GLORY = 3203;
-	// Monster
+	private static final int KASMAN = 30501;
+	private static final int VOKIAN = 30514;
+	private static final int MANAKIA = 30515;
+	private static final int KAKAI = 30565;
+	private static final int TANAPI = 30571;
+	private static final int VOLTAR = 30615;
+	private static final int KEPRA = 30616;
+	private static final int BURAI = 30617;
+	private static final int HARAK = 30618;
+	private static final int DRIKO = 30619;
+	private static final int CHIANTA = 30642;
+	// Monsters
 	private static final int TYRANT = 20192;
-	private static final int TYRANT_KINGPIN = 20193;
 	private static final int MARSH_STAKATO_DRONE = 20234;
 	private static final int GUARDIAN_BASILISK = 20550;
 	private static final int MANASHEN_GARGOYLE = 20563;
@@ -101,943 +55,985 @@ public class Q00220_TestimonyOfGlory extends Quest
 	private static final int TAMLIN_ORC_ARCHER = 20602;
 	private static final int RAGNA_ORC_OVERLORD = 20778;
 	private static final int RAGNA_ORC_SEER = 20779;
-	// Quest Monster
 	private static final int PASHIKA_SON_OF_VOLTAR = 27080;
 	private static final int VULTUS_SON_OF_VOLTAR = 27081;
 	private static final int ENKU_ORC_OVERLORD = 27082;
 	private static final int MAKUM_BUGBEAR_THUG = 27083;
 	private static final int REVENANT_OF_TANTOS_CHIEF = 27086;
-	// Misc
-	private static final int MIN_LEVEL = 37;
+	// Items
+	private static final int VOKIAN_ORDER_1 = 3204;
+	private static final int MANASHEN_SHARD = 3205;
+	private static final int TYRANT_TALON = 3206;
+	private static final int GUARDIAN_BASILISK_FANG = 3207;
+	private static final int VOKIAN_ORDER_2 = 3208;
+	private static final int NECKLACE_OF_AUTHORITY = 3209;
+	private static final int CHIANTA_ORDER_1 = 3210;
+	private static final int SCEPTER_OF_BREKA = 3211;
+	private static final int SCEPTER_OF_ENKU = 3212;
+	private static final int SCEPTER_OF_VUKU = 3213;
+	private static final int SCEPTER_OF_TUREK = 3214;
+	private static final int SCEPTER_OF_TUNATH = 3215;
+	private static final int CHIANTA_ORDER_2 = 3216;
+	private static final int CHIANTA_ORDER_3 = 3217;
+	private static final int TAMLIN_ORC_SKULL = 3218;
+	private static final int TIMAK_ORC_HEAD = 3219;
+	private static final int SCEPTER_BOX = 3220;
+	private static final int PASHIKA_HEAD = 3221;
+	private static final int VULTUS_HEAD = 3222;
+	private static final int GLOVE_OF_VOLTAR = 3223;
+	private static final int ENKU_OVERLORD_HEAD = 3224;
+	private static final int GLOVE_OF_KEPRA = 3225;
+	private static final int MAKUM_BUGBEAR_HEAD = 3226;
+	private static final int GLOVE_OF_BURAI = 3227;
+	private static final int MANAKIA_LETTER_1 = 3228;
+	private static final int MANAKIA_LETTER_2 = 3229;
+	private static final int KASMAN_LETTER_1 = 3230;
+	private static final int KASMAN_LETTER_2 = 3231;
+	private static final int KASMAN_LETTER_3 = 3232;
+	private static final int DRIKO_CONTRACT = 3233;
+	private static final int STAKATO_DRONE_HUSK = 3234;
+	private static final int TANAPI_ORDER = 3235;
+	private static final int SCEPTER_OF_TANTOS = 3236;
+	private static final int RITUAL_BOX = 3237;
+	// Rewards
+	private static final int MARK_OF_GLORY = 3203;
+	private static final int DIMENSIONAL_DIAMOND = 7562;
+	// Checks & Instances
+	private static boolean _sonsOfVoltar = false;
+	private static boolean _enkuOrcOverlords = false;
+	private static boolean _makumBugbearThugs = false;
 	
 	public Q00220_TestimonyOfGlory()
 	{
 		super(220);
-		addStartNpc(PREFECT_VOKIAN);
-		addTalkId(PREFECT_VOKIAN, PREFECT_KASMAN, SEER_MANAKIA, FLAME_LORD_KAKAI, SEER_TANAPI, BREKA_CHIEF_VOLTAR, ENKU_CHIEF_KEPRA, TUREK_CHIEF_BURAI, LEUNT_CHIEF_HARAK, VUKU_CHIEF_DRIKO, GANDI_CHIEF_CHIANTA);
-		addKillId(TYRANT, TYRANT_KINGPIN, MARSH_STAKATO_DRONE, GUARDIAN_BASILISK, MANASHEN_GARGOYLE, TIMAK_ORC, TIMAK_ORC_ARCHER, TIMAK_ORC_SOLDIER, TIMAK_ORC_WARRIOR, TIMAK_ORC_SHAMAN, TIMAK_ORC_OVERLORD, TAMLIN_ORC, TAMLIN_ORC_ARCHER, RAGNA_ORC_OVERLORD, RAGNA_ORC_SEER, PASHIKA_SON_OF_VOLTAR, VULTUS_SON_OF_VOLTAR, ENKU_ORC_OVERLORD, MAKUM_BUGBEAR_THUG, REVENANT_OF_TANTOS_CHIEF);
+		registerQuestItems(VOKIAN_ORDER_1, MANASHEN_SHARD, TYRANT_TALON, GUARDIAN_BASILISK_FANG, VOKIAN_ORDER_2, NECKLACE_OF_AUTHORITY, CHIANTA_ORDER_1, SCEPTER_OF_BREKA, SCEPTER_OF_ENKU, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH, CHIANTA_ORDER_2, CHIANTA_ORDER_3, TAMLIN_ORC_SKULL, TIMAK_ORC_HEAD, SCEPTER_BOX, PASHIKA_HEAD, VULTUS_HEAD, GLOVE_OF_VOLTAR, ENKU_OVERLORD_HEAD, GLOVE_OF_KEPRA, MAKUM_BUGBEAR_HEAD, GLOVE_OF_BURAI, MANAKIA_LETTER_1, MANAKIA_LETTER_2, KASMAN_LETTER_1, KASMAN_LETTER_2, KASMAN_LETTER_3, DRIKO_CONTRACT, STAKATO_DRONE_HUSK, TANAPI_ORDER, SCEPTER_OF_TANTOS, RITUAL_BOX);
+		addStartNpc(VOKIAN);
+		addTalkId(KASMAN, VOKIAN, MANAKIA, KAKAI, TANAPI, VOLTAR, KEPRA, BURAI, HARAK, DRIKO, CHIANTA);
 		addAttackId(RAGNA_ORC_OVERLORD, RAGNA_ORC_SEER, REVENANT_OF_TANTOS_CHIEF);
-		registerQuestItems(VOKIANS_ORDER, MANASHEN_SHARD, TYRANT_TALON, GUARDIAN_BASILISK_FANG, VOKIANS_ORDER2, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER, SCEPTER_OF_BREKA, SCEPTER_OF_ENKU, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, TAMLIN_ORC_SKULL, TIMAK_ORC_HEAD, SCEPTER_BOX, PASHIKAS_HEAD, VULTUS_HEAD, GLOVE_OF_VOLTAR, ENKU_OVERLORD_HEAD, GLOVE_OF_KEPRA, MAKUM_BUGBEAR_HEAD, GLOVE_OF_BURAI, MANAKIA_1ST_LETTER, MANAKIA_2ND_LETTER, KASMANS_1ST_LETTER, KASMANS_2ND_LETTER, KASMANS_3RD_LETTER, DRIKOS_CONTRACT, STAKATO_DRONE_HUSK, TANAPIS_ORDER, SCEPTER_OF_TANTOS, RITUAL_BOX);
+		addKillId(TYRANT, MARSH_STAKATO_DRONE, GUARDIAN_BASILISK, MANASHEN_GARGOYLE, TIMAK_ORC, TIMAK_ORC_ARCHER, TIMAK_ORC_SOLDIER, TIMAK_ORC_WARRIOR, TIMAK_ORC_SHAMAN, TIMAK_ORC_OVERLORD, TAMLIN_ORC, TAMLIN_ORC_ARCHER, RAGNA_ORC_OVERLORD, RAGNA_ORC_SEER, PASHIKA_SON_OF_VOLTAR, VULTUS_SON_OF_VOLTAR, ENKU_ORC_OVERLORD, MAKUM_BUGBEAR_THUG, REVENANT_OF_TANTOS_CHIEF);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30514-05.htm":
 			{
-				if (qs.isCreated())
+				st.startQuest();
+				giveItems(player, VOKIAN_ORDER_1, 1);
+				if (!player.getVariables().getBoolean("secondClassChange37", false))
 				{
-					qs.startQuest();
-					playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-					giveItems(player, VOKIANS_ORDER, 1);
+					htmltext = "30514-05a.htm";
+					giveItems(player, DIMENSIONAL_DIAMOND, DF_REWARD_37.get(player.getRace().ordinal()));
+					player.getVariables().set("secondClassChange37", true);
 				}
 				break;
 			}
-			case "30514-04.htm":
-			case "30514-07.html":
-			case "30571-02.html":
-			case "30615-03.html":
-			case "30616-03.html":
-			case "30642-02.html":
-			case "30642-06.html":
-			case "30642-08.html":
+			case "30642-03.htm":
 			{
-				htmltext = event;
+				st.setCond(4, true);
+				takeItems(player, VOKIAN_ORDER_2, 1);
+				giveItems(player, CHIANTA_ORDER_1, 1);
 				break;
 			}
-			case "30501-02.html":
+			case "30642-07.htm":
 			{
-				if (hasQuestItems(player, SCEPTER_OF_VUKU))
+				takeItems(player, CHIANTA_ORDER_1, 1);
+				takeItems(player, KASMAN_LETTER_1, 1);
+				takeItems(player, MANAKIA_LETTER_1, 1);
+				takeItems(player, MANAKIA_LETTER_2, 1);
+				takeItems(player, SCEPTER_OF_BREKA, 1);
+				takeItems(player, SCEPTER_OF_ENKU, 1);
+				takeItems(player, SCEPTER_OF_TUNATH, 1);
+				takeItems(player, SCEPTER_OF_TUREK, 1);
+				takeItems(player, SCEPTER_OF_VUKU, 1);
+				if (player.getLevel() >= 37)
 				{
-					htmltext = event;
+					st.setCond(6, true);
+					giveItems(player, CHIANTA_ORDER_3, 1);
 				}
-				else if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_VUKU, KASMANS_1ST_LETTER))
+				else
 				{
-					giveItems(player, KASMANS_1ST_LETTER, 1);
-					player.getRadar().addMarker(-2150, 124443, -3724);
-					htmltext = "30501-03.html";
-				}
-				else if (!hasQuestItems(player, SCEPTER_OF_VUKU) && hasAtLeastOneQuestItem(player, KASMANS_1ST_LETTER, DRIKOS_CONTRACT))
-				{
-					player.getRadar().addMarker(-2150, 124443, -3724);
-					htmltext = "30501-04.html";
-				}
-				break;
-			}
-			case "30501-05.html":
-			{
-				if (hasQuestItems(player, SCEPTER_OF_TUREK))
-				{
-					htmltext = event;
-				}
-				else if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_TUREK, KASMANS_2ND_LETTER))
-				{
-					giveItems(player, KASMANS_2ND_LETTER, 1);
-					player.getRadar().addMarker(-94294, 110818, -3563);
-					htmltext = "30501-06.html";
-				}
-				else if (!hasQuestItems(player, SCEPTER_OF_TUREK) && hasQuestItems(player, KASMANS_2ND_LETTER))
-				{
-					player.getRadar().addMarker(-94294, 110818, -3563);
-					htmltext = "30501-07.html";
+					htmltext = "30642-06.htm";
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, CHIANTA_ORDER_2, 1);
 				}
 				break;
 			}
-			case "30501-08.html":
+			case "30501-02.htm":
 			{
-				if (hasQuestItems(player, SCEPTER_OF_TUNATH))
+				if (!hasQuestItems(player, SCEPTER_OF_VUKU))
 				{
-					htmltext = event;
-				}
-				else if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_TUNATH, KASMANS_3RD_LETTER))
-				{
-					giveItems(player, KASMANS_3RD_LETTER, 1);
-					player.getRadar().addMarker(-55217, 200628, -3724);
-					htmltext = "30501-09.html";
-				}
-				else if (!hasQuestItems(player, SCEPTER_OF_TUNATH) && hasQuestItems(player, KASMANS_3RD_LETTER))
-				{
-					player.getRadar().addMarker(-55217, 200628, -3724);
-					htmltext = "30501-10.html";
-				}
-				break;
-			}
-			case "30515-04.html":
-			{
-				if (!hasQuestItems(player, SCEPTER_OF_BREKA) && hasQuestItems(player, MANAKIA_1ST_LETTER))
-				{
-					player.getRadar().addMarker(80100, 119991, -2264);
-					htmltext = event;
-				}
-				else if (hasQuestItems(player, SCEPTER_OF_BREKA))
-				{
-					htmltext = "30515-02.html";
-				}
-				else if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_BREKA, MANAKIA_1ST_LETTER))
-				{
-					giveItems(player, MANAKIA_1ST_LETTER, 1);
-					player.getRadar().addMarker(80100, 119991, -2264);
-					htmltext = "30515-03.html";
-				}
-				break;
-			}
-			case "30515-05.html":
-			{
-				if (hasQuestItems(player, SCEPTER_OF_ENKU))
-				{
-					htmltext = event;
-				}
-				else if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_ENKU, MANAKIA_2ND_LETTER))
-				{
-					giveItems(player, MANAKIA_2ND_LETTER, 1);
-					player.getRadar().addMarker(12805, 189249, -3616);
-					htmltext = "30515-06.html";
-				}
-				else if (!hasQuestItems(player, SCEPTER_OF_ENKU) && hasQuestItems(player, MANAKIA_2ND_LETTER))
-				{
-					player.getRadar().addMarker(12805, 189249, -3616);
-					htmltext = "30515-07.html";
-				}
-				break;
-			}
-			case "30571-03.html":
-			{
-				if (hasQuestItems(player, SCEPTER_BOX))
-				{
-					takeItems(player, SCEPTER_BOX, 1);
-					giveItems(player, TANAPIS_ORDER, 1);
-					qs.setCond(9, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30615-04.html":
-			{
-				if (hasQuestItems(player, MANAKIA_1ST_LETTER))
-				{
-					giveItems(player, GLOVE_OF_VOLTAR, 1);
-					takeItems(player, MANAKIA_1ST_LETTER, 1);
-					addAttackPlayerDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30616-04.html":
-			{
-				if (hasQuestItems(player, MANAKIA_2ND_LETTER))
-				{
-					giveItems(player, GLOVE_OF_KEPRA, 1);
-					takeItems(player, MANAKIA_2ND_LETTER, 1);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30617-03.html":
-			{
-				if (hasQuestItems(player, KASMANS_2ND_LETTER))
-				{
-					giveItems(player, GLOVE_OF_BURAI, 1);
-					takeItems(player, KASMANS_2ND_LETTER, 1);
-					addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
-					addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30618-03.html":
-			{
-				if (hasQuestItems(player, KASMANS_3RD_LETTER))
-				{
-					giveItems(player, SCEPTER_OF_TUNATH, 1);
-					takeItems(player, KASMANS_3RD_LETTER, 1);
-					if (hasQuestItems(player, SCEPTER_OF_TUREK, SCEPTER_OF_ENKU, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU))
+					if (hasQuestItems(player, KASMAN_LETTER_1))
 					{
-						qs.setCond(5, true);
+						htmltext = "30501-04.htm";
 					}
-					htmltext = event;
+					else
+					{
+						htmltext = "30501-03.htm";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, KASMAN_LETTER_1, 1);
+					}
+					addRadar(player, -2150, 124443, -3724);
 				}
 				break;
 			}
-			case "30619-03.html":
+			case "30501-05.htm":
 			{
-				if (hasQuestItems(player, KASMANS_1ST_LETTER))
+				if (!hasQuestItems(player, SCEPTER_OF_TUREK))
 				{
-					giveItems(player, DRIKOS_CONTRACT, 1);
-					takeItems(player, KASMANS_1ST_LETTER, 1);
-					htmltext = event;
+					if (hasQuestItems(player, KASMAN_LETTER_2))
+					{
+						htmltext = "30501-07.htm";
+					}
+					else
+					{
+						htmltext = "30501-06.htm";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, KASMAN_LETTER_2, 1);
+					}
+					addRadar(player, -94294, 110818, -3563);
 				}
 				break;
 			}
-			case "30642-03.html":
+			case "30501-08.htm":
 			{
-				if (hasQuestItems(player, VOKIANS_ORDER2))
+				if (!hasQuestItems(player, SCEPTER_OF_TUNATH))
 				{
-					takeItems(player, VOKIANS_ORDER2, 1);
-					giveItems(player, CHIANTA_1ST_ORDER, 1);
-					qs.setCond(4, true);
-					htmltext = event;
+					if (hasQuestItems(player, KASMAN_LETTER_3))
+					{
+						htmltext = "30501-10.htm";
+					}
+					else
+					{
+						htmltext = "30501-09.htm";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, KASMAN_LETTER_3, 1);
+					}
+					addRadar(player, -55217, 200628, -3724);
 				}
 				break;
 			}
-			case "30642-07.html":
+			case "30515-02.htm":
 			{
-				if (hasQuestItems(player, CHIANTA_1ST_ORDER, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH, SCEPTER_OF_ENKU))
+				if (!hasQuestItems(player, SCEPTER_OF_BREKA))
 				{
-					takeItems(player, CHIANTA_1ST_ORDER, 1);
-					takeItems(player, SCEPTER_OF_BREKA, 1);
-					takeItems(player, SCEPTER_OF_ENKU, 1);
-					takeItems(player, SCEPTER_OF_VUKU, 1);
-					takeItems(player, SCEPTER_OF_TUREK, 1);
-					takeItems(player, SCEPTER_OF_TUNATH, 1);
-					takeItems(player, MANAKIA_1ST_LETTER, 1);
-					takeItems(player, MANAKIA_2ND_LETTER, 1);
-					takeItems(player, KASMANS_1ST_LETTER, 1);
-					giveItems(player, CHIANTA_3RD_ORDER, 1);
-					qs.setCond(6, true);
-					htmltext = event;
+					if (hasQuestItems(player, MANAKIA_LETTER_1))
+					{
+						htmltext = "30515-04.htm";
+					}
+					else
+					{
+						htmltext = "30515-03.htm";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, MANAKIA_LETTER_1, 1);
+					}
+					addRadar(player, 80100, 119991, -2264);
 				}
 				break;
+			}
+			case "30515-05.htm":
+			{
+				if (!hasQuestItems(player, SCEPTER_OF_ENKU))
+				{
+					if (hasQuestItems(player, MANAKIA_LETTER_2))
+					{
+						htmltext = "30515-07.htm";
+					}
+					else
+					{
+						htmltext = "30515-06.htm";
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+						giveItems(player, MANAKIA_LETTER_2, 1);
+					}
+					addRadar(player, 19815, 189703, -3032);
+				}
+				break;
+			}
+			case "30615-04.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, MANAKIA_LETTER_1, 1);
+				giveItems(player, GLOVE_OF_VOLTAR, 1);
+				if (!_sonsOfVoltar)
+				{
+					addSpawn(PASHIKA_SON_OF_VOLTAR, 80117, 120039, -2259, 0, false, 200000);
+					addSpawn(VULTUS_SON_OF_VOLTAR, 80058, 120038, -2259, 0, false, 200000);
+					_sonsOfVoltar = true;
+					
+					// Resets Sons Of Voltar
+					startQuestTimer("voltar_sons_cleanup", 201000, null, player, false);
+				}
+				break;
+			}
+			case "30616-05.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, MANAKIA_LETTER_2, 1);
+				giveItems(player, GLOVE_OF_KEPRA, 1);
+				if (!_enkuOrcOverlords)
+				{
+					addSpawn(ENKU_ORC_OVERLORD, 19894, 189743, -3074, 0, false, 200000);
+					addSpawn(ENKU_ORC_OVERLORD, 19869, 189800, -3059, 0, false, 200000);
+					addSpawn(ENKU_ORC_OVERLORD, 19818, 189818, -3047, 0, false, 200000);
+					addSpawn(ENKU_ORC_OVERLORD, 19753, 189837, -3027, 0, false, 200000);
+					_enkuOrcOverlords = true;
+					
+					// Resets Enku Orc Overlords
+					startQuestTimer("enku_orcs_cleanup", 201000, null, player, false);
+				}
+				break;
+			}
+			case "30617-04.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, KASMAN_LETTER_2, 1);
+				giveItems(player, GLOVE_OF_BURAI, 1);
+				if (!_makumBugbearThugs)
+				{
+					addSpawn(MAKUM_BUGBEAR_THUG, -94292, 110781, -3701, 0, false, 200000);
+					addSpawn(MAKUM_BUGBEAR_THUG, -94293, 110861, -3701, 0, false, 200000);
+					_makumBugbearThugs = true;
+					
+					// Resets Makum Bugbear Thugs
+					startQuestTimer("makum_bugbears_cleanup", 201000, null, player, false);
+				}
+				break;
+			}
+			case "30618-03.htm":
+			{
+				takeItems(player, KASMAN_LETTER_3, 1);
+				giveItems(player, SCEPTER_OF_TUNATH, 1);
+				if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_ENKU, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK))
+				{
+					st.setCond(5, true);
+				}
+				else
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case "30619-03.htm":
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				takeItems(player, KASMAN_LETTER_1, 1);
+				giveItems(player, DRIKO_CONTRACT, 1);
+				break;
+			}
+			case "30571-03.htm":
+			{
+				st.setCond(9, true);
+				takeItems(player, SCEPTER_BOX, 1);
+				giveItems(player, TANAPI_ORDER, 1);
+				break;
+			}
+			case "voltar_sons_cleanup":
+			{
+				_sonsOfVoltar = false;
+				return null;
+			}
+			case "enku_orcs_cleanup":
+			{
+				_enkuOrcOverlords = false;
+				return null;
+			}
+			case "makum_bugbears_cleanup":
+			{
+				_makumBugbearThugs = false;
+				return null;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(attacker, false);
-		if ((qs != null) && qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case RAGNA_ORC_OVERLORD:
-				case RAGNA_ORC_SEER:
-				{
-					switch (npc.getScriptValue())
-					{
-						case 0:
-						{
-							npc.getVariables().set("lastAttacker", attacker.getObjectId());
-							if (!hasQuestItems(attacker, SCEPTER_OF_TANTOS))
-							{
-								npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.IS_IT_A_LACKEY_OF_KAKAI));
-								npc.setScriptValue(1);
-							}
-							break;
-						}
-						case 1:
-						{
-							npc.setScriptValue(2);
-							break;
-						}
-					}
-					break;
-				}
-				case REVENANT_OF_TANTOS_CHIEF:
-				{
-					switch (npc.getScriptValue())
-					{
-						case 0:
-						{
-							npc.getVariables().set("lastAttacker", attacker.getObjectId());
-							if (!hasQuestItems(attacker, SCEPTER_OF_TANTOS))
-							{
-								npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.HOW_REGRETFUL_UNJUST_DISHONOR));
-								npc.setScriptValue(1);
-							}
-							break;
-						}
-						case 1:
-						{
-							if (!hasQuestItems(attacker, SCEPTER_OF_TANTOS) && (npc.getCurrentHp() < (npc.getMaxHp() / 3)))
-							{
-								npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.INDIGNANT_AND_UNFAIR_DEATH));
-								npc.setScriptValue(2);
-							}
-							break;
-						}
-					}
-					break;
-				}
-			}
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case TYRANT:
-				case TYRANT_KINGPIN:
-				{
-					if (hasQuestItems(killer, VOKIANS_ORDER) && (getQuestItemsCount(killer, TYRANT_TALON) < 10))
-					{
-						if (getQuestItemsCount(killer, TYRANT_TALON) == 9)
-						{
-							giveItems(killer, TYRANT_TALON, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, MANASHEN_SHARD) >= 10) && (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) >= 10))
-							{
-								qs.setCond(2);
-							}
-						}
-						else
-						{
-							giveItems(killer, TYRANT_TALON, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MARSH_STAKATO_DRONE:
-				{
-					if (!hasQuestItems(killer, SCEPTER_OF_VUKU) && hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER, DRIKOS_CONTRACT) && (getQuestItemsCount(killer, STAKATO_DRONE_HUSK) < 30))
-					{
-						if (getQuestItemsCount(killer, TYRANT_TALON) == 29)
-						{
-							giveItems(killer, STAKATO_DRONE_HUSK, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							giveItems(killer, STAKATO_DRONE_HUSK, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case GUARDIAN_BASILISK:
-				{
-					if (hasQuestItems(killer, VOKIANS_ORDER) && (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) < 10))
-					{
-						if (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) == 9)
-						{
-							giveItems(killer, GUARDIAN_BASILISK_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, MANASHEN_SHARD) >= 10) && (getQuestItemsCount(killer, TYRANT_TALON) >= 10))
-							{
-								qs.setCond(2);
-							}
-						}
-						else
-						{
-							giveItems(killer, GUARDIAN_BASILISK_FANG, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MANASHEN_GARGOYLE:
-				{
-					if (hasQuestItems(killer, VOKIANS_ORDER) && (getQuestItemsCount(killer, MANASHEN_SHARD) < 10))
-					{
-						if (getQuestItemsCount(killer, MANASHEN_SHARD) == 9)
-						{
-							giveItems(killer, MANASHEN_SHARD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if ((getQuestItemsCount(killer, TYRANT_TALON) >= 10) && (getQuestItemsCount(killer, GUARDIAN_BASILISK_FANG) >= 10))
-							{
-								qs.setCond(2);
-							}
-						}
-						else
-						{
-							giveItems(killer, MANASHEN_SHARD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case TIMAK_ORC:
-				case TIMAK_ORC_ARCHER:
-				case TIMAK_ORC_SOLDIER:
-				case TIMAK_ORC_WARRIOR:
-				case TIMAK_ORC_SHAMAN:
-				case TIMAK_ORC_OVERLORD:
-				{
-					if (hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_3RD_ORDER) && (getQuestItemsCount(killer, TIMAK_ORC_HEAD) < 20))
-					{
-						if (getQuestItemsCount(killer, MANASHEN_SHARD) == 19)
-						{
-							giveItems(killer, TIMAK_ORC_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if (getQuestItemsCount(killer, TAMLIN_ORC_SKULL) >= 20)
-							{
-								qs.setCond(7);
-							}
-						}
-						else
-						{
-							giveItems(killer, TIMAK_ORC_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case TAMLIN_ORC:
-				case TAMLIN_ORC_ARCHER:
-				{
-					if (hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_3RD_ORDER) && (getQuestItemsCount(killer, TAMLIN_ORC_SKULL) < 20))
-					{
-						if (getQuestItemsCount(killer, TAMLIN_ORC_SKULL) == 19)
-						{
-							giveItems(killer, TAMLIN_ORC_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-							if (getQuestItemsCount(killer, TIMAK_ORC_HEAD) >= 20)
-							{
-								qs.setCond(7);
-							}
-						}
-						else
-						{
-							giveItems(killer, TAMLIN_ORC_SKULL, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case RAGNA_ORC_OVERLORD:
-				case RAGNA_ORC_SEER:
-				{
-					if (hasQuestItems(killer, TANAPIS_ORDER) && !hasQuestItems(killer, SCEPTER_OF_TANTOS))
-					{
-						addSpawn(REVENANT_OF_TANTOS_CHIEF, npc, true, 200000);
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.TOO_LATE));
-					}
-					break;
-				}
-				case PASHIKA_SON_OF_VOLTAR:
-				{
-					if (hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER, GLOVE_OF_VOLTAR) && !hasQuestItems(killer, PASHIKAS_HEAD))
-					{
-						if (hasQuestItems(killer, VULTUS_HEAD))
-						{
-							giveItems(killer, PASHIKAS_HEAD, 1);
-							takeItems(killer, GLOVE_OF_VOLTAR, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							giveItems(killer, PASHIKAS_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case VULTUS_SON_OF_VOLTAR:
-				{
-					if (hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER, GLOVE_OF_VOLTAR) && !hasQuestItems(killer, VULTUS_HEAD))
-					{
-						if (hasQuestItems(killer, PASHIKAS_HEAD))
-						{
-							giveItems(killer, VULTUS_HEAD, 1);
-							takeItems(killer, GLOVE_OF_VOLTAR, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							giveItems(killer, VULTUS_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case ENKU_ORC_OVERLORD:
-				{
-					if (hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER, GLOVE_OF_KEPRA) && (getQuestItemsCount(killer, ENKU_OVERLORD_HEAD) < 4))
-					{
-						if (getQuestItemsCount(killer, ENKU_OVERLORD_HEAD) == 3)
-						{
-							giveItems(killer, ENKU_OVERLORD_HEAD, 1);
-							takeItems(killer, GLOVE_OF_KEPRA, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							giveItems(killer, ENKU_OVERLORD_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case MAKUM_BUGBEAR_THUG:
-				{
-					if (hasQuestItems(killer, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER, GLOVE_OF_BURAI) && (getQuestItemsCount(killer, MAKUM_BUGBEAR_HEAD) < 2))
-					{
-						if (getQuestItemsCount(killer, MAKUM_BUGBEAR_HEAD) == 1)
-						{
-							giveItems(killer, MAKUM_BUGBEAR_HEAD, 1);
-							takeItems(killer, GLOVE_OF_BURAI, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_MIDDLE);
-						}
-						else
-						{
-							giveItems(killer, MAKUM_BUGBEAR_HEAD, 1);
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case REVENANT_OF_TANTOS_CHIEF:
-				{
-					if (hasQuestItems(killer, TANAPIS_ORDER) && !hasQuestItems(killer, SCEPTER_OF_TANTOS))
-					{
-						giveItems(killer, SCEPTER_OF_TANTOS, 1);
-						npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.I_LL_GET_REVENGE_SOMEDAY));
-						qs.setCond(10, true);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == PREFECT_VOKIAN)
+			case State.CREATED:
 			{
-				if (player.getRace() == Race.ORC)
+				if (player.getRace() != Race.ORC)
 				{
-					if ((player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.ORC_2ND_GROUP))
-					{
-						htmltext = "30514-03.htm";
-					}
-					else if (player.getLevel() >= MIN_LEVEL)
-					{
-						htmltext = "30514-01a.html";
-					}
-					else
-					{
-						htmltext = "30514-02.html";
-					}
+					htmltext = "30514-01.htm";
+				}
+				else if (player.getLevel() < 37)
+				{
+					htmltext = "30514-02.htm";
+				}
+				else if (player.getClassId().level() != 1)
+				{
+					htmltext = "30514-01a.htm";
 				}
 				else
 				{
-					htmltext = "30514-01.html";
+					htmltext = "30514-03.htm";
 				}
+				break;
 			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
+			case State.STARTED:
 			{
-				case PREFECT_VOKIAN:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (hasQuestItems(player, VOKIANS_ORDER))
+					case VOKIAN:
 					{
-						if ((getQuestItemsCount(player, MANASHEN_SHARD) >= 10) && (getQuestItemsCount(player, TYRANT_TALON) >= 10) && (getQuestItemsCount(player, GUARDIAN_BASILISK_FANG) >= 10))
+						if (cond == 1)
 						{
-							takeItems(player, VOKIANS_ORDER, 1);
-							takeItems(player, MANASHEN_SHARD, -1);
-							takeItems(player, TYRANT_TALON, -1);
-							takeItems(player, GUARDIAN_BASILISK_FANG, -1);
-							giveItems(player, VOKIANS_ORDER2, 1);
+							htmltext = "30514-06.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30514-08.htm";
+							st.setCond(3, true);
+							takeItems(player, GUARDIAN_BASILISK_FANG, 10);
+							takeItems(player, MANASHEN_SHARD, 10);
+							takeItems(player, TYRANT_TALON, 10);
+							takeItems(player, VOKIAN_ORDER_1, 1);
 							giveItems(player, NECKLACE_OF_AUTHORITY, 1);
-							qs.setCond(3, true);
-							htmltext = "30514-08.html";
+							giveItems(player, VOKIAN_ORDER_2, 1);
 						}
-						else
+						else if (cond == 3)
 						{
-							htmltext = "30514-06.html";
+							htmltext = "30514-09.htm";
 						}
-					}
-					else if (hasQuestItems(player, VOKIANS_ORDER2, NECKLACE_OF_AUTHORITY))
-					{
-						htmltext = "30514-09.html";
-					}
-					else if (!hasQuestItems(player, NECKLACE_OF_AUTHORITY) && hasAtLeastOneQuestItem(player, VOKIANS_ORDER2, SCEPTER_BOX))
-					{
-						htmltext = "30514-10.html";
-					}
-					break;
-				}
-				case PREFECT_KASMAN:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						htmltext = "30501-01.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30501-11.html";
-					}
-					break;
-				}
-				case SEER_MANAKIA:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						htmltext = "30515-01.html";
-					}
-					else if (hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30515-08.html";
-					}
-					break;
-				}
-				case FLAME_LORD_KAKAI:
-				{
-					if (!hasQuestItems(player, RITUAL_BOX) && hasAtLeastOneQuestItem(player, SCEPTER_BOX, TANAPIS_ORDER))
-					{
-						htmltext = "30565-01.html";
-					}
-					else if (hasQuestItems(player, RITUAL_BOX))
-					{
-						giveAdena(player, 262720, true);
-						giveItems(player, MARK_OF_GLORY, 1);
-						addExpAndSp(player, 1448226, 96648);
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30565-02.html";
-					}
-					break;
-				}
-				case SEER_TANAPI:
-				{
-					if (hasQuestItems(player, SCEPTER_BOX))
-					{
-						htmltext = "30571-01.html";
-					}
-					else if (hasQuestItems(player, TANAPIS_ORDER))
-					{
-						if (!hasQuestItems(player, SCEPTER_OF_TANTOS))
+						else if (cond == 8)
 						{
-							htmltext = "30571-04.html";
+							htmltext = "30514-10.htm";
 						}
-						else
-						{
-							takeItems(player, TANAPIS_ORDER, 1);
-							takeItems(player, SCEPTER_OF_TANTOS, 1);
-							giveItems(player, RITUAL_BOX, 1);
-							qs.setCond(11, true);
-							htmltext = "30571-05.html";
-						}
+						break;
 					}
-					else if (hasQuestItems(player, RITUAL_BOX))
+					case CHIANTA:
 					{
-						htmltext = "30571-06.html";
-					}
-					break;
-				}
-				case BREKA_CHIEF_VOLTAR:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_BREKA, MANAKIA_1ST_LETTER, GLOVE_OF_VOLTAR, PASHIKAS_HEAD, VULTUS_HEAD))
+						if (cond == 3)
 						{
-							htmltext = "30615-01.html";
+							htmltext = "30642-01.htm";
 						}
-						else if (hasQuestItems(player, MANAKIA_1ST_LETTER))
+						else if (cond == 4)
 						{
-							htmltext = "30615-02.html";
-							player.getRadar().removeMarker(80100, 119991, -2264);
+							htmltext = "30642-04.htm";
 						}
-						else if (!hasQuestItems(player, SCEPTER_OF_BREKA) && hasQuestItems(player, GLOVE_OF_VOLTAR) && ((getQuestItemsCount(player, PASHIKAS_HEAD) + getQuestItemsCount(player, VULTUS_HEAD)) < 2))
+						else if (cond == 5)
 						{
-							if (npc.getSummonedNpcCount() < 2)
+							if (hasQuestItems(player, CHIANTA_ORDER_2))
 							{
-								addAttackPlayerDesire(addSpawn(npc, PASHIKA_SON_OF_VOLTAR, npc, true, 200000), player);
-								addAttackPlayerDesire(addSpawn(npc, VULTUS_SON_OF_VOLTAR, npc, true, 200000), player);
-							}
-							htmltext = "30615-05.html";
-						}
-						else if (hasQuestItems(player, PASHIKAS_HEAD, VULTUS_HEAD))
-						{
-							giveItems(player, SCEPTER_OF_BREKA, 1);
-							takeItems(player, PASHIKAS_HEAD, 1);
-							takeItems(player, VULTUS_HEAD, 1);
-							if (hasQuestItems(player, SCEPTER_OF_ENKU, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH))
-							{
-								qs.setCond(5, true);
-							}
-							htmltext = "30615-06.html";
-						}
-						else if (hasQuestItems(player, SCEPTER_OF_BREKA))
-						{
-							htmltext = "30615-07.html";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30615-08.html";
-					}
-					break;
-				}
-				case ENKU_CHIEF_KEPRA:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_ENKU, MANAKIA_2ND_LETTER, GLOVE_OF_KEPRA) && ((getQuestItemsCount(player, ENKU_OVERLORD_HEAD)) < 4))
-						{
-							htmltext = "30616-01.html";
-						}
-						else if (hasQuestItems(player, MANAKIA_2ND_LETTER))
-						{
-							player.getRadar().removeMarker(12805, 189249, -3616);
-							htmltext = "30616-02.html";
-						}
-						else if (hasQuestItems(player, GLOVE_OF_KEPRA) && ((getQuestItemsCount(player, ENKU_OVERLORD_HEAD)) < 4))
-						{
-							if (npc.getSummonedNpcCount() < 5)
-							{
-								addAttackPlayerDesire(addSpawn(npc, ENKU_ORC_OVERLORD, npc, true, 200000), player);
-							}
-							htmltext = "30616-05.html";
-						}
-						else if (getQuestItemsCount(player, ENKU_OVERLORD_HEAD) >= 4)
-						{
-							giveItems(player, SCEPTER_OF_ENKU, 1);
-							takeItems(player, ENKU_OVERLORD_HEAD, -1);
-							if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH))
-							{
-								qs.setCond(5, true);
-							}
-							htmltext = "30616-06.html";
-						}
-						else if (hasQuestItems(player, SCEPTER_OF_ENKU))
-						{
-							htmltext = "30616-07.html";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30616-08.html";
-					}
-					break;
-				}
-				case TUREK_CHIEF_BURAI:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_TUREK, KASMANS_2ND_LETTER, GLOVE_OF_BURAI, MAKUM_BUGBEAR_HEAD))
-						{
-							htmltext = "30617-01.html";
-						}
-						else if (hasQuestItems(player, KASMANS_2ND_LETTER))
-						{
-							player.getRadar().removeMarker(-94294, 110818, -3563);
-							htmltext = "30617-02.html";
-						}
-						else if (hasQuestItems(player, GLOVE_OF_BURAI))
-						{
-							if (npc.getSummonedNpcCount() < 3)
-							{
-								addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
-								addAttackPlayerDesire(addSpawn(npc, MAKUM_BUGBEAR_THUG, npc, true, 200000), player);
-							}
-							htmltext = "30617-04.html";
-						}
-						else if (getQuestItemsCount(player, MAKUM_BUGBEAR_HEAD) >= 2)
-						{
-							giveItems(player, SCEPTER_OF_TUREK, 1);
-							takeItems(player, MAKUM_BUGBEAR_HEAD, -1);
-							if (hasQuestItems(player, SCEPTER_OF_ENKU, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_TUNATH))
-							{
-								qs.setCond(5, true);
-							}
-							htmltext = "30617-05.html";
-						}
-						else if (hasQuestItems(player, SCEPTER_OF_TUREK))
-						{
-							htmltext = "30617-06.html";
-						}
-					}
-					else if (hasQuestItems(player, NECKLACE_OF_AUTHORITY) && hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30617-07.html";
-					}
-					break;
-				}
-				case LEUNT_CHIEF_HARAK:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_TUNATH, KASMANS_3RD_LETTER))
-						{
-							htmltext = "30618-01.html";
-						}
-						else if (!hasQuestItems(player, SCEPTER_OF_TUNATH) && hasQuestItems(player, KASMANS_3RD_LETTER))
-						{
-							player.getRadar().removeMarker(-55217, 200628, -3724);
-							htmltext = "30618-02.html";
-						}
-						else if (hasQuestItems(player, SCEPTER_OF_TUNATH))
-						{
-							htmltext = "30618-04.html";
-						}
-					}
-					else if (hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30618-05.html";
-					}
-					break;
-				}
-				case VUKU_CHIEF_DRIKO:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						if (!hasAtLeastOneQuestItem(player, SCEPTER_OF_VUKU, KASMANS_1ST_LETTER, DRIKOS_CONTRACT))
-						{
-							htmltext = "30619-01.html";
-						}
-						else if (!hasQuestItems(player, SCEPTER_OF_VUKU) && hasQuestItems(player, KASMANS_1ST_LETTER))
-						{
-							player.getRadar().removeMarker(-2150, 124443, -3724);
-							htmltext = "30619-02.html";
-						}
-						else if (!hasQuestItems(player, SCEPTER_OF_VUKU) && hasQuestItems(player, DRIKOS_CONTRACT))
-						{
-							if (getQuestItemsCount(player, STAKATO_DRONE_HUSK) < 30)
-							{
-								htmltext = "30619-04.html";
+								if (player.getLevel() >= 37)
+								{
+									htmltext = "30642-09.htm";
+									st.setCond(6, true);
+									takeItems(player, CHIANTA_ORDER_2, 1);
+									giveItems(player, CHIANTA_ORDER_3, 1);
+								}
+								else
+								{
+									htmltext = "30642-08.htm";
+								}
 							}
 							else
 							{
-								giveItems(player, SCEPTER_OF_VUKU, 1);
-								takeItems(player, DRIKOS_CONTRACT, 1);
-								takeItems(player, STAKATO_DRONE_HUSK, -1);
-								if (hasQuestItems(player, SCEPTER_OF_TUREK, SCEPTER_OF_ENKU, SCEPTER_OF_BREKA, SCEPTER_OF_TUNATH))
-								{
-									qs.setCond(5, true);
-								}
-								htmltext = "30619-05.html";
+								htmltext = "30642-05.htm";
 							}
 						}
-						else if (hasQuestItems(player, SCEPTER_OF_VUKU))
+						else if (cond == 6)
 						{
-							htmltext = "30619-06.html";
+							htmltext = "30642-10.htm";
 						}
-					}
-					else if (hasQuestItems(player, NECKLACE_OF_AUTHORITY) && hasAtLeastOneQuestItem(player, CHIANTA_2ND_ORDER, CHIANTA_3RD_ORDER, SCEPTER_BOX))
-					{
-						htmltext = "30619-07.html";
-					}
-					break;
-				}
-				case GANDI_CHIEF_CHIANTA:
-				{
-					if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, VOKIANS_ORDER2))
-					{
-						htmltext = "30642-01.html";
-					}
-					else if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_1ST_ORDER))
-					{
-						if ((getQuestItemsCount(player, SCEPTER_OF_BREKA) + getQuestItemsCount(player, SCEPTER_OF_VUKU) + getQuestItemsCount(player, SCEPTER_OF_TUREK) + getQuestItemsCount(player, SCEPTER_OF_TUNATH) + getQuestItemsCount(player, SCEPTER_OF_ENKU)) < 5)
+						else if (cond == 7)
 						{
-							htmltext = "30642-04.html";
-						}
-						else if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH, SCEPTER_OF_ENKU))
-						{
-							htmltext = "30642-05.html";
-						}
-					}
-					else if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_2ND_ORDER))
-					{
-						giveItems(player, CHIANTA_3RD_ORDER, 1);
-						takeItems(player, CHIANTA_2ND_ORDER, 1);
-						htmltext = "30642-09.html";
-					}
-					else if (hasQuestItems(player, NECKLACE_OF_AUTHORITY, CHIANTA_3RD_ORDER))
-					{
-						if ((getQuestItemsCount(player, TAMLIN_ORC_SKULL) >= 20) && (getQuestItemsCount(player, TIMAK_ORC_HEAD) >= 20))
-						{
+							htmltext = "30642-11.htm";
+							st.setCond(8, true);
+							takeItems(player, CHIANTA_ORDER_3, 1);
 							takeItems(player, NECKLACE_OF_AUTHORITY, 1);
-							takeItems(player, CHIANTA_3RD_ORDER, 1);
-							takeItems(player, TAMLIN_ORC_SKULL, -1);
-							takeItems(player, TIMAK_ORC_HEAD, -1);
+							takeItems(player, TAMLIN_ORC_SKULL, 20);
+							takeItems(player, TIMAK_ORC_HEAD, 20);
 							giveItems(player, SCEPTER_BOX, 1);
-							qs.setCond(8, true);
-							htmltext = "30642-11.html";
 						}
-						else
+						else if (cond == 8)
 						{
-							htmltext = "30642-10.html";
+							htmltext = "30642-12.htm";
 						}
+						else if (cond > 8)
+						{
+							htmltext = "30642-13.htm";
+						}
+						break;
 					}
-					else if (hasQuestItems(player, SCEPTER_BOX))
+					case KASMAN:
 					{
-						htmltext = "30642-12.html";
+						if (hasQuestItems(player, CHIANTA_ORDER_1))
+						{
+							htmltext = "30501-01.htm";
+						}
+						else if (cond > 4)
+						{
+							htmltext = "30501-11.htm";
+						}
+						break;
 					}
-					else if (hasAtLeastOneQuestItem(player, TANAPIS_ORDER, RITUAL_BOX))
+					case MANAKIA:
 					{
-						htmltext = "30642-13.html";
+						if (hasQuestItems(player, CHIANTA_ORDER_1))
+						{
+							htmltext = "30515-01.htm";
+						}
+						else if (cond > 4)
+						{
+							htmltext = "30515-08.htm";
+						}
+						break;
 					}
-					break;
+					case VOLTAR:
+					{
+						if (cond > 3)
+						{
+							if (hasQuestItems(player, MANAKIA_LETTER_1))
+							{
+								htmltext = "30615-02.htm";
+								removeRadar(player, 80100, 119991, -2264);
+							}
+							else if (hasQuestItems(player, GLOVE_OF_VOLTAR))
+							{
+								htmltext = "30615-05.htm";
+								if (!_sonsOfVoltar)
+								{
+									addSpawn(PASHIKA_SON_OF_VOLTAR, 80117, 120039, -2259, 0, false, 200000);
+									addSpawn(VULTUS_SON_OF_VOLTAR, 80058, 120038, -2259, 0, false, 200000);
+									_sonsOfVoltar = true;
+									
+									// Resets Sons Of Voltar
+									startQuestTimer("voltar_sons_cleanup", 201000, null, player, false);
+								}
+							}
+							else if (hasQuestItems(player, PASHIKA_HEAD, VULTUS_HEAD))
+							{
+								htmltext = "30615-06.htm";
+								takeItems(player, PASHIKA_HEAD, 1);
+								takeItems(player, VULTUS_HEAD, 1);
+								giveItems(player, SCEPTER_OF_BREKA, 1);
+								
+								if (hasQuestItems(player, SCEPTER_OF_ENKU, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH))
+								{
+									st.setCond(5, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else if (hasQuestItems(player, SCEPTER_OF_BREKA))
+							{
+								htmltext = "30615-07.htm";
+							}
+							else if (hasQuestItems(player, CHIANTA_ORDER_1))
+							{
+								htmltext = "30615-01.htm";
+							}
+							else if (cond < 9)
+							{
+								htmltext = "30615-08.htm";
+							}
+						}
+						break;
+					}
+					case KEPRA:
+					{
+						if (cond > 3)
+						{
+							if (hasQuestItems(player, MANAKIA_LETTER_2))
+							{
+								htmltext = "30616-02.htm";
+								removeRadar(player, 19815, 189703, -3032);
+							}
+							else if (hasQuestItems(player, GLOVE_OF_KEPRA))
+							{
+								htmltext = "30616-05.htm";
+								
+								if (!_enkuOrcOverlords)
+								{
+									addSpawn(ENKU_ORC_OVERLORD, 19894, 189743, -3074, 0, false, 200000);
+									addSpawn(ENKU_ORC_OVERLORD, 19869, 189800, -3059, 0, false, 200000);
+									addSpawn(ENKU_ORC_OVERLORD, 19818, 189818, -3047, 0, false, 200000);
+									addSpawn(ENKU_ORC_OVERLORD, 19753, 189837, -3027, 0, false, 200000);
+									_enkuOrcOverlords = true;
+									
+									// Resets Enku Orc Overlords
+									startQuestTimer("enku_orcs_cleanup", 201000, null, player, false);
+								}
+							}
+							else if (getQuestItemsCount(player, ENKU_OVERLORD_HEAD) == 4)
+							{
+								htmltext = "30616-06.htm";
+								takeItems(player, ENKU_OVERLORD_HEAD, 4);
+								giveItems(player, SCEPTER_OF_ENKU, 1);
+								
+								if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_TUREK, SCEPTER_OF_TUNATH))
+								{
+									st.setCond(5, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else if (hasQuestItems(player, SCEPTER_OF_ENKU))
+							{
+								htmltext = "30616-07.htm";
+							}
+							else if (hasQuestItems(player, CHIANTA_ORDER_1))
+							{
+								htmltext = "30616-01.htm";
+							}
+							else if (cond < 9)
+							{
+								htmltext = "30616-08.htm";
+							}
+						}
+						break;
+					}
+					case BURAI:
+					{
+						if (cond > 3)
+						{
+							if (hasQuestItems(player, KASMAN_LETTER_2))
+							{
+								htmltext = "30617-02.htm";
+								removeRadar(player, -94294, 110818, -3563);
+							}
+							else if (hasQuestItems(player, GLOVE_OF_BURAI))
+							{
+								htmltext = "30617-04.htm";
+								
+								if (!_makumBugbearThugs)
+								{
+									addSpawn(MAKUM_BUGBEAR_THUG, -94292, 110781, -3701, 0, false, 200000);
+									addSpawn(MAKUM_BUGBEAR_THUG, -94293, 110861, -3701, 0, false, 200000);
+									_makumBugbearThugs = true;
+									
+									// Resets Makum Bugbear Thugs
+									startQuestTimer("makum_bugbears_cleanup", 201000, null, player, false);
+								}
+							}
+							else if (getQuestItemsCount(player, MAKUM_BUGBEAR_HEAD) == 2)
+							{
+								htmltext = "30617-05.htm";
+								takeItems(player, MAKUM_BUGBEAR_HEAD, 2);
+								giveItems(player, SCEPTER_OF_TUREK, 1);
+								
+								if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_VUKU, SCEPTER_OF_ENKU, SCEPTER_OF_TUNATH))
+								{
+									st.setCond(5, true);
+								}
+								else
+								{
+									playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+								}
+							}
+							else if (hasQuestItems(player, SCEPTER_OF_TUREK))
+							{
+								htmltext = "30617-06.htm";
+							}
+							else if (hasQuestItems(player, CHIANTA_ORDER_1))
+							{
+								htmltext = "30617-01.htm";
+							}
+							else if (cond < 8)
+							{
+								htmltext = "30617-07.htm";
+							}
+						}
+						break;
+					}
+					case HARAK:
+					{
+						if (cond > 3)
+						{
+							if (hasQuestItems(player, KASMAN_LETTER_3))
+							{
+								htmltext = "30618-02.htm";
+								removeRadar(player, -55217, 200628, -3724);
+							}
+							else if (hasQuestItems(player, SCEPTER_OF_TUNATH))
+							{
+								htmltext = "30618-04.htm";
+							}
+							else if (hasQuestItems(player, CHIANTA_ORDER_1))
+							{
+								htmltext = "30618-01.htm";
+							}
+							else if (cond < 9)
+							{
+								htmltext = "30618-05.htm";
+							}
+						}
+						break;
+					}
+					case DRIKO:
+					{
+						if (cond > 3)
+						{
+							if (hasQuestItems(player, KASMAN_LETTER_1))
+							{
+								htmltext = "30619-02.htm";
+								removeRadar(player, -2150, 124443, -3724);
+							}
+							else if (hasQuestItems(player, DRIKO_CONTRACT))
+							{
+								if (getQuestItemsCount(player, STAKATO_DRONE_HUSK) == 30)
+								{
+									htmltext = "30619-05.htm";
+									takeItems(player, DRIKO_CONTRACT, 1);
+									takeItems(player, STAKATO_DRONE_HUSK, 30);
+									giveItems(player, SCEPTER_OF_VUKU, 1);
+									
+									if (hasQuestItems(player, SCEPTER_OF_BREKA, SCEPTER_OF_TUREK, SCEPTER_OF_ENKU, SCEPTER_OF_TUNATH))
+									{
+										st.setCond(5, true);
+									}
+									else
+									{
+										playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+									}
+								}
+								else
+								{
+									htmltext = "30619-04.htm";
+								}
+							}
+							else if (hasQuestItems(player, SCEPTER_OF_VUKU))
+							{
+								htmltext = "30619-06.htm";
+							}
+							else if (hasQuestItems(player, CHIANTA_ORDER_1))
+							{
+								htmltext = "30619-01.htm";
+							}
+							else if (cond < 8)
+							{
+								htmltext = "30619-07.htm";
+							}
+						}
+						break;
+					}
+					case TANAPI:
+					{
+						if (cond == 8)
+						{
+							htmltext = "30571-01.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30571-04.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30571-05.htm";
+							st.setCond(11, true);
+							takeItems(player, SCEPTER_OF_TANTOS, 1);
+							takeItems(player, TANAPI_ORDER, 1);
+							giveItems(player, RITUAL_BOX, 1);
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30571-06.htm";
+						}
+						break;
+					}
+					case KAKAI:
+					{
+						if ((cond > 7) && (cond < 11))
+						{
+							htmltext = "30565-01.htm";
+						}
+						else if (cond == 11)
+						{
+							htmltext = "30565-02.htm";
+							takeItems(player, RITUAL_BOX, 1);
+							giveItems(player, MARK_OF_GLORY, 1);
+							addExpAndSp(player, 91457, 2500);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(false, true);
+						}
+						break;
+					}
 				}
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == PREFECT_VOKIAN)
+			case State.COMPLETED:
 			{
 				htmltext = getAlreadyCompletedMsg(player);
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onAttack(Npc npc, Player attacker, int damage, boolean isPet)
+	{
+		final QuestState st = getQuestState(attacker, false);
+		if (st == null)
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case RAGNA_ORC_OVERLORD:
+			case RAGNA_ORC_SEER:
+			{
+				if (st.isCond(9) && npc.isScriptValue(0))
+				{
+					npc.broadcastSay(ChatType.GENERAL, "Is it a lackey of Kakai?!");
+					npc.setScriptValue(1);
+				}
+				break;
+			}
+			case REVENANT_OF_TANTOS_CHIEF:
+			{
+				if (st.isCond(9))
+				{
+					if (npc.isScriptValue(0))
+					{
+						npc.broadcastSay(ChatType.GENERAL, "How regretful! Unjust dishonor!");
+						npc.setScriptValue(1);
+					}
+					else if (npc.isScriptValue(1) && ((npc.getCurrentHp() / npc.getMaxHp()) < 0.33))
+					{
+						npc.broadcastSay(ChatType.GENERAL, "Indignant and unfair death!");
+						npc.setScriptValue(2);
+					}
+				}
+				break;
+			}
+		}
+		
+		return null;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case TYRANT:
+			{
+				if (st.isCond(1) && (getQuestItemsCount(player, TYRANT_TALON) < 10) && (getRandom(10) < 5))
+				{
+					giveItems(player, TYRANT_TALON, 1);
+					if ((getQuestItemsCount(player, TYRANT_TALON) >= 10) && ((getQuestItemsCount(player, GUARDIAN_BASILISK_FANG) + getQuestItemsCount(player, MANASHEN_SHARD)) == 20))
+					{
+						st.setCond(2, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case GUARDIAN_BASILISK:
+			{
+				if (st.isCond(1) && (getQuestItemsCount(player, GUARDIAN_BASILISK_FANG) < 10) && (getRandom(10) < 5))
+				{
+					giveItems(player, GUARDIAN_BASILISK_FANG, 1);
+					if ((getQuestItemsCount(player, GUARDIAN_BASILISK_FANG) >= 10) && ((getQuestItemsCount(player, TYRANT_TALON) + getQuestItemsCount(player, MANASHEN_SHARD)) == 20))
+					{
+						st.setCond(2, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MANASHEN_GARGOYLE:
+			{
+				if (st.isCond(1) && (getQuestItemsCount(player, MANASHEN_SHARD) < 10) && (getRandom(100) < 75))
+				{
+					giveItems(player, MANASHEN_SHARD, 1);
+					if ((getQuestItemsCount(player, MANASHEN_SHARD) >= 10) && ((getQuestItemsCount(player, TYRANT_TALON) + getQuestItemsCount(player, GUARDIAN_BASILISK_FANG)) == 20))
+					{
+						st.setCond(2, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MARSH_STAKATO_DRONE:
+			{
+				if (hasQuestItems(player, DRIKO_CONTRACT) && (getQuestItemsCount(player, STAKATO_DRONE_HUSK) < 30) && (getRandom(100) < 75))
+				{
+					giveItems(player, STAKATO_DRONE_HUSK, 1);
+				}
+				break;
+			}
+			case PASHIKA_SON_OF_VOLTAR:
+			{
+				if (hasQuestItems(player, GLOVE_OF_VOLTAR) && !hasQuestItems(player, PASHIKA_HEAD))
+				{
+					giveItems(player, PASHIKA_HEAD, 1);
+					if (hasQuestItems(player, VULTUS_HEAD))
+					{
+						takeItems(player, GLOVE_OF_VOLTAR, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case VULTUS_SON_OF_VOLTAR:
+			{
+				if (hasQuestItems(player, GLOVE_OF_VOLTAR) && !hasQuestItems(player, VULTUS_HEAD))
+				{
+					giveItems(player, VULTUS_HEAD, 1);
+					if (hasQuestItems(player, PASHIKA_HEAD))
+					{
+						takeItems(player, GLOVE_OF_VOLTAR, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case ENKU_ORC_OVERLORD:
+			{
+				if (hasQuestItems(player, GLOVE_OF_KEPRA))
+				{
+					giveItems(player, ENKU_OVERLORD_HEAD, 1);
+					if ((getQuestItemsCount(player, ENKU_OVERLORD_HEAD) >= 4))
+					{
+						takeItems(player, GLOVE_OF_KEPRA, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case MAKUM_BUGBEAR_THUG:
+			{
+				if (hasQuestItems(player, GLOVE_OF_BURAI))
+				{
+					giveItems(player, MAKUM_BUGBEAR_HEAD, 1);
+					if ((getQuestItemsCount(player, MAKUM_BUGBEAR_HEAD) >= 2))
+					{
+						takeItems(player, GLOVE_OF_BURAI, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_MIDDLE);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case TIMAK_ORC:
+			case TIMAK_ORC_ARCHER:
+			case TIMAK_ORC_SOLDIER:
+			case TIMAK_ORC_WARRIOR:
+			case TIMAK_ORC_SHAMAN:
+			case TIMAK_ORC_OVERLORD:
+			{
+				if (st.isCond(6) && (getQuestItemsCount(player, TIMAK_ORC_HEAD) < 20) && (getRandom(1000000) < (500000 + ((npc.getId() - 20583) * 100000))))
+				{
+					giveItems(player, TIMAK_ORC_HEAD, 1);
+					if ((getQuestItemsCount(player, TIMAK_ORC_HEAD) >= 20) && (getQuestItemsCount(player, TAMLIN_ORC_SKULL) >= 20))
+					{
+						st.setCond(7, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case TAMLIN_ORC:
+			{
+				if (st.isCond(6) && (getQuestItemsCount(player, TAMLIN_ORC_SKULL) < 20) && (getRandom(1000000) < 500000))
+				{
+					giveItems(player, TAMLIN_ORC_SKULL, 1);
+					if ((getQuestItemsCount(player, TAMLIN_ORC_SKULL) >= 20) && (getQuestItemsCount(player, TIMAK_ORC_HEAD) >= 20))
+					{
+						st.setCond(7, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case TAMLIN_ORC_ARCHER:
+			{
+				if (st.isCond(6) && (getQuestItemsCount(player, TAMLIN_ORC_SKULL) < 20) && (getRandom(1000000) < 600000))
+				{
+					giveItems(player, TAMLIN_ORC_SKULL, 1);
+					if ((getQuestItemsCount(player, TAMLIN_ORC_SKULL) >= 20) && (getQuestItemsCount(player, TIMAK_ORC_HEAD) >= 20))
+					{
+						st.setCond(7, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case RAGNA_ORC_OVERLORD:
+			case RAGNA_ORC_SEER:
+			{
+				if (st.isCond(9))
+				{
+					npc.broadcastSay(ChatType.GENERAL, "Too late!");
+					addSpawn(REVENANT_OF_TANTOS_CHIEF, npc, true, 200000);
+				}
+				break;
+			}
+			case REVENANT_OF_TANTOS_CHIEF:
+			{
+				if (st.isCond(9))
+				{
+					st.setCond(10, true);
+					giveItems(player, SCEPTER_OF_TANTOS, 1);
+					npc.broadcastSay(ChatType.GENERAL, "I'll get revenge someday!!");
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

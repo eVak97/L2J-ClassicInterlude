@@ -22,11 +22,6 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Ominous News (122)<br>
- * Original Jython script by Polo.
- * @author malyelfik
- */
 public class Q00122_OminousNews extends Quest
 {
 	// NPCs
@@ -43,68 +38,63 @@ public class Q00122_OminousNews extends Quest
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("31979-03.htm"))
 		{
-			case "31979-02.htm":
-			{
-				qs.startQuest();
-				break;
-			}
-			case "32017-02.html":
-			{
-				giveAdena(player, 8923, true);
-				addExpAndSp(player, 45151, 2310);
-				qs.exitQuest(false, true);
-				break;
-			}
+			st.startQuest();
 		}
-		return event;
+		else if (event.equals("32017-02.htm"))
+		{
+			giveAdena(player, 1695, true);
+			st.exitQuest(false, true);
+		}
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (npc.getId())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case MOIRA:
+			case State.CREATED:
 			{
-				switch (qs.getState())
+				htmltext = (player.getLevel() < 20) ? "31979-01.htm" : "31979-02.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				switch (npc.getId())
 				{
-					case State.CREATED:
+					case MOIRA:
 					{
-						htmltext = (player.getLevel() >= 20) ? "31979-01.htm" : "31979-00.htm";
+						htmltext = "31979-03.htm";
 						break;
 					}
-					case State.STARTED:
+					case KARUDA:
 					{
-						htmltext = "31979-03.html";
-						break;
-					}
-					case State.COMPLETED:
-					{
-						htmltext = getAlreadyCompletedMsg(player);
+						htmltext = "32017-01.htm";
 						break;
 					}
 				}
 				break;
 			}
-			case KARUDA:
+			case State.COMPLETED:
 			{
-				if (qs.isStarted())
-				{
-					htmltext = "32017-01.html";
-				}
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 }

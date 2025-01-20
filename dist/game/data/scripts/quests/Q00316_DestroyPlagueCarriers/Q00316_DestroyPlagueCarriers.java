@@ -16,154 +16,141 @@
  */
 package quests.Q00316_DestroyPlagueCarriers;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.gameserver.enums.ChatType;
+import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Destroy Plague Carriers (316)
- * @author ivantotov
- */
 public class Q00316_DestroyPlagueCarriers extends Quest
 {
-	// NPC
-	private static final int ELLENIA = 30155;
+	// Monsters
+	private static final int SUKAR_WERERAT = 20040;
+	private static final int SUKAR_WERERAT_LEADER = 20047;
+	private static final int VAROOL_FOULCLAW = 27020;
 	// Items
 	private static final int WERERAT_FANG = 1042;
 	private static final int VAROOL_FOULCLAW_FANG = 1043;
-	// Misc
-	private static final int MIN_LEVEL = 18;
-	// Monsters
-	private static final int VAROOL_FOULCLAW = 27020;
-	private static final Map<Integer, ItemHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
-		MONSTER_DROPS.put(20040, new ItemHolder(WERERAT_FANG, 5)); // Sukar Wererat
-		MONSTER_DROPS.put(20047, new ItemHolder(WERERAT_FANG, 5)); // Sukar Wererat Leader
-		MONSTER_DROPS.put(VAROOL_FOULCLAW, new ItemHolder(VAROOL_FOULCLAW_FANG, 7)); // Varool Foulclaw
-	}
 	
 	public Q00316_DestroyPlagueCarriers()
 	{
 		super(316);
-		addStartNpc(ELLENIA);
-		addTalkId(ELLENIA);
-		addAttackId(VAROOL_FOULCLAW);
-		addKillId(MONSTER_DROPS.keySet());
 		registerQuestItems(WERERAT_FANG, VAROOL_FOULCLAW_FANG);
-		addCondMaxLevel(24, getNoQuestMsg(null));
-	}
-	
-	@Override
-	public boolean checkPartyMember(QuestState qs, Npc npc)
-	{
-		return ((npc.getId() != VAROOL_FOULCLAW) || !hasQuestItems(qs.getPlayer(), VAROOL_FOULCLAW_FANG));
+		addStartNpc(30155); // Ellenia
+		addTalkId(30155);
+		addKillId(SUKAR_WERERAT, SUKAR_WERERAT_LEADER, VAROOL_FOULCLAW);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
 		
-		switch (event)
+		if (event.equals("30155-04.htm"))
 		{
-			case "30155-04.htm":
-			{
-				if (qs.isCreated())
-				{
-					qs.startQuest();
-					htmltext = event;
-				}
-				break;
-			}
-			case "30155-08.html":
-			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "30155-09.html":
-			{
-				htmltext = event;
-				break;
-			}
+			st.startQuest();
 		}
+		else if (event.equals("30155-08.htm"))
+		{
+			st.exitQuest(true, true);
+		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onAttack(Npc npc, Player attacker, int damage, boolean isSummon)
-	{
-		if (npc.isScriptValue(0))
-		{
-			npc.broadcastPacket(new NpcSay(npc, ChatType.NPC_GENERAL, NpcStringId.WHY_DO_YOU_OPPRESS_US_SO));
-			npc.setScriptValue(1);
-		}
-		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(killer, -1, 3, npc);
-		if (qs != null)
-		{
-			final ItemHolder item = MONSTER_DROPS.get(npc.getId());
-			final int limit = (npc.getId() == VAROOL_FOULCLAW ? 1 : 0);
-			giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, limit, 10.0 / item.getCount(), true);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (player.getRace() != Race.ELF)
+			case State.CREATED:
 			{
-				htmltext = "30155-00.htm";
+				if (player.getRace() != Race.ELF)
+				{
+					htmltext = "30155-00.htm";
+				}
+				else if (player.getLevel() < 18)
+				{
+					htmltext = "30155-02.htm";
+				}
+				else
+				{
+					htmltext = "30155-03.htm";
+				}
+				break;
 			}
-			else if (player.getLevel() < MIN_LEVEL)
+			case State.STARTED:
 			{
-				htmltext = "30155-02.htm";
-			}
-			else
-			{
-				htmltext = "30155-03.htm";
+				final int ratFangs = (int) getQuestItemsCount(player, WERERAT_FANG);
+				final int varoolFangs = (int) getQuestItemsCount(player, VAROOL_FOULCLAW_FANG);
+				if ((ratFangs + varoolFangs) == 0)
+				{
+					htmltext = "30155-05.htm";
+				}
+				else
+				{
+					htmltext = "30155-07.htm";
+					takeItems(player, WERERAT_FANG, -1);
+					takeItems(player, VAROOL_FOULCLAW_FANG, -1);
+					
+					int reward = (ratFangs * 60) + (varoolFangs * 10000);
+					if (!Config.ALT_VILLAGES_REPEATABLE_QUEST_REWARD && (ratFangs >= 10))
+					{
+						reward += 5000;
+					}
+					
+					giveAdena(player, reward, true);
+				}
+				break;
 			}
 		}
-		else if (qs.isStarted())
-		{
-			if (hasAtLeastOneQuestItem(player, getRegisteredItemIds()))
-			{
-				final long wererars = getQuestItemsCount(player, WERERAT_FANG);
-				final long foulclaws = getQuestItemsCount(player, VAROOL_FOULCLAW_FANG);
-				giveAdena(player, ((wererars * 5) + (foulclaws * 1000) + ((wererars + foulclaws) >= 10 ? 5000 : 0)), true);
-				takeItems(player, -1, getRegisteredItemIds());
-				htmltext = "30155-07.html";
-			}
-			else
-			{
-				htmltext = "30155-05.html";
-			}
-		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case SUKAR_WERERAT:
+			case SUKAR_WERERAT_LEADER:
+			{
+				if (getRandom(10) < 4)
+				{
+					giveItems(player, WERERAT_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+			case VAROOL_FOULCLAW:
+			{
+				if (!hasQuestItems(player, VAROOL_FOULCLAW_FANG) && (getRandom(10) < 2))
+				{
+					giveItems(player, VAROOL_FOULCLAW_FANG, 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

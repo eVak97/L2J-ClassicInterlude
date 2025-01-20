@@ -16,314 +16,238 @@
  */
 package quests.Q00411_PathOfTheAssassin;
 
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path Of The Assassin (411)
- * @author ivantotov
- */
 public class Q00411_PathOfTheAssassin extends Quest
 {
 	// NPCs
 	private static final int TRISKEL = 30416;
-	private static final int GUARD_LEIKAN = 30382;
 	private static final int ARKENIA = 30419;
+	private static final int LEIKAN = 30382;
 	// Items
-	private static final int SHILENS_CALL = 1245;
-	private static final int ARKENIAS_LETTER = 1246;
-	private static final int LEIKANS_NOTE = 1247;
-	private static final int MOONSTONE_BEASTS_MOLAR = 1248;
-	private static final int SHILENS_TEARS = 1250;
-	private static final int ARKENIAS_RECOMMENDATION = 1251;
-	// Reward
+	private static final int SHILEN_CALL = 1245;
+	private static final int ARKENIA_LETTER = 1246;
+	private static final int LEIKAN_NOTE = 1247;
+	private static final int MOONSTONE_BEAST_MOLAR = 1248;
+	private static final int SHILEN_TEARS = 1250;
+	private static final int ARKENIA_RECOMMENDATION = 1251;
 	private static final int IRON_HEART = 1252;
-	// Monster
-	private static final int MOONSTONE_BEAST = 20369;
-	// Quest Monster
-	private static final int CALPICO = 27036;
-	// Misc
-	private static final int MIN_LEVEL = 19;
 	
 	public Q00411_PathOfTheAssassin()
 	{
 		super(411);
+		registerQuestItems(SHILEN_CALL, ARKENIA_LETTER, LEIKAN_NOTE, MOONSTONE_BEAST_MOLAR, SHILEN_TEARS, ARKENIA_RECOMMENDATION);
 		addStartNpc(TRISKEL);
-		addTalkId(TRISKEL, GUARD_LEIKAN, ARKENIA);
-		addKillId(MOONSTONE_BEAST, CALPICO);
-		registerQuestItems(SHILENS_CALL, ARKENIAS_LETTER, LEIKANS_NOTE, MOONSTONE_BEASTS_MOLAR, SHILENS_TEARS, ARKENIAS_RECOMMENDATION);
+		addTalkId(TRISKEL, ARKENIA, LEIKAN);
+		addKillId(27036, 20369);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30416-05.htm":
 			{
-				if (player.getClassId() == ClassId.DARK_FIGHTER)
+				if (player.getClassId() != ClassId.DARK_FIGHTER)
 				{
-					if (player.getLevel() >= MIN_LEVEL)
-					{
-						if (hasQuestItems(player, IRON_HEART))
-						{
-							htmltext = "30416-04.htm";
-						}
-						else
-						{
-							qs.startQuest();
-							giveItems(player, SHILENS_CALL, 1);
-							htmltext = "30416-05.htm";
-						}
-					}
-					else
-					{
-						htmltext = "30416-03.htm";
-					}
+					htmltext = (player.getClassId() == ClassId.ASSASSIN) ? "30416-02a.htm" : "30416-02.htm";
 				}
-				else if (player.getClassId() == ClassId.ASSASSIN)
+				else if (player.getLevel() < 19)
 				{
-					htmltext = "30416-02a.htm";
+					htmltext = "30416-03.htm";
+				}
+				else if (hasQuestItems(player, IRON_HEART))
+				{
+					htmltext = "30416-04.htm";
 				}
 				else
 				{
-					htmltext = "30416-02.htm";
+					st.startQuest();
+					giveItems(player, SHILEN_CALL, 1);
 				}
 				break;
 			}
-			case "30382-02.html":
-			case "30382-04.html":
+			case "30419-05.htm":
 			{
-				htmltext = event;
+				st.setCond(2, true);
+				takeItems(player, SHILEN_CALL, 1);
+				giveItems(player, ARKENIA_LETTER, 1);
 				break;
 			}
-			case "30382-03.html":
+			case "30382-03.htm":
 			{
-				if (hasQuestItems(player, ARKENIAS_LETTER))
-				{
-					takeItems(player, ARKENIAS_LETTER, 1);
-					giveItems(player, LEIKANS_NOTE, 1);
-					qs.setCond(3, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30419-02.html":
-			case "30419-03.html":
-			case "30419-04.html":
-			case "30419-06.html":
-			{
-				htmltext = event;
-				break;
-			}
-			case "30419-05.html":
-			{
-				if (hasQuestItems(player, SHILENS_CALL))
-				{
-					takeItems(player, SHILENS_CALL, 1);
-					giveItems(player, ARKENIAS_LETTER, 1);
-					qs.setCond(2, true);
-					htmltext = event;
-				}
+				st.setCond(3, true);
+				takeItems(player, ARKENIA_LETTER, 1);
+				giveItems(player, LEIKAN_NOTE, 1);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true))
-		{
-			switch (npc.getId())
-			{
-				case MOONSTONE_BEAST:
-				{
-					if (hasQuestItems(killer, LEIKANS_NOTE) && (getQuestItemsCount(killer, MOONSTONE_BEASTS_MOLAR) < 10))
-					{
-						giveItems(killer, MOONSTONE_BEASTS_MOLAR, 1);
-						if (getQuestItemsCount(killer, MOONSTONE_BEASTS_MOLAR) == 10)
-						{
-							qs.setCond(4, true);
-						}
-						else
-						{
-							playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-						}
-					}
-					break;
-				}
-				case CALPICO:
-				{
-					if (!hasQuestItems(killer, SHILENS_TEARS))
-					{
-						giveItems(killer, SHILENS_TEARS, 1);
-						qs.setCond(6, true);
-					}
-					break;
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == TRISKEL)
+			case State.CREATED:
 			{
-				if (!hasQuestItems(player, IRON_HEART))
+				htmltext = "30416-01.htm";
+				break;
+			}
+			case State.STARTED:
+			{
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					htmltext = "30416-01.htm";
+					case TRISKEL:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30416-11.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30416-07.htm";
+						}
+						else if ((cond == 3) || (cond == 4))
+						{
+							htmltext = "30416-08.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30416-09.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30416-10.htm";
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30416-06.htm";
+							takeItems(player, ARKENIA_RECOMMENDATION, 1);
+							giveItems(player, IRON_HEART, 1);
+							addExpAndSp(player, 3200, 3930);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
+						}
+						break;
+					}
+					case ARKENIA:
+					{
+						if (cond == 1)
+						{
+							htmltext = "30419-01.htm";
+						}
+						else if (cond == 2)
+						{
+							htmltext = "30419-07.htm";
+						}
+						else if ((cond == 3) || (cond == 4))
+						{
+							htmltext = "30419-10.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30419-11.htm";
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30419-08.htm";
+							st.setCond(7, true);
+							takeItems(player, SHILEN_TEARS, -1);
+							giveItems(player, ARKENIA_RECOMMENDATION, 1);
+						}
+						else if (cond == 7)
+						{
+							htmltext = "30419-09.htm";
+						}
+						break;
+					}
+					case LEIKAN:
+					{
+						if (cond == 2)
+						{
+							htmltext = "30382-01.htm";
+						}
+						else if (cond == 3)
+						{
+							htmltext = (!hasQuestItems(player, MOONSTONE_BEAST_MOLAR)) ? "30382-05.htm" : "30382-06.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30382-07.htm";
+							st.setCond(5, true);
+							takeItems(player, MOONSTONE_BEAST_MOLAR, -1);
+							takeItems(player, LEIKAN_NOTE, -1);
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30382-09.htm";
+						}
+						else if (cond > 5)
+						{
+							htmltext = "30382-08.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		if (npc.getId() == 20369)
+		{
+			if (st.isCond(3))
+			{
+				giveItems(player, MOONSTONE_BEAST_MOLAR, 1);
+				if (getQuestItemsCount(player, MOONSTONE_BEAST_MOLAR) < 10)
+				{
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				else
 				{
-					htmltext = "30416-04.htm";
+					st.setCond(4, true);
 				}
 			}
 		}
-		else if (qs.isCompleted())
+		else if (st.isCond(5))
 		{
-			if (npc.getId() == TRISKEL)
-			{
-				return htmltext;
-			}
+			st.setCond(6, true);
+			giveItems(player, SHILEN_TEARS, 1);
 		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case TRISKEL:
-				{
-					if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, IRON_HEART) && hasQuestItems(player, ARKENIAS_RECOMMENDATION))
-					{
-						giveItems(player, IRON_HEART, 1);
-						final int level = player.getLevel();
-						if (level >= 20)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else if (level == 19)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30416-06.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, ARKENIAS_LETTER))
-					{
-						htmltext = "30416-07.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, LEIKANS_NOTE))
-					{
-						htmltext = "30416-08.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL))
-					{
-						htmltext = "30416-09.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, SHILENS_TEARS))
-					{
-						htmltext = "30416-10.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART) && hasQuestItems(player, SHILENS_CALL))
-					{
-						htmltext = "30416-11.html";
-					}
-					break;
-				}
-				case GUARD_LEIKAN:
-				{
-					if (!hasAtLeastOneQuestItem(player, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL, MOONSTONE_BEASTS_MOLAR) && hasQuestItems(player, ARKENIAS_LETTER))
-					{
-						htmltext = "30382-01.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL, MOONSTONE_BEASTS_MOLAR) && hasQuestItems(player, LEIKANS_NOTE))
-					{
-						htmltext = "30382-05.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, LEIKANS_NOTE))
-					{
-						if (hasQuestItems(player, MOONSTONE_BEASTS_MOLAR) && (getQuestItemsCount(player, MOONSTONE_BEASTS_MOLAR) < 10))
-						{
-							htmltext = "30382-06.html";
-						}
-						else
-						{
-							takeItems(player, LEIKANS_NOTE, 1);
-							takeItems(player, MOONSTONE_BEASTS_MOLAR, -1);
-							qs.setCond(5, true);
-							htmltext = "30382-07.html";
-						}
-					}
-					else if (hasQuestItems(player, SHILENS_TEARS))
-					{
-						htmltext = "30382-08.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL, MOONSTONE_BEASTS_MOLAR))
-					{
-						htmltext = "30382-09.html";
-					}
-					break;
-				}
-				case ARKENIA:
-				{
-					if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART) && hasQuestItems(player, SHILENS_CALL))
-					{
-						htmltext = "30419-01.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, ARKENIAS_LETTER))
-					{
-						htmltext = "30419-07.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, SHILENS_TEARS))
-					{
-						takeItems(player, SHILENS_TEARS, 1);
-						giveItems(player, ARKENIAS_RECOMMENDATION, 1);
-						qs.setCond(7, true);
-						htmltext = "30419-08.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, ARKENIAS_RECOMMENDATION))
-					{
-						htmltext = "30419-09.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL) && hasQuestItems(player, LEIKANS_NOTE))
-					{
-						htmltext = "30419-10.html";
-					}
-					else if (!hasAtLeastOneQuestItem(player, ARKENIAS_LETTER, LEIKANS_NOTE, SHILENS_TEARS, ARKENIAS_RECOMMENDATION, IRON_HEART, SHILENS_CALL))
-					{
-						htmltext = "30419-11.html";
-					}
-					break;
-				}
-			}
-		}
-		return htmltext;
+		
+		return null;
 	}
 }

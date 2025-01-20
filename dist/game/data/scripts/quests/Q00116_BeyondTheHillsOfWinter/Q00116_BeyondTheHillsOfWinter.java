@@ -16,152 +16,132 @@
  */
 package quests.Q00116_BeyondTheHillsOfWinter;
 
+import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Beyond the Hills of Winter (116)
- * @author Adry_85
- */
 public class Q00116_BeyondTheHillsOfWinter extends Quest
 {
 	// NPCs
 	private static final int FILAUR = 30535;
 	private static final int OBI = 32052;
 	// Items
-	private static final ItemHolder THIEF_KEY = new ItemHolder(1661, 10);
-	private static final ItemHolder BANDAGE = new ItemHolder(1833, 20);
-	private static final ItemHolder ENERGY_STONE = new ItemHolder(5589, 5);
-	private static final int SUPPLYING_GOODS = 8098;
+	private static final int BANDAGE = 1833;
+	private static final int ENERGY_STONE = 5589;
+	private static final int THIEF_KEY = 1661;
+	private static final int GOODS = 8098;
 	// Reward
-	private static final int SOULSHOT_D = 1463;
-	// Misc
-	private static final int MIN_LEVEL = 30;
+	private static final int SSD = 1463;
 	
 	public Q00116_BeyondTheHillsOfWinter()
 	{
 		super(116);
+		registerQuestItems(GOODS);
 		addStartNpc(FILAUR);
 		addTalkId(FILAUR, OBI);
-		registerQuestItems(SUPPLYING_GOODS);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
 			case "30535-02.htm":
 			{
-				qs.startQuest();
-				qs.setMemoState(1);
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30535-05.html":
+			case "30535-05.htm":
 			{
-				if (qs.isMemoState(1))
-				{
-					qs.setMemoState(2);
-					qs.setCond(2, true);
-					giveItems(player, SUPPLYING_GOODS, 1);
-					htmltext = event;
-				}
+				st.setCond(2, true);
+				giveItems(player, GOODS, 1);
 				break;
 			}
-			case "32052-02.html":
+			case "materials":
 			{
-				if (qs.isMemoState(2))
-				{
-					htmltext = event;
-				}
+				htmltext = "32052-02.htm";
+				takeItems(player, GOODS, -1);
+				rewardItems(player, SSD, 1650);
+				st.exitQuest(false, true);
 				break;
 			}
-			case "MATERIAL":
+			case "adena":
 			{
-				if (qs.isMemoState(2))
-				{
-					rewardItems(player, SOULSHOT_D, 1740);
-					addExpAndSp(player, 82792, 4981);
-					qs.exitQuest(false, true);
-					htmltext = "32052-03.html";
-				}
-				break;
-			}
-			case "ADENA":
-			{
-				if (qs.isMemoState(2))
-				{
-					giveAdena(player, 17387, true);
-					addExpAndSp(player, 82792, 4981);
-					qs.exitQuest(false, true);
-					htmltext = "32052-03.html";
-				}
+				htmltext = "32052-02.htm";
+				takeItems(player, GOODS, -1);
+				giveAdena(player, 16500, true);
+				st.exitQuest(false, true);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			case State.COMPLETED:
-			{
-				if (npc.getId() == FILAUR)
-				{
-					htmltext = getAlreadyCompletedMsg(player);
-				}
-				break;
-			}
 			case State.CREATED:
 			{
-				if (npc.getId() == FILAUR)
-				{
-					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30535-01.htm" : "30535-03.htm";
-				}
+				htmltext = ((player.getLevel() < 30) || (player.getRace() != Race.DWARF)) ? "30535-00.htm" : "30535-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
+				final int cond = st.getCond();
 				switch (npc.getId())
 				{
 					case FILAUR:
 					{
-						if (qs.isMemoState(1))
+						if (cond == 1)
 						{
-							htmltext = (hasAllItems(player, true, THIEF_KEY, BANDAGE, ENERGY_STONE)) ? "30535-04.html" : "30535-06.html";
+							if ((getQuestItemsCount(player, BANDAGE) >= 20) && (getQuestItemsCount(player, ENERGY_STONE) >= 5) && (getQuestItemsCount(player, THIEF_KEY) >= 10))
+							{
+								htmltext = "30535-03.htm";
+								takeItems(player, BANDAGE, 20);
+								takeItems(player, ENERGY_STONE, 5);
+								takeItems(player, THIEF_KEY, 10);
+							}
+							else
+							{
+								htmltext = "30535-04.htm";
+							}
 						}
-						else if (qs.isMemoState(2))
+						else if (cond == 2)
 						{
-							htmltext = "30535-07.html";
+							htmltext = "30535-05.htm";
 						}
 						break;
 					}
 					case OBI:
 					{
-						if (qs.isMemoState(2) && hasQuestItems(player, SUPPLYING_GOODS))
+						if (cond == 2)
 						{
-							htmltext = "32052-01.html";
+							htmltext = "32052-00.htm";
 						}
 						break;
 					}
 				}
+				break;
+			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}

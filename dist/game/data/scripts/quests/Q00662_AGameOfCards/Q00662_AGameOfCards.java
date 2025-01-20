@@ -16,77 +16,113 @@
  */
 package quests.Q00662_AGameOfCards;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.data.xml.ItemData;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * A Game of Cards (662)
- * @author Zoey76
- */
 public class Q00662_AGameOfCards extends Quest
 {
 	// NPC
 	private static final int KLUMP = 30845;
-	// Items
+	// Quest Item
 	private static final int RED_GEM = 8765;
-	private static final int ZIGGOS_GEMSTONE = 8868;
-	// Misc
-	private static final int MIN_LEVEL = 61;
-	private static final int REQUIRED_CHIP_COUNT = 50;
-	// Monsters
-	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	// Reward Items
+	private static final int EW_S = 959;
+	private static final int EW_A = 729;
+	private static final int EW_B = 947;
+	private static final int EW_C = 951;
+	private static final int EW_D = 955;
+	private static final int EA_D = 956;
+	private static final int ZIGGO_GEMSTONE = 8868;
+	// All cards
+	private static final Map<Integer, String> CARDS = new HashMap<>();
 	static
 	{
-		MONSTERS.put(20672, 357); // Trives
-		MONSTERS.put(20673, 357); // Falibati
-		MONSTERS.put(20674, 583); // Doom Knight
-		MONSTERS.put(20677, 435); // Tulben
-		MONSTERS.put(20955, 358); // Ghostly Warrior
-		MONSTERS.put(20958, 283); // Death Agent
-		MONSTERS.put(20959, 455); // Dark Guard
-		MONSTERS.put(20961, 365); // Bloody Knight
-		MONSTERS.put(20962, 348); // Bloody Priest
-		MONSTERS.put(20965, 457); // Chimera Piece
-		MONSTERS.put(20966, 493); // Changed Creation
-		MONSTERS.put(20968, 418); // Nonexistent Man
-		MONSTERS.put(20972, 350); // Shaman of Ancient Times
-		MONSTERS.put(20973, 453); // Forgotten Ancient People
-		MONSTERS.put(21002, 315); // Doom Scout
-		MONSTERS.put(21004, 320); // Dismal Pole
-		MONSTERS.put(21006, 335); // Doom Servant
-		MONSTERS.put(21008, 462); // Doom Archer
-		MONSTERS.put(21010, 397); // Doom Warrior
-		MONSTERS.put(21109, 507); // Hames Orc Scout
-		MONSTERS.put(21112, 552); // Hames Orc Footman
-		MONSTERS.put(21114, 587); // Cursed Guardian
-		MONSTERS.put(21116, 812); // Hames Orc Overlord
-		MONSTERS.put(20142, 232); // Blood Queen
+		CARDS.put(0, "?");
+		CARDS.put(1, "!");
+		CARDS.put(2, "=");
+		CARDS.put(3, "T");
+		CARDS.put(4, "V");
+		CARDS.put(5, "O");
+		CARDS.put(6, "P");
+		CARDS.put(7, "S");
+		CARDS.put(8, "E");
+		CARDS.put(9, "H");
+		CARDS.put(10, "A");
+		CARDS.put(11, "R");
+		CARDS.put(12, "D");
+		CARDS.put(13, "I");
+		CARDS.put(14, "N");
+	}
+	// Drop chances
+	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
+	static
+	{
+		CHANCES.put(18001, 232000); // Blood Queen
+		CHANCES.put(20672, 357000); // Trives
+		CHANCES.put(20673, 373000); // Falibati
+		CHANCES.put(20674, 583000); // Doom Knight
+		CHANCES.put(20677, 435000); // Tulben
+		CHANCES.put(20955, 358000); // Ghostly Warrior
+		CHANCES.put(20958, 283000); // Death Agent
+		CHANCES.put(20959, 455000); // Dark Guard
+		CHANCES.put(20961, 365000); // Bloody Knight
+		CHANCES.put(20962, 348000); // Bloody Priest
+		CHANCES.put(20965, 457000); // Chimera Piece
+		CHANCES.put(20966, 493000); // Changed Creation
+		CHANCES.put(20968, 418000); // Nonexistant Man
+		CHANCES.put(20972, 350000); // Shaman of Ancient Times
+		CHANCES.put(20973, 453000); // Forgotten Ancient People
+		CHANCES.put(21002, 315000); // Doom Scout
+		CHANCES.put(21004, 320000); // Dismal Pole
+		CHANCES.put(21006, 335000); // Doom Servant
+		CHANCES.put(21008, 462000); // Doom Archer
+		CHANCES.put(21010, 397000); // Doom Warrior
+		CHANCES.put(21109, 507000); // Hames Orc Scout
+		CHANCES.put(21112, 552000); // Hames Orc Footman
+		CHANCES.put(21114, 587000); // Cursed Guardian
+		CHANCES.put(21116, 812000); // Hames Orc Overlord
+		CHANCES.put(21278, 483000); // Antelope
+		CHANCES.put(21279, 483000); // Antelope
+		CHANCES.put(21280, 483000); // Antelope
+		CHANCES.put(21281, 483000); // Antelope
+		CHANCES.put(21286, 515000); // Buffalo
+		CHANCES.put(21287, 515000); // Buffalo
+		CHANCES.put(21288, 515000); // Buffalo
+		CHANCES.put(21289, 515000); // Buffalo
+		CHANCES.put(21508, 493000); // Splinter Stakato
+		CHANCES.put(21510, 527000); // Splinter Stakato Soldier
+		CHANCES.put(21513, 562000); // Needle Stakato
+		CHANCES.put(21515, 598000); // Needle Stakato Soldier
+		CHANCES.put(21520, 458000); // Eye of Splendor
+		CHANCES.put(21526, 552000); // Wisdom of Splendor
+		CHANCES.put(21530, 488000); // Victory of Splendor
+		CHANCES.put(21535, 573000); // Signet of Splendor
 	}
 	
 	public Q00662_AGameOfCards()
 	{
 		super(662);
+		registerQuestItems(RED_GEM);
 		addStartNpc(KLUMP);
 		addTalkId(KLUMP);
-		addKillId(MONSTERS.keySet());
+		addKillId(CHANCES.keySet());
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		String htmltext = null;
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
 			return htmltext;
 		}
@@ -95,54 +131,37 @@ public class Q00662_AGameOfCards extends Quest
 		{
 			case "30845-03.htm":
 			{
-				if (player.getLevel() >= MIN_LEVEL)
+				st.startQuest();
+				st.set("state", "0");
+				st.set("stateEx", "0");
+				break;
+			}
+			case "30845-04.htm":
+			{
+				final int state = st.getInt("state");
+				final int stateEx = st.getInt("stateEx");
+				if ((state == 0) && (stateEx == 0) && (getQuestItemsCount(player, RED_GEM) >= 50))
 				{
-					if (qs.isCreated())
-					{
-						qs.startQuest();
-					}
-					htmltext = event;
+					htmltext = "30845-05.htm";
 				}
 				break;
 			}
-			case "30845-06.html":
-			case "30845-08.html":
-			case "30845-09.html":
-			case "30845-09a.html":
-			case "30845-09b.html":
-			case "30845-10.html":
+			case "30845-07.htm":
 			{
-				htmltext = event;
+				st.exitQuest(true, true);
 				break;
 			}
-			case "30845-07.html":
+			case "30845-11.htm":
 			{
-				qs.exitQuest(true, true);
-				htmltext = event;
-				break;
-			}
-			case "return":
-			{
-				htmltext = getQuestItemsCount(player, RED_GEM) < REQUIRED_CHIP_COUNT ? "30845-04.html" : "30845-05.html";
-				break;
-			}
-			case "30845-11.html":
-			{
-				if (getQuestItemsCount(player, RED_GEM) >= REQUIRED_CHIP_COUNT)
+				final int state = st.getInt("state");
+				final int stateEx = st.getInt("stateEx");
+				if ((state == 0) && (stateEx == 0) && (getQuestItemsCount(player, RED_GEM) >= 50))
 				{
-					int i1 = 0;
-					int i2 = 0;
-					int i3 = 0;
-					int i4 = 0;
-					int i5 = 0;
-					while ((i1 == i2) || (i1 == i3) || (i1 == i4) || (i1 == i5) || (i2 == i3) || (i2 == i4) || (i2 == i5) || (i3 == i4) || (i3 == i5) || (i4 == i5))
-					{
-						i1 = getRandom(70) + 1;
-						i2 = getRandom(70) + 1;
-						i3 = getRandom(70) + 1;
-						i4 = getRandom(70) + 1;
-						i5 = getRandom(70) + 1;
-					}
+					int i1 = getRandom(70) + 1;
+					int i2 = getRandom(70) + 1;
+					int i3 = getRandom(70) + 1;
+					int i4 = getRandom(70) + 1;
+					int i5 = getRandom(70) + 1;
 					if (i1 >= 57)
 					{
 						i1 = i1 - 56;
@@ -159,6 +178,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i1 = i1 - 14;
 					}
+					
 					if (i2 >= 57)
 					{
 						i2 = i2 - 56;
@@ -175,6 +195,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i2 = i2 - 14;
 					}
+					
 					if (i3 >= 57)
 					{
 						i3 = i3 - 56;
@@ -191,6 +212,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i3 = i3 - 14;
 					}
+					
 					if (i4 >= 57)
 					{
 						i4 = i4 - 56;
@@ -207,6 +229,7 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i4 = i4 - 14;
 					}
+					
 					if (i5 >= 57)
 					{
 						i5 = i5 - 56;
@@ -223,99 +246,90 @@ public class Q00662_AGameOfCards extends Quest
 					{
 						i5 = i5 - 14;
 					}
-					qs.set("v1", (i4 * 1000000) + (i3 * 10000) + (i2 * 100) + i1);
-					qs.set("ExMemoState", i5);
-					takeItems(player, RED_GEM, REQUIRED_CHIP_COUNT);
-					htmltext = event;
+					
+					st.set("state", String.valueOf((i4 * 1000000) + (i3 * 10000) + (i2 * 100) + i1));
+					st.set("stateEx", String.valueOf(i5));
+					takeItems(player, RED_GEM, 50);
 				}
 				break;
 			}
-			case "turncard1":
-			case "turncard2":
-			case "turncard3":
-			case "turncard4":
-			case "turncard5":
+			case "First":
+			case "Second":
+			case "Third":
+			case "Fourth":
+			case "Fifth":
 			{
-				final int cond = qs.getInt("v1");
-				int i1 = qs.getInt("ExMemoState");
-				final int i5 = i1 % 100;
-				int i9 = i1 / 100;
-				i1 = cond % 100;
-				final int i2 = (cond % 10000) / 100;
-				final int i3 = (cond % 1000000) / 10000;
-				final int i4 = (cond % 100000000) / 1000000;
+				final int state = st.getInt("state");
+				final int stateEx = st.getInt("stateEx");
+				int i0;
+				int i1;
+				int i2;
+				int i3;
+				int i4;
+				int i5;
+				int i6;
+				int i8;
+				int i9;
+				i0 = state;
+				i1 = stateEx;
+				i5 = i1 % 100;
+				i9 = i1 / 100;
+				i1 = i0 % 100;
+				i2 = (i0 % 10000) / 100;
+				i3 = (i0 % 1000000) / 10000;
+				i4 = (i0 % 100000000) / 1000000;
 				switch (event)
 				{
-					case "turncard1":
+					case "First":
 					{
 						if ((i9 % 2) < 1)
 						{
 							i9 = i9 + 1;
 						}
-						if ((i9 % 32) < 31)
-						{
-							qs.set("ExMemoState", (i9 * 100) + i5);
-						}
 						break;
 					}
-					case "turncard2":
+					case "Second":
 					{
 						if ((i9 % 4) < 2)
 						{
 							i9 = i9 + 2;
 						}
-						if ((i9 % 32) < 31)
-						{
-							qs.set("ExMemoState", (i9 * 100) + i5);
-						}
 						break;
 					}
-					case "turncard3":
+					case "Third":
 					{
 						if ((i9 % 8) < 4)
 						{
 							i9 = i9 + 4;
 						}
-						if ((i9 % 32) < 31)
-						{
-							qs.set("ExMemoState", (i9 * 100) + i5);
-						}
 						break;
 					}
-					case "turncard4":
+					case "Fourth":
 					{
 						if ((i9 % 16) < 8)
 						{
 							i9 = i9 + 8;
 						}
-						if ((i9 % 32) < 31)
-						{
-							qs.set("ExMemoState", (i9 * 100) + i5);
-						}
 						break;
 					}
-					case "turncard5":
+					case "Fifth":
 					{
 						if ((i9 % 32) < 16)
 						{
 							i9 = i9 + 16;
 						}
-						if ((i9 % 32) < 31)
-						{
-							qs.set("ExMemoState", (i9 * 100) + i5);
-						}
 						break;
 					}
 				}
-				
 				if ((i9 % 32) < 31)
 				{
-					htmltext = getHtm(player, "30845-12.html");
+					st.set("stateEx", String.valueOf((i9 * 100) + i5));
+					htmltext = getHtm(player, "30845-12.htm");
 				}
 				else if ((i9 % 32) == 31)
 				{
-					int i6 = 0;
-					int i8 = 0;
+					i6 = 0;
+					i8 = 0;
 					if ((i1 >= 1) && (i1 <= 14) && (i2 >= 1) && (i2 <= 14) && (i3 >= 1) && (i3 <= 14) && (i4 >= 1) && (i4 <= 14) && (i5 >= 1) && (i5 <= 14))
 					{
 						if (i1 == i2)
@@ -323,481 +337,263 @@ public class Q00662_AGameOfCards extends Quest
 							i6 = i6 + 10;
 							i8 = i8 + 8;
 						}
+						
 						if (i1 == i3)
 						{
 							i6 = i6 + 10;
 							i8 = i8 + 4;
 						}
+						
 						if (i1 == i4)
 						{
 							i6 = i6 + 10;
 							i8 = i8 + 2;
 						}
+						
 						if (i1 == i5)
 						{
 							i6 = i6 + 10;
 							i8 = i8 + 1;
 						}
+						
 						if ((i6 % 100) < 10)
 						{
 							if ((i8 % 16) < 8)
 							{
-								if ((i8 % 8) < 4)
+								if (((i8 % 8) < 4) && (i2 == i3))
 								{
-									if (i2 == i3)
-									{
-										i6 = i6 + 10;
-										i8 = i8 + 4;
-									}
+									i6 = i6 + 10;
+									i8 = i8 + 4;
 								}
-								if ((i8 % 4) < 2)
+								
+								if (((i8 % 4) < 2) && (i2 == i4))
 								{
-									if (i2 == i4)
-									{
-										i6 = i6 + 10;
-										i8 = i8 + 2;
-									}
+									i6 = i6 + 10;
+									i8 = i8 + 2;
 								}
-								if ((i8 % 2) < 1)
+								
+								if (((i8 % 2) < 1) && (i2 == i5))
 								{
-									if (i2 == i5)
-									{
-										i6 = i6 + 10;
-										i8 = i8 + 1;
-									}
+									i6 = i6 + 10;
+									i8 = i8 + 1;
 								}
 							}
 						}
-						else if ((i6 % 10) == 0)
+						else if (((i6 % 10) == 0) && ((i8 % 16) < 8))
 						{
-							if ((i8 % 16) < 8)
+							if (((i8 % 8) < 4) && (i2 == i3))
 							{
-								if ((i8 % 8) < 4)
-								{
-									if (i2 == i3)
-									{
-										i6 = i6 + 1;
-										i8 = i8 + 4;
-									}
-								}
-								if ((i8 % 4) < 2)
-								{
-									if (i2 == i4)
-									{
-										i6 = i6 + 1;
-										i8 = i8 + 2;
-									}
-								}
-								if ((i8 % 2) < 1)
-								{
-									if (i2 == i5)
-									{
-										i6 = i6 + 1;
-										i8 = i8 + 1;
-									}
-								}
+								i6 = i6 + 1;
+								i8 = i8 + 4;
+							}
+							
+							if (((i8 % 4) < 2) && (i2 == i4))
+							{
+								i6 = i6 + 1;
+								i8 = i8 + 2;
+							}
+							
+							if (((i8 % 2) < 1) && (i2 == i5))
+							{
+								i6 = i6 + 1;
+								i8 = i8 + 1;
 							}
 						}
+						
 						if ((i6 % 100) < 10)
 						{
 							if ((i8 % 8) < 4)
 							{
-								if ((i8 % 4) < 2)
+								if (((i8 % 4) < 2) && (i3 == i4))
 								{
-									if (i3 == i4)
-									{
-										i6 = i6 + 10;
-										i8 = i8 + 2;
-									}
+									i6 = i6 + 10;
+									i8 = i8 + 2;
 								}
-								if ((i8 % 2) < 1)
+								
+								if (((i8 % 2) < 1) && (i3 == i5))
 								{
-									if (i3 == i5)
-									{
-										i6 = i6 + 10;
-										i8 = i8 + 1;
-									}
+									i6 = i6 + 10;
+									i8 = i8 + 1;
 								}
 							}
 						}
-						else if ((i6 % 10) == 0)
+						else if (((i6 % 10) == 0) && ((i8 % 8) < 4))
 						{
-							if ((i8 % 8) < 4)
+							if (((i8 % 4) < 2) && (i3 == i4))
 							{
-								if ((i8 % 4) < 2)
-								{
-									if (i3 == i4)
-									{
-										i6 = i6 + 1;
-										i8 = i8 + 2;
-									}
-								}
-								if ((i8 % 2) < 1)
-								{
-									if (i3 == i5)
-									{
-										i6 = i6 + 1;
-										i8 = i8 + 1;
-									}
-								}
+								i6 = i6 + 1;
+								i8 = i8 + 2;
+							}
+							
+							if (((i8 % 2) < 1) && (i3 == i5))
+							{
+								i6 = i6 + 1;
+								i8 = i8 + 1;
 							}
 						}
+						
 						if ((i6 % 100) < 10)
 						{
-							if ((i8 % 4) < 2)
+							if (((i8 % 4) < 2) && ((i8 % 2) < 1) && (i4 == i5))
 							{
-								if ((i8 % 2) < 1)
-								{
-									if (i4 == i5)
-									{
-										i6 = i6 + 10;
-										i8 = i8 + 1;
-									}
-								}
+								i6 = i6 + 10;
+								i8 = i8 + 1;
 							}
 						}
-						else if ((i6 % 10) == 0)
+						else if (((i6 % 10) == 0) && ((i8 % 4) < 2) && ((i8 % 2) < 1) && (i4 == i5))
 						{
-							if ((i8 % 4) < 2)
-							{
-								if ((i8 % 2) < 1)
-								{
-									if (i4 == i5)
-									{
-										i6 = i6 + 1;
-										i8 = i8 + 1;
-									}
-								}
-							}
+							i6 = i6 + 1;
+							i8 = i8 + 1;
 						}
 					}
 					
 					if (i6 == 40)
 					{
-						rewardItems(player, ZIGGOS_GEMSTONE, 43);
-						rewardItems(player, 959, 3);
-						rewardItems(player, 729, 1);
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-13.html");
+						giveReward(player, ZIGGO_GEMSTONE, 43);
+						giveReward(player, EW_S, 3);
+						giveReward(player, EW_A, 1);
+						htmltext = getHtm(player, "30845-13.htm");
 					}
 					else if (i6 == 30)
 					{
-						rewardItems(player, 959, 2);
-						rewardItems(player, 951, 2);
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-14.html");
+						giveReward(player, EW_S, 2);
+						giveReward(player, EW_C, 2);
+						htmltext = getHtm(player, "30845-14.htm");
 					}
 					else if ((i6 == 21) || (i6 == 12))
 					{
-						rewardItems(player, 729, 1);
-						rewardItems(player, 947, 2);
-						rewardItems(player, 955, 1);
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-15.html");
+						giveReward(player, EW_A, 1);
+						giveReward(player, EW_B, 2);
+						giveReward(player, EW_D, 1);
+						htmltext = getHtm(player, "30845-15.htm");
 					}
 					else if (i6 == 20)
 					{
-						rewardItems(player, 951, 2);
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-16.html");
+						giveReward(player, EW_C, 2);
+						htmltext = getHtm(player, "30845-16.htm");
 					}
 					else if (i6 == 11)
 					{
-						rewardItems(player, 951, 1);
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-17.html");
+						giveReward(player, EW_C, 1);
+						htmltext = getHtm(player, "30845-17.htm");
 					}
 					else if (i6 == 10)
 					{
-						rewardItems(player, 956, 2);
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-18.html");
+						giveReward(player, EA_D, 2);
+						htmltext = getHtm(player, "30845-18.htm");
 					}
 					else if (i6 == 0)
 					{
-						qs.set("ExMemoState", 0);
-						qs.set("v1", 0);
-						htmltext = getHtm(player, "30845-19.html");
+						htmltext = getHtm(player, "30845-19.htm");
 					}
+					
+					st.set("state", "0");
+					st.set("stateEx", "0");
 				}
-				
-				if (htmltext != null)
-				{
-					if ((i9 % 2) < 1)
-					{
-						htmltext = htmltext.replace("FontColor1", "FFFF00");
-						htmltext = htmltext.replace("Cell1", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor1", "FF6F6F");
-						htmltext = setHtml(htmltext, i1, "Cell1");
-					}
-					if ((i9 % 4) < 2)
-					{
-						htmltext = htmltext.replace("FontColor2", "FFFF00");
-						htmltext = htmltext.replace("Cell2", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor2", "FF6F6F");
-						htmltext = setHtml(htmltext, i2, "Cell2");
-					}
-					if ((i9 % 8) < 4)
-					{
-						htmltext = htmltext.replace("FontColor3", "FFFF00");
-						htmltext = htmltext.replace("Cell3", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor3", "FF6F6F");
-						htmltext = setHtml(htmltext, i3, "Cell3");
-					}
-					if ((i9 % 16) < 8)
-					{
-						htmltext = htmltext.replace("FontColor4", "FFFF00");
-						htmltext = htmltext.replace("Cell4", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor4", "FF6F6F");
-						htmltext = setHtml(htmltext, i4, "Cell4");
-					}
-					if ((i9 % 32) < 16)
-					{
-						htmltext = htmltext.replace("FontColor5", "FFFF00");
-						htmltext = htmltext.replace("Cell5", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor5", "FF6F6F");
-						htmltext = setHtml(htmltext, i5, "Cell5");
-					}
-				}
+				htmltext = htmltext.replace("%FontColor1%", ((i9 % 2) < 1) ? "ffff00" : "ff6f6f").replace("%Cell1%", ((i9 % 2) < 1) ? CARDS.get(0) : CARDS.get(i1));
+				htmltext = htmltext.replace("%FontColor2%", ((i9 % 4) < 2) ? "ffff00" : "ff6f6f").replace("%Cell2%", ((i9 % 4) < 2) ? CARDS.get(0) : CARDS.get(i2));
+				htmltext = htmltext.replace("%FontColor3%", ((i9 % 8) < 4) ? "ffff00" : "ff6f6f").replace("%Cell3%", ((i9 % 8) < 4) ? CARDS.get(0) : CARDS.get(i3));
+				htmltext = htmltext.replace("%FontColor4%", ((i9 % 16) < 8) ? "ffff00" : "ff6f6f").replace("%Cell4%", ((i9 % 16) < 8) ? CARDS.get(0) : CARDS.get(i4));
+				htmltext = htmltext.replace("%FontColor5%", ((i9 % 32) < 16) ? "ffff00" : "ff6f6f").replace("%Cell5%", ((i9 % 32) < 16) ? CARDS.get(0) : CARDS.get(i5));
 				break;
 			}
-			case "playagain":
+			case "30845-20.htm":
 			{
-				htmltext = getQuestItemsCount(player, RED_GEM) < REQUIRED_CHIP_COUNT ? "30845-21.html" : "30845-20.html";
+				if (getQuestItemsCount(player, RED_GEM) < 50)
+				{
+					htmltext = "30845-21.htm";
+				}
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = player.getLevel() < MIN_LEVEL ? "30845-02.html" : "30845-01.htm";
+				htmltext = (player.getLevel() < 61) ? "30845-02.htm" : "30845-01.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				if (qs.isCond(1))
+				final int state = st.getInt("state");
+				final int stateEx = st.getInt("stateEx");
+				if ((state == 0) && (stateEx == 0))
 				{
-					htmltext = getQuestItemsCount(player, RED_GEM) < REQUIRED_CHIP_COUNT ? "30845-04.html" : "30845-05.html";
+					htmltext = (getQuestItemsCount(player, RED_GEM) < 50) ? "30845-04.htm" : "30845-05.htm";
 				}
-				else if (qs.getInt("ExMemoState") != 0)
+				else if ((state != 0) && (stateEx != 0))
 				{
-					final int i0 = qs.getInt("v1");
-					int i1 = qs.getInt("ExMemoState");
-					final int i5 = i1 % 100;
-					final int i9 = i1 / 100;
+					int i0;
+					int i1;
+					int i2;
+					int i3;
+					int i4;
+					int i5;
+					int i9;
+					i0 = state;
+					i1 = stateEx;
+					i5 = i1 % 100;
+					i9 = i1 / 100;
 					i1 = i0 % 100;
-					final int i2 = (i0 % 10000) / 100;
-					final int i3 = (i0 % 1000000) / 10000;
-					final int i4 = (i0 % 100000000) / 1000000;
-					htmltext = getHtm(player, "30845-11a.html");
-					if ((i9 % 2) < 1)
-					{
-						htmltext = htmltext.replace("FontColor1", "FFFF00");
-						htmltext = htmltext.replace("Cell1", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor1", "FF6F6F");
-						htmltext = setHtml(htmltext, i1, "Cell1");
-					}
-					
-					if ((i9 % 4) < 2)
-					{
-						htmltext = htmltext.replace("FontColor2", "FFFF00");
-						htmltext = htmltext.replace("Cell2", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor2", "FF6F6F");
-						htmltext = setHtml(htmltext, i2, "Cell2");
-					}
-					
-					if ((i9 % 8) < 4)
-					{
-						htmltext = htmltext.replace("FontColor3", "FFFF00");
-						htmltext = htmltext.replace("Cell3", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor3", "FF6F6F");
-						htmltext = setHtml(htmltext, i3, "Cell3");
-					}
-					if ((i9 % 16) < 8)
-					{
-						htmltext = htmltext.replace("FontColor4", "FFFF00");
-						htmltext = htmltext.replace("Cell4", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor4", "FF6F6F");
-						htmltext = setHtml(htmltext, i4, "Cell4");
-					}
-					if ((i9 % 32) < 16)
-					{
-						htmltext = htmltext.replace("FontColor5", "FFFF00");
-						htmltext = htmltext.replace("Cell5", "?");
-					}
-					else
-					{
-						htmltext = htmltext.replace("FontColor5", "FF6F6F");
-						htmltext = setHtml(htmltext, i5, "Cell5");
-					}
+					i2 = (i0 % 10000) / 100;
+					i3 = (i0 % 1000000) / 10000;
+					i4 = (i0 % 100000000) / 1000000;
+					htmltext = getHtm(player, "30845-11a.htm");
+					htmltext = htmltext.replace("%FontColor1%", ((i9 % 2) < 1) ? "ffff00" : "ff6f6f").replace("%Cell1%", ((i9 % 2) < 1) ? CARDS.get(0) : CARDS.get(i1));
+					htmltext = htmltext.replace("%FontColor2%", ((i9 % 4) < 2) ? "ffff00" : "ff6f6f").replace("%Cell2%", ((i9 % 4) < 2) ? CARDS.get(0) : CARDS.get(i2));
+					htmltext = htmltext.replace("%FontColor3%", ((i9 % 8) < 4) ? "ffff00" : "ff6f6f").replace("%Cell3%", ((i9 % 8) < 4) ? CARDS.get(0) : CARDS.get(i3));
+					htmltext = htmltext.replace("%FontColor4%", ((i9 % 16) < 8) ? "ffff00" : "ff6f6f").replace("%Cell4%", ((i9 % 16) < 8) ? CARDS.get(0) : CARDS.get(i4));
+					htmltext = htmltext.replace("%FontColor5%", ((i9 % 32) < 16) ? "ffff00" : "ff6f6f").replace("%Cell5%", ((i9 % 32) < 16) ? CARDS.get(0) : CARDS.get(i5));
 				}
-				break;
-			}
-			case State.COMPLETED:
-			{
-				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			}
 		}
+		
 		return htmltext;
 	}
 	
 	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final List<Player> players = new ArrayList<>();
-		players.add(killer);
-		players.add(killer);
-		
-		if (killer.isInParty())
+		final QuestState st = getRandomPartyMemberState(player, -1, 3, npc);
+		if ((st == null) || !st.isStarted())
 		{
-			for (Player member : killer.getParty().getMembers())
-			{
-				if (getQuestState(member, false) != null)
-				{
-					players.add(member);
-				}
-			}
+			return null;
+		}
+		final Player partyMember = st.getPlayer();
+		
+		if (getRandom(1000000) < CHANCES.get(npc.getId()))
+		{
+			giveItems(partyMember, RED_GEM, 1);
+			playSound(partyMember, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 		}
 		
-		final Player player = players.get(getRandom(players.size()));
-		if ((player != null) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, player, false))
-		{
-			if (MONSTERS.get(npc.getId()) < getRandom(1000))
-			{
-				final QuestState qs = getQuestState(player, false);
-				if (qs != null)
-				{
-					giveItemRandomly(qs.getPlayer(), npc, RED_GEM, 1, 0, MONSTERS.get(npc.getId()), true);
-				}
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
+		return null;
 	}
 	
-	private static String setHtml(String htmltext, int var, String regex)
+	private void giveReward(Player player, int item, int count)
 	{
-		String replacement = null;
-		switch (var)
+		final ItemTemplate template = ItemData.getInstance().getTemplate(item);
+		if (template.isStackable())
 		{
-			case 1:
+			giveItems(player, item, count);
+		}
+		else
+		{
+			for (int i = 0; i < count; i++)
 			{
-				replacement = "!";
-				break;
-			}
-			case 2:
-			{
-				replacement = "=";
-				break;
-			}
-			case 3:
-			{
-				replacement = "T";
-				break;
-			}
-			case 4:
-			{
-				replacement = "V";
-				break;
-			}
-			case 5:
-			{
-				replacement = "O";
-				break;
-			}
-			case 6:
-			{
-				replacement = "P";
-				break;
-			}
-			case 7:
-			{
-				replacement = "S";
-				break;
-			}
-			case 8:
-			{
-				replacement = "E";
-				break;
-			}
-			case 9:
-			{
-				replacement = "H";
-				break;
-			}
-			case 10:
-			{
-				replacement = "A";
-				break;
-			}
-			case 11:
-			{
-				replacement = "R";
-				break;
-			}
-			case 12:
-			{
-				replacement = "D";
-				break;
-			}
-			case 13:
-			{
-				replacement = "I";
-				break;
-			}
-			case 14:
-			{
-				replacement = "N";
-				break;
-			}
-			default:
-			{
-				replacement = "ERROR";
-				break;
+				giveItems(player, item, 1);
 			}
 		}
-		return htmltext.replaceAll(regex, replacement);
 	}
 }

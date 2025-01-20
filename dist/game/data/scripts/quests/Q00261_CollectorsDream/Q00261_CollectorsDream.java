@@ -16,127 +16,103 @@
  */
 package quests.Q00261_CollectorsDream;
 
-import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
-import org.l2jmobius.gameserver.model.variables.PlayerVariables;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.ExShowScreenMessage;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Collector's Dream (261)
- * @author xban1x
- */
 public class Q00261_CollectorsDream extends Quest
 {
-	// Npc
-	private static final int ALSHUPES = 30222;
-	// Monsters
-	private static final int[] MONSTERS = new int[]
-	{
-		20308, // Hook Spider
-		20460, // Crimson Spider
-		20466, // Pincer Spider
-	};
-	// Item
-	private static final int SPIDER_LEG = 1087;
-	// Misc
-	private static final int MIN_LEVEL = 15;
-	private static final int MAX_LEG_COUNT = 8;
-	// Message
-	private static final ExShowScreenMessage MESSAGE = new ExShowScreenMessage(NpcStringId.LAST_DUTY_COMPLETE_N_GO_FIND_THE_NEWBIE_HELPER, 2, 5000);
+	// Items
+	private static final int GIANT_SPIDER_LEG = 1087;
 	
 	public Q00261_CollectorsDream()
 	{
 		super(261);
-		addStartNpc(ALSHUPES);
-		addTalkId(ALSHUPES);
-		addKillId(MONSTERS);
-		registerQuestItems(SPIDER_LEG);
-		addCondMaxLevel(21, getNoQuestMsg(null));
+		registerQuestItems(GIANT_SPIDER_LEG);
+		addStartNpc(30222); // Alshupes
+		addTalkId(30222);
+		addKillId(20308, 20460, 20466);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30222-03.htm"))
+		final String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		if ((qs != null) && qs.isCond(1) && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, true) && giveItemRandomly(killer, SPIDER_LEG, 1, MAX_LEG_COUNT, 1, true))
+		
+		if (event.equals("30222-03.htm"))
 		{
-			qs.setCond(2);
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getLevel() >= MIN_LEVEL) ? "30222-02.htm" : "30222-01.htm";
+				htmltext = (player.getLevel() < 15) ? "30222-01.htm" : "30222-02.htm";
 				break;
 			}
 			case State.STARTED:
 			{
-				switch (qs.getCond())
+				if (st.isCond(2))
 				{
-					case 1:
-					{
-						htmltext = "30222-04.html";
-						break;
-					}
-					case 2:
-					{
-						if (getQuestItemsCount(player, SPIDER_LEG) >= MAX_LEG_COUNT)
-						{
-							if (!player.isSimulatingTalking())
-							{
-								giveNewbieReward(player);
-								giveAdena(player, 700, true);
-								qs.exitQuest(true, true);
-							}
-							htmltext = "30222-05.html";
-						}
-						break;
-					}
+					htmltext = "30222-05.htm";
+					takeItems(player, GIANT_SPIDER_LEG, -1);
+					giveAdena(player, 1000, true);
+					addExpAndSp(player, 2000, 0);
+					st.exitQuest(true, true);
+				}
+				else
+				{
+					htmltext = "30222-04.htm";
 				}
 				break;
 			}
+			case State.COMPLETED:
+			{
+				htmltext = getAlreadyCompletedMsg(player);
+				break;
+			}
 		}
+		
 		return htmltext;
 	}
 	
-	public static void giveNewbieReward(Player player)
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
 	{
-		final PlayerVariables vars = player.getVariables();
-		if (vars.getString("GUIDE_MISSION", null) == null)
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
 		{
-			vars.set("GUIDE_MISSION", 100000);
-			player.sendPacket(MESSAGE);
+			return null;
 		}
-		else if (((vars.getInt("GUIDE_MISSION") % 100000000) / 10000000) != 1)
+		
+		giveItems(player, GIANT_SPIDER_LEG, 1);
+		if (getQuestItemsCount(player, GIANT_SPIDER_LEG) >= 8)
 		{
-			vars.set("GUIDE_MISSION", vars.getInt("GUIDE_MISSION") + 10000000);
-			player.sendPacket(MESSAGE);
+			st.setCond(2, true);
 		}
+		else
+		{
+			playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+		}
+		
+		return null;
 	}
 }

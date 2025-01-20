@@ -16,41 +16,44 @@
  */
 package quests.Q00416_PathOfTheOrcShaman;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.l2jmobius.gameserver.enums.ChatType;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
-import org.l2jmobius.gameserver.network.NpcStringId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcSay;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
 
-/**
- * Path of the Orc Shaman (416)
- * @author Adry_85
- */
 public class Q00416_PathOfTheOrcShaman extends Quest
 {
 	// NPCs
-	private static final int UMOS = 30502;
 	private static final int TATARU_ZU_HESTUI = 30585;
+	private static final int UMOS = 30502;
 	private static final int HESTUI_TOTEM_SPIRIT = 30592;
 	private static final int DUDA_MARA_TOTEM_SPIRIT = 30593;
+	private static final int MOIRA = 31979;
+	private static final int TOTEM_SPIRIT_OF_GANDI = 32057;
+	private static final int DEAD_LEOPARD_CARCASS = 32090;
+	// Monsters
+	private static final int VENOMOUS_SPIDER = 20038;
+	private static final int ARACHNID_TRACKER = 20043;
+	private static final int GRIZZLY_BEAR = 20335;
+	private static final int SCARLET_SALAMANDER = 20415;
+	private static final int KASHA_BLADE_SPIDER = 20478;
+	private static final int KASHA_BEAR = 20479;
+	private static final int DURKA_SPIRIT = 27056;
+	private static final int BLACK_LEOPARD = 27319;
 	// Items
 	private static final int FIRE_CHARM = 1616;
 	private static final int KASHA_BEAR_PELT = 1617;
 	private static final int KASHA_BLADE_SPIDER_HUSK = 1618;
-	private static final int FIRST_FIERY_EGG = 1619;
+	private static final int FIERY_EGG_1 = 1619;
 	private static final int HESTUI_MASK = 1620;
-	private static final int SECOND_FIERY_EGG = 1621;
+	private static final int FIERY_EGG_2 = 1621;
 	private static final int TOTEM_SPIRIT_CLAW = 1622;
-	private static final int TATARUS_LETTER = 1623;
+	private static final int TATARU_LETTER = 1623;
 	private static final int FLAME_CHARM = 1624;
 	private static final int GRIZZLY_BLOOD = 1625;
 	private static final int BLOOD_CAULDRON = 1626;
@@ -59,467 +62,455 @@ public class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int DURKA_PARASITE = 1629;
 	private static final int TOTEM_SPIRIT_BLOOD = 1630;
 	private static final int MASK_OF_MEDIUM = 1631;
-	// Quest Monsters
-	private static final int DURKA_SPIRIT = 27056;
-	private static final int BLACK_LEOPARD = 27319;
-	// Misc
-	private static final int MIN_LEVEL = 19;
-	// Mobs
-	private static final Map<Integer, ItemChanceHolder> MOBS = new HashMap<>();
-	static
-	{
-		MOBS.put(20415, new ItemChanceHolder(FIRST_FIERY_EGG, 1, 1)); // scarlet_salamander
-		MOBS.put(20478, new ItemChanceHolder(KASHA_BLADE_SPIDER_HUSK, 1, 1)); // kasha_blade_spider
-		MOBS.put(20479, new ItemChanceHolder(KASHA_BEAR_PELT, 1, 1)); // kasha_bear
-		MOBS.put(20335, new ItemChanceHolder(GRIZZLY_BLOOD, 1, 6)); // grizzly_bear
-		MOBS.put(20038, new ItemChanceHolder(DURKA_PARASITE, 1, 9)); // poison_spider
-		MOBS.put(20043, new ItemChanceHolder(DURKA_PARASITE, 1, 9)); // bind_poison_spider
-		MOBS.put(27056, new ItemChanceHolder(DURKA_PARASITE, 1, 9)); // durka_spirit
-	}
 	
 	public Q00416_PathOfTheOrcShaman()
 	{
 		super(416);
+		registerQuestItems(FIRE_CHARM, KASHA_BEAR_PELT, KASHA_BLADE_SPIDER_HUSK, FIERY_EGG_1, HESTUI_MASK, FIERY_EGG_2, TOTEM_SPIRIT_CLAW, TATARU_LETTER, FLAME_CHARM, GRIZZLY_BLOOD, BLOOD_CAULDRON, SPIRIT_NET, BOUND_DURKA_SPIRIT, DURKA_PARASITE, TOTEM_SPIRIT_BLOOD);
 		addStartNpc(TATARU_ZU_HESTUI);
-		addTalkId(TATARU_ZU_HESTUI, UMOS, DUDA_MARA_TOTEM_SPIRIT, HESTUI_TOTEM_SPIRIT);
-		addKillId(MOBS.keySet());
-		addKillId(BLACK_LEOPARD);
-		registerQuestItems(FIRE_CHARM, KASHA_BEAR_PELT, KASHA_BLADE_SPIDER_HUSK, FIRST_FIERY_EGG, HESTUI_MASK, SECOND_FIERY_EGG, TOTEM_SPIRIT_CLAW, TATARUS_LETTER, FLAME_CHARM, GRIZZLY_BLOOD, BLOOD_CAULDRON, SPIRIT_NET, BOUND_DURKA_SPIRIT, DURKA_PARASITE, TOTEM_SPIRIT_BLOOD);
+		addTalkId(TATARU_ZU_HESTUI, UMOS, HESTUI_TOTEM_SPIRIT, DUDA_MARA_TOTEM_SPIRIT, MOIRA, TOTEM_SPIRIT_OF_GANDI, DEAD_LEOPARD_CARCASS);
+		addKillId(VENOMOUS_SPIDER, ARACHNID_TRACKER, GRIZZLY_BEAR, SCARLET_SALAMANDER, KASHA_BLADE_SPIDER, KASHA_BEAR, DURKA_SPIRIT, BLACK_LEOPARD);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "START":
+			case "30585-05.htm":
 			{
 				if (player.getClassId() != ClassId.ORC_MAGE)
 				{
-					if (player.getClassId() == ClassId.ORC_SHAMAN)
-					{
-						htmltext = "30585-02.htm";
-					}
-					else
-					{
-						htmltext = "30585-03.htm";
-					}
+					htmltext = (player.getClassId() == ClassId.ORC_SHAMAN) ? "30585-02a.htm" : "30585-02.htm";
 				}
-				else if (player.getLevel() < MIN_LEVEL)
+				else if (player.getLevel() < 19)
 				{
-					htmltext = "30585-04.htm";
+					htmltext = "30585-03.htm";
 				}
 				else if (hasQuestItems(player, MASK_OF_MEDIUM))
 				{
-					htmltext = "30585-05.htm";
-				}
-				else
-				{
-					htmltext = "30585-06.htm";
+					htmltext = "30585-04.htm";
 				}
 				break;
 			}
-			case "30585-07.htm":
+			case "30585-06.htm":
 			{
-				qs.startQuest();
-				qs.setMemoState(1);
+				st.startQuest();
 				giveItems(player, FIRE_CHARM, 1);
-				htmltext = event;
 				break;
 			}
-			case "30585-12.html":
+			case "30585-11b.htm":
 			{
-				if (hasQuestItems(player, TOTEM_SPIRIT_CLAW))
-				{
-					htmltext = event;
-				}
+				st.setCond(5, true);
+				takeItems(player, TOTEM_SPIRIT_CLAW, 1);
+				giveItems(player, TATARU_LETTER, 1);
 				break;
 			}
-			case "30585-13.html":
+			case "30585-11c.htm":
 			{
-				if (hasQuestItems(player, TOTEM_SPIRIT_CLAW))
-				{
-					takeItems(player, TOTEM_SPIRIT_CLAW, -1);
-					giveItems(player, TATARUS_LETTER, 1);
-					qs.setCond(5, true);
-					htmltext = event;
-				}
+				st.setCond(12, true);
+				takeItems(player, TOTEM_SPIRIT_CLAW, 1);
 				break;
 			}
-			case "30585-14.html":
+			case "30592-03.htm":
 			{
-				if (hasQuestItems(player, TOTEM_SPIRIT_CLAW))
-				{
-					takeItems(player, TOTEM_SPIRIT_CLAW, -1);
-					qs.setCond(12, true);
-					qs.setMemoState(100);
-					htmltext = event;
-				}
+				st.setCond(4, true);
+				takeItems(player, HESTUI_MASK, 1);
+				takeItems(player, FIERY_EGG_2, 1);
+				giveItems(player, TOTEM_SPIRIT_CLAW, 1);
 				break;
 			}
-			case "30502-07.html":
+			case "30593-03.htm":
 			{
-				if (hasQuestItems(player, TOTEM_SPIRIT_BLOOD))
-				{
-					takeItems(player, TOTEM_SPIRIT_BLOOD, -1);
-					giveItems(player, MASK_OF_MEDIUM, 1);
-					final int level = player.getLevel();
-					if (level >= 20)
-					{
-						addExpAndSp(player, 80314, 5087);
-					}
-					else if (level >= 19)
-					{
-						addExpAndSp(player, 80314, 5087);
-					}
-					else
-					{
-						addExpAndSp(player, 80314, 5087);
-					}
-					qs.exitQuest(false, true);
-					player.sendPacket(new SocialAction(player.getObjectId(), 3));
-					htmltext = event;
-				}
+				st.setCond(9, true);
+				takeItems(player, BLOOD_CAULDRON, 1);
+				giveItems(player, SPIRIT_NET, 1);
 				break;
 			}
-			case "32090-05.html":
+			case "32057-02.htm":
 			{
-				if (qs.isMemoState(106))
-				{
-					htmltext = event;
-				}
+				st.setCond(14, true);
 				break;
 			}
-			case "32090-06.html":
+			case "32057-05.htm":
 			{
-				if (qs.isMemoState(106))
-				{
-					qs.setMemoState(107);
-					qs.setCond(18, true);
-					htmltext = event;
-				}
+				st.setCond(21, true);
 				break;
 			}
-			case "30593-02.html":
+			case "32090-04.htm":
 			{
-				if (hasQuestItems(player, BLOOD_CAULDRON))
-				{
-					htmltext = event;
-				}
+				st.setCond(18, true);
 				break;
 			}
-			case "30593-03.html":
+			case "30502-07.htm":
 			{
-				if (hasQuestItems(player, BLOOD_CAULDRON))
-				{
-					takeItems(player, BLOOD_CAULDRON, -1);
-					giveItems(player, SPIRIT_NET, 1);
-					qs.setCond(9, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "30592-02.html":
-			{
-				if (hasQuestItems(player, HESTUI_MASK, SECOND_FIERY_EGG))
-				{
-					htmltext = event;
-				}
-				break;
-			}
-			case "30592-03.html":
-			{
-				if (hasQuestItems(player, HESTUI_MASK, SECOND_FIERY_EGG))
-				{
-					takeItems(player, -1, HESTUI_MASK, SECOND_FIERY_EGG);
-					giveItems(player, TOTEM_SPIRIT_CLAW, 1);
-					qs.setCond(4, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32057-02.html":
-			{
-				if (qs.isMemoState(101))
-				{
-					qs.setMemoState(102);
-					qs.setCond(14, true);
-					htmltext = event;
-				}
-				break;
-			}
-			case "32057-05.html":
-			{
-				if (qs.isMemoState(109))
-				{
-					qs.setMemoState(110);
-					qs.setCond(21, true);
-					htmltext = event;
-				}
+				takeItems(player, TOTEM_SPIRIT_BLOOD, -1);
+				giveItems(player, MASK_OF_MEDIUM, 1);
+				addExpAndSp(player, 3200, 2600);
+				player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+				st.exitQuest(true, true);
 				break;
 			}
 		}
+		
 		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player player, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(player, -1, 3, npc);
-		if (qs == null)
-		{
-			return super.onKill(npc, player, isSummon);
-		}
-		
-		if (npc.getId() == BLACK_LEOPARD)
-		{
-			switch (qs.getMemoState())
-			{
-				case 102:
-				{
-					qs.setMemoState(103);
-					break;
-				}
-				case 103:
-				{
-					qs.setMemoState(104);
-					qs.setCond(15, true);
-					if (getRandom(100) < 66)
-					{
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.MY_DEAR_FRIEND_OF_S1_WHO_HAS_GONE_ON_AHEAD_OF_ME).addStringParameter(qs.getPlayer().getName()));
-					}
-					break;
-				}
-				case 105:
-				{
-					qs.setMemoState(106);
-					qs.setCond(17, true);
-					if (getRandom(100) < 66)
-					{
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), ChatType.NPC_GENERAL, npc.getId(), NpcStringId.LISTEN_TO_TEJAKAR_GANDI_YOUNG_OROKA_THE_SPIRIT_OF_THE_SLAIN_LEOPARD_IS_CALLING_YOU_S1).addStringParameter(qs.getPlayer().getName()));
-					}
-					break;
-				}
-				case 107:
-				{
-					qs.setMemoState(108);
-					qs.setCond(19, true);
-					break;
-				}
-			}
-			return super.onKill(npc, player, isSummon);
-		}
-		
-		final ItemChanceHolder item = MOBS.get(npc.getId());
-		if (item.getCount() == qs.getCond())
-		{
-			if (qs.isCond(1) && hasQuestItems(qs.getPlayer(), FIRE_CHARM))
-			{
-				if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, 1, item.getChance(), true) //
-					&& hasQuestItems(qs.getPlayer(), FIRST_FIERY_EGG, KASHA_BLADE_SPIDER_HUSK, KASHA_BEAR_PELT))
-				{
-					qs.setCond(2, true);
-				}
-			}
-			else if (qs.isCond(6) && hasQuestItems(qs.getPlayer(), FLAME_CHARM))
-			{
-				if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, 3, item.getChance(), true))
-				{
-					qs.setCond(7);
-				}
-			}
-			else if (qs.isCond(9) && hasQuestItems(qs.getPlayer(), SPIRIT_NET) //
-				&& !hasQuestItems(qs.getPlayer(), BOUND_DURKA_SPIRIT) //
-				&& (getQuestItemsCount(qs.getPlayer(), DURKA_PARASITE) <= 8))
-			{
-				if ((npc.getId() == 20038) || (npc.getId() == 20043))
-				{
-					final int random = getRandom(10);
-					final long itemCount = getQuestItemsCount(qs.getPlayer(), DURKA_PARASITE);
-					if (((itemCount == 5) && (random < 1)) //
-						|| ((itemCount == 6) && (random < 2)) //
-						|| ((itemCount == 7) && (random < 2)) //
-						|| (itemCount >= 8))
-					{
-						takeItems(player, DURKA_PARASITE, -1);
-						addSpawn(DURKA_SPIRIT, npc.getX(), npc.getY(), npc.getZ(), 0, true, 0, false);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
-					}
-					else
-					{
-						giveItems(qs.getPlayer(), DURKA_PARASITE, 1);
-						playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
-					}
-				}
-				else
-				{
-					giveItems(qs.getPlayer(), BOUND_DURKA_SPIRIT, 1);
-					takeItems(qs.getPlayer(), -1, DURKA_PARASITE, SPIRIT_NET);
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == TATARU_ZU_HESTUI)
+			case State.CREATED:
 			{
 				htmltext = "30585-01.htm";
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == TATARU_ZU_HESTUI)
+			case State.STARTED:
 			{
-				return htmltext;
-			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case TATARU_ZU_HESTUI:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (qs.isMemoState(1))
+					case TATARU_ZU_HESTUI:
 					{
-						if (hasQuestItems(player, FIRE_CHARM))
+						if (cond == 1)
 						{
-							if (getQuestItemsCount(player, KASHA_BEAR_PELT, KASHA_BLADE_SPIDER_HUSK, FIRST_FIERY_EGG) < 3)
-							{
-								htmltext = "30585-08.html";
-							}
-							else
-							{
-								takeItems(player, -1, FIRE_CHARM, KASHA_BEAR_PELT, KASHA_BLADE_SPIDER_HUSK, FIRST_FIERY_EGG);
-								giveItems(player, HESTUI_MASK, 1);
-								giveItems(player, SECOND_FIERY_EGG, 1);
-								qs.setCond(3, true);
-								htmltext = "30585-09.html";
-							}
+							htmltext = "30585-07.htm";
 						}
-						else if (hasQuestItems(player, HESTUI_MASK, SECOND_FIERY_EGG))
+						else if (cond == 2)
 						{
-							htmltext = "30585-10.html";
+							htmltext = "30585-08.htm";
+							st.setCond(3, true);
+							takeItems(player, FIERY_EGG_1, 1);
+							takeItems(player, FIRE_CHARM, 1);
+							takeItems(player, KASHA_BEAR_PELT, 1);
+							takeItems(player, KASHA_BLADE_SPIDER_HUSK, 1);
+							giveItems(player, FIERY_EGG_2, 1);
+							giveItems(player, HESTUI_MASK, 1);
 						}
-						else if (hasQuestItems(player, TOTEM_SPIRIT_CLAW))
+						else if (cond == 3)
 						{
-							htmltext = "30585-11.html";
+							htmltext = "30585-09.htm";
 						}
-						else if (hasQuestItems(player, TATARUS_LETTER))
+						else if (cond == 4)
 						{
-							htmltext = "30585-15.html";
+							htmltext = "30585-10.htm";
 						}
-						else if (hasAtLeastOneQuestItem(player, GRIZZLY_BLOOD, FLAME_CHARM, BLOOD_CAULDRON, SPIRIT_NET, BOUND_DURKA_SPIRIT, TOTEM_SPIRIT_BLOOD))
+						else if (cond == 5)
 						{
-							htmltext = "30585-16.html";
+							htmltext = "30585-12.htm";
 						}
+						else if ((cond > 5) && (cond < 12))
+						{
+							htmltext = "30585-13.htm";
+						}
+						else if (cond == 12)
+						{
+							htmltext = "30585-11c.htm";
+						}
+						break;
 					}
-					else if (qs.isMemoState(100))
+					case HESTUI_TOTEM_SPIRIT:
 					{
-						htmltext = "30585-14.html";
-					}
-					break;
-				}
-				case UMOS:
-				{
-					if (qs.isMemoState(1))
-					{
-						if (hasQuestItems(player, TATARUS_LETTER))
+						if (cond == 3)
 						{
+							htmltext = "30592-01.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = "30592-04.htm";
+						}
+						else if ((cond > 4) && (cond < 12))
+						{
+							htmltext = "30592-05.htm";
+						}
+						break;
+					}
+					case UMOS:
+					{
+						if (cond == 5)
+						{
+							htmltext = "30502-01.htm";
+							st.setCond(6, true);
+							takeItems(player, TATARU_LETTER, 1);
 							giveItems(player, FLAME_CHARM, 1);
-							takeItems(player, TATARUS_LETTER, -1);
-							qs.setCond(6, true);
-							htmltext = "30502-01.html";
 						}
-						else if (hasQuestItems(player, FLAME_CHARM))
+						else if (cond == 6)
 						{
-							if (getQuestItemsCount(player, GRIZZLY_BLOOD) < 3)
-							{
-								htmltext = "30502-02.html";
-							}
-							else
-							{
-								takeItems(player, -1, FLAME_CHARM, GRIZZLY_BLOOD);
-								giveItems(player, BLOOD_CAULDRON, 1);
-								qs.setCond(8, true);
-								htmltext = "30502-03.html";
-							}
+							htmltext = "30502-02.htm";
 						}
-						else if (hasQuestItems(player, BLOOD_CAULDRON))
+						else if (cond == 7)
 						{
-							htmltext = "30502-04.html";
+							htmltext = "30502-03.htm";
+							st.setCond(8, true);
+							takeItems(player, FLAME_CHARM, 1);
+							takeItems(player, GRIZZLY_BLOOD, 3);
+							giveItems(player, BLOOD_CAULDRON, 1);
 						}
-						else if (hasAtLeastOneQuestItem(player, BOUND_DURKA_SPIRIT, SPIRIT_NET))
+						else if (cond == 8)
 						{
-							htmltext = "30502-05.html";
+							htmltext = "30502-04.htm";
 						}
-						else if (hasQuestItems(player, TOTEM_SPIRIT_BLOOD))
+						else if ((cond == 9) || (cond == 10))
 						{
-							htmltext = "30502-06.html";
+							htmltext = "30502-05.htm";
 						}
+						else if (cond == 11)
+						{
+							htmltext = "30502-06.htm";
+						}
+						break;
 					}
-					break;
-				}
-				case DUDA_MARA_TOTEM_SPIRIT:
-				{
-					if (qs.isMemoState(1))
+					case MOIRA:
 					{
-						if (hasQuestItems(player, BLOOD_CAULDRON))
+						if (cond == 12)
 						{
-							htmltext = "30593-01.html";
+							htmltext = "31979-01.htm";
+							st.setCond(13, true);
 						}
-						else if (hasQuestItems(player, SPIRIT_NET) && !hasQuestItems(player, BOUND_DURKA_SPIRIT))
+						else if ((cond > 12) && (cond < 21))
 						{
-							htmltext = "30593-04.html";
+							htmltext = "31979-02.htm";
 						}
-						else if (!hasQuestItems(player, SPIRIT_NET) && hasQuestItems(player, BOUND_DURKA_SPIRIT))
+						else if (cond == 21)
 						{
-							takeItems(player, BOUND_DURKA_SPIRIT, -1);
+							htmltext = "31979-03.htm";
+							giveItems(player, MASK_OF_MEDIUM, 1);
+							addExpAndSp(player, 3200, 3250);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
+						}
+						break;
+					}
+					case TOTEM_SPIRIT_OF_GANDI:
+					{
+						if (cond == 13)
+						{
+							htmltext = "32057-01.htm";
+						}
+						else if ((cond > 13) && (cond < 20))
+						{
+							htmltext = "32057-03.htm";
+						}
+						else if (cond == 20)
+						{
+							htmltext = "32057-04.htm";
+						}
+						break;
+					}
+					case DUDA_MARA_TOTEM_SPIRIT:
+					{
+						if (cond == 8)
+						{
+							htmltext = "30593-01.htm";
+						}
+						else if (cond == 9)
+						{
+							htmltext = "30593-04.htm";
+						}
+						else if (cond == 10)
+						{
+							htmltext = "30593-05.htm";
+							st.setCond(11, true);
+							takeItems(player, BOUND_DURKA_SPIRIT, 1);
 							giveItems(player, TOTEM_SPIRIT_BLOOD, 1);
-							qs.setCond(11, true);
-							htmltext = "30593-05.html";
 						}
-						else if (hasQuestItems(player, TOTEM_SPIRIT_BLOOD))
+						else if (cond == 11)
 						{
-							htmltext = "30593-06.html";
+							htmltext = "30593-06.htm";
 						}
+						break;
 					}
-					break;
-				}
-				case HESTUI_TOTEM_SPIRIT:
-				{
-					if (qs.isMemoState(1))
+					case DEAD_LEOPARD_CARCASS:
 					{
-						if (hasQuestItems(player, HESTUI_MASK, SECOND_FIERY_EGG))
+						if (cond == 14)
 						{
-							htmltext = "30592-01.html";
+							htmltext = "32090-01a.htm";
 						}
-						else if (hasQuestItems(player, TOTEM_SPIRIT_CLAW))
+						else if (cond == 15)
 						{
-							htmltext = "30592-04.html";
+							htmltext = "32090-01.htm";
+							st.setCond(16, true);
 						}
-						else if (hasAtLeastOneQuestItem(player, GRIZZLY_BLOOD, FLAME_CHARM, BLOOD_CAULDRON, SPIRIT_NET, BOUND_DURKA_SPIRIT, TOTEM_SPIRIT_BLOOD, TATARUS_LETTER))
+						else if (cond == 16)
 						{
-							htmltext = "30592-05.html";
+							htmltext = "32090-01b.htm";
 						}
+						else if (cond == 17)
+						{
+							htmltext = "32090-02.htm";
+						}
+						else if (cond == 18)
+						{
+							htmltext = "32090-05.htm";
+						}
+						else if (cond == 19)
+						{
+							htmltext = "32090-06.htm";
+							st.setCond(20, true);
+						}
+						break;
 					}
-					break;
 				}
+				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case KASHA_BEAR:
+			{
+				if (st.isCond(1) && !hasQuestItems(player, KASHA_BEAR_PELT))
+				{
+					giveItems(player, KASHA_BEAR_PELT, 1);
+					if (hasQuestItems(player, FIERY_EGG_1, KASHA_BLADE_SPIDER_HUSK))
+					{
+						st.setCond(2, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case KASHA_BLADE_SPIDER:
+			{
+				if (st.isCond(1) && !hasQuestItems(player, KASHA_BLADE_SPIDER_HUSK))
+				{
+					giveItems(player, KASHA_BLADE_SPIDER_HUSK, 1);
+					if (hasQuestItems(player, KASHA_BEAR_PELT, FIERY_EGG_1))
+					{
+						st.setCond(2, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case SCARLET_SALAMANDER:
+			{
+				if (st.isCond(1) && !hasQuestItems(player, FIERY_EGG_1))
+				{
+					giveItems(player, FIERY_EGG_1, 1);
+					if (hasQuestItems(player, KASHA_BEAR_PELT, KASHA_BLADE_SPIDER_HUSK))
+					{
+						st.setCond(2, true);
+					}
+					else
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case GRIZZLY_BEAR:
+			{
+				if (st.isCond(6))
+				{
+					giveItems(player, GRIZZLY_BLOOD, 1);
+					if (getQuestItemsCount(player, GRIZZLY_BLOOD) < 3)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+					else
+					{
+						st.setCond(7, true);
+					}
+				}
+				break;
+			}
+			case VENOMOUS_SPIDER:
+			case ARACHNID_TRACKER:
+			{
+				if (st.isCond(9))
+				{
+					final int count = (int) getQuestItemsCount(player, DURKA_PARASITE);
+					final int rnd = getRandom(10);
+					if (((count == 5) && (rnd < 1)) || (((count == 6) || (count == 7)) && (rnd < 2)) || (count >= 8))
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_BEFORE_BATTLE);
+						takeItems(player, DURKA_PARASITE, -1);
+						addSpawn(DURKA_SPIRIT, npc, false, 120000);
+					}
+					else
+					{
+						giveItems(player, DURKA_PARASITE, 1);
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					}
+				}
+				break;
+			}
+			case DURKA_SPIRIT:
+			{
+				if (st.isCond(9))
+				{
+					st.setCond(10, true);
+					takeItems(player, DURKA_PARASITE, -1);
+					takeItems(player, SPIRIT_NET, 1);
+					giveItems(player, BOUND_DURKA_SPIRIT, 1);
+				}
+				break;
+			}
+			case BLACK_LEOPARD:
+			{
+				if (st.isCond(14))
+				{
+					if (st.getInt("leopard") > 0)
+					{
+						st.setCond(15, true);
+						
+						if (getRandom(3) < 2)
+						{
+							npc.broadcastSay(ChatType.GENERAL, "My dear friend of " + player.getName() + ", who has gone on ahead of me!");
+						}
+					}
+					else
+					{
+						st.set("leopard", "1");
+					}
+				}
+				else if (st.isCond(16))
+				{
+					st.setCond(17, true);
+					
+					if (getRandom(3) < 2)
+					{
+						npc.broadcastSay(ChatType.GENERAL, "Listen to Tejakar Gandi, young Oroka! The spirit of the slain leopard is calling you, " + player.getName() + "!");
+					}
+				}
+				else if (st.isCond(18))
+				{
+					st.setCond(19, true);
+				}
+				break;
+			}
+		}
+		
+		return null;
 	}
 }

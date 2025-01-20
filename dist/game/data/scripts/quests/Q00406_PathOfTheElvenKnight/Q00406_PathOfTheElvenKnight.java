@@ -16,88 +16,56 @@
  */
 package quests.Q00406_PathOfTheElvenKnight;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.enums.ClassId;
 import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.holders.ItemChanceHolder;
 import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
+import org.l2jmobius.gameserver.model.quest.State;
 import org.l2jmobius.gameserver.network.serverpackets.SocialAction;
-import org.l2jmobius.gameserver.util.Util;
 
-/**
- * Path Of The Elven Knight (406)
- * @author ivantotov
- */
 public class Q00406_PathOfTheElvenKnight extends Quest
 {
 	// NPCs
-	private static final int BLACKSMITH_KLUTO = 30317;
-	private static final int MASTER_SORIUS = 30327;
+	private static final int SORIUS = 30327;
+	private static final int KLUTO = 30317;
 	// Items
 	private static final int SORIUS_LETTER = 1202;
 	private static final int KLUTO_BOX = 1203;
+	private static final int ELVEN_KNIGHT_BROOCH = 1204;
 	private static final int TOPAZ_PIECE = 1205;
 	private static final int EMERALD_PIECE = 1206;
 	private static final int KLUTO_MEMO = 1276;
-	// Reward
-	private static final int ELVEN_KNIGHT_BROOCH = 1204;
-	// Misc
-	private static final int MIN_LEVEL = 19;
-	// Mobs
-	private static final int OL_MAHUM_NOVICE = 20782;
-	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
-	static
-	{
-		MONSTER_DROPS.put(20035, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Tracker Skeleton
-		MONSTER_DROPS.put(20042, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Tracker Skeleton Leader
-		MONSTER_DROPS.put(20045, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Skeleton Scout
-		MONSTER_DROPS.put(20051, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Skeleton Bowman
-		MONSTER_DROPS.put(20054, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Ruin Spartoi
-		MONSTER_DROPS.put(20060, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Salamander Noble
-		MONSTER_DROPS.put(OL_MAHUM_NOVICE, new ItemChanceHolder(EMERALD_PIECE, 50)); // Ol Mahum Novice
-	}
 	
 	public Q00406_PathOfTheElvenKnight()
 	{
 		super(406);
-		addStartNpc(MASTER_SORIUS);
-		addTalkId(MASTER_SORIUS, BLACKSMITH_KLUTO);
-		addKillId(MONSTER_DROPS.keySet());
 		registerQuestItems(SORIUS_LETTER, KLUTO_BOX, TOPAZ_PIECE, EMERALD_PIECE, KLUTO_MEMO);
+		addStartNpc(SORIUS);
+		addTalkId(SORIUS, KLUTO);
+		addKillId(20035, 20042, 20045, 20051, 20054, 20060, 20782);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if (qs == null)
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = null;
 		switch (event)
 		{
-			case "ACCEPT":
+			case "30327-05.htm":
 			{
 				if (player.getClassId() != ClassId.ELVEN_FIGHTER)
 				{
-					if (player.getClassId() == ClassId.ELVEN_KNIGHT)
-					{
-						htmltext = "30327-02a.htm";
-					}
-					else
-					{
-						htmltext = "30327-02.htm";
-					}
+					htmltext = (player.getClassId() == ClassId.ELVEN_KNIGHT) ? "30327-02a.htm" : "30327-02.htm";
 				}
-				else if (player.getLevel() < MIN_LEVEL)
+				else if (player.getLevel() < 19)
 				{
 					htmltext = "30327-03.htm";
 				}
@@ -105,174 +73,153 @@ public class Q00406_PathOfTheElvenKnight extends Quest
 				{
 					htmltext = "30327-04.htm";
 				}
-				else
-				{
-					htmltext = "30327-05.htm";
-				}
 				break;
 			}
 			case "30327-06.htm":
 			{
-				qs.startQuest();
-				htmltext = event;
+				st.startQuest();
 				break;
 			}
-			case "30317-02.html":
+			case "30317-02.htm":
 			{
+				st.setCond(4, true);
 				takeItems(player, SORIUS_LETTER, 1);
-				if (!hasQuestItems(player, KLUTO_MEMO))
-				{
-					giveItems(player, KLUTO_MEMO, 1);
-				}
-				qs.setCond(4, true);
-				htmltext = event;
+				giveItems(player, KLUTO_MEMO, 1);
 				break;
 			}
-		}
-		return htmltext;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getQuestState(killer, false);
-		final ItemChanceHolder reward = MONSTER_DROPS.get(npc.getId());
-		int requiredItemId = KLUTO_BOX;
-		int cond = 2;
-		boolean check = !hasQuestItems(killer, requiredItemId);
-		if (npc.getId() == OL_MAHUM_NOVICE)
-		{
-			requiredItemId = KLUTO_MEMO;
-			cond = 5;
-			check = hasQuestItems(killer, requiredItemId);
 		}
 		
-		if ((qs != null) && qs.isStarted() && Util.checkIfInRange(Config.ALT_PARTY_RANGE, npc, killer, false) && check && (getQuestItemsCount(killer, reward.getId()) < 20) && (getRandom(100) < reward.getChance()))
-		{
-			giveItems(killer, reward);
-			if (getQuestItemsCount(killer, reward.getId()) == 20)
-			{
-				qs.setCond(cond, true);
-			}
-			else
-			{
-				playSound(killer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
-			}
-		}
-		return super.onKill(npc, killer, isSummon);
+		return htmltext;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		if (qs.isCreated())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
-			if (npc.getId() == MASTER_SORIUS)
+			case State.CREATED:
 			{
 				htmltext = "30327-01.htm";
+				break;
 			}
-		}
-		else if (qs.isCompleted())
-		{
-			if (npc.getId() == MASTER_SORIUS)
+			case State.STARTED:
 			{
-				return htmltext;
-			}
-		}
-		else if (qs.isStarted())
-		{
-			switch (npc.getId())
-			{
-				case MASTER_SORIUS:
+				final int cond = st.getCond();
+				switch (npc.getId())
 				{
-					if (!hasQuestItems(player, KLUTO_BOX))
+					case SORIUS:
 					{
-						if (!hasQuestItems(player, TOPAZ_PIECE))
+						if (cond == 1)
 						{
-							htmltext = "30327-07.html";
+							htmltext = (!hasQuestItems(player, TOPAZ_PIECE)) ? "30327-07.htm" : "30327-08.htm";
 						}
-						else if (hasQuestItems(player, TOPAZ_PIECE) && (getQuestItemsCount(player, TOPAZ_PIECE) < 20))
+						else if (cond == 2)
 						{
-							htmltext = "30327-08.html";
+							htmltext = "30327-09.htm";
+							st.setCond(3, true);
+							giveItems(player, SORIUS_LETTER, 1);
 						}
-						else if (!hasAtLeastOneQuestItem(player, KLUTO_MEMO, SORIUS_LETTER) && (getQuestItemsCount(player, TOPAZ_PIECE) >= 20))
+						else if ((cond > 2) && (cond < 6))
 						{
-							if (!hasQuestItems(player, SORIUS_LETTER))
-							{
-								giveItems(player, SORIUS_LETTER, 1);
-							}
-							qs.setCond(3, true);
-							htmltext = "30327-09.html";
+							htmltext = "30327-11.htm";
 						}
-						else if ((getQuestItemsCount(player, TOPAZ_PIECE) >= 20) && hasAtLeastOneQuestItem(player, SORIUS_LETTER, KLUTO_MEMO))
+						else if (cond == 6)
 						{
-							htmltext = "30327-11.html";
+							htmltext = "30327-10.htm";
+							takeItems(player, KLUTO_BOX, 1);
+							takeItems(player, KLUTO_MEMO, 1);
+							giveItems(player, ELVEN_KNIGHT_BROOCH, 1);
+							addExpAndSp(player, 3200, 2280);
+							player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
+							st.exitQuest(true, true);
 						}
+						break;
+					}
+					case KLUTO:
+					{
+						if (cond == 3)
+						{
+							htmltext = "30317-01.htm";
+						}
+						else if (cond == 4)
+						{
+							htmltext = (!hasQuestItems(player, EMERALD_PIECE)) ? "30317-03.htm" : "30317-04.htm";
+						}
+						else if (cond == 5)
+						{
+							htmltext = "30317-05.htm";
+							st.setCond(6, true);
+							takeItems(player, EMERALD_PIECE, -1);
+							takeItems(player, TOPAZ_PIECE, -1);
+							giveItems(player, KLUTO_BOX, 1);
+						}
+						else if (cond == 6)
+						{
+							htmltext = "30317-06.htm";
+						}
+						break;
+					}
+				}
+				break;
+			}
+		}
+		
+		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isStarted())
+		{
+			return null;
+		}
+		
+		switch (npc.getId())
+		{
+			case 20035:
+			case 20042:
+			case 20045:
+			case 20051:
+			case 20054:
+			case 20060:
+			{
+				if (st.isCond(1) && (getRandom(10) < 7))
+				{
+					giveItems(player, TOPAZ_PIECE, 1);
+					if (getQuestItemsCount(player, TOPAZ_PIECE) < 20)
+					{
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
 					else
 					{
-						if (!hasQuestItems(player, ELVEN_KNIGHT_BROOCH))
-						{
-							giveItems(player, ELVEN_KNIGHT_BROOCH, 1);
-						}
-						final int level = player.getLevel();
-						if (level >= 20)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else if (level == 19)
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						else
-						{
-							addExpAndSp(player, 80314, 5087);
-						}
-						qs.exitQuest(false, true);
-						player.sendPacket(new SocialAction(player.getObjectId(), 3));
-						htmltext = "30327-10.html";
+						st.setCond(2, true);
 					}
-					break;
 				}
-				case BLACKSMITH_KLUTO:
+				break;
+			}
+			case 20782:
+			{
+				if (st.isCond(4) && (getRandom(10) < 5))
 				{
-					if (!hasQuestItems(player, KLUTO_BOX))
+					giveItems(player, EMERALD_PIECE, 1);
+					if (getQuestItemsCount(player, EMERALD_PIECE) < 20)
 					{
-						if (hasQuestItems(player, SORIUS_LETTER) && (getQuestItemsCount(player, TOPAZ_PIECE) >= 20))
-						{
-							htmltext = "30317-01.html";
-						}
-						else if (!hasQuestItems(player, EMERALD_PIECE) && hasQuestItems(player, KLUTO_MEMO) && (getQuestItemsCount(player, TOPAZ_PIECE) >= 20))
-						{
-							htmltext = "30317-03.html";
-						}
-						else if (hasQuestItems(player, KLUTO_MEMO, EMERALD_PIECE) && (getQuestItemsCount(player, TOPAZ_PIECE) >= 20) && (getQuestItemsCount(player, EMERALD_PIECE) < 20))
-						{
-							htmltext = "30317-04.html";
-						}
-						else if (hasQuestItems(player, KLUTO_MEMO) && (getQuestItemsCount(player, TOPAZ_PIECE) >= 20) && (getQuestItemsCount(player, EMERALD_PIECE) >= 20))
-						{
-							if (!hasQuestItems(player, KLUTO_BOX))
-							{
-								giveItems(player, KLUTO_BOX, 1);
-							}
-							takeItems(player, TOPAZ_PIECE, -1);
-							takeItems(player, EMERALD_PIECE, -1);
-							takeItems(player, KLUTO_MEMO, 1);
-							qs.setCond(6, true);
-							htmltext = "30317-05.html";
-						}
+						playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					}
-					else if (hasQuestItems(player, KLUTO_BOX))
+					else
 					{
-						htmltext = "30317-06.html";
+						st.setCond(5, true);
 					}
-					break;
 				}
+				break;
 			}
 		}
-		return htmltext;
+		
+		return null;
 	}
 }

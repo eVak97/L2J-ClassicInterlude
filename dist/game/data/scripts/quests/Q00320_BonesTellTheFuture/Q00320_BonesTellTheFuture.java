@@ -16,6 +16,7 @@
  */
 package quests.Q00320_BonesTellTheFuture;
 
+import org.l2jmobius.gameserver.enums.QuestSound;
 import org.l2jmobius.gameserver.enums.Race;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -23,87 +24,104 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.quest.QuestState;
 import org.l2jmobius.gameserver.model.quest.State;
 
-/**
- * Bones Tell The Future (320)
- * @author ivantotov
- */
 public class Q00320_BonesTellTheFuture extends Quest
 {
-	// NPC
-	private static final int TETRACH_KAITAR = 30359;
 	// Item
 	private static final int BONE_FRAGMENT = 809;
-	// Misc
-	private static final int MIN_LEVEL = 10;
-	private static final int REQUIRED_BONE_COUNT = 10;
-	private static final double DROP_CHANCE = 0.18;
-	// Monsters
-	private static final int[] MONSTERS =
-	{
-		20517, // Skeleton Hunter
-		20518, // Skeleton Hunter Archer
-	};
 	
 	public Q00320_BonesTellTheFuture()
 	{
 		super(320);
-		addStartNpc(TETRACH_KAITAR);
-		addTalkId(TETRACH_KAITAR);
-		addKillId(MONSTERS);
 		registerQuestItems(BONE_FRAGMENT);
-		addCondMaxLevel(18, getNoQuestMsg(null));
+		addStartNpc(30359); // Kaitar
+		addTalkId(30359);
+		addKillId(20517, 20518);
 	}
 	
 	@Override
 	public String onEvent(String event, Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, false);
-		if ((qs != null) && event.equals("30359-04.htm"))
+		String htmltext = event;
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
 		{
-			qs.startQuest();
-			return event;
+			return htmltext;
 		}
-		return null;
-	}
-	
-	@Override
-	public String onKill(Npc npc, Player killer, boolean isSummon)
-	{
-		final QuestState qs = getRandomPartyMemberState(killer, 1, 3, npc);
-		if ((qs != null) && giveItemRandomly(killer, npc, BONE_FRAGMENT, 1, REQUIRED_BONE_COUNT, DROP_CHANCE, true))
+		
+		if (event.equals("30359-04.htm"))
 		{
-			qs.setCond(2);
+			st.startQuest();
 		}
-		return super.onKill(npc, killer, isSummon);
+		
+		return event;
 	}
 	
 	@Override
 	public String onTalk(Npc npc, Player player)
 	{
-		final QuestState qs = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		switch (qs.getState())
+		final QuestState st = getQuestState(player, true);
+		
+		switch (st.getState())
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30359-03.htm" : "30359-02.htm" : "30359-00.htm";
+				if (player.getRace() != Race.DARK_ELF)
+				{
+					htmltext = "30359-00.htm";
+				}
+				else if (player.getLevel() < 10)
+				{
+					htmltext = "30359-02.htm";
+				}
+				else
+				{
+					htmltext = "30359-03.htm";
+				}
 				break;
 			}
 			case State.STARTED:
 			{
-				if (getQuestItemsCount(player, BONE_FRAGMENT) >= REQUIRED_BONE_COUNT)
+				if (st.isCond(1))
 				{
-					htmltext = "30359-06.html";
-					giveAdena(player, 500, true);
-					qs.exitQuest(true, true);
+					htmltext = "30359-05.htm";
 				}
 				else
 				{
-					htmltext = "30359-05.html";
+					htmltext = "30359-06.htm";
+					takeItems(player, BONE_FRAGMENT, -1);
+					giveAdena(player, 8470, true);
+					st.exitQuest(true, true);
 				}
 				break;
 			}
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onKill(Npc npc, Player player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if ((st == null) || !st.isCond(1))
+		{
+			return null;
+		}
+		
+		if (getRandom(100) < (npc.getId() == 20517 ? 18 : 20))
+		{
+			giveItems(player, BONE_FRAGMENT, 1);
+			if (getQuestItemsCount(player, BONE_FRAGMENT) < 10)
+			{
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+			}
+			else
+			{
+				st.setCond(2, true);
+			}
+		}
+		
+		return null;
 	}
 }
