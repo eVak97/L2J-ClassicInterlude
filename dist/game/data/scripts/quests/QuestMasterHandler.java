@@ -55,11 +55,18 @@ import quests.Q00034_InSearchOfCloth.Q00034_InSearchOfCloth;
 import quests.Q00035_FindGlitteringJewelry.Q00035_FindGlitteringJewelry;
 import quests.Q00036_MakeASewingKit.Q00036_MakeASewingKit;
 import quests.Q00037_MakeFormalWear.Q00037_MakeFormalWear;
+import quests.Q00038_DragonFangs.Q00038_DragonFangs;
+import quests.Q00039_RedEyedInvaders.Q00039_RedEyedInvaders;
 // import quests.Q00038_DragonFangs.Q00038_DragonFangs;
 // import quests.Q00039_RedEyedInvaders.Q00039_RedEyedInvaders;
 import quests.Q00042_HelpTheUncle.Q00042_HelpTheUncle;
 import quests.Q00043_HelpTheSister.Q00043_HelpTheSister;
 import quests.Q00044_HelpTheSon.Q00044_HelpTheSon;
+import quests.Q00045_ToTalkingIsland.Q00045_ToTalkingIsland;
+import quests.Q00046_OnceMoreInTheArmsOfTheMotherTree.Q00046_OnceMoreInTheArmsOfTheMotherTree;
+import quests.Q00047_IntoTheDarkElvenForest.Q00047_IntoTheDarkElvenForest;
+import quests.Q00048_ToTheImmortalPlateau.Q00048_ToTheImmortalPlateau;
+import quests.Q00049_TheRoadHome.Q00049_TheRoadHome;
 // import quests.Q00045_ToTalkingIsland.Q00045_ToTalkingIsland;
 // import quests.Q00046_OnceMoreInTheArmsOfTheMotherTree.Q00046_OnceMoreInTheArmsOfTheMotherTree;
 // import quests.Q00047_IntoTheDarkElvenForest.Q00047_IntoTheDarkElvenForest;
@@ -477,16 +484,16 @@ public class QuestMasterHandler
 		Q00035_FindGlitteringJewelry.class,
 		Q00036_MakeASewingKit.class,
 		Q00037_MakeFormalWear.class,
-		// Q00038_DragonFangs.class,
-		// Q00039_RedEyedInvaders.class,
+		Q00038_DragonFangs.class, // Added, need html work and test.
+		Q00039_RedEyedInvaders.class, // Added, need html work and test.
 		Q00042_HelpTheUncle.class,
 		Q00043_HelpTheSister.class,
 		Q00044_HelpTheSon.class,
-		// Q00045_ToTalkingIsland.class,
-		// Q00046_OnceMoreInTheArmsOfTheMotherTree.class,
-		// Q00047_IntoTheDarkElvenForest.class,
-		// Q00048_ToTheImmortalPlateau.class,
-		// Q00049_TheRoadHome.class,
+		Q00045_ToTalkingIsland.class, // Added, need html work and test.
+		Q00046_OnceMoreInTheArmsOfTheMotherTree.class, // Added, need html work and test.
+		Q00047_IntoTheDarkElvenForest.class, // Added, need html work and test.
+		Q00048_ToTheImmortalPlateau.class, // Added, need html work and test.
+		Q00049_TheRoadHome.class, // Added, need html work and test.
 		Q00050_LanoscosSpecialBait.class,
 		Q00051_OFullesSpecialBait.class,
 		Q00052_WilliesSpecialBait.class,
