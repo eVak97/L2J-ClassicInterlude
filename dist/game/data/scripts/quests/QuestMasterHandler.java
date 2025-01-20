@@ -326,6 +326,10 @@ import quests.Q00620_FourGoblets.Q00620_FourGoblets;
 // import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 import quests.Q00622_SpecialtyLiquorDelivery.Q00622_SpecialtyLiquorDelivery;
 import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
+import quests.Q00624_TheFinestIngredientsPart1.Q00624_TheFinestIngredientsPart1;
+import quests.Q00625_TheFinestIngredientsPart2.Q00625_TheFinestIngredientsPart2;
+import quests.Q00626_ADarkTwilight.Q00626_ADarkTwilight;
+import quests.Q00627_HeartInSearchOfPower.Q00627_HeartInSearchOfPower;
 // import quests.Q00624_TheFinestIngredientsPart1.Q00624_TheFinestIngredientsPart1;
 // import quests.Q00625_TheFinestIngredientsPart2.Q00625_TheFinestIngredientsPart2;
 // import quests.Q00626_ADarkTwilight.Q00626_ADarkTwilight;
@@ -689,10 +693,10 @@ public class QuestMasterHandler
 		// Q00621_EggDelivery.class,
 		Q00622_SpecialtyLiquorDelivery.class,
 		Q00623_TheFinestFood.class,
-		// Q00624_TheFinestIngredientsPart1.class,
-		// Q00625_TheFinestIngredientsPart2.class,
-		// Q00626_ADarkTwilight.class,
-		// Q00627_HeartInSearchOfPower.class,
+		Q00624_TheFinestIngredientsPart1.class, // Added, need html work and test.
+		Q00625_TheFinestIngredientsPart2.class, // Added, need html work and test.
+		Q00626_ADarkTwilight.class, // Added, need html work and test.
+		Q00627_HeartInSearchOfPower.class, // Added, need html work and test.
 		Q00628_HuntGoldenRam.class,
 		Q00629_CleanUpTheSwampOfScreams.class, // Added, need html work and test.
 		Q00631_DeliciousTopChoiceMeat.class, // Added, need html work and test.
