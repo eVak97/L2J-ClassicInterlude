@@ -54,8 +54,8 @@ import org.l2jmobius.gameserver.network.serverpackets.SystemMessage;
  */
 public class ClanHall extends AbstractResidence
 {
+	private static final Logger LOGGER = Logger.getLogger(ClanHall.class.getName());
 	
-	protected static final Logger LOGGER = Logger.getLogger(ClanHall.class.getName());
 	// Static parameters
 	private final ClanHallType _type;
 	private final int _minBid;
