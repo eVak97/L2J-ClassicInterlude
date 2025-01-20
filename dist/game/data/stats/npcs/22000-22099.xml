@@ -636,6 +636,658 @@
 			<height normal="21" />
 		</collision>
 	</npc>
+	<npc id="22008" level="30" type="Monster" name="Grave Robber Fighter">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="88" />
+			<param name="MoveAroundSocial2" value="170" />
+			<param name="SoulShot" value="200" />
+			<param name="SoulShotRate" value="5" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="10" />
+			<param name="LongRangeGuardRate" value="10" />
+			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="8528" /> <!-- rhand: For Monsters Only (Doom Hammer) -->
+		<acquire exp="1281" sp="70" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="604.08419" hpRegen="3.5" mp="329.4" mpRegen="1.5" />
+			<attack physical="92.64226" magical="63.26266" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="118.46427" magical="86.68702" />
+			<speed>
+				<walk ground="36" />
+				<run ground="110" />
+			</speed>
+			<hitTime>630</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>THIEF</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="234" max="468" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0162">
+					<item id="377" min="1" max="1" chance="100" /> <!-- Scale Gaiters -->
+				</group>
+				<group chance="4.6238">
+					<item id="1935" min="1" max="1" chance="5.75284" /> <!-- Scale Mail Fragment -->
+					<item id="1882" min="1" max="1" chance="27.034" /> <!-- Leather -->
+					<item id="1881" min="1" max="1" chance="17.7278" /> <!-- Coarse Bone Powder -->
+					<item id="1880" min="1" max="1" chance="9.6544" /> <!-- Steel -->
+					<item id="1877" min="1" max="1" chance="3.98374" /> <!-- Adamantite Nugget -->
+					<item id="1876" min="1" max="1" chance="20.4031" /> <!-- Mithril Ore -->
+					<item id="956" min="1" max="1" chance="3.08621" /> <!-- Scroll: Enchant Armor (Grade D) -->
+					<item id="1937" min="1" max="1" chance="12.3578" /> <!-- Scale Gaiters Fragment -->
+				</group>
+				<group chance="42">
+					<item id="8600" min="1" max="1" chance="55" /> <!-- Herb of Life -->
+					<item id="8601" min="1" max="1" chance="38" /> <!-- Greater Herb of Life -->
+					<item id="8602" min="1" max="1" chance="7" /> <!-- Superior Herb of Life -->
+				</group>
+				<group chance="11">
+					<item id="8603" min="1" max="1" chance="26" /> <!-- Herb of Mana -->
+					<item id="8604" min="1" max="1" chance="65" /> <!-- Greater Herb of Mana -->
+					<item id="8605" min="1" max="1" chance="9" /> <!-- Superior Herb of Mana -->
+				</group>
+				<group chance="25">
+					<item id="8606" min="1" max="1" chance="34" /> <!-- Herb of Power -->
+					<item id="8608" min="1" max="1" chance="33" /> <!-- Herb of Atk. Spd. -->
+					<item id="8610" min="1" max="1" chance="33" /> <!-- Herb of Critical Attack. -->
+				</group>
+				<group chance="10">
+					<item id="8607" min="1" max="1" chance="50" /> <!-- Herb of Magic -->
+					<item id="8609" min="1" max="1" chance="50" /> <!-- Herb of Casting Spd. -->
+				</group>
+				<group chance="1">
+					<item id="8612" min="1" max="1" chance="33" /> <!-- Herb of the Warrior -->
+					<item id="8613" min="1" max="1" chance="33" /> <!-- Herb of the Mystic -->
+					<item id="8614" min="1" max="1" chance="34" /> <!-- Herb of Recovery -->
+				</group>
+				<group chance="11">
+					<item id="8611" min="1" max="1" chance="100" /> <!-- Herb of Speed -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="955" min="1" max="1" chance="0.5" /> <!-- Scroll: Enchant Weapon (Grade D) -->
+				<item id="1877" min="1" max="1" chance="2.5" /> <!-- Adamantite Nugget -->
+				<item id="1881" min="1" max="2" chance="5.8667" /> <!-- Coarse Bone Powder -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="8" />
+			<height normal="17.5" />
+		</collision>
+	</npc>
+	<npc id="22009" level="31" type="Monster" name="Ghost of a Loyal Vassal">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="SelfBuff1" id="4089" level="1" /> <!-- NPC Bear Spirit Totem -->
+			<skill name="SelfBuff2" id="4090" level="1" /> <!-- NPC Wolf Spirit Totem -->
+			<skill name="SelfBuff3" id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
+			<skill name="SelfBuff4" id="4092" level="1" /> <!-- NPC Puma Spirit Totem -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8532" /> <!-- rhand: For Monsters Only (Spinebone Sword) -->
+		<acquire exp="1404" sp="78" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="635.76437" hpRegen="4.5" mp="343.8" mpRegen="1.8" />
+			<attack physical="99.21986" magical="67.7543" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="121.98819" magical="89.26566" />
+			<speed>
+				<walk ground="45" />
+				<run ground="120" />
+			</speed>
+			<hitTime>260</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4089" level="1" /> <!-- NPC Bear Spirit Totem -->
+			<skill id="4090" level="1" /> <!-- NPC Wolf Spirit Totem -->
+			<skill id="4091" level="1" /> <!-- NPC Ogre Spirit Totem -->
+			<skill id="4092" level="1" /> <!-- NPC Puma Spirit Totem -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="226" max="451" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0934">
+					<item id="848" min="1" max="1" chance="21.8415" /> <!-- Enchanted Earring -->
+					<item id="879" min="1" max="1" chance="34.3683" /> <!-- Enchanted Ring -->
+					<item id="911" min="1" max="1" chance="43.7901" /> <!-- Enchanted Necklace -->
+				</group>
+				<group chance="10.0399">
+					<item id="5549" min="1" max="1" chance="4.50702" /> <!-- Metallic Thread -->
+					<item id="1900" min="1" max="1" chance="7.06382" /> <!-- Enchanted Necklace Chain -->
+					<item id="1885" min="1" max="1" chance="4.98013" /> <!-- High Grade Suede -->
+					<item id="1879" min="1" max="1" chance="7.32378" /> <!-- Cokes -->
+					<item id="1875" min="1" max="1" chance="4.74308" /> <!-- Stone of Purity -->
+					<item id="1832" min="1" max="1" chance="55.3352" /> <!-- Greater Antidote -->
+					<item id="1829" min="1" max="1" chance="15.8099" /> <!-- Scroll of Escape: Clan Hall -->
+					<item id="5550" min="1" max="1" chance="0.23705" /> <!-- Durable Metal Plate -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="1832" min="1" max="2" chance="2.5641" /> <!-- Greater Antidote -->
+				<item id="1936" min="1" max="1" chance="0.6882" /> <!-- White Tunic Pattern -->
+				<item id="2184" min="1" max="1" chance="5.8192" /> <!-- Recipe: Mithril Banded Gaiters -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="9" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="22010" level="32" type="Monster" name="Ghost of a General">
+		<parameters>
+			<param name="MoveAroundSocial" value="75" />
+			<param name="MoveAroundSocial1" value="75" />
+			<param name="MoveAroundSocial2" value="75" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<!-- <skill name="SelfBuff" id="4028" level="2" /> --> <!-- NPC Might -->
+			<skill name="PhysicalSpecial" id="4032" level="2" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8532" /> <!-- rhand: For Monsters Only (Spinebone Sword) -->
+		<acquire exp="1449" sp="81" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="668.47132" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
+			<attack physical="106.16525" magical="72.49711" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="125.57727" magical="91.89199" />
+			<speed>
+				<walk ground="45" />
+				<run ground="120" />
+			</speed>
+			<hitTime>460</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4028" level="1" /> <!-- NPC Might -->
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="286" max="575" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.1569">
+					<item id="46" min="1" max="1" chance="62.5239" /> <!-- Bronze Helmet -->
+					<item id="627" min="1" max="1" chance="37.4761" /> <!-- Aspis -->
+				</group>
+				<group chance="18.0337">
+					<item id="1829" min="1" max="1" chance="12.3225" /> <!-- Scroll of Escape: Clan Hall -->
+					<item id="1868" min="1" max="1" chance="69.3147" /> <!-- Thread -->
+					<item id="1873" min="1" max="1" chance="13.5247" /> <!-- Silver Nugget -->
+					<item id="1889" min="1" max="1" chance="1.9946" /> <!-- Compound Braid -->
+					<item id="5549" min="1" max="1" chance="2.84357" /> <!-- Metallic Thread -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="1937" min="1" max="1" chance="0.5714" /> <!-- Scale Gaiters Fragment -->
+				<item id="2021" min="1" max="1" chance="0.6882" /> <!-- Spinebone Sword Blade -->
+				<item id="2185" min="1" max="1" chance="0.8192" /> <!-- Recipe: Iron Boots -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="12" />
+			<height normal="22" />
+		</collision>
+	</npc>
+	<npc id="22011" level="33" type="Monster" name="Ghost of a Batur Chief">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="AreaName" value="21_14_batur_grudge" />
+			<param name="ShoutMsg1" value="1000514" />
+			<param name="ShoutMsg2" value="1000515" />
+			<param name="ShoutMsg4" value="1000145" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8533" /> <!-- rhand: For Monsters Only (Crimson Sword) -->
+		<acquire exp="1515" sp="87" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="45" />
+				<run ground="130" />
+			</speed>
+			<hitTime>760</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="276" max="547" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="18.2291">
+					<item id="1866" min="1" max="1" chance="30.476" /> <!-- Suede -->
+					<item id="1871" min="1" max="1" chance="60.9525" /> <!-- Charcoal -->
+					<item id="1877" min="1" max="1" chance="1.71429" /> <!-- Adamantite Nugget -->
+					<item id="2154" min="1" max="1" chance="6.85717" /> <!-- Recipe: Elven Earring -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="1866" min="1" max="3" chance="7.6923" /> <!-- Suede -->
+				<item id="1871" min="1" max="3" chance="25" /> <!-- Charcoal -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="22012" level="33" type="Monster" name="Ghost of a Batur Chief">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="AreaName" value="21_14_batur_grudge2" />
+			<param name="ShoutMsg1" value="1000514" />
+			<param name="ShoutMsg2" value="1000515" />
+			<param name="ShoutMsg4" value="1000145" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8533" /> <!-- rhand: For Monsters Only (Crimson Sword) -->
+		<acquire exp="1515" sp="87" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="45" />
+				<run ground="130" />
+			</speed>
+			<hitTime>760</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="278" max="539" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="18.2981">
+					<item id="1866" min="1" max="1" chance="26.024" /> <!-- Suede -->
+					<item id="1871" min="1" max="1" chance="68.3131" /> <!-- Charcoal -->
+					<item id="1877" min="1" max="1" chance="2.83144" /> <!-- Adamantite Nugget -->
+					<item id="2155" min="1" max="1" chance="2.83144" /> <!-- Recipe: Elven Ring -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="2154" min="1" max="1" chance="2.5" /> <!-- Recipe: Elven Earring -->
+				<item id="2155" min="1" max="1" chance="2.5" /> <!-- Recipe: Elven Ring -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="22013" level="33" type="Monster" name="Ghost of a Morek Chief">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="AreaName" value="21_14_morek_grudge" />
+			<param name="ShoutMsg1" value="1000514" />
+			<param name="ShoutMsg2" value="1000516" />
+			<param name="ShoutMsg4" value="1000145" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8533" /> <!-- rhand: For Monsters Only (Crimson Sword) -->
+		<acquire exp="1515" sp="87" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="45" />
+				<run ground="130" />
+			</speed>
+			<hitTime>760</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="274" max="546" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="11.8405">
+					<item id="1865" min="1" max="1" chance="52.7849" /> <!-- Varnish -->
+					<item id="1870" min="1" max="1" chance="31.2799" /> <!-- Coal -->
+					<item id="1879" min="1" max="1" chance="7.96757" /> <!-- Cokes -->
+					<item id="2156" min="1" max="1" chance="7.96757" /> <!-- Recipe: Elven Necklace -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="1865" min="1" max="1" chance="2.5" /> <!-- Varnish -->
+				<item id="1870" min="1" max="1" chance="2.5" /> <!-- Coal -->
+				<item id="1939" min="1" max="1" chance="0.5" /> <!-- Mithril Banded Gaiters Material -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="22014" level="33" type="Monster" name="Ghost of a Morek Chief">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="AreaName" value="21_14_morek_grudge2" />
+			<param name="ShoutMsg1" value="1000514" />
+			<param name="ShoutMsg2" value="1000516" />
+			<param name="ShoutMsg4" value="1000145" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8533" /> <!-- rhand: For Monsters Only (Crimson Sword) -->
+		<acquire exp="1515" sp="87" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="45" />
+				<run ground="130" />
+			</speed>
+			<hitTime>760</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="275" max="548" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="28.2207">
+					<item id="1341" min="10" max="29" chance="70.87" /> <!-- Bone Arrow -->
+					<item id="1865" min="1" max="1" chance="7.87436" /> <!-- Varnish -->
+					<item id="1870" min="1" max="1" chance="18.6501" /> <!-- Coal -->
+					<item id="1879" min="1" max="1" chance="2.60553" /> <!-- Cokes -->
+				</group>
+			</drop>
+		</dropLists>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="22015" level="33" type="Monster" name="Ghost of a Turka Chief">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="AreaName" value="21_14_turka_gudege" />
+			<param name="ShoutMsg1" value="1000514" />
+			<param name="ShoutMsg2" value="1000517" />
+			<param name="ShoutMsg4" value="1000145" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8533" /> <!-- rhand: For Monsters Only (Crimson Sword) -->
+		<acquire exp="1515" sp="87" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="45" />
+				<run ground="130" />
+			</speed>
+			<hitTime>760</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="277" max="546" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="5.5031">
+					<item id="1878" min="1" max="1" chance="12.4457" /> <!-- Braided Hemp -->
+					<item id="1884" min="1" max="1" chance="62.6611" /> <!-- Cord -->
+					<item id="5220" min="1" max="1" chance="24.8932" /> <!-- Metal Hardener -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="1884" min="1" max="1" chance="25" /> <!-- Cord -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="22016" level="33" type="Monster" name="Ghost of a Turka Chief">
+		<parameters>
+			<param name="MoveAroundSocial" value="70" />
+			<param name="MoveAroundSocial1" value="70" />
+			<param name="MoveAroundSocial2" value="70" />
+			<param name="AreaName" value="21_14_turka_gudege2" />
+			<param name="ShoutMsg1" value="1000514" />
+			<param name="ShoutMsg2" value="1000517" />
+			<param name="ShoutMsg4" value="1000145" />
+			<param name="SoulShot" value="100" />
+			<param name="SoulShotRate" value="10" />
+			<param name="SpiritShot" value="100" />
+			<param name="SpiritShotRate" value="5" />
+			<param name="LongRangeGuardRate" value="5" />
+			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8533" /> <!-- rhand: For Monsters Only (Crimson Sword) -->
+		<acquire exp="1515" sp="87" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
+			<attack physical="113.49065" magical="77.49941" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="129.23095" magical="94.5656" />
+			<speed>
+				<walk ground="45" />
+				<run ground="130" />
+			</speed>
+			<hitTime>760</hitTime>
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4032" level="1" /> <!-- NPC Strike -->
+			<skill id="4274" level="3" /> <!-- Blunt Weapon Weak Point -->
+			<skill id="4413" level="13" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4458" level="3" /> <!-- Spear Weapon Weak Point -->
+		</skillList>
+		<shots shotChance="30" spiritChance="30" />
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300">
+			<clanList>
+				<clan>GRUDGE</clan>
+			</clanList>
+		</ai>
+		<dropLists>
+			<drop>
+				<group chance="70">
+					<item id="57" min="275" max="544" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="7.4537">
+					<item id="1878" min="1" max="1" chance="33.5404" /> <!-- Braided Hemp -->
+					<item id="1884" min="1" max="1" chance="49.6894" /> <!-- Cord -->
+					<item id="1889" min="1" max="1" chance="16.7702" /> <!-- Compound Braid -->
+				</group>
+			</drop>
+			<spoil>
+				<item id="1889" min="1" max="1" chance="25" /> <!-- Compound Braid -->
+				<item id="2187" min="1" max="1" chance="0.5862" /> <!-- Recipe: Manticore Skin Shirt -->
+			</spoil>
+		</dropLists>
+		<collision>
+			<radius normal="10" />
+			<height normal="23" />
+		</collision>
+	</npc>	
 	<npc id="22017" level="30" type="Monster" name="Bandit Sweeper">
 		
 		<parameters>
