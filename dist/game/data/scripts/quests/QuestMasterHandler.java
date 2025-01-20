@@ -345,6 +345,8 @@ import quests.Q00640_TheZeroHour.Q00640_TheZeroHour;
 import quests.Q00641_AttackSailren.Q00641_AttackSailren;
 import quests.Q00642_APowerfulPrimevalCreature.Q00642_APowerfulPrimevalCreature;
 import quests.Q00643_RiseAndFallOfTheElrokiTribe.Q00643_RiseAndFallOfTheElrokiTribe;
+import quests.Q00644_GraveRobberAnnihilation.Q00644_GraveRobberAnnihilation;
+import quests.Q00645_GhostsOfBatur.Q00645_GhostsOfBatur;
 import quests.Q00660_AidingTheFloranVillage.Q00660_AidingTheFloranVillage;
 import quests.Q00661_MakingTheHarvestGroundsSafe.Q00661_MakingTheHarvestGroundsSafe;
 // import quests.Q00644_GraveRobberAnnihilation.Q00644_GraveRobberAnnihilation;
@@ -701,8 +703,8 @@ public class QuestMasterHandler
 		Q00641_AttackSailren.class,
 		Q00642_APowerfulPrimevalCreature.class,
 		Q00643_RiseAndFallOfTheElrokiTribe.class,
-		// Q00644_GraveRobberAnnihilation.class,
-		// Q00645_GhostsOfBatur.class,
+		Q00644_GraveRobberAnnihilation.class,
+		Q00645_GhostsOfBatur.class,
 		// Q00646_SignsOfRevolt.class,
 		// Q00647_InfluxOfMachines.class,
 		// Q00648_AnIceMerchantsDream.class,
