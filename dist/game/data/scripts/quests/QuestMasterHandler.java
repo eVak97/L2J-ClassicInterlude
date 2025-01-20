@@ -134,6 +134,20 @@ import quests.Q00154_SacrificeToTheSea.Q00154_SacrificeToTheSea;
 import quests.Q00155_FindSirWindawood.Q00155_FindSirWindawood;
 import quests.Q00156_MillenniumLove.Q00156_MillenniumLove;
 import quests.Q00157_RecoverSmuggledGoods.Q00157_RecoverSmuggledGoods;
+import quests.Q00158_SeedOfEvil.Q00158_SeedOfEvil;
+import quests.Q00159_ProtectTheWaterSource.Q00159_ProtectTheWaterSource;
+import quests.Q00160_NerupasRequest.Q00160_NerupasRequest;
+import quests.Q00161_FruitOfTheMotherTree.Q00161_FruitOfTheMotherTree;
+import quests.Q00162_CurseOfTheUndergroundFortress.Q00162_CurseOfTheUndergroundFortress;
+import quests.Q00163_LegacyOfThePoet.Q00163_LegacyOfThePoet;
+import quests.Q00164_BloodFiend.Q00164_BloodFiend;
+import quests.Q00165_ShilensHunt.Q00165_ShilensHunt;
+import quests.Q00166_MassOfDarkness.Q00166_MassOfDarkness;
+import quests.Q00167_DwarvenKinship.Q00167_DwarvenKinship;
+import quests.Q00168_DeliverSupplies.Q00168_DeliverSupplies;
+import quests.Q00169_OffspringOfNightmares.Q00169_OffspringOfNightmares;
+import quests.Q00170_DangerousSeduction.Q00170_DangerousSeduction;
+import quests.Q00171_ActsOfEvil.Q00171_ActsOfEvil;
 // import quests.Q00158_SeedOfEvil.Q00158_SeedOfEvil;
 // import quests.Q00159_ProtectTheWaterSource.Q00159_ProtectTheWaterSource;
 // import quests.Q00160_NerupasRequest.Q00160_NerupasRequest;
@@ -542,20 +556,20 @@ public class QuestMasterHandler
 		Q00155_FindSirWindawood.class,
 		Q00156_MillenniumLove.class,
 		Q00157_RecoverSmuggledGoods.class,
-		// Q00158_SeedOfEvil.class,
-		// Q00159_ProtectTheWaterSource.class,
-		// Q00160_NerupasRequest.class,
-		// Q00161_FruitOfTheMotherTree.class,
-		// Q00162_CurseOfTheUndergroundFortress.class,
-		// Q00163_LegacyOfThePoet.class,
-		// Q00164_BloodFiend.class,
-		// Q00165_ShilensHunt.class,
-		// Q00166_MassOfDarkness.class,
-		// Q00167_DwarvenKinship.class,
-		// Q00168_DeliverSupplies.class,
-		// Q00169_OffspringOfNightmares.class,
-		// Q00170_DangerousSeduction.class,
-		// Q00171_ActsOfEvil.class,
+		Q00158_SeedOfEvil.class, // Added, need html work and test.
+		Q00159_ProtectTheWaterSource.class, // Added, need html work and test.
+		Q00160_NerupasRequest.class, // Added, need html work and test.
+		Q00161_FruitOfTheMotherTree.class, // Added, need html work and test.
+		Q00162_CurseOfTheUndergroundFortress.class, // Added, need html work and test.
+		Q00163_LegacyOfThePoet.class, // Added, need html work and test.
+		Q00164_BloodFiend.class, // Added, need html work and test.
+		Q00165_ShilensHunt.class, // Added, need html work and test.
+		Q00166_MassOfDarkness.class, // Added, need html work and test.
+		Q00167_DwarvenKinship.class, // Added, need html work and test.
+		Q00168_DeliverSupplies.class, // Added, need html work and test.
+		Q00169_OffspringOfNightmares.class, // Added, need html work and test.
+		Q00170_DangerousSeduction.class, // Added, need html work and test.
+		Q00171_ActsOfEvil.class, // Added, need html work and test, check below if the quests are repetible
 		Q00211_TrialOfTheChallenger.class,
 		Q00212_TrialOfDuty.class,
 		Q00213_TrialOfTheSeeker.class,
