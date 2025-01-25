@@ -23,4 +23,4 @@ Things TO DO:
 -Formulas
 -Have a look on multiple handlers
 -conquerable halls
--More to come.
+-More to come
