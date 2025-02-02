@@ -1,384 +1,339 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="31100" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="1" />
 			<param name="PosX" value="118333" />
 			<param name="PosY" value="132800" />
-			<param name="PosZ" value="-4806" />
+			<param name="PosZ" value="-4856" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31101" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="1" />
 			<param name="PosX" value="172351" />
 			<param name="PosY" value="-17600" />
-			<param name="PosZ" value="-4878" />
+			<param name="PosZ" value="-4928" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31102" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="1" />
 			<param name="PosX" value="83146" />
 			<param name="PosY" value="209217" />
-			<param name="PosZ" value="-5416" />
+			<param name="PosZ" value="-5466" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31103" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="-41567" />
 			<param name="PosY" value="209463" />
-			<param name="PosZ" value="-5062" />
+			<param name="PosZ" value="-5114" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31104" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="45248" />
 			<param name="PosY" value="124223" />
-			<param name="PosZ" value="-5390" />
+			<param name="PosZ" value="-5440" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31105" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="110966" />
 			<param name="PosY" value="174015" />
-			<param name="PosZ" value="-5416" />
+			<param name="PosZ" value="-5466" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31106" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="-22076" />
 			<param name="PosY" value="77375" />
-			<param name="PosZ" value="-5150" />
+			<param name="PosZ" value="-5200" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31107" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="-52610" />
 			<param name="PosY" value="79112" />
-			<param name="PosZ" value="-4718" />
+			<param name="PosZ" value="-4768" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31108" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="117980" />
 			<param name="PosY" value="132800" />
-			<param name="PosZ" value="-4808" />
+			<param name="PosZ" value="-4858" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31109" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="172031" />
 			<param name="PosY" value="-17600" />
-			<param name="PosZ" value="-4878" />
+			<param name="PosZ" value="-4928" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31110" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="82700" />
 			<param name="PosY" value="209200" />
-			<param name="PosZ" value="-5382" />
+			<param name="PosZ" value="-5432" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31111" level="70" type="Folk" name="Gatekeeper Ziggurat">
-		
+	<npc id="31111" level="70" type="Folk" name="Gatekeeper Spirit">
 		<parameters>
 			<param name="DuskPosX" value="184464" />
 			<param name="DuskPosY" value="-13104" />
@@ -389,66 +344,59 @@
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="8446" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31112" level="70" type="Folk" name="Gatekeeper Spirit">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31113" level="70" type="SignsPriest" name="Merchant of Mammon">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="203" />
-			<param name="MoveAroundSocial2" value="203" />
 			<param name="PosX1" value="118336" />
 			<param name="PosY1" value="132592" />
 			<param name="PosZ1" value="-4829" />
@@ -476,447 +424,397 @@
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="22" />
 			<height normal="18" />
 		</collision>
 	</npc>
 	<npc id="31114" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="2" />
-			<param name="PosX" value="-52850" />
-			<param name="PosY" value="-250269" />
-			<param name="PosZ" value="-7904" />
+			<param name="PosX" value="-53113" />
+			<param name="PosY" value="-250277" />
+			<param name="PosZ" value="-7934" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31115" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="2" />
 			<param name="PosX" value="46262" />
 			<param name="PosY" value="170303" />
-			<param name="PosZ" value="-4956" />
+			<param name="PosZ" value="-5006" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31116" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="2" />
-			<param name="PosX" value="-20554" />
-			<param name="PosY" value="-250788" />
-			<param name="PosZ" value="-8160" />
+			<param name="PosX" value="-20470" />
+			<param name="PosY" value="-250784" />
+			<param name="PosZ" value="-8190" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31117" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="2" />
 			<param name="PosX" value="140499" />
 			<param name="PosY" value="79679" />
-			<param name="PosZ" value="-5404" />
+			<param name="PosZ" value="-5454" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31118" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="2" />
 			<param name="PosX" value="-19392" />
 			<param name="PosY" value="13500" />
-			<param name="PosZ" value="-4876" />
+			<param name="PosZ" value="-4926" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31119" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="0" />
 			<param name="SignNumber" value="2" />
-			<param name="PosX" value="12947" />
-			<param name="PosY" value="-248487" />
-			<param name="PosZ" value="-9576" />
+			<param name="PosX" value="12780" />
+			<param name="PosY" value="-248482" />
+			<param name="PosZ" value="-9606" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31120" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="42710" />
 			<param name="PosY" value="143930" />
-			<param name="PosZ" value="-5356" />
+			<param name="PosZ" value="-5406" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31121" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="45913" />
 			<param name="PosY" value="170306" />
-			<param name="PosZ" value="-4956" />
+			<param name="PosZ" value="-5008" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31122" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="77147" />
 			<param name="PosY" value="78400" />
-			<param name="PosZ" value="-5102" />
+			<param name="PosZ" value="-5152" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31123" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="140130" />
 			<param name="PosY" value="79681" />
-			<param name="PosZ" value="-5406" />
+			<param name="PosZ" value="-5456" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31124" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="-19737" />
 			<param name="PosY" value="13540" />
-			<param name="PosZ" value="-4876" />
+			<param name="PosZ" value="-4928" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31125" level="70" type="DungeonGatekeeper" name="Gatekeeper Ziggurat">
-		
 		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
 			<param name="Role" value="1" />
 			<param name="PosX" value="113649" />
 			<param name="PosY" value="84546" />
-			<param name="PosZ" value="-6518" />
+			<param name="PosZ" value="-6568" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" evasion="0" shield="0" shieldRate="0" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31126" level="70" type="SignsPriest" name="Blacksmith of Mammon">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="85" />
-			<param name="MoveAroundSocial2" value="140" />
 			<param name="PosX1" value="12629" />
 			<param name="PosY1" value="-248700" />
 			<param name="PosZ1" value="-9584" />
@@ -938,29 +836,28 @@
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>600</hitTime>
 		</stats>
-		<status attackable="false" undying="true" canBeSown="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><corpseTime>7</corpseTime>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="450" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="16.5" />
 		</collision>
 	</npc>
 	<npc id="31127" level="70" type="FestivalGuide" name="Festival Guide" title="Level 31 and Below">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -969,7 +866,7 @@
 			<param name="SibylName" value="dawn_sibyl5" />
 			<param name="escape_x" value="-78936" />
 			<param name="escape_y" value="111274" />
-			<param name="SibylSilhouette" value="31136" />
+			<param name="SibylSilhouette" value="31136" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-79182" />
 			<param name="SibylPosY" value="113194" />
 			<param name="SibylPosZ" value="-4895" />
@@ -977,32 +874,29 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment lhand="5802" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment lhand="5802" /> <!-- lhand: For NPC (Dawn) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="30.5" />
 		</collision>
 	</npc>
-	<npc id="31128" level="70" type="FestivalGuide" name="Festival Guide" title="Level 42 or Below">
-		
+	<npc id="31128" level="70" type="FestivalGuide" name="Festival Guide" title="Level 42 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -1010,7 +904,7 @@
 			<param name="SibylName" value="dawn_sibyl4" />
 			<param name="escape_x" value="-75936" />
 			<param name="escape_y" value="111887" />
-			<param name="SibylSilhouette" value="31135" />
+			<param name="SibylSilhouette" value="31135" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-76175" />
 			<param name="SibylPosY" value="113801" />
 			<param name="SibylPosZ" value="-4895" />
@@ -1018,39 +912,36 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment lhand="5802" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment lhand="5802" /> <!-- lhand: For NPC (Dawn) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="30.5" />
 		</collision>
 	</npc>
-	<npc id="31129" level="70" type="FestivalGuide" name="Festival Guide" title="Level 53 or Below">
-		
+	<npc id="31129" level="70" type="FestivalGuide" name="Festival Guide" title="Level 53 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
 			<param name="RoomIndex" value="3" />
 			<param name="SibylName" value="dawn_sibyl3" />
 			<param name="escape_x" value="-75267" />
-			<param name="SibylSilhouette" value="31134" />
+			<param name="SibylSilhouette" value="31134" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-73829" />
 			<param name="SibylPosY" value="111967" />
 			<param name="SibylPosZ" value="-4895" />
@@ -1058,32 +949,29 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment lhand="5802" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment lhand="5802" /> <!-- lhand: For NPC (Dawn) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="30.5" />
 		</collision>
 	</npc>
-	<npc id="31130" level="70" type="FestivalGuide" name="Festival Guide" title="Level 64 or Below">
-		
+	<npc id="31130" level="70" type="FestivalGuide" name="Festival Guide" title="Level 64 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -1091,7 +979,7 @@
 			<param name="SibylName" value="dawn_sibyl2" />
 			<param name="escape_x" value="-76178" />
 			<param name="escape_y" value="112053" />
-			<param name="SibylSilhouette" value="31133" />
+			<param name="SibylSilhouette" value="31133" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-75920" />
 			<param name="SibylPosY" value="110134" />
 			<param name="SibylPosZ" value="-4895" />
@@ -1099,39 +987,36 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment lhand="5802" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment lhand="5802" /> <!-- lhand: For NPC (Dawn) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="30.5" />
 		</collision>
 	</npc>
 	<npc id="31131" level="70" type="FestivalGuide" name="Festival Guide" title="No Level Limit">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
 			<param name="RoomIndex" value="5" />
 			<param name="SibylName" value="dawn_sibyl1" />
 			<param name="escape_x" value="-79179" />
-			<param name="SibylSilhouette" value="31132" />
+			<param name="SibylSilhouette" value="31132" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-78930" />
 			<param name="SibylPosY" value="109525" />
 			<param name="SibylPosZ" value="-4895" />
@@ -1139,32 +1024,29 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment lhand="5802" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment lhand="5802" /> <!-- lhand: For NPC (Dawn) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="30.5" />
 		</collision>
 	</npc>
 	<npc id="31132" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1221,56 +1103,53 @@
 			<param name="battle2_4x" value="-79380" />
 			<param name="battle2_4y" value="109303" />
 			<param name="coord_z" value="-4895" />
-			<param name="battle1_npc_name" value="18099" />
+			<param name="battle1_npc_name" value="18099" /> <!-- Offering of Forbidden Path, Elder -->
 			<param name="battle1_npc_ai" value="dawn_5_1_corner_leader" />
-			<param name="battle1_archer_name" value="18101" />
+			<param name="battle1_archer_name" value="18101" /> <!-- Offering of Forbidden Path, Archer -->
 			<param name="battle1_archer_ai" value="dawn_5_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18102" />
+			<param name="battle_slow_type_name" value="18102" /> <!-- Offering of Forbidden Path, Warrior -->
 			<param name="battle_slow_type_ai" value="dawn_5_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18103" />
+			<param name="battle_fast_type_name" value="18103" /> <!-- Offering of Forbidden Path, Follower -->
 			<param name="battle_fast_type_ai" value="dawn_5_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18104" />
+			<param name="battle_slow_type_name_ex" value="18104" /> <!-- Offering of Forbidden Path, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dawn_5_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18105" />
+			<param name="battle_fast_type_name_ex" value="18105" /> <!-- Offering of Forbidden Path, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dawn_5_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18106" />
+			<param name="battle_sniper_name" value="18106" /> <!-- Offering of Forbidden Path, Marksman -->
 			<param name="battle_sniper_ai" value="dawn_5_3_mid_archer" />
-			<param name="battle_supporter_name" value="18107" />
+			<param name="battle_supporter_name" value="18107" /> <!-- Offering of Forbidden Path, Disciple -->
 			<param name="battle_supporter_ai" value="dawn_5_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18108" />
+			<param name="battle_supporter_name_ex" value="18108" /> <!-- Offering of Forbidden Path, Saint -->
 			<param name="battle_supporter_ai_ex" value="dawn_5_4_last_trp_2" />
-			<param name="battle_present_name" value="18118" />
+			<param name="battle_present_name" value="18118" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dawn_5_box" />
-			<param name="battle_bomb_man_name" value="18317" />
+			<param name="battle_bomb_man_name" value="18317" /> <!-- Flame of Forbidden Path -->
 			<param name="battle_bomb_man_ai" value="dawn_5_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31133" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1327,56 +1206,53 @@
 			<param name="battle2_4x" value="-76394" />
 			<param name="battle2_4y" value="109930" />
 			<param name="coord_z" value="-4895" />
-			<param name="battle1_npc_name" value="18089" />
+			<param name="battle1_npc_name" value="18089" /> <!-- Dark Omen Offering Elder -->
 			<param name="battle1_npc_ai" value="dawn_4_1_corner_leader" />
-			<param name="battle1_archer_name" value="18091" />
+			<param name="battle1_archer_name" value="18091" /> <!-- Dark Omen Offering Archer -->
 			<param name="battle1_archer_ai" value="dawn_4_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18092" />
+			<param name="battle_slow_type_name" value="18092" /> <!-- Dark Omen Offering Warrior -->
 			<param name="battle_slow_type_ai" value="dawn_4_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18093" />
+			<param name="battle_fast_type_name" value="18093" /> <!-- Dark Omen Offering Follower -->
 			<param name="battle_fast_type_ai" value="dawn_4_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18094" />
+			<param name="battle_slow_type_name_ex" value="18094" /> <!-- Dark Omen Offering Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dawn_4_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18095" />
+			<param name="battle_fast_type_name_ex" value="18095" /> <!-- Dark Omen Offering Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dawn_4_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18096" />
+			<param name="battle_sniper_name" value="18096" /> <!-- Dark Omen Offering Marksman -->
 			<param name="battle_sniper_ai" value="dawn_4_3_mid_archer" />
-			<param name="battle_supporter_name" value="18097" />
+			<param name="battle_supporter_name" value="18097" /> <!-- Dark Omen Offering Disciple -->
 			<param name="battle_supporter_ai" value="dawn_4_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18098" />
+			<param name="battle_supporter_name_ex" value="18098" /> <!-- Dark Omen Offering Saint -->
 			<param name="battle_supporter_ai_ex" value="dawn_4_4_last_trp_2" />
-			<param name="battle_present_name" value="18117" />
+			<param name="battle_present_name" value="18117" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dawn_4_box" />
-			<param name="battle_bomb_man_name" value="18315" />
+			<param name="battle_bomb_man_name" value="18315" /> <!-- Flame of Dark Omen -->
 			<param name="battle_bomb_man_ai" value="dawn_4_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31134" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1433,56 +1309,53 @@
 			<param name="battle2_4x" value="-73627" />
 			<param name="battle2_4y" value="111509" />
 			<param name="coord_z" value="-4895" />
-			<param name="battle1_npc_name" value="18079" />
+			<param name="battle1_npc_name" value="18079" /> <!-- Witch's Offering, Elder -->
 			<param name="battle1_npc_ai" value="dawn_3_1_corner_leader" />
-			<param name="battle1_archer_name" value="18081" />
+			<param name="battle1_archer_name" value="18081" /> <!-- Witch's Offering, Archer -->
 			<param name="battle1_archer_ai" value="dawn_3_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18082" />
+			<param name="battle_slow_type_name" value="18082" /> <!-- Witch's Offering, Warrior -->
 			<param name="battle_slow_type_ai" value="dawn_3_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18083" />
+			<param name="battle_fast_type_name" value="18083" /> <!-- Witch's Offering, Follower -->
 			<param name="battle_fast_type_ai" value="dawn_3_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18084" />
+			<param name="battle_slow_type_name_ex" value="18084" /> <!-- Witch's Offering, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dawn_3_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18085" />
+			<param name="battle_fast_type_name_ex" value="18085" /> <!-- Witch's Offering, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dawn_3_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18086" />
+			<param name="battle_sniper_name" value="18086" /> <!-- Witch's Offering, Marksman -->
 			<param name="battle_sniper_ai" value="dawn_3_3_mid_archer" />
-			<param name="battle_supporter_name" value="18087" />
+			<param name="battle_supporter_name" value="18087" /> <!-- Witch's Offering, Disciple -->
 			<param name="battle_supporter_ai" value="dawn_3_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18088" />
+			<param name="battle_supporter_name_ex" value="18088" /> <!-- Witch's Offering, Saint -->
 			<param name="battle_supporter_ai_ex" value="dawn_3_4_last_trp_2" />
-			<param name="battle_present_name" value="18116" />
+			<param name="battle_present_name" value="18116" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dawn_3_box" />
-			<param name="battle_bomb_man_name" value="18313" />
+			<param name="battle_bomb_man_name" value="18313" /> <!-- Flame of the Witch -->
 			<param name="battle_bomb_man_ai" value="dawn_3_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31135" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1539,56 +1412,53 @@
 			<param name="battle2_4x" value="-75701" />
 			<param name="battle2_4y" value="114007" />
 			<param name="coord_z" value="-4895" />
-			<param name="battle1_npc_name" value="18069" />
+			<param name="battle1_npc_name" value="18069" /> <!-- Apostate's Offering, Elder -->
 			<param name="battle1_npc_ai" value="dawn_2_1_corner_leader" />
-			<param name="battle1_archer_name" value="18071" />
+			<param name="battle1_archer_name" value="18071" /> <!-- Apostate's Offering, Archer -->
 			<param name="battle1_archer_ai" value="dawn_2_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18072" />
+			<param name="battle_slow_type_name" value="18072" /> <!-- Apostate's Offering, Warrior -->
 			<param name="battle_slow_type_ai" value="dawn_2_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18073" />
+			<param name="battle_fast_type_name" value="18073" /> <!-- Apostate's Offering, Follower -->
 			<param name="battle_fast_type_ai" value="dawn_2_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18074" />
+			<param name="battle_slow_type_name_ex" value="18074" /> <!-- Apostate's Offering, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dawn_2_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18075" />
+			<param name="battle_fast_type_name_ex" value="18075" /> <!-- Apostate's Offering, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dawn_2_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18076" />
+			<param name="battle_sniper_name" value="18076" /> <!-- Apostate's Offering, Marksman -->
 			<param name="battle_sniper_ai" value="dawn_2_3_mid_archer" />
-			<param name="battle_supporter_name" value="18077" />
+			<param name="battle_supporter_name" value="18077" /> <!-- Apostate's Offering, Disciple -->
 			<param name="battle_supporter_ai" value="dawn_2_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18078" />
+			<param name="battle_supporter_name_ex" value="18078" /> <!-- Apostate's Offering, Saint -->
 			<param name="battle_supporter_ai_ex" value="dawn_2_4_last_trp_2" />
-			<param name="battle_present_name" value="18115" />
+			<param name="battle_present_name" value="18115" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dawn_2_box" />
-			<param name="battle_bomb_man_name" value="18311" />
+			<param name="battle_bomb_man_name" value="18311" /> <!-- Flame of Apostates -->
 			<param name="battle_bomb_man_ai" value="dawn_2_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31136" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1645,56 +1515,53 @@
 			<param name="battle2_4x" value="-78717" />
 			<param name="battle2_4y" value="113385" />
 			<param name="coord_z" value="-4895" />
-			<param name="battle1_npc_name" value="18059" />
+			<param name="battle1_npc_name" value="18059" /> <!-- Offering of the Branded, Elder -->
 			<param name="battle1_npc_ai" value="dawn_1_1_corner_leader" />
-			<param name="battle1_archer_name" value="18061" />
+			<param name="battle1_archer_name" value="18061" /> <!-- Offering of the Branded, Archer -->
 			<param name="battle1_archer_ai" value="dawn_1_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18062" />
+			<param name="battle_slow_type_name" value="18062" /> <!-- Offering of the Branded, Warrior -->
 			<param name="battle_slow_type_ai" value="dawn_1_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18063" />
+			<param name="battle_fast_type_name" value="18063" /> <!-- Offering of the Branded, Follower -->
 			<param name="battle_fast_type_ai" value="dawn_1_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18064" />
+			<param name="battle_slow_type_name_ex" value="18064" /> <!-- Offering of the Branded, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dawn_1_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18065" />
+			<param name="battle_fast_type_name_ex" value="18065" /> <!-- Offering of the Branded, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dawn_1_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18066" />
+			<param name="battle_sniper_name" value="18066" /> <!-- Offering of the Branded, Marksman -->
 			<param name="battle_sniper_ai" value="dawn_1_3_mid_archer" />
-			<param name="battle_supporter_name" value="18067" />
+			<param name="battle_supporter_name" value="18067" /> <!-- Offering of the Branded, Disciple -->
 			<param name="battle_supporter_ai" value="dawn_1_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18068" />
+			<param name="battle_supporter_name_ex" value="18068" /> <!-- Offering of the Branded, Saint -->
 			<param name="battle_supporter_ai_ex" value="dawn_1_4_last_trp_2" />
-			<param name="battle_present_name" value="18114" />
+			<param name="battle_present_name" value="18114" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dawn_1_box" />
-			<param name="battle_bomb_man_name" value="18309" />
+			<param name="battle_bomb_man_name" value="18309" /> <!-- Flame of the Branded -->
 			<param name="battle_bomb_man_ai" value="dawn_1_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="31137" level="70" type="FestivalGuide" name="Festival Guide" title="Level 31 or Below">
-		
+	<npc id="31137" level="70" type="FestivalGuide" name="Festival Guide" title="Level 31 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="80" />
@@ -1702,7 +1569,7 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SibylName" value="dusk_sibyl5" />
 			<param name="escape_x" value="-79946" />
-			<param name="SibylSilhouette" value="31146" />
+			<param name="SibylSilhouette" value="31146" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-80208" />
 			<param name="SibylPosY" value="88355" />
 			<param name="SibylPosZ" value="-5151" />
@@ -1710,39 +1577,36 @@
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="5801" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment rhand="5801" /> <!-- rhand: For NPC (Dusk) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="31138" level="70" type="FestivalGuide" name="Festival Guide" title="Level 42 or Below">
-		
+	<npc id="31138" level="70" type="FestivalGuide" name="Festival Guide" title="Level 42 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="RoomIndex" value="2" />
 			<param name="SibylName" value="dusk_sibyl4" />
 			<param name="escape_x" value="-76944" />
-			<param name="SibylSilhouette" value="31145" />
+			<param name="SibylSilhouette" value="31145" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-77199" />
 			<param name="SibylPosY" value="88969" />
 			<param name="SibylPosZ" value="-5151" />
@@ -1750,39 +1614,36 @@
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="5801" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment rhand="5801" /> <!-- rhand: For NPC (Dusk) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="31139" level="70" type="FestivalGuide" name="Festival Guide" title="Level 53 or Below">
-		
+	<npc id="31139" level="70" type="FestivalGuide" name="Festival Guide" title="Level 53 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="RoomIndex" value="3" />
 			<param name="SibylName" value="dusk_sibyl3" />
 			<param name="escape_x" value="-76290" />
-			<param name="SibylSilhouette" value="31144" />
+			<param name="SibylSilhouette" value="31144" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-74862" />
 			<param name="SibylPosY" value="87136" />
 			<param name="SibylPosZ" value="-5151" />
@@ -1790,32 +1651,29 @@
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="5801" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment rhand="5801" /> <!-- rhand: For NPC (Dusk) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="31140" level="70" type="FestivalGuide" name="Festival Guide" title="Level 64 or Below">
-		
+	<npc id="31140" level="70" type="FestivalGuide" name="Festival Guide" title="Level 64 and Below">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="80" />
@@ -1823,7 +1681,7 @@
 			<param name="SibylName" value="dusk_sibyl2" />
 			<param name="escape_x" value="-77208" />
 			<param name="escape_y" value="87220" />
-			<param name="SibylSilhouette" value="31143" />
+			<param name="SibylSilhouette" value="31143" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-76944" />
 			<param name="SibylPosY" value="85309" />
 			<param name="SibylPosZ" value="-5151" />
@@ -1831,32 +1689,29 @@
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="5801" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment rhand="5801" /> <!-- rhand: For NPC (Dusk) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
 	<npc id="31141" level="70" type="FestivalGuide" name="Festival Guide" title="No Level Limit">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="80" />
@@ -1864,7 +1719,7 @@
 			<param name="SibylName" value="dusk_sibyl1" />
 			<param name="escape_x" value="-80208" />
 			<param name="escape_y" value="86615" />
-			<param name="SibylSilhouette" value="31142" />
+			<param name="SibylSilhouette" value="31142" /> <!-- Festival Witch -->
 			<param name="SibylPosX" value="-79957" />
 			<param name="SibylPosY" value="84699" />
 			<param name="SibylPosZ" value="-5151" />
@@ -1872,32 +1727,29 @@
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="5801" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment rhand="5801" /> <!-- rhand: For NPC (Dusk) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
 	<npc id="31142" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1954,56 +1806,53 @@
 			<param name="battle2_4x" value="-80420" />
 			<param name="battle2_4y" value="84492" />
 			<param name="coord_z" value="-5151" />
-			<param name="battle1_npc_name" value="18049" />
+			<param name="battle1_npc_name" value="18049" /> <!-- Offering of Forbidden Path, Elder -->
 			<param name="battle1_npc_ai" value="dusk_5_1_corner_leader" />
-			<param name="battle1_archer_name" value="18051" />
+			<param name="battle1_archer_name" value="18051" /> <!-- Offering of Forbidden Path, Archer -->
 			<param name="battle1_archer_ai" value="dusk_5_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18052" />
+			<param name="battle_slow_type_name" value="18052" /> <!-- Offering of Forbidden Path, Warrior -->
 			<param name="battle_slow_type_ai" value="dusk_5_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18053" />
+			<param name="battle_fast_type_name" value="18053" /> <!-- Offering of Forbidden Path, Follower -->
 			<param name="battle_fast_type_ai" value="dusk_5_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18054" />
+			<param name="battle_slow_type_name_ex" value="18054" /> <!-- Offering of Forbidden Path, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dusk_5_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18055" />
+			<param name="battle_fast_type_name_ex" value="18055" /> <!-- Offering of Forbidden Path, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dusk_5_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18056" />
+			<param name="battle_sniper_name" value="18056" /> <!-- Offering of Forbidden Path, Marksman -->
 			<param name="battle_sniper_ai" value="dusk_5_3_mid_archer" />
-			<param name="battle_supporter_name" value="18057" />
+			<param name="battle_supporter_name" value="18057" /> <!-- Offering of Forbidden Path, Disciple -->
 			<param name="battle_supporter_ai" value="dusk_5_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18058" />
+			<param name="battle_supporter_name_ex" value="18058" /> <!-- Offering of Forbidden Path, Saint -->
 			<param name="battle_supporter_ai_ex" value="dusk_5_4_last_trp_2" />
-			<param name="battle_present_name" value="18113" />
+			<param name="battle_present_name" value="18113" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dusk_5_box" />
-			<param name="battle_bomb_man_name" value="18307" />
+			<param name="battle_bomb_man_name" value="18307" /> <!-- Flame of Forbidden Path -->
 			<param name="battle_bomb_man_ai" value="dusk_5_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31143" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2060,56 +1909,53 @@
 			<param name="battle2_4x" value="-77411" />
 			<param name="battle2_4y" value="85124" />
 			<param name="coord_z" value="-5151" />
-			<param name="battle1_npc_name" value="18039" />
+			<param name="battle1_npc_name" value="18039" /> <!-- Dark Omen Offering Elder -->
 			<param name="battle1_npc_ai" value="dusk_4_1_corner_leader" />
-			<param name="battle1_archer_name" value="18041" />
+			<param name="battle1_archer_name" value="18041" /> <!-- Dark Omen Offering Archer -->
 			<param name="battle1_archer_ai" value="dusk_4_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18042" />
+			<param name="battle_slow_type_name" value="18042" /> <!-- Dark Omen Offering Warrior -->
 			<param name="battle_slow_type_ai" value="dusk_4_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18043" />
+			<param name="battle_fast_type_name" value="18043" /> <!-- Dark Omen Offering Follower -->
 			<param name="battle_fast_type_ai" value="dusk_4_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18044" />
+			<param name="battle_slow_type_name_ex" value="18044" /> <!-- Dark Omen Offering Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dusk_4_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18045" />
+			<param name="battle_fast_type_name_ex" value="18045" /> <!-- Dark Omen Offering Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dusk_4_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18046" />
+			<param name="battle_sniper_name" value="18046" /> <!-- Dark Omen Offering Marksman -->
 			<param name="battle_sniper_ai" value="dusk_4_3_mid_archer" />
-			<param name="battle_supporter_name" value="18047" />
+			<param name="battle_supporter_name" value="18047" /> <!-- Dark Omen Offering Disciple -->
 			<param name="battle_supporter_ai" value="dusk_4_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18048" />
+			<param name="battle_supporter_name_ex" value="18048" /> <!-- Dark Omen Offering Saint -->
 			<param name="battle_supporter_ai_ex" value="dusk_4_4_last_trp_2" />
-			<param name="battle_present_name" value="18112" />
+			<param name="battle_present_name" value="18112" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dusk_4_box" />
-			<param name="battle_bomb_man_name" value="18305" />
+			<param name="battle_bomb_man_name" value="18305" /> <!-- Flame of Dark Omen -->
 			<param name="battle_bomb_man_ai" value="dusk_4_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31144" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2166,56 +2012,53 @@
 			<param name="battle2_4x" value="-74665" />
 			<param name="battle2_4y" value="86692" />
 			<param name="coord_z" value="-5151" />
-			<param name="battle1_npc_name" value="18029" />
+			<param name="battle1_npc_name" value="18029" /> <!-- Witch's Offering, Elder -->
 			<param name="battle1_npc_ai" value="dusk_3_1_corner_leader" />
-			<param name="battle1_archer_name" value="18031" />
+			<param name="battle1_archer_name" value="18031" /> <!-- Witch's Offering, Archer -->
 			<param name="battle1_archer_ai" value="dusk_3_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18032" />
+			<param name="battle_slow_type_name" value="18032" /> <!-- Witch's Offering, Warrior -->
 			<param name="battle_slow_type_ai" value="dusk_3_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18033" />
+			<param name="battle_fast_type_name" value="18033" /> <!-- Witch's Offering, Follower -->
 			<param name="battle_fast_type_ai" value="dusk_3_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18034" />
+			<param name="battle_slow_type_name_ex" value="18034" /> <!-- Witch's Offering, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dusk_3_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18035" />
+			<param name="battle_fast_type_name_ex" value="18035" /> <!-- Witch's Offering, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dusk_3_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18036" />
+			<param name="battle_sniper_name" value="18036" /> <!-- Witch's Offering, Marksman -->
 			<param name="battle_sniper_ai" value="dusk_3_3_mid_archer" />
-			<param name="battle_supporter_name" value="18037" />
+			<param name="battle_supporter_name" value="18037" /> <!-- Witch's Offering, Disciple -->
 			<param name="battle_supporter_ai" value="dusk_3_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18038" />
+			<param name="battle_supporter_name_ex" value="18038" /> <!-- Witch's Offering, Saint -->
 			<param name="battle_supporter_ai_ex" value="dusk_3_4_last_trp_2" />
-			<param name="battle_present_name" value="18111" />
+			<param name="battle_present_name" value="18111" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dusk_3_box" />
-			<param name="battle_bomb_man_name" value="18303" />
+			<param name="battle_bomb_man_name" value="18303" /> <!-- Flame of the Witch -->
 			<param name="battle_bomb_man_ai" value="dusk_3_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31145" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2272,56 +2115,53 @@
 			<param name="battle2_4x" value="-76775" />
 			<param name="battle2_4y" value="89151" />
 			<param name="coord_z" value="-5151" />
-			<param name="battle1_npc_name" value="18019" />
+			<param name="battle1_npc_name" value="18019" /> <!-- Apostate's Offering, Elder -->
 			<param name="battle1_npc_ai" value="dusk_2_1_corner_leader" />
-			<param name="battle1_archer_name" value="18021" />
+			<param name="battle1_archer_name" value="18021" /> <!-- Apostate's Offering, Archer -->
 			<param name="battle1_archer_ai" value="dusk_2_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18022" />
+			<param name="battle_slow_type_name" value="18022" /> <!-- Apostate's Offering, Warrior -->
 			<param name="battle_slow_type_ai" value="dusk_2_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18023" />
+			<param name="battle_fast_type_name" value="18023" /> <!-- Apostate's Offering, Follower -->
 			<param name="battle_fast_type_ai" value="dusk_2_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18024" />
+			<param name="battle_slow_type_name_ex" value="18024" /> <!-- Apostate's Offering, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dusk_2_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18025" />
+			<param name="battle_fast_type_name_ex" value="18025" /> <!-- Apostate's Offering, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dusk_2_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18026" />
+			<param name="battle_sniper_name" value="18026" /> <!-- Apostate's Offering, Marksman -->
 			<param name="battle_sniper_ai" value="dusk_2_3_mid_archer" />
-			<param name="battle_supporter_name" value="18027" />
+			<param name="battle_supporter_name" value="18027" /> <!-- Apostate's Offering, Disciple -->
 			<param name="battle_supporter_ai" value="dusk_2_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18028" />
+			<param name="battle_supporter_name_ex" value="18028" /> <!-- Apostate's Offering, Saint -->
 			<param name="battle_supporter_ai_ex" value="dusk_2_4_last_trp_2" />
-			<param name="battle_present_name" value="18110" />
+			<param name="battle_present_name" value="18110" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dusk_2_box" />
-			<param name="battle_bomb_man_name" value="18301" />
+			<param name="battle_bomb_man_name" value="18301" /> <!-- Flame of Apostates -->
 			<param name="battle_bomb_man_ai" value="dusk_2_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="31146" level="70" type="FestivalGuide" name="Festival Witch">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2378,148 +2218,137 @@
 			<param name="battle2_4x" value="-79765" />
 			<param name="battle2_4y" value="88525" />
 			<param name="coord_z" value="-5151" />
-			<param name="battle1_npc_name" value="18009" />
+			<param name="battle1_npc_name" value="18009" /> <!-- Offering of the Branded, Elder -->
 			<param name="battle1_npc_ai" value="dusk_1_1_corner_leader" />
-			<param name="battle1_archer_name" value="18011" />
+			<param name="battle1_archer_name" value="18011" /> <!-- Offering of the Branded, Archer -->
 			<param name="battle1_archer_ai" value="dusk_1_1_corner_archer" />
-			<param name="battle_slow_type_name" value="18012" />
+			<param name="battle_slow_type_name" value="18012" /> <!-- Offering of the Branded, Warrior -->
 			<param name="battle_slow_type_ai" value="dusk_1_2_heavy_trp_1" />
-			<param name="battle_fast_type_name" value="18013" />
+			<param name="battle_fast_type_name" value="18013" /> <!-- Offering of the Branded, Follower -->
 			<param name="battle_fast_type_ai" value="dusk_1_2_light_trp_1" />
-			<param name="battle_slow_type_name_ex" value="18014" />
+			<param name="battle_slow_type_name_ex" value="18014" /> <!-- Offering of the Branded, Berserker -->
 			<param name="battle_slow_type_ai_ex" value="dusk_1_2_heavy_trp_2" />
-			<param name="battle_fast_type_name_ex" value="18015" />
+			<param name="battle_fast_type_name_ex" value="18015" /> <!-- Offering of the Branded, Zealot -->
 			<param name="battle_fast_type_ai_ex" value="dusk_1_2_light_trp_2" />
-			<param name="battle_sniper_name" value="18016" />
+			<param name="battle_sniper_name" value="18016" /> <!-- Offering of the Branded, Marksman -->
 			<param name="battle_sniper_ai" value="dusk_1_3_mid_archer" />
-			<param name="battle_supporter_name" value="18017" />
+			<param name="battle_supporter_name" value="18017" /> <!-- Offering of the Branded, Disciple -->
 			<param name="battle_supporter_ai" value="dusk_1_4_last_trp_1" />
-			<param name="battle_supporter_name_ex" value="18018" />
+			<param name="battle_supporter_name_ex" value="18018" /> <!-- Offering of the Branded, Saint -->
 			<param name="battle_supporter_ai_ex" value="dusk_1_4_last_trp_2" />
-			<param name="battle_present_name" value="18109" />
+			<param name="battle_present_name" value="18109" /> <!-- Treasures of the Festival -->
 			<param name="battle_present_ai" value="dusk_1_box" />
-			<param name="battle_bomb_man_name" value="18299" />
+			<param name="battle_bomb_man_name" value="18299" /> <!-- Flame of the Branded -->
 			<param name="battle_bomb_man_ai" value="dusk_1_5_mid_bomb" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="31147" level="70" type="Teleporter" name="Sobling">
-		
+	<npc id="31147" level="70" type="Teleporter" name="Sobling" title="Head Researcher">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="132" />
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="19.7" />
 		</collision>
 	</npc>
-	<npc id="31148" level="70" type="Folk" name="Pirate's Treasure Chest">
-		
+	<npc id="31148" level="70" type="Folk" name="Pirate's Chest">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="12" />
 			<height normal="9" />
 		</collision>
 	</npc>
 	<npc id="31149" level="70" type="Folk" name="Alchemist's Mixing Urn">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="10" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31168" level="70" type="DawnPriest" name="Priest of Dawn">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2527,32 +2356,29 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment lhand="5802" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment lhand="5802" /> <!-- lhand: For NPC (Dawn) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="30.5" />
 		</collision>
 	</npc>
-	<npc id="31169" level="70" type="Folk" name="Priestess of Dusk">
-		
+	<npc id="31169" level="70" type="DuskPriest" name="Dusk Priestess">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="80" />
@@ -2560,94 +2386,85 @@
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="5801" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="5" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+		<equipment rhand="5801" /> <!-- rhand: For NPC (Dusk) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
 	<npc id="31170" level="70" type="Folk" name="Crest of Dawn">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="0.01" />
 			<height normal="0.01" />
 		</collision>
 	</npc>
 	<npc id="31171" level="70" type="Folk" name="Crest of Dusk">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="0.01" />
 			<height normal="0.01" />
 		</collision>
 	</npc>
 	<npc id="31172" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="-81943" />
 			<param name="PosY1" value="151330" />
@@ -2658,32 +2475,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31173" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="-79777" />
 			<param name="PosY1" value="152749" />
@@ -2694,32 +2508,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31174" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="-82880" />
 			<param name="PosY1" value="150691" />
@@ -2730,32 +2541,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31175" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="-78117" />
 			<param name="PosY1" value="155643" />
@@ -2766,32 +2574,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31176" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="-83030" />
 			<param name="PosY1" value="151900" />
@@ -2802,32 +2607,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31177" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="0" />
 			<param name="PosY1" value="0" />
@@ -2838,32 +2640,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31178" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="15718" />
 			<param name="PosY1" value="143114" />
@@ -2874,32 +2673,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31179" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="19107" />
 			<param name="PosY1" value="142935" />
@@ -2910,32 +2706,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31180" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="17896" />
 			<param name="PosY1" value="145903" />
@@ -2946,32 +2739,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31181" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="17510" />
 			<param name="PosY1" value="147185" />
@@ -2982,32 +2772,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31182" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="-18992" />
 			<param name="PosY1" value="145514" />
@@ -3018,32 +2805,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31183" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="-16720" />
 			<param name="PosY1" value="144279" />
@@ -3054,32 +2838,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31184" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="18801" />
 			<param name="PosY1" value="1144695" />
@@ -3090,32 +2871,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31185" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="0" />
 			<param name="PosY1" value="0" />
@@ -3126,32 +2904,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31186" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="83290" />
 			<param name="PosY1" value="148160" />
@@ -3162,32 +2937,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31187" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="81528" />
 			<param name="PosY1" value="143863" />
@@ -3198,32 +2970,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31188" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="82665" />
 			<param name="PosY1" value="147782" />
@@ -3234,32 +3003,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31189" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="77308" />
 			<param name="PosY1" value="148630" />
@@ -3270,32 +3036,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31190" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="81930" />
 			<param name="PosY1" value="148117" />
@@ -3306,32 +3069,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31191" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="81547" />
 			<param name="PosY1" value="152704" />
@@ -3342,32 +3102,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31192" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="81592" />
 			<param name="PosY1" value="146718" />
@@ -3378,32 +3135,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31193" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="0" />
 			<param name="PosY1" value="0" />
@@ -3414,32 +3168,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31194" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="147500" />
 			<param name="PosY1" value="25819" />
@@ -3450,32 +3201,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31195" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="114742" />
 			<param name="PosY1" value="77945" />
@@ -3486,32 +3234,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31196" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="148086" />
 			<param name="PosY1" value="26999" />
@@ -3522,32 +3267,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31197" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="115658" />
 			<param name="PosY1" value="74990" />
@@ -3558,32 +3300,29 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="31198" level="70" type="Folk" name="Preacher of Doom">
-		
 		<parameters>
 			<param name="PosX1" value="146775" />
 			<param name="PosY1" value="27062" />
@@ -3594,32 +3333,29 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
 			</speed>
 			<hitTime>370</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="31199" level="70" type="Folk" name="Orator of Revelations">
-		
 		<parameters>
 			<param name="PosX1" value="118346" />
 			<param name="PosY1" value="74232" />
@@ -3630,25 +3366,23 @@
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />

@@ -1,28 +1,24 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="27300" level="76" type="Monster" name="Monument Watcher Ezekiel" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="WeakModeTrue" id="4523" level="1" /> 
-			<skill name="WeakModeFalse" id="4524" level="1" /> 
-			<skill name="Buff" id="4522" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4101" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4072" level="7" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
+			<skill name="WeakModeTrue" id="4523" level="1" /> <!-- Quest - BOSS Evasion -->
+			<skill name="WeakModeFalse" id="4524" level="1" /> <!-- Quest - BOSS Bluff -->
+			<skill name="Buff" id="4522" level="1" /> <!-- Eye of Assassin -->
+			<skill name="PhysicalSpecial1" id="4101" level="8" /> <!-- NPC Spinning Slash -->
+			<skill name="PhysicalSpecial2" id="4072" level="7" /> <!-- Stun -->
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
@@ -30,15 +26,17 @@
 			<hitTime>760</hitTime>
 		</stats>
 		<status undying="false" />
-		<skillList><skill id="4032" level="8" /> 
-			<skill id="4072" level="7" /> 
-			<skill id="4101" level="8" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-			<skill id="4522" level="1" /> 
-			<skill id="4523" level="1" /> 
-			<skill id="4524" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4032" level="8" /> <!-- NPC Strike -->
+			<skill id="4072" level="7" /> <!-- Shock -->
+			<skill id="4101" level="8" /> <!-- NPC Spinning Slash -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4522" level="1" /> <!-- Eye of Assassin -->
+			<skill id="4523" level="1" /> <!-- Quest - BOSS Evasion -->
+			<skill id="4524" level="1" /> <!-- Quest - BOSS Bluff -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -46,28 +44,24 @@
 		</collision>
 	</npc>
 	<npc id="27301" level="76" type="Monster" name="Monument Watcher Ezekiel" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="WeakModeTrue" id="4523" level="1" /> 
-			<skill name="WeakModeFalse" id="4524" level="1" /> 
-			<skill name="Buff" id="4522" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4101" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4072" level="7" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
+			<skill name="WeakModeTrue" id="4523" level="1" /> <!-- Quest - BOSS Evasion -->
+			<skill name="WeakModeFalse" id="4524" level="1" /> <!-- Quest - BOSS Bluff -->
+			<skill name="Buff" id="4522" level="1" /> <!-- Eye of Assassin -->
+			<skill name="PhysicalSpecial1" id="4101" level="8" /> <!-- NPC Spinning Slash -->
+			<skill name="PhysicalSpecial2" id="4072" level="7" /> <!-- Stun -->
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
@@ -75,15 +69,17 @@
 			<hitTime>760</hitTime>
 		</stats>
 		<status undying="false" />
-		<skillList><skill id="4032" level="8" /> 
-			<skill id="4072" level="7" /> 
-			<skill id="4101" level="8" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-			<skill id="4522" level="1" /> 
-			<skill id="4523" level="1" /> 
-			<skill id="4524" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4032" level="8" /> <!-- NPC Strike -->
+			<skill id="4072" level="7" /> <!-- Shock -->
+			<skill id="4101" level="8" /> <!-- NPC Spinning Slash -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4522" level="1" /> <!-- Eye of Assassin -->
+			<skill id="4523" level="1" /> <!-- Quest - BOSS Evasion -->
+			<skill id="4524" level="1" /> <!-- Quest - BOSS Bluff -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="15" />
@@ -91,7 +87,6 @@
 		</collision>
 	</npc>
 	<npc id="27302" level="81" type="Monster" name="Monument Defender Azrael" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
@@ -99,24 +94,23 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
 			<hitTime>760</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -125,7 +119,6 @@
 		</collision>
 	</npc>
 	<npc id="27303" level="81" type="Monster" name="Monument Defender Azrael" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
@@ -133,24 +126,23 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
 			<hitTime>760</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -159,7 +151,6 @@
 		</collision>
 	</npc>
 	<npc id="27304" level="81" type="Monster" name="Monument Defender Azrael" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
@@ -167,24 +158,23 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
 			<hitTime>760</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -193,7 +183,6 @@
 		</collision>
 	</npc>
 	<npc id="27305" level="81" type="Monster" name="Monument Defender Azrael" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
@@ -201,24 +190,23 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
 			<hitTime>760</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -227,7 +215,6 @@
 		</collision>
 	</npc>
 	<npc id="27306" level="81" type="Monster" name="Monument Defender Azrael" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
@@ -235,24 +222,23 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
 			<hitTime>760</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -261,7 +247,6 @@
 		</collision>
 	</npc>
 	<npc id="27307" level="81" type="Monster" name="Monument Defender Azrael" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
@@ -269,24 +254,23 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
 			</speed>
 			<hitTime>760</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -295,7 +279,6 @@
 		</collision>
 	</npc>
 	<npc id="27308" level="81" type="Monster" name="Assassin Frost" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -303,24 +286,23 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="229" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="229" /> <!-- rhand: Kris -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="10" critical="8" accuracy="3" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="5" critical="12" accuracy="-3.75" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="-5" dark="53" />
-			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="180" />
 			</speed>
 			<hitTime>450</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="9" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -329,7 +311,6 @@
 		</collision>
 	</npc>
 	<npc id="27309" level="81" type="Monster" name="Minervia Van Hacken" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -337,24 +318,23 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="229" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="229" /> <!-- rhand: Kris -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="10" critical="8" accuracy="3" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="5" critical="12" accuracy="-3.75" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="-5" dark="53" />
-			</attribute>
 			<speed>
 				<walk ground="64" />
 				<run ground="180" />
 			</speed>
 			<hitTime>500</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -363,7 +343,6 @@
 		</collision>
 	</npc>
 	<npc id="27310" level="81" type="Monster" name="Kitanis Van Hacken" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="130" />
 			<param name="MoveAroundSocial1" value="130" />
@@ -371,23 +350,22 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="7" critical="12" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="-5" dark="53" />
-			</attribute>
 			<speed>
 				<walk ground="15" />
 				<run ground="180" />
 			</speed>
 			<hitTime>560</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="9" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -396,7 +374,6 @@
 		</collision>
 	</npc>
 	<npc id="27311" level="81" type="Monster" name="Judgment Hound Dog Kelvas" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -404,23 +381,22 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="7" critical="12" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
 			<speed>
 				<walk ground="35" />
 				<run ground="180" />
 			</speed>
 			<hitTime>480</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="3" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -429,7 +405,6 @@
 		</collision>
 	</npc>
 	<npc id="27312" level="81" type="Monster" name="Mysterious Servitor" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="24" />
 			<param name="MoveAroundSocial1" value="24" />
@@ -437,23 +412,22 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
-			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="7.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<attack physical="938.20801458" magical="656.66638089" random="7" critical="12" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="354.8183475" magical="259.6406685" evasion="3" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="-5" dark="53" />
-			</attribute>
 			<speed>
 				<walk ground="48" />
 				<run ground="180" />
 			</speed>
 			<hitTime>610</hitTime>
 		</stats>
-		<skillList><skill id="4408" level="17" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
 		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
@@ -462,26 +436,21 @@
 		</collision>
 	</npc>
 	<npc id="27313" level="76" type="Monster" name="Vision Guardian Shakiel" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
-			<skill name="Buff1" id="4532" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4076" level="3" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="7" /> 
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial2" id="4076" level="3" /> <!-- Decrease Speed -->
+			<skill name="PhysicalSpecial3" id="4032" level="7" /> <!-- NPC Strike -->
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
@@ -489,12 +458,14 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skillList><skill id="4032" level="7" /> 
-			<skill id="4032" level="8" /> 
-			<skill id="4076" level="3" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4032" level="7" /> <!-- NPC Strike -->
+			<skill id="4032" level="8" /> <!-- NPC Strike -->
+			<skill id="4076" level="3" /> <!-- Decrease Speed -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" grown="13" />
@@ -502,26 +473,21 @@
 		</collision>
 	</npc>
 	<npc id="27314" level="76" type="Monster" name="Vision Guardian Shakiel" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
-			<skill name="Buff1" id="4532" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4076" level="3" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="7" /> 
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial2" id="4076" level="3" /> <!-- Decrease Speed -->
+			<skill name="PhysicalSpecial3" id="4032" level="7" /> <!-- NPC Strike -->
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
@@ -529,12 +495,14 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skillList><skill id="4032" level="7" /> 
-			<skill id="4032" level="8" /> 
-			<skill id="4076" level="3" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4032" level="7" /> <!-- NPC Strike -->
+			<skill id="4032" level="8" /> <!-- NPC Strike -->
+			<skill id="4076" level="3" /> <!-- Decrease Speed -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" grown="13" />
@@ -542,26 +510,21 @@
 		</collision>
 	</npc>
 	<npc id="27315" level="76" type="Monster" name="Vision Guardian Shakiel" title="Quest Monster">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
-			<skill name="Buff1" id="4532" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4076" level="3" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="7" /> 
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial2" id="4076" level="3" /> <!-- Decrease Speed -->
+			<skill name="PhysicalSpecial3" id="4032" level="7" /> <!-- NPC Strike -->
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
 			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="53" dark="-13" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="180" />
@@ -569,19 +532,21 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
-		<skillList><skill id="4032" level="7" /> 
-			<skill id="4032" level="8" /> 
-			<skill id="4076" level="3" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4032" level="7" /> <!-- NPC Strike -->
+			<skill id="4032" level="8" /> <!-- NPC Strike -->
+			<skill id="4076" level="3" /> <!-- Decrease Speed -->
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="11" grown="13" />
 			<height normal="38.5" grown="46.5" />
 		</collision>
 	</npc>
-	<npc id="27316" level="55" type="Monster" name="Ice Monster" title="Quest Monster">
+	<npc id="27316" level="55" type="Monster" name="Fallen Chieftain Vegus" title="Quest Monster">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="65" />
@@ -589,3429 +554,199 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4461" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
+		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" />
 			<speed>
-				<walk ground="20" />
+				<walk ground="36" />
 				<run ground="180" />
 			</speed>
-			<hitTime>600</hitTime>
-			<abnormalResist physical="10" magical="10" />
+			<hitTime>540</hitTime>
 		</stats>
-		<status attackable="true" />
-		<skillList><skill id="4414" level="3" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
+		<status undying="false" />
+		<skillList>
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="12" grown="14" />
 			<height normal="24" grown="28.8" />
 		</collision>
 	</npc>
-	<npc id="27317" level="70" type="Monster" name="Spirit of the Drowned" title="Quest Monster">
+	<npc id="27317" level="70" type="Monster" name="Restrainer of Glory" title="Quest Monster">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="74" />
 			<param name="MoveAroundSocial2" value="90" />
 		</parameters>
-		<race>ELEMENTAL</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4461" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
+		<race>DIVINE</race>
+		<sex>MALE</sex>
+		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
 			<speed>
-				<walk ground="60" />
+				<walk ground="50" />
 				<run ground="180" />
 			</speed>
-			<hitTime>350</hitTime>
-			<abnormalResist physical="10" magical="10" />
+			<hitTime>560</hitTime>
 		</stats>
-		<status attackable="true" />
-		<skillList><skill id="4414" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
+		<status undying="false" />
+		<skillList>
+			<skill id="4414" level="3" /> <!-- Light Armor Type -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="12" />
-			<height normal="27" />
+			<radius normal="13" />
+			<height normal="32" />
 		</collision>
 	</npc>
-	<npc id="27318" level="46" type="Monster" name="Soul of Cold" title="Quest Monster">
+	<npc id="27318" level="46" type="Monster" name="Wendy's Guardian" title="Quest Monster">
 		<parameters>
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="94" />
 		</parameters>
-		<race>ELEMENTAL</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4461" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="1229.78678" hpRegen="5.5" mp="637.8" mpRegen="2.1" />
+			<attack physical="248.0526" magical="169.38777" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="182.18816" magical="133.31739" />
 			<speed>
-				<walk ground="30" />
-				<run ground="180" />
+				<walk ground="50" />
+				<run ground="130" />
 			</speed>
 			<hitTime>430</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="true" />
-		<skillList><skill id="4412" level="14" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
+		<status undying="false" />
+		<skillList>
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
-			<height normal="35.6" />
+			<height normal="37.2" />
 		</collision>
 	</npc>
-	<npc id="27319" level="18" type="Monster" name="Ghost of Solitude" title="Quest Monster">
+	<npc id="27319" level="18" type="Monster" name="Black Leopard" title="Quest Monster">
 		<parameters>
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="90" />
 			<param name="MoveAroundSocial2" value="90" />
 		</parameters>
-		<race>HUMANOID</race>
+		<race>BEAST</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4461" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="301.66622" hpRegen="2.5" mp="174.64" mpRegen="1.2" />
+			<attack physical="37.82932" magical="25.83252" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="81.34791" magical="59.52687" />
 			<speed>
-				<walk ground="36" />
-				<run ground="180" />
+				<walk ground="30" />
+				<run ground="130" />
 			</speed>
-			<hitTime>600</hitTime>
-			<abnormalResist physical="10" magical="10" />
+			<hitTime>240</hitTime>
 		</stats>
-		<status attackable="true" />
-		<skillList><skill id="4410" level="13" /> 
-			<skill id="4412" level="12" /> 
-			<skill id="4416" level="3" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
+		<status undying="false" />
+		<skillList>
+			<skill id="4410" level="13" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4416" level="3" /> <!-- Beasts -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="12" />
-			<height normal="25" />
+			<radius normal="14" />
+			<height normal="14.5" />
 		</collision>
 	</npc>
-	<npc id="27320" level="20" type="Monster" name="Fiend of Cold" title="Quest Monster">
+	<npc id="27320" level="20" type="Monster" name="Timora Orc" title="Quest Monster">
 		<parameters>
 			<param name="MoveAroundSocial" value="35" />
 			<param name="MoveAroundSocial1" value="35" />
 			<param name="MoveAroundSocial2" value="35" />
 		</parameters>
-		<race>BEAST</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4461" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
-			<speed>
-				<walk ground="60" />
-				<run ground="180" />
-			</speed>
-			<hitTime>450</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="true" />
-		<skillList><skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="34" />
-			<height normal="28" />
-		</collision>
-	</npc>
-	<npc id="27321" level="20" type="Monster" name="Spirit of Cold" title="Quest Monster">
-		<race>ELEMENTAL</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4461" hpRegen="8.5" mp="1507.8" mpRegen="3" />
-			<attack physical="794.70901" magical="542.68324" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="319.24623" magical="233.61053" />
-			<speed>
-				<walk ground="30" />
-				<run ground="180" />
-			</speed>
-			<hitTime>600</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="true" />
-		<skillList><skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="20" />
-			<height normal="50" />
-		</collision>
-	</npc>
-	<npc id="27322" level="27" type="Monster" name="Possessed Windsus" title="Quest Monster">
-		
-		<race>ANIMAL</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="976.64429110491" hpRegen="4.5" mp="463.32" mpRegen="1.8" />
-			<attack physical="166.06476" magical="113.4007" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="152.46752" magical="111.56912" />
-			<speed>
-				<walk ground="35" />
-				<run ground="174" />
-			</speed>
-			<hitTime>540</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="true" />
-		<collision>
-			<radius normal="35" />
-			<height normal="27" />
-		</collision>
-		<skillList><skill id="4416" level="12" /> 
-		</skillList></npc>
-	<npc id="27323" level="40" type="Monster" name="Divine Emissary" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="50" />
-			<param name="MoveAroundSocial1" value="50" />
-			<param name="MoveAroundSocial2" value="50" />
-		</parameters>
-		<race>DIVINE</race>
-		<sex>MALE</sex>
-		<equipment rhand="148" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
-			<attack physical="176.36077" magical="120.43155" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="156.55035" magical="114.55675" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="170" />
-			</speed>
-			<hitTime>520</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13.5" grown="16" />
-			<height normal="36.5" grown="42.5" />
-		</collision>
-	</npc>
-	<npc id="27324" level="76" type="Monster" name="Vision Guard Eranus" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-			<skill name="CheckSkill1" id="485" level="7" /> 
-			<skill name="CheckSkill2" id="494" level="1" /> 
-			<skill name="ArrowDefenceMode" id="4545" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
-		</parameters>
-		<race>DIVINE</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="6717" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="485" level="7" /> 
-			<skill id="494" level="1" /> 
-			<skill id="4032" level="8" /> 
-			<skill id="4067" level="8" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
-			<skill id="4545" level="1" /> 
-			<skill id="4579" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="8" grown="9" />
-			<height normal="30" grown="36.5" />
-		</collision>
-	</npc>
-	<npc id="27325" level="76" type="Monster" name="Archon of Halisha" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="6722" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="35" />
-				<run ground="180" />
-			</speed>
-			<hitTime>480</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4415" level="4" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
-		<collision>
-			<radius normal="14" grown="17" />
-			<height normal="57.75" grown="69" />
-		</collision>
-	</npc>
-	<npc id="27326" level="81" type="Monster" name="Archangel Kanriel" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="98" />
-			<param name="MoveAroundSocial2" value="90" />
-		</parameters>
-		<race>DIVINE</race>
-		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2916.89894" hpRegen="8.5" mp="1708.8" mpRegen="3" />
-			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="345.61127" magical="252.90333" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="120" />
-			</speed>
-			<hitTime>760</hitTime>
-		</stats>
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="11" /> 
-			<skill id="4416" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="37.5" />
-		</collision>
-	</npc>
-	<npc id="27327" level="76" type="Monster" name="Zakorel's Executor" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="85" />
-			<param name="MoveAroundSocial1" value="85" />
-			<param name="MoveAroundSocial2" value="85" />
-			<skill name="WeakModeTrue" id="4523" level="1" /> 
-			<skill name="WeakModeFalse" id="4524" level="1" /> 
-			<skill name="Buff" id="4522" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4101" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4072" level="7" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
-		</parameters>
-		<race>DIVINE</race>
-		<sex>MALE</sex>
-		<equipment rhand="6718" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-			<hitTime>480</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="8" /> 
-			<skill id="4072" level="7" /> 
-			<skill id="4101" level="8" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
-			<skill id="4522" level="1" /> 
-			<skill id="4523" level="1" /> 
-			<skill id="4524" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="11" grown="13" />
-			<height normal="38.5" grown="46.5" />
-		</collision>
-	</npc>
-	<npc id="27328" level="81" type="Monster" name="Zakorel" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="122" />
-		</parameters>
-		<race>DIVINE</race>
-		<sex>MALE</sex>
-		<equipment rhand="6717" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2916.89894" hpRegen="8.5" mp="1708.8" mpRegen="3" />
-			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="345.61127" magical="252.90333" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="180" />
-			</speed>
-			<hitTime>430</hitTime>
-		</stats>
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13" />
-			<height normal="47" />
-		</collision>
-	</npc>
-	<npc id="27329" level="76" type="Monster" name="Archon of Halisha" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="6722" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="35" />
-				<run ground="180" />
-			</speed>
-			<hitTime>480</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4415" level="4" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
-		<collision>
-			<radius normal="14" grown="17" />
-			<height normal="57.75" grown="69" />
-		</collision>
-	</npc>
-	<npc id="27332" level="35" type="Monster" name="Guardian Angel" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="50" />
-			<param name="MoveAroundSocial1" value="50" />
-			<param name="MoveAroundSocial2" value="50" />
-		</parameters>
-		<race>DIVINE</race>
-		<sex>MALE</sex>
-		<equipment rhand="196" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="772.73802" hpRegen="4.5" mp="402.6" mpRegen="1.8" />
-			<attack physical="129.32896" magical="88.31491" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="136.72948" magical="100.0527" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="170" />
-			</speed>
-			<hitTime>520</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13.5" grown="16" />
-			<height normal="36.5" grown="42.5" />
-		</collision>
-	</npc>
-	<npc id="27333" level="76" type="Monster" name="Crimson Duchess" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="101" />
-			<skill name="CheckSkill1" id="507" level="1" /> 
-			<skill name="CheckSkill2" id="1435" level="2" /> 
-			<skill name="ArrowDefenceMode" id="4545" level="1" /> 
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="20" />
-				<run ground="190" />
-			</speed>
-			<hitTime>430</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="507" level="1" /> 
-			<skill id="1435" level="2" /> 
-			<skill id="4032" level="8" /> 
-			<skill id="4067" level="8" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="1" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4545" level="1" /> 
-			<skill id="4579" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="10" />
-			<height normal="25.4" />
-		</collision>
-	</npc>
-	<npc id="27334" level="76" type="Monster" name="Archon of Halisha" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="100" />
-			<param name="MoveAroundSocial1" value="100" />
-			<param name="MoveAroundSocial2" value="100" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="6722" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
-			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="35" />
-				<run ground="180" />
-			</speed>
-			<hitTime>480</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4415" level="4" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
-		<collision>
-			<radius normal="14" grown="17" />
-			<height normal="57.75" grown="69" />
-		</collision>
-	</npc>
-	<npc id="27335" level="81" type="Monster" name="Dark Angel Othiel" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="98" />
-			<param name="MoveAroundSocial2" value="90" />
-		</parameters>
-		<race>DIVINE</race>
-		<sex>MALE</sex>
-		<equipment rhand="97" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2916.89894" hpRegen="8.5" mp="1708.8" mpRegen="3" />
-			<attack physical="913.54847" magical="623.83518" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="345.61127" magical="252.90333" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
-			</speed>
-			<hitTime>760</hitTime>
-		</stats>
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="1" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
-		<collision>
-			<radius normal="15" />
-			<height normal="80" />
-		</collision>
-	</npc>
-	<npc id="27336" level="40" type="Monster" name="Crimson Lady" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<skill name="DDMagic" id="4002" level="3" /> 
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
-			<attack physical="176.36077" magical="120.43155" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="156.55035" magical="114.55675" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="60" />
-				<run ground="120" />
-			</speed>
-			<hitTime>840</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="3" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="10" />
-			<height normal="36" />
-		</collision>
-	</npc>
-	<npc id="27337" level="20" type="Monster" name="Ol Mahum Officer Tak" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="90" />
-			<param name="MoveAroundSocial1" value="90" />
-			<param name="MoveAroundSocial2" value="90" />
-		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="69" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="342.5127" hpRegen="2.5" mp="192.0" mpRegen="1.2" />
+		<equipment rhand="2" /> <!-- rhand: Long Sword -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="342.5127" hpRegen="2.5" mp="192" mpRegen="1.2" />
 			<attack physical="44.32863" magical="30.2707" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="86.87049" magical="63.56806" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
 			<speed>
-				<walk ground="50" />
-				<run ground="110" />
-			</speed>
-			<hitTime>630</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="6" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="14" grown="16" />
-			<height normal="27" grown="32" />
-		</collision>
-	</npc>
-	<npc id="27338" level="38" type="Monster" name="Fallen Angel" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-		</parameters>
-		<race>DIVINE</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="6717" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="886.09975" hpRegen="4.5" mp="447.96" mpRegen="1.8" />
-			<attack physical="156.22273" magical="106.67987" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="148.44287" magical="108.62405" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="180" />
+				<walk ground="80" />
+				<run ground="130" />
 			</speed>
 			<hitTime>460</hitTime>
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="8" /> 
+			<skill id="4416" level="6" /> <!-- Humanoids -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="8" grown="9" />
-			<height normal="30" grown="36.5" />
+			<radius normal="9" />
+			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="27339" level="35" type="Monster" name="Cruma Marshlands Traitor" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="946" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="772.73802" hpRegen="4.5" mp="402.6" mpRegen="1.8" />
-			<attack physical="129.32896" magical="88.31491" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="136.72948" magical="100.0527" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="64" />
-				<run ground="180" />
-			</speed>
-			<hitTime>500</hitTime>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="3" /> 
-			<skill id="4415" level="5" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="6" grown="7" />
-			<height normal="21.5" grown="25.8" />
-		</collision>
-	</npc>
-	<npc id="27340" level="39" type="Monster" name="Pursuer">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="130" />
-			<param name="MoveAroundSocial1" value="130" />
-			<param name="MoveAroundSocial2" value="130" />
-		</parameters>
+	<npc id="27321" level="20" type="Monster" name="Bruin Lizardman" title="Quest Monster">
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="219" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="925.85879" hpRegen="4.5" mp="463.32" mpRegen="1.8" />
-			<attack physical="166.06476" magical="113.4007" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="152.46752" magical="111.56912" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
+		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="342.5127" hpRegen="2.5" mp="192" mpRegen="1.2" />
+			<attack physical="44.32863" magical="30.2707" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="86.87049" magical="63.56806" />
 			<speed>
-				<walk ground="50" />
-				<run ground="110" />
+				<walk ground="43" />
+				<run ground="130" />
 			</speed>
-			<hitTime>460</hitTime>
+			<hitTime>480</hitTime>
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="6" /> 
+			<skill id="4416" level="6" /> <!-- Humanoids -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="13.5" />
-			<height normal="25" />
-		</collision>
-	</npc>
-	<npc id="27341" level="51" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5975" level="1" /> 
-			<skill name="Skill02_ID" id="5976" level="1" /> 
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27342" level="61" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5975" level="2" /> 
-			<skill name="Skill02_ID" id="5976" level="2" /> 
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1985.55926" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="2" /> 
-			<skill id="5976" level="2" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27343" level="79" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5975" level="3" /> 
-			<skill name="Skill02_ID" id="5976" level="3" /> 
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641.0" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<attack type="DARK" value="100" />
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="180" />
-			</speed>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5975" level="3" /> 
-			<skill id="5976" level="3" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
-			<skill shortRangeId="5976" shortRangeChance="10" />
-		</ai>
-		<collision>
-			<radius normal="14" />
-			<height normal="27.5" />
-		</collision>
-	</npc>
-	<npc id="27344" level="51" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5975" level="1" /> 
-			<skill name="Skill02_ID" id="5976" level="1" /> 
-			<skill name="Skill03_ID" id="5977" level="1" /> 
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="1" /> 
-			<skill id="5977" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27345" level="61" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5975" level="2" /> 
-			<skill name="Skill02_ID" id="5976" level="2" /> 
-			<skill name="Skill03_ID" id="5977" level="2" /> 
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1985.55926" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="2" /> 
-			<skill id="5976" level="2" /> 
-			<skill id="5977" level="2" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27346" level="79" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="150" />
-			<param name="MoveAroundSocial1" value="150" />
-			<param name="MoveAroundSocial2" value="150" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<param name="SceneID" value="14" />
-			<skill name="Skill01_ID" id="5975" level="3" /> 
-			<skill name="Skill02_ID" id="5976" level="3" /> 
-			<skill name="Skill03_ID" id="5977" level="3" /> 
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641.0" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<attack type="DARK" value="100" />
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="45" />
-				<run ground="180" />
-			</speed>
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5975" level="3" /> 
-			<skill id="5976" level="3" /> 
-			<skill id="5977" level="3" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
-		<collision>
-			<radius normal="20" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27348" level="85" type="Monster" name="Guard of the Oracle of Dawn">
-		
-		<race>MERCENARY</race>
-		<sex>MALE</sex>
-		<equipment rhand="16" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="4234" hpRegen="8.5" mp="1846" mpRegen="3" />
-			<attack physical="1188.87259499001" magical="811.84586495282" random="10" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
-			<defence physical="361.78814" magical="264.74086" />
-			<attribute>
-				<attack type="FIRE" value="100" />
-				<defence fire="150" water="40" wind="90" earth="90" holy="90" dark="90" default="85" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="11" /> 
-			<skill id="4416" level="23" /> 
-			<skill id="5462" level="1" /> 
-			<skill id="5978" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="150" />
-		<collision>
-			<radius normal="8" />
-			<height normal="23.5" />
-		</collision>
-	</npc>
-	<npc id="27350" level="85" type="Monster" name="Guard of the Oracle of Dawn">
-		
-		<race>MERCENARY</race>
-		<sex>MALE</sex>
-		<equipment rhand="5" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="4234" hpRegen="8.5" mp="1846" mpRegen="3" />
-			<attack physical="1188.87259499001" magical="811.84586495282" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="361.78814" magical="264.74086" />
-			<attribute>
-				<attack type="FIRE" value="100" />
-				<defence fire="150" water="40" wind="90" earth="90" holy="90" dark="90" default="85" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="5" /> 
-			<skill id="4416" level="23" /> 
-			<skill id="5462" level="1" /> 
-			<skill id="5978" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="150" />
-		<collision>
-			<radius normal="8" />
-			<height normal="24" />
-		</collision>
-	</npc>
-	<npc id="27351" level="85" type="Monster" name="Guard of the Dawn">
-		
-		<parameters>
-			<param name="Fstring_Num" value="19505" />
-		</parameters>
-		<race>MERCENARY</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="6" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="4234" hpRegen="8.5" mp="1846" mpRegen="3" />
-			<attack physical="1188.87259499001" magical="811.84586495282" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="361.78814" magical="264.74086" />
-			<attribute>
-				<attack type="FIRE" value="100" />
-				<defence fire="150" water="40" wind="90" earth="90" holy="90" dark="90" default="85" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status randomWalk="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="5" /> 
-			<skill id="4416" level="23" /> 
-			<skill id="5462" level="1" /> 
-			<skill id="5978" level="1" /> 
-		</skillList>
-		<exCrtEffect>false</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="150" />
-		<collision>
-			<radius normal="8" />
+			<radius normal="10" />
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="27352" level="85" type="Monster" name="Guard of the Oracle of Dawn">
-		
-		<race>MERCENARY</race>
-		<sex>FEMALE</sex>
-		<equipment rhand="6" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="4234" hpRegen="8.5" mp="1846" mpRegen="3" />
-			<attack physical="1188.87259499001" magical="811.84586495282" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
-			<defence physical="361.78814" magical="264.74086" />
-			<attribute>
-				<attack type="FIRE" value="100" />
-				<defence fire="150" water="40" wind="90" earth="90" holy="90" dark="90" default="85" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="5" /> 
-			<skill id="4416" level="23" /> 
-			<skill id="5462" level="1" /> 
-			<skill id="5978" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="150" />
-		<collision>
-			<radius normal="8" />
-			<height normal="23" />
-		</collision>
-	</npc>
-	<npc id="27353" level="51" type="Monster" name="Lilim Butcher">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<skill name="Skill01_ID" id="4067" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
+	<npc id="27322" level="27" type="Monster" name="Picot Araneid" title="Quest Monster">
+		<race>BUG</race>
 		<sex>MALE</sex>
-		<equipment rhand="232" lhand="232" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="515.17856" hpRegen="3.5" mp="286.92" mpRegen="1.5" />
+			<attack physical="74.99121" magical="51.20928" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="108.28767" magical="79.24022" />
 			<speed>
-				<walk ground="36" />
-				<run ground="190" />
+				<walk ground="72" />
+				<run ground="130" />
 			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
+			<hitTime>260</hitTime>
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4067" level="5" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
+			<skill id="4416" level="12" /> <!-- Bugs -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<collision>
-			<radius normal="11" />
-			<height normal="36" />
-		</collision>
-	</npc>
-	<npc id="27354" level="51" type="Monster" name="Lilim Magus">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="4002" level="5" />
-			<skill name="Skill02_ID" id="4094" level="5" />
-			<skill name="Skill03_ID" id="4046" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="5" /> 
-			<skill id="4046" level="5" /> 
-			<skill id="4094" level="5" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="8" />
-			<height normal="30.6" />
-		</collision>
-	</npc>
-	<npc id="27355" level="51" type="Monster" name="Lilim Knight-Errant">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="1" />
-			<skill name="Skill01_ID" id="4092" level="1" />
-			<skill name="Skill02_ID" id="4032" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="5" /> 
-			<skill id="4092" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="45" />
-		</collision>
-	</npc>
-	<npc id="27356" level="85" type="Monster" name="Lilim Marauder">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<skill name="Skill01_ID" id="4067" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="229" lhand="229" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="5" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="36" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6034" max="14063" chance="70" /> 
-				<item id="36563" min="1" max="1" chance="1.531" /> 
-				<item id="37724" min="1" max="1" chance="0.075" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="10.98" /> 
-				<item id="36553" min="1" max="1" chance="3.15" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27357" level="86" type="Monster" name="Lilim Priest">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="4002" level="5" />
-			<skill name="Skill02_ID" id="4094" level="5" />
-			<skill name="Skill03_ID" id="4046" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="5" /> 
-			<skill id="4046" level="5" /> 
-			<skill id="4094" level="5" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="8" />
-			<height normal="30.6" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="3431" max="7996" chance="70" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="3.628" /> 
-				<item id="36553" min="1" max="1" chance="1.007" /> 
-				<item id="45930" min="1" max="1" chance="0.3" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27358" level="87" type="Monster" name="Lilim Knight">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="1" />
-			<skill name="Skill01_ID" id="4092" level="1" />
-			<skill name="Skill02_ID" id="4032" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="5" /> 
-			<skill id="4092" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="45" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6437" max="15020" chance="70" /> 
-				<item id="19440" min="1" max="1" chance="1.233" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="7.127" /> 
-				<item id="36553" min="1" max="1" chance="2.153" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27359" level="87" type="Monster" name="Lilim Slayer">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<skill name="Skill01_ID" id="4067" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="234" lhand="234" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="5" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="44" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6437" max="15020" chance="70" /> 
-				<item id="36563" min="1" max="1" chance="2.286" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="7.148" /> 
-				<item id="36553" min="1" max="1" chance="2.043" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27360" level="88" type="Monster" name="Lilim Great Magus">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="4002" level="5" />
-			<skill name="Skill02_ID" id="4094" level="5" />
-			<skill name="Skill03_ID" id="4046" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="5" /> 
-			<skill id="4046" level="5" /> 
-			<skill id="4094" level="5" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="10" />
-			<height normal="37.5" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="5569" max="13008" chance="70" /> 
-				<item id="19440" min="1" max="1" chance="0.975" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="6.167" /> 
-				<item id="36553" min="1" max="1" chance="1.838" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27361" level="89" type="Monster" name="Lilim Royal Knight">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="1" />
-			<skill name="Skill01_ID" id="4092" level="1" />
-			<skill name="Skill02_ID" id="4032" level="5" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="5" /> 
-			<skill id="4092" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="55" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="4516" max="10527" chance="70" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="4.793" /> 
-				<item id="36553" min="1" max="1" chance="1.383" /> 
-				<item id="45930" min="1" max="1" chance="0.3" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27362" level="61" type="Monster" name="Lilim Butcher">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<skill name="Skill01_ID" id="4067" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="232" lhand="232" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="6" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="36" />
-		</collision>
-	</npc>
-	<npc id="27363" level="61" type="Monster" name="Lilim Magus">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="4002" level="6" />
-			<skill name="Skill02_ID" id="4094" level="6" />
-			<skill name="Skill03_ID" id="4046" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="6" /> 
-			<skill id="4046" level="6" /> 
-			<skill id="4094" level="6" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="8" />
-			<height normal="30.6" />
-		</collision>
-	</npc>
-	<npc id="27364" level="61" type="Monster" name="Lilim Knight-Errant">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="1" />
-			<skill name="Skill01_ID" id="4092" level="1" />
-			<skill name="Skill02_ID" id="4032" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="6" /> 
-			<skill id="4092" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="45" />
-		</collision>
-	</npc>
-	<npc id="27365" level="85" type="Monster" name="Lilim Marauder">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<skill name="Skill01_ID" id="4067" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="229" lhand="229" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="6" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="36" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6034" max="14063" chance="70" /> 
-				<item id="36563" min="1" max="1" chance="1.531" /> 
-				<item id="37724" min="1" max="1" chance="0.075" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="10.98" /> 
-				<item id="36553" min="1" max="1" chance="3.15" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27366" level="86" type="Monster" name="Lilim Priest">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="4002" level="6" />
-			<skill name="Skill02_ID" id="4094" level="6" />
-			<skill name="Skill03_ID" id="4046" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="6" /> 
-			<skill id="4046" level="6" /> 
-			<skill id="4094" level="6" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="8" />
-			<height normal="30.6" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="3431" max="7996" chance="70" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="3.628" /> 
-				<item id="36553" min="1" max="1" chance="1.007" /> 
-				<item id="45930" min="1" max="1" chance="0.3" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27367" level="87" type="Monster" name="Lilim Knight">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="1" />
-			<skill name="Skill01_ID" id="4092" level="1" />
-			<skill name="Skill02_ID" id="4032" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="6" /> 
-			<skill id="4092" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="45" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6437" max="15020" chance="70" /> 
-				<item id="19440" min="1" max="1" chance="1.233" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="7.127" /> 
-				<item id="36553" min="1" max="1" chance="2.153" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27368" level="87" type="Monster" name="Lilim Slayer">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<skill name="Skill01_ID" id="4067" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="234" lhand="234" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="6" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="44" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6437" max="15020" chance="70" /> 
-				<item id="36563" min="1" max="1" chance="2.286" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="7.148" /> 
-				<item id="36553" min="1" max="1" chance="2.043" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27369" level="88" type="Monster" name="Lilim Great Magus">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="Skill03_Type" value="2" />
-			<skill name="Skill01_ID" id="4002" level="6" />
-			<skill name="Skill02_ID" id="4094" level="6" />
-			<skill name="Skill03_ID" id="4046" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="6" /> 
-			<skill id="4046" level="6" /> 
-			<skill id="4094" level="6" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="10" />
-			<height normal="37.5" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="5569" max="13008" chance="70" /> 
-				<item id="19440" min="1" max="1" chance="0.975" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="6.167" /> 
-				<item id="36553" min="1" max="1" chance="1.838" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27370" level="89" type="Monster" name="Lilim Royal Knight">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_Type" value="1" />
-			<skill name="Skill01_ID" id="4092" level="1" />
-			<skill name="Skill02_ID" id="4032" level="6" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="6" /> 
-			<skill id="4092" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="55" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="4516" max="10527" chance="70" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="4.793" /> 
-				<item id="36553" min="1" max="1" chance="1.383" /> 
-				<item id="45930" min="1" max="1" chance="0.3" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27371" level="79" type="Monster" name="Lilim Butcher">
-		
-		<parameters>
-			<param name="IsAggressive" value="1" />
-			<param name="Ditect_PC" value="1000268" />
-			<param name="Dying_Message" value="5864" />
-			<skill name="Skill01_ID" id="4067" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="232" lhand="232" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="11" />
-			<height normal="36" />
-		</collision>
-	</npc>
-	<npc id="27372" level="79" type="Monster" name="Lilim Magus">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="Skill04_Type" value="2" />
-			<param name="Ditect_PC" value="1000208" />
-			<param name="Dying_Message" value="1000247" />
-			<skill name="Skill01_ID" id="4002" level="4" />
-			<skill name="Skill02_ID" id="4002" level="4" />
-			<skill name="Skill03_ID" id="4094" level="4" />
-			<skill name="Skill04_ID" id="4046" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="4" /> 
-			<skill id="4046" level="4" /> 
-			<skill id="4094" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="8" />
-			<height normal="30.6" />
-		</collision>
-	</npc>
-	<npc id="27373" level="79" type="Monster" name="Lilim Knight-Errant">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill01_Target" value="2" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Ditect_PC" value="1000108" />
-			<param name="Dying_Message" value="1000270" />
-			<skill name="Skill01_ID" id="4032" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="11" />
-			<height normal="45" />
-		</collision>
-	</npc>
-	<npc id="27374" level="79" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="150" />
-			<param name="MoveAroundSocial1" value="150" />
-			<param name="MoveAroundSocial2" value="150" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill02_Target" value="3" />
-			<param name="Skill02_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5975" level="1" />
-			<skill name="Skill02_ID" id="5976" level="1" />
-			<skill name="Skill03_ID" id="5977" level="1" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="45" />
-				<run ground="180" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="1" /> 
-			<skill id="5977" level="1" /> 
-			<skill id="4067" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="20" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27375" level="79" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="IsAggressive" value="1" />
-			<param name="Aggressive_Time" value="1" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-			<skill name="Skill01_ID" id="5975" level="1" />
-			<skill name="Skill02_ID" id="5976" level="1" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="180" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="1" /> 
-			<skill id="4002" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="14" />
-			<height normal="27.5" />
-		</collision>
-	</npc>
-	<npc id="27376" level="87" type="Monster" name="Lilim Knight">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill01_Target" value="2" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Ditect_PC" value="1000108" />
-			<param name="Dying_Message" value="1000270" />
-			<skill name="Skill01_ID" id="4032" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="11" />
-			<height normal="45" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6437" max="15020" chance="70" /> 
-				<item id="19440" min="1" max="1" chance="1.233" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="7.127" /> 
-				<item id="36553" min="1" max="1" chance="2.153" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27377" level="87" type="Monster" name="Lilim Slayer">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="75" />
-			<param name="MoveAroundSocial1" value="75" />
-			<param name="MoveAroundSocial2" value="75" />
-			<param name="IsAggressive" value="1" />
-			<param name="Ditect_PC" value="1000222" />
-			<param name="Dying_Message" value="8564" />
-			<skill name="Skill01_ID" id="4067" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="234" lhand="234" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="36" />
-				<run ground="190" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4067" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="13" />
-			<height normal="44" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="6437" max="15020" chance="70" /> 
-				<item id="36563" min="1" max="1" chance="2.286" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="7.148" /> 
-				<item id="36553" min="1" max="1" chance="2.043" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27378" level="88" type="Monster" name="Lilim Great Magus">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="110" />
-			<param name="MoveAroundSocial2" value="110" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill03_Type" value="2" />
-			<param name="Skill04_Type" value="2" />
-			<param name="Ditect_PC" value="1000208" />
-			<param name="Dying_Message" value="1000247" />
-			<skill name="Skill01_ID" id="4002" level="4" />
-			<skill name="Skill02_ID" id="4002" level="4" />
-			<skill name="Skill03_ID" id="4094" level="4" />
-			<skill name="Skill04_ID" id="4046" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="140" />
-			</speed>
-			<hitTime>500</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4002" level="4" /> 
-			<skill id="4046" level="4" /> 
-			<skill id="4094" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="10" />
-			<height normal="37.5" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="5569" max="13008" chance="70" /> 
-				<item id="19440" min="1" max="1" chance="0.975" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="6.167" /> 
-				<item id="36553" min="1" max="1" chance="1.838" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27379" level="89" type="Monster" name="Lilim Royal Knight">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-			<param name="IsAggressive" value="1" />
-			<param name="Skill01_Target" value="2" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<param name="Ditect_PC" value="1000268" />
-			<param name="Dying_Message" value="1000270" />
-			<skill name="Skill01_ID" id="4032" level="4" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="80" water="80" wind="80" earth="80" holy="60" dark="120" default="100" />
-			</attribute>
-			<speed>
-				<walk ground="56" />
-				<run ground="180" />
-			</speed>
-			<hitTime>460</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4032" level="4" /> 
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="3" /> 
-			<skill id="4411" level="3" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="4072" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="13" />
-			<height normal="55" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="4516" max="10527" chance="70" /> 
-				<item id="37724" min="1" max="1" chance="0.3" /> 
-			</drop>
-			<spoil>
-				<item id="36558" min="1" max="1" chance="4.793" /> 
-				<item id="36553" min="1" max="1" chance="1.383" /> 
-				<item id="45930" min="1" max="1" chance="0.3" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27380" level="76" type="Monster" name="Reckless Water Spirit" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-		</parameters>
-		<race>ELEMENTAL</race>
-		<sex>FEMALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="2758" hpRegen="8.5" mp="1540" mpRegen="3" />
-			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<attack type="WATER" value="80" />
-				<defence fire="-280" water="435" wind="65" earth="65" holy="65" dark="65" default="300" />
-			</attribute>
-			<speed>
-				<walk ground="60" />
-				<run ground="60" />
-			</speed>
-			<hitTime>350</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="10" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="13" /> 
-			<skill id="4413" level="14" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="7" /> 
-			<skill id="5463" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>2</sNpcPropHpRate>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="12" />
-			<height normal="27" />
-		</collision>
-	</npc>
-	<npc id="27381" level="76" type="Monster" name="Reckless Wind Spirit" title="Quest Monster">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="80" />
-			<param name="MoveAroundSocial1" value="80" />
-			<param name="MoveAroundSocial2" value="80" />
-		</parameters>
-		<race>ELEMENTAL</race>
-		<sex>FEMALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="2758" hpRegen="8.5" mp="1540" mpRegen="3" />
-			<attack physical="824.422073095" magical="562.9734023" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="323.78455" magical="236.93149" />
-			<attribute>
-				<attack type="WIND" value="100" />
-				<defence fire="90" water="90" wind="450" earth="-280" holy="90" dark="90" default="300" />
-			</attribute>
-			<speed>
-				<walk ground="60" />
-				<run ground="60" />
-			</speed>
-			<hitTime>560</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="10" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="13" /> 
-			<skill id="4413" level="14" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="7" /> 
-			<skill id="5464" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>2</sNpcPropHpRate>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="11" />
-			<height normal="35" />
-		</collision>
-	</npc>
-	<npc id="27382" level="51" type="Monster" name="Power of Seal Isolation">
-		
-		<parameters>
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5980" level="1" />
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5980" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27383" level="61" type="Monster" name="Power of Seal Isolation">
-		
-		<parameters>
-			<param name="Skill01_Target" value="3" />
-			<param name="Skill01_AttackSplash" value="1" />
-			<skill name="Skill01_ID" id="5980" level="2" />
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5980" level="2" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27384" level="79" type="Monster" name="Seal Device" title="Emperor Shunaiman's">
-		
-		<race>CONSTRUCT</race>
-		<sex>FEMALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="1" />
-				<run ground="1" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<skillList>
-			<skill id="4408" level="16" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="5" /> 
-			<skill id="4411" level="4" /> 
-			<skill id="4412" level="18" /> 
-			<skill id="4413" level="19" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="2" /> 
-			<skill id="5980" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<sNpcPropHpRate>8</sNpcPropHpRate>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="21" />
-			<height normal="24" />
-		</collision>
-	</npc>
-	<npc id="27392" level="65" type="Monster" name="Bloody Axe Subordinate">
-		
-		<race>HUMANOID</race>
-		<sex>MALE</sex>
-		<equipment rhand="69" lhand="19" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="2193" hpRegen="7.5" mp="1188" mpRegen="2.7" />
-			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="271.89033" magical="198.95754" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="110" />
-			</speed>
-			<hitTime>630</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="6" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="14" grown="16" />
-			<height normal="27" grown="32" />
-		</collision>
-	</npc>
-	<npc id="27393" level="50" type="Monster" name="Headless Knight">
-		
-		<race>UNDEAD</race>
-		<sex>MALE</sex>
-		<equipment rhand="135" /> 
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="2193" hpRegen="7.5" mp="1188" mpRegen="2.7" />
-			<attack physical="582.81759" magical="397.98887" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="271.89033" magical="198.95754" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="70" />
-				<run ground="110" />
-			</speed>
-			<hitTime>520</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="21" grown="24" />
-			<height normal="31" grown="38" />
-		</collision>
-		<dropLists>
-			<drop>
-				<item id="57" min="16" max="36" chance="70" /> 
-				<item id="4609" min="1" max="1" chance="0.03" /> 
-				<item id="45929" min="1" max="4" chance="0.003" /> 
-			</drop>
-			<spoil>
-				<item id="36531" min="1" max="1" chance="8.535" /> 
-				<item id="36880" min="1" max="1" chance="9" /> 
-			</spoil>
-		</dropLists>
-	</npc>
-	<npc id="27394" level="51" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<skill name="Skill01_ID" id="5975" level="1" />
-			<skill name="Skill02_ID" id="5976" level="1" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27395" level="61" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<skill name="Skill01_ID" id="5975" level="1" />
-			<skill name="Skill02_ID" id="5976" level="2" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="2" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27396" level="79" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-			<skill name="Skill01_ID" id="5975" level="3" />
-			<skill name="Skill02_ID" id="5976" level="3" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<attack type="DARK" value="200" />
-				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="150" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="180" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5975" level="3" /> 
-			<skill id="5976" level="3" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="14" />
-			<height normal="27.5" />
-		</collision>
-	</npc>
-	<npc id="27397" level="51" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<skill name="Skill01_ID" id="5975" level="1" />
-			<skill name="Skill02_ID" id="5976" level="1" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1470" hpRegen="6.5" mp="775" mpRegen="2.4" />
-			<attack physical="321.13207" magical="219.29157" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="204.85194" magical="149.90176" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="1" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27398" level="61" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<skill name="Skill01_ID" id="5975" level="1" />
-			<skill name="Skill02_ID" id="5976" level="2" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-		</parameters>
-		<race>ETC</race>
-		<sex>ETC</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="1985" hpRegen="7.5" mp="1066" mpRegen="2.7" />
-			<attack physical="501.08068" magical="342.17315" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="252.49346" magical="184.76376" />
-			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
-			</attribute>
-			<speed>
-				<walk ground="50" />
-				<run ground="100" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="19" /> 
-			<skill id="5975" level="1" /> 
-			<skill id="5976" level="2" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="13" />
-			<height normal="40" />
-		</collision>
-	</npc>
-	<npc id="27399" level="79" type="Monster" name="Shilen's Evil Thoughts">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="0" />
-			<param name="MoveAroundSocial1" value="0" />
-			<param name="MoveAroundSocial2" value="0" />
-			<param name="Skill01_Probablity" value="1000" />
-			<param name="Skill02_Probablity" value="1000" />
-			<skill name="Skill01_ID" id="5975" level="3" />
-			<skill name="Skill02_ID" id="5976" level="3" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
-			<vitals hp="3127" hpRegen="8.5" mp="1641" mpRegen="3" />
-			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="337.07008" magical="246.65326" />
-			<attribute>
-				<attack type="DARK" value="200" />
-				<defence fire="170" water="170" wind="170" earth="170" holy="120" dark="200" default="150" />
-			</attribute>
-			<speed>
-				<walk ground="30" />
-				<run ground="180" />
-			</speed>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="3" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5975" level="3" /> 
-			<skill id="5976" level="3" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="300" />
-		<collision>
-			<radius normal="14" />
-			<height normal="27.5" />
+			<radius normal="39" />
+			<height normal="38" />
 		</collision>
 	</npc>
 </list>

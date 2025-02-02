@@ -1,29 +1,27 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="31700" level="70" type="Folk" name="Saint's Follower">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="74" />
 		</parameters>
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="7" />
@@ -31,31 +29,29 @@
 		</collision>
 	</npc>
 	<npc id="31701" level="70" type="Folk" name="Saint's Follower">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
 			<param name="HavePet" value="1" />
-			<param name="silhouette" value="31703" /> 
+			<param name="silhouette" value="31703" /> <!-- Saint's Follower -->
 		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="15" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="6" />
@@ -63,31 +59,29 @@
 		</collision>
 	</npc>
 	<npc id="31702" level="70" type="Folk" name="Saint's Follower">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="165" />
 			<param name="HavePet" value="1" />
-			<param name="silhouette" value="31704" /> 
+			<param name="silhouette" value="31704" /> <!-- Saint's Follower -->
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
@@ -95,25 +89,23 @@
 		</collision>
 	</npc>
 	<npc id="31703" level="70" type="Folk" name="Saint's Follower">
-		
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
@@ -121,46 +113,40 @@
 		</collision>
 	</npc>
 	<npc id="31704" level="70" type="Folk" name="Saint's Follower">
-		
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="31705" level="70" type="Monster" name="Daimon the White-Eyed">
-		
+	<npc id="31705" level="70" type="Folk" name="Daimon the White-Eyed">
 		<parameters>
 			<param name="MoveAroundSocial" value="120" />
 			<param name="MoveAroundSocial1" value="120" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="30" />
 				<run ground="120" />
@@ -168,9 +154,11 @@
 			<hitTime>540</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="21" />
@@ -178,20 +166,16 @@
 		</collision>
 	</npc>
 	<npc id="31706" level="70" type="Folk" name="Miki the Cat">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -199,9 +183,11 @@
 			<hitTime>610</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="9" />
@@ -209,7 +195,6 @@
 		</collision>
 	</npc>
 	<npc id="31707" level="70" type="Folk" name="Ketra Van Grunt">
-		
 		<parameters>
 			<param name="NoFnHi" value="1" />
 			<param name="MoveAroundSocial" value="140" />
@@ -217,14 +202,11 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="6719" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="6719" /> <!-- rhand: Monster Only(Ketra Orc Chieftain) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="24" />
 				<run ground="120" />
@@ -232,9 +214,11 @@
 			<hitTime>510</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="11" grown="16" />
@@ -242,7 +226,6 @@
 		</collision>
 	</npc>
 	<npc id="31708" level="70" type="Folk" name="Ketra Van Shaman">
-		
 		<parameters>
 			<param name="NoFnHi" value="1" />
 			<param name="MoveAroundSocial" value="90" />
@@ -250,14 +233,11 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="92" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="92" /> <!-- rhand: Sprite's Staff -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="10" />
 				<run ground="120" />
@@ -265,9 +245,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="10" />
@@ -275,7 +257,6 @@
 		</collision>
 	</npc>
 	<npc id="31709" level="70" type="Folk" name="Ketra Van Captain">
-		
 		<parameters>
 			<param name="NoFnHi" value="1" />
 			<param name="MoveAroundSocial" value="110" />
@@ -283,14 +264,11 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="80" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="80" /> <!-- rhand: Tallum Blade -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="27" />
 				<run ground="120" />
@@ -298,17 +276,18 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="12" />
 			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="31710" level="70" type="Folk" name="Varka Van Commander">
-		
+	<npc id="31710" level="70" type="Folk" name="Ketra Van Commander">
 		<parameters>
 			<param name="NoFnHi" value="1" />
 			<param name="MoveAroundSocial" value="90" />
@@ -316,14 +295,11 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="2500" /> <!-- rhand: Dark Legion's Edge -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="25" />
 				<run ground="120" />
@@ -331,17 +307,18 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="18" />
 			<height normal="42.5" />
 		</collision>
 	</npc>
-	<npc id="31711" level="70" type="Folk" name="Varka Van Shaman">
-		
+	<npc id="31711" level="70" type="Folk" name="Ketra Van Shaman">
 		<parameters>
 			<param name="NoFnHi" value="1" />
 			<param name="MoveAroundSocial" value="123" />
@@ -349,14 +326,11 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="6716" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="6716" /> <!-- rhand: Monster Only(Silenos Shaman) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="36" />
 				<run ground="120" />
@@ -364,9 +338,11 @@
 			<hitTime>490</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />
@@ -374,7 +350,6 @@
 		</collision>
 	</npc>
 	<npc id="31712" level="70" type="Folk" name="Varka Raider">
-		
 		<parameters>
 			<param name="NoFnHi" value="1" />
 			<param name="MoveAroundSocial" value="85" />
@@ -382,14 +357,11 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="34" />
 				<run ground="120" />
@@ -397,9 +369,11 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="6" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="16" />
@@ -407,16 +381,12 @@
 		</collision>
 	</npc>
 	<npc id="31713" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -424,9 +394,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -434,16 +406,12 @@
 		</collision>
 	</npc>
 	<npc id="31714" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -451,9 +419,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -461,16 +431,12 @@
 		</collision>
 	</npc>
 	<npc id="31715" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -478,9 +444,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -488,16 +456,12 @@
 		</collision>
 	</npc>
 	<npc id="31716" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -505,9 +469,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -515,16 +481,12 @@
 		</collision>
 	</npc>
 	<npc id="31717" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -532,9 +494,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -542,16 +506,12 @@
 		</collision>
 	</npc>
 	<npc id="31718" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -559,9 +519,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -569,16 +531,12 @@
 		</collision>
 	</npc>
 	<npc id="31719" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -586,9 +544,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -596,16 +556,12 @@
 		</collision>
 	</npc>
 	<npc id="31720" level="70" type="Folk" name="Preacher of Doom">
-		
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="100" />
 				<run ground="120" />
@@ -613,9 +569,11 @@
 			<hitTime>370</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="20" />
@@ -623,16 +581,12 @@
 		</collision>
 	</npc>
 	<npc id="31721" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -640,9 +594,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -650,16 +606,12 @@
 		</collision>
 	</npc>
 	<npc id="31722" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -667,9 +619,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -677,16 +631,12 @@
 		</collision>
 	</npc>
 	<npc id="31723" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -694,9 +644,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -704,16 +656,12 @@
 		</collision>
 	</npc>
 	<npc id="31724" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -721,9 +669,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -731,16 +681,12 @@
 		</collision>
 	</npc>
 	<npc id="31725" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -748,9 +694,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -758,16 +706,12 @@
 		</collision>
 	</npc>
 	<npc id="31726" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -775,9 +719,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -785,16 +731,12 @@
 		</collision>
 	</npc>
 	<npc id="31727" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -802,9 +744,11 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
@@ -812,16 +756,12 @@
 		</collision>
 	</npc>
 	<npc id="31728" level="70" type="Folk" name="Orator of Revelations">
-		
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -829,317 +769,299 @@
 			<hitTime>340</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="15" />
 			<height normal="28" />
 		</collision>
 	</npc>
-	<npc id="31729" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31729" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="156" lhand="20" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="156" lhand="20" /> <!-- rhand: Hand Axe lhand: Buckler -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="31730" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31730" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
 		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
-		<equipment rhand="130" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="130" /> <!-- rhand: Elven Sword -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="15" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="6" />
 			<height normal="21" />
 		</collision>
 	</npc>
-	<npc id="31731" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31731" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="103" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="21731" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="224" /> <!-- rhand: Maingauche -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="31732" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31732" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="188" />
 		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="17" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="26" />
 		</collision>
 	</npc>
-	<npc id="31733" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31733" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="70" />
 		</parameters>
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="17.5" />
 		</collision>
 	</npc>
-	<npc id="31734" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31734" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
 		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="21732" lhand="102" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="9.5" />
 			<height normal="22.4" />
 		</collision>
 	</npc>
-	<npc id="31735" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31735" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="123" />
 		</parameters>
 		<race>ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="231" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="231" /> <!-- rhand: Grace Dagger -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="15" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="31736" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31736" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="139" />
 		</parameters>
 		<race>DARK_ELF</race>
 		<sex>MALE</sex>
-		<equipment rhand="151" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="151" /> <!-- rhand: Sword of Miracles -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="31737" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31737" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="156" />
 		</parameters>
 		<race>ORC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="99" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="17" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="31738" level="70" type="Folk" name="Adventure Guildsman">
-		
+	<npc id="31738" level="70" type="Adventurer" name="Adventurer Guildsman">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="165" />
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<equipment rhand="99" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -1147,30 +1069,28 @@
 		</collision>
 	</npc>
 	<npc id="31739" level="70" type="Folk" name="Talien">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="4202" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="4202" /> <!-- rhand: Chrono Cithara -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
@@ -1178,30 +1098,28 @@
 		</collision>
 	</npc>
 	<npc id="31740" level="70" type="Folk" name="Caradine">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="100" />
 		</parameters>
 		<race>ELF</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="285" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="285" /> <!-- rhand: Noble Elven Bow -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="15" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="7" />
@@ -1209,30 +1127,28 @@
 		</collision>
 	</npc>
 	<npc id="31741" level="70" type="Folk" name="Ossian">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="21732" lhand="102" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" shield="148" shieldRate="20" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="10" />
@@ -1240,29 +1156,27 @@
 		</collision>
 	</npc>
 	<npc id="31742" level="70" type="Folk" name="Virgil">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="165" />
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
@@ -1270,29 +1184,27 @@
 		</collision>
 	</npc>
 	<npc id="31743" level="70" type="Folk" name="Kassandra">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="74" />
 		</parameters>
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="7" />
@@ -1300,29 +1212,27 @@
 		</collision>
 	</npc>
 	<npc id="31744" level="70" type="Folk" name="Ogmar">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="188" />
 		</parameters>
 		<race>ORC</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="17" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
@@ -1330,29 +1240,27 @@
 		</collision>
 	</npc>
 	<npc id="31745" level="70" type="Folk" name="Lady of the Lake">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
 		</parameters>
 		<race>ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="15" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8.5" />
@@ -1360,20 +1268,16 @@
 		</collision>
 	</npc>
 	<npc id="31746" level="70" type="Folk" name="Fallen Unicorn">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="46" />
 				<run ground="120" />
@@ -1381,9 +1285,11 @@
 			<hitTime>740</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />
@@ -1391,20 +1297,16 @@
 		</collision>
 	</npc>
 	<npc id="31747" level="70" type="Folk" name="Pure White Unicorn">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="60" />
 			<param name="MoveAroundSocial1" value="60" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="46" />
 				<run ground="120" />
@@ -1412,9 +1314,11 @@
 			<hitTime>740</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="14" />
@@ -1422,29 +1326,27 @@
 		</collision>
 	</npc>
 	<npc id="31748" level="70" type="Folk" name="Cornerstone of Restraining">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="2" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
@@ -1452,29 +1354,27 @@
 		</collision>
 	</npc>
 	<npc id="31750" level="70" type="Folk" name="Mysterious Woman">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
 		</parameters>
 		<race>ELF</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="15" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8.5" />
@@ -1482,21 +1382,17 @@
 		</collision>
 	</npc>
 	<npc id="31751" level="70" type="Folk" name="Mysterious Dark Knight">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> 
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<equipment rhand="78" /> <!-- rhand: Great Sword -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="40" />
 				<run ground="120" />
@@ -1504,9 +1400,11 @@
 			<hitTime>500</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="1" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="1" /> <!-- Undead -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="21" grown="25" />
@@ -1514,29 +1412,27 @@
 		</collision>
 	</npc>
 	<npc id="31752" level="70" type="Folk" name="Corpse of Angel">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="8" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="CORPSE" aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="25" />
@@ -1544,7 +1440,6 @@
 		</collision>
 	</npc>
 	<npc id="31755" level="70" type="VillageMasterMystic" name="Halaster" title="Grand Magister">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
@@ -1552,22 +1447,21 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -1575,7 +1469,6 @@
 		</collision>
 	</npc>
 	<npc id="31756" level="70" type="ClassMaster" name="Mr. Cat" title="Test Server Helper">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -1583,13 +1476,10 @@
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -1597,9 +1487,11 @@
 			<hitTime>610</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="9" />
@@ -1607,7 +1499,6 @@
 		</collision>
 	</npc>
 	<npc id="31757" level="70" type="ClassMaster" name="Miss Queen" title="Test Server Helper">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
@@ -1615,13 +1506,10 @@
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="26" />
 				<run ground="120" />
@@ -1629,9 +1517,11 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
@@ -1639,20 +1529,16 @@
 		</collision>
 	</npc>
 	<npc id="31758" level="70" type="Folk" name="Rafi">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>DRAGON</race>
 		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="80" />
 				<run ground="120" />
@@ -1660,9 +1546,11 @@
 			<hitTime>270</hitTime>
 		</stats>
 		<status attackable="false" talkable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="10" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="10" /> <!-- Dragons -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="9" />
@@ -1670,442 +1558,401 @@
 		</collision>
 	</npc>
 	<npc id="31759" level="70" type="Folk" name="Teleportation Cubic">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="40" />
 			<height normal="80" />
 		</collision>
 	</npc>
-	<npc id="31760" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31760" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31761" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31761" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31762" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31762" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31763" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31763" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31764" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31764" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31765" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31765" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31766" level="70" type="Folk" name="Queen of Hearts" title="Adventurers' Guide">
-		
+	<npc id="31766" level="70" type="Folk" name="Miss Queen" title="Adventurers' Guide">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="26" />
 				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31767" level="70" type="Folk" name="Event Gatekeeper">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="48" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
 	<npc id="31768" level="70" type="Folk" name="Event Gatekeeper">
-		
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
-				<walk ground="25" />
+				<walk ground="48" />
 				<run ground="120" />
 			</speed>
 			<hitTime>340</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31769" level="70" type="Folk" name="Monument of Heroes">
-		
+	<npc id="31769" level="70" type="OlympiadManager" name="Monument of Heroes">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="24" />
 			<height normal="77.5" />
 		</collision>
 	</npc>
-	<npc id="31770" level="70" type="Folk" name="Monument of Heroes">
-		
+	<npc id="31770" level="70" type="OlympiadManager" name="Monument of Heroes">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="77" />
 		</collision>
 	</npc>
-	<npc id="31771" level="70" type="Folk" name="Monument of Heroes">
-		
+	<npc id="31771" level="70" type="OlympiadManager" name="Monument of Heroes">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="24" />
 			<height normal="72.5" />
 		</collision>
 	</npc>
-	<npc id="31772" level="70" type="Folk" name="Monument of Heroes">
-		
+	<npc id="31772" level="70" type="OlympiadManager" name="Monument of Heroes">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 		</parameters>
 		<race>ETC</race>
 		<sex>ETC</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="19" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="19" /> <!-- Others -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="23" />
 			<height normal="80" />
@@ -2119,193 +1966,769 @@
 		<race>DWARF</race>
 		<sex>FEMALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" undying="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="18" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="7" />
 			<height normal="18" />
 		</collision>
 	</npc>
-	<npc id="31774" level="70" type="Folk" name="Magrit" title="Soul Tracker">
-		
+	<npc id="31774" level="70" type="Folk" name="Beryl the Cat" title="Event Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="118" />
 		</parameters>
-		<race>ANIMAL</race>
+		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
 			<speed>
-				<walk ground="50" />
-				<run ground="160" />
+				<walk ground="26" />
+				<run ground="120" />
 			</speed>
 			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
-		<status attackable="false" undying="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="7" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
 			<radius normal="8" />
-			<height normal="22.5" />
+			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="31775" level="70" type="Folk" name="Ingrit" title="Soul Tracker">
-		
+	<npc id="31775" level="70" type="Adventurer" name="Adventure Guildsman">
 		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="118" />
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="90" />
 		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
+		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
 			<defence physical="295.91597" magical="216.53847" />
-			<speed>
-				<walk ground="50" />
-				<run ground="160" />
-			</speed>
-			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="false" undying="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
-		<collision>
-			<radius normal="7" />
-			<height normal="21.2" />
-		</collision>
-	</npc>
-	<npc id="31776" level="70" type="Folk" name="Iris" title="Soul Tracker">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="118" />
-		</parameters>
-		<race>HUMAN</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
-			<speed>
-				<walk ground="50" />
-				<run ground="160" />
-			</speed>
-			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="false" undying="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="14" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
-		<collision>
-			<radius normal="8" />
-			<height normal="22.5" />
-		</collision>
-	</npc>
-	<npc id="31777" level="70" type="Folk" name="Rosammy" title="Soul Tracker">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="118" />
-		</parameters>
-		<race>DARK_ELF</race>
-		<sex>FEMALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
-			<speed>
-				<walk ground="36" />
-				<run ground="160" />
-			</speed>
-			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="false" undying="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
-		<collision>
-			<radius normal="8" />
-			<height normal="23.5" />
-		</collision>
-	</npc>
-	<npc id="31778" level="70" type="Folk" name="Tores" title="Dungeon of Abyss Officer">
-		
-		<parameters>
-			<param name="MoveAroundSocial" value="110" />
-			<param name="MoveAroundSocial1" value="118" />
-		</parameters>
-		<race>DARK_ELF</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
-			<vitals hp="2823" hpRegen="7.5" mp="1507" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
-			<speed>
-				<walk ground="50" />
-				<run ground="160" />
-			</speed>
-			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
-		</stats>
-		<status attackable="false" undying="true" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="16" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
-		<collision>
-			<radius normal="8" />
-			<height normal="23.5" />
-		</collision>
-	</npc>
-	<npc id="31795" level="70" type="Folk" name="Adventure Guildsman">
-		
-		<race>ORC</race>
-		<sex>MALE</sex>
-		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
-			<vitals hp="2444" hpRegen="7.5" mp="1345" mpRegen="2.7" />
-			<attack physical="688.86373" magical="470.40463" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
-			<defence physical="295.91597" magical="216.53847" />
-			<attribute>
-				<defence fire="150" water="150" wind="150" earth="150" holy="150" dark="150" default="150" />
-			</attribute>
 			<speed>
 				<walk ground="50" />
 				<run ground="120" />
 			</speed>
-			<hitTime>480</hitTime>
-			<abnormalResist physical="10" magical="10" />
 		</stats>
 		<status attackable="false" />
-		<skillList><skill id="4045" level="1" /> 
-			<skill id="4416" level="17" /> 
-		</skillList><exCrtEffect>true</exCrtEffect>
-		<ai clanHelpRange="300" aggroRange="450" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="9.5" />
+			<height normal="22.4" />
+		</collision>
+	</npc>
+	<npc id="31776" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="120" />
+		</parameters>
+		<race>HUMAN</race>
+		<sex>MALE</sex>
+		<equipment rhand="156" lhand="20" /> <!-- rhand: Hand Axe lhand: Buckler -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="21.5" />
+		</collision>
+	</npc>
+	<npc id="31777" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="103" />
+		</parameters>
+		<race>DARK_ELF</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="224" /> <!-- rhand: Maingauche -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="31778" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="139" />
+		</parameters>
+		<race>DARK_ELF</race>
+		<sex>MALE</sex>
+		<equipment rhand="151" /> <!-- rhand: Sword of Miracles -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="31779" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="139" />
+		</parameters>
+		<race>DARK_ELF</race>
+		<sex>MALE</sex>
+		<equipment rhand="151" /> <!-- rhand: Sword of Miracles -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="31780" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="130" />
+		</parameters>
+		<race>ELF</race>
+		<sex>MALE</sex>
+		<equipment rhand="130" /> <!-- rhand: Elven Sword -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="6" />
+			<height normal="21" />
+		</collision>
+	</npc>
+	<npc id="31781" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="123" />
+		</parameters>
+		<race>ELF</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="231" /> <!-- rhand: Grace Dagger -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="31782" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="70" />
+		</parameters>
+		<race>DWARF</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="17.5" />
+		</collision>
+	</npc>
+	<npc id="31783" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="165" />
+		</parameters>
+		<race>DWARF</race>
+		<sex>MALE</sex>
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="17" />
+		</collision>
+	</npc>
+	<npc id="31784" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="188" />
+		</parameters>
+		<race>ORC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="26" />
+		</collision>
+	</npc>
+	<npc id="31785" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="156" />
+		</parameters>
+		<race>ORC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="24" />
+		</collision>
+	</npc>
+	<npc id="31786" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="156" />
+		</parameters>
+		<race>ORC</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="24" />
+		</collision>
+	</npc>
+	<npc id="31787" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="90" />
+		</parameters>
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="9.5" />
+			<height normal="22.4" />
+		</collision>
+	</npc>
+	<npc id="31788" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="188" />
+		</parameters>
+		<race>ORC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="26" />
+		</collision>
+	</npc>
+	<npc id="31789" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="165" />
+		</parameters>
+		<race>DWARF</race>
+		<sex>MALE</sex>
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="17" />
+		</collision>
+	</npc>
+	<npc id="31790" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="123" />
+		</parameters>
+		<race>ELF</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="231" /> <!-- rhand: Grace Dagger -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="31791" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="139" />
+		</parameters>
+		<race>DARK_ELF</race>
+		<sex>MALE</sex>
+		<equipment rhand="151" /> <!-- rhand: Sword of Miracles -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="31792" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="130" />
+		</parameters>
+		<race>ELF</race>
+		<sex>MALE</sex>
+		<equipment rhand="130" /> <!-- rhand: Elven Sword -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="6" />
+			<height normal="21" />
+		</collision>
+	</npc>
+	<npc id="31793" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="103" />
+		</parameters>
+		<race>DARK_ELF</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="224" /> <!-- rhand: Maingauche -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="16" /> <!-- Dark Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="23" />
+		</collision>
+	</npc>
+	<npc id="31794" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="123" />
+		</parameters>
+		<race>ELF</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="231" /> <!-- rhand: Grace Dagger -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="31795" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="188" />
+		</parameters>
+		<race>ORC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="26" />
+		</collision>
+	</npc>
+	<npc id="31796" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="70" />
+		</parameters>
+		<race>DWARF</race>
+		<sex>FEMALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="17.5" />
+		</collision>
+	</npc>
+	<npc id="31797" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="165" />
+		</parameters>
+		<race>DWARF</race>
+		<sex>MALE</sex>
+		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="18" /> <!-- Dwarves -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="8" />
+			<height normal="17" />
+		</collision>
+	</npc>
+	<npc id="31798" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="90" />
+		</parameters>
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
+		<collision>
+			<radius normal="9.5" />
+			<height normal="22.4" />
+		</collision>
+	</npc>
+	<npc id="31799" level="70" type="Adventurer" name="Adventure Guildsman">
+		<parameters>
+			<param name="MoveAroundSocial" value="0" />
+			<param name="MoveAroundSocial1" value="188" />
+		</parameters>
+		<race>ORC</race>
+		<sex>MALE</sex>
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
+			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
+			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="295.91597" magical="216.53847" />
+			<speed>
+				<walk ground="50" />
+				<run ground="120" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skillList>
+			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<collision>
 			<radius normal="8" />
 			<height normal="26" />
