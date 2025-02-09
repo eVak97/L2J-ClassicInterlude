@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="30700" level="70" type="Trainer" name="Prestan" title="Master">
+<npc id="30700" level="70" type="Folk" name="Prestan" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="103" />
@@ -18,8 +18,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -28,11 +28,11 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30701" level="70" type="Trainer" name="Errickin" title="Magister">
+	<npc id="30701" level="70" type="Folk" name="Errickin" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="156" />
-			<param name="skill_sharing_item" value="15309" /> <!-- Holy Pomander - Shillien Saint -->
+			<param name="skill_sharing_item" value="15309" /> 
 			<param name="token_num" value="4" />
 		</parameters>
 		<race>DARK_ELF</race>
@@ -48,8 +48,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -76,8 +76,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -104,8 +104,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -133,8 +133,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -143,7 +143,7 @@
 			<height normal="26" />
 		</collision>
 	</npc>
-	<npc id="30705" level="70" type="Trainer" name="Chakiris" title="Prefect">
+	<npc id="30705" level="70" type="Folk" name="Chakiris" title="Prefect">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -161,8 +161,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -171,7 +171,7 @@
 			<height normal="28.5" />
 		</collision>
 	</npc>
-	<npc id="30706" level="70" type="Trainer" name="Lazenby" title="Seer">
+	<npc id="30706" level="70" type="Folk" name="Lazenby" title="Seer">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="165" />
@@ -189,8 +189,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -206,7 +206,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
+		<equipment rhand="129" lhand="102" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -218,8 +218,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -235,7 +235,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -247,8 +247,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -264,7 +264,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="275" /> <!-- rhand: Long Bow -->
+		<equipment rhand="275" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
@@ -276,8 +276,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -293,7 +293,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -305,8 +305,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -322,7 +322,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -334,8 +334,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -351,7 +351,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -363,8 +363,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -380,7 +380,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="275" /> <!-- rhand: Long Bow -->
+		<equipment rhand="275" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
@@ -392,8 +392,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -409,7 +409,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -421,8 +421,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -431,7 +431,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="30715" level="70" type="Trainer" name="Marina" title="Magister">
+	<npc id="30715" level="70" type="Folk" name="Marina" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="133" />
@@ -449,8 +449,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -477,8 +477,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -487,7 +487,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="30717" level="70" type="Trainer" name="Gauen" title="Magister">
+	<npc id="30717" level="70" type="Folk" name="Gauen" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="187" />
@@ -505,8 +505,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -515,7 +515,7 @@
 			<height normal="22.2" />
 		</collision>
 	</npc>
-	<npc id="30718" level="70" type="Trainer" name="Joan" title="Magister">
+	<npc id="30718" level="70" type="Folk" name="Joan" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="100" />
@@ -533,8 +533,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -561,8 +561,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -571,7 +571,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="30720" level="70" type="Trainer" name="Kaiena" title="Magister">
+	<npc id="30720" level="70" type="Folk" name="Kaiena" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -589,8 +589,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -599,7 +599,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30721" level="70" type="Trainer" name="Ladd" title="Magister">
+	<npc id="30721" level="70" type="Folk" name="Ladd" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="156" />
@@ -617,8 +617,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -645,8 +645,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -662,7 +662,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="129" lhand="102" /> <!-- rhand: Sword of Revolution lhand: Round Shield -->
+		<equipment rhand="129" lhand="102" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -674,8 +674,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -691,7 +691,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -703,8 +703,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -720,7 +720,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -732,8 +732,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -749,7 +749,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" lhand="20" /> <!-- rhand: Long Sword lhand: Buckler -->
+		<equipment rhand="2" lhand="20" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -761,8 +761,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -789,8 +789,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -806,7 +806,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="93" /> <!-- rhand: Winged Spear -->
+		<equipment rhand="93" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -818,8 +818,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -846,8 +846,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -863,7 +863,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="232" /> <!-- rhand: Dark Elven Dagger -->
+		<equipment rhand="232" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -875,8 +875,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -890,35 +890,35 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
 			<param name="HavePet" value="1" />
-			<param name="silhouette" value="31202" /> <!-- Maximus -->
-			<param name="item_baby_pet1" value="2375" /> <!-- Wolf Collar -->
-			<param name="item_grown_pet1" value="9882" /> <!-- Great Wolf Necklace -->
+			<param name="silhouette" value="31202" /> 
+			<param name="item_baby_pet1" value="2375" /> 
+			<param name="item_grown_pet1" value="9882" /> 
 			<param name="id_grown_pet1" value="12" />
-			<param name="class_id_baby_pet1" value="12077" /> <!-- Wolf -->
+			<param name="class_id_baby_pet1" value="12077" /> 
 			<param name="min_lv_pet1" value="55" />
 			<param name="check_min_lv_pet1" value="1" />
-			<param name="item_baby_pet2" value="6648" /> <!-- Baby Buffalo Panpipe -->
-			<param name="item_grown_pet2" value="10311" /> <!-- Improved Buffalo Panpipe -->
+			<param name="item_baby_pet2" value="6648" /> 
+			<param name="item_grown_pet2" value="10311" /> 
 			<param name="id_grown_pet2" value="18" />
-			<param name="class_id_baby_pet2" value="12780" /> <!-- Baby Buffalo -->
+			<param name="class_id_baby_pet2" value="12780" /> 
 			<param name="min_lv_pet2" value="55" />
 			<param name="check_min_lv_pet2" value="1" />
-			<param name="item_baby_pet3" value="6650" /> <!-- Baby Kookaburra Ocarina -->
-			<param name="item_grown_pet3" value="10313" /> <!-- Improved Kookaburra Ocarina -->
+			<param name="item_baby_pet3" value="6650" /> 
+			<param name="item_grown_pet3" value="10313" /> 
 			<param name="id_grown_pet3" value="19" />
-			<param name="class_id_baby_pet3" value="12781" /> <!-- Baby Kookaburra -->
+			<param name="class_id_baby_pet3" value="12781" /> 
 			<param name="min_lv_pet3" value="55" />
 			<param name="check_min_lv_pet3" value="1" />
-			<param name="item_baby_pet4" value="6649" /> <!-- Baby Cougar Chime -->
-			<param name="item_grown_pet4" value="10312" /> <!-- Improved Cougar Chime -->
+			<param name="item_baby_pet4" value="6649" /> 
+			<param name="item_grown_pet4" value="10312" /> 
 			<param name="id_grown_pet4" value="20" />
-			<param name="class_id_baby_pet4" value="12782" /> <!-- Baby Cougar -->
+			<param name="class_id_baby_pet4" value="12782" /> 
 			<param name="min_lv_pet4" value="55" />
 			<param name="check_min_lv_pet4" value="1" />
-			<param name="item_baby_pet5" value="9882" /> <!-- Great Wolf Necklace -->
-			<param name="item_grown_pet5" value="10426" /> <!-- Fenrir Necklace -->
+			<param name="item_baby_pet5" value="9882" /> 
+			<param name="item_grown_pet5" value="10426" /> 
 			<param name="id_grown_pet5" value="21" />
-			<param name="class_id_baby_pet5" value="16025" /> <!-- Great Wolf -->
+			<param name="class_id_baby_pet5" value="16025" /> 
 			<param name="min_lv_pet5" value="70" />
 			<param name="check_min_lv_pet5" value="1" />
 		</parameters>
@@ -935,8 +935,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -952,7 +952,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="1" /> <!-- rhand: Short Sword -->
+		<equipment rhand="1" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="809.52639" hpRegen="4.5" mp="417.6" mpRegen="1.8" />
 			<attack physical="137.86467" magical="94.1437" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -965,8 +965,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -983,7 +983,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="275" /> <!-- rhand: Long Bow -->
+		<equipment rhand="275" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" reuseDelay="1500" type="BOW" range="1100" distance="10" width="0" />
@@ -995,8 +995,8 @@
 		</stats>
 		<status attackable="false" undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1023,8 +1023,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1051,8 +1051,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1079,8 +1079,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1107,8 +1107,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1135,8 +1135,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1164,8 +1164,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1193,8 +1193,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1221,8 +1221,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1250,8 +1250,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="13" /> <!-- Fairies -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="13" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1278,8 +1278,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1306,8 +1306,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1334,8 +1334,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1362,8 +1362,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1391,8 +1391,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="13" /> <!-- Fairies -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="13" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1420,8 +1420,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1449,8 +1449,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1478,8 +1478,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1507,8 +1507,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1536,8 +1536,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="10" /> <!-- Dragons -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1564,8 +1564,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1581,7 +1581,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="150" /> <!-- rhand: Elemental Sword -->
+		<equipment rhand="150" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1594,8 +1594,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1611,7 +1611,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="127" /> <!-- rhand: Crimson Sword -->
+		<equipment rhand="127" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1624,8 +1624,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1652,8 +1652,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1680,8 +1680,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1708,8 +1708,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1736,8 +1736,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1764,8 +1764,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1792,8 +1792,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="CORPSE" aggroRange="1000" clanHelpRange="300" />
@@ -1820,8 +1820,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="CORPSE" aggroRange="1000" clanHelpRange="300" />
@@ -1848,8 +1848,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="CORPSE" aggroRange="1000" clanHelpRange="300" />
@@ -1876,8 +1876,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1904,8 +1904,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1932,8 +1932,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -1942,7 +1942,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30767" level="70" type="Auctioneer" name="Auctioneer">
+	<npc id="30767" level="70" type="Folk" name="Auctioneer">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -1960,8 +1960,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1970,7 +1970,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="30768" level="70" type="Auctioneer" name="Auctioneer">
+	<npc id="30768" level="70" type="Folk" name="Auctioneer">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="75" />
@@ -1988,8 +1988,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1998,7 +1998,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="30769" level="70" type="Auctioneer" name="Auctioneer">
+	<npc id="30769" level="70" type="Folk" name="Auctioneer">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="107" />
@@ -2016,8 +2016,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2026,7 +2026,7 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="30770" level="70" type="Auctioneer" name="Auctioneer">
+	<npc id="30770" level="70" type="Folk" name="Auctioneer">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="87" />
@@ -2044,8 +2044,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2054,7 +2054,7 @@
 			<height normal="18.5" />
 		</collision>
 	</npc>
-	<npc id="30771" level="70" type="Auctioneer" name="Auctioneer">
+	<npc id="30771" level="70" type="Folk" name="Auctioneer">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="156" />
@@ -2072,8 +2072,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2082,7 +2082,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="30772" level="70" type="ClanHallDoorman" name="Wilson" title="Clan Hall Gatekeeper">
+	<npc id="30772" level="70" type="Merchant" name="Wilson" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2100,8 +2100,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2110,7 +2110,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30773" level="70" type="ClanHallDoorman" name="Todd" title="Clan Hall Gatekeeper">
+	<npc id="30773" level="70" type="Folk" name="Todd" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2128,8 +2128,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />

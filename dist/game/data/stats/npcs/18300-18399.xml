@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="18300" level="33" type="Folk" name="Offering of the Branded, Evoked Spirit">
+<npc id="18300" level="33" type="Monster" name="Offering of the Branded, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4572" level="3" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="158" /> <!-- rhand: Tarbar -->
+		<equipment rhand="158" /> 
 		<acquire exp="1751" sp="100" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
@@ -22,11 +22,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="3" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -35,11 +35,11 @@
 			<height normal="21" />
 		</collision>
 	</npc>
-	<npc id="18301" level="46" type="Folk" name="Flame of Apostates">
+	<npc id="18301" level="46" type="Monster" name="Flame of Apostates">
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4614" level="5" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="5" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -55,13 +55,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="5" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -71,15 +71,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18302" level="44" type="Folk" name="Offering of Apostates, Evoked Spirit">
+	<npc id="18302" level="44" type="Monster" name="Offering of Apostates, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4572" level="4" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="172" /> <!-- rhand: Heavy Bone Club -->
+		<equipment rhand="172" /> 
 		<acquire exp="3113" sp="213" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1138.62924" hpRegen="5.5" mp="584" mpRegen="2.1" />
@@ -93,11 +93,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="4" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -106,11 +106,11 @@
 			<height normal="22" grown="26.4" />
 		</collision>
 	</npc>
-	<npc id="18303" level="57" type="Folk" name="Flame of the Witch">
+	<npc id="18303" level="57" type="Monster" name="Flame of the Witch">
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4614" level="6" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="6" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -126,13 +126,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="6" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -142,15 +142,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18304" level="55" type="Folk" name="Offering of the Witch, Evoked Spirit">
+	<npc id="18304" level="55" type="Monster" name="Offering of the Witch, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4572" level="5" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="91" /> <!-- rhand: Heavy War Axe -->
+		<equipment rhand="91" /> 
 		<acquire exp="4864" sp="393" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
@@ -164,11 +164,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="5" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -177,11 +177,11 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="18305" level="68" type="Folk" name="Flame of Dark Omen">
+	<npc id="18305" level="68" type="Monster" name="Flame of Dark Omen">
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4614" level="7" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="7" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -197,13 +197,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="7" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="7" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -213,15 +213,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18306" level="66" type="Folk" name="Offering of Dark Omen, Evoked Spirit">
+	<npc id="18306" level="66" type="Monster" name="Offering of Dark Omen, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4572" level="6" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2503" /> <!-- rhand: Yaksa Mace -->
+		<equipment rhand="2503" /> 
 		<acquire exp="7004" sp="659" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2244.67715" hpRegen="7.5" mp="1219.8" mpRegen="2.7" />
@@ -235,11 +235,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="6" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -248,11 +248,11 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="18307" level="79" type="Folk" name="Flame of Forbidden Path">
+	<npc id="18307" level="79" type="Monster" name="Flame of Forbidden Path">
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="9" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -268,13 +268,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="9" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -284,15 +284,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18308" level="77" type="Folk" name="Offering of /Forbidden Path, Evoked Spirit">
+	<npc id="18308" level="77" type="Monster" name="Offering of /Forbidden Path, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="8" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="175" /> <!-- rhand: Art of Battle Axe -->
+		<equipment rhand="175" /> 
 		<acquire exp="9533" sp="1032" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2762.08447" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -306,11 +306,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -319,11 +319,11 @@
 			<height normal="20" />
 		</collision>
 	</npc>
-	<npc id="18309" level="35" type="Folk" name="Flame of the Branded">
+	<npc id="18309" level="35" type="Monster" name="Flame of the Branded">
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4614" level="4" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="4" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -339,13 +339,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="4" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -355,15 +355,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18310" level="33" type="Folk" name="Offering of the Branded, Evoked Spirit">
+	<npc id="18310" level="33" type="Monster" name="Offering of the Branded, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4572" level="3" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="158" /> <!-- rhand: Tarbar -->
+		<equipment rhand="158" /> 
 		<acquire exp="1751" sp="100" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="702.20463" hpRegen="4.5" mp="372.96" mpRegen="1.8" />
@@ -377,11 +377,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="3" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -390,11 +390,11 @@
 			<height normal="21" />
 		</collision>
 	</npc>
-	<npc id="18311" level="46" type="Folk" name="Flame of Apostates">
+	<npc id="18311" level="46" type="Monster" name="Flame of Apostates">
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4614" level="5" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="5" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -410,13 +410,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="5" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -426,15 +426,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18312" level="44" type="Folk" name="Offering of Apostates, Evoked Spirit">
+	<npc id="18312" level="44" type="Monster" name="Offering of Apostates, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4572" level="4" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="172" /> <!-- rhand: Heavy Bone Club -->
+		<equipment rhand="172" /> 
 		<acquire exp="3113" sp="213" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1138.62924" hpRegen="5.5" mp="584" mpRegen="2.1" />
@@ -448,11 +448,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="4" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -461,11 +461,11 @@
 			<height normal="22" grown="26.4" />
 		</collision>
 	</npc>
-	<npc id="18313" level="57" type="Folk" name="Flame of the Witch">
+	<npc id="18313" level="57" type="Monster" name="Flame of the Witch">
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4614" level="6" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="6" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -481,13 +481,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="6" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -497,15 +497,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18314" level="55" type="Folk" name="Offering of the Witch, Evoked Spirit">
+	<npc id="18314" level="55" type="Monster" name="Offering of the Witch, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4572" level="5" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="91" /> <!-- rhand: Heavy War Axe -->
+		<equipment rhand="91" /> 
 		<acquire exp="4864" sp="393" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
@@ -519,11 +519,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="5" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -532,11 +532,11 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="18315" level="68" type="Folk" name="Flame of Dark Omen">
+	<npc id="18315" level="68" type="Monster" name="Flame of Dark Omen">
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4614" level="7" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="7" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -552,13 +552,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="7" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="7" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -568,15 +568,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18316" level="66" type="Folk" name="Offering of Dark Omen, Evoked Spirit">
+	<npc id="18316" level="66" type="Monster" name="Offering of Dark Omen, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4572" level="6" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2503" /> <!-- rhand: Yaksa Mace -->
+		<equipment rhand="2503" /> 
 		<acquire exp="7004" sp="659" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2244.67715" hpRegen="7.5" mp="1219.8" mpRegen="2.7" />
@@ -590,11 +590,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="6" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -603,11 +603,11 @@
 			<height normal="21.5" />
 		</collision>
 	</npc>
-	<npc id="18317" level="79" type="Folk" name="Flame of Forbidden Path">
+	<npc id="18317" level="79" type="Monster" name="Flame of Forbidden Path">
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
+			<skill name="DDMagic" id="4614" level="9" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -623,13 +623,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4413" level="19" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4614" level="9" /> <!-- NPC Death Bomb -->
+			<skill id="4408" level="11" /> 
+			<skill id="4413" level="19" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4614" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -639,15 +639,15 @@
 			<height normal="13" />
 		</collision>
 	</npc>
-	<npc id="18318" level="77" type="Folk" name="Offering of Forbidden Path, Evoked Spirit">
+	<npc id="18318" level="77" type="Monster" name="Offering of Forbidden Path, Evoked Spirit">
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial" id="4572" level="8" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="175" /> <!-- rhand: Art of Battle Axe -->
+		<equipment rhand="175" /> 
 		<acquire exp="9533" sp="1032" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2762.08447" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -661,11 +661,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4572" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -680,7 +680,7 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<param name="SayType" value="0" />
-			<skill name="PhysicalSpecial" id="4382" level="1" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="1" /> 
 		</parameters>
 		<race>ANIMAL</race>
 		<sex>MALE</sex>
@@ -697,25 +697,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="1" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="4" /> <!-- Animals -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="4" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.1159">
-					<item id="6529" min="1" max="1" chance="100" /> <!-- Baby Duck Rod -->
+					<item id="6529" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="33.8151">
-					<item id="6519" min="1" max="1" chance="25.7143" /> <!-- Green Colored Lure - Low Grade -->
-					<item id="6522" min="1" max="1" chance="17.1429" /> <!-- Purple Colored Lure - Low Grade -->
-					<item id="6525" min="1" max="1" chance="21.4286" /> <!-- Yellow Colored Lure - Low Grade -->
-					<item id="6535" min="12" max="36" chance="35.7142" /> <!-- Fishing Shot: non-grade -->
+					<item id="6519" min="1" max="1" chance="25.7143" /> 
+					<item id="6522" min="1" max="1" chance="17.1429" /> 
+					<item id="6525" min="1" max="1" chance="21.4286" /> 
+					<item id="6535" min="12" max="36" chance="35.7142" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -730,7 +730,7 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<param name="SayType" value="1" />
-			<skill name="PhysicalSpecial" id="4382" level="2" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="2" /> 
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>FEMALE</sex>
@@ -747,25 +747,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="2" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="7" /> <!-- Spirits -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="2" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="7" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.0527">
-					<item id="6530" min="1" max="1" chance="100" /> <!-- Albatross Rod -->
+					<item id="6530" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="43.904">
-					<item id="6519" min="1" max="1" chance="30" /> <!-- Green Colored Lure - Low Grade -->
-					<item id="6522" min="1" max="1" chance="20" /> <!-- Purple Colored Lure - Low Grade -->
-					<item id="6525" min="1" max="1" chance="25" /> <!-- Yellow Colored Lure - Low Grade -->
-					<item id="6536" min="12" max="36" chance="25" /> <!-- Fishing Shot: D-grade -->
+					<item id="6519" min="1" max="1" chance="30" /> 
+					<item id="6522" min="1" max="1" chance="20" /> 
+					<item id="6525" min="1" max="1" chance="25" /> 
+					<item id="6536" min="12" max="36" chance="25" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -780,11 +780,11 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<param name="SayType" value="2" />
-			<skill name="PhysicalSpecial" id="4382" level="3" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="3" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="156" /> <!-- rhand: Hand Axe -->
+		<equipment rhand="156" /> 
 		<acquire exp="1550" sp="85" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="604.08419" hpRegen="3.5" mp="329.4" mpRegen="1.5" />
@@ -798,25 +798,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="3" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="3" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.02">
-					<item id="6531" min="1" max="1" chance="100" /> <!-- Pelican Rod -->
+					<item id="6531" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="39.5843">
-					<item id="6520" min="2" max="6" chance="8.40005" /> <!-- Green Colored Lure -->
-					<item id="6523" min="1" max="1" chance="28" /> <!-- Purple Colored Lure -->
-					<item id="6526" min="1" max="1" chance="33.5999" /> <!-- Yellow Colored Lure -->
-					<item id="6537" min="12" max="36" chance="30" /> <!-- Fishing Shot: C-grade -->
+					<item id="6520" min="2" max="6" chance="8.40005" /> 
+					<item id="6523" min="1" max="1" chance="28" /> 
+					<item id="6526" min="1" max="1" chance="33.5999" /> 
+					<item id="6537" min="12" max="36" chance="30" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -831,11 +831,11 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<param name="SayType" value="3" />
-			<skill name="PhysicalSpecial" id="4382" level="4" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="4" /> 
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="131" /> <!-- rhand: Spirit Sword -->
+		<equipment rhand="131" /> 
 		<acquire exp="2755" sp="178" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
@@ -849,25 +849,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="4" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="11" /> <!-- Giants -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="4" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="11" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.0108">
-					<item id="6532" min="1" max="1" chance="100" /> <!-- KingFisher Rod -->
+					<item id="6532" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="32.6944">
-					<item id="6520" min="2" max="6" chance="20.6613" /> <!-- Green Colored Lure -->
-					<item id="6523" min="1" max="1" chance="55.0963" /> <!-- Purple Colored Lure -->
-					<item id="6526" min="3" max="9" chance="11.0193" /> <!-- Yellow Colored Lure -->
-					<item id="6538" min="15" max="45" chance="13.2231" /> <!-- Fishing Shot: B-grade -->
+					<item id="6520" min="2" max="6" chance="20.6613" /> 
+					<item id="6523" min="1" max="1" chance="55.0963" /> 
+					<item id="6526" min="3" max="9" chance="11.0193" /> 
+					<item id="6538" min="15" max="45" chance="13.2231" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -882,11 +882,11 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<param name="SayType" value="4" />
-			<skill name="PhysicalSpecial" id="4382" level="5" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="5" /> 
 		</parameters>
 		<race>ELEMENTAL</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<acquire exp="4305" sp="324" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
@@ -900,25 +900,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="5" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="7" /> <!-- Spirits -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="7" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.0041">
-					<item id="6533" min="1" max="1" chance="100" /> <!-- Cygnus Pole -->
+					<item id="6533" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="48.4814">
-					<item id="6521" min="2" max="6" chance="13.9536" /> <!-- Green Colored Lure - High Grade -->
-					<item id="6524" min="1" max="1" chance="41.8604" /> <!-- Purple Colored Lure - High Grade -->
-					<item id="6527" min="2" max="6" chance="9.30233" /> <!-- Yellow Colored Lure - High Grade -->
-					<item id="6539" min="3" max="9" chance="34.8837" /> <!-- Fishing Shot: A-grade -->
+					<item id="6521" min="2" max="6" chance="13.9536" /> 
+					<item id="6524" min="1" max="1" chance="41.8604" /> 
+					<item id="6527" min="2" max="6" chance="9.30233" /> 
+					<item id="6539" min="3" max="9" chance="34.8837" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -933,7 +933,7 @@
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
 			<param name="SayType" value="5" />
-			<skill name="PhysicalSpecial" id="4382" level="6" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="6" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -950,25 +950,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="6" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="6" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.0061">
-					<item id="6533" min="1" max="1" chance="100" /> <!-- Cygnus Pole -->
+					<item id="6533" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="58.4812">
-					<item id="6521" min="2" max="6" chance="13.9535" /> <!-- Green Colored Lure - High Grade -->
-					<item id="6524" min="1" max="1" chance="41.8605" /> <!-- Purple Colored Lure - High Grade -->
-					<item id="6527" min="2" max="6" chance="9.30231" /> <!-- Yellow Colored Lure - High Grade -->
-					<item id="6539" min="3" max="9" chance="34.8837" /> <!-- Fishing Shot: A-grade -->
+					<item id="6521" min="2" max="6" chance="13.9535" /> 
+					<item id="6524" min="1" max="1" chance="41.8605" /> 
+					<item id="6527" min="2" max="6" chance="9.30231" /> 
+					<item id="6539" min="3" max="9" chance="34.8837" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -983,7 +983,7 @@
 			<param name="MoveAroundSocial1" value="120" />
 			<param name="MoveAroundSocial2" value="120" />
 			<param name="SayType" value="6" />
-			<skill name="PhysicalSpecial" id="4382" level="7" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="7" /> 
 		</parameters>
 		<race>PLANT</race>
 		<sex>MALE</sex>
@@ -1000,25 +1000,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="7" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="5" /> <!-- Plants -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="7" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="5" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.0017">
-					<item id="6534" min="1" max="1" chance="100" /> <!-- Triton Pole -->
+					<item id="6534" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="47.1824">
-					<item id="6521" min="2" max="6" chance="15.0001" /> <!-- Green Colored Lure - High Grade -->
-					<item id="6524" min="1" max="1" chance="44.9998" /> <!-- Purple Colored Lure - High Grade -->
-					<item id="6527" min="2" max="6" chance="10.0001" /> <!-- Yellow Colored Lure - High Grade -->
-					<item id="6540" min="3" max="9" chance="30" /> <!-- Fishing Shot: S-grade -->
+					<item id="6521" min="2" max="6" chance="15.0001" /> 
+					<item id="6524" min="1" max="1" chance="44.9998" /> 
+					<item id="6527" min="2" max="6" chance="10.0001" /> 
+					<item id="6540" min="3" max="9" chance="30" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1033,7 +1033,7 @@
 			<param name="MoveAroundSocial1" value="120" />
 			<param name="MoveAroundSocial2" value="120" />
 			<param name="SayType" value="7" />
-			<skill name="PhysicalSpecial" id="4382" level="9" /> <!-- Curse of Lake Ghost -->
+			<skill name="PhysicalSpecial" id="4382" level="9" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -1050,25 +1050,25 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4382" level="9" /> <!-- Curse of Lake Ghost -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4382" level="9" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="0.003">
-					<item id="6534" min="1" max="1" chance="100" /> <!-- Triton Pole -->
+					<item id="6534" min="1" max="1" chance="100" /> 
 				</group>
 				<group chance="57.1824">
-					<item id="6521" min="2" max="6" chance="15.0001" /> <!-- Green Colored Lure - High Grade -->
-					<item id="6524" min="1" max="1" chance="44.9999" /> <!-- Purple Colored Lure - High Grade -->
-					<item id="6527" min="2" max="6" chance="10.0001" /> <!-- Yellow Colored Lure - High Grade -->
-					<item id="6540" min="3" max="9" chance="30" /> <!-- Fishing Shot: S-grade -->
+					<item id="6521" min="2" max="6" chance="15.0001" /> 
+					<item id="6524" min="1" max="1" chance="44.9999" /> 
+					<item id="6527" min="2" max="6" chance="10.0001" /> 
+					<item id="6540" min="3" max="9" chance="30" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1097,12 +1097,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4379" level="5" /> <!-- Resist Spear Weapons -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4410" level="19" /> <!-- Extremely Strong P. Atk. -->
-			<skill id="4413" level="20" /> <!-- Extremely Strong M. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4379" level="5" /> 
+			<skill id="4408" level="16" /> 
+			<skill id="4410" level="19" /> 
+			<skill id="4413" level="20" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1143,9 +1143,9 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4416" level="2" /> 
+			<skill id="4408" level="16" /> 
+			<skill id="4413" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1160,12 +1160,12 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<!-- <skill name="SelfBuff" id="4028" level="3" /> --> <!-- NPC Might -->
+			<skill name="PhysicalSpecial" id="4032" level="9" /> 
+			 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- rhand: Great Sword -->
+		<equipment rhand="78" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1178,15 +1178,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="13" /> <!-- HP Increase (5x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="13" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>5</sNpcPropHpRate>
@@ -1205,12 +1205,12 @@
 			<param name="MoveAroundSocial" value="114" />
 			<param name="MoveAroundSocial1" value="114" />
 			<param name="MoveAroundSocial2" value="114" />
-			<skill name="W_LongRangeDDMagic" id="4137" level="9" /> <!-- Hydro Screw -->
-			<skill name="W_ShortRangeDDMagic" id="4560" level="9" /> <!-- NPC Fire Burn -->
+			<skill name="W_LongRangeDDMagic" id="4137" level="9" /> 
+			<skill name="W_ShortRangeDDMagic" id="4560" level="9" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="326" /> <!-- rhand: Heathen's Book -->
+		<equipment rhand="326" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
@@ -1223,13 +1223,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4438" level="2" /> <!-- Greater Sleep Resistance -->
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4438" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1248,12 +1248,12 @@
 			<param name="MoveAroundSocial" value="74" />
 			<param name="MoveAroundSocial1" value="74" />
 			<param name="MoveAroundSocial2" value="74" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<!-- <skill name="SelfBuff" id="4028" level="3" /> --> <!-- NPC Might -->
+			<skill name="PhysicalSpecial" id="4032" level="9" /> 
+			 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
+		<equipment rhand="142" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1266,15 +1266,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="2" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1293,12 +1293,12 @@
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="110" />
 			<param name="MoveAroundSocial2" value="110" />
-			<skill name="PhysicalSpecial" id="4101" level="9" /> <!-- NPC Spinning Slash -->
-			<!-- <skill name="SelfBuff" id="4028" level="3" /> --> <!-- NPC Might -->
+			<skill name="PhysicalSpecial" id="4101" level="9" /> 
+			 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="124" /> <!-- rhand: Two-Handed Sword -->
+		<equipment rhand="124" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1311,15 +1311,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1338,7 +1338,7 @@
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="111" />
-			<skill name="SelfRangeDDMagic" id="4614" level="9" /> <!-- NPC Death Bomb -->
+			<skill name="SelfRangeDDMagic" id="4614" level="9" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
@@ -1354,15 +1354,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1391,13 +1391,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4408" level="13" /> <!-- HP Increase (5x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4286" level="1" /> <!-- Greater Sleep Resistance -->
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="13" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4286" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>5</sNpcPropHpRate>
@@ -1416,8 +1416,8 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<!-- <skill name="SelfBuff" id="4028" level="3" /> --> <!-- NPC Might -->
+			<skill name="PhysicalSpecial" id="4032" level="9" /> 
+			 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -1433,14 +1433,14 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1459,12 +1459,12 @@
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
-			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
-			<!-- <skill name="SelfBuff" id="4028" level="3" /> --> <!-- NPC Might -->
+			<skill name="PhysicalSpecial" id="4032" level="9" /> 
+			 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="1472" /> <!-- rhand: Dreadbane -->
+		<equipment rhand="1472" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
@@ -1477,15 +1477,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="2" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1504,11 +1504,11 @@
 			<param name="MoveAroundSocial" value="157" />
 			<param name="MoveAroundSocial1" value="157" />
 			<param name="MoveAroundSocial2" value="157" />
-			<skill name="PhysicalSpecial" id="4040" level="9" /> <!-- NPC Bow Attack -->
+			<skill name="PhysicalSpecial" id="4040" level="9" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="279" /> <!-- rhand: Reinforced Long Bow -->
+		<equipment rhand="279" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -1521,15 +1521,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="2" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1548,8 +1548,8 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="W_LongRangeDDMagic" id="4137" level="9" /> <!-- Hydro Screw -->
-			<skill name="W_ShortRangeDDMagic" id="4560" level="9" /> <!-- NPC Fire Burn -->
+			<skill name="W_LongRangeDDMagic" id="4137" level="9" /> 
+			<skill name="W_ShortRangeDDMagic" id="4560" level="9" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -1565,14 +1565,14 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4408" level="11" /> <!-- HP Increase (3x) -->
-			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="2" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="9" /> 
+			<skill id="4408" level="11" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>3</sNpcPropHpRate>
@@ -1594,7 +1594,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="150" lhand="103" /> <!-- rhand: Elemental Sword lhand: Tower Shield -->
+		<equipment rhand="150" lhand="103" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="253165" hpRegen="13.43" mp="9999" mpRegen="3.09" />
 			<attack physical="4500" magical="3240" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1607,13 +1607,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1629,7 +1629,7 @@
 	</npc>
 	<npc id="18340" level="80" type="Monster" name="Hall Keeper Suicidal Soldier">
 		<parameters>
-			<skill name="SelfRangeDDMagic" id="5042" level="9" /> <!-- NPC Dispel Bomb -->
+			<skill name="SelfRangeDDMagic" id="5042" level="9" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
@@ -1645,13 +1645,13 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1667,7 +1667,7 @@
 	</npc>
 	<npc id="18341" level="80" type="Monster" name="Hall Keeper Suicidal Soldier">
 		<parameters>
-			<skill name="SelfRangeDDMagic" id="5042" level="9" /> <!-- NPC Dispel Bomb -->
+			<skill name="SelfRangeDDMagic" id="5042" level="9" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
@@ -1683,15 +1683,15 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4412" level="13" /> <!-- Slightly Strong P. Def. -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="3" /> <!-- Dark Attack Resistance -->
-			<skill id="4275" level="2" /> <!-- Holy Attack Vulnerability -->
-			<skill id="4438" level="5" /> <!-- Greater Sleep Resistance -->
-			<skill id="4439" level="5" /> <!-- Greater Hold Resistance -->
+			<skill id="4416" level="1" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="3" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4438" level="5" /> 
+			<skill id="4439" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -1726,14 +1726,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="13" /> <!-- Fairies -->
+			<skill id="4416" level="13" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="100">
-					<item id="57" min="7" max="13" chance="100" /> <!-- Adena -->
+					<item id="57" min="7" max="13" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1744,14 +1744,14 @@
 	</npc>
 	<npc id="18343" level="80" type="Monster" name="Gatekeeper Zombie">
 		<parameters>
-			<param name="pass1" value="8064" /> <!-- Visitor's Mark -->
-			<param name="pass2" value="8065" /> <!-- Faded Visitor's Mark -->
-			<param name="pass3" value="8067" /> <!-- Pagan's Mark -->
+			<param name="pass1" value="8064" /> 
+			<param name="pass2" value="8065" /> 
+			<param name="pass3" value="8067" /> 
 			<param name="SkillRange" value="700" />
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="8217" /> <!-- rhand: Monster Only (Zombie Gateguard Spear) -->
+		<equipment rhand="8217" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2985.1835" hpRegen="8.65" mp="1777.4" mpRegen="3.05" />
 			<attack physical="1025.486" magical="742.0569674364" random="7" critical="8" accuracy="-3.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -1764,12 +1764,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4275" level="2" /> <!-- Sacred Attack Weak Point -->
-			<skill id="4408" level="16" /> <!-- HP Increase (8x) -->
-			<skill id="4411" level="15" /> <!-- Strong M. Atk. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
-			<skill id="4422" level="3" /> <!-- Dark Attacks -->
+			<skill id="4275" level="2" /> 
+			<skill id="4408" level="16" /> 
+			<skill id="4411" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="4422" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1804,8 +1804,8 @@
 		</stats>
 		<status undying="false" canMove="false" />
 		<skillList>
-			<skill id="4408" level="8" /> <!-- HP Increase (1/4x) -->
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4408" level="8" /> 
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>0.25</sNpcPropHpRate>
@@ -1840,7 +1840,7 @@
 		<dropLists>
 			<drop>
 				<group chance="25">
-					<item id="8787" min="1" max="1" chance="100" /> <!-- Sprigant's Fruit -->
+					<item id="8787" min="1" max="1" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1874,13 +1874,2533 @@
 		<dropLists>
 			<drop>
 				<group chance="25">
-					<item id="8787" min="1" max="1" chance="100" /> <!-- Sprigant's Fruit -->
+					<item id="8787" min="1" max="1" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
 		<collision>
 			<radius normal="45" />
 			<height normal="67" />
+		</collision>
+	</npc>
+<npc id="18347" level="20" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="4078" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1061" sp="31" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="342" hpRegen="2.5" mp="192" mpRegen="1.2" />
+			<attack physical="44.32863" magical="30.2707" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="86.87049" magical="63.56806" />
+			<speed>
+				<walk ground="36" />
+				<run ground="120" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4078" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18348" level="21" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1422" sp="35" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="364" hpRegen="3.5" mp="205" mpRegen="1.5" />
+			<attack physical="47.91924" magical="32.72263" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="89.73059" magical="65.66095" />
+			<speed>
+				<walk ground="36" />
+				<run ground="110" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18349" level="21" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="165" />
+			<param name="MoveAroundSocial1" value="165" />
+			<param name="MoveAroundSocial2" value="165" />
+			<param name="AttackRange" value="1" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="5492" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="10128" /> 
+		<acquire exp="1360" sp="41" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="364" hpRegen="3.5" mp="205" mpRegen="1.5" />
+			<attack physical="47.91924" magical="32.72263" random="5" critical="10" accuracy="5" attackSpeed="253" reuseDelay="400" type="BOW" range="700" distance="10" width="0" />
+			<defence physical="89.73059" magical="65.66095" />
+			<speed>
+				<walk ground="36" />
+				<run ground="110" />
+			</speed>
+			<hitTime>510</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="5492" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15" />
+			<height normal="24.5" />
+		</collision>
+	</npc>
+	<npc id="18350" level="21" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4077" level="2" />
+			<skill name="Skill02_ID" id="4001" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1498" sp="35" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="364" hpRegen="3.5" mp="205" mpRegen="1.5" />
+			<attack physical="47.91924" magical="32.72263" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="89.73059" magical="65.66095" />
+			<speed>
+				<walk ground="36" />
+				<run ground="110" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4001" level="2" /> 
+			<skill id="4077" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18351" level="21" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="Party_Type" value="1" />
+			<param name="Party_Loyalty" value="1" />
+			<param name="Party_OneShot" value="10" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="200" />
+			<skill name="Skill01_ID" id="4033" level="2" />
+			<skill name="Skill02_ID" id="4066" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1427" sp="35" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="364" hpRegen="3.5" mp="205" mpRegen="1.5" />
+			<attack physical="47.91924" magical="32.72263" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="89.73059" magical="65.66095" />
+			<speed>
+				<walk ground="36" />
+				<run ground="110" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4033" level="2" /> 
+			<skill id="4066" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18352" level="22" type="Monster" name="Kamael Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18348" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2711" sp="68" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18353" level="22" type="Monster" name="Guardian of Records">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18349" count="1" respawnTime="0" weightPoint="1" />
+				<npc id="18350" count="1" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<param name="Skill01_Probablity" value="1000" />
+			<param name="Skill01_Type" value="2" />
+			<skill name="Skill01_ID" id="5260" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="3601" sp="99" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="5260" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18354" level="22" type="Monster" name="Guardian of Observation">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18348" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2711" sp="68" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18355" level="22" type="Monster" name="Spicula's Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18348" count="1" respawnTime="0" weightPoint="1" />
+				<npc id="18350" count="1" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="4077" level="2" />
+			<skill name="Skill02_ID" id="4137" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="3811" sp="99" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4077" level="2" /> 
+			<skill id="4137" level="2" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="13" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18356" level="22" type="Monster" name="Harkilgamed's Gatekeeper">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="165" />
+			<param name="MoveAroundSocial1" value="165" />
+			<param name="MoveAroundSocial2" value="165" />
+			<minions name="Privates">
+				<npc id="18348" count="1" respawnTime="0" weightPoint="1" />
+				<npc id="18351" count="1" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="AttackRange" value="1" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5262" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="10128" /> 
+		<acquire exp="3704" sp="111" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="10" accuracy="5" attackSpeed="253" reuseDelay="400" type="BOW" range="700" distance="10" width="0" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>510</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="5262" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15" />
+			<height normal="24.5" />
+		</collision>
+	</npc>
+	<npc id="18357" level="22" type="Monster" name="Rodenpicula's Gatekeeper">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18348" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5263" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="3601" sp="99" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="5263" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18358" level="22" type="Monster" name="Guardian of Secrets">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2711" sp="68" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18359" level="22" type="Monster" name="Arviterre's Guardian">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18349" count="2" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2711" sp="68" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18360" level="22" type="Monster" name="Katenar's Gatekeeper">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18350" count="1" respawnTime="0" weightPoint="1" />
+				<npc id="18351" count="1" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="2711" sp="68" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>2</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18361" level="22" type="Monster" name="Guardian of Prediction">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<minions name="Privates">
+				<npc id="18348" count="1" respawnTime="0" weightPoint="1" />
+				<npc id="18349" count="1" respawnTime="0" weightPoint="1" />
+			</minions>
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<param name="Party_Type" value="2" />
+			<param name="Party_OneShot" value="10" />
+			<param name="Skill01_Type" value="2" />
+			<skill name="Skill01_ID" id="5264" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="3601" sp="99" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="387" hpRegen="3.5" mp="218" mpRegen="1.5" />
+			<attack physical="51.75278" magical="35.34044" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="92.65694" magical="67.80232" />
+			<speed>
+				<walk ground="36" />
+				<run ground="130" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4408" level="10" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="13" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="13" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="5264" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>3</sNpcPropHpRate>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18362" level="19" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="MoveArounding" value="0" />
+			<skill name="Skill01_ID" id="4032" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<acquire exp="1113" sp="30" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="321" hpRegen="2.5" mp="183" mpRegen="1.2" />
+			<attack physical="40.96915" magical="27.97662" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="84.07638" magical="61.52345" />
+			<speed>
+				<walk ground="36" />
+				<run ground="120" />
+			</speed>
+			<hitTime>470</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4032" level="2" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="6" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15.5" />
+			<height normal="22.5" />
+		</collision>
+	</npc>
+	<npc id="18363" level="19" type="Monster" name="Garden Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="165" />
+			<param name="MoveAroundSocial1" value="165" />
+			<param name="MoveAroundSocial2" value="165" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="AttackRange" value="1" />
+			<param name="MovingAttack" value="0" />
+			<skill name="Skill01_ID" id="5492" level="2" />
+		</parameters>
+		<race>HUMANOID</race>
+		<sex>MALE</sex>
+		<equipment rhand="10128" /> 
+		<acquire exp="1004" sp="29" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="321" hpRegen="2.5" mp="183" mpRegen="1.2" />
+			<attack physical="40.96915" magical="27.97662" random="5" critical="10" accuracy="5" attackSpeed="253" reuseDelay="400" type="BOW" range="700" distance="10" width="0" />
+			<defence physical="84.07638" magical="61.52345" />
+			<speed>
+				<walk ground="36" />
+				<run ground="110" />
+			</speed>
+			<hitTime>510</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" canMove="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="5492" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="ARCHER" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>NDG</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="15" />
+			<height normal="24.5" />
+		</collision>
+	</npc>
+	<npc id="18364" level="79" type="Monster" name="Witch Warder">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<skill name="PhysicalSpecial" id="5334" level="2" />
+			<skill name="selfbuff" id="4471" level="10" />
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="8968.456725" hpRegen="8.5" mp="1330.851" mpRegen="3" />
+			<attack physical="875.49759" magical="597.85136" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="337.07008" magical="246.65326" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>240</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4471" level="10" /> 
+			<skill id="5334" level="2" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4095" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="14" />
+			<height normal="14.5" />
+		</collision>
+	</npc>
+	<npc id="18365" level="79" type="Monster" name="Witch Warder">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<skill name="W_ShortRangeDDMagic" id="5393" level="2" />
+			<skill name="W_LongRangeDDMagic" id="5374" level="2" />
+			<skill name="selfbuff" id="4471" level="10" />
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="3" />
+			<attack physical="894.75854" magical="611.00409" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>240</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4085" level="1" /> 
+			<skill id="4095" level="1" /> 
+			<skill id="4332" level="1" /> 
+			<skill id="4408" level="13" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4471" level="10" /> 
+			<skill id="5374" level="2" /> 
+			<skill id="5393" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="14" />
+			<height normal="14.5" />
+		</collision>
+	</npc>
+	<npc id="18366" level="79" type="Monster" name="Witch Warder">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="90" />
+			<param name="MoveAroundSocial1" value="90" />
+			<param name="MoveAroundSocial2" value="90" />
+			<skill name="PhysicalSpecial" id="5334" level="3" />
+			<skill name="W_LongRangeDDMagic" id="5374" level="3" />
+		</parameters>
+		<race>BEAST</race>
+		<sex>MALE</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2951" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="931.81944" magical="636.31188" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="30" />
+				<run ground="170" />
+			</speed>
+			<hitTime>240</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4085" level="1" /> 
+			<skill id="4095" level="1" /> 
+			<skill id="4332" level="1" /> 
+			<skill id="4408" level="13" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="1" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="5334" level="3" /> 
+			<skill id="5374" level="3" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>5</sNpcPropHpRate>
+		<ai clanHelpRange="300" aggroRange="450" />
+		<collision>
+			<radius normal="14" />
+			<height normal="14.5" />
+		</collision>
+	</npc>
+	<npc id="18367" level="80" type="Monster" name="Prison Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8217" /> 
+		<acquire exp="8578" sp="962" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2880" hpRegen="8.5" mp="1674" mpRegen="3" />
+			<attack physical="894.75854" magical="611.00409" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" />
+			<speed>
+				<walk ground="33" />
+				<run ground="50" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="400" isAggressive="true">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="17" />
+			<height normal="30.5" />
+		</collision>
+	</npc>
+	<npc id="18368" level="80" type="Monster" name="Prison Guard">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="80" />
+			<param name="MoveAroundSocial1" value="80" />
+			<param name="MoveAroundSocial2" value="119" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="7" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<param name="Skill01_Check_Dist" value="1" />
+			<param name="Skill01_Dist_Max" value="150" />
+			<skill name="Skill01_ID" id="5360" level="3" />
+		</parameters>
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8217" /> 
+		<acquire exp="15441" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3290" hpRegen="8.5" mp="1674" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" />
+			<speed>
+				<walk ground="33" />
+				<run ground="160" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+			<skill id="5360" level="3" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai aggroRange="300" clanHelpRange="400" isAggressive="true">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="17" />
+			<height normal="30.5" />
+		</collision>
+	</npc>
+	<npc id="18369" level="82" type="Monster" name="Chromatic Crystalline Golem">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="126" />
+			<param name="MoveAroundSocial1" value="126" />
+			<param name="MoveAroundSocial2" value="126" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="Skill01_Target" value="3" />
+			<param name="Skill01_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="4101" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="16753" sp="4" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="54" />
+				<run ground="170" />
+			</speed>
+			<hitTime>340</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4101" level="9" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" aggroRange="450" clanHelpRange="500" isAggressive="true">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="34" />
+			<height normal="47" />
+		</collision>
+	</npc>
+	<npc id="18370" level="82" type="Monster" name="Chromatic Crystalline Golem">
+		
+		<parameters>
+			<param name="MoveAroundSocial" value="126" />
+			<param name="MoveAroundSocial1" value="126" />
+			<param name="MoveAroundSocial2" value="126" />
+			<param name="IsAggressive" value="1" />
+			<param name="Aggressive_Time" value="0" />
+			<param name="AttackRange" value="2" />
+			<param name="Skill01_MainAttack" value="1" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="4597" level="10" />
+			<skill name="Skill02_ID" id="4477" level="10" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>MALE</sex>
+		<acquire exp="15381" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="54" />
+				<run ground="170" />
+			</speed>
+			<hitTime>340</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" canBeSown="true" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4477" level="10" /> 
+			<skill id="4597" level="10" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" aggroRange="450" clanHelpRange="500" isAggressive="true">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="34" />
+			<height normal="47" />
+		</collision>
+	</npc>
+	<npc id="18371" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8217" /> 
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="33" />
+				<run ground="50" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="17" />
+			<height normal="30.5" />
+		</collision>
+	</npc>
+	<npc id="18372" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="123" /> 
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="36" />
+				<run ground="180" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="24.6" />
+		</collision>
+	</npc>
+	<npc id="18373" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="38" />
+				<run ground="200" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="17" />
+			<height normal="22.3" />
+		</collision>
+	</npc>
+	<npc id="18374" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="8215" /> 
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="38" />
+				<run ground="200" />
+			</speed>
+			<hitTime>430</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="17" />
+			<height normal="22.3" />
+		</collision>
+	</npc>
+	<npc id="18375" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="946" lhand="945" /> 
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="80" />
+				<run ground="15" />
+			</speed>
+			<hitTime>520</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="11" />
+			<height normal="28.5" />
+		</collision>
+	</npc>
+	<npc id="18376" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>DEMONIC</race>
+		<sex>MALE</sex>
+		<equipment rhand="205" /> 
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="70" />
+				<run ground="155" />
+			</speed>
+			<hitTime>740</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="12" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="18377" level="82" type="Monster" name="Beleth' Sample">
+		
+		<race>UNDEAD</race>
+		<sex>MALE</sex>
+		<equipment rhand="150" lhand="103" /> 
+		<acquire exp="13855" sp="3" />
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="3643" hpRegen="8.5" mp="1743" mpRegen="3" />
+			<attack physical="1055.28566004965" magical="720.623302603812" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="349.77477" magical="255.95" />
+			<speed>
+				<walk ground="40" />
+				<run ground="160" />
+			</speed>
+			<hitTime>170</hitTime>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<status undying="false" randomWalk="false" />
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="1" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300">
+			<clanList>
+				<clan>ORACLE</clan>
+			</clanList>
+		</ai>
+		<collision>
+			<radius normal="10" />
+			<height normal="25" />
+		</collision>
+	</npc>
+	<npc id="18378" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="MAGE" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="19" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18379" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18380" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18381" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18382" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18383" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18384" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18385" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18386" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="1" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="1" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="1" />
+			<param name="IsDefused" value="1" />
+			<skill name="trap_skill" id="5422" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5422" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18387" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18388" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18389" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18390" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18391" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18392" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18393" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18394" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18395" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18396" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18397" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18398" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
+		</collision>
+	</npc>
+	<npc id="18399" level="78" type="Folk" name="Trap">
+		
+		<parameters>
+			<param name="show_created" value="0" />
+			<param name="show_detected" value="0" />
+			<param name="show_activated" value="0" />
+			<param name="show_step_in" value="0" />
+			<param name="show_step_out" value="0" />
+			<param name="show_defused" value="0" />
+			<param name="IsDetected" value="0" />
+			<param name="IsDefused" value="0" />
+			<skill name="trap_skill1" id="5423" level="9" />
+			<skill name="trap_skill2" id="5424" level="9" />
+		</parameters>
+		<race>CONSTRUCT</race>
+		<sex>ETC</sex>
+		<stats str="79" int="34" dex="42" wit="66" con="75" men="12">
+			<vitals hp="2802" hpRegen="8.5" mp="1607" mpRegen="3" />
+			<attack physical="855.81387" magical="584.40994" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="332.70061" magical="243.45587" />
+			<speed>
+				<walk ground="1" />
+				<run ground="160" />
+			</speed>
+			<abnormalResist physical="10" magical="10" />
+		</stats>
+		<skillList>
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="5423" level="9" /> 
+			<skill id="5424" level="9" /> 
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<ai type="BALANCED" clanHelpRange="300" aggroRange="300" />
+		<collision>
+			<radius normal="30" />
+			<height normal="13" />
 		</collision>
 	</npc>
 </list>

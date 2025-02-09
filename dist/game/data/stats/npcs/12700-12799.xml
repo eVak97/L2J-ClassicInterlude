@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="12774" level="1" type="Folk" name="Young Squash">
+<npc id="12774" level="1" type="Monster" name="Young Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -19,7 +19,7 @@
 			<height normal="10.5" />
 		</collision>
 	</npc>
-	<npc id="12775" level="1" type="Folk" name="High Quality Squash">
+	<npc id="12775" level="1" type="Monster" name="High Quality Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -39,7 +39,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="12776" level="1" type="Folk" name="Low Quality Squash">
+	<npc id="12776" level="1" type="Monster" name="Low Quality Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -59,7 +59,7 @@
 			<height normal="16" />
 		</collision>
 	</npc>
-	<npc id="12777" level="1" type="Folk" name="Large Young Squash">
+	<npc id="12777" level="1" type="Monster" name="Large Young Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -78,7 +78,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="12778" level="1" type="Folk" name="High Quality Large Squash">
+	<npc id="12778" level="1" type="Monster" name="High Quality Large Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -98,7 +98,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="12779" level="1" type="Folk" name="Low Quality Large Squash">
+	<npc id="12779" level="1" type="Monster" name="Low Quality Large Squash">
 		<race>ETC</race>
 		<sex>ETC</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -118,10 +118,10 @@
 			<height normal="31" />
 		</collision>
 	</npc>
-	<npc id="12780" level="25" type="BabyPet" name="Baby Buffalo">
+	<npc id="12780" level="25" type="Pet" name="Baby Buffalo">
 		<parameters>
-			<skill name="Heal1" id="4717" level="1" /> <!-- Heal Trick -->
-			<skill name="Heal2" id="4718" level="1" /> <!-- Greater Heal Trick -->
+			<skill name="Heal1" id="4717" level="1" /> 
+			<skill name="Heal2" id="4718" level="1" /> 
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
@@ -137,10 +137,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4717" level="1" /> <!-- Heal Trick -->
-			<skill id="4718" level="1" /> <!-- Greater Heal Trick -->
+			<skill id="4121" level="1" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4717" level="1" /> 
+			<skill id="4718" level="1" /> 
 		</skillList>
 		<shots soul="2" spirit="2" />
 		<corpseTime>86400</corpseTime>
@@ -150,10 +150,10 @@
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="12781" level="25" type="BabyPet" name="Baby Kookaburra">
+	<npc id="12781" level="25" type="Pet" name="Baby Kookaburra">
 		<parameters>
-			<skill name="Heal1" id="4717" level="1" /> <!-- Heal Trick -->
-			<skill name="Heal2" id="4718" level="1" /> <!-- Greater Heal Trick -->
+			<skill name="Heal1" id="4717" level="1" /> 
+			<skill name="Heal2" id="4718" level="1" /> 
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
@@ -169,10 +169,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4717" level="1" /> <!-- Heal Trick -->
-			<skill id="4718" level="1" /> <!-- Greater Heal Trick -->
+			<skill id="4121" level="1" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4717" level="1" /> 
+			<skill id="4718" level="1" /> 
 		</skillList>
 		<shots soul="2" spirit="2" />
 		<corpseTime>86400</corpseTime>
@@ -182,10 +182,10 @@
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="12782" level="25" type="BabyPet" name="Baby Cougar">
+	<npc id="12782" level="25" type="Pet" name="Baby Cougar">
 		<parameters>
-			<skill name="Heal1" id="4717" level="1" /> <!-- Heal Trick -->
-			<skill name="Heal2" id="4718" level="1" /> <!-- Greater Heal Trick -->
+			<skill name="Heal1" id="4717" level="1" /> 
+			<skill name="Heal2" id="4718" level="1" /> 
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
@@ -201,10 +201,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
-			<skill id="4717" level="1" /> <!-- Heal Trick -->
-			<skill id="4718" level="1" /> <!-- Greater Heal Trick -->
+			<skill id="4121" level="1" /> 
+			<skill id="4416" level="3" /> 
+			<skill id="4717" level="1" /> 
+			<skill id="4718" level="1" /> 
 		</skillList>
 		<shots soul="2" spirit="2" />
 		<corpseTime>86400</corpseTime>

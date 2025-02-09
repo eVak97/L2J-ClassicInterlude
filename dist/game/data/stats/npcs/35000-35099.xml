@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="35010" level="50" type="Defender" name="Mercenary">
+<npc id="35010" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="128" lhand="628" /> <!-- rhand: Knight's Sword lhand: Hoplon -->
+		<equipment rhand="128" lhand="628" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -16,8 +16,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -34,7 +34,7 @@
 	<npc id="35011" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="93" /> <!-- rhand: Winged Spear -->
+		<equipment rhand="93" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -47,8 +47,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -65,7 +65,7 @@
 	<npc id="35012" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="280" /> <!-- rhand: Light Crossbow -->
+		<equipment rhand="280" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -78,8 +78,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -95,11 +95,11 @@
 	</npc>
 	<npc id="35013" level="50" type="Defender" name="Mercenary">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -112,9 +112,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -130,11 +130,11 @@
 	</npc>
 	<npc id="35014" level="50" type="Defender" name="Mercenary">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="179" /> <!-- rhand: Mace of Prayer -->
+		<equipment rhand="179" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -147,9 +147,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -166,7 +166,7 @@
 	<npc id="35015" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="128" lhand="628" /> <!-- rhand: Knight's Sword lhand: Hoplon -->
+		<equipment rhand="128" lhand="628" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -179,8 +179,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -197,7 +197,7 @@
 	<npc id="35016" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="93" /> <!-- rhand: Winged Spear -->
+		<equipment rhand="93" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -210,8 +210,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -228,7 +228,7 @@
 	<npc id="35017" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="280" /> <!-- rhand: Light Crossbow -->
+		<equipment rhand="280" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -241,8 +241,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -258,11 +258,11 @@
 	</npc>
 	<npc id="35018" level="50" type="Defender" name="Mercenary">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -275,9 +275,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -293,11 +293,11 @@
 	</npc>
 	<npc id="35019" level="50" type="Defender" name="Mercenary">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="179" /> <!-- rhand: Mace of Prayer -->
+		<equipment rhand="179" /> 
 		<acquire exp="449" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -310,9 +310,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -329,7 +329,7 @@
 	<npc id="35020" level="70" type="Defender" name="Mercenary of Dawn">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="150" /> <!-- rhand: Elemental Sword -->
+		<equipment rhand="150" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -342,8 +342,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -360,7 +360,7 @@
 	<npc id="35021" level="70" type="Defender" name="Mercenary of Dawn">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -373,8 +373,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -391,7 +391,7 @@
 	<npc id="35022" level="70" type="Defender" name="Mercenary of Dawn">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="288" /> <!-- rhand: Carnage Bow -->
+		<equipment rhand="288" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -404,8 +404,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -421,11 +421,11 @@
 	</npc>
 	<npc id="35023" level="70" type="Defender" name="Mercenary of Dawn">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
+		<equipment rhand="325" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -438,9 +438,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -456,11 +456,11 @@
 	</npc>
 	<npc id="35024" level="70" type="Defender" name="Mercenary of Dawn">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="196" /> <!-- rhand: Stick of Eternity -->
+		<equipment rhand="196" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -473,9 +473,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -492,7 +492,7 @@
 	<npc id="35025" level="70" type="Defender" name="Mercenary of Dawn">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="150" /> <!-- rhand: Elemental Sword -->
+		<equipment rhand="150" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -505,8 +505,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -523,7 +523,7 @@
 	<npc id="35026" level="70" type="Defender" name="Mercenary of Dawn">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -536,8 +536,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -554,7 +554,7 @@
 	<npc id="35027" level="70" type="Defender" name="Mercenary of Dawn">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="288" /> <!-- rhand: Carnage Bow -->
+		<equipment rhand="288" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -567,8 +567,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -584,11 +584,11 @@
 	</npc>
 	<npc id="35028" level="70" type="Defender" name="Mercenary of Dawn">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
+		<equipment rhand="325" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -601,9 +601,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -619,11 +619,11 @@
 	</npc>
 	<npc id="35029" level="70" type="Defender" name="Mercenary of Dawn">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="196" /> <!-- rhand: Stick of Eternity -->
+		<equipment rhand="196" /> 
 		<acquire exp="640" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
@@ -636,9 +636,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -655,7 +655,7 @@
 	<npc id="35030" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="132" /> <!-- rhand: Sword of Limit -->
+		<equipment rhand="132" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -668,8 +668,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -686,7 +686,7 @@
 	<npc id="35031" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="301" /> <!-- rhand: Scorpion -->
+		<equipment rhand="301" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -699,8 +699,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -717,7 +717,7 @@
 	<npc id="35032" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="280" /> <!-- rhand: Light Crossbow -->
+		<equipment rhand="280" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -730,8 +730,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -747,11 +747,11 @@
 	</npc>
 	<npc id="35033" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -764,9 +764,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -782,11 +782,11 @@
 	</npc>
 	<npc id="35034" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
+		<equipment rhand="325" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -799,9 +799,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -818,7 +818,7 @@
 	<npc id="35035" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="132" /> <!-- rhand: Sword of Limit -->
+		<equipment rhand="132" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -831,8 +831,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -849,7 +849,7 @@
 	<npc id="35036" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="301" /> <!-- rhand: Scorpion -->
+		<equipment rhand="301" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -862,8 +862,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -880,7 +880,7 @@
 	<npc id="35037" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="280" /> <!-- rhand: Light Crossbow -->
+		<equipment rhand="280" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -893,8 +893,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -910,11 +910,11 @@
 	</npc>
 	<npc id="35038" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -927,9 +927,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -945,11 +945,11 @@
 	</npc>
 	<npc id="35039" level="60" type="Defender" name="Elite Mercenary Guild Member">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
+		<equipment rhand="325" /> 
 		<acquire exp="578" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2758.05923328" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -962,9 +962,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -981,7 +981,7 @@
 	<npc id="35040" level="55" type="Defender" name="Greater Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="66" lhand="20" /> <!-- rhand: Gladius lhand: Buckler -->
+		<equipment rhand="66" lhand="20" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -994,8 +994,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1012,7 +1012,7 @@
 	<npc id="35041" level="55" type="Defender" name="Greater Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1025,8 +1025,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1043,7 +1043,7 @@
 	<npc id="35042" level="55" type="Defender" name="Greater Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="274" /> <!-- rhand: Reinforced Bow -->
+		<equipment rhand="274" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1056,8 +1056,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1073,11 +1073,11 @@
 	</npc>
 	<npc id="35043" level="55" type="Defender" name="Greater Recruit">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="7" /> <!-- rhand: Apprentice's Rod -->
+		<equipment rhand="7" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1090,9 +1090,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1108,11 +1108,11 @@
 	</npc>
 	<npc id="35044" level="55" type="Defender" name="Greater Recruit">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="154" /> <!-- rhand: Dwarven Mace -->
+		<equipment rhand="154" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1125,9 +1125,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1144,7 +1144,7 @@
 	<npc id="35045" level="55" type="Defender" name="Greater Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="66" lhand="20" /> <!-- rhand: Gladius lhand: Buckler -->
+		<equipment rhand="66" lhand="20" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1157,8 +1157,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1175,7 +1175,7 @@
 	<npc id="35046" level="55" type="Defender" name="Greater Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1188,8 +1188,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1206,7 +1206,7 @@
 	<npc id="35047" level="55" type="Defender" name="Greater Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="274" /> <!-- rhand: Reinforced Bow -->
+		<equipment rhand="274" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1219,8 +1219,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1236,11 +1236,11 @@
 	</npc>
 	<npc id="35048" level="55" type="Defender" name="Greater Recruit">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="7" /> <!-- rhand: Apprentice's Rod -->
+		<equipment rhand="7" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1253,9 +1253,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1271,11 +1271,11 @@
 	</npc>
 	<npc id="35049" level="55" type="Defender" name="Greater Recruit">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="154" /> <!-- rhand: Dwarven Mace -->
+		<equipment rhand="154" /> 
 		<acquire exp="517" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -1288,9 +1288,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1307,7 +1307,7 @@
 	<npc id="35050" level="45" type="Defender" name="Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="66" /> <!-- rhand: Gladius -->
+		<equipment rhand="66" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1320,8 +1320,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1338,7 +1338,7 @@
 	<npc id="35051" level="45" type="Defender" name="Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1351,8 +1351,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1369,7 +1369,7 @@
 	<npc id="35052" level="45" type="Defender" name="Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1382,8 +1382,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1399,11 +1399,11 @@
 	</npc>
 	<npc id="35053" level="45" type="Defender" name="Recruit">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="6" /> <!-- rhand: Apprentice's Wand -->
+		<equipment rhand="6" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1416,9 +1416,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1434,11 +1434,11 @@
 	</npc>
 	<npc id="35054" level="45" type="Defender" name="Recruit">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<equipment rhand="99" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1451,9 +1451,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1470,7 +1470,7 @@
 	<npc id="35055" level="45" type="Defender" name="Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="66" /> <!-- rhand: Gladius -->
+		<equipment rhand="66" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1483,8 +1483,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1501,7 +1501,7 @@
 	<npc id="35056" level="45" type="Defender" name="Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1514,8 +1514,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1532,7 +1532,7 @@
 	<npc id="35057" level="45" type="Defender" name="Recruit">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1545,8 +1545,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1562,11 +1562,11 @@
 	</npc>
 	<npc id="35058" level="45" type="Defender" name="Recruit">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="6" /> <!-- rhand: Apprentice's Wand -->
+		<equipment rhand="6" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1579,9 +1579,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1597,11 +1597,11 @@
 	</npc>
 	<npc id="35059" level="45" type="Defender" name="Recruit">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="99" /> <!-- rhand: Apprentice's Spellbook -->
+		<equipment rhand="99" /> 
 		<acquire exp="409" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2141.82127" hpRegen="7.5" mp="1158" mpRegen="2.7" />
@@ -1614,9 +1614,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="1200" isAggressive="false">
@@ -1633,7 +1633,7 @@
 	<npc id="35060" level="75" type="Folk" name="Nephilim Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" lhand="6377" /> <!-- rhand: Dark Legion's Edge lhand: Imperial Crusader Shield -->
+		<equipment rhand="2500" lhand="6377" /> 
 		<acquire exp="722" sp="1" />
 		<stats str="84" int="76" dex="73" wit="70" con="71" men="80">
 			<vitals hp="596964.367482148" hpRegen="981" mp="1662.64929543826" mpRegen="3" />
@@ -1646,8 +1646,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="1200">
@@ -1664,7 +1664,7 @@
 	<npc id="35061" level="72" type="Folk" name="Nephilim Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
-		<equipment rhand="8687" /> <!-- rhand: Cabrio's Hand -->
+		<equipment rhand="8687" /> 
 		<acquire exp="672" sp="1" />
 		<stats str="84" int="76" dex="73" wit="70" con="71" men="80">
 			<vitals hp="585703.507797897" hpRegen="989" mp="1561.39135959339" mpRegen="3" />
@@ -1677,9 +1677,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200">
@@ -1711,7 +1711,7 @@
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<corpseTime>7</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1735,8 +1735,8 @@
 		</stats>
 		<status undying="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="19" /> <!-- Others -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1748,7 +1748,7 @@
 	<npc id="35064" level="65" type="Defender" name="Baron Lewin Waldner">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
+		<equipment rhand="79" /> 
 		<acquire exp="688" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="38355.9060587002" hpRegen="8.5" mp="5332.2" mpRegen="3" />
@@ -1761,8 +1761,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1780,7 +1780,7 @@
 	<npc id="35065" level="62" type="Defender" name="Cronenberg" title="Sir">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="655" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="34617.7253215841" hpRegen="8.5" mp="5126.4" mpRegen="3" />
@@ -1793,8 +1793,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -1812,7 +1812,7 @@
 	<npc id="35066" level="60" type="Defender" name="Royal Knight" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="76" lhand="2497" /> <!-- rhand: Sword of Delusion lhand: Full Plate Shield -->
+		<equipment rhand="76" lhand="2497" /> 
 		<acquire exp="624" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641" mpRegen="3" />
@@ -1825,8 +1825,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1843,11 +1843,11 @@
 	</npc>
 	<npc id="35067" level="58" type="Defender" name="Court Sorcerer" title="Gludio">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
+		<equipment rhand="325" /> 
 		<acquire exp="592" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -1860,9 +1860,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1879,11 +1879,11 @@
 	</npc>
 	<npc id="35068" level="58" type="Defender" name="Court Sorcerer" title="Gludio">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="193" /> <!-- rhand: Stick of Faith -->
+		<equipment rhand="193" /> 
 		<acquire exp="592" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -1896,9 +1896,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1916,7 +1916,7 @@
 	<npc id="35069" level="58" type="Defender" name="Court Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="94" /> <!-- rhand: Bec de Corbin -->
+		<equipment rhand="94" /> 
 		<acquire exp="592" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -1929,8 +1929,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1948,7 +1948,7 @@
 	<npc id="35070" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -1961,8 +1961,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -1980,7 +1980,7 @@
 	<npc id="35071" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="2499" /> <!-- rhand: Elven Long Sword -->
+		<equipment rhand="2499" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -1993,8 +1993,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2012,7 +2012,7 @@
 	<npc id="35072" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="276" /> <!-- rhand: Elven Bow -->
+		<equipment rhand="276" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2025,8 +2025,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2044,7 +2044,7 @@
 	<npc id="35073" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2057,8 +2057,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2076,7 +2076,7 @@
 	<npc id="35074" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="2" /> <!-- rhand: Long Sword -->
+		<equipment rhand="2" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2089,8 +2089,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2108,7 +2108,7 @@
 	<npc id="35075" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2121,8 +2121,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2140,7 +2140,7 @@
 	<npc id="35076" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2153,8 +2153,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2172,7 +2172,7 @@
 	<npc id="35077" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" /> <!-- rhand: Long Sword -->
+		<equipment rhand="2" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2185,8 +2185,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2204,7 +2204,7 @@
 	<npc id="35078" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2217,8 +2217,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2236,7 +2236,7 @@
 	<npc id="35079" level="60" type="Defender" name="Royal Knight" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="76" lhand="2497" /> <!-- rhand: Sword of Delusion lhand: Full Plate Shield -->
+		<equipment rhand="76" lhand="2497" /> 
 		<acquire exp="624" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641" mpRegen="3" />
@@ -2249,8 +2249,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2267,11 +2267,11 @@
 	</npc>
 	<npc id="35080" level="58" type="Defender" name="Court Sorcerer" title="Gludio">
 		<parameters>
-			<skill name="DDMagic" id="4026" level="1" /> <!-- Gludio Flame -->
+			<skill name="DDMagic" id="4026" level="1" /> 
 		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="325" /> <!-- rhand: Horn of Glory -->
+		<equipment rhand="325" /> 
 		<acquire exp="592" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -2284,9 +2284,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4026" level="1" /> <!-- Gludio Flame -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4026" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2303,11 +2303,11 @@
 	</npc>
 	<npc id="35081" level="58" type="Defender" name="Court Sorcerer" title="Gludio">
 		<parameters>
-			<skill name="MagicHeal" id="4027" level="1" /> <!-- Gludio Heal -->
+			<skill name="MagicHeal" id="4027" level="1" /> 
 		</parameters>
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="193" /> <!-- rhand: Stick of Faith -->
+		<equipment rhand="193" /> 
 		<acquire exp="592" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -2320,9 +2320,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4027" level="1" /> <!-- Gludio Heal -->
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4027" level="1" /> 
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2340,7 +2340,7 @@
 	<npc id="35082" level="58" type="Defender" name="Court Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="94" /> <!-- rhand: Bec de Corbin -->
+		<equipment rhand="94" /> 
 		<acquire exp="592" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2856.7687256316" hpRegen="8.5" mp="1574" mpRegen="3" />
@@ -2353,8 +2353,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2372,7 +2372,7 @@
 	<npc id="35083" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="93" /> <!-- rhand: Winged Spear -->
+		<equipment rhand="93" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2385,8 +2385,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2404,7 +2404,7 @@
 	<npc id="35084" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="2499" /> <!-- rhand: Elven Long Sword -->
+		<equipment rhand="2499" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2417,8 +2417,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2436,7 +2436,7 @@
 	<npc id="35085" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="276" /> <!-- rhand: Elven Bow -->
+		<equipment rhand="276" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2449,8 +2449,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2468,7 +2468,7 @@
 	<npc id="35086" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2481,8 +2481,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2500,7 +2500,7 @@
 	<npc id="35087" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="2" /> <!-- rhand: Long Sword -->
+		<equipment rhand="2" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2513,8 +2513,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2532,7 +2532,7 @@
 	<npc id="35088" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2545,8 +2545,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2564,7 +2564,7 @@
 	<npc id="35089" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="16" /> <!-- rhand: Great Spear -->
+		<equipment rhand="16" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2577,8 +2577,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2596,7 +2596,7 @@
 	<npc id="35090" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" /> <!-- rhand: Long Sword -->
+		<equipment rhand="2" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2609,8 +2609,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2628,7 +2628,7 @@
 	<npc id="35091" level="56" type="Defender" name="Guard" title="Gludio">
 		<race>CASTLE_GUARD</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="561" sp="1" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
@@ -2641,8 +2641,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="22" /> <!-- Defending Army -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="22" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>8</sNpcPropHpRate>
@@ -2657,7 +2657,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35092" level="56" type="CastleDoorman" name="Gatekeeper" title="Gludio">
+	<npc id="35092" level="56" type="Folk" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2693,8 +2693,8 @@
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="600" isAggressive="false">
@@ -2708,7 +2708,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35093" level="56" type="CastleDoorman" name="Gatekeeper" title="Gludio">
+	<npc id="35093" level="56" type="Folk" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2744,8 +2744,8 @@
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="600" isAggressive="false">
@@ -2759,7 +2759,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35094" level="56" type="CastleDoorman" name="Gatekeeper" title="Gludio">
+	<npc id="35094" level="56" type="Folk" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2795,8 +2795,8 @@
 		</stats>
 		<status attackable="false" undying="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="23" /> <!-- Mercenaries -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="600" isAggressive="false">
@@ -2831,8 +2831,8 @@
 		</stats>
 		<status attackable="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" />
@@ -2841,7 +2841,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35096" level="70" type="CastleDoorman" name="Outer Doorman" title="Gludio">
+	<npc id="35096" level="70" type="Folk" name="Outer Doorman" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2868,8 +2868,8 @@
 		</stats>
 		<status attackable="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2878,7 +2878,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35097" level="70" type="CastleDoorman" name="Inner Doorman" title="Gludio">
+	<npc id="35097" level="70" type="Folk" name="Inner Doorman" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2905,8 +2905,8 @@
 		</stats>
 		<status attackable="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2922,7 +2922,7 @@
 		</parameters>
 		<race>DWARF</race>
 		<sex>MALE</sex>
-		<equipment rhand="89" /> <!-- rhand: Big Hammer -->
+		<equipment rhand="89" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2676.65854" hpRegen="8.5" mp="1507.8" mpRegen="3" />
 			<attack physical="794.70901" magical="542.68324" random="7" critical="12" accuracy="-3.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2934,8 +2934,8 @@
 		</stats>
 		<status attackable="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
@@ -2962,8 +2962,8 @@
 		</stats>
 		<status attackable="false" canMove="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />

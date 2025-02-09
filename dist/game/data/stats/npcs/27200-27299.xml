@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="27200" level="36" type="Monster" name="Krudel Lizardman" title="Quest Monster">
+<npc id="27200" level="36" type="Monster" name="Krudel Lizardman" title="Quest Monster">
 		<parameters>
 			<param name="MoveAroundSocial" value="58" />
 			<param name="MoveAroundSocial1" value="58" />
@@ -8,7 +8,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="809.52639" hpRegen="4.5" mp="417.6" mpRegen="1.8" />
 			<attack physical="137.86467" magical="94.1437" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -21,7 +21,7 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="6" /> <!-- Humanoids -->
+			<skill id="4416" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -34,7 +34,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="27201" level="10" type="Folk" name="">
+	<npc id="27201" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
@@ -42,7 +42,7 @@
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -55,15 +55,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -76,14 +76,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27202" level="10" type="Folk" name="">
+	<npc id="27202" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -96,15 +96,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -117,14 +117,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27203" level="10" type="Folk" name="">
+	<npc id="27203" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -137,15 +137,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -158,14 +158,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27204" level="10" type="Folk" name="">
+	<npc id="27204" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -178,15 +178,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -199,14 +199,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27205" level="10" type="Folk" name="">
+	<npc id="27205" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -219,15 +219,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -240,14 +240,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27206" level="10" type="Folk" name="">
+	<npc id="27206" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -260,15 +260,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -281,14 +281,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27207" level="10" type="Folk" name="">
+	<npc id="27207" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -301,15 +301,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -322,14 +322,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27208" level="10" type="Folk" name="">
+	<npc id="27208" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -342,15 +342,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -363,14 +363,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27209" level="10" type="Folk" name="">
+	<npc id="27209" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -383,15 +383,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -404,14 +404,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27210" level="10" type="Folk" name="">
+	<npc id="27210" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -424,15 +424,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -445,14 +445,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27211" level="10" type="Folk" name="">
+	<npc id="27211" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -465,15 +465,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -486,14 +486,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27212" level="10" type="Folk" name="">
+	<npc id="27212" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -506,15 +506,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -527,14 +527,14 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="27213" level="10" type="Folk" name="">
+	<npc id="27213" level="10" type="Monster" name="">
 		<parameters>
 			<param name="MoveAroundSocial" value="124" />
 			<param name="MoveAroundSocial1" value="124" />
 		</parameters>
 		<race>GIANT</race>
 		<sex>MALE</sex>
-		<equipment rhand="291" /> <!-- rhand: Trident -->
+		<equipment rhand="291" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="163.28607" hpRegen="2" mp="108.4" mpRegen="0.9" />
 			<attack physical="19.33758" magical="13.20506" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
@@ -547,15 +547,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
-			<skill id="4411" level="11" /> <!-- Average M. Atk. -->
-			<skill id="4412" level="11" /> <!-- Average P. Def. -->
-			<skill id="4413" level="11" /> <!-- Average M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="11" /> <!-- Spears -->
-			<skill id="4416" level="11" /> <!-- Giants -->
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="11" /> 
+			<skill id="4411" level="11" /> 
+			<skill id="4412" level="11" /> 
+			<skill id="4413" level="11" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="11" /> 
+			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false">
@@ -576,7 +576,7 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="80" /> <!-- rhand: Tallum Blade -->
+		<equipment rhand="80" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -589,8 +589,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
@@ -611,7 +611,7 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="80" /> <!-- rhand: Tallum Blade -->
+		<equipment rhand="80" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -624,8 +624,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
@@ -646,7 +646,7 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="80" /> <!-- rhand: Tallum Blade -->
+		<equipment rhand="80" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -659,8 +659,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false">
@@ -678,7 +678,7 @@
 			<param name="MoveAroundSocial" value="110" />
 			<param name="MoveAroundSocial1" value="110" />
 			<param name="MoveAroundSocial2" value="110" />
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
@@ -694,9 +694,9 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4073" level="6" /> <!-- Shock -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4073" level="6" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -710,7 +710,7 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -725,9 +725,9 @@
 			<hitTime>350</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4073" level="6" /> <!-- Shock -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4073" level="6" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -744,7 +744,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -757,8 +757,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -775,7 +775,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -788,8 +788,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -806,7 +806,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -819,8 +819,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -837,7 +837,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -850,8 +850,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -868,7 +868,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -881,8 +881,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -899,7 +899,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -912,8 +912,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -930,7 +930,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -943,8 +943,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -961,7 +961,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -974,8 +974,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -992,7 +992,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1005,8 +1005,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1023,7 +1023,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1036,8 +1036,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1054,7 +1054,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1067,8 +1067,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1085,7 +1085,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1098,8 +1098,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1116,7 +1116,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1129,8 +1129,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1147,7 +1147,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1160,8 +1160,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1178,7 +1178,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1191,8 +1191,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1209,7 +1209,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1222,8 +1222,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1240,7 +1240,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1253,8 +1253,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1271,7 +1271,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1284,8 +1284,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1302,7 +1302,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1315,8 +1315,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1333,7 +1333,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1346,8 +1346,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1364,7 +1364,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1377,8 +1377,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1395,7 +1395,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1408,8 +1408,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1426,7 +1426,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1439,8 +1439,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1457,7 +1457,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1470,8 +1470,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1488,7 +1488,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1501,8 +1501,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1519,7 +1519,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1532,8 +1532,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1550,7 +1550,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1563,8 +1563,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1581,7 +1581,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1594,8 +1594,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1612,7 +1612,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1625,8 +1625,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1643,7 +1643,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1656,8 +1656,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1674,7 +1674,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="6722" /> <!-- rhand: Monster Only(Ahrimanes) -->
+		<equipment rhand="6722" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -1687,8 +1687,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" />
@@ -1702,9 +1702,9 @@
 			<param name="MoveAroundSocial" value="140" />
 			<param name="MoveAroundSocial1" value="140" />
 			<param name="MoveAroundSocial2" value="140" />
-			<skill name="SummonEffect" id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill name="SummonHeal1" id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill name="SummonHeal2" id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill name="SummonEffect" id="4526" level="1" /> 
+			<skill name="SummonHeal1" id="4527" level="1" /> 
+			<skill name="SummonHeal2" id="4528" level="1" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -1720,12 +1720,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill id="4408" level="10" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4526" level="1" /> 
+			<skill id="4527" level="1" /> 
+			<skill id="4528" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -1740,9 +1740,9 @@
 			<param name="MoveAroundSocial" value="140" />
 			<param name="MoveAroundSocial1" value="140" />
 			<param name="MoveAroundSocial2" value="140" />
-			<skill name="SummonEffect" id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill name="SummonHeal1" id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill name="SummonHeal2" id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill name="SummonEffect" id="4526" level="1" /> 
+			<skill name="SummonHeal1" id="4527" level="1" /> 
+			<skill name="SummonHeal2" id="4528" level="1" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -1758,12 +1758,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill id="4408" level="10" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4526" level="1" /> 
+			<skill id="4527" level="1" /> 
+			<skill id="4528" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -1778,9 +1778,9 @@
 			<param name="MoveAroundSocial" value="140" />
 			<param name="MoveAroundSocial1" value="140" />
 			<param name="MoveAroundSocial2" value="140" />
-			<skill name="SummonEffect" id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill name="SummonHeal1" id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill name="SummonHeal2" id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill name="SummonEffect" id="4526" level="1" /> 
+			<skill name="SummonHeal1" id="4527" level="1" /> 
+			<skill name="SummonHeal2" id="4528" level="1" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -1796,12 +1796,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill id="4408" level="10" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4526" level="1" /> 
+			<skill id="4527" level="1" /> 
+			<skill id="4528" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -1816,9 +1816,9 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="SelfRangeDDMagic1" id="4529" level="1" /> <!-- Quest - Summoned Explosion -->
-			<skill name="SelfRangeDDMagic2" id="4530" level="1" /> <!-- Quest - Summoned HP Heal -->
-			<skill name="SelfRangeDDMagic3" id="4531" level="1" /> <!-- Quest - Summoned MP Heal -->
+			<skill name="SelfRangeDDMagic1" id="4529" level="1" /> 
+			<skill name="SelfRangeDDMagic2" id="4530" level="1" /> 
+			<skill name="SelfRangeDDMagic3" id="4531" level="1" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -1834,13 +1834,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="9" /> <!-- HP Increase (1/2x) -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4529" level="1" /> <!-- Quest - Summoned Explosion -->
-			<skill id="4530" level="1" /> <!-- Quest - Summoned HP Heal -->
-			<skill id="4531" level="1" /> <!-- Quest - Summoned MP Heal -->
+			<skill id="4408" level="9" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4529" level="1" /> 
+			<skill id="4530" level="1" /> 
+			<skill id="4531" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>0.5</sNpcPropHpRate>
@@ -1869,9 +1869,9 @@
 			<hitTime>760</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -1900,9 +1900,9 @@
 			<hitTime>760</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -1931,9 +1931,9 @@
 			<hitTime>760</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -1948,13 +1948,13 @@
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
-			<skill name="SummonEffect" id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill name="SummonHeal1" id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill name="SummonHeal2" id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill name="SummonEffect" id="4526" level="1" /> 
+			<skill name="SummonHeal1" id="4527" level="1" /> 
+			<skill name="SummonHeal2" id="4528" level="1" /> 
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<equipment rhand="161" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -1967,11 +1967,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
-			<skill id="4526" level="1" /> <!-- Quest - BOSS Summon -->
-			<skill id="4527" level="1" /> <!-- Quest - BOSS Inc HP to Summoned -->
-			<skill id="4528" level="1" /> <!-- Quest - BOSS Movement to Summoned -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="8" /> 
+			<skill id="4526" level="1" /> 
+			<skill id="4527" level="1" /> 
+			<skill id="4528" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -1985,13 +1985,13 @@
 			<param name="MoveAroundSocial" value="85" />
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="8" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4073" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4572" level="8" /> 
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<equipment rhand="161" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2004,12 +2004,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4073" level="8" /> <!-- Shock -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
-			<skill id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4032" level="8" /> 
+			<skill id="4073" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="8" /> 
+			<skill id="4572" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2024,12 +2024,12 @@
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
 			<minions name="Privates">
-				<npc id="27261" count="3" respawnTime="0" weightPoint="1" /> <!-- Bead of Sacred Flame -->
+				<npc id="27261" count="3" respawnTime="0" weightPoint="1" /> 
 			</minions>
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<equipment rhand="161" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2042,8 +2042,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2058,12 +2058,12 @@
 			<param name="MoveAroundSocial1" value="85" />
 			<param name="MoveAroundSocial2" value="85" />
 			<minions name="Privates">
-				<npc id="27261" count="3" respawnTime="0" weightPoint="1" /> <!-- Bead of Sacred Flame -->
+				<npc id="27261" count="3" respawnTime="0" weightPoint="1" /> 
 			</minions>
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="161" /> <!-- rhand: Silver Axe -->
+		<equipment rhand="161" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2076,8 +2076,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2106,8 +2106,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2124,7 +2124,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- rhand: Great Sword -->
+		<equipment rhand="78" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="0" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2136,9 +2136,9 @@
 			<hitTime>500</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2156,7 +2156,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- rhand: Great Sword -->
+		<equipment rhand="78" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="0" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2168,9 +2168,9 @@
 			<hitTime>500</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2188,7 +2188,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="78" /> <!-- rhand: Great Sword -->
+		<equipment rhand="78" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="0" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2200,9 +2200,9 @@
 			<hitTime>500</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2220,7 +2220,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="205" /> <!-- rhand: Ghoul's Staff -->
+		<equipment rhand="205" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="50" critical="1" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2232,9 +2232,9 @@
 			<hitTime>740</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2250,7 +2250,7 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<minions name="Privates">
-				<npc id="27268" count="2" respawnTime="0" weightPoint="1" /> <!-- Guard of Haures -->
+				<npc id="27268" count="2" respawnTime="0" weightPoint="1" /> 
 			</minions>
 		</parameters>
 		<race>UNDEAD</race>
@@ -2267,10 +2267,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
-			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="10" /> 
+			<skill id="4412" level="21" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -2286,7 +2286,7 @@
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
 			<minions name="Privates">
-				<npc id="27268" count="2" respawnTime="0" weightPoint="1" /> <!-- Guard of Haures -->
+				<npc id="27268" count="2" respawnTime="0" weightPoint="1" /> 
 			</minions>
 		</parameters>
 		<race>UNDEAD</race>
@@ -2303,10 +2303,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4408" level="10" /> <!-- HP Increase (2x) -->
-			<skill id="4412" level="21" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="10" /> 
+			<skill id="4412" level="21" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
@@ -2336,8 +2336,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2351,13 +2351,13 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="DeBuff1" id="4539" level="1" /> <!-- Curse of Vague -->
-			<skill name="DeBuff2" id="4540" level="1" /> <!-- Curse of Weakness -->
-			<skill name="DeBuff3" id="4541" level="1" /> <!-- Curse of Nihil -->
+			<skill name="DeBuff1" id="4539" level="1" /> 
+			<skill name="DeBuff2" id="4540" level="1" /> 
+			<skill name="DeBuff3" id="4541" level="1" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- rhand: Lady's Fan -->
+		<equipment rhand="3939" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2370,11 +2370,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4539" level="1" /> <!-- Curse of Vague -->
-			<skill id="4540" level="1" /> <!-- Curse of Weakness -->
-			<skill id="4541" level="1" /> <!-- Curse of Nihil -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4539" level="1" /> 
+			<skill id="4540" level="1" /> 
+			<skill id="4541" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2388,13 +2388,13 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="DeBuff1" id="4539" level="1" /> <!-- Curse of Vague -->
-			<skill name="DeBuff2" id="4540" level="1" /> <!-- Curse of Weakness -->
-			<skill name="DeBuff3" id="4541" level="1" /> <!-- Curse of Nihil -->
+			<skill name="DeBuff1" id="4539" level="1" /> 
+			<skill name="DeBuff2" id="4540" level="1" /> 
+			<skill name="DeBuff3" id="4541" level="1" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- rhand: Lady's Fan -->
+		<equipment rhand="3939" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2407,11 +2407,11 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4539" level="1" /> <!-- Curse of Vague -->
-			<skill id="4540" level="1" /> <!-- Curse of Weakness -->
-			<skill id="4541" level="1" /> <!-- Curse of Nihil -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4539" level="1" /> 
+			<skill id="4540" level="1" /> 
+			<skill id="4541" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2425,9 +2425,9 @@
 			<param name="MoveAroundSocial" value="135" />
 			<param name="MoveAroundSocial1" value="135" />
 			<param name="MoveAroundSocial2" value="135" />
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="8" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4073" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4572" level="8" /> 
 		</parameters>
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
@@ -2443,12 +2443,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4073" level="8" /> <!-- Shock -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4032" level="8" /> 
+			<skill id="4073" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4572" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2462,13 +2462,13 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
 			<param name="MoveAroundSocial2" value="0" />
-			<skill name="DeBuff1" id="4533" level="1" /> <!-- Dance of Resistance -->
-			<skill name="DeBuff2" id="4534" level="1" /> <!-- Dance of Nihil -->
-			<skill name="DeBuff3" id="4535" level="1" /> <!-- Dance of Weakness -->
+			<skill name="DeBuff1" id="4533" level="1" /> 
+			<skill name="DeBuff2" id="4534" level="1" /> 
+			<skill name="DeBuff3" id="4535" level="1" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="3939" /> <!-- rhand: Lady's Fan -->
+		<equipment rhand="3939" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2481,12 +2481,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4533" level="1" /> <!-- Dance of Resistance -->
-			<skill id="4534" level="1" /> <!-- Dance of Nihil -->
-			<skill id="4535" level="1" /> <!-- Dance of Weakness -->
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4533" level="1" /> 
+			<skill id="4534" level="1" /> 
+			<skill id="4535" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2503,7 +2503,7 @@
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="242" /> <!-- rhand: Soulfire Dirk -->
+		<equipment rhand="242" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="5" critical="12" accuracy="-3.75" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
@@ -2515,9 +2515,9 @@
 			<hitTime>520</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2535,7 +2535,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="286" /> <!-- rhand: Eminence Bow -->
+		<equipment rhand="286" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="10" critical="8" accuracy="-3.75" attackSpeed="253" reuseDelay="1500" type="BOW" range="500" distance="10" width="0" />
@@ -2547,9 +2547,9 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2567,7 +2567,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="286" /> <!-- rhand: Eminence Bow -->
+		<equipment rhand="286" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="10" critical="8" accuracy="-3.75" attackSpeed="253" reuseDelay="1500" type="BOW" range="500" distance="10" width="0" />
@@ -2579,9 +2579,9 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2599,7 +2599,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="286" /> <!-- rhand: Eminence Bow -->
+		<equipment rhand="286" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="10" critical="8" accuracy="-3.75" attackSpeed="253" reuseDelay="1500" type="BOW" range="500" distance="10" width="0" />
@@ -2611,9 +2611,9 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2631,7 +2631,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="286" /> <!-- rhand: Eminence Bow -->
+		<equipment rhand="286" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="10" critical="8" accuracy="-3.75" attackSpeed="253" reuseDelay="1500" type="BOW" range="500" distance="10" width="0" />
@@ -2643,9 +2643,9 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2663,7 +2663,7 @@
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="205" /> <!-- rhand: Ghoul's Staff -->
+		<equipment rhand="205" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="50" critical="1" accuracy="4.75" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -2675,9 +2675,9 @@
 			<hitTime>740</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2706,9 +2706,9 @@
 			<hitTime>560</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2737,9 +2737,9 @@
 			<hitTime>450</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2768,9 +2768,9 @@
 			<hitTime>450</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2788,7 +2788,7 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="-3.75" attackSpeed="253" type="SWORD" range="80" distance="80" width="120" />
@@ -2800,9 +2800,9 @@
 			<hitTime>760</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2831,9 +2831,9 @@
 			<hitTime>520</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2862,9 +2862,9 @@
 			<hitTime>480</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="7" /> <!-- Spirits -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="7" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2882,7 +2882,7 @@
 		</parameters>
 		<race>BEAST</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0804" />
 			<attack physical="938.20801458" magical="656.66638089" random="30" critical="4" accuracy="0" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2894,9 +2894,9 @@
 			<hitTime>460</hitTime>
 		</stats>
 		<skillList>
-			<skill id="4408" level="17" /> <!-- HP Increase (9x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="3" /> <!-- Beasts -->
+			<skill id="4408" level="17" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>9</sNpcPropHpRate>
@@ -2911,13 +2911,13 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
 			<param name="MoveAroundSocial2" value="92" />
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="8" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4073" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4572" level="8" /> 
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" lhand="107" /> <!-- rhand: Sword of Damascus lhand: Composite Shield -->
+		<equipment rhand="79" lhand="107" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2929,12 +2929,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4073" level="8" /> <!-- Shock -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="14" /> <!-- Humans -->
-			<skill id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4032" level="8" /> 
+			<skill id="4073" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="14" /> 
+			<skill id="4572" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2948,13 +2948,13 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="79" />
 			<param name="MoveAroundSocial2" value="79" />
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="8" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4073" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4572" level="8" /> 
 		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
-		<equipment rhand="145" /> <!-- rhand: Sword of Whispering Death -->
+		<equipment rhand="145" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2966,12 +2966,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4073" level="8" /> <!-- Shock -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="15" /> <!-- Elves -->
-			<skill id="4572" level="8" /> <!-- NPC Triple Sonic Slash -->
+			<skill id="4032" level="8" /> 
+			<skill id="4073" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="15" /> 
+			<skill id="4572" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -2985,13 +2985,13 @@
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="127" />
 			<param name="MoveAroundSocial2" value="148" />
-			<skill name="DeBuff1" id="4536" level="1" /> <!-- Song of Seduce -->
-			<skill name="DeBuff2" id="4537" level="1" /> <!-- Song of Sweet Whisper -->
-			<skill name="DeBuff3" id="4538" level="1" /> <!-- Song of Temptation -->
+			<skill name="DeBuff1" id="4536" level="1" /> 
+			<skill name="DeBuff2" id="4537" level="1" /> 
+			<skill name="DeBuff3" id="4538" level="1" /> 
 		</parameters>
 		<race>ELF</race>
 		<sex>MALE</sex>
-		<equipment rhand="74" lhand="74" /> <!-- rhand: Katana lhand: Katana -->
+		<equipment rhand="74" lhand="74" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3003,12 +3003,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="15" /> <!-- Elves -->
-			<skill id="4536" level="1" /> <!-- Song of Seduce -->
-			<skill id="4537" level="1" /> <!-- Song of Sweet Whisper -->
-			<skill id="4538" level="1" /> <!-- Song of Temptation -->
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="15" /> 
+			<skill id="4536" level="1" /> 
+			<skill id="4537" level="1" /> 
+			<skill id="4538" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3022,16 +3022,16 @@
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
-			<skill name="CheckSkill1" id="260" level="37" /> <!-- Hammer Crush -->
-			<skill name="CheckSkill2" id="1" level="37" /> <!-- Triple Slash -->
-			<skill name="ArrowDefenceMode" id="4545" level="1" /> <!-- Quest - BOSS Reflect -->
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> <!-- Bleed -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="CheckSkill1" id="260" level="37" /> 
+			<skill name="CheckSkill2" id="1" level="37" /> 
+			<skill name="ArrowDefenceMode" id="4545" level="1" /> 
+			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
-		<equipment rhand="5800" lhand="5799" /> <!-- rhand: Nephilim Lord lhand: Nephilim Lord -->
+		<equipment rhand="5800" lhand="5799" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3044,14 +3044,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="1" level="37" /> <!-- Triple Slash -->
-			<skill id="260" level="37" /> <!-- Hammer Crush -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="9" /> <!-- Demons -->
-			<skill id="4579" level="8" /> <!-- Bleed -->
+			<skill id="1" level="37" /> 
+			<skill id="260" level="37" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4067" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="9" /> 
+			<skill id="4579" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3066,12 +3066,12 @@
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
 			<minions name="Privates">
-				<npc id="27291" count="5" respawnTime="0" weightPoint="1" /> <!-- White Wing Fighter -->
+				<npc id="27291" count="5" respawnTime="0" weightPoint="1" /> 
 			</minions>
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3084,8 +3084,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3102,7 +3102,7 @@
 		</parameters>
 		<race>DIVINE</race>
 		<sex>FEMALE</sex>
-		<equipment rhand="80" /> <!-- rhand: Tallum Blade -->
+		<equipment rhand="80" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3115,8 +3115,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3130,15 +3130,15 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="65" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckSkill1" id="190" level="37" /> <!-- Fatal Strike -->
-			<skill name="CheckSkill2" id="260" level="37" /> <!-- Hammer Crush -->
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> <!-- Bleed -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="CheckSkill1" id="190" level="37" /> 
+			<skill name="CheckSkill2" id="260" level="37" /> 
+			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="7834" /> <!-- rhand: Art of Battle Axe -->
+		<equipment rhand="7834" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3151,14 +3151,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="190" level="37" /> <!-- Fatal Strike -->
-			<skill id="260" level="37" /> <!-- Hammer Crush -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4579" level="8" /> <!-- Bleed -->
+			<skill id="190" level="37" /> 
+			<skill id="260" level="37" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4067" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4579" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3172,11 +3172,11 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="65" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckSkill1" id="280" level="37" /> <!-- Burning Fist -->
-			<skill name="CheckSkill2" id="281" level="37" /> <!-- Soul Breaker -->
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> <!-- Bleed -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="CheckSkill1" id="280" level="37" /> 
+			<skill name="CheckSkill2" id="281" level="37" /> 
+			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
@@ -3192,14 +3192,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="280" level="37" /> <!-- Burning Fist -->
-			<skill id="281" level="37" /> <!-- Soul Breaker -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4579" level="8" /> <!-- Bleed -->
+			<skill id="280" level="37" /> 
+			<skill id="281" level="37" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4067" level="8" /> 
+			<skill id="4412" level="18" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4579" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3213,18 +3213,18 @@
 			<param name="MoveAroundSocial" value="140" />
 			<param name="MoveAroundSocial1" value="54" />
 			<param name="MoveAroundSocial2" value="140" />
-			<skill name="BigBodySkill" id="4692" level="1" /> <!-- Quest BOSS Big Body -->
-			<skill name="NormalBodySkill" id="4693" level="1" /> <!-- Quest BOSS Dispel Big Body -->
-			<skill name="DeBuff1" id="4544" level="1" /> <!-- Quest - BOSS Weakness -->
-			<skill name="DeBuff2" id="4544" level="2" /> <!-- Quest - BOSS Weakness -->
-			<skill name="DeBuff3" id="4544" level="3" /> <!-- Quest - BOSS Weakness -->
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="8" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4032" level="7" /> <!-- NPC Strike -->
+			<skill name="BigBodySkill" id="4692" level="1" /> 
+			<skill name="NormalBodySkill" id="4693" level="1" /> 
+			<skill name="DeBuff1" id="4544" level="1" /> 
+			<skill name="DeBuff2" id="4544" level="2" /> 
+			<skill name="DeBuff3" id="4544" level="3" /> 
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4073" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="6719" /> <!-- rhand: Monster Only(Ketra Orc Chieftain) -->
+		<equipment rhand="6719" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -3237,17 +3237,17 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="7" /> <!-- NPC Strike -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4073" level="8" /> <!-- Shock -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4544" level="1" /> <!-- Quest - BOSS Weakness -->
-			<skill id="4544" level="2" /> <!-- Quest - BOSS Weakness -->
-			<skill id="4544" level="3" /> <!-- Quest - BOSS Weakness -->
-			<skill id="4692" level="1" /> <!-- Quest BOSS Big Body -->
-			<skill id="4693" level="1" /> <!-- Quest BOSS Dispel Big Body -->
+			<skill id="4032" level="7" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4073" level="8" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4544" level="1" /> 
+			<skill id="4544" level="2" /> 
+			<skill id="4544" level="3" /> 
+			<skill id="4692" level="1" /> 
+			<skill id="4693" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -3262,18 +3262,18 @@
 			<param name="MoveAroundSocial" value="140" />
 			<param name="MoveAroundSocial1" value="54" />
 			<param name="MoveAroundSocial2" value="140" />
-			<skill name="BigBodySkill" id="4692" level="1" /> <!-- Quest BOSS Big Body -->
-			<skill name="NormalBodySkill" id="4693" level="1" /> <!-- Quest BOSS Dispel Big Body -->
-			<skill name="DeBuff1" id="4544" level="1" /> <!-- Quest - BOSS Weakness -->
-			<skill name="DeBuff2" id="4544" level="2" /> <!-- Quest - BOSS Weakness -->
-			<skill name="DeBuff3" id="4544" level="3" /> <!-- Quest - BOSS Weakness -->
-			<skill name="PhysicalSpecial1" id="4032" level="8" /> <!-- NPC Strike -->
-			<skill name="PhysicalSpecial2" id="4073" level="8" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4032" level="7" /> <!-- NPC Strike -->
+			<skill name="BigBodySkill" id="4692" level="1" /> 
+			<skill name="NormalBodySkill" id="4693" level="1" /> 
+			<skill name="DeBuff1" id="4544" level="1" /> 
+			<skill name="DeBuff2" id="4544" level="2" /> 
+			<skill name="DeBuff3" id="4544" level="3" /> 
+			<skill name="PhysicalSpecial1" id="4032" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4073" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="6719" /> <!-- rhand: Monster Only(Ketra Orc Chieftain) -->
+		<equipment rhand="6719" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
@@ -3286,17 +3286,17 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="7" /> <!-- NPC Strike -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4073" level="8" /> <!-- Shock -->
-			<skill id="4408" level="12" /> <!-- HP Increase (4x) -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4544" level="1" /> <!-- Quest - BOSS Weakness -->
-			<skill id="4544" level="2" /> <!-- Quest - BOSS Weakness -->
-			<skill id="4544" level="3" /> <!-- Quest - BOSS Weakness -->
-			<skill id="4692" level="1" /> <!-- Quest BOSS Big Body -->
-			<skill id="4693" level="1" /> <!-- Quest BOSS Dispel Big Body -->
+			<skill id="4032" level="7" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4073" level="8" /> 
+			<skill id="4408" level="12" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4544" level="1" /> 
+			<skill id="4544" level="2" /> 
+			<skill id="4544" level="3" /> 
+			<skill id="4692" level="1" /> 
+			<skill id="4693" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>4</sNpcPropHpRate>
@@ -3311,15 +3311,15 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckSkill1" id="19" level="37" /> <!-- Double Shot -->
-			<skill name="CheckSkill2" id="101" level="40" /> <!-- Stun Shot -->
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> <!-- Bleed -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="CheckSkill1" id="19" level="37" /> 
+			<skill name="CheckSkill2" id="101" level="40" /> 
+			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3332,13 +3332,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="19" level="37" /> <!-- Double Shot -->
-			<skill id="101" level="40" /> <!-- Stunning Shot -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
-			<skill id="4579" level="8" /> <!-- Bleed -->
+			<skill id="19" level="37" /> 
+			<skill id="101" level="40" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4067" level="8" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
+			<skill id="4579" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3352,15 +3352,15 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckSkill1" id="19" level="37" /> <!-- Double Shot -->
-			<skill name="CheckSkill2" id="101" level="40" /> <!-- Stun Shot -->
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> <!-- Bleed -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="CheckSkill1" id="19" level="37" /> 
+			<skill name="CheckSkill2" id="101" level="40" /> 
+			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3373,13 +3373,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="19" level="37" /> <!-- Double Shot -->
-			<skill id="101" level="40" /> <!-- Stunning Shot -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
-			<skill id="4579" level="8" /> <!-- Bleed -->
+			<skill id="19" level="37" /> 
+			<skill id="101" level="40" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4067" level="8" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
+			<skill id="4579" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3393,15 +3393,15 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="CheckSkill1" id="19" level="37" /> <!-- Double Shot -->
-			<skill name="CheckSkill2" id="101" level="40" /> <!-- Stun Shot -->
-			<skill name="PhysicalSpecial1" id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill name="PhysicalSpecial2" id="4579" level="8" /> <!-- Bleed -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="CheckSkill1" id="19" level="37" /> 
+			<skill name="CheckSkill2" id="101" level="40" /> 
+			<skill name="PhysicalSpecial1" id="4067" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4579" level="8" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3414,13 +3414,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="19" level="37" /> <!-- Double Shot -->
-			<skill id="101" level="40" /> <!-- Stunning Shot -->
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4067" level="8" /> <!-- NPC Mortal Blow -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
-			<skill id="4579" level="8" /> <!-- Bleed -->
+			<skill id="19" level="37" /> 
+			<skill id="101" level="40" /> 
+			<skill id="4032" level="8" /> 
+			<skill id="4067" level="8" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
+			<skill id="4579" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
@@ -3434,16 +3434,16 @@
 			<param name="MoveAroundSocial" value="90" />
 			<param name="MoveAroundSocial1" value="98" />
 			<param name="MoveAroundSocial2" value="90" />
-			<skill name="WeakModeTrue" id="4523" level="1" /> <!-- Quest - BOSS Evasion -->
-			<skill name="WeakModeFalse" id="4524" level="1" /> <!-- Quest - BOSS Bluff -->
-			<skill name="Buff" id="4522" level="1" /> <!-- Eye of Assassin -->
-			<skill name="PhysicalSpecial1" id="4101" level="8" /> <!-- NPC Spinning Slash -->
-			<skill name="PhysicalSpecial2" id="4072" level="7" /> <!-- Stun -->
-			<skill name="PhysicalSpecial3" id="4032" level="8" /> <!-- NPC Strike -->
+			<skill name="WeakModeTrue" id="4523" level="1" /> 
+			<skill name="WeakModeFalse" id="4524" level="1" /> 
+			<skill name="Buff" id="4522" level="1" /> 
+			<skill name="PhysicalSpecial1" id="4101" level="8" /> 
+			<skill name="PhysicalSpecial2" id="4072" level="7" /> 
+			<skill name="PhysicalSpecial3" id="4032" level="8" /> 
 		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
 			<attack physical="815.37145" magical="556.793" random="30" critical="4" accuracy="4.75" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -3456,14 +3456,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="8" /> <!-- NPC Strike -->
-			<skill id="4072" level="7" /> <!-- Shock -->
-			<skill id="4101" level="8" /> <!-- NPC Spinning Slash -->
-			<skill id="4414" level="1" /> <!-- Heavy Armor Type -->
-			<skill id="4416" level="8" /> <!-- Angels -->
-			<skill id="4522" level="1" /> <!-- Eye of Assassin -->
-			<skill id="4523" level="1" /> <!-- Quest - BOSS Evasion -->
-			<skill id="4524" level="1" /> <!-- Quest - BOSS Bluff -->
+			<skill id="4032" level="8" /> 
+			<skill id="4072" level="7" /> 
+			<skill id="4101" level="8" /> 
+			<skill id="4414" level="1" /> 
+			<skill id="4416" level="8" /> 
+			<skill id="4522" level="1" /> 
+			<skill id="4523" level="1" /> 
+			<skill id="4524" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />

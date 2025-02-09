@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-	<npc id="31400" level="80" type="Guard" name="Dummy - Sword Guard" title="Ch4 Test">
+<npc id="31400" level="80" type="Guard" name="Dummy - Sword Guard" title="Ch4 Test">
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="2" /> <!-- rhand: Long Sword -->
+		<equipment rhand="2" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -15,16 +15,16 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="16" /> 
+			<skill id="4413" level="16" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -36,7 +36,7 @@
 	<npc id="31401" level="80" type="Guard" name="Dummy - Bow Guard" title="Ch4 Test">
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
 			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -48,16 +48,16 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4408" level="1" /> <!-- HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!-- MP Increase (1x) -->
-			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
-			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
-			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
-			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
-			<skill id="4414" level="2" /> <!-- Standard Type -->
-			<skill id="4415" level="3" /> <!-- One-handed Sword -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4408" level="1" /> 
+			<skill id="4409" level="1" /> 
+			<skill id="4410" level="16" /> 
+			<skill id="4411" level="16" /> 
+			<skill id="4412" level="16" /> 
+			<skill id="4413" level="16" /> 
+			<skill id="4414" level="2" /> 
+			<skill id="4415" level="3" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -84,8 +84,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -112,8 +112,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -140,8 +140,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -168,8 +168,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -196,8 +196,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -224,8 +224,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -252,8 +252,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -280,8 +280,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -308,8 +308,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -336,8 +336,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -364,8 +364,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -392,8 +392,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="16" /> <!-- Dark Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -420,8 +420,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -448,8 +448,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -476,8 +476,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -504,8 +504,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -532,8 +532,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -560,8 +560,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="15" /> <!-- Elves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -588,8 +588,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -616,8 +616,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -644,8 +644,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -672,8 +672,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -700,8 +700,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -728,8 +728,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -756,8 +756,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -784,8 +784,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -812,8 +812,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -840,8 +840,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="17" /> <!-- Orcs -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="17" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="MAGE" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -868,8 +868,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -896,8 +896,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -924,8 +924,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -952,8 +952,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -980,8 +980,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1008,8 +1008,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1036,8 +1036,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1064,8 +1064,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1092,8 +1092,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1120,8 +1120,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1148,8 +1148,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1176,8 +1176,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1204,8 +1204,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1232,8 +1232,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="18" /> <!-- Dwarves -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1242,7 +1242,7 @@
 			<height normal="17.5" />
 		</collision>
 	</npc>
-	<npc id="31452" level="70" type="SepulcherNpc" name="Ghost of Wigoth">
+	<npc id="31452" level="70" type="Folk" name="Ghost of Wigoth">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -1260,8 +1260,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1270,7 +1270,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="31453" level="70" type="SepulcherNpc" name="Nameless Spirit">
+	<npc id="31453" level="70" type="Folk" name="Nameless Spirit">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="180" />
@@ -1288,8 +1288,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1298,7 +1298,7 @@
 			<height normal="21" />
 		</collision>
 	</npc>
-	<npc id="31454" level="70" type="SepulcherNpc" name="Ghost of Wigoth">
+	<npc id="31454" level="70" type="Folk" name="Ghost of Wigoth">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -1316,8 +1316,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1326,7 +1326,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="31455" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31455" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1341,8 +1341,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1351,7 +1351,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31456" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31456" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1366,8 +1366,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1376,7 +1376,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31457" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31457" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1391,8 +1391,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1401,7 +1401,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31458" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31458" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1416,8 +1416,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1426,7 +1426,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31459" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31459" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1441,8 +1441,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1451,7 +1451,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31460" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31460" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1466,8 +1466,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1476,7 +1476,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31461" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31461" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1491,8 +1491,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1501,7 +1501,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31462" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31462" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1516,8 +1516,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1526,7 +1526,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31463" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31463" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1541,8 +1541,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1551,7 +1551,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31464" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31464" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1566,8 +1566,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1576,7 +1576,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31465" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31465" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1591,8 +1591,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1601,7 +1601,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31466" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31466" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1616,8 +1616,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1626,7 +1626,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31467" level="70" type="SepulcherNpc" name="Key Box">
+	<npc id="31467" level="70" type="Folk" name="Key Box">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -1641,8 +1641,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1651,7 +1651,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31468" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31468" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="1" />
 			<param name="room_event_1" value="1st_type1_a" />
@@ -1672,8 +1672,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1682,7 +1682,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31469" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31469" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="2" />
 			<param name="room_event_1" value="1st_type1_b1" />
@@ -1702,8 +1702,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1712,7 +1712,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31470" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31470" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="3" />
 			<param name="room_event_1" value="1st_type1_c" />
@@ -1732,8 +1732,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1742,7 +1742,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31471" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31471" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="4" />
 			<param name="room_event_1" value="1st_type1_d" />
@@ -1763,8 +1763,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1773,7 +1773,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31472" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31472" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="5" />
 			<param name="room_event_1" value="1st_type1_e" />
@@ -1793,8 +1793,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1803,7 +1803,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31473" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31473" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="1" />
 			<param name="room_event_1" value="2nd_type1_a" />
@@ -1824,8 +1824,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1834,7 +1834,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31474" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31474" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="2" />
 			<param name="room_event_1" value="2nd_type1_b1" />
@@ -1854,8 +1854,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1864,7 +1864,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31475" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31475" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="3" />
 			<param name="room_event_1" value="2nd_type1_c" />
@@ -1884,8 +1884,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1894,7 +1894,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31476" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31476" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="4" />
 			<param name="room_event_1" value="2nd_type1_d" />
@@ -1915,8 +1915,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1925,7 +1925,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31477" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31477" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="5" />
 			<param name="room_event_1" value="2nd_type1_e" />
@@ -1945,8 +1945,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1955,7 +1955,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31478" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31478" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="1" />
 			<param name="room_event_1" value="3rd_type1_a" />
@@ -1976,8 +1976,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -1986,7 +1986,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31479" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31479" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="2" />
 			<param name="room_event_1" value="3rd_type1_b1" />
@@ -2006,8 +2006,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2016,7 +2016,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31480" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31480" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="3" />
 			<param name="room_event_1" value="3rd_type1_c" />
@@ -2036,8 +2036,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2046,7 +2046,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31481" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31481" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="4" />
 			<param name="room_event_1" value="3rd_type1_d" />
@@ -2067,8 +2067,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2077,7 +2077,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31482" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31482" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="5" />
 			<param name="room_event_1" value="3rd_type1_e" />
@@ -2097,8 +2097,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2107,7 +2107,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31483" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31483" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="1" />
 			<param name="room_event_1" value="4th_type1_a" />
@@ -2128,8 +2128,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2138,7 +2138,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31484" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31484" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="2" />
 			<param name="room_event_1" value="4th_type1_b1" />
@@ -2158,8 +2158,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2168,7 +2168,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31485" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31485" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="3" />
 			<param name="room_event_1" value="4th_type1_c" />
@@ -2188,8 +2188,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2198,7 +2198,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31486" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31486" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="4" />
 			<param name="room_event_1" value="4th_type1_d" />
@@ -2219,8 +2219,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2229,7 +2229,7 @@
 			<height normal="8.5" />
 		</collision>
 	</npc>
-	<npc id="31487" level="70" type="SepulcherNpc" name="Mysterious Box">
+	<npc id="31487" level="70" type="Folk" name="Mysterious Box">
 		<parameters>
 			<param name="RoomIDX" value="5" />
 			<param name="room_event_1" value="4th_type1_e" />
@@ -2249,8 +2249,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -2266,7 +2266,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="94" /> <!-- rhand: Bec de Corbin -->
+		<equipment rhand="94" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2278,8 +2278,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2295,7 +2295,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="304" /> <!-- rhand: Orcish Halberd -->
+		<equipment rhand="304" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2307,8 +2307,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2324,7 +2324,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" lhand="111" /> <!-- rhand: Sword of Damascus lhand: Shield of Pledge -->
+		<equipment rhand="79" lhand="111" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2336,8 +2336,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2353,7 +2353,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="76" lhand="660" /> <!-- rhand: Sword of Delusion lhand: Otherworldly Shield -->
+		<equipment rhand="76" lhand="660" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2365,8 +2365,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2382,7 +2382,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="80" lhand="655" /> <!-- rhand: Tallum Blade lhand: Sage's Shield -->
+		<equipment rhand="80" lhand="655" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2394,8 +2394,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2411,7 +2411,7 @@
 		</parameters>
 		<race>HUMAN</race>
 		<sex>MALE</sex>
-		<equipment rhand="135" /> <!-- rhand: Samurai Longsword -->
+		<equipment rhand="135" /> 
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
 			<attack physical="688.86373" magical="470.40463" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
@@ -2423,8 +2423,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="14" /> <!-- Humans -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2451,8 +2451,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2479,8 +2479,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2507,8 +2507,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2535,8 +2535,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2563,8 +2563,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
@@ -2591,8 +2591,8 @@
 		</stats>
 		<status attackable="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
