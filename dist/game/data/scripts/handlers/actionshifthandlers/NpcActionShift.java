@@ -27,6 +27,7 @@ import org.l2jmobius.commons.util.CommonUtil;
 import org.l2jmobius.gameserver.data.xml.ClanHallData;
 import org.l2jmobius.gameserver.data.xml.NpcData;
 import org.l2jmobius.gameserver.enums.AttributeType;
+import org.l2jmobius.gameserver.enums.DropType;
 import org.l2jmobius.gameserver.enums.InstanceType;
 import org.l2jmobius.gameserver.handler.IActionShiftHandler;
 import org.l2jmobius.gameserver.instancemanager.QuestManager;
@@ -200,7 +201,8 @@ public class NpcActionShift implements IActionShiftHandler
 				return false;
 			}
 			player.setTarget(target);
-			NpcViewMod.sendNpcView(player, target.asNpc());
+			
+			NpcViewMod.sendNpcDropList(player, target.asNpc(), DropType.DROP, 1);
 		}
 		return true;
 	}

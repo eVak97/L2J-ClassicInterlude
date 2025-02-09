@@ -43,8 +43,8 @@ import org.l2jmobius.gameserver.model.item.ItemTemplate;
 import org.l2jmobius.gameserver.model.itemcontainer.Inventory;
 import org.l2jmobius.gameserver.model.stats.Stat;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2jmobius.gameserver.network.serverpackets.TutorialShowHtml;
 import org.l2jmobius.gameserver.util.HtmlUtil;
-import org.l2jmobius.gameserver.util.Util;
 
 /**
  * @author NosBit
@@ -332,7 +332,7 @@ public class NpcViewMod implements IBypassHandler
 		final List<DropHolder> dropListSpoil = npc.getTemplate().getSpoilList();
 		if ((dropListGroups != null) || (dropListDeath != null) || (dropListSpoil != null))
 		{
-			sb.append("<table width=275 cellpadding=0 cellspacing=0><tr>");
+			sb.append("<table width=275 cellpadding=1 cellspacing=0><tr>");
 			if ((dropListGroups != null) || (dropListDeath != null))
 			{
 				sb.append("<td align=center><button value=\"Show Drop\" width=100 height=25 action=\"bypass NpcViewMod dropList DROP " + npc.getObjectId() + "\" back=\"L2UI_CT1.Button_DF_Calculator_Down\" fore=\"L2UI_CT1.Button_DF_Calculator\"></td>");
@@ -348,9 +348,10 @@ public class NpcViewMod implements IBypassHandler
 		return sb.toString();
 	}
 	
-	private void sendNpcDropList(Player player, Npc npc, DropType dropType, int pageValue)
+	public static void sendNpcDropList(Player player, Npc npc, DropType dropType, int pageValue)
 	{
 		List<DropHolder> dropList = null;
+		final StringBuilder sb = new StringBuilder();
 		if (dropType == DropType.SPOIL)
 		{
 			dropList = new ArrayList<>(npc.getTemplate().getSpoilList());
@@ -384,7 +385,16 @@ public class NpcViewMod implements IBypassHandler
 			return;
 		}
 		
-		Collections.sort(dropList, (d1, d2) -> Integer.valueOf(d1.getItemId()).compareTo(Integer.valueOf(d2.getItemId())));
+		// Ordena la lista por el valor de type1 de menor a mayor
+		Collections.sort(dropList, (d1, d2) ->
+		{
+			// Obtén los ItemTemplate correspondientes
+			ItemTemplate item1 = ItemData.getInstance().getTemplate(d1.getItemId());
+			ItemTemplate item2 = ItemData.getInstance().getTemplate(d2.getItemId());
+			
+			// Compara los valores de type1 de los ItemTemplate
+			return Integer.compare(item1.getType1(), item2.getType1());
+		});
 		
 		int pages = dropList.size() / DROP_LIST_ITEMS_PER_PAGE;
 		if ((DROP_LIST_ITEMS_PER_PAGE * pages) < dropList.size())
@@ -418,22 +428,19 @@ public class NpcViewMod implements IBypassHandler
 		
 		final DecimalFormat amountFormat = new DecimalFormat("#,###");
 		final DecimalFormat chanceFormat = new DecimalFormat("0.00##");
-		int leftHeight = 0;
-		int rightHeight = 0;
 		final PlayerStat stat = player.getStat();
 		final double dropAmountAdenaEffectBonus = stat.getMul(Stat.BONUS_DROP_ADENA, 1);
 		final double dropAmountEffectBonus = stat.getMul(Stat.BONUS_DROP_AMOUNT, 1);
 		final double dropRateEffectBonus = stat.getMul(Stat.BONUS_DROP_RATE, 1);
 		final double spoilRateEffectBonus = stat.getMul(Stat.BONUS_SPOIL_RATE, 1);
-		final StringBuilder leftSb = new StringBuilder();
-		final StringBuilder rightSb = new StringBuilder();
 		String limitReachedMsg = "";
+		boolean isEvenRow = false;
 		for (int i = start; i < end; i++)
 		{
-			final StringBuilder sb = new StringBuilder();
-			final int height = 64;
 			final DropHolder dropItem = dropList.get(i);
 			final ItemTemplate item = ItemData.getInstance().getTemplate(dropItem.getItemId());
+			// Cambiar el color de fondo dependiendo de si la fila es par o impar
+			String backgroundColor = isEvenRow ? "bgcolor=1a1917" : "bgcolor=282726";
 			
 			// real time server rate calculations
 			double rateChance = 1;
@@ -541,59 +548,94 @@ public class NpcViewMod implements IBypassHandler
 				rateChance *= dropRateEffectBonus;
 			}
 			
-			sb.append("<table width=332 cellpadding=2 cellspacing=0 background=\"L2UI_CT1.Windows.Windows_DF_TooltipBG\">");
-			sb.append("<tr><td width=32 valign=top>");
-			sb.append("<button width=\"32\" height=\"32\" back=\"" + (item.getIcon() == null ? "icon.etc_question_mark_i00" : item.getIcon()) + "\" fore=\"" + (item.getIcon() == null ? "icon.etc_question_mark_i00" : item.getIcon()) + "\" itemtooltip=\"" + dropItem.getItemId() + "\">");
-			sb.append("</td><td fixwidth=300 align=center><font name=\"hs9\" color=\"CD9000\">");
-			sb.append(item.getName());
-			sb.append("</font></td></tr><tr><td width=32></td><td width=300><table width=295 cellpadding=0 cellspacing=0>");
-			sb.append("<tr><td width=48 align=right valign=top><font color=\"LEVEL\">Amount:</font></td>");
-			sb.append("<td width=247 align=center>");
+			sb.append("<table width=605 cellpadding=1 cellspacing=0 " + backgroundColor + ">");
+			sb.append("<tr>");
 			
+			sb.append("<td width=20>");
+			sb.append("<button width=\"32\" height=\"20\" back=\"" + (item.getIcon() == null ? "icon.etc_question_mark_i00" : item.getIcon()) + "\" fore=\"" + (item.getIcon() == null ? "icon.etc_question_mark_i00" : item.getIcon()) + "\" itemtooltip=\"" + dropItem.getItemId() + "\">");
+			sb.append("</button>");
+			sb.append("</td>");
+			
+			// Nueva columna para el ícono del grado (entre nombre y cantidad mínima)
+			sb.append("<td width=15 height=20 align=center>"); // Fijamos el ancho a 16px, que es el tamaño del ícono
+			
+			if (item.getCrystalCount() > 0)
+			{
+				String gradeIcon = "";
+				switch (item.getCrystalType())
+				{
+					case D:
+						gradeIcon = "symbol.Icon.grade_D";
+						break;
+					case C:
+						gradeIcon = "symbol.Icon.grade_C";
+						break;
+					case B:
+						gradeIcon = "symbol.Icon.grade_B";
+						break;
+					case A:
+						gradeIcon = "symbol.Icon.grade_A";
+						break;
+					case S:
+						gradeIcon = "symbol.Icon.grade_S";
+						break;
+					default:
+						break;
+				}
+				
+				if (!gradeIcon.isEmpty())
+				{
+					sb.append("<img src=\"" + gradeIcon + "\" width=\"15\" height=\"16\" />");
+				}
+			}
+			else
+			{
+				sb.append("<span style=\"display:inline-block;width:15px;\">&nbsp;</span>"); // Espacio de 15px si no tiene crystalType
+			}
+			
+			sb.append("</td>");
+			
+			sb.append("<td width=280>");
+			sb.append("<td width=75 align=center>");
+			sb.append("<font color=\"ECEF4C\" name=\"CreditTextSmall\">");
+			sb.append(item.getName()); // Nombre del item
+			sb.append("</font>");
+			sb.append("</td>");
+			
+			// Para las cantidades y el chance, añadimos el mismo color
+			sb.append("<td width=75 align=center>");
+			sb.append("<font color=\"ECEF4C\" name=\"CreditTextSmall\">");
 			final long min = (long) (dropItem.getMin() * rateAmount);
-			final long max = (long) (dropItem.getMax() * rateAmount);
-			if (min == max)
-			{
-				sb.append(amountFormat.format(min));
-			}
-			else
-			{
-				sb.append(amountFormat.format(min));
-				sb.append(" - ");
-				sb.append(amountFormat.format(max));
-			}
+			sb.append(amountFormat.format(min));
+			sb.append("</font>");
+			sb.append("</td>");
 			
-			sb.append("</td></tr><tr><td width=48 align=right valign=top><font color=\"LEVEL\">Chance:</font></td>");
-			sb.append("<td width=247 align=center>");
+			sb.append("<td width=75 align=center>");
+			sb.append("<font color=\"ECEF4C\" name=\"CreditTextSmall\">");
+			final long max = (long) (dropItem.getMax() * rateAmount);
+			sb.append(amountFormat.format(max));
+			sb.append("</font>");
+			sb.append("</td>");
+			
+			sb.append("<td width=75 align=center>");
+			sb.append("<font color=\"ECEF4C\" name=\"CreditTextSmall\">");
 			sb.append(chanceFormat.format(Math.min(dropItem.getChance() * rateChance, 100)));
-			sb.append("%</td></tr></table></td></tr><tr><td width=32></td><td width=300>&nbsp;</td></tr></table>");
-			if ((sb.length() + rightSb.length() + leftSb.length()) < 16000) // limit of 32766?
-			{
-				if (leftHeight >= (rightHeight + height))
-				{
-					rightSb.append(sb);
-					rightHeight += height;
-				}
-				else
-				{
-					leftSb.append(sb);
-					leftHeight += height;
-				}
-			}
-			else
-			{
-				limitReachedMsg = "<br><center>Too many drops! Could not display them all!</center>";
-			}
+			sb.append("%</font>");
+			sb.append("</td>");
+			
+			sb.append("</tr>");
+			sb.append("</table>");
+			
+			// Alternar el fondo para la siguiente fila
+			isEvenRow = !isEvenRow;
 		}
 		
 		final StringBuilder bodySb = new StringBuilder();
-		bodySb.append("<table><tr>");
-		bodySb.append("<td>");
-		bodySb.append(leftSb.toString());
-		bodySb.append("</td><td>");
-		bodySb.append(rightSb.toString());
-		bodySb.append("</td>");
-		bodySb.append("</tr></table>");
+		bodySb.append("<table>");
+		bodySb.append("<tr><td>");
+		bodySb.append(sb.toString());
+		bodySb.append("</td></tr>");
+		bodySb.append("</table>");
 		
 		String html = HtmCache.getInstance().getHtm(player, "data/html/mods/NpcView/DropList.htm");
 		if (html == null)
@@ -601,10 +643,14 @@ public class NpcViewMod implements IBypassHandler
 			LOGGER.warning(NpcViewMod.class.getSimpleName() + ": The html file data/html/mods/NpcView/DropList.htm could not be found.");
 			return;
 		}
+		
+		html = html.replace("%hpGauge%", HtmlUtil.getHpGauge(250, (long) npc.getCurrentHp(), npc.getMaxHp(), false));
+		html = html.replace("%mpGauge%", HtmlUtil.getMpGauge(250, (long) npc.getCurrentMp(), npc.getMaxMp(), false));
 		html = html.replace("%name%", npc.getName());
 		html = html.replace("%dropListButtons%", getDropListButtons(npc));
 		html = html.replace("%pages%", pagesSb.toString());
 		html = html.replace("%items%", bodySb.toString() + limitReachedMsg);
-		Util.sendCBHtml(player, html);
+		// Util.sendCBHtml(player, html);
+		player.sendPacket(new TutorialShowHtml(0, html, 1));
 	}
 }
