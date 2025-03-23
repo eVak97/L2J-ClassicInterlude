@@ -115,6 +115,7 @@ public class Config
 	private static final String HEXID_FILE = "./config/hexid.txt";
 	private static final String IPCONFIG_FILE = "./config/ipconfig.xml";
 	
+	private static final String CUSTOM_BUFFER_CONFIG_FILE = "./config/Custom/Buffer.ini";
 	// --------------------------------------------------
 	// Custom Config File Definitions
 	// --------------------------------------------------
@@ -337,7 +338,7 @@ public class Config
 	public static boolean STORE_UI_SETTINGS;
 	public static String[] FORBIDDEN_NAMES;
 	public static boolean SILENCE_MODE_EXCLUDE;
-	
+	public static int BUFFER_CUSTOM_BUFF_DURATION;
 	// --------------------------------------------------
 	// Castle Settings
 	// --------------------------------------------------
@@ -3711,6 +3712,9 @@ public class Config
 			final PropertiesParser walkerBotProtectionConfig = new PropertiesParser(CUSTOM_WALKER_BOT_PROTECTION_CONFIG_FILE);
 			L2WALKER_PROTECTION = walkerBotProtectionConfig.getBoolean("L2WalkerProtection", false);
 			
+			final PropertiesParser BufferProperties = new PropertiesParser(CUSTOM_BUFFER_CONFIG_FILE);
+			BUFFER_CUSTOM_BUFF_DURATION = BufferProperties.getInt("BufferOverrideBuffDuration", 0);
+			
 			// Load Database config file (if exists)
 			final PropertiesParser databaseConfig = new PropertiesParser(DATABASE_CONFIG_FILE);
 			DATABASE_DRIVER = databaseConfig.getString("Driver", "com.mysql.cj.jdbc.Driver");
@@ -3738,7 +3742,7 @@ public class Config
 			MYSQL_BIN_PATH = databaseConfig.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
 			BACKUP_PATH = databaseConfig.getString("BackupPath", "../backup/");
 			BACKUP_DAYS = databaseConfig.getInt("BackupDays", 30);
-						
+			
 			final PropertiesParser loginConfig = new PropertiesParser(LOGIN_CONFIG_FILE);
 			GAME_SERVER_LOGIN_HOST = loginConfig.getString("LoginHostname", "127.0.0.1");
 			GAME_SERVER_LOGIN_PORT = loginConfig.getInt("LoginPort", 9013);
