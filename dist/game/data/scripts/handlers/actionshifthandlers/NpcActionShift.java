@@ -173,6 +173,7 @@ public class NpcActionShift implements IActionShiftHandler
 				html.replace("%ai_type%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>AIType</font></td><td align=right width=170>" + npc.getAiType() + "</td></tr></table></td></tr>");
 				html.replace("%ai_clan%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Clan & Range:</font></td><td align=right width=170>" + clansString + " " + npc.getTemplate().getClanHelpRange() + "</td></tr></table></td></tr>");
 				html.replace("%ai_enemy_clan%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Ignore & Range:</font></td><td align=right width=170>" + ignoreClanNpcIdsString + " " + npc.getTemplate().getAggroRange() + "</td></tr></table></td></tr>");
+				html.replace("%isaggressive%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Aggressive:</font></td><td align=right width=170>" + (npc.isAggressive() ? "true" : "false") + "</td></tr></table></td></tr>");
 			}
 			else
 			{
@@ -181,6 +182,7 @@ public class NpcActionShift implements IActionShiftHandler
 				html.replace("%ai_type%", "");
 				html.replace("%ai_clan%", "");
 				html.replace("%ai_enemy_clan%", "");
+				html.replace("%isaggressive%", "");
 			}
 			
 			final String routeName = WalkingManager.getInstance().getRouteName(npc);
@@ -202,7 +204,7 @@ public class NpcActionShift implements IActionShiftHandler
 			}
 			player.setTarget(target);
 			
-			NpcViewMod.sendNpcDropList(player, target.asNpc(), DropType.DROP, 1);
+			NpcViewMod.sendNpcDropList(player, target.asNpc(), DropType.DROP, 0);
 		}
 		return true;
 	}

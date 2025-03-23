@@ -7,18 +7,29 @@
 		<br><br>
 		<table width=600 cellpadding=1 cellspacing=0>
 			<tr>
+			<td height=35 valign="center" align="center">
+				<table>
+					<tr>
+						<td width=55>Monster:</td>
+						<td><edit height=11 width=200 var="itemname"></td>
+						<td><button value=" " action="bypass NpcViewMod itemsearch" width=25 height=17 valign=center tooltip="Search" back="L2UI_CT1.InventoryWnd.Magnifier_o" fore="L2UI_CT1.InventoryWnd.Magnifier_d"></td>
+					</tr>
+				</table>
+			</td>
+			</tr>				
+			<tr>
 				<td height=25 align="center"><font name="HtmlTitle_nonshadow" color="CDB67F">%name%</font></td>
+			</tr>		
+			<tr>
+			    <td width=250 align=center>%hpGauge%</td>
 			</tr>
-		<tr>
-		    <td width=250 align=center>%hpGauge%</td>
-		</tr>
-		<tr>
-		    <td><img height=7></td>
-		    <td></td>
-		</tr>
-		<tr>
-		    <td width=250 align=center>%mpGauge%</td>
-		</tr>
+			<tr>
+			    <td><img height=7></td>
+			    <td></td>
+			</tr>
+			<tr>
+			    <td width=250 align=center>%mpGauge%</td>
+			</tr>
 		</table>
 		<br><br>		
         %dropListButtons% 

@@ -48,6 +48,7 @@ public enum InstanceType
 	FeedableBeast(Monster),
 	TamedBeast(FeedableBeast),
 	FriendlyMob(Attackable),
+	RiftInvader(Monster),
 	RaidBoss(Monster),
 	GrandBoss(RaidBoss),
 	FriendlyNpc(Attackable),

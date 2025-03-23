@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug LoginServer",
+            "request": "launch",
+            "mainClass": "org.l2jmobius.loginserver.LoginServer",
+            "projectName": "L2J_Mobius_Classic_2.9.5_Saviors",
+            "vmArgs": "-server -Dfile.encoding=UTF-8 -Dorg.slf4j.simpleLogger.log.com.zaxxer.hikari=warn -XX:+UseZGC",
+            "cwd": "${workspaceFolder}/dist/login/"
+        },
+        {
+            "type": "java",
+            "name": "Debug GameServer",
+            "request": "launch",
+            "mainClass": "org.l2jmobius.gameserver.GameServer",
+            "projectName": "L2J_Mobius_Classic_2.9.5_Saviors",
+            "vmArgs": "-server -Dfile.encoding=UTF-8 -Djava.util.logging.manager=org.l2jmobius.log.ServerLogManager -Dorg.slf4j.simpleLogger.log.com.zaxxer.hikari=warn -XX:+UseZGC -Xmx2048m",
+            "cwd": "${workspaceFolder}/dist/game/"
+        }
+    ]
+}

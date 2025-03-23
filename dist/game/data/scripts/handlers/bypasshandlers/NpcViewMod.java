@@ -651,6 +651,6 @@ public class NpcViewMod implements IBypassHandler
 		html = html.replace("%pages%", pagesSb.toString());
 		html = html.replace("%items%", bodySb.toString() + limitReachedMsg);
 		// Util.sendCBHtml(player, html);
-		player.sendPacket(new TutorialShowHtml(0, html, 1));
+		player.sendPacket(new TutorialShowHtml(html));
 	}
 }

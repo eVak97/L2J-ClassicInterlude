@@ -867,6 +867,11 @@ public class NpcData implements IXmlReader
 		return _masterMonsterIDs;
 	}
 	
+	public NpcTemplate getNpcById(int npcId)
+	{
+		return _npcs.get(npcId);
+	}
+	
 	/**
 	 * Gets the single instance of NpcData.
 	 * @return single instance of NpcData

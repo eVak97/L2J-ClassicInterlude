@@ -2537,12 +2537,13 @@ public abstract class Creature extends WorldObject implements IDeletable
 				final Monster monster = asMonster();
 				if (monster.isAggressive())
 				{
-					t2 += "[A]"; // Aggressive.
+					t2 += "[*]"; // Aggressive.
+					
 				}
-				if ((monster.getTemplate().getClans() != null) && (monster.getTemplate().getClanHelpRange() > 0))
-				{
-					t2 += "[G]"; // Group.
-				}
+				// if ((monster.getTemplate().getClans() != null) && (monster.getTemplate().getClanHelpRange() > 0))
+				// {
+				// t2 += "[G]"; // Group.
+				// }
 			}
 			t1 += t2;
 			if ((_title != null) && !_title.isEmpty())

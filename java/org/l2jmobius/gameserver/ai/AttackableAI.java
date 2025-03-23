@@ -35,9 +35,11 @@ import org.l2jmobius.commons.util.Rnd;
 import org.l2jmobius.gameserver.enums.AISkillScope;
 import org.l2jmobius.gameserver.enums.AIType;
 import org.l2jmobius.gameserver.geoengine.GeoEngine;
+import org.l2jmobius.gameserver.instancemanager.DimensionalRiftManager;
 import org.l2jmobius.gameserver.instancemanager.ItemsOnGroundManager;
 import org.l2jmobius.gameserver.model.AggroInfo;
 import org.l2jmobius.gameserver.model.Location;
+import org.l2jmobius.gameserver.model.Party;
 import org.l2jmobius.gameserver.model.Spawn;
 import org.l2jmobius.gameserver.model.World;
 import org.l2jmobius.gameserver.model.WorldObject;
@@ -49,6 +51,7 @@ import org.l2jmobius.gameserver.model.actor.instance.GrandBoss;
 import org.l2jmobius.gameserver.model.actor.instance.Guard;
 import org.l2jmobius.gameserver.model.actor.instance.Monster;
 import org.l2jmobius.gameserver.model.actor.instance.RaidBoss;
+import org.l2jmobius.gameserver.model.actor.instance.RiftInvader;
 import org.l2jmobius.gameserver.model.actor.templates.NpcTemplate;
 import org.l2jmobius.gameserver.model.effects.EffectType;
 import org.l2jmobius.gameserver.model.events.EventDispatcher;
@@ -147,6 +150,17 @@ public class AttackableAI extends CreatureAI
 			if (player.isRecentFakeDeath())
 			{
 				return false;
+			}
+			
+			final Party party = player.getParty();
+			if (player.isInParty() && party.isInDimensionalRift())
+			{
+				final byte riftType = party.getDimensionalRift().getType();
+				final byte riftRoom = party.getDimensionalRift().getCurrentRoom();
+				if ((me instanceof RiftInvader) && !DimensionalRiftManager.getInstance().getRoom(riftType, riftRoom).checkIfInZone(me.getX(), me.getY(), me.getZ()))
+				{
+					return false;
+				}
 			}
 			
 			if (me instanceof Guard)
@@ -762,6 +776,17 @@ public class AttackableAI extends CreatureAI
 						
 						if (finalTarget.isPlayable())
 						{
+							// Dimensional Rift check.
+							if (finalTarget.isInParty() && finalTarget.getParty().isInDimensionalRift())
+							{
+								final byte riftType = finalTarget.getParty().getDimensionalRift().getType();
+								final byte riftRoom = finalTarget.getParty().getDimensionalRift().getCurrentRoom();
+								if ((npc instanceof RiftInvader) && !DimensionalRiftManager.getInstance().getRoom(riftType, riftRoom).checkIfInZone(npc.getX(), npc.getY(), npc.getZ()))
+								{
+									return;
+								}
+							}
+							
 							// By default, when a faction member calls for help, attack the caller's attacker.
 							// Notify the AI with EVT_AGGRESSION
 							nearby.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);

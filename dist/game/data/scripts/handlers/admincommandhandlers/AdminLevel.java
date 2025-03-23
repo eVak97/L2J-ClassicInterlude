@@ -25,9 +25,13 @@ import java.util.StringTokenizer;
 import org.l2jmobius.Config;
 import org.l2jmobius.gameserver.data.xml.ExperienceData;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
+import org.l2jmobius.gameserver.model.Party;
 import org.l2jmobius.gameserver.model.WorldObject;
 import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.clan.Clan;
 import org.l2jmobius.gameserver.network.SystemMessageId;
+import org.l2jmobius.gameserver.network.serverpackets.PartySmallWindowAll;
+import org.l2jmobius.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
 import org.l2jmobius.gameserver.util.BuilderUtil;
 
 public class AdminLevel implements IAdminCommandHandler
@@ -111,6 +115,27 @@ public class AdminLevel implements IAdminCommandHandler
 			{
 				BuilderUtil.sendSysMessage(activeChar, "You must specify level between 1 and " + maxLevel + ".");
 				return false;
+			}
+			
+			if (((Player) targetChar).isInParty())
+			{
+				// Delete party window for other party members
+				final Party party = ((Player) targetChar).getParty();
+				party.broadcastToPartyMembers((Player) targetChar, PartySmallWindowDeleteAll.STATIC_PACKET);
+				for (Player member : party.getMembers())
+				{
+					// And re-add
+					if (member != targetChar)
+					{
+						member.sendPacket(new PartySmallWindowAll(member, party));
+					}
+				}
+			}
+			
+			final Clan clan = ((Player) targetChar).getClan();
+			if (clan != null)
+			{
+				clan.broadcastClanStatus();
 			}
 		}
 		return true;
