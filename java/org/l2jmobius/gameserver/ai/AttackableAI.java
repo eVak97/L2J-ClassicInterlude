@@ -453,6 +453,18 @@ public class AttackableAI extends CreatureAI
 				});
 			}
 			
+			// Ensure aggressive mobs add nearby players to their aggro list
+			if (npc.isAggressive())
+			{
+				World.getInstance().forEachVisibleObjectInRange(npc, Creature.class, npc.getAggroRange(), creature -> // Renamed from 'target' to 'creature'
+				{
+					if (isAggressiveTowards(creature) && !npc.isInAggroList(creature))
+					{
+						npc.addDamageHate(creature, 0, 1); // Add target to aggro list with minimal hate
+					}
+				});
+			}
+			
 			// Chose a target from its aggroList
 			Creature hated;
 			if (npc.isConfused() && (target != null) && target.isCreature())
