@@ -1170,40 +1170,79 @@
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5140" toLevel="1" name="Dark Curse">
+	<skill id="5140" toLevel="6" name="Dark Curse">
+		<!-- Cursed. Atk. Spd./Casting Spd. decreased and receives damage over time. -->
 		<icon>icon.skill1160</icon>
 		<operateType>A2</operateType>
 		<targetType>SELF</targetType>
 		<abnormalLevel>3</abnormalLevel>
 		<abnormalTime>30</abnormalTime>
 		<abnormalType>ATTACK_TIME_UP</abnormalType>
-		<activateRate>60</activateRate>
+		<activateRate>80</activateRate>
 		<affectObject>NOT_FRIEND</affectObject>
 		<affectRange>200</affectRange>
 		<affectScope>POINT_BLANK</affectScope>
 		<basicProperty>MAGIC</basicProperty>
 		<effectPoint>-100</effectPoint>
-		<hitTime>1500</hitTime>
+		<hitTime>1000</hitTime>
 		<isDebuff>true</isDebuff>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
-		<lvlBonusRate>1</lvlBonusRate>
+		<lvlBonusRate>30</lvlBonusRate>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<mpConsume>258</mpConsume>
-		<mpInitialConsume>64</mpInitialConsume>
+		<magicLevel>
+			<value level="1">77</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
+			<value level="6">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">258</value>
+			<value level="2">260</value>
+			<value level="3">262</value>
+			<value level="4">264</value>
+			<value level="5">266</value>
+			<value level="6">268</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">64</value>
+			<value level="2">65</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">68</value>
+			<value level="6">70</value>
+		</mpInitialConsume>
 		<reuseDelay>8000</reuseDelay>
 		<effects>
 			<effect name="DamOverTime">
-				<power>109</power>
-				<ticks>5</ticks>
+				<power>
+					<value level="1">109</value>
+					<value level="2">112</value>
+					<value level="3">115</value>
+					<value level="4">118</value>
+					<value level="5">121</value>
+					<value level="6">124</value>
+				</power>
+				<ticks>1</ticks>
 			</effect>
 			<effect name="PhysicalAttackSpeed">
 				<amount>-23</amount>
 				<mode>PER</mode>
 			</effect>
+			<effect name="MagicalAttackSpeed">
+				<amount>-23</amount>
+				<mode>PER</mode>
+			</effect>
 		</effects>
 	</skill>
-	<skill id="5141" toLevel="1" name="Dicing Death">
+	<skill id="5141" toLevel="6" name="Dicing Death">
+		<!-- Level 1: Attacks enemies with 8264 Power. Has a chance to cancel the target. -->
+		<!-- Level 2: Attacks enemies with 8597 Power. Has a chance to cancel the target. -->
+		<!-- Level 3: Attacks enemies with 8945 Power. Has a chance to cancel the target. -->
+		<!-- Level 4: Attacks enemies with 9302 Power. Has a chance to cancel the target. -->
+		<!-- Level 5: Attacks enemies with 9674 Power. Has a chance to cancel the target. -->
+		<!-- Level 6: Attacks enemies with 10061 Power. Has a chance to cancel the target. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>ENEMY</targetType>
@@ -1212,19 +1251,43 @@
 		<coolTime>720</coolTime>
 		<effectPoint>-100</effectPoint>
 		<effectRange>400</effectRange>
-		<hitTime>1080</hitTime>
+		<hitTime>1000</hitTime>
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
+		<magicLevel>
+			<value level="1">77</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
+			<value level="6">85</value>
+		</magicLevel>
 		<mpConsume>214</mpConsume>
 		<nextAction>ATTACK</nextAction>
 		<reuseDelay>8000</reuseDelay>
 		<effects>
 			<effect name="PhysicalDamage">
-				<power>8264</power>
+				<power>
+					<value level="1">8264</value>
+					<value level="2">8597</value>
+					<value level="3">8945</value>
+					<value level="4">9302</value>
+					<value level="5">9674</value>
+					<value level="6">10061</value>
+				</power>
+				<overHit>true</overHit>
+			</effect>
+			<effect name="TargetCancel">
+				<chance>30</chance>
 			</effect>
 		</effects>
 	</skill>
-	<skill id="5142" toLevel="1" name="Corpse Burst">
+	<skill id="5142" toLevel="6" name="Corpse Burst">
+		<!-- Level 1: Attacks multiple enemies simultaneously with bonus 228 M. Atk. Power. -->
+		<!-- Level 2: Attacks multiple enemies simultaneously with bonus 230 M. Atk. Power. -->
+		<!-- Level 3: Attacks multiple enemies simultaneously with bonus 232 M. Atk. Power. -->
+		<!-- Level 4: Attacks multiple enemies simultaneously with bonus 234 M. Atk. Power. -->
+		<!-- Level 5: Attacks multiple enemies simultaneously with bonus 236 M. Atk. Power. -->
+		<!-- Level 6: Attacks multiple enemies simultaneously with bonus 240 M. Atk. Power. -->
 		<icon>icon.skill0000</icon>
 		<operateType>A1</operateType>
 		<targetType>NPC_BODY</targetType>
@@ -1234,12 +1297,33 @@
 		<castRange>400</castRange>
 		<effectPoint>-100</effectPoint>
 		<effectRange>900</effectRange>
-		<hitTime>1500</hitTime>
+		<hitTime>1000</hitTime>
 		<isMagic>1</isMagic> <!-- Magic Skill -->
 		<magicCriticalRate>-5</magicCriticalRate>
-		<magicLevel>80</magicLevel>
-		<mpConsume>258</mpConsume>
-		<mpInitialConsume>64</mpInitialConsume>
+		<magicLevel>
+			<value level="1">77</value>
+			<value level="2">81</value>
+			<value level="3">82</value>
+			<value level="4">83</value>
+			<value level="5">84</value>
+			<value level="6">85</value>
+		</magicLevel>
+		<mpConsume>
+			<value level="1">258</value>
+			<value level="2">260</value>
+			<value level="3">262</value>
+			<value level="4">264</value>
+			<value level="5">266</value>
+			<value level="6">268</value>
+		</mpConsume>
+		<mpInitialConsume>
+			<value level="1">64</value>
+			<value level="2">65</value>
+			<value level="3">66</value>
+			<value level="4">67</value>
+			<value level="5">68</value>
+			<value level="6">70</value>
+		</mpInitialConsume>
 		<reuseDelay>20000</reuseDelay>
 		<conditions>
 			<condition name="ConsumeBody" />
@@ -1247,7 +1331,14 @@
 		<effects>
 			<effect name="ConsumeBody" />
 			<effect name="MagicalDamage">
-				<power>228</power>
+				<power>
+					<value level="1">228</value>
+					<value level="2">230</value>
+					<value level="3">232</value>
+					<value level="4">234</value>
+					<value level="5">236</value>
+					<value level="6">240</value>
+				</power>
 			</effect>
 		</effects>
 	</skill>
