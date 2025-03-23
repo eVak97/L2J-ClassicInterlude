@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-<npc id="29001" level="40" type="GrandBoss" name="Queen Ant">
+	<npc id="29001" level="40" type="GrandBoss" name="Queen Ant">
 		<parameters>
 			<minions name="Privates">
 				<npc id="29003" count="6" respawnTime="10" weightPoint="1" />
@@ -183,7 +183,7 @@
 			<skill id="4416" level="12" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="700">
+		<ai aggroRange="1000" clanHelpRange="700" isAggressive="True">
 			<clanList>
 				<clan>QUEEN_ANT</clan>
 			</clanList>
@@ -348,7 +348,7 @@
 			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="2100" clanHelpRange="2300">
+		<ai aggroRange="2100" clanHelpRange="2300" isAggressive="True">
 			<clanList>
 				<clan>CURMA_CORE</clan>
 			</clanList>
@@ -388,7 +388,7 @@
 			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1900" clanHelpRange="700">
+		<ai type="BALANCED" aggroRange="1900" clanHelpRange="700" isAggressive="True">
 			<clanList>
 				<clan>CURMA_CORE</clan>
 			</clanList>
@@ -425,7 +425,7 @@
 			<skill id="4416" level="5" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1300" clanHelpRange="800">
+		<ai aggroRange="1300" clanHelpRange="800" isAggressive="True">
 			<clanList>
 				<clan>CURMA_CORE</clan>
 			</clanList>
@@ -460,7 +460,7 @@
 			<skill id="4416" level="3" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1500" clanHelpRange="1200">
+		<ai aggroRange="1500" clanHelpRange="1200" isAggressive="True">
 			<clanList>
 				<clan>CURMA_CORE</clan>
 			</clanList>
@@ -497,7 +497,7 @@
 			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1700" clanHelpRange="1500">
+		<ai aggroRange="1700" clanHelpRange="1500" isAggressive="True">
 			<clanList>
 				<clan>CURMA_CORE</clan>
 			</clanList>
@@ -537,7 +537,7 @@
 			<skill id="4444" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1500" clanHelpRange="800">
+		<ai aggroRange="1500" clanHelpRange="800" isAggressive="True">
 			<clanList>
 				<clan>CURMA_CORE</clan>
 			</clanList>
@@ -1092,7 +1092,7 @@
 			<skill id="4416" level="8" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300">
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>ARCHANGEL</clan>
 			</clanList>
@@ -1239,7 +1239,7 @@
 			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<dropLists>
 			<drop>
 				<group chance="20">
@@ -1281,7 +1281,7 @@
 			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<dropLists>
 			<drop>
 				<group chance="20">
@@ -1312,7 +1312,7 @@
 			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="4296" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="4296" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="65" />
 			<height normal="82" />
@@ -1345,7 +1345,7 @@
 			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<dropLists>
 			<drop>
 				<group chance="20">
@@ -1385,7 +1385,7 @@
 			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" />
+		<ai aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<dropLists>
 			<drop>
 				<group chance="20">
@@ -1620,7 +1620,7 @@
 			<skill id="4607" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300">
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>VALAKAS</clan>
 			</clanList>
@@ -2239,7 +2239,7 @@
 		</skillList>
 		<corpseTime>15</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED">
+		<ai type="BALANCED" isAggressive="True">
 			<clanList>
 				<clan>FRINTESSA</clan>
 			</clanList>
@@ -2269,7 +2269,7 @@
 		</skillList>
 		<corpseTime>7</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="3000" clanHelpRange="2000">
+		<ai type="BALANCED" aggroRange="3000" clanHelpRange="2000" isAggressive="True">
 			<skill primaryId="5014" />
 			<clanList>
 				<clan>FRINTESSA</clan>
@@ -2531,7 +2531,7 @@
 			<skill id="4045" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1500" clanHelpRange="2000">
+		<ai type="BALANCED" aggroRange="1500" clanHelpRange="2000" isAggressive="True">
 			<clanList>
 				<clan>FRINTESSA</clan>
 			</clanList>
@@ -2560,7 +2560,7 @@
 			<skill id="4045" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1500" clanHelpRange="2000">
+		<ai type="BALANCED" aggroRange="1500" clanHelpRange="2000" isAggressive="True">
 			<clanList>
 				<clan>FRINTESSA</clan>
 			</clanList>
@@ -2570,7 +2570,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="29052" level="99" type="Folk">
+	<npc id="29052" level="99" type="Monster">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -2599,7 +2599,7 @@
 			<height normal="35" />
 		</collision>
 	</npc>
-	<npc id="29053" level="99" type="Folk">
+	<npc id="29053" level="99" type="Monster">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -2655,7 +2655,7 @@
 			<skill id="4994" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" />
+		<ai aggroRange="1000" isAggressive="True" />
 		<dropLists>
 			<drop>
 				<group chance="68.2692">
@@ -2677,7 +2677,7 @@
 			<height normal="56" />
 		</collision>
 	</npc>
-	<npc id="29055" level="93" type="Monster" name="Teleportation Cubic">
+	<npc id="29055" level="93" type="Folk" name="Teleportation Cubic">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="0" />
@@ -2705,7 +2705,7 @@
 			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" clanHelpRange="300" />
+		<ai type="BALANCED" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="40" />
 			<height normal="80" />
@@ -2743,7 +2743,7 @@
 			<skill id="5036" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300">
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>ICE</clan>
 			</clanList>
@@ -2867,7 +2867,7 @@
 			<height normal="36" />
 		</collision>
 	</npc>
-	<npc id="29059" level="80" type="Monster" name="">
+	<npc id="29059" level="80" type="Folk" name="">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -3018,7 +3018,7 @@
 			<skill id="5033" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300">
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>ANDREAS</clan>
 			</clanList>
@@ -3803,7 +3803,7 @@
 			<skill id="5096" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300">
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<skill maxChance="25" />
 		</ai>
 		<dropLists>
@@ -3877,7 +3877,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="37" />
 			<height normal="28" />
@@ -3900,7 +3900,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="37" />
 			<height normal="28" />
@@ -3923,7 +3923,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="37" />
 			<height normal="28" />
@@ -3946,7 +3946,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="37" />
 			<height normal="28" />
@@ -3969,7 +3969,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="37" />
 			<height normal="28" />
@@ -3992,7 +3992,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="100" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="37" />
 			<height normal="28" />
@@ -4015,7 +4015,7 @@
 			<skill id="4416" level="10" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="200" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="200" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="42" />
 			<height normal="34.5" />
@@ -4119,7 +4119,7 @@
 			<height normal="0.1" />
 		</collision>
 	</npc>
-	<npc id="29079" level="78" type="Folk">
+	<npc id="29079" level="78" type="Monster">
 		<parameters>
 			<param name="suicide1_x" value="175120" />
 			<param name="suicide2_x" value="175024" />
@@ -4168,7 +4168,7 @@
 			<height normal="0.1" />
 		</collision>
 	</npc>
-	<npc id="29080" level="78" type="Folk">
+	<npc id="29080" level="78" type="Monster">
 		<parameters>
 			<param name="suicide1_x" value="174640" />
 			<param name="suicide2_x" value="174576" />
@@ -4217,7 +4217,7 @@
 			<height normal="0.1" />
 		</collision>
 	</npc>
-	<npc id="29081" level="78" type="Folk">
+	<npc id="29081" level="78" type="Monster">
 		<parameters>
 			<param name="suicide1_x" value="173968" />
 			<param name="suicide2_x" value="173856" />
@@ -4266,7 +4266,7 @@
 			<height normal="0.1" />
 		</collision>
 	</npc>
-	<npc id="29082" level="78" type="Folk">
+	<npc id="29082" level="78" type="Monster">
 		<parameters>
 			<param name="suicide1_x" value="173920" />
 			<param name="suicide2_x" value="174064" />
@@ -4315,7 +4315,7 @@
 			<height normal="0.1" />
 		</collision>
 	</npc>
-	<npc id="29083" level="78" type="Folk">
+	<npc id="29083" level="78" type="Monster">
 		<parameters>
 			<param name="suicide1_x" value="174704" />
 			<param name="suicide2_x" value="174800" />
@@ -5095,71 +5095,6 @@
 		<collision>
 			<radius normal="13" />
 			<height normal="47" />
-		</collision>
-	</npc>
-<npc id="29099" level="83" type="GrandBoss" name="Baylor" title="Warden">
-		
-		<parameters>
-			<skill name="selfbuff1" id="5221" level="1" />
-			<skill name="selfbuff2" id="5222" level="1" />
-			<skill name="selfbuff3" id="5223" level="1" />
-			<skill name="selfbuff4" id="5224" level="1" />
-			<skill name="selfbuff5" id="5225" level="1" />
-			<skill name="PhysicalSpecial1" id="5227" level="1" />
-			<skill name="PhysicalSpecial2" id="5228" level="1" />
-			<skill name="PhysicalSpecial3" id="5229" level="1" />
-			<skill name="PhysicalSpecial4" id="5226" level="1" />
-			<skill name="d_skill1" id="5402" level="1" />
-			<skill name="d_skill2" id="5403" level="1" />
-			<skill name="d_skill3" id="5404" level="1" />
-		</parameters>
-		<race>DEMONIC</race>
-		<sex>MALE</sex>
-		<acquire exp="3190203" sp="765" />
-		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
-			<vitals hp="1078413" hpRegen="100.862738374864" mp="100000" mpRegen="1000" />
-			<attack physical="2098.5269559057" magical="1433.02186584885" random="5" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
-			<defence physical="1415.44576" magical="1035.7618" evasion="-18" />
-			<attribute>
-				<attack type="DARK" value="200" />
-				<defence fire="200" water="200" wind="200" earth="200" holy="150" dark="200" default="60" />
-			</attribute>
-			<speed>
-				<walk ground="34" />
-				<run ground="180" />
-			</speed>
-			<hitTime>470</hitTime>
-			<abnormalResist physical="230" magical="230" />
-		</stats>
-		<status undying="false" />
-		<skillList>
-			<skill id="4045" level="1" /> 
-			<skill id="4408" level="1" /> 
-			<skill id="4409" level="1" /> 
-			<skill id="4410" level="11" /> 
-			<skill id="4411" level="11" /> 
-			<skill id="4412" level="11" /> 
-			<skill id="4413" level="11" /> 
-			<skill id="4414" level="2" /> 
-			<skill id="4415" level="1" /> 
-			<skill id="4416" level="9" /> 
-			<skill id="5221" level="1" /> 
-			<skill id="5222" level="1" /> 
-			<skill id="5223" level="1" /> 
-			<skill id="5224" level="1" /> 
-			<skill id="5227" level="1" /> 
-			<skill id="5228" level="1" /> 
-			<skill id="5229" level="1" /> 
-			<skill id="5467" level="1" /> 
-			<skill id="5478" level="1" /> 
-			<skill id="5479" level="1" /> 
-			<skill id="14765" level="4" /> 
-		</skillList>
-		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="450" clanHelpRange="300" isAggressive="true" />
-		<collision>
-			<radius normal="54" />
-			<height normal="77.5" />
 		</collision>
 	</npc>
 </list>

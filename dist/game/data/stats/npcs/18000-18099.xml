@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
 	<npc id="18001" level="60" type="Monster" name="Blood Queen">
 		<parameters>
 			<param name="MoveAroundSocial" value="60" />
 			<param name="MoveAroundSocial1" value="60" />
 			<param name="MoveAroundSocial2" value="60" />
-			<skill name="DDMagic1" id="4039" level="6" /> <!-- NPC MP Drain -->
-			<skill name="DDMagic2" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="DeBuff" id="4035" level="6" /> <!-- Poison -->
+			<skill name="DDMagic1" id="4039" level="6" /> 
+			<skill name="DDMagic2" id="4002" level="6" /> 
+			<skill name="DeBuff" id="4035" level="6" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
@@ -24,58 +24,58 @@
 		</stats>
 		<status undying="false" canBeSown="true" />
 		<skillList>
-			<skill id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill id="4035" level="6" /> <!-- Poison -->
-			<skill id="4039" level="6" /> <!-- NPC MP Drain -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Resist Dark Attack -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4002" level="6" /> 
+			<skill id="4035" level="6" /> 
+			<skill id="4039" level="6" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="400">
+		<ai aggroRange="1000" clanHelpRange="400" isAggressive="True">
 			<clanList>
 				<clan>CAVE_SERVANT</clan>
-				<ignoreNpcId>20134</ignoreNpcId> <!-- Cave Maiden -->
-				<ignoreNpcId>20236</ignoreNpcId> <!-- Cave Servant -->
-				<ignoreNpcId>20237</ignoreNpcId> <!-- Cave Servant Archer -->
-				<ignoreNpcId>20238</ignoreNpcId> <!-- Cave Servant Warrior -->
-				<ignoreNpcId>20239</ignoreNpcId> <!-- Cave Servant Captain -->
-				<ignoreNpcId>20240</ignoreNpcId> <!-- Royal Cave Servant -->
-				<ignoreNpcId>20246</ignoreNpcId> <!-- Cave Keeper -->
-				<ignoreNpcId>20272</ignoreNpcId> <!-- Cave Servant -->
-				<ignoreNpcId>20273</ignoreNpcId> <!-- Cave Servant Archer -->
-				<ignoreNpcId>20274</ignoreNpcId> <!-- Cave Servant Warrior -->
-				<ignoreNpcId>20275</ignoreNpcId> <!-- Cave Servant Captain -->
-				<ignoreNpcId>20276</ignoreNpcId> <!-- Royal Cave Servant -->
-				<ignoreNpcId>20277</ignoreNpcId> <!-- Cave Keeper -->
-				<ignoreNpcId>20287</ignoreNpcId> <!-- Cave Maiden -->
+				<ignoreNpcId>20134</ignoreNpcId> 
+				<ignoreNpcId>20236</ignoreNpcId> 
+				<ignoreNpcId>20237</ignoreNpcId> 
+				<ignoreNpcId>20238</ignoreNpcId> 
+				<ignoreNpcId>20239</ignoreNpcId> 
+				<ignoreNpcId>20240</ignoreNpcId> 
+				<ignoreNpcId>20246</ignoreNpcId> 
+				<ignoreNpcId>20272</ignoreNpcId> 
+				<ignoreNpcId>20273</ignoreNpcId> 
+				<ignoreNpcId>20274</ignoreNpcId> 
+				<ignoreNpcId>20275</ignoreNpcId> 
+				<ignoreNpcId>20276</ignoreNpcId> 
+				<ignoreNpcId>20277</ignoreNpcId> 
+				<ignoreNpcId>20287</ignoreNpcId> 
 			</clanList>
 		</ai>
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="765" max="1528" chance="100" /> <!-- Adena -->
+					<item id="57" min="765" max="1528" chance="100" /> 
 				</group>
 				<group chance="0.0039">
-					<item id="2406" min="1" max="1" chance="20.5128" /> <!-- Avadon Robe -->
-					<item id="2402" min="1" max="1" chance="48.718" /> <!-- Stockings of Zubei -->
-					<item id="2397" min="1" max="1" chance="30.7692" /> <!-- Tunic of Zubei -->
+					<item id="2406" min="1" max="1" chance="20.5128" /> 
+					<item id="2402" min="1" max="1" chance="48.718" /> 
+					<item id="2397" min="1" max="1" chance="30.7692" /> 
 				</group>
 				<group chance="48.5648">
-					<item id="4071" min="1" max="1" chance="0.33255" /> <!-- Avadon Robe Fabric -->
-					<item id="4070" min="1" max="1" chance="0.65727" /> <!-- Stockings of Zubei Fabric -->
-					<item id="4069" min="1" max="1" chance="0.43282" /> <!-- Tunic of Zubei Fabric -->
-					<item id="1889" min="1" max="1" chance="1.11912" /> <!-- Compound Braid -->
-					<item id="1885" min="1" max="1" chance="1.46032" /> <!-- High Grade Suede -->
-					<item id="1878" min="1" max="1" chance="7.62631" /> <!-- Braided Hemp -->
-					<item id="1866" min="1" max="1" chance="12.8694" /> <!-- Suede -->
-					<item id="1864" min="1" max="1" chance="34.3185" /> <!-- Stem -->
-					<item id="1419" min="1" max="1" chance="41.1821" /> <!-- Blood Mark -->
-					<item id="4197" min="1" max="1" chance="0.00165" /> <!-- Recipe: Demon Dagger -->
+					<item id="4071" min="1" max="1" chance="0.33255" /> 
+					<item id="4070" min="1" max="1" chance="0.65727" /> 
+					<item id="4069" min="1" max="1" chance="0.43282" /> 
+					<item id="1889" min="1" max="1" chance="1.11912" /> 
+					<item id="1885" min="1" max="1" chance="1.46032" /> 
+					<item id="1878" min="1" max="1" chance="7.62631" /> 
+					<item id="1866" min="1" max="1" chance="12.8694" /> 
+					<item id="1864" min="1" max="1" chance="34.3185" /> 
+					<item id="1419" min="1" max="1" chance="41.1821" /> 
+					<item id="4197" min="1" max="1" chance="0.00165" /> 
 				</group>
 			</drop>
 			<spoil>
-				<item id="1806" min="1" max="1" chance="1.0868" /> <!-- Recipe: Soulshot: B-Grade -->
+				<item id="1806" min="1" max="1" chance="1.0868" /> 
 			</spoil>
 		</dropLists>
 		<collision>
@@ -88,9 +88,9 @@
 			<param name="MoveAroundSocial" value="60" />
 			<param name="MoveAroundSocial1" value="60" />
 			<param name="MoveAroundSocial2" value="60" />
-			<skill name="DDMagic1" id="4039" level="6" /> <!-- NPC MP Drain -->
-			<skill name="DDMagic2" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="DeBuff" id="4035" level="6" /> <!-- Poison -->
+			<skill name="DDMagic1" id="4039" level="6" /> 
+			<skill name="DDMagic2" id="4002" level="6" /> 
+			<skill name="DeBuff" id="4035" level="6" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
@@ -107,31 +107,31 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill id="4035" level="6" /> <!-- Poison -->
-			<skill id="4039" level="6" /> <!-- NPC MP Drain -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Resist Dark Attack -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4002" level="6" /> 
+			<skill id="4035" level="6" /> 
+			<skill id="4039" level="6" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300">
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>CAVE_SERVANT</clan>
-				<ignoreNpcId>20134</ignoreNpcId> <!-- Cave Maiden -->
-				<ignoreNpcId>20236</ignoreNpcId> <!-- Cave Servant -->
-				<ignoreNpcId>20237</ignoreNpcId> <!-- Cave Servant Archer -->
-				<ignoreNpcId>20238</ignoreNpcId> <!-- Cave Servant Warrior -->
-				<ignoreNpcId>20239</ignoreNpcId> <!-- Cave Servant Captain -->
-				<ignoreNpcId>20240</ignoreNpcId> <!-- Royal Cave Servant -->
-				<ignoreNpcId>20246</ignoreNpcId> <!-- Cave Keeper -->
-				<ignoreNpcId>20272</ignoreNpcId> <!-- Cave Servant -->
-				<ignoreNpcId>20273</ignoreNpcId> <!-- Cave Servant Archer -->
-				<ignoreNpcId>20274</ignoreNpcId> <!-- Cave Servant Warrior -->
-				<ignoreNpcId>20275</ignoreNpcId> <!-- Cave Servant Captain -->
-				<ignoreNpcId>20276</ignoreNpcId> <!-- Royal Cave Servant -->
-				<ignoreNpcId>20277</ignoreNpcId> <!-- Cave Keeper -->
-				<ignoreNpcId>20287</ignoreNpcId> <!-- Cave Maiden -->
+				<ignoreNpcId>20134</ignoreNpcId> 
+				<ignoreNpcId>20236</ignoreNpcId> 
+				<ignoreNpcId>20237</ignoreNpcId> 
+				<ignoreNpcId>20238</ignoreNpcId> 
+				<ignoreNpcId>20239</ignoreNpcId> 
+				<ignoreNpcId>20240</ignoreNpcId> 
+				<ignoreNpcId>20246</ignoreNpcId> 
+				<ignoreNpcId>20272</ignoreNpcId> 
+				<ignoreNpcId>20273</ignoreNpcId> 
+				<ignoreNpcId>20274</ignoreNpcId> 
+				<ignoreNpcId>20275</ignoreNpcId> 
+				<ignoreNpcId>20276</ignoreNpcId> 
+				<ignoreNpcId>20277</ignoreNpcId> 
+				<ignoreNpcId>20287</ignoreNpcId> 
 			</clanList>
 		</ai>
 		<collision>
@@ -160,32 +160,32 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4416" level="4" /> <!-- Animals -->
+			<skill id="4416" level="4" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="false" />
 		<dropLists>
 			<drop>
 				<group chance="100">
-					<item id="57" min="32" max="48" chance="70" /> <!-- Adena -->
+					<item id="57" min="32" max="48" chance="70" /> 
 				</group>
 				<group chance="100">
-					<item id="17" min="30" max="90" chance="2.1739" /> <!-- Wooden Arrow -->
+					<item id="17" min="30" max="90" chance="2.1739" /> 
 				</group>
 				<group chance="100">
-					<item id="1868" min="1" max="1" chance="2.7522" /> <!-- Thread -->
+					<item id="1868" min="1" max="1" chance="2.7522" /> 
 				</group>
 				<group chance="100">
-					<item id="1786" min="1" max="1" chance="0.9174" /> <!-- Recipe: Broad Sword -->
+					<item id="1786" min="1" max="1" chance="0.9174" /> 
 				</group>
 				<group chance="100">
-					<item id="1873" min="1" max="1" chance="0.6423" /> <!-- Silver Nugget -->
+					<item id="1873" min="1" max="1" chance="0.6423" /> 
 				</group>
 				<group chance="100">
-					<item id="462" min="1" max="1" chance="6.1224" /> <!-- Stockings -->
+					<item id="462" min="1" max="1" chance="6.1224" /> 
 				</group>
 				<group chance="100">
-					<item id="426" min="1" max="1" chance="3.6585" /> <!-- Tunic -->
+					<item id="426" min="1" max="1" chance="3.6585" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -210,10 +210,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -238,8 +238,8 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4045" level="1" /> <!-- Resist Full Magic Attack -->
-			<skill id="4416" level="2" /> <!-- Magic Creatures -->
+			<skill id="4045" level="1" /> 
+			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" isAggressive="false" />
@@ -253,14 +253,14 @@
 			<param name="MoveAroundSocial" value="80" />
 			<param name="MoveAroundSocial1" value="80" />
 			<param name="MoveAroundSocial2" value="80" />
-			<skill name="DDMagic" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="CancelMagic" id="4094" level="6" /> <!-- NPC Cancel Magic -->
-			<skill name="CheckMagic" id="4098" level="6" /> <!-- Silence -->
-			<skill name="SleepMagic" id="4046" level="6" /> <!-- Sleep -->
+			<skill name="DDMagic" id="4002" level="6" /> 
+			<skill name="CancelMagic" id="4094" level="6" /> 
+			<skill name="CheckMagic" id="4098" level="6" /> 
+			<skill name="SleepMagic" id="4046" level="6" /> 
 		</parameters>
 		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="1472" /> <!-- rhand: Dreadbane -->
+		<equipment rhand="1472" /> 
 		<acquire exp="6057" sp="586" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2421.5" hpRegen="7.5" mp="1282.4" mpRegen="2.7" />
@@ -274,16 +274,16 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill id="4046" level="6" /> <!-- Sleep -->
-			<skill id="4094" level="6" /> <!-- NPC Cancel Magic -->
-			<skill id="4098" level="6" /> <!-- Silence -->
-			<skill id="4275" level="2" /> <!-- Sacred Attack Weak Point -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4416" level="1" /> <!-- Undead -->
+			<skill id="4002" level="6" /> 
+			<skill id="4046" level="6" /> 
+			<skill id="4094" level="6" /> 
+			<skill id="4098" level="6" /> 
+			<skill id="4275" level="2" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4416" level="1" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300">
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>MALRUK</clan>
 			</clanList>
@@ -298,9 +298,9 @@
 			<param name="MoveAroundSocial" value="60" />
 			<param name="MoveAroundSocial1" value="60" />
 			<param name="MoveAroundSocial2" value="60" />
-			<skill name="DDMagic" id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill name="DeBuff" id="4118" level="6" /> <!-- Paralysis -->
-			<skill name="HoldMagic" id="4047" level="6" /> <!-- Hold -->
+			<skill name="DDMagic" id="4002" level="6" /> 
+			<skill name="DeBuff" id="4118" level="6" /> 
+			<skill name="HoldMagic" id="4047" level="6" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
@@ -317,15 +317,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4002" level="6" /> <!-- NPC HP Drain -->
-			<skill id="4047" level="6" /> <!-- Hold -->
-			<skill id="4118" level="6" /> <!-- Paralysis -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Resist Dark Attack -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4002" level="6" /> 
+			<skill id="4047" level="6" /> 
+			<skill id="4118" level="6" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300">
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>MALRUK</clan>
 			</clanList>
@@ -340,7 +340,7 @@
 			<param name="MoveAroundSocial" value="140" />
 			<param name="MoveAroundSocial1" value="140" />
 			<param name="MoveAroundSocial2" value="140" />
-			<skill name="HoldMagic" id="4047" level="7" /> <!-- Hold -->
+			<skill name="HoldMagic" id="4047" level="7" /> 
 		</parameters>
 		<race>DEMONIC</race>
 		<sex>MALE</sex>
@@ -357,17 +357,17 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4047" level="7" /> <!-- Hold -->
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4085" level="1" /> <!-- Critical Power -->
-			<skill id="4086" level="1" /> <!-- Critical Chance -->
-			<skill id="4278" level="1" /> <!-- Dark Attack -->
-			<skill id="4333" level="5" /> <!-- Resist Dark Attack -->
-			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
-			<skill id="4416" level="9" /> <!-- Demons -->
+			<skill id="4047" level="7" /> 
+			<skill id="4071" level="5" /> 
+			<skill id="4085" level="1" /> 
+			<skill id="4086" level="1" /> 
+			<skill id="4278" level="1" /> 
+			<skill id="4333" level="5" /> 
+			<skill id="4412" level="14" /> 
+			<skill id="4416" level="9" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300">
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True">
 			<clanList>
 				<clan>ALL</clan>
 			</clanList>
@@ -382,13 +382,13 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<minions name="Privates">
-				<npc id="18010" count="2" respawnTime="120" weightPoint="0" /> <!-- Offering of the Branded -->
+				<npc id="18010" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="3" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="127" /> <!-- rhand: Crimson Sword -->
+		<equipment rhand="127" /> 
 		<acquire exp="1754" sp="102" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="736.96177" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
@@ -402,13 +402,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="3" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -430,7 +430,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="218" /> <!-- rhand: Throwing Knife -->
+		<equipment rhand="218" /> 
 		<acquire exp="1523" sp="86" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="668.47132" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
@@ -444,12 +444,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -466,7 +466,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="1001" sp="53" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="543.79576" hpRegen="3.5" mp="300.96" mpRegen="1.5" />
@@ -480,10 +480,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -497,11 +497,11 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4087" level="3" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="125" /> <!-- rhand: Spinebone Sword -->
+		<equipment rhand="125" /> 
 		<acquire exp="1026" sp="55" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="573.42917" hpRegen="3.5" mp="315.12" mpRegen="1.5" />
@@ -515,13 +515,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="3" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -529,7 +529,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="148" max="293" chance="100" /> <!-- Adena -->
+					<item id="57" min="148" max="293" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -542,14 +542,14 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18300" /> <!-- Offering of the Branded, Evoked Spirit -->
+			<param name="private_name" value="18300" /> 
 			<param name="private_ai" value="dusk_1_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="2" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="2" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="2" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="2" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="1227" sp="66" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="573.42917" hpRegen="3.5" mp="315.12" mpRegen="1.5" />
@@ -563,15 +563,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="2" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="2" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="2" /> 
+			<skill id="4160" level="2" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -579,7 +579,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="148" max="293" chance="100" /> <!-- Adena -->
+					<item id="57" min="148" max="293" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -593,11 +593,11 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="3" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="292" /> <!-- rhand: Pike -->
+		<equipment rhand="292" /> 
 		<acquire exp="2276" sp="140" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="847.31754" hpRegen="4.5" mp="432.72" mpRegen="1.8" />
@@ -611,14 +611,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="3" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -626,7 +626,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="228" max="455" chance="100" /> <!-- Adena -->
+					<item id="57" min="228" max="455" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -639,13 +639,13 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18300" /> <!-- Offering of the Branded, Evoked Spirit -->
+			<param name="private_name" value="18300" /> 
 			<param name="private_ai" value="dusk_1_2_light_prv" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="158" /> <!-- rhand: Tarbar -->
+		<equipment rhand="158" /> 
 		<acquire exp="1650" sp="96" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="736.96177" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
@@ -659,13 +659,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="3" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -673,7 +673,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="194" max="387" chance="100" /> <!-- Adena -->
+					<item id="57" min="194" max="387" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -689,7 +689,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="273" /> <!-- rhand: Composite Bow -->
+		<equipment rhand="273" /> 
 		<acquire exp="1265" sp="71" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="668.47132" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
@@ -703,10 +703,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -720,11 +720,11 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4032" level="4" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="129" /> <!-- rhand: Sword of Revolution -->
+		<equipment rhand="129" /> 
 		<acquire exp="1650" sp="96" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="736.96177" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
@@ -738,10 +738,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="4" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="4" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -749,7 +749,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="194" max="387" chance="100" /> <!-- Adena -->
+					<item id="57" min="194" max="387" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -763,11 +763,11 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="4" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<acquire exp="2171" sp="138" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="925.85879" hpRegen="4.5" mp="463.32" mpRegen="1.8" />
@@ -781,12 +781,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="4" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -794,7 +794,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="253" max="504" chance="100" /> <!-- Adena -->
+					<item id="57" min="253" max="504" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -808,13 +808,13 @@
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<minions name="Privates">
-				<npc id="18020" count="2" respawnTime="120" weightPoint="0" /> <!-- Apostate's Offering -->
+				<npc id="18020" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="4" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<acquire exp="3013" sp="210" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
@@ -828,13 +828,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="4" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -851,7 +851,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="223" /> <!-- rhand: Kukuri -->
+		<equipment rhand="223" /> 
 		<acquire exp="2751" sp="186" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1094.28943" hpRegen="5.5" mp="557.4" mpRegen="2.1" />
@@ -865,12 +865,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -887,7 +887,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="275" /> <!-- rhand: Long Bow -->
+		<equipment rhand="275" /> 
 		<acquire exp="1879" sp="119" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="925.85879" hpRegen="4.5" mp="463.32" mpRegen="1.8" />
@@ -901,10 +901,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -918,11 +918,11 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4087" level="4" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="127" /> <!-- rhand: Crimson Sword -->
+		<equipment rhand="127" /> 
 		<acquire exp="1920" sp="124" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
@@ -936,13 +936,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="4" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -950,7 +950,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="265" max="529" chance="100" /> <!-- Adena -->
+					<item id="57" min="265" max="529" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -963,14 +963,14 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18302" /> <!-- Apostate's Offering, Evoked Spirit -->
+			<param name="private_name" value="18302" /> 
 			<param name="private_ai" value="dusk_2_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="4" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="4" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="4" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="2296" sp="148" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
@@ -984,15 +984,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="4" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="4" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="4" /> 
+			<skill id="4160" level="4" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1000,7 +1000,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="265" max="529" chance="100" /> <!-- Adena -->
+					<item id="57" min="265" max="529" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1013,11 +1013,11 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4244" level="4" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="297" /> <!-- rhand: Glaive -->
+		<equipment rhand="297" /> 
 		<acquire exp="3832" sp="280" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1324.01623" hpRegen="5.5" mp="692.4" mpRegen="2.1" />
@@ -1031,14 +1031,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="4" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1046,7 +1046,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="381" max="761" chance="100" /> <!-- Adena -->
+					<item id="57" min="381" max="761" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1059,14 +1059,14 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18302" /> <!-- Apostate's Offering, Evoked Spirit -->
+			<param name="private_name" value="18302" /> 
 			<param name="private_ai" value="dusk_2_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="4" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="172" /> <!-- rhand: Heavy Bone Club -->
+		<equipment rhand="172" /> 
 		<acquire exp="2891" sp="201" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
@@ -1080,13 +1080,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="4" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="4" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1094,7 +1094,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="335" max="669" chance="100" /> <!-- Adena -->
+					<item id="57" min="335" max="669" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1110,7 +1110,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="277" /> <!-- rhand: Dark Elven Bow -->
+		<equipment rhand="277" /> 
 		<acquire exp="2285" sp="154" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1094.28943" hpRegen="5.5" mp="557.4" mpRegen="2.1" />
@@ -1124,10 +1124,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1141,11 +1141,11 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="74" /> <!-- rhand: Katana -->
+		<equipment rhand="74" /> 
 		<acquire exp="2891" sp="201" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
@@ -1159,10 +1159,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="5" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="5" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1170,7 +1170,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="335" max="669" chance="100" /> <!-- Adena -->
+					<item id="57" min="335" max="669" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1184,11 +1184,11 @@
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="5" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="133" /> <!-- rhand: Raid Sword -->
+		<equipment rhand="133" /> 
 		<acquire exp="3570" sp="269" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
@@ -1202,12 +1202,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="5" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1215,7 +1215,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="414" max="829" chance="100" /> <!-- Adena -->
+					<item id="57" min="414" max="829" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1229,13 +1229,13 @@
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<minions name="Privates">
-				<npc id="18030" count="2" respawnTime="120" weightPoint="0" /> <!-- Witch's Offering -->
+				<npc id="18030" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="5" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="133" /> <!-- rhand: Raid Sword -->
+		<equipment rhand="133" /> 
 		<acquire exp="4666" sp="383" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
@@ -1249,13 +1249,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="5" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1272,7 +1272,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="226" /> <!-- rhand: Cursed Dagger -->
+		<equipment rhand="226" /> 
 		<acquire exp="4339" sp="346" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1621.75618" hpRegen="6.5" mp="861" mpRegen="2.4" />
@@ -1286,12 +1286,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1308,7 +1308,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="278" /> <!-- rhand: Gastraphetes -->
+		<equipment rhand="278" /> 
 		<acquire exp="3090" sp="233" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
@@ -1322,10 +1322,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1339,11 +1339,11 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4087" level="5" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<acquire exp="3121" sp="238" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
@@ -1357,13 +1357,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="5" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1371,7 +1371,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="431" max="863" chance="100" /> <!-- Adena -->
+					<item id="57" min="431" max="863" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1384,14 +1384,14 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18304" /> <!-- Witch's Offering, Evoked Spirit -->
+			<param name="private_name" value="18304" /> 
 			<param name="private_ai" value="dusk_3_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="5" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="5" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="3732" sp="285" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
@@ -1405,15 +1405,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="5" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="5" /> 
+			<skill id="4160" level="5" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1421,7 +1421,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="431" max="863" chance="100" /> <!-- Adena -->
+					<item id="57" min="431" max="863" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1435,11 +1435,11 @@
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="5" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="301" /> <!-- rhand: Scorpion -->
+		<equipment rhand="301" /> 
 		<acquire exp="5789" sp="495" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1880.92519" hpRegen="6.5" mp="1007" mpRegen="2.4" />
@@ -1453,14 +1453,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="5" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1468,7 +1468,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="585" max="1171" chance="100" /> <!-- Adena -->
+					<item id="57" min="585" max="1171" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1481,14 +1481,14 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18304" /> <!-- Witch's Offering, Evoked Spirit -->
+			<param name="private_name" value="18304" /> 
 			<param name="private_ai" value="dusk_3_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="91" /> <!-- rhand: Heavy War Axe -->
+		<equipment rhand="91" /> 
 		<acquire exp="4478" sp="368" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
@@ -1502,13 +1502,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="5" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="5" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1516,7 +1516,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="525" max="1049" chance="100" /> <!-- Adena -->
+					<item id="57" min="525" max="1049" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1532,7 +1532,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="282" /> <!-- rhand: Elemental Bow -->
+		<equipment rhand="282" /> 
 		<acquire exp="3604" sp="287" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1621.75618" hpRegen="6.5" mp="861" mpRegen="2.4" />
@@ -1546,10 +1546,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1563,11 +1563,11 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="135" /> <!-- rhand: Samurai Longsword -->
+		<equipment rhand="135" /> 
 		<acquire exp="4478" sp="368" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
@@ -1581,10 +1581,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="6" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="6" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1592,7 +1592,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="525" max="1049" chance="100" /> <!-- Adena -->
+					<item id="57" min="525" max="1049" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1606,11 +1606,11 @@
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
+		<equipment rhand="79" /> 
 		<acquire exp="5313" sp="468" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1985.55926" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
@@ -1624,12 +1624,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="6" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1637,7 +1637,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="629" max="1257" chance="100" /> <!-- Adena -->
+					<item id="57" min="629" max="1257" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1651,13 +1651,13 @@
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<minions name="Privates">
-				<npc id="18040" count="2" respawnTime="120" weightPoint="0" /> <!-- Dark Omen Offering -->
+				<npc id="18040" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="6" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
+		<equipment rhand="79" /> 
 		<acquire exp="6679" sp="636" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -1671,13 +1671,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="6" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1694,7 +1694,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="234" /> <!-- rhand: Demon's Dagger -->
+		<equipment rhand="234" /> 
 		<acquire exp="6286" sp="584" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
@@ -1708,12 +1708,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1730,7 +1730,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="283" /> <!-- rhand: Akat Long Bow -->
+		<equipment rhand="283" /> 
 		<acquire exp="4599" sp="405" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1985.55926" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
@@ -1744,10 +1744,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1761,11 +1761,11 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4087" level="6" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="133" /> <!-- rhand: Raid Sword -->
+		<equipment rhand="133" /> 
 		<acquire exp="4612" sp="411" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2037.81082" hpRegen="7.5" mp="1097" mpRegen="2.7" />
@@ -1779,13 +1779,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="6" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1793,7 +1793,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="651" max="1302" chance="100" /> <!-- Adena -->
+					<item id="57" min="651" max="1302" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1806,14 +1806,14 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18306" /> <!-- Offering of Dark Omen, Evoked Spirit -->
+			<param name="private_name" value="18306" /> 
 			<param name="private_ai" value="dusk_4_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="6" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="6" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="6" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="5516" sp="492" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2037.81082" hpRegen="7.5" mp="1097" mpRegen="2.7" />
@@ -1827,15 +1827,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="6" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="6" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="6" /> 
+			<skill id="4160" level="6" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1843,7 +1843,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="651" max="1302" chance="100" /> <!-- Adena -->
+					<item id="57" min="651" max="1302" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1857,11 +1857,11 @@
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="6" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<acquire exp="8149" sp="808" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
@@ -1875,14 +1875,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="6" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1890,7 +1890,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="848" max="1697" chance="100" /> <!-- Adena -->
+					<item id="57" min="848" max="1697" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1903,14 +1903,14 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18306" /> <!-- Offering of Dark Omen, Evoked Spirit -->
+			<param name="private_name" value="18306" /> 
 			<param name="private_ai" value="dusk_4_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2503" /> <!-- rhand: Yaksa Mace -->
+		<equipment rhand="2503" /> 
 		<acquire exp="6410" sp="610" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -1924,13 +1924,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="6" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="6" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1938,7 +1938,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="770" max="1541" chance="100" /> <!-- Adena -->
+					<item id="57" min="770" max="1541" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -1954,7 +1954,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="286" /> <!-- rhand: Eminence Bow -->
+		<equipment rhand="286" /> 
 		<acquire exp="5222" sp="485" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
@@ -1968,10 +1968,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -1985,11 +1985,11 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4032" level="7" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="6410" sp="610" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -2003,10 +2003,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="7" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="7" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2014,7 +2014,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="770" max="1541" chance="100" /> <!-- Adena -->
+					<item id="57" min="770" max="1541" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2028,11 +2028,11 @@
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="7" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> <!-- rhand: Dark Legion's Edge -->
+		<equipment rhand="2500" /> 
 		<acquire exp="7402" sp="752" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -2046,12 +2046,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="7" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2059,7 +2059,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2073,13 +2073,13 @@
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<minions name="Privates">
-				<npc id="18050" count="2" respawnTime="120" weightPoint="0" /> <!-- Offering of Forbidden Path -->
+				<npc id="18050" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="7" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> <!-- rhand: Dark Legion's Edge -->
+		<equipment rhand="2500" /> 
 		<acquire exp="9052" sp="991" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2802.89989" hpRegen="8.5" mp="1607.4" mpRegen="3" />
@@ -2093,13 +2093,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="7" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2116,7 +2116,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="236" /> <!-- rhand: Soul Separator -->
+		<equipment rhand="236" /> 
 		<acquire exp="8594" sp="919" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -2130,12 +2130,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2152,7 +2152,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="287" /> <!-- rhand: Bow of Peril -->
+		<equipment rhand="287" /> 
 		<acquire exp="7899" sp="955" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3010.8929976" hpRegen="8.772" mp="1777.86" mpRegen="3.0906" />
@@ -2166,10 +2166,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2183,11 +2183,11 @@
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="DDMagic" id="4087" level="7" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
+		<equipment rhand="79" /> 
 		<acquire exp="7301" sp="862" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2937.9838056" hpRegen="8.67" mp="1708.296" mpRegen="3.06" />
@@ -2201,13 +2201,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="7" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2215,7 +2215,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2228,14 +2228,14 @@
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18308" /> <!-- Offering of Forbidden Path, Evoked Spirit -->
+			<param name="private_name" value="18308" /> 
 			<param name="private_ai" value="dusk_5_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="7" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="7" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="7" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="8732" sp="1031" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2937.9838056" hpRegen="8.67" mp="1708.296" mpRegen="3.06" />
@@ -2249,15 +2249,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="7" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="7" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="7" /> 
+			<skill id="4160" level="7" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2265,7 +2265,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2279,11 +2279,11 @@
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="7" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="305" /> <!-- rhand: Tallum Glaive -->
+		<equipment rhand="305" /> 
 		<acquire exp="10119" sp="1239" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2975.2369188" hpRegen="8.721" mp="1742.976" mpRegen="3.0702" />
@@ -2297,14 +2297,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="7" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2312,7 +2312,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2325,14 +2325,14 @@
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<param name="private_name" value="18308" /> <!-- Offering of Forbidden Path, Evoked Spirit -->
+			<param name="private_name" value="18308" /> 
 			<param name="private_ai" value="dusk_5_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="7" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="175" /> <!-- rhand: Art of Battle Axe -->
+		<equipment rhand="175" /> 
 		<acquire exp="8687" sp="951" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2802.89989" hpRegen="8.5" mp="1607.4" mpRegen="3" />
@@ -2346,13 +2346,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="7" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="7" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2360,7 +2360,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2376,7 +2376,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="289" /> <!-- rhand: Soul Bow -->
+		<equipment rhand="289" /> 
 		<acquire exp="7139" sp="763" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2719.97952" hpRegen="8.5" mp="1540.8" mpRegen="3" />
@@ -2390,10 +2390,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2407,11 +2407,11 @@
 		<parameters>
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
-			<skill name="PhysicalSpecial" id="4032" level="7" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="151" /> <!-- rhand: Sword of Miracles -->
+		<equipment rhand="151" /> 
 		<acquire exp="8687" sp="951" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2802.89989" hpRegen="8.5" mp="1607.4" mpRegen="3" />
@@ -2425,10 +2425,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="7" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="7" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2436,7 +2436,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2450,11 +2450,11 @@
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="TWILIGHT" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="7" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> <!-- rhand: Dark Legion's Edge -->
+		<equipment rhand="2500" /> 
 		<acquire exp="9351" sp="1144" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="3044.88717" hpRegen="8.823" mp="1812.948" mpRegen="3.111" />
@@ -2468,12 +2468,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="7" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2481,7 +2481,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2495,13 +2495,13 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
 			<minions name="Privates">
-				<npc id="18060" count="2" respawnTime="120" weightPoint="0" /> <!-- Offering of the Branded -->
+				<npc id="18060" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="3" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="127" /> <!-- rhand: Crimson Sword -->
+		<equipment rhand="127" /> 
 		<acquire exp="1720" sp="100" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="736.96177" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
@@ -2515,13 +2515,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="3" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2538,7 +2538,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="218" /> <!-- rhand: Throwing Knife -->
+		<equipment rhand="218" /> 
 		<acquire exp="1523" sp="86" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="668.47132" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
@@ -2552,12 +2552,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2574,7 +2574,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="14" /> <!-- rhand: Bow -->
+		<equipment rhand="14" /> 
 		<acquire exp="1001" sp="53" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="543.79576" hpRegen="3.5" mp="300.96" mpRegen="1.5" />
@@ -2588,10 +2588,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2605,11 +2605,11 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4087" level="3" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="125" /> <!-- rhand: Spinebone Sword -->
+		<equipment rhand="125" /> 
 		<acquire exp="1026" sp="55" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="573.42917" hpRegen="3.5" mp="315.12" mpRegen="1.5" />
@@ -2623,13 +2623,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="3" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2637,7 +2637,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="148" max="293" chance="100" /> <!-- Adena -->
+					<item id="57" min="148" max="293" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2650,14 +2650,14 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18310" /> <!-- Offering of the Branded, Evoked Spirit -->
+			<param name="private_name" value="18310" /> 
 			<param name="private_ai" value="dawn_1_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="2" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="2" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="2" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="2" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="1227" sp="66" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="573.42917" hpRegen="3.5" mp="315.12" mpRegen="1.5" />
@@ -2671,15 +2671,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="2" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="2" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="2" /> 
+			<skill id="4160" level="2" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2687,7 +2687,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="148" max="293" chance="100" /> <!-- Adena -->
+					<item id="57" min="148" max="293" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2701,11 +2701,11 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="3" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="292" /> <!-- rhand: Pike -->
+		<equipment rhand="292" /> 
 		<acquire exp="2276" sp="140" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="847.31754" hpRegen="4.5" mp="432.72" mpRegen="1.8" />
@@ -2719,14 +2719,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="3" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="3" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2734,7 +2734,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="228" max="455" chance="100" /> <!-- Adena -->
+					<item id="57" min="228" max="455" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2747,14 +2747,14 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18310" /> <!-- Offering of the Branded, Evoked Spirit -->
+			<param name="private_name" value="18310" /> 
 			<param name="private_ai" value="dawn_1_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="3" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="3" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="158" /> <!-- rhand: Tarbar -->
+		<equipment rhand="158" /> 
 		<acquire exp="1650" sp="96" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="736.96177" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
@@ -2768,13 +2768,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="3" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="3" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2782,7 +2782,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="194" max="387" chance="100" /> <!-- Adena -->
+					<item id="57" min="194" max="387" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2798,7 +2798,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="273" /> <!-- rhand: Composite Bow -->
+		<equipment rhand="273" /> 
 		<acquire exp="1265" sp="71" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="668.47132" hpRegen="4.5" mp="358.32" mpRegen="1.8" />
@@ -2812,10 +2812,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2829,11 +2829,11 @@
 		<parameters>
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4032" level="4" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="129" /> <!-- rhand: Sword of Revolution -->
+		<equipment rhand="129" /> 
 		<acquire exp="1650" sp="96" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="736.96177" hpRegen="4.5" mp="387.72" mpRegen="1.8" />
@@ -2847,10 +2847,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="4" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="4" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2858,7 +2858,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="194" max="387" chance="100" /> <!-- Adena -->
+					<item id="57" min="194" max="387" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2872,11 +2872,11 @@
 			<param name="RoomIndex" value="1" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="4" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<acquire exp="2171" sp="138" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="925.85879" hpRegen="4.5" mp="463.32" mpRegen="1.8" />
@@ -2890,12 +2890,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="4" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2903,7 +2903,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="253" max="504" chance="100" /> <!-- Adena -->
+					<item id="57" min="253" max="504" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -2917,13 +2917,13 @@
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
 			<minions name="Privates">
-				<npc id="18070" count="2" respawnTime="120" weightPoint="0" /> <!-- Apostate's Offering -->
+				<npc id="18070" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="4" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<acquire exp="3013" sp="210" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
@@ -2937,13 +2937,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="4" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2960,7 +2960,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="223" /> <!-- rhand: Kukuri -->
+		<equipment rhand="223" /> 
 		<acquire exp="2751" sp="186" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1094.28943" hpRegen="5.5" mp="557.4" mpRegen="2.1" />
@@ -2974,12 +2974,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -2996,7 +2996,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="275" /> <!-- rhand: Long Bow -->
+		<equipment rhand="275" /> 
 		<acquire exp="1879" sp="119" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="925.85879" hpRegen="4.5" mp="463.32" mpRegen="1.8" />
@@ -3010,10 +3010,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3027,11 +3027,11 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4087" level="4" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="127" /> <!-- rhand: Crimson Sword -->
+		<equipment rhand="127" /> 
 		<acquire exp="1920" sp="124" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
@@ -3045,13 +3045,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="4" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3059,7 +3059,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="265" max="529" chance="100" /> <!-- Adena -->
+					<item id="57" min="265" max="529" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3072,14 +3072,14 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18312" /> <!-- Apostate's Offering, Evoked Spirit -->
+			<param name="private_name" value="18312" /> 
 			<param name="private_ai" value="dawn_2_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="4" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="4" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="4" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="2296" sp="148" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="966.57792" hpRegen="4.5" mp="478.8" mpRegen="1.8" />
@@ -3093,15 +3093,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="4" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="4" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="4" /> 
+			<skill id="4160" level="4" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3109,7 +3109,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="265" max="529" chance="100" /> <!-- Adena -->
+					<item id="57" min="265" max="529" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3123,11 +3123,11 @@
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="4" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="297" /> <!-- rhand: Glaive -->
+		<equipment rhand="297" /> 
 		<acquire exp="3832" sp="280" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1324.01623" hpRegen="5.5" mp="692.4" mpRegen="2.1" />
@@ -3141,14 +3141,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="4" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="4" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3156,7 +3156,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="381" max="761" chance="100" /> <!-- Adena -->
+					<item id="57" min="381" max="761" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3169,14 +3169,14 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18312" /> <!-- Apostate's Offering, Evoked Spirit -->
+			<param name="private_name" value="18312" /> 
 			<param name="private_ai" value="dawn_2_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="4" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="4" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="172" /> <!-- rhand: Heavy Bone Club -->
+		<equipment rhand="172" /> 
 		<acquire exp="2891" sp="201" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
@@ -3190,13 +3190,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="4" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="4" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3204,7 +3204,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="335" max="669" chance="100" /> <!-- Adena -->
+					<item id="57" min="335" max="669" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3220,7 +3220,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="277" /> <!-- rhand: Dark Elven Bow -->
+		<equipment rhand="277" /> 
 		<acquire exp="2285" sp="154" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1094.28943" hpRegen="5.5" mp="557.4" mpRegen="2.1" />
@@ -3234,10 +3234,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3251,11 +3251,11 @@
 		<parameters>
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="74" /> <!-- rhand: Katana -->
+		<equipment rhand="74" /> 
 		<acquire exp="2891" sp="201" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1183.80594" hpRegen="5.5" mp="610.8" mpRegen="2.1" />
@@ -3269,10 +3269,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="5" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="5" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3280,7 +3280,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="335" max="669" chance="100" /> <!-- Adena -->
+					<item id="57" min="335" max="669" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3294,11 +3294,11 @@
 			<param name="RoomIndex" value="2" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="5" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="133" /> <!-- rhand: Raid Sword -->
+		<equipment rhand="133" /> 
 		<acquire exp="3570" sp="269" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
@@ -3312,12 +3312,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="5" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3325,7 +3325,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="414" max="829" chance="100" /> <!-- Adena -->
+					<item id="57" min="414" max="829" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3339,13 +3339,13 @@
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
 			<minions name="Privates">
-				<npc id="18080" count="2" respawnTime="120" weightPoint="0" /> <!-- Witch's Offering, -->
+				<npc id="18080" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="5" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="133" /> <!-- rhand: Raid Sword -->
+		<equipment rhand="133" /> 
 		<acquire exp="4666" sp="383" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
@@ -3359,13 +3359,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="5" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3382,7 +3382,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="226" /> <!-- rhand: Cursed Dagger -->
+		<equipment rhand="226" /> 
 		<acquire exp="4339" sp="346" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1621.75618" hpRegen="6.5" mp="861" mpRegen="2.4" />
@@ -3396,12 +3396,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3418,7 +3418,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="278" /> <!-- rhand: Gastraphetes -->
+		<equipment rhand="278" /> 
 		<acquire exp="3090" sp="233" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1421.00103" hpRegen="5.5" mp="747.8" mpRegen="2.1" />
@@ -3432,10 +3432,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3449,11 +3449,11 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4087" level="5" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="72" /> <!-- rhand: Stormbringer -->
+		<equipment rhand="72" /> 
 		<acquire exp="3121" sp="238" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
@@ -3467,13 +3467,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="5" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3481,7 +3481,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="431" max="863" chance="100" /> <!-- Adena -->
+					<item id="57" min="431" max="863" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3494,14 +3494,14 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18314" /> <!-- Witch's Offering, Evoked Spirit -->
+			<param name="private_name" value="18314" /> 
 			<param name="private_ai" value="dawn_3_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="5" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="5" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="3732" sp="285" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1470.41596" hpRegen="6.5" mp="775.8" mpRegen="2.4" />
@@ -3515,15 +3515,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="5" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="5" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="5" /> 
+			<skill id="4160" level="5" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3531,7 +3531,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="431" max="863" chance="100" /> <!-- Adena -->
+					<item id="57" min="431" max="863" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3545,11 +3545,11 @@
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="5" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="301" /> <!-- rhand: Scorpion -->
+		<equipment rhand="301" /> 
 		<acquire exp="5789" sp="495" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1880.92519" hpRegen="6.5" mp="1007" mpRegen="2.4" />
@@ -3563,14 +3563,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="5" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="5" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3578,7 +3578,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="585" max="1171" chance="100" /> <!-- Adena -->
+					<item id="57" min="585" max="1171" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3591,14 +3591,14 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18314" /> <!-- Witch's Offering, Evoked Spirit -->
+			<param name="private_name" value="18314" /> 
 			<param name="private_ai" value="dawn_3_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="5" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="5" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="91" /> <!-- rhand: Heavy War Axe -->
+		<equipment rhand="91" /> 
 		<acquire exp="4478" sp="368" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
@@ -3612,13 +3612,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="5" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="5" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3626,7 +3626,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="525" max="1049" chance="100" /> <!-- Adena -->
+					<item id="57" min="525" max="1049" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3642,7 +3642,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="282" /> <!-- rhand: Elemental Bow -->
+		<equipment rhand="282" /> 
 		<acquire exp="3604" sp="287" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1621.75618" hpRegen="6.5" mp="861" mpRegen="2.4" />
@@ -3656,10 +3656,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3673,11 +3673,11 @@
 		<parameters>
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="135" /> <!-- rhand: Samurai Longsword -->
+		<equipment rhand="135" /> 
 		<acquire exp="4478" sp="368" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1724.6831" hpRegen="6.5" mp="918.8" mpRegen="2.4" />
@@ -3691,10 +3691,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="6" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="6" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3702,7 +3702,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="525" max="1049" chance="100" /> <!-- Adena -->
+					<item id="57" min="525" max="1049" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3716,11 +3716,11 @@
 			<param name="RoomIndex" value="3" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="6" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
+		<equipment rhand="79" /> 
 		<acquire exp="5313" sp="468" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1985.55926" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
@@ -3734,12 +3734,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="6" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3747,7 +3747,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="629" max="1257" chance="100" /> <!-- Adena -->
+					<item id="57" min="629" max="1257" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3761,13 +3761,13 @@
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
 			<minions name="Privates">
-				<npc id="18090" count="2" respawnTime="120" weightPoint="0" /> <!-- Dark Omen Offering -->
+				<npc id="18090" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="6" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="79" /> <!-- rhand: Sword of Damascus -->
+		<equipment rhand="79" /> 
 		<acquire exp="6679" sp="636" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -3781,13 +3781,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="6" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3804,7 +3804,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="234" /> <!-- rhand: Demon's Dagger -->
+		<equipment rhand="234" /> 
 		<acquire exp="6286" sp="584" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
@@ -3818,12 +3818,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3840,7 +3840,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="283" /> <!-- rhand: Akat Long Bow -->
+		<equipment rhand="283" /> 
 		<acquire exp="4599" sp="405" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="1985.55926" hpRegen="7.5" mp="1066.8" mpRegen="2.7" />
@@ -3854,10 +3854,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3871,11 +3871,11 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="DDMagic" id="4087" level="6" /> <!-- NPC Blaze -->
+			<skill name="DDMagic" id="4087" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="133" /> <!-- rhand: Raid Sword -->
+		<equipment rhand="133" /> 
 		<acquire exp="4612" sp="411" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2037.81082" hpRegen="7.5" mp="1097" mpRegen="2.7" />
@@ -3889,13 +3889,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4087" level="6" /> <!-- NPC Blaze -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4087" level="6" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3903,7 +3903,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="651" max="1302" chance="100" /> <!-- Adena -->
+					<item id="57" min="651" max="1302" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3916,14 +3916,14 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18316" /> <!-- Offering of Dark Omen, Evoked Spirit -->
+			<param name="private_name" value="18316" /> 
 			<param name="private_ai" value="dawn_4_2_light_prv" />
-			<skill name="W_LongRangeDDMagic" id="4151" level="6" /> <!-- NPC Windstrike - Magic -->
-			<skill name="W_ShortRangeDDMagic" id="4160" level="6" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="W_LongRangeDDMagic" id="4151" level="6" /> 
+			<skill name="W_ShortRangeDDMagic" id="4160" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="316" /> <!-- rhand: Sage's Blood -->
+		<equipment rhand="316" /> 
 		<acquire exp="5516" sp="492" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2037.81082" hpRegen="7.5" mp="1097" mpRegen="2.7" />
@@ -3937,15 +3937,15 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4151" level="6" /> <!-- NPC Windstrike - Magic -->
-			<skill id="4160" level="6" /> <!-- NPC Aura Burn - Magic -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4151" level="6" /> 
+			<skill id="4160" level="6" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -3953,7 +3953,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="651" max="1302" chance="100" /> <!-- Adena -->
+					<item id="57" min="651" max="1302" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -3967,11 +3967,11 @@
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="DDMagic" id="4244" level="7" /> <!-- NPC Wild Sweep -->
+			<skill name="DDMagic" id="4244" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="97" /> <!-- rhand: Lance -->
+		<equipment rhand="97" /> 
 		<acquire exp="8149" sp="808" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2444.46819" hpRegen="7.5" mp="1345.8" mpRegen="2.7" />
@@ -3985,14 +3985,14 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4244" level="7" /> <!-- NPC Wild Sweep -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4413" level="15" /> <!-- Strong M. Def. -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4244" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4413" level="15" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -4000,7 +4000,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="848" max="1697" chance="100" /> <!-- Adena -->
+					<item id="57" min="848" max="1697" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -4013,14 +4013,14 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
-			<param name="private_name" value="18316" /> <!-- Offering of Dark Omen, Evoked Spirit -->
+			<param name="private_name" value="18316" /> 
 			<param name="private_ai" value="dawn_4_2_light_prv" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4032" level="6" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="6" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2503" /> <!-- rhand: Yaksa Mace -->
+		<equipment rhand="2503" /> 
 		<acquire exp="6410" sp="610" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -4034,13 +4034,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="6" /> <!-- NPC Strike -->
-			<skill id="4225" level="5" /> <!-- Resist Shock Attacks -->
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4445" level="2" /> <!-- Greater Resist Spear Weapons -->
+			<skill id="4032" level="6" /> 
+			<skill id="4225" level="5" /> 
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4445" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -4048,7 +4048,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="770" max="1541" chance="100" /> <!-- Adena -->
+					<item id="57" min="770" max="1541" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -4064,7 +4064,7 @@
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="286" /> <!-- rhand: Eminence Bow -->
+		<equipment rhand="286" /> 
 		<acquire exp="5222" sp="485" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2193.43142" hpRegen="7.5" mp="1188.8" mpRegen="2.7" />
@@ -4078,10 +4078,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4414" level="3" /> <!-- Light Armor Type -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4414" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -4095,11 +4095,11 @@
 		<parameters>
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
-			<skill name="PhysicalSpecial" id="4032" level="7" /> <!-- NPC Strike -->
+			<skill name="PhysicalSpecial" id="4032" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="142" /> <!-- rhand: Keshanberk -->
+		<equipment rhand="142" /> 
 		<acquire exp="6410" sp="610" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2295.48154" hpRegen="7.5" mp="1251" mpRegen="2.7" />
@@ -4113,10 +4113,10 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4032" level="7" /> <!-- NPC Strike -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4032" level="7" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -4124,7 +4124,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="770" max="1541" chance="100" /> <!-- Adena -->
+					<item id="57" min="770" max="1541" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -4138,11 +4138,11 @@
 			<param name="RoomIndex" value="4" />
 			<param name="SSQPart" value="DAWN" />
 			<param name="IsStrong" value="1" />
-			<skill name="PhysicalSpecial" id="4073" level="7" /> <!-- Stun -->
+			<skill name="PhysicalSpecial" id="4073" level="7" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> <!-- rhand: Dark Legion's Edge -->
+		<equipment rhand="2500" /> 
 		<acquire exp="7402" sp="752" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2540.15331" hpRegen="8.5" mp="1410" mpRegen="3" />
@@ -4156,12 +4156,12 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4071" level="5" /> <!-- Resist Bow Weapons -->
-			<skill id="4073" level="7" /> <!-- Shock -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
+			<skill id="4071" level="5" /> 
+			<skill id="4073" level="7" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
@@ -4169,7 +4169,7 @@
 		<dropLists>
 			<drop>
 				<group chance="70">
-					<item id="57" min="902" max="1804" chance="100" /> <!-- Adena -->
+					<item id="57" min="902" max="1804" chance="100" /> 
 				</group>
 			</drop>
 		</dropLists>
@@ -4183,13 +4183,13 @@
 			<param name="RoomIndex" value="5" />
 			<param name="SSQPart" value="DAWN" />
 			<minions name="Privates">
-				<npc id="18100" count="2" respawnTime="120" weightPoint="0" /> <!-- Offering of Forbidden Path -->
+				<npc id="18100" count="2" respawnTime="120" weightPoint="0" /> 
 			</minions>
-			<skill name="DDMagic" id="4078" level="8" /> <!-- NPC Flamestrike -->
+			<skill name="DDMagic" id="4078" level="8" /> 
 		</parameters>
 		<race>HUMANOID</race>
 		<sex>MALE</sex>
-		<equipment rhand="2500" /> <!-- rhand: Dark Legion's Edge -->
+		<equipment rhand="2500" /> 
 		<acquire exp="9052" sp="991" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
 			<vitals hp="2802.89989" hpRegen="8.5" mp="1607.4" mpRegen="3" />
@@ -4203,13 +4203,13 @@
 		</stats>
 		<status undying="false" />
 		<skillList>
-			<skill id="4078" level="8" /> <!-- NPC Flamestrike -->
-			<skill id="4273" level="3" /> <!-- Resist Daggers -->
-			<skill id="4274" level="1" /> <!-- Blunt Weapon Weak Point -->
-			<skill id="4416" level="6" /> <!-- Humanoids -->
-			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
-			<skill id="4439" level="2" /> <!-- Greater Resist Hold -->
-			<skill id="4444" level="2" /> <!-- Greater Resist Bow Weapons -->
+			<skill id="4078" level="8" /> 
+			<skill id="4273" level="3" /> 
+			<skill id="4274" level="1" /> 
+			<skill id="4416" level="6" /> 
+			<skill id="4438" level="2" /> 
+			<skill id="4439" level="2" /> 
+			<skill id="4444" level="2" /> 
 		</skillList>
 		<corpseTime>3</corpseTime>
 		<exCrtEffect>true</exCrtEffect>

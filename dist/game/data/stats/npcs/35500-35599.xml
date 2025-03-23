@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-<npc id="35500" level="56" type="Folk" name="Gatekeeper" title="Rune">
+	<npc id="35500" level="56" type="CastleDoorman" name="Gatekeeper" title="Rune">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -69,7 +69,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35501" level="56" type="Folk" name="Gatekeeper" title="Rune">
+	<npc id="35501" level="56" type="CastleDoorman" name="Gatekeeper" title="Rune">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -163,13 +163,13 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" />
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35503" level="70" type="Folk" name="Outer Doorman" title="Rune">
+	<npc id="35503" level="70" type="CastleDoorman" name="Outer Doorman" title="Rune">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -206,7 +206,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35504" level="70" type="Folk" name="Inner Doorman" title="Rune">
+	<npc id="35504" level="70" type="CastleDoorman" name="Inner Doorman" title="Rune">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -243,7 +243,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35505" level="70" type="Folk" name="Inner Doorman" title="Rune">
+	<npc id="35505" level="70" type="CastleDoorman" name="Inner Doorman" title="Rune">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -297,7 +297,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23.5" />
@@ -326,7 +326,7 @@
 			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="16.5" />
@@ -425,7 +425,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23" />
@@ -1449,7 +1449,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35544" level="56" type="Folk" name="Gatekeeper" title="Schuttgart">
+	<npc id="35544" level="56" type="CastleDoorman" name="Gatekeeper" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1500,7 +1500,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35545" level="56" type="Folk" name="Gatekeeper" title="Schuttgart">
+	<npc id="35545" level="56" type="CastleDoorman" name="Gatekeeper" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1551,7 +1551,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35546" level="56" type="Folk" name="Gatekeeper" title="Schuttgart">
+	<npc id="35546" level="56" type="CastleDoorman" name="Gatekeeper" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1627,13 +1627,13 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" />
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35548" level="70" type="Folk" name="Outer Doorman" title="Schuttgart">
+	<npc id="35548" level="70" type="CastleDoorman" name="Outer Doorman" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1670,7 +1670,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35549" level="70" type="Folk" name="Inner Doorman" title="Schuttgart">
+	<npc id="35549" level="70" type="CastleDoorman" name="Inner Doorman" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1706,7 +1706,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35550" level="70" type="Folk" name="Inner Doorman" title="Schuttgart">
+	<npc id="35550" level="70" type="CastleDoorman" name="Inner Doorman" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1742,7 +1742,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35551" level="70" type="Folk" name="Doorman" title="Schuttgart">
+	<npc id="35551" level="70" type="CastleDoorman" name="Doorman" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1778,7 +1778,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="35552" level="70" type="Folk" name="Doorman" title="Schuttgart">
+	<npc id="35552" level="70" type="CastleDoorman" name="Doorman" title="Schuttgart">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -1837,7 +1837,7 @@
 			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="16.5" />
@@ -1937,7 +1937,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="10" />
 			<height normal="24" />
@@ -2240,7 +2240,7 @@
 			<height normal="37" grown="44.5" />
 		</collision>
 	</npc>
-	<npc id="35566" level="70" type="Merchant" name="Ronald" title="Clan Hall Manager">
+	<npc id="35566" level="70" type="ClanHallManager" name="Ronald" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2267,7 +2267,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35567" level="70" type="Folk" name="Emil" title="Clan Hall Gatekeeper">
+	<npc id="35567" level="70" type="ClanHallDoorman" name="Emil" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2326,7 +2326,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35568" level="70" type="Merchant" name="Wayne" title="Clan Hall Manager">
+	<npc id="35568" level="70" type="ClanHallManager" name="Wayne" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2353,7 +2353,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35569" level="70" type="Folk" name="Daniel" title="Clan Hall Gatekeeper">
+	<npc id="35569" level="70" type="ClanHallDoorman" name="Daniel" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2412,7 +2412,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35570" level="70" type="Merchant" name="Patty" title="Clan Hall Manager">
+	<npc id="35570" level="70" type="ClanHallManager" name="Patty" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -2439,7 +2439,7 @@
 			<height normal="22.25" />
 		</collision>
 	</npc>
-	<npc id="35571" level="70" type="Folk" name="Dale" title="Clan Hall Gatekeeper">
+	<npc id="35571" level="70" type="ClanHallDoorman" name="Dale" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2498,7 +2498,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35572" level="70" type="Merchant" name="Jimmy" title="Clan Hall Manager">
+	<npc id="35572" level="70" type="ClanHallManager" name="Jimmy" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2525,7 +2525,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35573" level="70" type="Folk" name="Shawn" title="Clan Hall Gatekeeper">
+	<npc id="35573" level="70" type="ClanHallDoorman" name="Shawn" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2584,7 +2584,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35574" level="70" type="Merchant" name="Michael" title="Clan Hall Manager">
+	<npc id="35574" level="70" type="ClanHallManager" name="Michael" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2611,7 +2611,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35575" level="70" type="Folk" name="Ryan" title="Clan Hall Gatekeeper">
+	<npc id="35575" level="70" type="ClanHallDoorman" name="Ryan" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2670,7 +2670,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35576" level="70" type="Merchant" name="Jack" title="Clan Hall Manager">
+	<npc id="35576" level="70" type="ClanHallManager" name="Jack" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2697,7 +2697,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35577" level="70" type="Folk" name="Harry" title="Clan Hall Gatekeeper">
+	<npc id="35577" level="70" type="ClanHallDoorman" name="Harry" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2756,7 +2756,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35578" level="70" type="Merchant" name="Karuto" title="Clan Hall Manager">
+	<npc id="35578" level="70" type="ClanHallManager" name="Karuto" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2783,7 +2783,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35579" level="70" type="Folk" name="Egon" title="Clan Hall Gatekeeper">
+	<npc id="35579" level="70" type="ClanHallDoorman" name="Egon" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2842,7 +2842,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35580" level="70" type="Merchant" name="Carol" title="Clan Hall Manager">
+	<npc id="35580" level="70" type="ClanHallManager" name="Carol" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2869,7 +2869,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35581" level="70" type="Folk" name="Osho" title="Clan Hall Gatekeeper">
+	<npc id="35581" level="70" type="ClanHallDoorman" name="Osho" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2897,7 +2897,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35582" level="70" type="Merchant" name="Stanley" title="Clan Hall Manager">
+	<npc id="35582" level="70" type="ClanHallManager" name="Stanley" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2924,7 +2924,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35583" level="70" type="Folk" name="Walter" title="Clan Hall Gatekeeper">
+	<npc id="35583" level="70" type="ClanHallDoorman" name="Walter" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -2952,7 +2952,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="35584" level="70" type="Merchant" name="Billy" title="Clan Hall Manager">
+	<npc id="35584" level="70" type="ClanHallManager" name="Billy" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -2979,7 +2979,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="35585" level="70" type="Folk" name="Alice" title="Clan Hall Gatekeeper">
+	<npc id="35585" level="70" type="ClanHallDoorman" name="Alice" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -3007,7 +3007,7 @@
 			<height normal="22.25" />
 		</collision>
 	</npc>
-	<npc id="35586" level="70" type="Merchant" name="Serena" title="Clan Hall Manager">
+	<npc id="35586" level="70" type="ClanHallManager" name="Serena" title="Clan Hall Manager">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="102" />
@@ -3034,7 +3034,7 @@
 			<height normal="20.5" />
 		</collision>
 	</npc>
-	<npc id="35587" level="70" type="Folk" name="Neria" title="Clan Hall Gatekeeper">
+	<npc id="35587" level="70" type="ClanHallDoorman" name="Neria" title="Clan Hall Gatekeeper">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="154" />
@@ -3062,7 +3062,7 @@
 			<height normal="17.7" />
 		</collision>
 	</npc>
-	<npc id="35588" level="56" type="Folk" name="Hot Springs Gourd">
+	<npc id="35588" level="56" type="Monster" name="Hot Springs Gourd">
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -3079,7 +3079,7 @@
 			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3089,7 +3089,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35589" level="56" type="Folk" name="Hot Springs Gourd">
+	<npc id="35589" level="56" type="Monster" name="Hot Springs Gourd">
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -3106,7 +3106,7 @@
 			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3116,7 +3116,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35590" level="56" type="Folk" name="Hot Springs Gourd">
+	<npc id="35590" level="56" type="Monster" name="Hot Springs Gourd">
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -3133,7 +3133,7 @@
 			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3143,7 +3143,7 @@
 			<height normal="40" />
 		</collision>
 	</npc>
-	<npc id="35591" level="56" type="Folk" name="Hot Springs Gourd">
+	<npc id="35591" level="56" type="Monster" name="Hot Springs Gourd">
 		<race>ETC</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -3160,7 +3160,7 @@
 			<skill id="4416" level="19" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3193,13 +3193,13 @@
 			<skill id="4416" level="11" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="15" />
 			<height normal="27.5" />
 		</collision>
 	</npc>
-	<npc id="35593" level="52" type="Folk" name="Treasure Chest">
+	<npc id="35593" level="52" type="Chest" name="Treasure Chest">
 		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="10">
@@ -3217,7 +3217,7 @@
 			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -3241,7 +3241,7 @@
 			<skill id="4416" level="2" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -3266,7 +3266,7 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<sNpcPropHpRate>0.25</sNpcPropHpRate>
-		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -3290,7 +3290,7 @@
 			<skill id="4416" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3318,7 +3318,7 @@
 			<skill id="4416" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3346,7 +3346,7 @@
 			<skill id="4416" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>
@@ -3374,7 +3374,7 @@
 			<skill id="4416" level="6" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000">
+		<ai type="BALANCED" aggroRange="1000" isAggressive="True">
 			<clanList>
 				<clan>RAINBOW</clan>
 			</clanList>

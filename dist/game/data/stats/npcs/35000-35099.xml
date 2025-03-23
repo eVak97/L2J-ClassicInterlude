@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-<npc id="35010" level="50" type="Defender" name="Mercenary">
+	<npc id="35010" level="50" type="Defender" name="Mercenary">
 		<race>MERCENARY</race>
 		<sex>MALE</sex>
 		<equipment rhand="128" lhand="628" /> 
@@ -1650,7 +1650,7 @@
 			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="1200">
+		<ai aggroRange="1000" clanHelpRange="1200" isAggressive="True">
 			<clanList>
 				<clan>DOOR</clan>
 				<clan>MERCENARY_SIEGE</clan>
@@ -1682,7 +1682,7 @@
 			<skill id="4416" level="23" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200">
+		<ai type="MAGE" aggroRange="1000" clanHelpRange="1200" isAggressive="True">
 			<clanList>
 				<clan>DOOR</clan>
 				<clan>MERCENARY_SIEGE</clan>
@@ -1715,7 +1715,7 @@
 		</skillList>
 		<corpseTime>7</corpseTime>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="1000" />
+		<ai aggroRange="1000" clanHelpRange="1000" isAggressive="True" />
 		<collision>
 			<radius normal="21" />
 			<height normal="82" />
@@ -2657,7 +2657,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35092" level="56" type="Folk" name="Gatekeeper" title="Gludio">
+	<npc id="35092" level="56" type="CastleDoorman" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2708,7 +2708,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35093" level="56" type="Folk" name="Gatekeeper" title="Gludio">
+	<npc id="35093" level="56" type="CastleDoorman" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2759,7 +2759,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35094" level="56" type="Folk" name="Gatekeeper" title="Gludio">
+	<npc id="35094" level="56" type="CastleDoorman" name="Gatekeeper" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2835,13 +2835,13 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" />
+		<ai aggroRange="1000" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35096" level="70" type="Folk" name="Outer Doorman" title="Gludio">
+	<npc id="35096" level="70" type="CastleDoorman" name="Outer Doorman" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2878,7 +2878,7 @@
 			<height normal="24" />
 		</collision>
 	</npc>
-	<npc id="35097" level="70" type="Folk" name="Inner Doorman" title="Gludio">
+	<npc id="35097" level="70" type="CastleDoorman" name="Inner Doorman" title="Gludio">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="92" />
@@ -2938,7 +2938,7 @@
 			<skill id="4416" level="18" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" />
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="16.5" />

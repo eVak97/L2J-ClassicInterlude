@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
-<npc id="30300" level="70" type="Merchant" name="Pushkin" title="Blacksmith">
+	<npc id="30300" level="70" type="Trainer" name="Pushkin" title="Blacksmith">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="93" />
@@ -79,13 +79,13 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="6" />
 			<height normal="23.8" />
 		</collision>
 	</npc>
-	<npc id="30307" level="70" type="Merchant" name="Karrod" title="Blacksmith">
+	<npc id="30307" level="70" type="Folk" name="Karrod" title="Blacksmith">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -107,7 +107,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="23" />
@@ -135,7 +135,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="24" />
@@ -163,7 +163,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="21.5" />
@@ -281,7 +281,7 @@
 			<height normal="17" />
 		</collision>
 	</npc>
-	<npc id="30317" level="70" type="Merchant" name="Kluto" title="Blacksmith">
+	<npc id="30317" level="70" type="Trainer" name="Kluto" title="Blacksmith">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="93" />
@@ -395,7 +395,7 @@
 			<height normal="17" />
 		</collision>
 	</npc>
-	<npc id="30325" level="70" type="Folk" name="Audiberti" title="Master">
+	<npc id="30325" level="70" type="Trainer" name="Audiberti" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
@@ -423,7 +423,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30326" level="70" type="Folk" name="Leona" title="Master">
+	<npc id="30326" level="70" type="Trainer" name="Leona" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -451,7 +451,7 @@
 			<height normal="22.4" />
 		</collision>
 	</npc>
-	<npc id="30327" level="70" type="Folk" name="Sorius" title="Master">
+	<npc id="30327" level="70" type="Trainer" name="Sorius" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="187" />
@@ -479,7 +479,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="30328" level="70" type="Folk" name="Reisa" title="Master">
+	<npc id="30328" level="70" type="Trainer" name="Reisa" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="123" />
@@ -507,7 +507,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="30329" level="70" type="Folk" name="Virgil" title="Master">
+	<npc id="30329" level="70" type="Trainer" name="Virgil" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -535,7 +535,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30330" level="70" type="Folk" name="Sidra" title="Magister">
+	<npc id="30330" level="70" type="Trainer" name="Sidra" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="110" />
@@ -588,7 +588,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -651,7 +651,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -680,7 +680,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -709,7 +709,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -738,7 +738,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -767,7 +767,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -796,7 +796,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -824,13 +824,13 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="30344" level="70" type="Folk" name="Rohmer" title="Magister">
+	<npc id="30344" level="70" type="Trainer" name="Rohmer" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="90" />
@@ -858,7 +858,7 @@
 			<height normal="23" />
 		</collision>
 	</npc>
-	<npc id="30345" level="70" type="Folk" name="Ramoniell" title="Magister">
+	<npc id="30345" level="70" type="Trainer" name="Ramoniell" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="100" />
@@ -909,7 +909,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -938,7 +938,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -967,7 +967,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -996,7 +996,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -1052,7 +1052,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="23" />
@@ -1080,7 +1080,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="21.5" />
@@ -1108,7 +1108,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="23" />
@@ -1136,7 +1136,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="21.5" />
@@ -1165,7 +1165,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -1194,7 +1194,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -1223,7 +1223,7 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25" />
@@ -1279,13 +1279,13 @@
 			<skill id="4416" level="16" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="6" />
 			<height normal="23.8" />
 		</collision>
 	</npc>
-	<npc id="30360" level="70" type="Folk" name="Harant" title="Master">
+	<npc id="30360" level="70" type="Trainer" name="Harant" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="120" />
@@ -1335,7 +1335,7 @@
 			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25.5" />
@@ -1363,13 +1363,13 @@
 			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25.5" />
 		</collision>
 	</npc>
-	<npc id="30363" level="70" type="Merchant" name="Aios" title="Blacksmith">
+	<npc id="30363" level="70" type="Folk" name="Aios" title="Blacksmith">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="130" />
@@ -1391,7 +1391,7 @@
 			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="6" />
 			<height normal="21" />
@@ -1419,13 +1419,13 @@
 			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25.5" />
 		</collision>
 	</npc>
-	<npc id="30369" level="70" type="Folk" name="Baenedes" title="Master">
+	<npc id="30369" level="70" type="Trainer" name="Baenedes" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="187" />
@@ -1476,7 +1476,7 @@
 			<skill id="4416" level="13" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="15" />
 			<height normal="26" />
@@ -1504,7 +1504,7 @@
 			<skill id="4416" level="15" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="7" />
 			<height normal="25.5" />
@@ -1538,7 +1538,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="30374" level="70" type="Folk" name="Rhodiell" title="Master">
+	<npc id="30374" level="70" type="Trainer" name="Rhodiell" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="123" />
@@ -1566,7 +1566,7 @@
 			<height normal="22.5" />
 		</collision>
 	</npc>
-	<npc id="30375" level="70" type="Folk" name="Adonius" title="Priest">
+	<npc id="30375" level="70" type="Trainer" name="Adonius" title="Priest">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="187" />
@@ -1596,7 +1596,7 @@
 			<height normal="22.2" />
 		</collision>
 	</npc>
-	<npc id="30376" level="70" type="Folk" name="Nell" title="Magister">
+	<npc id="30376" level="70" type="Trainer" name="Nell" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="100" />
@@ -1624,7 +1624,7 @@
 			<height normal="21.2" />
 		</collision>
 	</npc>
-	<npc id="30377" level="70" type="Folk" name="Talbot" title="Magister">
+	<npc id="30377" level="70" type="Trainer" name="Talbot" title="Magister">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="156" />
@@ -1654,7 +1654,7 @@
 			<height normal="22" />
 		</collision>
 	</npc>
-	<npc id="30378" level="70" type="Folk" name="Estella" title="Master">
+	<npc id="30378" level="70" type="Trainer" name="Estella" title="Master">
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
 			<param name="MoveAroundSocial1" value="103" />
@@ -1705,7 +1705,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1734,7 +1734,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1763,7 +1763,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1792,7 +1792,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1821,7 +1821,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1850,7 +1850,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1879,7 +1879,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1908,7 +1908,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="24" />
@@ -1964,7 +1964,7 @@
 			<skill id="4416" level="14" /> 
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="1000" clanHelpRange="300" />
+		<ai aggroRange="1000" clanHelpRange="300" isAggressive="True" />
 		<collision>
 			<radius normal="8" />
 			<height normal="20.5" />
