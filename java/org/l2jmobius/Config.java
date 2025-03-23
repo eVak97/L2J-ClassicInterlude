@@ -97,6 +97,7 @@ public class Config
 	private static final String ATTENDANCE_CONFIG_FILE = "./config/AttendanceRewards.ini";
 	private static final String ATTRIBUTE_SYSTEM_FILE = "./config/AttributeSystem.ini";
 	private static final String CHARACTER_CONFIG_FILE = "./config/Character.ini";
+	private static final String DATABASE_CONFIG_FILE = "./config/Database.ini";
 	private static final String FEATURE_CONFIG_FILE = "./config/Feature.ini";
 	private static final String FLOOD_PROTECTOR_CONFIG_FILE = "./config/FloodProtector.ini";
 	private static final String GAME_ASSISTANT_CONFIG_FILE = "./config/GameAssistant.ini";
@@ -1434,16 +1435,6 @@ public class Config
 			PACKET_ENCRYPTION = serverConfig.getBoolean("PacketEncryption", false);
 			REQUEST_ID = serverConfig.getInt("RequestServerID", 0);
 			ACCEPT_ALTERNATE_ID = serverConfig.getBoolean("AcceptAlternateID", true);
-			DATABASE_DRIVER = serverConfig.getString("Driver", "com.mysql.cj.jdbc.Driver");
-			DATABASE_URL = serverConfig.getString("URL", "jdbc:mysql://localhost/l2jmobius");
-			DATABASE_LOGIN = serverConfig.getString("Login", "root");
-			DATABASE_PASSWORD = serverConfig.getString("Password", "");
-			DATABASE_MAX_CONNECTIONS = serverConfig.getInt("MaximumDatabaseConnections", 10);
-			DATABASE_TEST_CONNECTIONS = serverConfig.getBoolean("TestDatabaseConnections", false);
-			BACKUP_DATABASE = serverConfig.getBoolean("BackupDatabase", false);
-			MYSQL_BIN_PATH = serverConfig.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
-			BACKUP_PATH = serverConfig.getString("BackupPath", "../backup/");
-			BACKUP_DAYS = serverConfig.getInt("BackupDays", 30);
 			try
 			{
 				DATAPACK_ROOT = new File(serverConfig.getString("DatapackRoot", ".").replaceAll("\\\\", "/")).getCanonicalFile();
@@ -3719,9 +3710,35 @@ public class Config
 			// Load WalkerBotProtection config file (if exists)
 			final PropertiesParser walkerBotProtectionConfig = new PropertiesParser(CUSTOM_WALKER_BOT_PROTECTION_CONFIG_FILE);
 			L2WALKER_PROTECTION = walkerBotProtectionConfig.getBoolean("L2WalkerProtection", false);
+			
+			// Load Database config file (if exists)
+			final PropertiesParser databaseConfig = new PropertiesParser(DATABASE_CONFIG_FILE);
+			DATABASE_DRIVER = databaseConfig.getString("Driver", "com.mysql.cj.jdbc.Driver");
+			DATABASE_URL = databaseConfig.getString("URL", "jdbc:mysql://localhost/l2jmobius");
+			DATABASE_LOGIN = databaseConfig.getString("Login", "root");
+			DATABASE_PASSWORD = databaseConfig.getString("Password", "");
+			DATABASE_MAX_CONNECTIONS = databaseConfig.getInt("MaximumDatabaseConnections", 10);
+			DATABASE_TEST_CONNECTIONS = databaseConfig.getBoolean("TestDatabaseConnections", false);
+			BACKUP_DATABASE = databaseConfig.getBoolean("BackupDatabase", false);
+			MYSQL_BIN_PATH = databaseConfig.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
+			BACKUP_PATH = databaseConfig.getString("BackupPath", "../backup/");
+			BACKUP_DAYS = databaseConfig.getInt("BackupDays", 30);
+			
 		}
 		else if (SERVER_MODE == ServerMode.LOGIN)
 		{
+			final PropertiesParser databaseConfig = new PropertiesParser(DATABASE_CONFIG_FILE);
+			DATABASE_DRIVER = databaseConfig.getString("Driver", "com.mysql.cj.jdbc.Driver");
+			DATABASE_URL = databaseConfig.getString("URL", "jdbc:mysql://localhost/l2jmobius");
+			DATABASE_LOGIN = databaseConfig.getString("Login", "root");
+			DATABASE_PASSWORD = databaseConfig.getString("Password", "");
+			DATABASE_MAX_CONNECTIONS = databaseConfig.getInt("MaximumDatabaseConnections", 10);
+			DATABASE_TEST_CONNECTIONS = databaseConfig.getBoolean("TestDatabaseConnections", false);
+			BACKUP_DATABASE = databaseConfig.getBoolean("BackupDatabase", false);
+			MYSQL_BIN_PATH = databaseConfig.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
+			BACKUP_PATH = databaseConfig.getString("BackupPath", "../backup/");
+			BACKUP_DAYS = databaseConfig.getInt("BackupDays", 30);
+						
 			final PropertiesParser loginConfig = new PropertiesParser(LOGIN_CONFIG_FILE);
 			GAME_SERVER_LOGIN_HOST = loginConfig.getString("LoginHostname", "127.0.0.1");
 			GAME_SERVER_LOGIN_PORT = loginConfig.getInt("LoginPort", 9013);
@@ -3741,16 +3758,6 @@ public class Config
 			LOGIN_BLOCK_AFTER_BAN = loginConfig.getInt("LoginBlockAfterBan", 900);
 			LOGIN_SERVER_SCHEDULE_RESTART = loginConfig.getBoolean("LoginRestartSchedule", false);
 			LOGIN_SERVER_SCHEDULE_RESTART_TIME = loginConfig.getLong("LoginRestartTime", 24);
-			DATABASE_DRIVER = loginConfig.getString("Driver", "com.mysql.cj.jdbc.Driver");
-			DATABASE_URL = loginConfig.getString("URL", "jdbc:mysql://localhost/l2jmobius");
-			DATABASE_LOGIN = loginConfig.getString("Login", "root");
-			DATABASE_PASSWORD = loginConfig.getString("Password", "");
-			DATABASE_MAX_CONNECTIONS = loginConfig.getInt("MaximumDatabaseConnections", 10);
-			DATABASE_TEST_CONNECTIONS = loginConfig.getBoolean("TestDatabaseConnections", false);
-			BACKUP_DATABASE = loginConfig.getBoolean("BackupDatabase", false);
-			MYSQL_BIN_PATH = loginConfig.getString("MySqlBinLocation", "C:/xampp/mysql/bin/");
-			BACKUP_PATH = loginConfig.getString("BackupPath", "../backup/");
-			BACKUP_DAYS = loginConfig.getInt("BackupDays", 30);
 			SCHEDULED_THREAD_POOL_SIZE = loginConfig.getInt("ScheduledThreadPoolSize", 2);
 			if (SCHEDULED_THREAD_POOL_SIZE == -1)
 			{
