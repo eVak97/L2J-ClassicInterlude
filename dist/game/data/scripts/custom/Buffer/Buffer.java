@@ -22,12 +22,24 @@ import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.l2jmobius.Config;
+import org.l2jmobius.gameserver.handler.BypassHandler;
+import org.l2jmobius.gameserver.handler.ItemHandler;
+import org.l2jmobius.gameserver.handler.VoicedCommandHandler;
+import org.l2jmobius.gameserver.model.actor.Creature;
+import org.l2jmobius.gameserver.model.actor.Npc;
+import org.l2jmobius.gameserver.model.actor.Playable;
+import org.l2jmobius.gameserver.model.actor.Player;
+import org.l2jmobius.gameserver.model.skill.BuffInfo;
+import org.l2jmobius.gameserver.model.zone.ZoneId;
+import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
+import org.l2jmobius.gameserver.taskmanager.AttackStanceTaskManager;
 
 import ai.AbstractNpcAI;
 import custom.Buffer.util.ItemRequirement;
@@ -40,21 +52,6 @@ import custom.Buffer.util.htmltmpls.funcs.IfChildsFunc;
 import custom.Buffer.util.htmltmpls.funcs.IfFunc;
 import custom.Buffer.util.htmltmpls.funcs.IncludeFunc;
 
-import org.l2jmobius.Config;
-import org.l2jmobius.gameserver.enums.HtmlActionScope;
-import org.l2jmobius.gameserver.handler.BypassHandler;
-import org.l2jmobius.gameserver.handler.ItemHandler;
-import org.l2jmobius.gameserver.handler.VoicedCommandHandler;
-import org.l2jmobius.gameserver.model.actor.Creature;
-import org.l2jmobius.gameserver.model.actor.Npc;
-import org.l2jmobius.gameserver.model.actor.Playable;
-import org.l2jmobius.gameserver.model.actor.Player;
-import org.l2jmobius.gameserver.model.skill.BuffInfo;
-import org.l2jmobius.gameserver.model.zone.ZoneId;
-import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
-import org.l2jmobius.gameserver.network.serverpackets.ShowBoard;
-import org.l2jmobius.gameserver.taskmanager.AttackStanceTaskManager;
-
 /**
  * @author HorridoJoho
  */
@@ -64,14 +61,14 @@ public final class Buffer extends AbstractNpcAI
 	{
 		protected static final Buffer INSTANCE = new Buffer();
 	}
-
+	
 	private static final int MINUTE_IN_SECONDS = 60;
-
+	
 	private static final Logger _LOGGER = Logger.getLogger(Buffer.class.getName());
 	public static final Path SCRIPTS_SUBFOLDER = Paths.get("custom");
 	public static final Path SCRIPT_TOP_FOLDER = Paths.get("Buffer");
 	public static final Path SCRIPT_SUBFOLDER = Paths.get(SCRIPTS_SUBFOLDER.toString(), SCRIPT_TOP_FOLDER.toString());
-
+	
 	static Buffer getInstance()
 	{
 		return SingletonHolder.INSTANCE;
@@ -105,9 +102,9 @@ public final class Buffer extends AbstractNpcAI
 	
 	Buffer()
 	{
-//		super(-1, SCRIPT_TOP_FOLDER.toString(), SCRIPTS_SUBFOLDER.toString());
+		// super(-1, SCRIPT_TOP_FOLDER.toString(), SCRIPTS_SUBFOLDER.toString());
 		super();
-
+		
 		BypassHandler.getInstance().registerHandler(BufferNpcBypassHandler.getInstance());
 		
 		if (BufferData.getInstance().getVoicedBuffer().enabled)
@@ -142,103 +139,6 @@ public final class Buffer extends AbstractNpcAI
 			return buffer;
 		}
 		return BufferData.getInstance().getBufferNpc(npc.getId());
-	}
-	
-	private String generateAdvancedHtml(Player player, String path, Map<String, HTMLTemplatePlaceholder> placeholders, BufferData.HtmlType dialogType)
-	{
-		return HTMLTemplateParser.fromCache(
-			Path.of(
-				"/data/scripts/" + "custom/Buffer" + "/data/html/" + dialogType.toString().toLowerCase(Locale.ENGLISH) + "/" + path
-			).toString(),
-			player,
-			placeholders,
-			IncludeFunc.INSTANCE,
-			IfFunc.INSTANCE,
-			ForeachFunc.INSTANCE,
-			ExistsFunc.INSTANCE,
-			IfChildsFunc.INSTANCE,
-			ChildsCountFunc.INSTANCE
-		);
-	}
-	
-	/**
-	 * Copy from {@link NpcHtmlMessage}
-	 * @param activeChar the player
-	 * @param html the html to check
-	 */
-	private void buildBypassCache(Player activeChar, String html)
-	{
-		if (activeChar == null)
-		{
-			return;
-		}
-		
-		activeChar.clearHtmlActions(HtmlActionScope.NPC_HTML);
-		int len = html.length();
-		for (int i = 0; i < len; i++)
-		{
-			int start = html.indexOf("\"bypass ", i);
-			int finish = html.indexOf("\"", start + 1);
-			if ((start < 0) || (finish < 0))
-			{
-				break;
-			}
-			
-			if (html.substring(start + 8, start + 10).equals("-h"))
-			{
-				start += 11;
-			}
-			else
-			{
-				start += 8;
-			}
-			
-			i = finish;
-			int finish2 = html.indexOf("$", start);
-			if ((finish2 < finish) && (finish2 > 0))
-			{
-				activeChar.addHtmlAction(HtmlActionScope.NPC_HTML, html.substring(start, finish2).trim());
-			}
-			else
-			{
-				activeChar.addHtmlAction(HtmlActionScope.NPC_HTML, html.substring(start, finish).trim());
-			}
-		}
-	}
-	
-	/**
-	 * Copy from {@link org.l2jmobius.gameserver.communitybbs.Manager.BaseBBSManager}. Modified to allow larger community board htmls.
-	 * @param player the player to send to
-	 * @param html the html text
-	 */
-	private void sendBBSHtml(Player player, String html)
-	{
-		buildBypassCache(player, html);
-		
-		if (html.length() < 16250)
-		{
-			player.sendPacket(new ShowBoard(html, "101"));
-			player.sendPacket(new ShowBoard(null, "102"));
-			player.sendPacket(new ShowBoard(null, "103"));
-		}
-		else if (html.length() < (16250 * 2))
-		{
-			player.sendPacket(new ShowBoard(html.substring(0, 16250), "101"));
-			player.sendPacket(new ShowBoard(html.substring(16250), "102"));
-			player.sendPacket(new ShowBoard(null, "103"));
-		}
-		else if (html.length() < (16250 * 3))
-		{
-			player.sendPacket(new ShowBoard(html.substring(0, 16250), "101"));
-			player.sendPacket(new ShowBoard(html.substring(16250, 16250 * 2), "102"));
-			player.sendPacket(new ShowBoard(html.substring(16250 * 2), "103"));
-		}
-		else
-		{
-			player.sendPacket(new ShowBoard("<html><body><br><center>Error: HTML was too long!</center></body></html>", "101"));
-			player.sendPacket(new ShowBoard(null, "102"));
-			player.sendPacket(new ShowBoard(null, "103"));
-		}
 	}
 	
 	private void fillItemAmountMap(Map<Integer, Long> items, BufferData.Buff buff)
@@ -282,29 +182,27 @@ public final class Buffer extends AbstractNpcAI
 			}
 		}
 		
-		BufferData.HtmlType dialogType = BufferData.getInstance().getHtmlType();
-		
 		String filePath = "data/scripts/" + "custom" + "/Buffer" + "/data/html/" + "npc" + "/" + htmlPath;
 		String html = HTMLTemplateParser.fromCache(filePath, player, placeholders, IncludeFunc.INSTANCE, IfFunc.INSTANCE, ForeachFunc.INSTANCE, ExistsFunc.INSTANCE, IfChildsFunc.INSTANCE, ChildsCountFunc.INSTANCE);
 		// String html = generateAdvancedHtml(player, htmlPath, placeholders, dialogType);
-    // Assuming NpcHtmlMessage is always used
-    	player.sendPacket(new NpcHtmlMessage(npc == null ? 0 : npc.getObjectId(), html));
-
-	// 	String html = generateAdvancedHtml(player, htmlPath, placeholders, dialogType);
-	// 	switch (dialogType)
-	// 	{
-	// 		case NPC:
-	// 			player.sendPacket(new NpcHtmlMessage(npc == null ? 0 : npc.getObjectId(), html));
-	// 			break;
-	// 		case COMMUNITY:
-	// 			sendBBSHtml(player, html);
-	// 			break;
-	// 	}
+		// Assuming NpcHtmlMessage is always used
+		player.sendPacket(new NpcHtmlMessage(npc == null ? 0 : npc.getObjectId(), html));
+		
+		// String html = generateAdvancedHtml(player, htmlPath, placeholders, dialogType);
+		// switch (dialogType)
+		// {
+		// case NPC:
+		// player.sendPacket(new NpcHtmlMessage(npc == null ? 0 : npc.getObjectId(), html));
+		// break;
+		// case COMMUNITY:
+		// sendBBSHtml(player, html);
+		// break;
+		// }
 	}
 	
 	private void htmlShowMain(Player player, BufferData.Buffer buffer, Npc npc)
 	{
-		showAdvancedHtml(player, buffer, npc, "main.html", new HashMap<String, HTMLTemplatePlaceholder>());
+		showAdvancedHtml(player, buffer, npc, "main.html", new HashMap<>());
 	}
 	
 	private void htmlShowCategory(Player player, BufferData.Buffer buffer, Npc npc, String categoryIdent)
@@ -733,7 +631,7 @@ public final class Buffer extends AbstractNpcAI
 			{
 				return;
 			}
-
+			
 			final Collection<BuffInfo> buffs = player.getEffectList().getEffects();
 			for (final BuffInfo effect : buffs)
 			{

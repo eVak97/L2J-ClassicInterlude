@@ -18,11 +18,10 @@
 package custom.Buffer;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
+import org.l2jmobius.gameserver.enums.InstanceType;
 import org.l2jmobius.gameserver.handler.IBypassHandler;
 import org.l2jmobius.gameserver.model.WorldObject;
-import org.l2jmobius.gameserver.enums.InstanceType;
 import org.l2jmobius.gameserver.model.actor.Creature;
 import org.l2jmobius.gameserver.model.actor.Npc;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -33,6 +32,7 @@ import org.l2jmobius.gameserver.model.actor.Player;
 public class BufferNpcBypassHandler implements IBypassHandler
 {
 	private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(BufferNpcBypassHandler.class.getName());
+	
 	private static final class SingletonHolder
 	{
 		protected static final BufferNpcBypassHandler INSTANCE = new BufferNpcBypassHandler();
@@ -71,7 +71,7 @@ public class BufferNpcBypassHandler implements IBypassHandler
 		}
 		
 		Buffer.getInstance().executeCommand(activeChar, (Npc) playerTarget, command.substring(BYPASS.length()).trim());
-
+		
 		LOGGER.log(Level.SEVERE, "Error message: " + command, (Object[]) null);
 		return true;
 	}

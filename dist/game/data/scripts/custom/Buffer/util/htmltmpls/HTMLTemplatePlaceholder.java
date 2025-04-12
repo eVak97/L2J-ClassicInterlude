@@ -45,7 +45,7 @@ public final class HTMLTemplatePlaceholder
 	 */
 	public HTMLTemplatePlaceholder(String name, String value)
 	{
-		this(name, value, new LinkedHashMap<String, HTMLTemplatePlaceholder>());
+		this(name, value, new LinkedHashMap<>());
 	}
 	
 	/**
