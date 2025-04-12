@@ -23,6 +23,7 @@ import java.util.StringTokenizer;
 import org.l2jmobius.gameserver.cache.HtmCache;
 import org.l2jmobius.gameserver.handler.IAdminCommandHandler;
 import org.l2jmobius.gameserver.instancemanager.GrandBossManager;
+import org.l2jmobius.gameserver.instancemanager.QuestManager;
 import org.l2jmobius.gameserver.instancemanager.ZoneManager;
 import org.l2jmobius.gameserver.model.StatSet;
 import org.l2jmobius.gameserver.model.actor.Player;
@@ -30,6 +31,9 @@ import org.l2jmobius.gameserver.model.quest.Quest;
 import org.l2jmobius.gameserver.model.zone.type.NoRestartZone;
 import org.l2jmobius.gameserver.network.serverpackets.NpcHtmlMessage;
 import org.l2jmobius.gameserver.util.BuilderUtil;
+
+import ai.bosses.Antharas.Antharas;
+import ai.bosses.Baium.Baium;
 
 /**
  * @author St3eT
@@ -44,6 +48,10 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	private static final int QUEENANT = 29001; // Queen Ant
 	private static final int ORFEN = 29014; // Orfen
 	private static final int CORE = 29006; // Core
+	private static final int ZAKEN = 29022; // Zaken
+	private static final int ZAKEN_ZONE = 70053; // Zaken Ship
+	private static final int FRINTEZZA = 29045; // Frintezza
+	private static final int FRINTEZZA_ZONE = 70054; // Frintezza Hall
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -198,7 +206,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	
 	private void manageHtml(Player activeChar, int grandBossId)
 	{
-		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE).contains(grandBossId))
+		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE, ZAKEN, FRINTEZZA).contains(grandBossId))
 		{
 			final int bossStatus = GrandBossManager.getInstance().getStatus(grandBossId);
 			NoRestartZone bossZone = null;
@@ -241,9 +249,20 @@ public class AdminGrandBoss implements IAdminCommandHandler
 					htmlPatch = "data/html/admin/grandboss/grandboss_core.htm";
 					break;
 				}
+				case ZAKEN:
+				{
+					bossZone = ZoneManager.getInstance().getZoneById(ZAKEN_ZONE, NoRestartZone.class);
+					htmlPatch = "data/html/admin/grandboss/grandboss_zaken.htm";
+					break;
+				}
+				case FRINTEZZA:
+				{
+					bossZone = ZoneManager.getInstance().getZoneById(FRINTEZZA_ZONE, NoRestartZone.class);
+					htmlPatch = "data/html/admin/grandboss/grandboss_frintezza.htm";
+				}
 			}
 			
-			if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM).contains(grandBossId))
+			if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, FRINTEZZA).contains(grandBossId))
 			{
 				deadStatus = 3;
 				switch (bossStatus)
@@ -322,14 +341,13 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	
 	private Quest antharasAi()
 	{
-		return null;
-		// return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
+		
+		return QuestManager.getInstance().getQuest(Antharas.class.getSimpleName());
 	}
 	
 	private Quest baiumAi()
 	{
-		return null;
-		// return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
+		return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
 	}
 	
 	@Override
